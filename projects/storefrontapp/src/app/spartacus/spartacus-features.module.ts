@@ -384,6 +384,8 @@ if (environment.cpq) {
         a11yViewHoursButtonIconContrast: true,
         a11yCheckoutStepsLandmarks: true,
         a11yQTY2Quantity: true,
+        a11yDeleteButton2First: true,
+        a11yUpdatingCartNoNarration: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
