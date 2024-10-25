@@ -22,6 +22,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { FeatureConfigService, TranslationService } from '@spartacus/core';
 import { filter, take } from 'rxjs';
 import { BREAKPOINT, BreakpointService } from '../../../layout';
+import { NgSelectComponent } from '@ng-select/ng-select';
 
 const ARIA_LABEL = 'aria-label';
 
@@ -51,6 +52,23 @@ export class NgSelectA11yDirective implements AfterViewInit {
     observer.observe(this.elementRef.nativeElement, { childList: true });
   }
 
+  /**
+   * When we inside a combo box using JAWS screen reader and press escape key
+   * an escape keyboard event doesn't get fired, instead an AltLeft is fired.
+   */
+  @HostListener('keyup', ['$event'])
+  onKeyUp(event: KeyboardEvent) {
+    if (
+      !this.featureConfigService?.isEnabled('a11yNgSelectCloseDropdownOnEscape')
+    ) {
+      return;
+    }
+    const jawsEscapeCode = 'AltLeft';
+    if (event.code === jawsEscapeCode) {
+      this.selectComponent.close();
+    }
+  }
+
   @HostListener('keydown.escape')
   onEscape() {
     setTimeout(() => {
@@ -64,7 +82,8 @@ export class NgSelectA11yDirective implements AfterViewInit {
 
   constructor(
     private renderer: Renderer2,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private selectComponent: NgSelectComponent
   ) {}
 
   ngAfterViewInit(): void {
