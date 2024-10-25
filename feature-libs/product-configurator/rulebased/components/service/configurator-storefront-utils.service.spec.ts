@@ -123,7 +123,7 @@ class MockProductService {
   }
 }
 
-fdescribe('ConfiguratorStorefrontUtilsService', () => {
+describe('ConfiguratorStorefrontUtilsService', () => {
   let classUnderTest: ConfiguratorStorefrontUtilsService;
   let fixture: ComponentFixture<MockComponent>;
   let htmlElem: HTMLElement;
@@ -366,6 +366,8 @@ fdescribe('ConfiguratorStorefrontUtilsService', () => {
     });
 
     describe('focusValue', () => {
+      let attribute: Configurator.Attribute;
+
       function createValue(name: string, isSelected: boolean) {
         const value: Configurator.Value = {
           valueCode: name,
@@ -399,8 +401,6 @@ fdescribe('ConfiguratorStorefrontUtilsService', () => {
           }
         });
       }
-
-      let attribute: Configurator.Attribute;
 
       beforeEach(() => {
         attribute = {
