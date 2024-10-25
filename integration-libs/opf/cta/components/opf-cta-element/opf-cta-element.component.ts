@@ -29,10 +29,10 @@ export class OpfCtaElementComponent implements AfterViewInit {
   @Input() ctaScriptHtml: OpfDynamicScript;
 
   ngAfterViewInit(): void {
-    this.windowRef.isBrowser() &&
-      this.opfCtaScriptsService.loadAndRunScript(this.ctaScriptHtml);
+    this.opfCtaScriptsService.loadAndRunScript(this.ctaScriptHtml);
   }
   renderHtml(html: string): SafeHtml {
+    // Display sanitized html in SSR for security concerns
     return this.windowRef.isBrowser()
       ? this.sanitizer.bypassSecurityTrustHtml(this.removeScriptTags(html))
       : html;
