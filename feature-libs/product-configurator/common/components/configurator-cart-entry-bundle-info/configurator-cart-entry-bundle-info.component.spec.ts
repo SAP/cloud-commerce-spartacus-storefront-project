@@ -259,22 +259,22 @@ describe('ConfiguratorCartEntryBundleInfoComponent', () => {
 
   describe('isBundleBasedConfigurator', () => {
     it('should return false because the configurator type is not bundle based one', () => {
-      let testEntry = structuredClone(entry);
+      let clonedEntry = structuredClone(entry);
       setConfiguratorTypeIntoFirstConfigInfo(
-        testEntry,
+        clonedEntry,
         'notBundleBasedConfiguratorType'
       );
 
       fixture.detectChanges();
-      expect(component.isBundleBasedConfigurator(testEntry)).toBe(false);
+      expect(component.isBundleBasedConfigurator(clonedEntry)).toBe(false);
     });
 
     it('should return true because the configurator type is a bundle based one', () => {
-      let testEntry = structuredClone(entry);
-      setConfiguratorTypeIntoFirstConfigInfo(testEntry, ConfiguratorType.CPQ);
+      let clonedEntry = structuredClone(entry);
+      setConfiguratorTypeIntoFirstConfigInfo(clonedEntry, ConfiguratorType.CPQ);
 
       fixture.detectChanges();
-      expect(component.isBundleBasedConfigurator(testEntry)).toBe(true);
+      expect(component.isBundleBasedConfigurator(clonedEntry)).toBe(true);
     });
 
     it('should return false in case no configuration infos are available', () => {
