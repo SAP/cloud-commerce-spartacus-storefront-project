@@ -8,10 +8,13 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   Input,
+  ViewChild,
   inject,
 } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { WindowRef } from '@spartacus/core';
 import { OpfDynamicScript } from '@spartacus/opf/base/root';
 import { OpfCtaScriptsService } from '../opf-cta-scripts/opf-cta-scripts.service';
 
@@ -21,16 +24,32 @@ import { OpfCtaScriptsService } from '../opf-cta-scripts/opf-cta-scripts.service
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OpfCtaElementComponent implements AfterViewInit {
+  @ViewChild('ctaElementContainer') container: ElementRef;
   protected sanitizer = inject(DomSanitizer);
   protected opfCtaScriptsService = inject(OpfCtaScriptsService);
-  loader = true;
+  protected windowRef = inject(WindowRef);
 
   @Input() ctaScriptHtml: OpfDynamicScript;
 
   ngAfterViewInit(): void {
-    this.opfCtaScriptsService.loadAndRunScript(this.ctaScriptHtml);
+    this.windowRef.isBrowser() &&
+      this.opfCtaScriptsService.loadAndRunScript(
+        this.ctaScriptHtml,
+        this.container
+      );
   }
   renderHtml(html: string): SafeHtml {
-    return this.sanitizer.bypassSecurityTrustHtml(html);
+    return this.windowRef.isBrowser()
+      ? this.sanitizer.bypassSecurityTrustHtml(html)
+      : html;
+  }
+
+  // Removing script tags on FE until BE fix: CXSPA-8572
+  protected removeScriptTags(html: string) {
+    const element = new DOMParser().parseFromString(html, 'text/html');
+    Array.from(element.getElementsByTagName('script')).forEach((script) => {
+      html = html.replace(script.outerHTML, '');
+    });
+    return html;
   }
 }
