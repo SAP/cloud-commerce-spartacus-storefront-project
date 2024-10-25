@@ -321,7 +321,7 @@ const mockConfiguratorUISettingsConfigTemplate: ConfiguratorUISettingsConfig = {
   },
 };
 
-fdescribe('OccConfiguratorVariantNormalizer', () => {
+describe('OccConfiguratorVariantNormalizer', () => {
   let occConfiguratorVariantNormalizer: OccConfiguratorVariantNormalizer;
   let configUISettingsConfig: ConfiguratorUISettingsConfig;
   let configuration: OccConfigurator.Configuration;
