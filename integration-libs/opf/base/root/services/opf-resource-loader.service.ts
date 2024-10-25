@@ -35,12 +35,6 @@ export class OpfResourceLoaderService extends ScriptLoader {
   }): void {
     const { src, callback, errorCallback } = embedOptions;
 
-    const isSSR = isPlatformServer(this.platformId);
-
-    if (isSSR) {
-      return;
-    }
-
     const link: HTMLLinkElement = this.document.createElement('link');
     link.href = src;
     link.rel = 'stylesheet';
