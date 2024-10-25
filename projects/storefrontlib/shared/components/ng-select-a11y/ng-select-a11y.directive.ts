@@ -20,9 +20,10 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FeatureConfigService, TranslationService } from '@spartacus/core';
-import { filter, take } from 'rxjs';
+import { filter, merge, take } from 'rxjs';
 import { BREAKPOINT, BreakpointService } from '../../../layout';
 import { NgSelectComponent } from '@ng-select/ng-select';
+import { map } from 'rxjs/operators';
 
 const ARIA_LABEL = 'aria-label';
 
@@ -90,6 +91,15 @@ export class NgSelectA11yDirective implements AfterViewInit {
     const divCombobox =
       this.elementRef.nativeElement.querySelector('[role="combobox"]');
     const inputElement = divCombobox.querySelector('input');
+
+    this.renderer.setAttribute(inputElement, 'role', 'combobox');
+    this.renderer.setAttribute(inputElement, 'aria-expanded', 'false');
+
+    const isOpened$ = this.selectComponent.openEvent.pipe(map(() => 'true'));
+    const isClosed$ = this.selectComponent.closeEvent.pipe(map(() => 'false'));
+    merge(isOpened$, isClosed$).subscribe((state) => {
+      this.renderer.setAttribute(inputElement, 'aria-expanded', state);
+    });
 
     const ariaLabel = this.cxNgSelectA11y.ariaLabel;
     const elementId = this.elementRef.nativeElement.id;
