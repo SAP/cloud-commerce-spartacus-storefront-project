@@ -351,7 +351,7 @@ if (environment.cpq) {
         a11yEmptyWishlistHeading: true,
         a11yScreenReaderBloatFix: true,
         a11yUseButtonsForBtnLinks: true,
-        a11yTabComponent: true,
+        a11yTabComponent: false,
         a11yCarouselArrowKeysNavigation: true,
         a11yNotificationsOnConsentChange: true,
         a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields:
@@ -377,6 +377,8 @@ if (environment.cpq) {
         a11yAddToWishlistFocus: true,
         a11ySearchBoxFocusOnEscape: true,
         a11yPasswordVisibliltyBtnValueOverflow: true,
+        a11yItemCounterFocus: true,
+        a11yScrollToReviewByShowReview: true,
         a11yViewHoursButtonIconContrast: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
