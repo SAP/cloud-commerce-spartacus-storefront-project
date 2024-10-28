@@ -605,10 +605,9 @@ export interface FeatureTogglesInterface {
   a11yViewHoursButtonIconContrast?: boolean;
 
   /**
-   * `CheckoutDeliveryAddressComponent` add a landmark for to get a
-   * 'new address button' associated with an appropriate content
+   * `Checkout` add a landmarks to content representing steps
    */
-  a11yCheckoutDeliveryAddressAddLandmark?: boolean;
+  a11yCheckoutStepsLandmarks?: boolean;
 
   /**
    * In `CartItemListComponent`, change QTY into Quantity.
@@ -791,7 +790,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,
-  a11yCheckoutDeliveryAddressAddLandmark: false,
+  a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
