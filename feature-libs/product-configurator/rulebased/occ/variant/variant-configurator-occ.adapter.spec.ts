@@ -119,7 +119,7 @@ const variantSearchResult: Configurator.Variant[] = [{ productCode: 'a' }];
 
 const cartModification: CartModification = { quantity: 1 };
 
-fdescribe('OccConfigurationVariantAdapter', () => {
+describe('OccConfigurationVariantAdapter', () => {
   let occConfiguratorVariantAdapter: VariantConfiguratorOccAdapter;
   let httpMock: HttpTestingController;
   let converterService: ConverterService;
