@@ -1,0 +1,71 @@
+{
+  "epdVisualization" : {
+    "visualViewer" : {
+      "contentType" : {
+        "drawing2D" : "[[[2Ď∙∙]]]",
+        "model3D" : "[[[3Ď∙∙]]]"
+      },
+      "toolbar" : {
+        "homeButton" : {
+          "label" : "[[[Ĥŏɱē]]]"
+        },
+        "zoomButton" : {
+          "label" : "[[[Żŏŏɱ]]]"
+        },
+        "panButton" : {
+          "label" : "[[[Ƥąŋ∙]]]"
+        },
+        "rotateButton" : {
+          "label" : "[[[Řŏţąţē∙∙∙∙∙∙∙∙]]]"
+        },
+        "isolateButton" : {
+          "label" : "[[[Ĭşŏĺąţē∙∙∙∙∙∙∙]]]"
+        },
+        "playButton" : {
+          "label" : "[[[Ƥĺąŷ]]]"
+        },
+        "pauseButton" : {
+          "label" : "[[[Ƥąűşē∙∙∙∙∙∙∙∙∙]]]"
+        },
+        "hotspotsButton" : {
+          "label" : "[[[Ĥŏţşρŏţş∙∙∙∙∙∙]]]",
+          "show" : "[[[Ŝĥŏŵ]]]",
+          "hide" : "[[[Ĥįƌē]]]"
+        },
+        "visualViewerAnimationSlider" : {
+          "label" : "[[[Āŋįɱąţįŏŋ Ŝĺįƌēŗ∙∙∙∙∙∙∙∙]]]",
+          "role" : "[[[Ŝĺįƌēŗ∙∙∙∙∙∙∙∙]]]"
+        }
+      }
+    },
+    "visualPicking" : {
+      "visualPickingTab" : {
+        "noProductReferences" : "[[[Ńŏ şρąŗē ρąŗţş ąŗē ąʋąįĺąƃĺē ƒŏŗ ţĥįş ρŗŏƌűċţ.∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]"
+      },
+      "visualPickingProductList" : {
+        "description" : "[[[Ďēşċŗįρţįŏŋ∙∙∙∙∙∙∙∙]]]",
+        "itemPrice" : "[[[Ƥŗįċē∙∙∙∙∙∙∙∙∙]]]",
+        "outOfStock" : "[[[Ŏűţ ŏƒ şţŏċķ∙∙∙∙∙∙∙]]]",
+        "id" : "[[[ĬĎ∙∙]]]"
+      },
+      "visualPickingProductFilter" : {
+        "input" : {
+          "placeholder" : "[[[Ƒįĺţēŗ ƃŷ ŋąɱē ŏŗ įƌ∙∙∙∙]]]"
+        },
+        "searchButton" : {
+          "label" : "[[[şēąŗċĥ∙∙∙∙∙∙∙∙]]]"
+        },
+        "resetButton" : {
+          "label" : "[[[ŗēşēţ∙∙∙∙∙∙∙∙∙]]]"
+        }
+      }
+    },
+    "errors" : {
+      "visualLoad" : {
+        "noMatchingVisualFound" : "[[[Ńŏ ɱąţċĥįŋğ ʋįşűąĺįžąţįŏŋ ƒŏűŋƌ∙∙∙∙∙∙∙∙∙∙]]]",
+        "multipleMatchingVisualsFound" : "[[[Μűĺţįρĺē ɱąţċĥįŋğ ʋįşűąĺįžąţįŏŋş ƒŏűŋƌ∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+        "unexpectedLoadError" : "[[[Ĕŗŗŏŗ ŏċċűŗŗēƌ ŵĥįĺē ĺŏąƌįŋğ ʋįşűąĺįžąţįŏŋ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]"
+      }
+    }
+  }
+}

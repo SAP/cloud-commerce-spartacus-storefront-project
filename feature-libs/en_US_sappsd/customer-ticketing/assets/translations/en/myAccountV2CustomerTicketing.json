@@ -1,0 +1,10 @@
+{
+  "myAccountV2CustomerTicketing" : {
+    "heading" : "[[[Ĉűşţŏɱēŗ Ŝēŗʋįċē∙∙∙∙∙∙∙∙]]]",
+    "showMore" : "[[[Ŝĥŏŵ Μŏŗē∙∙∙∙∙]]]",
+    "changedOn" : "[[[Ĉĥąŋğēƌ Ŏŋ: {{value}}]]]",
+    "ticketId" : "[[[ĬĎ: {{value}}]]]",
+    "subjectLabel" : "[[[Ŝűƃĵēċţ∙∙∙∙∙∙∙]]]",
+    "idLabel" : "[[[Ĉűşţŏɱēŗ Ŝēŗʋįċē Ĭƌ∙∙∙∙∙]]]"
+  }
+}

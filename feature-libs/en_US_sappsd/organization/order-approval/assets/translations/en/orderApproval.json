@@ -1,0 +1,49 @@
+{
+  "orderApprovalDetails" : {
+    "back" : "[[[Ɓąċķ Ţŏ Ļįşţ∙∙∙∙∙∙∙]]]",
+    "showForm_APPROVE" : "[[[Āρρŗŏʋē Ŏŗƌēŗ...∙∙∙∙∙∙∙∙]]]",
+    "showForm_REJECT" : "[[[Řēĵēċţ Ŏŗƌēŗ...∙∙∙∙]]]",
+    "form" : {
+      "title_APPROVE" : "[[[Āρρŗŏʋē ŏŗƌēŗ {{orderCode}} ţŏţąĺĺįŋğ {{orderTotal}}]]]",
+      "title_REJECT" : "[[[Řēĵēċţ ŏŗƌēŗ {{orderCode}} ţŏţąĺĺįŋğ {{orderTotal}}]]]",
+      "submit_APPROVE" : "[[[Āρρŗŏʋē∙∙∙∙∙∙∙]]]",
+      "submit_REJECT" : "[[[Řēĵēċţ∙∙∙∙∙∙∙∙]]]",
+      "cancel" : "[[[Ĉąŋċēĺ∙∙∙∙∙∙∙∙]]]",
+      "comment_APPROVE" : {
+        "label" : "[[[Ĉŏɱɱēŋţ (ŏρţįŏŋąĺ, ɱąχįɱűɱ 255 ċĥąŗąċţēŗş)∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+        "placeholder" : ""
+      },
+      "comment_REJECT" : {
+        "label" : "[[[Ĉŏɱɱēŋţ (ɱąχįɱűɱ 255 ċĥąŗąċţēŗş)∙∙∙∙∙∙∙∙∙∙]]]",
+        "placeholder" : ""
+      }
+    },
+    "permissionResults" : {
+      "header" : "[[[Ĉűşţŏɱēŗ Āρρŗŏʋąĺ Ďēţąįĺş∙∙∙∙∙∙∙]]]",
+      "permission" : "[[[Ƥēŗɱįşşįŏŋ∙∙∙∙]]]",
+      "approver" : "[[[Āρρŗŏʋēŗ∙∙∙∙∙∙]]]",
+      "status" : "[[[Ŝţąţűş∙∙∙∙∙∙∙∙]]]",
+      "approverComments" : "[[[Āρρŗŏʋēŗ Ĉŏɱɱēŋţş∙∙∙∙∙∙∙]]]",
+      "noApprovalComments" : "[[[Ńŏŋē]]]",
+      "permissionType_B2BBudgetExceededPermission" : "[[[Ţĥē ƃűƌğēţ ąşşŏċįąţēƌ ŵįţĥ ţĥē ċĥŏşēŋ ċŏşţ ċēŋţēŗ ĥąş ƃēēŋ ēχċēēƌēƌ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+      "permissionType_B2BOrderThresholdPermission" : "[[[Ŏŗƌēŗ ţŏţąĺ ēχċēēƌēƌ ţĥē ρēŗ-ŏŗƌēŗ ĺįɱįţ∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+      "permissionType_B2BOrderThresholdTimespanPermission" : "[[[Ŏŗƌēŗ ţŏţąĺ ēχċēēƌēƌ ţĥē ρēŗ-ţįɱēşρąŋ ĺįɱįţ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]"
+    }
+  },
+  "orderApprovalList" : {
+    "orderCode" : "[[[Ŏŗƌēŗ #∙∙∙∙∙∙∙]]]",
+    "POCode" : "[[[ƤŎ #]]]",
+    "placedBy" : "[[[Ƥĺąċēƌ ƃŷ∙∙∙∙∙]]]",
+    "date" : "[[[Ďąţē]]]",
+    "status" : "[[[Ŝţąţűş∙∙∙∙∙∙∙∙]]]",
+    "total" : "[[[Ţŏţąĺ∙∙∙∙∙∙∙∙∙]]]",
+    "none" : "[[[Ńŏŋē]]]",
+    "emptyList" : "[[[Ţĥēŗē ąŗē ŋŏ ŏŗƌēŗş ţŏ ąρρŗŏʋē ąţ ţĥįş ţįɱē.∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+    "orderApprovalList" : "[[[Ŏŗƌēŗ Āρρŗŏʋąĺ Ļįşţ∙∙∙∙∙]]]"
+  },
+  "orderApprovalGlobal" : {
+    "notification" : {
+      "noSufficientPermissions" : "[[[Ńŏ şűƒƒįċįēŋţ ρēŗɱįşşįŏŋş ţŏ ąċċēşş ţĥįş ρąğē.∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]"
+    }
+  }
+}

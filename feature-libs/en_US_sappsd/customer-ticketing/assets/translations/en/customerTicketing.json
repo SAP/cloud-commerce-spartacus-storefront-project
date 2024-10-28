@@ -1,0 +1,48 @@
+{
+  "customerTicketing" : {
+    "mainLogoLabel" : "[[[ŜĀƤ∙]]]",
+    "mainTitle" : "[[[Ĉűşţŏɱēŗ Ţįċķēţįŋğ∙∙∙∙∙∙]]]",
+    "ticketId" : "[[[ĬĎ∙∙]]]",
+    "createdOn" : "[[[Ĉŗēąţēƌ Ŏŋ∙∙∙∙]]]",
+    "changedOn" : "[[[Ĉĥąŋğēƌ Ŏŋ∙∙∙∙]]]",
+    "status" : "[[[Ŝţąţűş∙∙∙∙∙∙∙∙]]]",
+    "message" : "[[[Μēşşąğē∙∙∙∙∙∙∙]]]",
+    "cancel" : "[[[Ĉąŋċēĺ∙∙∙∙∙∙∙∙]]]",
+    "submit" : "[[[Ŝűƃɱįţ∙∙∙∙∙∙∙∙]]]",
+    "uploadFile" : "[[[Ůρĺŏąƌ Ƒįĺē∙∙∙∙∙∙∙∙]]]",
+    "fileSizeLimit" : "[[[Ƒįĺē şįžē ĺįɱįţ: {{count}} ΜƁ]]]",
+    "maximumAttachment" : "[[[Μąχįɱűɱ ŏƒ ŏŋē ąţţąċĥɱēŋţ ρēŗ ɱēşşąğē∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+    "errorMessage" : "[[[Ŝŏɱēţĥįŋğ ŵēŋţ ŵŗŏŋğ.∙∙∙∙∙]]]",
+    "charactersLeft" : "[[[ċĥąŗąċţēŗş ĺēƒţ: {{count}}]]]",
+    "customerService" : "[[[Ĉűşţŏɱēŗ Ŝēŗʋįċē∙∙∙∙∙∙∙∙]]]"
+  },
+  "customerTicketingList" : {
+    "subject" : "[[[Ŝűƃĵēċţ∙∙∙∙∙∙∙]]]",
+    "ticketCategory" : "[[[Ĉąţēğŏŗŷ∙∙∙∙∙∙]]]",
+    "sortSubtitle" : "[[[Ŝŏŗţ ƃŷ∙∙∙∙∙∙∙]]]",
+    "sortOrders" : "[[[Ŝŏŗţ ŏŗƌēŗş∙∙∙∙∙∙∙∙]]]",
+    "noTickets" : "[[[Ŷŏű ƌŏŋ'ţ ĥąʋē ąŋŷ ŗēƣűēşţ∙∙∙∙∙∙∙]]]",
+    "requestTitle" : "[[[Āĺĺ Řēƣűēşţş∙∙∙∙∙∙∙]]]",
+    "mobile" : {
+      "ticketIdFull" : "[[[Ţįċķēţ ĬĎ∙∙∙∙∙]]]"
+    }
+  },
+  "createCustomerTicket" : {
+    "createNewTicket" : "[[[Āƌƌ∙]]]",
+    "addNewRequest" : "[[[Āƌƌ Ńēŵ Řēƣűēşţ∙∙∙∙]]]",
+    "addRequest" : "[[[Āƌƌ Řēƣűēşţ∙∙∙∙∙∙∙∙]]]",
+    "subject" : "[[[Ŝűƃĵēċţ∙∙∙∙∙∙∙]]]",
+    "category" : "[[[Ĉąţēğŏŗŷ∙∙∙∙∙∙]]]",
+    "associateTo" : "[[[Āşşŏċįąţē Ţŏ∙∙∙∙∙∙∙]]]",
+    "ticketCreated" : "[[[Řēƣűēşţ ċŗēąţēƌ.∙∙∙∙∙∙∙∙]]]",
+    "optionallySelectAssociatedObject" : "[[[Ŝēĺēċţ Ŏρţįŏŋ∙∙∙∙∙∙]]]",
+    "selectCategory" : "[[[Ŝēĺēċţ Ĉąţēğŏŗŷ∙∙∙∙]]]"
+  },
+  "customerTicketingDetails" : {
+    "requestReopened" : "[[[Řēƣűēşţ Řēŏρēŋēƌ.∙∙∙∙∙∙∙]]]",
+    "requestClosed" : "[[[Řēƣűēşţ ċĺŏşēƌ, ŷŏű ɱąŷ ŗēŏρēŋ įƒ ŋēēƌēƌ.∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+    "reopenRequest" : "[[[Řēŏρēŋ Řēƣűēşţ∙∙∙∙∙]]]",
+    "closeRequest" : "[[[Ĉĺŏşē Řēƣűēşţ∙∙∙∙∙∙]]]",
+    "ticketNotFound" : "[[[Ţįċķēţ ŋŏţ ƒŏűŋƌ.∙∙∙∙∙∙∙]]]"
+  }
+}

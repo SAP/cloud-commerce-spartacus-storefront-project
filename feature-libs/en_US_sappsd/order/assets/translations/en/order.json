@@ -1,0 +1,192 @@
+{
+  "orderDetails" : {
+    "orderId" : "[[[Ŏŗƌēŗ #∙∙∙∙∙∙∙]]]",
+    "orderNumber" : "[[[Ŏŗƌēŗ Ńűɱƃēŗ∙∙∙∙∙∙∙]]]",
+    "replenishmentId" : "[[[Řēρĺēŋįşĥɱēŋţ #∙∙∙∙]]]",
+    "purchaseOrderId" : "[[[Ƥűŗċĥąşē Ŏŗƌēŗ #∙∙∙∙∙∙∙∙]]]",
+    "purchaseOrderNumber" : "[[[Ƥűŗċĥąşē Ŏŗƌēŗ Ńűɱƃēŗ∙∙∙∙∙]]]",
+    "emptyPurchaseOrderId" : "[[[Ńŏŋē]]]",
+    "none" : "[[[Ńŏŋē {{value}}]]]",
+    "placed" : "[[[Ƥĺąċēƌ∙∙∙∙∙∙∙∙]]]",
+    "placedBy" : "[[[Ƥĺąċēƌ Ɓŷ∙∙∙∙∙]]]",
+    "unit" : "[[[Ůŋįţ]]]",
+    "costCenter" : "[[[Ĉŏşţ Ĉēŋţēŗ∙∙∙∙∙∙∙∙]]]",
+    "costCenterAndUnit" : "[[[Ĉŏşţ Ĉēŋţēŗ / Ůŋįţ∙∙∙∙∙∙]]]",
+    "costCenterAndUnitValue" : "[[[{{costCenterName}} / {{unitName}}]]]",
+    "methodOfPayment" : "[[[Μēţĥŏƌ ŏƒ Ƥąŷɱēŋţ∙∙∙∙∙∙∙]]]",
+    "payByAccount" : "[[[Ƥąŷ ƃŷ Āċċŏűŋţ∙∙∙∙∙]]]",
+    "paidByCreditCard" : "[[[(ρąįƌ ƃŷ ċŗēƌįţ ċąŗƌ)∙∙∙∙∙]]]",
+    "status" : "[[[Ŝţąţűş∙∙∙∙∙∙∙∙]]]",
+    "active" : "[[[Āċţįʋē∙∙∙∙∙∙∙∙]]]",
+    "shippedOn" : "[[[Ŝĥįρρēƌ ŏŋ∙∙∙∙]]]",
+    "shippingMethod" : "[[[Ŝĥįρρįŋğ Μēţĥŏƌ∙∙∙∙]]]",
+    "placedOn" : "[[[Ƥĺąċēƌ ŏŋ∙∙∙∙∙]]]",
+    "startOn" : "[[[Ŝţąŗţ Ŏŋ∙∙∙∙∙∙]]]",
+    "nextOrderDate" : "[[[Ńēχţ Ŏŗƌēŗ Ďąţē∙∙∙∙]]]",
+    "frequency" : "[[[Ƒŗēƣűēŋċŷ∙∙∙∙∙]]]",
+    "cancelled" : "[[[ Ĉąŋċēĺĺēƌ∙∙∙∙]]]",
+    "deliveryStatus_IN_TRANSIT" : "[[[Ĭŋ Ţŗąŋşįţ∙∙∙∙]]]",
+    "deliveryStatus_READY_FOR_PICKUP" : "[[[Řēąƌŷ ƒŏŗ Ƥįċķűρ∙∙∙∙∙∙∙∙]]]",
+    "deliveryStatus_READY_FOR_SHIPPING" : "[[[Řēąƌŷ ƒŏŗ Ŝĥįρρįŋğ∙∙∙∙∙∙]]]",
+    "deliveryStatus_WAITING" : "[[[Ŵąįţįŋğ∙∙∙∙∙∙∙]]]",
+    "deliveryStatus_DELIVERING" : "[[[Ďēĺįʋēŗįŋğ∙∙∙∙]]]",
+    "deliveryStatus_PICKPACK" : "[[[Ƥŗēρąŗįŋğ ƒŏŗ Ŝĥįρɱēŋţ∙∙∙∙∙]]]",
+    "deliveryStatus_PICKUP_COMPLETE" : "[[[Ƥįċķűρ Ĉŏɱρĺēţē∙∙∙∙]]]",
+    "deliveryStatus_DELIVERY_COMPLETED" : "[[[Ďēĺįʋēŗŷ Ĉŏɱρĺēţē∙∙∙∙∙∙∙]]]",
+    "deliveryStatus_PAYMENT_NOT_CAPTURED" : "[[[Ƥąŷɱēŋţ Ĭşşűē∙∙∙∙∙∙]]]",
+    "deliveryStatus_IN_PROCESS" : "[[[Ŏŗƌēŗ Ƥŗŏċēşşįŋğ∙∙∙∙∙∙∙∙]]]",
+    "deliveryStatus_READY" : "[[[Ŏŗƌēŗ Ƥŗŏċēşşįŋğ∙∙∙∙∙∙∙∙]]]",
+    "deliveryStatus_DELIVERY_REJECTED" : "[[[Ďēĺįʋēŗŷ Řēĵēċţēƌ∙∙∙∙∙∙∙]]]",
+    "deliveryStatus_SHIPPED" : "[[[Ŝĥįρρēƌ∙∙∙∙∙∙∙]]]",
+    "deliveryStatus_TAX_NOT_COMMITTED" : "[[[Ţąχ Ĭşşűē∙∙∙∙∙]]]",
+    "deliveryStatus_CANCELLED" : "[[[Ĉąŋċēĺĺēƌ∙∙∙∙∙]]]",
+    "statusDisplay_cancelled" : "[[[Ĉąŋċēĺĺēƌ∙∙∙∙∙]]]",
+    "statusDisplay_cancelling" : "[[[Ĉąŋċēĺ Ƥēŋƌįŋğ∙∙∙∙∙]]]",
+    "statusDisplay_completed" : "[[[Ĉŏɱρĺēţēƌ∙∙∙∙∙]]]",
+    "statusDisplay_created" : "[[[Ĉŗēąţēƌ∙∙∙∙∙∙∙]]]",
+    "statusDisplay_error" : "[[[Ƥēŋƌįŋğ∙∙∙∙∙∙∙]]]",
+    "statusDisplay_Error" : "[[[Ƥēŋƌįŋğ∙∙∙∙∙∙∙]]]",
+    "statusDisplay_processing" : "[[[Ƥēŋƌįŋğ∙∙∙∙∙∙∙]]]",
+    "statusDisplay_open" : "[[[Ŏρēŋ]]]",
+    "statusDisplay_pending" : {
+      "approval" : "[[[Ƥēŋƌįŋğ Āρρŗŏʋąĺ∙∙∙∙∙∙∙∙]]]",
+      "merchant" : {
+        "approval" : "[[[Ƥēŋƌįŋğ Μēŗċĥąŋţ Āρρŗŏʋąĺ∙∙∙∙∙∙∙]]]"
+      }
+    },
+    "statusDisplay_approved" : "[[[Āρρŗŏʋēƌ∙∙∙∙∙∙]]]",
+    "statusDisplay_rejected" : "[[[Řēĵēċţēƌ∙∙∙∙∙∙]]]",
+    "statusDisplay_merchant" : {
+      "approved" : "[[[Μēŗċĥąŋţ Āρρŗŏʋēƌ∙∙∙∙∙∙∙]]]",
+      "rejected" : "[[[Μēŗċĥąŋţ Řēĵēċţēƌ∙∙∙∙∙∙∙]]]"
+    },
+    "statusDisplay_assigned" : {
+      "admin" : "[[[Āşşįğŋēƌ Ţŏ Āƌɱįŋįşţŗąţŏŗ∙∙∙∙∙∙∙]]]"
+    },
+    "consignmentTracking" : {
+      "action" : "[[[Ţŗąċķ ρąċķąğē∙∙∙∙∙∙]]]",
+      "dialog" : {
+        "header" : "[[[Ţŗąċķįŋğ Ĭŋƒŏŗɱąţįŏŋ∙∙∙∙]]]",
+        "shipped" : "[[[Ŝĥįρρēƌ∙∙∙∙∙∙∙]]]",
+        "estimate" : "[[[Ĕşţįɱąţēƌ Ďēĺįʋēŗŷ∙∙∙∙∙∙]]]",
+        "carrier" : "[[[Ďēĺįʋēŗŷ Ŝēŗʋįċē∙∙∙∙∙∙∙∙]]]",
+        "trackingId" : "[[[Ţŗąċķįŋğ Ńűɱƃēŗ∙∙∙∙]]]",
+        "noTracking" : "[[[Ţĥē ρąċķąğē ĥąş ŋŏţ ƃēēŋ ƌįşρąţċĥēƌ ƒŗŏɱ ţĥē ŵąŗēĥŏűşē. Ţĥē ţŗąċķįŋğ įŋƒŏŗɱąţįŏŋ ŵįĺĺ ƃē ąʋąįĺąƃĺē ąƒţēŗ ţĥē ρąċķąğē įş şĥįρρēƌ.∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+        "loadingHeader" : "[[[Ĉŏŋşįğŋɱēŋţ Ţŗąċķįŋğ∙∙∙∙]]]"
+      }
+    },
+    "cancellationAndReturn" : {
+      "returnAction" : "[[[Řēƣűēşţ ą Řēţűŗŋ∙∙∙∙∙∙∙∙]]]",
+      "cancelAction" : "[[[Ĉąŋċēĺ Ĭţēɱş∙∙∙∙∙∙∙]]]",
+      "item" : "[[[Ĭţēɱ]]]",
+      "itemPrice" : "[[[Ĭţēɱ Ƥŗįċē∙∙∙∙]]]",
+      "quantity" : "[[[Μąχ Ǭűąŋţįţŷ∙∙∙∙∙∙∙]]]",
+      "returnQty" : "[[[Ǭűąŋţįţŷ ţŏ Řēţűŗŋ∙∙∙∙∙∙]]]",
+      "cancelQty" : "[[[Ǭűąŋţįţŷ ţŏ Ĉąŋċēĺ∙∙∙∙∙∙]]]",
+      "setAll" : "[[[Ŝēţ ąĺĺ ƣűąŋţįţįēş ţŏ ɱąχįɱűɱ∙∙∙∙∙∙∙∙∙]]]",
+      "totalPrice" : "[[[Ţŏţąĺ∙∙∙∙∙∙∙∙∙]]]",
+      "submit" : "[[[Ŝűƃɱįţ Řēƣűēşţ∙∙∙∙∙]]]",
+      "submitDescription" : "[[[Ŝűƃɱįţ Řēƣűēşţ. Ĭţēɱş ŏŋ ţĥįş ρąğē ŵįĺĺ ƃē įŋċĺűƌēƌ įŋ ţĥē ċąŋċēĺĺąţįŏŋ ŗēƣűēşţ.∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+      "returnSuccess" : "[[[Ŷŏűŗ ŗēţűŗŋ ŗēƣűēşţ ({{rma}}) ŵąş şűƃɱįţţēƌ]]]",
+      "cancelSuccess" : "[[[Ŷŏűŗ ċąŋċēĺĺąţįŏŋ ŗēƣűēşţ ŵąş şűƃɱįţţēƌ (ŏŗįğįŋąĺ ŏŗƌēŗ {{orderCode}} ŵįĺĺ ƃē űρƌąţēƌ)]]]"
+    },
+    "cancelReplenishment" : {
+      "title" : "[[[Ĉąŋċēĺ Řēρĺēŋįşĥɱēŋţ∙∙∙∙]]]",
+      "description" : "[[[Ĉąŋċēĺ ąŋŷ ƒűţűŗē ŗēρĺēŋįşĥɱēŋţ ŏŗƌēŗ?∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+      "accept" : "[[[Ŷēş∙]]]",
+      "reject" : "[[[Ńŏ∙∙]]]",
+      "cancelSuccess" : "[[[Řēρĺēŋįşĥɱēŋţ ŏŗƌēŗ #{{replenishmentOrderCode}} ĥąş ƃēēŋ şűċċēşşƒűĺĺŷ ċąŋċēĺĺēƌ]]]"
+    },
+    "caption" : "[[[Ŏŗƌēŗ ċŏŋţēŋţş.∙∙∙∙]]]"
+  },
+  "orderHistory" : {
+    "orderHistory" : "[[[Ŏŗƌēŗ ĥįşţŏŗŷ∙∙∙∙∙∙]]]",
+    "orderId" : "[[[Ŏŗƌēŗ #∙∙∙∙∙∙∙]]]",
+    "emptyPurchaseOrderId" : "[[[Ńŏŋē]]]",
+    "date" : "[[[Ďąţē]]]",
+    "status" : "[[[Ŝţąţűş∙∙∙∙∙∙∙∙]]]",
+    "PONumber" : "[[[Ƥ.Ŏ. Ńűɱƃēŗ∙∙∙∙∙∙∙∙]]]",
+    "total" : "[[[Ţŏţąĺ∙∙∙∙∙∙∙∙∙]]]",
+    "noOrders" : "[[[Ŵē ĥąʋē ŋŏ ŏŗƌēŗ ŗēċŏŗƌş ƒŏŗ ţĥįş ąċċŏűŋţ.∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+    "noReplenishmentOrders" : "[[[Ŵē ĥąʋē ŋŏ ŗēρĺēŋįşĥɱēŋţ ŏŗƌēŗ ŗēċŏŗƌş ƒŏŗ ţĥįş ąċċŏűŋţ.∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+    "startShopping" : "[[[Ŝţąŗţ Ŝĥŏρρįŋğ∙∙∙∙∙]]]",
+    "sortBy" : "[[[Ŝŏŗţ ƃŷ∙∙∙∙∙∙∙]]]",
+    "sortOrders" : "[[[Ŝŏŗţ ŏŗƌēŗş∙∙∙∙∙∙∙∙]]]",
+    "replenishmentOrderHistory" : "[[[Řēρĺēŋįşĥɱēŋţ Ŏŗƌēŗ Ĥįşţŏŗŷ∙∙∙∙∙∙∙∙]]]",
+    "replenishmentOrderId" : "[[[Řēρĺēŋįşĥɱēŋţ #∙∙∙∙]]]",
+    "purchaseOrderNumber" : "[[[ƤŎ #]]]",
+    "costCenter" : "[[[Ĉŏşţ Ĉēŋţēŗ∙∙∙∙∙∙∙∙]]]",
+    "startOn" : "[[[Ŝţąŗţ Ŏŋ∙∙∙∙∙∙]]]",
+    "frequency" : "[[[Ƒŗēƣűēŋċŷ∙∙∙∙∙]]]",
+    "nextOrderDate" : "[[[Ńēχţ Ŏŗƌēŗ Ďąţē∙∙∙∙]]]",
+    "cancel" : "[[[Ĉąŋċēĺ∙∙∙∙∙∙∙∙]]]",
+    "cancelled" : "[[[Ĉąŋċēĺĺēƌ∙∙∙∙∙]]]",
+    "replenishmentHistory" : "[[[Řēρĺēŋįşĥɱēŋţ Ĥįşţŏŗŷ∙∙∙∙∙]]]",
+    "notFound" : "[[[Ńŏ Ŏŗƌēŗş Ƒŏűŋƌ∙∙∙∙]]]",
+    "actions" : "[[[Āċţįŏŋş∙∙∙∙∙∙∙]]]"
+  },
+  "AccountOrderHistoryTabContainer" : {
+    "tabs" : {
+      "AccountOrderHistoryComponent" : "[[[ĀĻĻ ŎŘĎĔŘŜ ({{param}})]]]",
+      "OrderReturnRequestListComponent" : "[[[ŘĔŢŮŘŃŜ ({{param}})]]]"
+    },
+    "tabPanelContainerRegion" : "[[[Ģŗŏűρ ŵįţĥ ŏŗƌēŗ ĥįşţŏŗŷ ƌēţąįĺş∙∙∙∙∙∙∙∙∙∙]]]",
+    "tabPanelContainerRegionGroup" : "[[[Ģŗŏűρ ŵįţĥ ŏŗƌēŗ ĥįşţŏŗŷ ƌēţąįĺş∙∙∙∙∙∙∙∙∙∙]]]"
+  },
+  "returnRequestList" : {
+    "returnRequestId" : "[[[Řēţűŗŋ #∙∙∙∙∙∙]]]",
+    "orderId" : "[[[Ŏŗƌēŗ #∙∙∙∙∙∙∙]]]",
+    "date" : "[[[Ďąţē Ĉŗēąţēƌ∙∙∙∙∙∙∙]]]",
+    "status" : "[[[Ŝţąţűş∙∙∙∙∙∙∙∙]]]",
+    "sortBy" : "[[[Ŝŏŗţ ƃŷ∙∙∙∙∙∙∙]]]",
+    "sortReturns" : "[[[Ŝŏŗţ ŗēţűŗŋş∙∙∙∙∙∙∙]]]",
+    "statusDisplay_APPROVAL_PENDING" : "[[[Āρρŗŏʋąĺ Ƥēŋƌįŋğ∙∙∙∙∙∙∙∙]]]",
+    "statusDisplay_CANCELED" : "[[[Ĉąŋċēĺĺēƌ∙∙∙∙∙]]]",
+    "statusDisplay_CANCELLING" : "[[[Ĉąŋċēĺĺįŋğ∙∙∙∙]]]",
+    "statusDisplay_WAIT" : "[[[Ŵąįţ]]]",
+    "statusDisplay_RECEIVED" : "[[[Řēċēįʋēƌ∙∙∙∙∙∙]]]",
+    "statusDisplay_RECEIVING" : "[[[Řēċēįʋįŋğ∙∙∙∙∙]]]",
+    "statusDisplay_APPROVING" : "[[[Āρρŗŏʋįŋğ∙∙∙∙∙]]]",
+    "statusDisplay_REVERSING_PAYMENT" : "[[[Řēʋēŗşįŋğ Ƥąŷɱēŋţ∙∙∙∙∙∙∙]]]",
+    "statusDisplay_PAYMENT_REVERSED" : "[[[Ƥąŷɱēŋţ Řēʋēŗşēƌ∙∙∙∙∙∙∙∙]]]",
+    "statusDisplay_PAYMENT_REVERSAL_FAILED" : "[[[Ƥąŷɱēŋţ Řēʋēŗşąĺ Ƒąįĺēƌ∙∙∙∙∙∙]]]",
+    "statusDisplay_REVERSING_TAX" : "[[[Řēʋēŗşįŋğ Ţąχ∙∙∙∙∙∙]]]",
+    "statusDisplay_TAX_REVERSED" : "[[[Ţąχ Řēʋēŗşēƌ∙∙∙∙∙∙∙]]]",
+    "statusDisplay_TAX_REVERSAL_FAILED" : "[[[Ţąχ Řēʋēŗşąĺ Ƒąįĺēƌ∙∙∙∙∙]]]",
+    "statusDisplay_COMPLETED" : "[[[Ĉŏɱρĺēţēƌ∙∙∙∙∙]]]"
+  },
+  "returnRequest" : {
+    "returnRequestId" : "[[[Řēţűŗŋ Řēƣűēşţ #∙∙∙∙∙∙∙∙]]]",
+    "orderCode" : "[[[Ƒŏŗ Ŏŗƌēŗ #∙∙∙∙∙∙∙∙]]]",
+    "status" : "[[[Řēţűŗŋ şţąţűş∙∙∙∙∙∙]]]",
+    "cancel" : "[[[Ĉąŋċēĺ Řēţűŗŋ Řēƣűēşţ∙∙∙∙∙]]]",
+    "item" : "[[[Ďēşċŗįρţįŏŋ∙∙∙∙∙∙∙∙]]]",
+    "itemPrice" : "[[[Ĭţēɱ Ƥŗįċē∙∙∙∙]]]",
+    "returnQty" : "[[[Řēţűŗŋ Ǭűąŋţįţŷ∙∙∙∙]]]",
+    "total" : "[[[Ţŏţąĺ∙∙∙∙∙∙∙∙∙]]]",
+    "summary" : "[[[Řēţűŗŋ Ţŏţąĺş∙∙∙∙∙∙]]]",
+    "subtotal" : "[[[Ŝűƃţŏţąĺ∙∙∙∙∙∙]]]",
+    "deliveryCode" : "[[[Ďēĺįʋēŗŷ ċŏşţ∙∙∙∙∙∙]]]",
+    "estimatedRefund" : "[[[Ĕşţįɱąţēƌ ŗēƒűŋƌ∙∙∙∙∙∙∙∙]]]",
+    "note" : "[[[Ţĥē ţŏţąĺş ąŗē ēşţįɱąţēƌ ąŋƌ ɱąŷ ŋŏţ įŋċĺűƌē ąρρĺįċąƃĺē ţąχēş ŏŗ ŏţĥēŗ ċĥąŗğēş.∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+    "cancelSuccess" : "[[[Ŷŏűŗ ŗēţűŗŋ ŗēƣűēşţ ({{rma}}) ŵąş ċąŋċēĺĺēƌ]]]",
+    "caption" : "[[[Ŏŗƌēŗ ċŏŋţēŋţş.∙∙∙∙]]]"
+  },
+  "reorder" : {
+    "button" : "[[[Řēŏŗƌēŗ∙∙∙∙∙∙∙]]]",
+    "dialog" : {
+      "reorderProducts" : "[[[Řēŏŗƌēŗ ρŗŏƌűċţş∙∙∙∙∙∙∙∙]]]",
+      "messages" : {
+        "reviewConfiguration" : "[[[Āŋ ēŗŗŏŗ ŏċċűŗŗēƌ ŵįţĥ \"{{ productCode}}\" ċŏŋƒįğűŗąţįŏŋ.]]]",
+        "lowStock" : "[[[Ǭűąŋţįţŷ ƒŏŗ {{ productName }}: {{ quantity }} ĥąş ƃēēŋ ŗēƌűċēƌ ţŏ {{ quantityAdded }}.]]]",
+        "noStock" : "[[[{{ productName }} įş ċűŗŗēŋţĺŷ ŏűţ ŏƒ şţŏċķ.]]]",
+        "pricingError" : "[[[Ƥŗįċįŋğ ρŗŏƃĺēɱ ŵįţĥ \"{{ productCode }}\".]]]",
+        "unresolvableIssues" : "[[[Ůŋŗēċŏğŋįžēƌ ρŗŏƃĺēɱ ŵįţĥ \"{{ productCode }}\".]]]",
+        "success" : "[[[Ƥŗŏƌűċţş ĥąʋē ƃēēŋ şűċċēşşƒűĺĺŷ ąƌƌēƌ ţŏ ţĥē ċąŗţ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]"
+      },
+      "areYouSureToReplaceCart" : "[[[Ĉűŗŗēŋţ ċąŗţ ŵįĺĺ ƃē ŗēρĺąċēƌ ŵįţĥ ŋēŵ įţēɱş. Ďŏ ŷŏű ŵįşĥ ţŏ ċŏŋţįŋűē?∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+      "cancel" : "[[[Ĉąŋċēĺ∙∙∙∙∙∙∙∙]]]",
+      "continue" : "[[[Ĉŏŋţįŋűē∙∙∙∙∙∙]]]"
+    }
+  }
+}

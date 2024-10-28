@@ -1,0 +1,14 @@
+{
+  "checkoutScheduledReplenishment" : {
+    "autoReplenishOrder" : "[[[Āűţŏ Řēρĺēŋįşĥ Ŏŗƌēŗ∙∙∙∙]]]",
+    "orderType_PLACE_ORDER" : "[[[Ńŏŋē (ŏŋē ţįɱē ŏŗƌēŗ ŏŋĺŷ)∙∙∙∙∙∙∙]]]",
+    "orderType_SCHEDULE_REPLENISHMENT_ORDER" : "[[[Řēρĺēŋįşĥ Ŏŗƌēŗ∙∙∙∙]]]",
+    "every" : "[[[Ĕʋēŗŷ∙∙∙∙∙∙∙∙∙]]]",
+    "recurrencePeriodType_DAILY" : "[[[Ďąŷ(ş)∙∙∙∙∙∙∙∙]]]",
+    "recurrencePeriodType_WEEKLY" : "[[[Ŵēēķ(ş)∙∙∙∙∙∙∙]]]",
+    "recurrencePeriodType_MONTHLY" : "[[[Μŏŋţĥ∙∙∙∙∙∙∙∙∙]]]",
+    "dayOfMonth" : "[[[Ŏŋ ƌąŷ∙∙∙∙∙∙∙∙]]]",
+    "startOn" : "[[[Ŝţąŗţ ŏŋ∙∙∙∙∙∙]]]",
+    "repeatOnDays" : "[[[Řēρēąţ ŏŋ ţĥē ƒŏĺĺŏŵįŋğ ƌąŷş∙∙∙∙∙∙∙∙]]]"
+  }
+}

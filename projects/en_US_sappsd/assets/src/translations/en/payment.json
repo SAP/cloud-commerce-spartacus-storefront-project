@@ -1,0 +1,53 @@
+{
+  "paymentForm" : {
+    "payment" : "[[[Ƥąŷɱēŋţ∙∙∙∙∙∙∙]]]",
+    "choosePaymentMethod" : "[[[Ĉĥŏŏşē ą ρąŷɱēŋţ ɱēţĥŏƌ∙∙∙∙∙∙]]]",
+    "paymentType" : "[[[Ƥąŷɱēŋţ Ţŷρē∙∙∙∙∙∙∙]]]",
+    "accountHolderName" : {
+      "label" : "[[[Āċċŏűŋţ Ĥŏĺƌēŗ Ńąɱē∙∙∙∙∙]]]",
+      "placeholder" : "[[[Āċċŏűŋţ Ĥŏĺƌēŗ Ńąɱē∙∙∙∙∙]]]"
+    },
+    "cardNumber" : "[[[Ĉąŗƌ Ńűɱƃēŗ∙∙∙∙∙∙∙∙]]]",
+    "expirationDate" : "[[[Ĕχρįŗąţįŏŋ Ďąţē∙∙∙∙]]]",
+    "securityCode" : "[[[Ŝēċűŗįţŷ ċŏƌē (ĈƲƲ)∙∙∙∙∙]]]",
+    "securityCodeTitle" : "[[[Ĉąŗƌ Ʋēŗįƒįċąţįŏŋ Ʋąĺűē∙∙∙∙∙∙]]]",
+    "saveAsDefault" : "[[[Ŝąʋē ąş ƌēƒąűĺţ∙∙∙∙]]]",
+    "setAsDefault" : "[[[Ŝēţ ąş ƌēƒąűĺţ ρąŷɱēŋţ ɱēţĥŏƌ∙∙∙∙∙∙∙∙∙]]]",
+    "billingAddress" : "[[[Ɓįĺĺįŋğ ąƌƌŗēşş∙∙∙∙]]]",
+    "sameAsDeliveryAddress" : "[[[Ŝąɱē ąş ƌēĺįʋēŗŷ ąƌƌŗēşş∙∙∙∙∙∙]]]",
+    "billingAddressSameAsShipping" : "[[[Ɓįĺĺįŋğ ąƌƌŗēşş įş ţĥē şąɱē ąş ƌēĺįʋēŗŷ ąƌƌŗēşş∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+    "selectOne" : "[[[Ŝēĺēċţ Ŏŋē...∙∙∙∙∙∙]]]",
+    "monthMask" : "[[[ΜΜ∙∙]]]",
+    "yearMask" : "[[[ŶŶŶŶ]]]",
+    "expirationYear" : "[[[Ĕχρįŗąţįŏŋ ŷēąŗ {{ selected }}]]]",
+    "expirationMonth" : "[[[Ĕχρįŗąţįŏŋ ɱŏŋţĥ {{ selected }}]]]",
+    "useThisPayment" : "[[[Ůşē ţĥįş ρąŷɱēŋţ∙∙∙∙∙∙∙∙]]]",
+    "addNewPayment" : "[[[Āƌƌ Ńēŵ Ƥąŷɱēŋţ∙∙∙∙]]]",
+    "paymentAddedSuccessfully" : "[[[Ńēŵ ρąŷɱēŋţ ŵąş ąƌƌēƌ şűċċēşşƒűĺĺŷ∙∙∙∙∙∙∙∙∙∙∙]]]",
+    "changePayment" : "[[[Ĉĥąŋğē Ƥąŷɱēŋţ∙∙∙∙∙]]]"
+  },
+  "paymentMethods" : {
+    "paymentMethods" : "[[[Ƥąŷɱēŋţ ɱēţĥŏƌş∙∙∙∙]]]",
+    "paymentMethodSelected" : "[[[Ƥąŷɱēŋţ ɱēţĥŏƌ şēĺēċţēƌ∙∙∙∙∙∙]]]",
+    "newPaymentMethodsAreAddedDuringCheckout" : "[[[Ńēŵ ρąŷɱēŋţ ɱēţĥŏƌş ąŗē ąƌƌēƌ ƌűŗįŋğ ċĥēċķŏűţ.∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+    "invalidField" : "[[[ĬŋʋąĺįƌƑįēĺƌ: {{ field }}]]]"
+  },
+  "paymentCard" : {
+    "deleteConfirmation" : "[[[Āŗē ŷŏű şűŗē ŷŏű ŵąŋţ ţŏ ƌēĺēţē ţĥįş ρąŷɱēŋţ ɱēţĥŏƌ?∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]",
+    "setAsDefault" : "[[[Ŝēţ ąş ƌēƒąűĺţ∙∙∙∙∙]]]",
+    "expires" : "[[[Ĕχρįŗēş: {{ month }}/{{ year }}]]]",
+    "defaultPaymentMethod" : "[[[✓ ĎĔƑĀŮĻŢ∙∙∙∙∙]]]",
+    "defaultPaymentLabel" : "[[[Ďēƒąűĺţ ρąŷɱēŋţ ɱēţĥŏƌ∙∙∙∙∙]]]",
+    "additionalPaymentLabel" : "[[[Āƌƌįţįŏŋąĺ ρąŷɱēŋţ ɱēţĥŏƌ {{ number }}]]]",
+    "selected" : "[[[Ŝēĺēċţēƌ∙∙∙∙∙∙]]]",
+    "deletePaymentSuccess" : "[[[Ƥąŷɱēŋţ ɱēţĥŏƌ ƌēĺēţēƌ şűċċēşşƒűĺĺŷ∙∙∙∙∙∙∙∙∙∙∙∙]]]"
+  },
+  "paymentTypes" : {
+    "title" : "[[[Ƥąŷɱēŋţ ɱēţĥŏƌ∙∙∙∙∙]]]",
+    "paymentType_CARD" : "[[[Ĉŗēƌįţ Ĉąŗƌ∙∙∙∙∙∙∙∙]]]",
+    "paymentType_ACCOUNT" : "[[[Āċċŏűŋţ∙∙∙∙∙∙∙]]]"
+  },
+  "paymentMessages" : {
+    "setAsDefaultSuccessfully" : "[[[Ńēŵ ρąŷɱēŋţ ŵąş şűċċēşşƒűĺĺŷ şēţ ąş ƌēƒąűĺţ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]"
+  }
+}

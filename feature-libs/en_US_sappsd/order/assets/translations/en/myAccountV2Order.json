@@ -1,0 +1,51 @@
+{
+  "myAccountV2OrderHistory" : {
+    "heading" : "[[[Āĺĺ Ŏŗƌēŗş ({{param}})]]]",
+    "item" : "[[[{{param}} Ĭţēɱ]]]",
+    "items" : "[[[{{param}} Ĭţēɱş]]]",
+    "totalPrice" : "[[[Ţŏţąĺ Ƥŗįċē: {{param}}]]]",
+    "consignmentCode" : "[[[Ĉŏŋşįğŋɱēŋţ {{param}}]]]",
+    "statusDate" : "[[[Ļąşţ Ůρƌąţēƌ: {{param}}]]]",
+    "returnProcessed" : "[[[Řēţűŗŋ Ƥŗŏċēşşēƌ: {{param}}]]]",
+    "deliveryPointOfServiceDetails" : {
+      "itemsToBePickUp" : "[[[Ţŏ Ɓē Ƥįċķēƌ Ůρ - ∙∙∙∙∙∙]]]"
+    },
+    "checkoutMode" : {
+      "deliveryEntries" : "[[[Ţŏ Ɓē Ŝĥįρρēƌ - ∙∙∙∙∙∙∙∙]]]"
+    },
+    "checkoutPickupInStore" : {
+      "heading" : "[[[Ţŏ Ɓē Ƥįċķēƌ Ůρ - ∙∙∙∙∙∙]]]"
+    },
+    "orderListResults" : "[[[Ŏŗƌēŗş Ļįşţ∙∙∙∙∙∙∙∙]]]",
+    "orderListPagination" : "[[[Ŏŗƌēŗş Ļįşţ ρąğįŋąţįŏŋ∙∙∙∙∙]]]",
+    "totalPriceLabel" : "[[[Ţŏţąĺ Ƥŗįċē∙∙∙∙∙∙∙∙]]]",
+    "orderPlaced" : "[[[Ŏŗƌēŗ Ƥĺąċēƌ Ŏŋ∙∙∙∙]]]",
+    "orderCodeLabel" : "[[[Ŏŗƌēŗ Ĉŏƌē∙∙∙∙]]]",
+    "consignmentDetailLabel" : "[[[Ĉŏŋşįğŋɱēŋţ Ĭŋƒŏŗɱąţįŏŋ∙∙∙∙∙∙]]]",
+    "consignmentNumberLabel" : "[[[Ĉŏŋşįğŋɱēŋţ Ńűɱƃēŗ∙∙∙∙∙∙]]]",
+    "consignmentStatusLabel" : "[[[Ĉŏŋşįğŋɱēŋţ Ŝţąţűş∙∙∙∙∙∙]]]",
+    "consignmentStatusDateLabel" : "[[[Ļąşţ Ůρƌąţēƌ Ŏŋ∙∙∙∙]]]",
+    "estimateDeliveryLabel" : "[[[Ĕşţįɱąţēƌ Ďēĺįʋēŗŷ Ďąţē∙∙∙∙∙∙]]]"
+  },
+  "myAccountV2OrderDetails" : {
+    "returnItems" : "[[[Řēţűŗŋ Ĭţēɱş∙∙∙∙∙∙∙]]]",
+    "cancelItems" : "[[[Ĉąŋċēĺ Ĭţēɱş∙∙∙∙∙∙∙]]]",
+    "downloadInvoices" : "[[[Ďŏŵŋĺŏąƌ Ĭŋʋŏįċēş∙∙∙∙∙∙∙]]]",
+    "viewAllOrders" : "[[[Ʋįēŵ Āĺĺ Ŏŗƌēŗş∙∙∙∙]]]",
+    "noInvoices" : "[[[Ĭŋʋŏįċēş ąŗē ŋŏţ ğēŋēŗąţēƌ ŷēţ. Ƥĺēąşē ċŏɱē ƃąċķ ĺąţēŗ.∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙]]]"
+  },
+  "myAccountV2Orders" : {
+    "item" : "[[[{{value}} Ĭţēɱ]]]",
+    "items" : "[[[{{value}} Ĭţēɱş]]]",
+    "heading" : "[[[Ŏŗƌēŗş Āŋƌ Řēţűŗŋş∙∙∙∙∙∙]]]",
+    "orderNumber" : "[[[Ŏŗƌēŗ Ńűɱƃēŗ ({{value}})]]]",
+    "purchasedOn" : "[[[Ƥűŗċĥąşēƌ Ŏŋ: {{value}}]]]",
+    "orderedItems" : "[[[Ŏŗƌēŗēƌ Ĭţēɱş: {{value}}]]]",
+    "totalPrice" : "[[[Ţŏţąĺ Ƥŗįċē: {{value}}]]]",
+    "orderDetails" : "[[[Ŏŗƌēŗ Ďēţąįĺş∙∙∙∙∙∙]]]",
+    "orderDetailsLabel" : "[[[Ŝĥŏŵ Ŏŗƌēŗ Ďēţąįĺş∙∙∙∙∙∙]]]",
+    "orderStatusLabel" : "[[[Ŏŗƌēŗ Ŝţąţűş∙∙∙∙∙∙∙]]]",
+    "returnOrder" : "[[[Řēţűŗŋ Ŏŗƌēŗ∙∙∙∙∙∙∙]]]",
+    "showMore" : "[[[Ŝĥŏŵ Μŏŗē∙∙∙∙∙]]]"
+  }
+}

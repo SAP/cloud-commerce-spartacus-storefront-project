@@ -1,0 +1,86 @@
+{
+  "pickupInfo" : {
+    "inStorePickup" : "[[[Ĭŋ Ŝţŏŗē Ƥįċķűρ∙∙∙∙]]]",
+    "pickupBy" : "[[[Ƥįċķ űρ ƃŷ∙∙∙∙]]]",
+    "pickupFrom" : "[[[Ƥįċķ űρ ƒŗŏɱ∙∙∙∙∙∙∙]]]"
+  },
+  "pickupOptionDialog" : {
+    "close" : "[[[Ĉĺŏşē∙∙∙∙∙∙∙∙∙]]]",
+    "modalHeader" : "[[[Ƥįċķűρ įŋ Ŝţŏŗē∙∙∙∙]]]"
+  },
+  "pickupOptions" : {
+    "legend" : "[[[Ďēĺįʋēŗŷ Μēţĥŏƌ∙∙∙∙]]]",
+    "changeStore" : "[[[Ĉĥąŋğē Ŝţŏŗē∙∙∙∙∙∙∙]]]",
+    "delivery" : "[[[Ŝĥįρ Ĭţ (Ƒŗēē Řēţűŗŋ)∙∙∙∙∙]]]",
+    "pickup" : "[[[Ƒŗēē Ƥįċķűρ Ĭŋ Ŝţŏŗē∙∙∙∙]]]",
+    "selectStore" : "[[[Ŝēĺēċţ Ŝţŏŗē∙∙∙∙∙∙∙]]]"
+  },
+  "setPreferredStore" : {
+    "makeThisMyStore" : "[[[Μąķē Ţĥįş Μŷ Ŝţŏŗē∙∙∙∙∙∙]]]",
+    "myStore" : "[[[Μŷ Ŝţŏŗē∙∙∙∙∙∙]]]"
+  },
+  "store" : {
+    "pickupFromHere" : "[[[Ƥįċķ Ůρ ƒŗŏɱ ĥēŗē∙∙∙∙∙∙∙]]]",
+    "stockLevel_inStock" : "[[[{{ count }} įŋ Ŝţŏċķ]]]",
+    "stockLevel_outOfStock" : "[[[Ŏűţ ŏƒ Ŝţŏċķ∙∙∙∙∙∙∙]]]",
+    "viewHours" : "[[[Ʋįēŵ Ĥŏűŗş∙∙∙∙]]]"
+  },
+  "storeList" : {
+    "noStoresMessage" : "[[[Ńŏ şţŏŗēş ƒŏűŋƌ įŋ ƌąţąƃąşē...∙∙∙∙∙∙∙∙∙]]]"
+  },
+  "storeSchedule" : {
+    "closed" : "[[[Ĉĺŏşēƌ∙∙∙∙∙∙∙∙]]]",
+    "storeHours" : "[[[Ŝţŏŗē ĥŏűŗş∙∙∙∙∙∙∙∙]]]"
+  },
+  "storeSearch" : {
+    "findAStore" : "[[[Ƒįŋƌ ą Ŝţŏŗē∙∙∙∙∙∙∙]]]",
+    "findStores" : "[[[Ƒįŋƌ Ŝţŏŗēş∙∙∙∙∙∙∙∙]]]",
+    "hideOutOfStockOptions" : "[[[Ĥįƌē ŏűţ ŏƒ şţŏċķ ŏρţįŏŋş∙∙∙∙∙∙∙]]]",
+    "searchPlaceholder" : "[[[Ĕŋţēŗ Żįρ Ĉŏƌē ŏŗ Ţŏŵŋ ŏŗ Āƌƌŗēşş∙∙∙∙∙∙∙∙∙∙∙]]]",
+    "useMyLocation" : "[[[Ůşē ɱŷ ĺŏċąţįŏŋ∙∙∙∙]]]"
+  },
+  "addressBookPickupInStore" : {
+    "heading" : "[[[Ƥįċķ-Ůρ Ŝţŏŗē∙∙∙∙∙∙]]]"
+  },
+  "storeFinderPickupInStore" : {
+    "heading" : "[[[Μŷ Ŝţŏŗē∙∙∙∙∙∙]]]"
+  },
+  "checkoutPickupInStore" : {
+    "heading" : "[[[Ĭţēɱş ţŏ ƃē Ƥįċķēƌ Ůρ∙∙∙∙∙]]]",
+    "storeItemHeading" : "[[[Ƥįċķ Ůρ Ŝţŏŗē Āƌƌŗēşş∙∙∙∙∙]]]"
+  },
+  "cartItems" : {
+    "item" : "[[[Ĭţēɱ]]]"
+  },
+  "deliveryPointOfServiceDetails" : {
+    "itemsToBePickUp" : "[[[Ĭţēɱş Ţŏ Ɓē Ƥįċķ-Ůρ∙∙∙∙∙]]]",
+    "pickUpInStoreAddress" : "[[[Ƥįċķ Ůρ Ŝţŏŗē Āƌƌŗēşş∙∙∙∙∙]]]",
+    "itemsToBeShipped" : "[[[Ĭţēɱş Ţŏ Ɓē Ŝĥįρρēƌ∙∙∙∙∙]]]",
+    "shippingAddress" : "[[[Ŝĥįρρįŋğ Āƌƌŗēşş∙∙∙∙∙∙∙∙]]]",
+    "deliveryMethod" : "[[[Ďēĺįʋēŗŷ Μēţĥŏƌ∙∙∙∙]]]",
+    "deliveryOptions" : "[[[Ďēĺįʋēŗŷ Ŏρţįŏŋş∙∙∙∙∙∙∙∙]]]",
+    "statusDisplay_cancelled" : "[[[Ĉąŋċēĺĺēƌ∙∙∙∙∙]]]",
+    "statusDisplay_cancelling" : "[[[Ĉąŋċēĺ Ƥēŋƌįŋğ∙∙∙∙∙]]]",
+    "statusDisplay_completed" : "[[[Ĉŏɱρĺēţēƌ∙∙∙∙∙]]]",
+    "statusDisplay_created" : "[[[Ĉŗēąţēƌ∙∙∙∙∙∙∙]]]",
+    "statusDisplay_error" : "[[[Ƥēŋƌįŋğ∙∙∙∙∙∙∙]]]",
+    "statusDisplay_Error" : "[[[Ƥēŋƌįŋğ∙∙∙∙∙∙∙]]]",
+    "statusDisplay_processing" : "[[[Ƥēŋƌįŋğ∙∙∙∙∙∙∙]]]",
+    "statusDisplay_open" : "[[[Ŏρēŋ]]]",
+    "statusDisplay_pending" : {
+      "approval" : "[[[Ƥēŋƌįŋğ Āρρŗŏʋąĺ∙∙∙∙∙∙∙∙]]]",
+      "merchant" : {
+        "approval" : "[[[Ƥēŋƌįŋğ Μēŗċĥąŋţ Āρρŗŏʋąĺ∙∙∙∙∙∙∙]]]"
+      }
+    },
+    "statusDisplay_approved" : "[[[Āρρŗŏʋēƌ∙∙∙∙∙∙]]]",
+    "statusDisplay_rejected" : "[[[Řēĵēċţēƌ∙∙∙∙∙∙]]]",
+    "statusDisplay_merchant" : {
+      "approved" : "[[[Μēŗċĥąŋţ Āρρŗŏʋēƌ∙∙∙∙∙∙∙]]]",
+      "rejected" : "[[[Μēŗċĥąŋţ Řēĵēċţēƌ∙∙∙∙∙∙∙]]]"
+    },
+    "statusDisplay_assigned" : {
+      "admin" : "[[[Āşşįğŋēƌ Ţŏ Āƌɱįŋįşţŗąţŏŗ∙∙∙∙∙∙∙]]]"
+    }
+  }
+}
