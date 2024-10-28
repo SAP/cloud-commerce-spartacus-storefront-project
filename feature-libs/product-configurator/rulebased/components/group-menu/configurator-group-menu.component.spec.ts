@@ -1346,12 +1346,14 @@ describe('ConfiguratorGroupMenuComponent', () => {
         });
     });
 
-    xit('should return appropriate (ICONCARET_RIGHT) aria-describedby if group has subgroups', (done) => {
+    it('should return appropriate (ICONCARET_RIGHT) aria-describedby if group has subgroups', (done) => {
+      clonedProductConfiguration.owner.configuratorType = 'CONFIGURATOR';
       clonedProductConfiguration.groups[0].complete = true;
       clonedProductConfiguration.groups[0].consistent = true;
       clonedProductConfiguration.groups[0].subGroups = [
         { id: 'subgroup1', subGroups: [] },
       ];
+      isConflictGroupType = false;
       initialize();
 
       component
@@ -1368,14 +1370,14 @@ describe('ConfiguratorGroupMenuComponent', () => {
         });
     });
 
-    xit('should return appropriate (ICONCARET_RIGHT and ICONERROR) aria-describedby if group has subgroups', (done) => {
+    it('should return appropriate (ICONCARET_RIGHT and ICONERROR) aria-describedby if group has subgroups', (done) => {
       clonedProductConfiguration.groups[0].groupType = undefined;
       clonedProductConfiguration.groups[0].complete = false;
       clonedProductConfiguration.groups[0].consistent = false;
       clonedProductConfiguration.groups[0].subGroups = [
         { id: 'subgroup1', subGroups: [] },
       ];
-      isConflictGroupType = true;
+      isConflictGroupType = false;
       initialize();
 
       component
