@@ -163,15 +163,7 @@
           ></cx-form-errors>
 
           <cx-form-errors
-            *cxFeature="'formErrorsDescriptiveMessages && a11yQTY2Quantity'"
-            [translationParams]="{
-              label: 'quickOrderCartForm.quantityFullLabel' | cxTranslate,
-            }"
-            [control]="quickOrderForm.get('quantity')"
-          ></cx-form-errors>
-
-          <cx-form-errors
-            *cxFeature="'formErrorsDescriptiveMessages && !a11yQTY2Quantity'"
+            *cxFeature="'formErrorsDescriptiveMessages'"
             [translationParams]="{
               label: 'quickOrderCartForm.quantityLabel' | cxTranslate,
             }"
