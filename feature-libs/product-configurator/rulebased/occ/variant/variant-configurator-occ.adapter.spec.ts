@@ -63,8 +63,6 @@ class MockTranslationService {
 
 const productCode = 'CONF_LAPTOP';
 const kbLogSys = 'RR5CLNT910';
-let expMode = true;
-let forceReset = false;
 const cartEntryNo = '1';
 const configId = '1234-56-7890';
 const CONFIG_ID_TEMPLATE = '1234-56-abcd';
@@ -121,15 +119,19 @@ const variantSearchResult: Configurator.Variant[] = [{ productCode: 'a' }];
 
 const cartModification: CartModification = { quantity: 1 };
 
-describe('OccConfigurationVariantAdapter', () => {
+fdescribe('OccConfigurationVariantAdapter', () => {
   let occConfiguratorVariantAdapter: VariantConfiguratorOccAdapter;
   let httpMock: HttpTestingController;
   let converterService: ConverterService;
   let occEndpointsService: OccEndpointsService;
   let configuratorUtils: CommonConfiguratorUtilsService;
   let configExpertModeService: ConfiguratorExpertModeService;
+  let expMode: boolean;
+  let forceReset: boolean;
 
   beforeEach(() => {
+    forceReset = false;
+    expMode = true;
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       providers: [
@@ -555,7 +557,6 @@ describe('OccConfigurationVariantAdapter', () => {
     mockReq.flush(pricesOcc);
   });
   describe('readConfigurationForCartEntry', () => {
-    const expMode = false;
     const params: CommonConfigurator.ReadConfigurationFromCartEntryParameters =
       {
         owner: configuration.owner,
