@@ -201,6 +201,64 @@ describe('TabComponent', () => {
       expect(component.isOpen(3)).toEqual(false);
     });
 
+    it('should NOT navigate menu buttons with restricted arrow keys', () => {
+      component.config = {
+        label: 'test',
+        mode: TAB_MODE.TAB,
+        openTabs: [0],
+        restrictDirectionKeys: true,
+      };
+      fixture.detectChanges();
+
+      expect(component.isOpen(0)).toEqual(true);
+      expect(component.isOpen(1)).toEqual(false);
+      expect(component.isOpen(2)).toEqual(false);
+
+      component.handleKeydownEvent(
+        0,
+        component.tabs,
+        component.config.mode,
+        new KeyboardEvent('keydown', { key: 'ArrowRight' })
+      );
+
+      expect(component.isOpen(0)).toEqual(false);
+      expect(component.isOpen(1)).toEqual(true);
+      expect(component.isOpen(2)).toEqual(false);
+
+      component.handleKeydownEvent(
+        1,
+        component.tabs,
+        component.config.mode,
+        new KeyboardEvent('keydown', { key: 'ArrowDown' })
+      );
+
+      expect(component.isOpen(0)).toEqual(false);
+      expect(component.isOpen(1)).toEqual(true);
+      expect(component.isOpen(2)).toEqual(false);
+
+      component.handleKeydownEvent(
+        1,
+        component.tabs,
+        component.config.mode,
+        new KeyboardEvent('keydown', { key: 'ArrowLeft' })
+      );
+
+      expect(component.isOpen(0)).toEqual(true);
+      expect(component.isOpen(1)).toEqual(false);
+      expect(component.isOpen(2)).toEqual(false);
+
+      component.handleKeydownEvent(
+        0,
+        component.tabs,
+        component.config.mode,
+        new KeyboardEvent('keydown', { key: 'ArrowUp' })
+      );
+
+      expect(component.isOpen(0)).toEqual(true);
+      expect(component.isOpen(1)).toEqual(false);
+      expect(component.isOpen(2)).toEqual(false);
+    });
+
     it('should navigate to last tab with END key', () => {
       expect(component.isOpen(0)).toEqual(true);
       expect(component.isOpen(1)).toEqual(false);
@@ -324,6 +382,53 @@ describe('TabComponent', () => {
       expect(component.isOpen(0)).toEqual(false);
       expect(component.isOpen(1)).toEqual(false);
       expect(component.isOpen(2)).toEqual(true);
+    });
+
+    it('should NOT navigate menu buttons with restricted arrow keys', () => {
+      const spy = spyOn(component, 'selectOrFocus')
+      component.config = {
+        label: 'test',
+        mode: TAB_MODE.ACCORDIAN,
+        openTabs: [0],
+        restrictDirectionKeys: true,
+      };
+      fixture.detectChanges();
+
+      component.handleKeydownEvent(
+        0,
+        component.tabs,
+        component.config.mode,
+        new KeyboardEvent('keydown', { key: 'ArrowRight' })
+      );
+
+      expect(spy).toHaveBeenCalledTimes(0)
+
+      component.handleKeydownEvent(
+        0,
+        component.tabs,
+        component.config.mode,
+        new KeyboardEvent('keydown', { key: 'ArrowDown' })
+      );
+
+      expect(spy).toHaveBeenCalledTimes(1)
+
+      component.handleKeydownEvent(
+        1,
+        component.tabs,
+        component.config.mode,
+        new KeyboardEvent('keydown', { key: 'ArrowLeft' })
+      );
+
+      expect(spy).toHaveBeenCalledTimes(1)
+
+      component.handleKeydownEvent(
+        1,
+        component.tabs,
+        component.config.mode,
+        new KeyboardEvent('keydown', { key: 'ArrowUp' })
+      );
+
+      expect(spy).toHaveBeenCalledTimes(2)
     });
   });
 });

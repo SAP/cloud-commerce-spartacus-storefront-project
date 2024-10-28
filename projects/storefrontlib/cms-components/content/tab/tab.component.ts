@@ -134,6 +134,14 @@ export class TabComponent implements OnInit, AfterViewInit, OnDestroy {
     const PREVIOUS_TAB = wrapIntoBounds(tabNum - 1, LAST_TAB);
     const NEXT_TAB = wrapIntoBounds(tabNum + 1, LAST_TAB);
 
+    // Disable some keys is `restrictDirectionKeys` is enabled.
+    if (
+      this.config.restrictDirectionKeys &&
+      this.shouldRestrictKeys(mode, event)
+    ) {
+      return;
+    }
+
     switch (event.key) {
       case 'ArrowLeft':
       case 'ArrowUp':
@@ -146,6 +154,21 @@ export class TabComponent implements OnInit, AfterViewInit, OnDestroy {
       case 'End':
         return this.selectOrFocus(LAST_TAB, mode, event);
     }
+  }
+
+  protected shouldRestrictKeys(mode: TAB_MODE, event: KeyboardEvent): boolean {
+    if (mode === TAB_MODE.TAB && ['ArrowUp', 'ArrowDown'].includes(event.key)) {
+      return true;
+    }
+
+    if (
+      mode === TAB_MODE.ACCORDIAN &&
+      ['ArrowLeft', 'ArrowRight'].includes(event.key)
+    ) {
+      return true;
+    }
+
+    return false;
   }
 
   /**

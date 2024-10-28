@@ -82,6 +82,7 @@ export class FacetListComponent implements OnInit, OnDestroy, AfterViewInit {
     label: 'productFacetNavigation.productFacets',
     mode: TAB_MODE.ACCORDIAN,
     openTabs: [0],
+    restrictDirectionKeys: true,
   };
 
   tabs$: BehaviorSubject<Tab[]> = new BehaviorSubject<Tab[]>([]);

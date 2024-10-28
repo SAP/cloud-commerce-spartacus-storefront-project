@@ -51,6 +51,11 @@ export interface TabConfig {
    * The indexes of tabs to have open initially.
    */
   openTabs?: number[];
+  /**
+   * Restricts the direction keys that can be used to navigate between tabs.
+   * When enabled, tab mode can only use left/right arrow keys and accordian mode up/down.
+   */
+  restrictDirectionKeys?: boolean;
 }
 
 export enum TAB_MODE {
