@@ -385,7 +385,7 @@ describe('TabComponent', () => {
     });
 
     it('should NOT navigate menu buttons with restricted arrow keys', () => {
-      const spy = spyOn(component, 'selectOrFocus')
+      const spy = spyOn(component, 'selectOrFocus');
       component.config = {
         label: 'test',
         mode: TAB_MODE.ACCORDIAN,
@@ -401,7 +401,7 @@ describe('TabComponent', () => {
         new KeyboardEvent('keydown', { key: 'ArrowRight' })
       );
 
-      expect(spy).toHaveBeenCalledTimes(0)
+      expect(spy).toHaveBeenCalledTimes(0);
 
       component.handleKeydownEvent(
         0,
@@ -410,7 +410,7 @@ describe('TabComponent', () => {
         new KeyboardEvent('keydown', { key: 'ArrowDown' })
       );
 
-      expect(spy).toHaveBeenCalledTimes(1)
+      expect(spy).toHaveBeenCalledTimes(1);
 
       component.handleKeydownEvent(
         1,
@@ -419,7 +419,7 @@ describe('TabComponent', () => {
         new KeyboardEvent('keydown', { key: 'ArrowLeft' })
       );
 
-      expect(spy).toHaveBeenCalledTimes(1)
+      expect(spy).toHaveBeenCalledTimes(1);
 
       component.handleKeydownEvent(
         1,
@@ -428,7 +428,7 @@ describe('TabComponent', () => {
         new KeyboardEvent('keydown', { key: 'ArrowUp' })
       );
 
-      expect(spy).toHaveBeenCalledTimes(2)
+      expect(spy).toHaveBeenCalledTimes(2);
     });
   });
 });
