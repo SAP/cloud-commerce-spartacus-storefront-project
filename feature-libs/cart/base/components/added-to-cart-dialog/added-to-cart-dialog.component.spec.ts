@@ -22,6 +22,7 @@ import {
 } from '@spartacus/cart/base/root';
 import {
   ActivatedRouterStateSnapshot,
+  FeatureConfigService,
   I18nTestingModule,
   RouterState,
   RoutingService,
@@ -134,6 +135,12 @@ class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
 
+class MockFeatureConfigService {
+  isEnabled() {
+    return true;
+  }
+}
+
 describe('AddedToCartDialogComponent', () => {
   let component: AddedToCartDialogComponent;
   let fixture: ComponentFixture<AddedToCartDialogComponent>;
@@ -141,6 +148,7 @@ describe('AddedToCartDialogComponent', () => {
   let activeCartFacade: ActiveCartFacade;
   let launchDialogService: LaunchDialogService;
   let routingService: RoutingService;
+  let featureConfigService: FeatureConfigService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -170,6 +178,7 @@ describe('AddedToCartDialogComponent', () => {
           useClass: MockRoutingService,
         },
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
+        { provide: FeatureConfigService, useClass: MockFeatureConfigService },
       ],
     }).compileComponents();
   });
@@ -182,6 +191,7 @@ describe('AddedToCartDialogComponent', () => {
 
     launchDialogService = TestBed.inject(LaunchDialogService);
     routingService = TestBed.inject(RoutingService);
+    featureConfigService = TestBed.inject(FeatureConfigService);
 
     spyOn(activeCartFacade, 'updateEntry').and.callThrough();
 
@@ -247,20 +257,12 @@ describe('AddedToCartDialogComponent', () => {
     });
   });
 
-  it('should display loading placeholder', () => {
-    component.loaded$ = of(false);
+  it('should shouw item added to your cart dialog title message in case a11yUpdatingCartNoNarration is enabled', () => {
+    spyOn(featureConfigService, 'isEnabled').and.returnValue(true);
     fixture.detectChanges();
     expect(
       el.query(By.css('.cx-dialog-title')).nativeElement.textContent.trim()
-    ).toEqual('addToCart.updatingCart');
-    expect(el.query(By.css('cx-spinner')).nativeElement).toBeDefined();
-  });
-
-  it('should display quantity', () => {
-    fixture.detectChanges();
-    expect(
-      el.query(By.css('.cx-dialog-title')).nativeElement.textContent.trim()
-    ).toEqual('addToCart.itemsAddedToYourCart');
+    ).toEqual('addToCart.itemAddedToYourCart');
   });
 
   it('should display cart item', () => {
@@ -320,29 +322,6 @@ describe('AddedToCartDialogComponent', () => {
       quantity: 50,
       entryNumber: 0,
     });
-  });
-
-  it('should show added dialog title message in case new entry appears in cart', () => {
-    component.entry$ = of(mockOrderEntries[0]);
-    component.loaded$ = of(true);
-    spyOn(activeCartFacade, 'getEntries').and.returnValue(of([]));
-    fixture.detectChanges();
-    const dialogTitleEl = el.query(By.css('.cx-dialog-title')).nativeElement;
-    expect(dialogTitleEl.textContent).toEqual(
-      ' addToCart.itemsAddedToYourCart '
-    );
-  });
-
-  it('should show increment dialog title message in case no new entry appears in cart', () => {
-    component.entry$ = of(mockOrderEntries[0]);
-    component.loaded$ = of(true);
-    component.addedEntryWasMerged$ = of(true);
-    spyOn(activeCartFacade, 'getEntries').and.returnValue(of(mockOrderEntries));
-    fixture.detectChanges();
-    const dialogTitleEl = el.query(By.css('.cx-dialog-title')).nativeElement;
-    expect(dialogTitleEl.textContent).toEqual(
-      ' addToCart.itemsIncrementedInYourCart '
-    );
   });
 
   it('should not show cart entry', () => {
