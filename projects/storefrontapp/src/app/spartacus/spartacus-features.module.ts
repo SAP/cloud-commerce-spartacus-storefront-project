@@ -400,6 +400,7 @@ if (environment.cpq) {
         enableConsecutiveCharactersPasswordRequirement: true,
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
+        a11yPdpGridArrangement: true,
         sciEnabled: true,
         useExtendedMediaComponentConfiguration: true,
         a11yWrapReviewOrderInSection: true,
