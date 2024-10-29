@@ -7,6 +7,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
+  DestroyRef,
   Directive,
   ElementRef,
   HostListener,
@@ -24,6 +25,7 @@ import { filter, merge, take } from 'rxjs';
 import { BREAKPOINT, BreakpointService } from '../../../layout';
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { map } from 'rxjs/operators';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 const ARIA_LABEL = 'aria-label';
 
@@ -41,6 +43,8 @@ export class NgSelectA11yDirective implements AfterViewInit {
   protected translationService = inject(TranslationService);
   protected domSanitizer = inject(DomSanitizer);
   private featureConfigService = inject(FeatureConfigService);
+  private selectComponent = inject(NgSelectComponent);
+  private destroyRef = inject(DestroyRef);
 
   @HostListener('open')
   onOpen() {
@@ -83,8 +87,7 @@ export class NgSelectA11yDirective implements AfterViewInit {
 
   constructor(
     private renderer: Renderer2,
-    private elementRef: ElementRef,
-    private selectComponent: NgSelectComponent
+    private elementRef: ElementRef
   ) {}
 
   ngAfterViewInit(): void {
@@ -97,9 +100,11 @@ export class NgSelectA11yDirective implements AfterViewInit {
 
     const isOpened$ = this.selectComponent.openEvent.pipe(map(() => 'true'));
     const isClosed$ = this.selectComponent.closeEvent.pipe(map(() => 'false'));
-    merge(isOpened$, isClosed$).subscribe((state) => {
-      this.renderer.setAttribute(inputElement, 'aria-expanded', state);
-    });
+    merge(isOpened$, isClosed$)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((state) => {
+        this.renderer.setAttribute(inputElement, 'aria-expanded', state);
+      });
 
     const ariaLabel = this.cxNgSelectA11y.ariaLabel;
     const elementId = this.elementRef.nativeElement.id;
