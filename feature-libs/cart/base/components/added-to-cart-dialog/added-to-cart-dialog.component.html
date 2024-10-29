@@ -19,20 +19,7 @@
         class="cx-dialog-title modal-title"
         role="none"
       >
-        <span *ngIf="loaded$ | async">
-          <span>
-            {{
-              (addedEntryWasMerged$ | async)
-                ? ('addToCart.itemsIncrementedInYourCartWithNoDot'
-                  | cxTranslate)
-                : ('addToCart.itemsAddedToYourCart' | cxTranslate)
-            }}
-          </span>
-          <span aria-hidden="true">&nbsp;</span>
-        </span>
-        <span *ngIf="!(loaded$ | async)" aria-hidden="true">
-          {{ 'addToCart.updatingCart' | cxTranslate }}
-        </span>
+        {{ 'addToCart.itemAddedToYourCart' | cxTranslate }}
       </div>
       <div
         *cxFeature="'!a11yUpdatingCartNoNarration'"
