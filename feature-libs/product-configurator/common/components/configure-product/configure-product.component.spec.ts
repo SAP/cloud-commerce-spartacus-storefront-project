@@ -173,7 +173,7 @@ function setupWithCurrentProductService(
   fixture = TestBed.createComponent(ConfigureProductComponent);
   component = fixture.componentInstance;
   htmlElem = fixture.nativeElement;
-  testProduct = { ...mockProduct };
+  testProduct = structuredClone(mockProduct);
 }
 
 describe('ConfigureProductComponent', () => {
@@ -358,7 +358,8 @@ describe('ConfigureProductComponent', () => {
 
   describe('isReadOnlyBaseProduct', () => {
     beforeEach(() => {
-      testProduct = { ...mockProduct };
+      testProduct = structuredClone(mockProduct);
+      setupWithCurrentProductService(true);
     });
     it('should return `false` in case configurator type is CPQCONFIGURATOR', () => {
       expect(component.isReadOnlyBaseProduct(testProduct)).toEqual(false);
@@ -385,7 +386,8 @@ describe('ConfigureProductComponent', () => {
 
   describe('isBaseProduct', () => {
     beforeEach(() => {
-      testProduct = { ...mockProduct };
+      testProduct = structuredClone(mockProduct);
+      setupWithCurrentProductService(true);
     });
     it('should return `false` in case base product and product code are not equal', () => {
       testProduct.baseProduct = 'BASE_PRODUCT';
