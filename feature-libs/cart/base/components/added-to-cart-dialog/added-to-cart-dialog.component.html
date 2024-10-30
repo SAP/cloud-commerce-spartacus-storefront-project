@@ -144,7 +144,12 @@
   <ng-template #loading>
     <div class="cx-dialog-body modal-body">
       <div class="cx-dialog-row">
-        <div class="col-sm-12"><cx-spinner></cx-spinner></div>
+        <div class="col-sm-12" *cxFeature="'a11yUpdatingCartNoNarration'">
+          <cx-spinner aria-hidden="ture"></cx-spinner>
+        </div>
+        <div class="col-sm-12" *cxFeature="'!a11yUpdatingCartNoNarration'">
+          <cx-spinner></cx-spinner>
+        </div>
       </div>
     </div>
   </ng-template>
