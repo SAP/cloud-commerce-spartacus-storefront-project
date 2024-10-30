@@ -42,9 +42,9 @@ export class NgSelectA11yDirective implements AfterViewInit {
 
   protected translationService = inject(TranslationService);
   protected domSanitizer = inject(DomSanitizer);
+  protected selectComponent = inject(NgSelectComponent);
+  protected destroyRef = inject(DestroyRef);
   private featureConfigService = inject(FeatureConfigService);
-  private selectComponent = inject(NgSelectComponent);
-  private destroyRef = inject(DestroyRef);
 
   @HostListener('open')
   onOpen() {
