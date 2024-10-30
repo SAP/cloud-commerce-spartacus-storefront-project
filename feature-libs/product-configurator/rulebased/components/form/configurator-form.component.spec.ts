@@ -507,7 +507,7 @@ describe('ConfigurationFormComponent', () => {
 
   describe('isNavigationToGroupEnabled()', () => {
     beforeEach(() => {
-     component = createComponentWithoutData();
+      component = createComponentWithoutData();
     });
 
     it('should return true in case immediateConflictResolution is set to false', () => {
@@ -581,7 +581,7 @@ describe('ConfigurationFormComponent', () => {
     beforeEach(() => {
       routerStateObservable = of(mockRouterState);
     });
-    it('should raise message in case a conflict has been resolved', () => { 
+    it('should raise message in case a conflict has been resolved', () => {
       hasConfigurationConflictsObservable = of(true, false);
       createComponentWithData();
       expect(globalMessageService.add).toHaveBeenCalledTimes(1);
