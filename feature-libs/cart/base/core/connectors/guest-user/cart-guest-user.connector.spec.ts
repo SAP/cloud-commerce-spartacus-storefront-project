@@ -34,16 +34,15 @@ describe('CartGuestUserConnector', () => {
   });
 
   it('createCartGuestUser should call adapter', () => {
-    const adapter = TestBed.inject(CartGuestUserAdapter);
     service.createCartGuestUser('userId', 'cartId').subscribe();
     expect(adapter.createCartGuestUser).toHaveBeenCalledWith(
       'userId',
-      'cartId'
+      'cartId',
+      undefined
     );
   });
 
   it('updateCartGuestUser should call adapter', () => {
-    const adapter = TestBed.inject(CartGuestUserAdapter);
     service
       .updateCartGuestUser('userId', 'cartId', { email: 'test@sap.com' })
       .subscribe();
