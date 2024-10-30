@@ -105,7 +105,7 @@ class MockConfiguratorAttributePriceChangeService {
   }
 }
 
-const ATTRIBUTES_NOT_PRESENT = 'attribute values are not present';
+const ATTRIBUTE_VALUES_MISSING = 'attribute values are missing';
 
 describe('ConfiguratorAttributeDropDownComponent', () => {
   let component: ConfiguratorAttributeDropDownComponent;
@@ -333,7 +333,7 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
         attributeValues[0].selected = false;
         attributeValues[1].selected = true;
       } else {
-        fail(ATTRIBUTES_NOT_PRESENT);
+        fail(ATTRIBUTE_VALUES_MISSING);
       }
 
       fixture.detectChanges();
@@ -366,7 +366,7 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
           value: 100,
         };
       } else {
-        fail(ATTRIBUTES_NOT_PRESENT);
+        fail(ATTRIBUTE_VALUES_MISSING);
       }
 
       fixture.detectChanges();
@@ -409,7 +409,7 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
           value: 100,
         };
       } else {
-        fail(ATTRIBUTES_NOT_PRESENT);
+        fail(ATTRIBUTE_VALUES_MISSING);
       }
 
       fixture.detectChanges();
@@ -502,7 +502,7 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
         value2.selected = true;
         value2.valuePrice = undefined;
       } else {
-        fail(ATTRIBUTES_NOT_PRESENT);
+        fail(ATTRIBUTE_VALUES_MISSING);
       }
       fixture.detectChanges();
       CommonConfiguratorTestUtilsService.expectElementContainsA11y(
@@ -531,7 +531,7 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
           value: 100,
         };
       } else {
-        fail(ATTRIBUTES_NOT_PRESENT);
+        fail(ATTRIBUTE_VALUES_MISSING);
       }
 
       fixture.detectChanges();
@@ -564,7 +564,7 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
           value: 100,
         };
       } else {
-        fail(ATTRIBUTES_NOT_PRESENT);
+        fail(ATTRIBUTE_VALUES_MISSING);
       }
 
       fixture.detectChanges();
