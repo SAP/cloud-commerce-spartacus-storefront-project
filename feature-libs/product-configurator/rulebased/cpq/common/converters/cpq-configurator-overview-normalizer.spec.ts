@@ -8,12 +8,13 @@ import { CpqConfiguratorNormalizerUtilsService } from './cpq-configurator-normal
 import { CpqConfiguratorOverviewNormalizer } from './cpq-configurator-overview-normalizer';
 
 const ATTR_NAME = 'name of attribute';
-const attr: Cpq.Attribute = {
+const attrBase: Cpq.Attribute = {
   name: ATTR_NAME,
   stdAttrCode: 11,
   pA_ID: 111,
   values: [],
 };
+let attr: Cpq.Attribute;
 
 const GRP_DESCR = 'description of tab';
 const GENERAL_GRP_DESCR = 'General';
@@ -22,7 +23,7 @@ const tab: Cpq.Tab = {
   id: 1,
   displayName: GRP_DESCR,
   attributes: [
-    structuredClone(attr),
+    structuredClone(attrBase),
     { stdAttrCode: 12, pA_ID: 122, values: [] },
   ],
 };
@@ -162,6 +163,7 @@ describe('CpqConfiguratorOverviewNormalizer', () => {
     serviceUnderTest = TestBed.inject(
       CpqConfiguratorOverviewNormalizer as Type<CpqConfiguratorOverviewNormalizer>
     );
+    attr = structuredClone(attrBase);
   }));
 
   it('should be created', () => {
