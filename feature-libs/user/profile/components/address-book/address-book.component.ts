@@ -109,7 +109,7 @@ export class AddressBookComponent implements OnInit {
           const numbers = getAddressNumbers(address, textPhone, textMobile);
 
           return {
-            role: 'article',
+            role: 'application',
             textBold: address.firstName + ' ' + address.lastName,
             text: [
               address.line1,
