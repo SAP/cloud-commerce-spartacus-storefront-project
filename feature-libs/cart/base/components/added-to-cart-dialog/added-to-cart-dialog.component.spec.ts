@@ -22,7 +22,6 @@ import {
 } from '@spartacus/cart/base/root';
 import {
   ActivatedRouterStateSnapshot,
-  FeatureConfigService,
   I18nTestingModule,
   RouterState,
   RoutingService,
@@ -135,12 +134,6 @@ class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
 
-class MockFeatureConfigService {
-  isEnabled() {
-    return true;
-  }
-}
-
 describe('AddedToCartDialogComponent', () => {
   let component: AddedToCartDialogComponent;
   let fixture: ComponentFixture<AddedToCartDialogComponent>;
@@ -148,7 +141,6 @@ describe('AddedToCartDialogComponent', () => {
   let activeCartFacade: ActiveCartFacade;
   let launchDialogService: LaunchDialogService;
   let routingService: RoutingService;
-  let featureConfigService: FeatureConfigService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -178,7 +170,6 @@ describe('AddedToCartDialogComponent', () => {
           useClass: MockRoutingService,
         },
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
-        { provide: FeatureConfigService, useClass: MockFeatureConfigService },
       ],
     }).compileComponents();
   });
@@ -191,7 +182,6 @@ describe('AddedToCartDialogComponent', () => {
 
     launchDialogService = TestBed.inject(LaunchDialogService);
     routingService = TestBed.inject(RoutingService);
-    featureConfigService = TestBed.inject(FeatureConfigService);
 
     spyOn(activeCartFacade, 'updateEntry').and.callThrough();
 
@@ -257,8 +247,13 @@ describe('AddedToCartDialogComponent', () => {
     });
   });
 
-  it('should shouw item added to your cart dialog title message', () => {
-    spyOn(featureConfigService, 'isEnabled').and.returnValue(true);
+  it('should display loading placeholder', () => {
+    component.loaded$ = of(false);
+    fixture.detectChanges();
+    expect(el.query(By.css('cx-spinner')).nativeElement).toBeDefined();
+  });
+
+  it('should show item added to your cart dialog title message', () => {
     fixture.detectChanges();
     expect(
       el.query(By.css('.cx-dialog-title')).nativeElement.textContent.trim()
