@@ -257,7 +257,7 @@ describe('AddedToCartDialogComponent', () => {
     });
   });
 
-  it('should shouw item added to your cart dialog title message in case a11yUpdatingCartNoNarration is enabled', () => {
+  it('should shouw item added to your cart dialog title message', () => {
     spyOn(featureConfigService, 'isEnabled').and.returnValue(true);
     fixture.detectChanges();
     expect(
