@@ -16,6 +16,7 @@ export class OpfCheckoutTermsAndConditionsAlertComponent {
   iconTypes = ICON_TYPE;
 
   @Input() isVisible: boolean;
+  @Input() isExplicit: boolean | undefined | null;
 
   close() {
     this.isVisible = false;

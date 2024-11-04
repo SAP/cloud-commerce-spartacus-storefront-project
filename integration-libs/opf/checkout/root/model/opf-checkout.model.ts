@@ -6,3 +6,6 @@
 
 export const OPF_PAYMENT_AND_REVIEW_SEMANTIC_ROUTE =
   'opfCheckoutPaymentAndReview';
+
+export const OPF_EXPLICIT_T_AND_C_CMS_CPNT =
+  'OpfExplicitTermsAndConditionsComponent';
