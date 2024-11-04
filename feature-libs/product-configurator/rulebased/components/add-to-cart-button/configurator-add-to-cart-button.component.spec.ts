@@ -517,7 +517,6 @@ describe('ConfiguratorAddToCartButtonComponent', () => {
   });
 
   afterEach(() => {
-    fixture.destroy();
     mockRouterData.displayOnly = false;
   });
 

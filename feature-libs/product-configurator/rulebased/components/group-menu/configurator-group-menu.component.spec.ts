@@ -296,7 +296,7 @@ describe('ConfiguratorGroupMenuComponent', () => {
           useClass: MockFeatureConfigService,
         },
       ],
-    });
+    }).compileComponents();
   }));
 
   beforeEach(() => {
