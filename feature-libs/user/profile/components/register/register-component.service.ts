@@ -5,9 +5,10 @@
  */
 
 import { Injectable } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormArray } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder } from '@angular/forms';
 import {
   ConsentTemplate,
+  FeatureConfigService,
   GlobalMessageService,
   GlobalMessageType,
   Title,
@@ -18,6 +19,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class RegisterComponentService {
+  private featureConfigService: FeatureConfigService;
   constructor(
     protected userRegisterFacade: UserRegisterFacade,
     protected globalMessageService: GlobalMessageService,
@@ -44,10 +46,17 @@ export class RegisterComponentService {
    * Show the message after successful registration.
    */
   postRegisterMessage(): void {
-    this.globalMessageService.add(
-      { key: 'register.postRegisterMessage' },
-      GlobalMessageType.MSG_TYPE_CONFIRMATION
-    );
+    if (this.featureConfigService.isEnabled('a11yPostRegisterSuccessMessage')) {
+      this.globalMessageService.add(
+        { key: 'register.postRegisterSuccessMessage' },
+        GlobalMessageType.MSG_TYPE_CONFIRMATION
+      );
+    } else {
+      this.globalMessageService.add(
+        { key: 'register.postRegisterMessage' },
+        GlobalMessageType.MSG_TYPE_CONFIRMATION
+      );
+    }
   }
 
   /**

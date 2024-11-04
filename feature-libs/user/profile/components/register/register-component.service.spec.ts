@@ -71,7 +71,7 @@ describe('RegisterComponentService', () => {
     it('should delegate to globalMessageService.add', () => {
       service.postRegisterMessage();
       expect(globalMessageService.add).toHaveBeenCalledWith(
-        { key: 'register.postRegisterMessage' },
+        { key: 'register.postRegisterSuccessMessage' },
         GlobalMessageType.MSG_TYPE_CONFIRMATION
       );
     });
