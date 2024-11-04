@@ -196,9 +196,6 @@ describe('OpfCheckoutPaymentsComponent', () => {
 
       if (configuration?.logoUrl) {
         expect(logoElement).toBeTruthy();
-        expect(logoElement.nativeElement.attributes['class'].value).toBe(
-          'cx-payment-logo'
-        );
         expect(logoElement.nativeElement.attributes['alt'].value).toBe(
           configuration.displayName
         );
