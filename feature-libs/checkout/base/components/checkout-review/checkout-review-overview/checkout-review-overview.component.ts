@@ -52,15 +52,15 @@ export class CheckoutReviewOverviewComponent implements AfterViewInit {
           // We need to delay for a tick to let components render before querying.
           setTimeout(() => {
             // These are the components that we need to wrap.
-            const els = [
-              this.document.querySelector('cx-checkout-review-payment'),
-              this.document.querySelector('cx-checkout-review-overview'),
-              this.document.querySelector('cx-checkout-review-shipping'),
-              this.document.querySelector('cx-pick-up-in-store-items-details'),
+            const els: any[] = [
+              this.document?.querySelector('cx-checkout-review-payment'),
+              this.document?.querySelector('cx-checkout-review-overview'),
+              this.document?.querySelector('cx-checkout-review-shipping'),
+              this.document?.querySelector('cx-pick-up-in-store-items-details'),
             ];
             const parent = els[0]?.parentNode;
             if (parent) {
-              const section: any = this.document.createElement('section');
+              const section: any = this.document?.createElement('section');
               section.ariaLabel = label;
               parent.replaceChild(section, els[0]);
               els.forEach((el: any) => section.appendChild(el));
