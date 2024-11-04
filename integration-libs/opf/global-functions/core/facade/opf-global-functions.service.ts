@@ -184,7 +184,6 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     vcr?: ViewContainerRef
   ): void {
     this.getGlobalFunctionContainer(domain).submit = ({
-      cartId,
       additionalData,
       submitSuccess = (): void => {
         // this is intentional
@@ -220,7 +219,6 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
             .submitPayment({
               additionalData,
               paymentSessionId,
-              cartId,
               callbackArray,
               paymentMethod,
               returnPath: undefined,
@@ -238,7 +236,6 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
   }
 
   protected runSubmitComplete(
-    cartId: string,
     additionalData: Array<KeyValuePair>,
     callbackArray: [MerchantCallback, MerchantCallback, MerchantCallback],
     paymentSessionId: string,
@@ -256,7 +253,6 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
           .submitCompletePayment({
             additionalData,
             paymentSessionId,
-            cartId,
             callbackArray,
             returnPath,
           })
@@ -277,7 +273,6 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     vcr?: ViewContainerRef
   ): void {
     this.getGlobalFunctionContainer(domain).submitComplete = ({
-      cartId,
       additionalData,
       submitSuccess = (): void => {
         // this is intentional
@@ -296,7 +291,6 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
       submitFailure: MerchantCallback;
     }): Promise<boolean> => {
       return this.runSubmitComplete(
-        cartId,
         additionalData,
         [submitSuccess, submitPending, submitFailure],
         paymentSessionId,
@@ -312,7 +306,6 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     vcr?: ViewContainerRef
   ): void {
     this.getGlobalFunctionContainer(domain).submitCompleteRedirect = ({
-      cartId,
       additionalData,
       submitSuccess = (): void => {
         // this is intentional
@@ -331,7 +324,6 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
       submitFailure: MerchantCallback;
     }): Promise<boolean> => {
       return this.runSubmitComplete(
-        cartId,
         additionalData,
         [submitSuccess, submitPending, submitFailure],
         paymentSessionId,
