@@ -25,7 +25,7 @@ import {
   PaymentPattern,
   PaymentSessionData,
 } from '@spartacus/opf/payment/root';
-import { Subscription, tap } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper.service';
 
 @Component({
@@ -36,9 +36,7 @@ import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper
 export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
   @Input() selectedPaymentId: number;
 
-  renderPaymentMethodEvent$ = this.service
-    .getRenderPaymentMethodEvent()
-    .pipe(tap((val) => console.log('val', val)));
+  renderPaymentMethodEvent$ = this.service.getRenderPaymentMethodEvent();
 
   RENDER_PATTERN = PaymentPattern;
 
