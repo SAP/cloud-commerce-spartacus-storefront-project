@@ -21,8 +21,8 @@ import {
   OpfProviderType,
   OpfQuickBuyDigitalWallet,
 } from '@spartacus/opf/quick-buy/root';
-import { combineLatest, Observable, of } from 'rxjs';
-import { map, mergeMap, switchMap, take, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class OpfQuickBuyButtonsService {
@@ -76,39 +76,5 @@ export class OpfQuickBuyButtonsService {
     }
 
     return isEnabled;
-  }
-
-  /**
-   * Checks whether the cart belongs to a `guest` or the `current` user.
-   * After that, the QuickBuy buttons are displayed.
-   *
-   * If the cart belongs to an `anonymous` user, the `createCartGuestUser` function
-   * is called to create and associate a new guest user.
-   */
-  isUserGuestOrLoggedIn(): Observable<boolean> {
-    return combineLatest([
-      this.activeCartFacade.isGuestCart(),
-      this.authService.isUserLoggedIn(),
-    ]).pipe(
-      take(1),
-      mergeMap(([isGuestUser, isLoggedInUser]) => {
-        if (isGuestUser || isLoggedInUser) {
-          return of(true);
-        } else {
-          return combineLatest([
-            this.userIdService.getUserId(),
-            this.activeCartFacade.takeActiveCartId(),
-          ]).pipe(
-            take(1),
-            switchMap(([userId, cartId]) =>
-              this.cartGuestUserFacade.createCartGuestUser(userId, cartId).pipe(
-                tap(() => this.multiCartFacade.reloadCart(cartId)),
-                map(() => true)
-              )
-            )
-          );
-        }
-      })
-    );
   }
 }

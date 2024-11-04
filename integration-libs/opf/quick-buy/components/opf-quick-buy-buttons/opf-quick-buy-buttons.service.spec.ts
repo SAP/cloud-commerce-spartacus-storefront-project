@@ -6,18 +6,8 @@
 
 import { TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
-import {
-  ActiveCartFacade,
-  CartGuestUserFacade,
-  MultiCartFacade,
-} from '@spartacus/cart/base/root';
 import { CheckoutConfig } from '@spartacus/checkout/base/root';
-import {
-  AuthService,
-  QueryState,
-  RoutingService,
-  UserIdService,
-} from '@spartacus/core';
+import { AuthService, QueryState, RoutingService } from '@spartacus/core';
 import {
   ActiveConfiguration,
   OpfBaseFacade,
@@ -33,10 +23,6 @@ describe('OpfQuickBuyButtonsService', () => {
   let authServiceMock: jasmine.SpyObj<AuthService>;
   let checkoutConfigMock: jasmine.SpyObj<CheckoutConfig>;
   let routingServiceMock: jasmine.SpyObj<RoutingService>;
-  let userIdServiceMock: jasmine.SpyObj<UserIdService>;
-  let cartGuestUserFacadeMock: jasmine.SpyObj<CartGuestUserFacade>;
-  let activeCartFacadeMock: jasmine.SpyObj<ActiveCartFacade>;
-  let multiCartFacadeMock: jasmine.SpyObj<MultiCartFacade>;
 
   beforeEach(() => {
     opfBaseFacadeMock = jasmine.createSpyObj('OpfBaseFacade', [
@@ -47,17 +33,6 @@ describe('OpfQuickBuyButtonsService', () => {
     routingServiceMock = jasmine.createSpyObj('RoutingService', [
       'getRouterState',
     ]);
-    userIdServiceMock = jasmine.createSpyObj('UserIdService', ['getUserId']);
-    cartGuestUserFacadeMock = jasmine.createSpyObj('CartGuestUserFacade', [
-      'createCartGuestUser',
-    ]);
-    activeCartFacadeMock = jasmine.createSpyObj('ActiveCartFacade', [
-      'takeActiveCartId',
-      'isGuestCart',
-    ]);
-    multiCartFacadeMock = jasmine.createSpyObj('MultiCartFacade', [
-      'reloadCart',
-    ]);
 
     TestBed.configureTestingModule({
       imports: [StoreModule.forRoot({})],
@@ -67,10 +42,6 @@ describe('OpfQuickBuyButtonsService', () => {
         { provide: AuthService, useValue: authServiceMock },
         { provide: CheckoutConfig, useValue: checkoutConfigMock },
         { provide: RoutingService, useValue: routingServiceMock },
-        { provide: UserIdService, useValue: userIdServiceMock },
-        { provide: CartGuestUserFacade, useValue: cartGuestUserFacadeMock },
-        { provide: ActiveCartFacade, useValue: activeCartFacadeMock },
-        { provide: MultiCartFacade, useValue: multiCartFacadeMock },
       ],
     });
 
@@ -206,26 +177,6 @@ describe('OpfQuickBuyButtonsService', () => {
         activeConfiguration
       );
       expect(result).toBeFalsy();
-    });
-  });
-
-  describe('isUserGuestOrLoggedIn', () => {
-    it('should return true if the user is logged in', () => {
-      authServiceMock.isUserLoggedIn.and.returnValue(of(true));
-      activeCartFacadeMock.isGuestCart.and.returnValue(of(false));
-
-      service.isUserGuestOrLoggedIn().subscribe((result) => {
-        expect(result).toBeTruthy();
-      });
-    });
-
-    it('should return true if the user is a guest', () => {
-      authServiceMock.isUserLoggedIn.and.returnValue(of(false));
-      activeCartFacadeMock.isGuestCart.and.returnValue(of(true));
-
-      service.isUserGuestOrLoggedIn().subscribe((result) => {
-        expect(result).toBeTruthy();
-      });
     });
   });
 
