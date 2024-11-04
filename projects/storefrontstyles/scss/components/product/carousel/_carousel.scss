@@ -209,6 +209,12 @@
       }
     }
 
+    .indicators button[disabled] .cx-icon {
+      color: var(--cx-color-dark);
+      background-color: var(--cx-color-light);
+      padding: 4px;
+    }
+
     .indicators button[aria-disabled='true'] {
       .cx-icon {
         color: var(--cx-color-dark);
