@@ -381,6 +381,8 @@ if (environment.cpq) {
         a11yScrollToReviewByShowReview: true,
         a11yViewHoursButtonIconContrast: true,
         a11yQTY2Quantity: true,
+        a11yDeleteButton2First: true,
+        a11yApprovalProcessWithNoClearable: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,

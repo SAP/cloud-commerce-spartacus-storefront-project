@@ -11,7 +11,12 @@ import {
   OnInit,
 } from '@angular/core';
 import { AbstractControl, UntypedFormGroup } from '@angular/forms';
-import { B2BApprovalProcess, B2BUnit, isNotUndefined } from '@spartacus/core';
+import {
+  B2BApprovalProcess,
+  B2BUnit,
+  isNotUndefined,
+  useFeatureStyles,
+} from '@spartacus/core';
 import {
   B2BUnitNode,
   OrgUnitService,
@@ -78,7 +83,9 @@ export class UnitFormComponent implements OnInit {
   constructor(
     protected itemService: ItemService<B2BUnit>,
     protected unitService: OrgUnitService
-  ) {}
+  ) {
+    useFeatureStyles('a11yApprovalProcessWithNoClearable');
+  }
 
   ngOnInit(): void {
     this.unitService.loadList();
