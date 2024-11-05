@@ -60,6 +60,20 @@
         'orgUnit.approvalProcess' | cxTranslate
       }}</span>
       <ng-select
+        *cxFeature="'a11yApprovalProcessWithNoClearable'"
+        [inputAttrs]="{ required: 'true' }"
+        formControlName="code"
+        [searchable]="false"
+        [clearable]="false"
+        [items]="approvalProcess$ | async"
+        bindLabel="name"
+        bindValue="code"
+        appendTo="cx-org-list"
+        [placeholder]="'orgUnit.approvalProcess' | cxTranslate"
+      >
+      </ng-select>
+      <ng-select
+        *cxFeature="'!a11yApprovalProcessWithNoClearable'"
         [inputAttrs]="{ required: 'true' }"
         formControlName="code"
         [searchable]="false"
