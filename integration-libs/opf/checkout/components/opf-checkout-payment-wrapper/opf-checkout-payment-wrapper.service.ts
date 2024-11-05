@@ -162,11 +162,13 @@ export class OpfCheckoutPaymentWrapperService {
         data: config?.destination.url,
         destination: config?.destination,
       });
+      return;
     }
 
     if (
       config?.dynamicScript &&
-      config?.pattern === PaymentPattern.HOSTED_FIELDS
+      (config?.pattern === PaymentPattern.HOSTED_FIELDS ||
+        config?.pattern === PaymentPattern.FULL_PAGE)
     ) {
       const html = config?.dynamicScript?.html;
 
