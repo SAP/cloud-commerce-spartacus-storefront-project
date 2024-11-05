@@ -47,8 +47,8 @@ export class OpfCheckoutPaymentAndReviewComponent
   explicitTermsAndConditions$: Observable<boolean | undefined> = this.cmsService
     .getCurrentPage()
     .pipe(
-      map((page) => {
-        return this.IsCmsComponentInPage(OPF_EXPLICIT_T_AND_C_CMS_CPNT, page);
+      map((page: Page) => {
+        return this.isCmsComponentInPage(OPF_EXPLICIT_T_AND_C_CMS_CPNT, page);
       })
     );
 
@@ -93,7 +93,7 @@ export class OpfCheckoutPaymentAndReviewComponent
     );
   }
 
-  protected IsCmsComponentInPage(cmsComponentUid: string, page: Page): boolean {
+  protected isCmsComponentInPage(cmsComponentUid: string, page: Page): boolean {
     return !!page && JSON.stringify(page).includes(cmsComponentUid);
   }
 
