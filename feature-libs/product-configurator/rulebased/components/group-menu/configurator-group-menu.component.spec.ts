@@ -49,8 +49,8 @@ import { ConfiguratorGroupMenuService } from './configurator-group-menu.componen
 
 let mockGroupVisited = false;
 let mockDirection = DirectionMode.LTR;
-const mockProductConfiguration: Configurator.Configuration =
-  productConfiguration;
+let mockProductConfiguration: Configurator.Configuration =
+  structuredClone(productConfiguration);
 
 class MockRoutingService {
   getRouterState(): Observable<RouterState> {
