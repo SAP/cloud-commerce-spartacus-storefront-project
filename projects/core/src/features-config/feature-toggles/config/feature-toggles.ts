@@ -310,6 +310,11 @@ export interface FeatureTogglesInterface {
   a11yUnitsListKeyboardControls?: boolean;
 
   /**
+   * Adds label to the `SearchBoxComponent` search input
+   */
+  a11ySearchboxLabel?: boolean;
+
+  /**
    * When set to `true`, product titles in `CartItemComponent`, `QuickOrderItemComponent`, `WishListItemComponent`
    * adopt a more link-like style, appearing blue with an underline. This enhances visual cues for clickable elements,
    * providing a more intuitive user experience.
@@ -493,6 +498,11 @@ export interface FeatureTogglesInterface {
   a11yFacetsDialogFocusHandling?: boolean;
 
   /**
+   * `StorefrontComponent`: Prevents header links from wrapping on smaller screen sizes
+   */
+  headerLayoutForSmallerViewports?: boolean;
+
+  /**
    * Enables radio group fieldset for 'CheckoutDeliveryModeComponent' form
    * and further improves its screen reader readout.
    */
@@ -590,6 +600,11 @@ export interface FeatureTogglesInterface {
   a11ySearchBoxFocusOnEscape?: boolean;
 
   /**
+   * Stops the inputs value from obstructing the 'PasswordVisibilityToggleComponent'.
+   */
+  a11yPasswordVisibliltyBtnValueOverflow?: boolean;
+
+  /**
    * In `ItemCounterComponenet`, Remove button no longer lose focus after activating when count is 2.
    * Add button no longer lose focus after activating when count is `max - 1`.
    */
@@ -605,6 +620,16 @@ export interface FeatureTogglesInterface {
    * store's opening hours has an acceptable contrast ratio in a default theme
    */
   a11yViewHoursButtonIconContrast?: boolean;
+
+  /**
+   * `Checkout` add a landmarks to content representing steps
+   */
+  a11yCheckoutStepsLandmarks?: boolean;
+
+  /**
+   * In `CartItemListComponent`, change QTY into Quantity.
+   */
+  a11yQTY2Quantity?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -736,6 +761,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yFacetKeyboardNavigation: false,
   a11yUnitsListKeyboardControls: true,
   a11yCartItemsLinksStyles: true,
+  a11ySearchboxLabel: false,
   a11yHideSelectBtnForSelectedAddrOrPayment: false,
   a11ySelectLabelWithContextForSelectedAddrOrPayment: false,
   a11yFocusableCarouselControls: true,
@@ -761,6 +787,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yNotificationsOnConsentChange: false,
   a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields: false,
   a11yFacetsDialogFocusHandling: false,
+  headerLayoutForSmallerViewports: false,
   a11yStoreFinderAlerts: false,
   a11yFormErrorMuteIcon: false,
   a11yCxMessageFocus: false,
@@ -779,9 +806,12 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yDialogTriggerRefocus: false,
   a11yAddToWishlistFocus: false,
   a11ySearchBoxFocusOnEscape: false,
+  a11yPasswordVisibliltyBtnValueOverflow: false,
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,
+  a11yCheckoutStepsLandmarks: false,
+  a11yQTY2Quantity: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
