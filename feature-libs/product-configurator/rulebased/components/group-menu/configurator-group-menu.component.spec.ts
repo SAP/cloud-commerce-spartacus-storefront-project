@@ -233,15 +233,16 @@ let hamburgerMenuService: HamburgerMenuService;
 let htmlElem: HTMLElement;
 let configuratorUtils: CommonConfiguratorUtilsService;
 let configGroupMenuService: ConfiguratorGroupMenuService;
-let routerStateObservable: Observable<RouterState>;
-let groupVisitedObservable: Observable<boolean>;
-let productConfigurationObservable: Observable<Configurator.Configuration>;
+let routerStateObservable: Observable<RouterState> = NEVER;
+let groupVisitedObservable: Observable<boolean> = NEVER;
+let productConfigurationObservable: Observable<Configurator.Configuration> =
+  NEVER;
 let isConflictGroupType: boolean;
 let directionService: DirectionService;
 let direction: DirectionMode;
 let configUtils: ConfiguratorStorefrontUtilsService;
 let configExpertModeService: ConfiguratorExpertModeService;
-let breakpointObservable: Observable<boolean>;
+let breakpointObservable: Observable<boolean> = NEVER;
 
 function initialize() {
   groupVisitedObservable = of(mockGroupVisited);
