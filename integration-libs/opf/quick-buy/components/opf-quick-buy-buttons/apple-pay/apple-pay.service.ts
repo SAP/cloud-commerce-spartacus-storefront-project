@@ -175,28 +175,24 @@ export class ApplePayService {
       countryCode,
     };
 
-    return this.opfQuickBuyTransactionService.handleCartGuestUser().pipe(
-      switchMap(() => {
-        return forkJoin({
-          deliveryInfo:
-            this.opfQuickBuyTransactionService.getTransactionDeliveryInfo(),
-          merchantName: this.opfQuickBuyTransactionService.getMerchantName(),
-        }).pipe(
-          switchMap(({ deliveryInfo, merchantName }) => {
-            this.transactionDetails.total.label = merchantName;
-            initialRequest.total.label = merchantName;
-            this.transactionDetails.deliveryInfo = deliveryInfo;
+    return forkJoin({
+      deliveryInfo:
+        this.opfQuickBuyTransactionService.getTransactionDeliveryInfo(),
+      merchantName: this.opfQuickBuyTransactionService.getMerchantName(),
+    }).pipe(
+      switchMap(({ deliveryInfo, merchantName }) => {
+        this.transactionDetails.total.label = merchantName;
+        initialRequest.total.label = merchantName;
+        this.transactionDetails.deliveryInfo = deliveryInfo;
 
-            return of(undefined);
-          }),
-          map((opfQuickBuyDeliveryInfo) => {
-            if (!opfQuickBuyDeliveryInfo) {
-              return initialRequest;
-            }
-            this.transactionDetails.deliveryInfo = opfQuickBuyDeliveryInfo;
-            return initialRequest;
-          })
-        );
+        return of(undefined);
+      }),
+      map((opfQuickBuyDeliveryInfo) => {
+        if (!opfQuickBuyDeliveryInfo) {
+          return initialRequest;
+        }
+        this.transactionDetails.deliveryInfo = opfQuickBuyDeliveryInfo;
+        return initialRequest;
       })
     );
   }
@@ -204,7 +200,8 @@ export class ApplePayService {
   private validateOpfAppleSession(
     event: ApplePayJS.ApplePayValidateMerchantEvent
   ): Observable<ApplePaySessionVerificationResponse> {
-    return this.opfQuickBuyTransactionService.getCurrentCartId().pipe(
+    return this.opfQuickBuyTransactionService.handleCartGuestUser().pipe(
+      switchMap(() => this.opfQuickBuyTransactionService.getCurrentCartId()),
       switchMap((cartId: string) => {
         const verificationRequest: ApplePaySessionVerificationRequest = {
           validationUrl: event.validationURL,
@@ -415,6 +412,13 @@ export class ApplePayService {
             );
 
     return deliveryTypeHandlingObservable.pipe(
+      switchMap(() => {
+        return shippingContact?.emailAddress
+          ? this.opfQuickBuyTransactionService.updateCartGuestUserEmail(
+              shippingContact.emailAddress
+            )
+          : of(true);
+      }),
       switchMap(() => this.opfQuickBuyTransactionService.getCurrentCartId()),
       switchMap((cartId: string) => {
         const encryptedToken = btoa(
