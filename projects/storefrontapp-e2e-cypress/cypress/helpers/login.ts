@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {user, getSampleUser, SampleUser} from '../sample-data/checkout-flow';
+import { user, getSampleUser, SampleUser } from '../sample-data/checkout-flow';
 import { login, register } from './auth-forms';
 import { waitForPage } from './checkout-flow';
 import * as alerts from './global-message';
