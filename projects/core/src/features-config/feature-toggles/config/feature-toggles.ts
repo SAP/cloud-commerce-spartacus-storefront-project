@@ -310,6 +310,11 @@ export interface FeatureTogglesInterface {
   a11yUnitsListKeyboardControls?: boolean;
 
   /**
+   * Adds label to the `SearchBoxComponent` search input
+   */
+  a11ySearchboxLabel?: boolean;
+
+  /**
    * When set to `true`, product titles in `CartItemComponent`, `QuickOrderItemComponent`, `WishListItemComponent`
    * adopt a more link-like style, appearing blue with an underline. This enhances visual cues for clickable elements,
    * providing a more intuitive user experience.
@@ -464,6 +469,16 @@ export interface FeatureTogglesInterface {
   a11yCarouselArrowKeysNavigation?: boolean;
 
   /**
+   * Use tabs instead of radio group for pickup options. Improves SR narration and keyboard navigation pattern.
+   * Modified components:
+   *  - `PickupOptionsComponent`
+   *  - `PdpPickupOptionsContainerComponent`
+   *  - `CartPickupOptionsContainerComponent`
+   *  - `AddToCartComponent`
+   */
+  a11yPickupOptionsTabs?: boolean;
+
+  /**
    * `AnonymousConsentDialogComponent` - after consent was given/withdrawn the notification
    * will be displayed
    * `ConsentManagementComponent` - improve stability of notifications announcements by VoiceOver
@@ -484,6 +499,11 @@ export interface FeatureTogglesInterface {
    * New "Back To Results" button is added
    */
   a11yFacetsDialogFocusHandling?: boolean;
+
+  /**
+   * `StorefrontComponent`: Prevents header links from wrapping on smaller screen sizes
+   */
+  headerLayoutForSmallerViewports?: boolean;
 
   /**
    * Enables radio group fieldset for 'CheckoutDeliveryModeComponent' form
@@ -583,6 +603,48 @@ export interface FeatureTogglesInterface {
   a11ySearchBoxFocusOnEscape?: boolean;
 
   /**
+   * In `AddedToCartDialogComponent`, `Updating cart...` should no longer read by a screen reader.
+   */
+  a11yUpdatingCartNoNarration?: boolean;
+
+  /**
+   * Stops the inputs value from obstructing the 'PasswordVisibilityToggleComponent'.
+   */
+  a11yPasswordVisibliltyBtnValueOverflow?: boolean;
+
+  /**
+   * In `ItemCounterComponenet`, Remove button no longer lose focus after activating when count is 2.
+   * Add button no longer lose focus after activating when count is `max - 1`.
+   */
+  a11yItemCounterFocus?: boolean;
+
+  /**
+   * `ProductIntroComponent` should now scroll to the Review tab on the first click of the 'Show Review' button.
+   */
+  a11yScrollToReviewByShowReview?: boolean;
+
+  /**
+   * `StoreComponent and MyPreferredStoreComponent` an icon in a button that triggers showing
+   * store's opening hours has an acceptable contrast ratio in a default theme
+   */
+  a11yViewHoursButtonIconContrast?: boolean;
+
+  /**
+   * `Checkout` add a landmarks to content representing steps
+   */
+  a11yCheckoutStepsLandmarks?: boolean;
+
+  /**
+   * In `CartItemListComponent`, change QTY into Quantity.
+   */
+  a11yQTY2Quantity?: boolean;
+
+  /**
+   * In `CardComponent`, place `Delete` button before `Cancel` button.
+   */
+  a11yDeleteButton2First?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -638,6 +700,35 @@ export interface FeatureTogglesInterface {
    * This feature toggle can be used to make the CDS module use these new URLs.
    */
   sciEnabled?: boolean;
+  
+  /**
+   * When enabled, allows to provide extended formats and media queries for <picture> element if used in MediaComponent.
+   *
+   * Important: After activation default HTML element in MediaComponent will be `<img>`
+   * Only BannerComponent has passed `'picture'` value. If you need to use `<picture>` HTML element
+   * you need to pass `[elementType]="'picture'"` to `<cx-media>`
+   *
+   * For proper work requires `pictureElementFormats`  provided in media config:
+   *  ```ts
+   * provideConfig({
+   *   pictureElementFormats: {
+   *    mediaQueries: {
+   *     'max-width': '767px',
+   *      ...
+   *    },
+   *    width: 50,
+   *    height: 50,
+   *   },
+   * })
+   * ```
+   *
+   * After activating this toggle, new inputs in `MediaComponent` — specifically
+   * `width`, `height`, and `sizes` — will be passed to the template as HTML attributes.
+   *
+   * Toggle activates `@Input() elementType: 'img' | 'picture' = 'img'` in `MediaComponent`
+   *
+   */
+  useExtendedMediaComponentConfiguration?: boolean;
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
@@ -689,6 +780,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yFacetKeyboardNavigation: false,
   a11yUnitsListKeyboardControls: true,
   a11yCartItemsLinksStyles: true,
+  a11ySearchboxLabel: false,
   a11yHideSelectBtnForSelectedAddrOrPayment: false,
   a11yFocusableCarouselControls: true,
   a11yUseTrapTabInsteadOfTrapInDialogs: false,
@@ -710,9 +802,11 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yUseButtonsForBtnLinks: false,
   a11yTabComponent: false,
   a11yCarouselArrowKeysNavigation: false,
+  a11yPickupOptionsTabs: false,
   a11yNotificationsOnConsentChange: false,
   a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields: false,
   a11yFacetsDialogFocusHandling: false,
+  headerLayoutForSmallerViewports: false,
   a11yStoreFinderAlerts: false,
   a11yFormErrorMuteIcon: false,
   a11yCxMessageFocus: false,
@@ -731,6 +825,14 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yDialogTriggerRefocus: false,
   a11yAddToWishlistFocus: false,
   a11ySearchBoxFocusOnEscape: false,
+  a11yUpdatingCartNoNarration: false,
+  a11yPasswordVisibliltyBtnValueOverflow: false,
+  a11yItemCounterFocus: false,
+  a11yScrollToReviewByShowReview: false,
+  a11yViewHoursButtonIconContrast: false,
+  a11yCheckoutStepsLandmarks: false,
+  a11yQTY2Quantity: false,
+  a11yDeleteButton2First: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
@@ -738,4 +840,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
   sciEnabled: false,
+  useExtendedMediaComponentConfiguration: false,
 };
