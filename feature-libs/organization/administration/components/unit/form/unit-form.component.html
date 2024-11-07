@@ -70,12 +70,7 @@
         bindValue="code"
         appendTo="cx-org-list"
         [placeholder]="'orgUnit.approvalProcess' | cxTranslate"
-        [cxNgSelectA11y]="{
-          ariaLabel:
-            'orgUnit.approvalProcess'
-            | cxTranslate
-              : { selected: form.get('approvalProcess.code')?.value },
-        }"
+        [cxNgSelectA11y]="{}"
       >
       </ng-select>
       <ng-select
@@ -121,11 +116,7 @@
           bindValue="id"
           appendTo="cx-org-list"
           [placeholder]="'orgUnit.form.parentOrgUnit' | cxTranslate"
-          [cxNgSelectA11y]="{
-            ariaLabel:
-              'orgUnit.form.parentOrgUnit'
-              | cxTranslate: { selected: form.get('parentOrgUnit.uid')?.value },
-          }"
+          [cxNgSelectA11y]="{}"
         >
         </ng-select>
         <ng-select
