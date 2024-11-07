@@ -625,11 +625,6 @@ export interface FeatureTogglesInterface {
   a11yQTY2Quantity?: boolean;
 
   /**
-   * In `CardComponent`, place `Delete` button before `Cancel` button.
-   */
-  a11yDeleteButton2First?: boolean;
-
-  /**
    * In `UnitFormComponent`, set 'clearable' as false for select of `ApprovalProcess`.
    */
   a11yApprovalProcessWithNoClearable?: boolean;
@@ -814,7 +809,6 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yViewHoursButtonIconContrast: false,
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
-  a11yDeleteButton2First: false,
   a11yApprovalProcessWithNoClearable: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
