@@ -354,6 +354,7 @@ if (environment.cpq) {
         a11yUseButtonsForBtnLinks: true,
         a11yTabComponent: false,
         a11yCarouselArrowKeysNavigation: true,
+        a11yPickupOptionsTabs: true,
         a11yNotificationsOnConsentChange: true,
         a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields:
           true,
@@ -378,6 +379,7 @@ if (environment.cpq) {
         a11yDialogTriggerRefocus: true,
         a11yAddToWishlistFocus: true,
         a11ySearchBoxFocusOnEscape: true,
+        a11yUpdatingCartNoNarration: true,
         a11yPasswordVisibliltyBtnValueOverflow: true,
         a11yItemCounterFocus: true,
         a11yScrollToReviewByShowReview: true,
@@ -385,6 +387,7 @@ if (environment.cpq) {
         a11yCheckoutStepsLandmarks: true,
         a11yQTY2Quantity: true,
         a11yPostRegisterSuccessMessage: true,
+        a11yDeleteButton2First: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
