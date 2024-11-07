@@ -201,7 +201,7 @@ export class OpfQuickBuyTransactionService {
     );
   }
 
-  protected UpdateCartGuestUser(
+  protected updateCartGuestUser(
     cartGuestUser: CartGuestUser
   ): Observable<boolean> {
     return combineLatest([
@@ -225,7 +225,7 @@ export class OpfQuickBuyTransactionService {
       take(1),
       switchMap((isGuestCart) => {
         return isGuestCart && email
-          ? this.UpdateCartGuestUser({ email })
+          ? this.updateCartGuestUser({ email })
           : of(false);
       })
     );
