@@ -10,12 +10,13 @@ import { FeatureToggles } from '@spartacus/core';
 
 export function defaultCdsConfigFactory(): CdsConfig {
   const featureToggles = inject(FeatureToggles);
+  const sciEnabled = featureToggles.sciEnabled;
   return {
     cds: {
       tenant: '',
       baseUrl: '',
       endpoints: {
-        strategyProducts: featureToggles.sciEnabled
+        strategyProducts: sciEnabled
           ? '/strategy/v1/sites/${baseSite}/strategies/${strategyId}/products'
           : '/strategy/${tenant}/strategies/${strategyId}/products',
         searchIntelligence:
@@ -27,6 +28,7 @@ export function defaultCdsConfigFactory(): CdsConfig {
       consentTemplateId: 'PROFILE',
       profileTag: {
         allowInsecureCookies: false,
+        sciEnabled: sciEnabled,
       },
     },
   };
