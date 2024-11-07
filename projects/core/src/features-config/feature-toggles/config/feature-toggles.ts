@@ -634,10 +634,10 @@ export interface FeatureTogglesInterface {
   allPageMetaResolversEnabledInCsr?: boolean;
 
   /**
-   * CDS/ISS is integrated into CAS. CAS uses different URL formats for its services. This feature toggle can be used
-   * to make the CDS module use the CAS URLs.
+   * CDS/ISS is integrated into the SAP Cloud Identity Service (SCI). The downstream services use different domains and URL formats.
+   * This feature toggle can be used to make the CDS module use these new URLs.
    */
-  cdsCasEnabled?: boolean;
+  sciEnabled?: boolean;
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
@@ -737,5 +737,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   enableConsecutiveCharactersPasswordRequirement: false,
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
-  cdsCasEnabled: false,
+  sciEnabled: false,
 };

@@ -15,7 +15,7 @@ export function defaultCdsConfigFactory(): CdsConfig {
       tenant: '',
       baseUrl: '',
       endpoints: {
-        strategyProducts: featureToggles.cdsCasEnabled
+        strategyProducts: featureToggles.sciEnabled
           ? '/strategy/v1/sites/${baseSite}/strategies/${strategyId}/products'
           : '/strategy/${tenant}/strategies/${strategyId}/products',
         searchIntelligence:
