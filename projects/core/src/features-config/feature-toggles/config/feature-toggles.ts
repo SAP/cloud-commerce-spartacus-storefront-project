@@ -700,7 +700,7 @@ export interface FeatureTogglesInterface {
    * This feature toggle can be used to make the CDS module use these new URLs.
    */
   sciEnabled?: boolean;
-  
+
   /**
    * When enabled, allows to provide extended formats and media queries for <picture> element if used in MediaComponent.
    *
