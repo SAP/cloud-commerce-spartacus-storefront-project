@@ -189,7 +189,13 @@ export class OpfCheckoutPaymentWrapperService {
             this.executeScriptFromHtml(html);
           }
         });
+      return;
     }
+    this.handlePaymentInitiationError({
+      message: 'Payment Configuration problem',
+    })
+      .pipe(take(1))
+      .subscribe();
   }
 
   protected handlePaymentInitiationError(
@@ -215,7 +221,7 @@ export class OpfCheckoutPaymentWrapperService {
       switchMap(() => {
         this.onPlaceOrderSuccess();
 
-        return throwError('Payment already done');
+        return throwError(() => 'Payment already done');
       })
     );
   }
