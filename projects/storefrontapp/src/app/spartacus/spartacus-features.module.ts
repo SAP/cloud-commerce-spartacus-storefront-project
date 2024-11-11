@@ -390,6 +390,7 @@ if (environment.cpq) {
         a11yQTY2Quantity: true,
         a11yPostRegisterSuccessMessage: true,
         a11yDeleteButton2First: true,
+        a11yShowLabelOfSelect: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,

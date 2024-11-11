@@ -13,9 +13,14 @@
         class="cx-order-approval-form-group form-group col-sm-12 col-md-4 col-lg-4"
       >
         <label>
-          <span class="cx-visually-hidden">{{
+          <span *cxFeature="'a11yShowLabelOfSelect'" class="label-content">{{
             'orderHistory.sortOrders' | cxTranslate
           }}</span>
+          <span
+            *cxFeature="'!a11yShowLabelOfSelect'"
+            class="cx-visually-hidden"
+            >{{ 'orderHistory.sortOrders' | cxTranslate }}</span
+          >
           <cx-sorting
             [sortOptions]="orderApprovals.sorts"
             [sortLabels]="sortLabels$ | async"
@@ -171,9 +176,14 @@
         class="cx-order-approval-form-group form-group col-sm-12 col-md-4 col-lg-4"
       >
         <label>
-          <span class="cx-visually-hidden">{{
+          <span *cxFeature="'a11yShowLabelOfSelect'" class="label-content">{{
             'orderHistory.sortOrders' | cxTranslate
           }}</span>
+          <span
+            *cxFeature="'!a11yShowLabelOfSelect'"
+            class="cx-visually-hidden"
+            >{{ 'orderHistory.sortOrders' | cxTranslate }}</span
+          >
           <cx-sorting
             [sortOptions]="orderApprovals.sorts"
             [sortLabels]="sortLabels$ | async"
