@@ -54,7 +54,7 @@
           'navigation.linkItemInList'
             | cxTranslate
               : {
-                  title: node.title
+                  title: node.title,
                 }
         "
         [url]="node.url"
@@ -149,7 +149,7 @@
                 node: child,
                 depth: depth + 1,
                 listLength: node.children.length,
-                position: i + 1
+                position: i + 1,
               }
             "
           >

@@ -18,7 +18,7 @@
   }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   .LeftContentSlot {
     max-width: 26% !important;
   }
@@ -27,30 +27,30 @@
     max-width: 73% !important;
   }
 }
-@media screen and (max-width: 855px){
-.LeftContentSlot {
-  max-width: 34% !important;
-}
+@media screen and (max-width: 855px) {
+  .LeftContentSlot {
+    max-width: 34% !important;
+  }
 
-.RightContentSlot {
-  max-width: 64% !important;
+  .RightContentSlot {
+    max-width: 64% !important;
+  }
 }
-}
-@media screen and (max-width: 544px){
-.LeftContentSlot {
-  max-width: 34% !important;
-}
+@media screen and (max-width: 544px) {
+  .LeftContentSlot {
+    max-width: 34% !important;
+  }
 
-.RightContentSlot {
-  max-width: 64% !important;
+  .RightContentSlot {
+    max-width: 64% !important;
+  }
 }
-}
-@media screen and (max-width: 444px){
-.LeftContentSlot {
-  max-width: 36% !important;
-}
+@media screen and (max-width: 444px) {
+  .LeftContentSlot {
+    max-width: 36% !important;
+  }
 
-.RightContentSlot {
-  max-width: 63% !important;
-}
+  .RightContentSlot {
+    max-width: 63% !important;
+  }
 }
