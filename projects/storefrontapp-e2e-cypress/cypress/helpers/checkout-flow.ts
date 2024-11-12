@@ -270,6 +270,7 @@ export function verifyItemsToBeShipped() {
 
 export function verifyReviewOrderPage() {
   cy.contains('Cart total');
+  cy.contains('section[ariaLabel="Review Order"]');
 }
 
 export function placeOrder() {
