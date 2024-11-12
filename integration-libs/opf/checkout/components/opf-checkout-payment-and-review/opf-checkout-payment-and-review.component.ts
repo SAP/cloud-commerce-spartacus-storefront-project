@@ -27,7 +27,7 @@ import {
 } from '@spartacus/checkout/base/root';
 import { CmsService, Page, TranslationService } from '@spartacus/core';
 import { OpfMetadataStoreService } from '@spartacus/opf/base/root';
-import { OPF_EXPLICIT_T_AND_C_CMS_CPNT } from '@spartacus/opf/checkout/root';
+import { OPF_EXPLICIT_TERMS_AND_CONDITIONS_COMPONENT } from '@spartacus/opf/checkout/root';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -48,7 +48,10 @@ export class OpfCheckoutPaymentAndReviewComponent
     .getCurrentPage()
     .pipe(
       map((page: Page) => {
-        return this.isCmsComponentInPage(OPF_EXPLICIT_T_AND_C_CMS_CPNT, page);
+        return this.isCmsComponentInPage(
+          OPF_EXPLICIT_TERMS_AND_CONDITIONS_COMPONENT,
+          page
+        );
       })
     );
 
