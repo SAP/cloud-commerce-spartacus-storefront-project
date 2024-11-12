@@ -56,7 +56,6 @@ export class CheckoutReviewOverviewComponent implements AfterViewInit {
               this.document?.querySelector('cx-checkout-review-payment'),
               this.document?.querySelector('cx-checkout-review-overview'),
               this.document?.querySelector('cx-checkout-review-shipping'),
-              this.document?.querySelector('cx-pick-up-in-store-items-details'),
             ];
             const parent = els[0]?.parentNode;
             if (parent) {
