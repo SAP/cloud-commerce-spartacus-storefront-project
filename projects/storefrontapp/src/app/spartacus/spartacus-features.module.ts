@@ -387,6 +387,7 @@ if (environment.cpq) {
         a11yCheckoutStepsLandmarks: true,
         a11yQTY2Quantity: true,
         a11yDeleteButton2First: true,
+        a11yTextSpacingAdjustments: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
