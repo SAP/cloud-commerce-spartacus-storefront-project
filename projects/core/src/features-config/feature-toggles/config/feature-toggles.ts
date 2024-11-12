@@ -663,7 +663,7 @@ export interface FeatureTogglesInterface {
   a11yDeleteButton2First?: boolean;
 
   /**
-   * Show label of every `ng-select` and `select`.
+   * In `CustomerListComponent`, `OrderApprovalListComponent`, and `ConfiguratorAttriuteSingleSelectionBundleDropdownComponent`, show label of every `ng-select` and `select`.
    */
   a11yShowLabelOfSelect?: boolean;
 
