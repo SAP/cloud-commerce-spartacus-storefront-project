@@ -804,7 +804,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yFacetKeyboardNavigation: true,
   a11yUnitsListKeyboardControls: true,
   a11yCartItemsLinksStyles: true,
-  a11yStyleExternalLinksAsLinks: true,
+  a11yStyleExternalLinksAsLinks: false,
   a11ySearchboxLabel: false,
   a11yHideSelectBtnForSelectedAddrOrPayment: true,
   a11ySelectLabelWithContextForSelectedAddrOrPayment: false,
