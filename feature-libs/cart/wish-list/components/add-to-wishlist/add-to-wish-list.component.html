@@ -86,6 +86,7 @@
   <ng-container *ngIf="hasStock">
     <a
       class="btn btn-link button-add-link cx-action-link"
+      role="button"
       [routerLink]="{ cxRoute: 'login' } | cxUrl"
     >
       <cx-icon aria-hidden="true" [type]="iconTypes.EMPTY_HEART"></cx-icon>
