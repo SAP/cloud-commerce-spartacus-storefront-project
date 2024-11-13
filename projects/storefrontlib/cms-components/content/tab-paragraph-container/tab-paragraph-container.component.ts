@@ -19,7 +19,13 @@ import {
   WindowRef,
 } from '@spartacus/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { distinctUntilChanged, map, switchMap, tap } from 'rxjs/operators';
+import {
+  distinctUntilChanged,
+  map,
+  startWith,
+  switchMap,
+  tap,
+} from 'rxjs/operators';
 import { ComponentWrapperDirective } from '../../../cms-structure/page/component/component-wrapper.directive';
 import { CmsComponentData } from '../../../cms-structure/page/model/index';
 import { BREAKPOINT } from '../../../layout/config/layout-config';
@@ -144,7 +150,10 @@ export class TabParagraphContainerComponent implements AfterViewInit, OnInit {
     }
 
     // Render the tabs after the templates have completed loading in the view.
-    this.tabs$ = combineLatest([this.components$, this.tabRefs.changes]).pipe(
+    this.tabs$ = combineLatest([
+      this.components$,
+      this.tabRefs.changes.pipe(startWith(this.tabRefs)),
+    ]).pipe(
       map(([components, refs]) =>
         components.map((component, index) => ({
           headerKey: component.title,
