@@ -330,6 +330,13 @@ export interface FeatureTogglesInterface {
   a11yHideSelectBtnForSelectedAddrOrPayment?: boolean;
 
   /**
+   * If enabled, the "Checkout Shipping address/Payment" views
+   * will have a more a11y friendly selected label, including the context
+   * indicating weather the user is on a selected Address or Payment regsion.
+   */
+  a11ySelectLabelWithContextForSelectedAddrOrPayment?: boolean;
+
+  /**
    * Determines whether the controls in the `CarouselComponent` are focusable and accessible from the keyboard.
    */
   a11yFocusableCarouselControls?: boolean;
@@ -469,6 +476,16 @@ export interface FeatureTogglesInterface {
   a11yCarouselArrowKeysNavigation?: boolean;
 
   /**
+   * Use tabs instead of radio group for pickup options. Improves SR narration and keyboard navigation pattern.
+   * Modified components:
+   *  - `PickupOptionsComponent`
+   *  - `PdpPickupOptionsContainerComponent`
+   *  - `CartPickupOptionsContainerComponent`
+   *  - `AddToCartComponent`
+   */
+  a11yPickupOptionsTabs?: boolean;
+
+  /**
    * `AnonymousConsentDialogComponent` - after consent was given/withdrawn the notification
    * will be displayed
    * `ConsentManagementComponent` - improve stability of notifications announcements by VoiceOver
@@ -535,6 +552,12 @@ export interface FeatureTogglesInterface {
   a11yNgSelectOptionsCount?: boolean;
 
   /**
+   * 'NgSelectA11yDirective' will close a dropdown with options on Escape key press
+   * when a screen reader is used.
+   */
+  a11yNgSelectCloseDropdownOnEscape?: boolean;
+
+  /**
    * Removes duplicated error message from 'CancelOrderComponent'.
    */
   a11yRepeatedCancelOrderError?: boolean;
@@ -593,9 +616,14 @@ export interface FeatureTogglesInterface {
   a11ySearchBoxFocusOnEscape?: boolean;
 
   /**
+   * In `AddedToCartDialogComponent`, `Updating cart...` should no longer read by a screen reader.
+   */
+  a11yUpdatingCartNoNarration?: boolean;
+
+  /**
    * Stops the inputs value from obstructing the 'PasswordVisibilityToggleComponent'.
    */
-  a11yPasswordVisibliltyBtnValueOverflow?: boolean;
+  a11yPasswordVisibilityBtnValueOverflow?: boolean;
 
   /**
    * In `ItemCounterComponenet`, Remove button no longer lose focus after activating when count is 2.
@@ -623,6 +651,16 @@ export interface FeatureTogglesInterface {
    * In `CartItemListComponent`, change QTY into Quantity.
    */
   a11yQTY2Quantity?: boolean;
+
+  /**
+   * Changes the success message of successful registration to be more informative. Affects `RegisterComponentService`.
+   */
+  a11yPostRegisterSuccessMessage?: boolean;
+
+  /**
+   * In `CardComponent`, place `Delete` button before `Cancel` button.
+   */
+  a11yDeleteButton2First?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -750,35 +788,37 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yStoreFinderOverflow: true,
   a11yMobileFocusOnFirstNavigationItem: false,
   a11yCartSummaryHeadingOrder: true,
-  a11ySearchBoxMobileFocus: false,
-  a11yFacetKeyboardNavigation: false,
+  a11ySearchBoxMobileFocus: true,
+  a11yFacetKeyboardNavigation: true,
   a11yUnitsListKeyboardControls: true,
   a11yCartItemsLinksStyles: true,
   a11ySearchboxLabel: false,
-  a11yHideSelectBtnForSelectedAddrOrPayment: false,
+  a11yHideSelectBtnForSelectedAddrOrPayment: true,
+  a11ySelectLabelWithContextForSelectedAddrOrPayment: false,
   a11yFocusableCarouselControls: true,
   a11yUseTrapTabInsteadOfTrapInDialogs: false,
-  cmsGuardsServiceUseGuardsComposer: false,
+  cmsGuardsServiceUseGuardsComposer: true,
   cartQuickOrderRemoveListeningToFailEvent: true,
   a11yKeyboardAccessibleZoom: false,
   a11yOrganizationLinkableCells: false,
-  a11yVisibleFocusOverflows: false,
-  a11yTruncatedTextForResponsiveView: false,
+  a11yVisibleFocusOverflows: true,
+  a11yTruncatedTextForResponsiveView: true,
   a11ySemanticPaginationLabel: false,
   a11yPreventCartItemsFormRedundantRecreation: false,
   a11yPreventSRFocusOnHiddenElements: false,
-  a11yMyAccountLinkOutline: false,
-  a11yCloseProductImageBtnFocus: false,
+  a11yMyAccountLinkOutline: true,
+  a11yCloseProductImageBtnFocus: true,
   a11yNotificationPreferenceFieldset: false,
   a11yImproveContrast: false,
-  a11yEmptyWishlistHeading: false,
+  a11yEmptyWishlistHeading: true,
   a11yScreenReaderBloatFix: false,
-  a11yUseButtonsForBtnLinks: false,
+  a11yUseButtonsForBtnLinks: true,
   a11yTabComponent: false,
   a11yCarouselArrowKeysNavigation: false,
+  a11yPickupOptionsTabs: false,
   a11yNotificationsOnConsentChange: false,
   a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields: false,
-  a11yFacetsDialogFocusHandling: false,
+  a11yFacetsDialogFocusHandling: true,
   headerLayoutForSmallerViewports: false,
   a11yStoreFinderAlerts: false,
   a11yFormErrorMuteIcon: false,
@@ -787,6 +827,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yRepeatedPageTitleFix: false,
   a11yDeliveryModeRadiogroup: false,
   a11yNgSelectOptionsCount: false,
+  a11yNgSelectCloseDropdownOnEscape: false,
   a11yRepeatedCancelOrderError: false,
   a11yAddedToCartActiveDialog: false,
   a11yNgSelectMobileReadout: false,
@@ -798,12 +839,15 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yDialogTriggerRefocus: false,
   a11yAddToWishlistFocus: false,
   a11ySearchBoxFocusOnEscape: false,
-  a11yPasswordVisibliltyBtnValueOverflow: false,
+  a11yUpdatingCartNoNarration: false,
+  a11yPasswordVisibilityBtnValueOverflow: false,
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
+  a11yPostRegisterSuccessMessage: false,
+  a11yDeleteButton2First: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
