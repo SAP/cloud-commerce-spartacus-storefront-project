@@ -25,6 +25,13 @@ export class CheckoutReviewOverviewComponent implements AfterViewInit {
   protected translationService = inject(TranslationService, { optional: true });
   private featureService = inject(FeatureConfigService, { optional: true });
 
+  // These are the components that we need to wrap with section element.
+  protected readonly CHECKOUT_COMPONENTS = [
+    'cx-checkout-review-payment',
+    'cx-checkout-review-overview',
+    'cx-checkout-review-shipping',
+  ];
+
   constructor(protected activeCartFacade: ActiveCartFacade) {}
 
   ngAfterViewInit(): void {
@@ -38,6 +45,10 @@ export class CheckoutReviewOverviewComponent implements AfterViewInit {
   /**
    * Wraps checkout review components with section element required
    * for applying correct a11y practices.
+   *
+   * Note: We need to do it this way because there is no single parent component
+   * template we can use to wrap all related components because the layout is
+   * CMS-driven (ie. by page slot).
    */
   protected wrapComponentsWithSectionEl() {
     if (
@@ -50,18 +61,16 @@ export class CheckoutReviewOverviewComponent implements AfterViewInit {
         .pipe(take(1))
         .subscribe((label) => {
           // We need to delay for a tick to let components render before querying.
-          setTimeout(() => {
-            // These are the components that we need to wrap.
-            const els: any[] = [
-              this.document?.querySelector('cx-checkout-review-payment'),
-              this.document?.querySelector('cx-checkout-review-overview'),
-              this.document?.querySelector('cx-checkout-review-shipping'),
-            ];
+          requestAnimationFrame(() => {
+            // Wrap checkout components with section selector.
+            const els = this.CHECKOUT_COMPONENTS.map((selector) =>
+              this.document?.querySelector(selector)
+            );
             const parent = els[0]?.parentNode;
-            if (parent) {
-              const section: any = this.document?.createElement('section');
+            const section = this.document?.createElement('section');
+            if (parent && section) {
               section.ariaLabel = label;
-              parent.replaceChild(section, els[0]);
+              parent.replaceChild(section, <Node>els[0]);
               els.forEach((el: any) => section.appendChild(el));
             }
           });
