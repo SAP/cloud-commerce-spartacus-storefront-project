@@ -41,6 +41,17 @@ export class OpfCheckoutPaymentAndReviewComponent
   extends CheckoutReviewSubmitComponent
   implements OnInit
 {
+  protected fb = inject(UntypedFormBuilder);
+  protected checkoutDeliveryAddressFacade = inject(
+    CheckoutDeliveryAddressFacade
+  );
+  protected checkoutPaymentFacade = inject(CheckoutPaymentFacade);
+  protected activeCartFacade = inject(ActiveCartFacade);
+  protected translationService = inject(TranslationService);
+  protected checkoutStepService = inject(CheckoutStepService);
+  protected checkoutDeliveryModesFacade = inject(CheckoutDeliveryModesFacade);
+  protected opfMetadataStoreService = inject(OpfMetadataStoreService);
+
   protected defaultTermsAndConditionsFieldValue = false;
   protected cmsService = inject(CmsService);
 
@@ -76,23 +87,14 @@ export class OpfCheckoutPaymentAndReviewComponent
       .pipe(map((cart: Cart) => cart.paymentType));
   }
 
-  constructor(
-    protected fb: UntypedFormBuilder,
-    protected checkoutDeliveryAddressFacade: CheckoutDeliveryAddressFacade,
-    protected checkoutPaymentFacade: CheckoutPaymentFacade,
-    protected activeCartFacade: ActiveCartFacade,
-    protected translationService: TranslationService,
-    protected checkoutStepService: CheckoutStepService,
-    protected checkoutDeliveryModesFacade: CheckoutDeliveryModesFacade,
-    protected opfMetadataStoreService: OpfMetadataStoreService
-  ) {
+  constructor() {
     super(
-      checkoutDeliveryAddressFacade,
-      checkoutPaymentFacade,
-      activeCartFacade,
-      translationService,
-      checkoutStepService,
-      checkoutDeliveryModesFacade
+      this.checkoutDeliveryAddressFacade,
+      this.checkoutPaymentFacade,
+      this.activeCartFacade,
+      this.translationService,
+      this.checkoutStepService,
+      this.checkoutDeliveryModesFacade
     );
   }
 
