@@ -11,3 +11,4 @@ export * from './opf-api-endpoints.model';
 export * from './opf-base.model';
 export * from './opf-error-dialog.model';
 export * from './opf-metadata-store.model';
+export * from './opf-order.model';
