@@ -392,6 +392,7 @@ if (environment.cpq) {
         a11yPostRegisterSuccessMessage: true,
         a11yDeleteButton2First: true,
         a11yTextSpacingAdjustments: true,
+        a11yTableHeaderReadout: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
