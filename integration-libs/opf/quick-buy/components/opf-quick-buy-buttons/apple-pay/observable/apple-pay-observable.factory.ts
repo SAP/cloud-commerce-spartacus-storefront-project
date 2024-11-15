@@ -43,7 +43,7 @@ export class ApplePayObservableFactory {
         ApplePayEvent.VALIDATE_MERCHANT,
         (event: Event) => {
           config
-            .validateMerchant(<any>event)
+            .onValidateMerchant(<any>event)
             .pipe(take(1))
             .subscribe({
               next: (merchantSession) => {
@@ -58,12 +58,12 @@ export class ApplePayObservableFactory {
         observer.error({ type: OpfPaymentErrorType.PAYMENT_CANCELLED });
       });
 
-      if (config.paymentMethodSelected) {
+      if (config.onPaymentMethodSelected) {
         session.addEventListener(
           ApplePayEvent.PAYMENT_METHOD_SELECTED,
           (event: Event) => {
             config
-              .paymentMethodSelected(<any>event)
+              .onPaymentMethodSelected(<any>event)
               .pipe(take(1))
               .subscribe({
                 next: (paymentMethodUpdate) => {
@@ -76,14 +76,14 @@ export class ApplePayObservableFactory {
       }
 
       if (
-        config.shippingContactSelected &&
+        config.onShippingContactSelected &&
         this.isShippingTypeNotPickup(config)
       ) {
         session.addEventListener(
           ApplePayEvent.SHIPPING_CONTACT_SELECTED,
           (event: Event) => {
             config
-              .shippingContactSelected(<any>event)
+              .onShippingContactSelected(<any>event)
               .pipe(take(1))
               .subscribe({
                 next: (shippingContactUpdate) => {
@@ -98,14 +98,14 @@ export class ApplePayObservableFactory {
       }
 
       if (
-        config.shippingMethodSelected &&
+        config.onShippingMethodSelected &&
         this.isShippingTypeNotPickup(config)
       ) {
         session.addEventListener(
           ApplePayEvent.SHIPPING_METHOD_SELECTED,
           (event: Event) => {
             config
-              .shippingMethodSelected(<any>event)
+              .onShippingMethodSelected(<any>event)
               .pipe(take(1))
               .subscribe({
                 next: (shippingMethodUpdate) => {
@@ -121,7 +121,7 @@ export class ApplePayObservableFactory {
         ApplePayEvent.PAYMENT_AUTHORIZED,
         (event: Event) => {
           config
-            .paymentAuthorized(<any>event)
+            .onPaymentAuthorized(<any>event)
             .pipe(take(1))
             .subscribe({
               next: (authResult) => {
