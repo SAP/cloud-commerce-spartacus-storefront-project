@@ -66,8 +66,11 @@ export class AddToCartComponent implements OnInit, OnDestroy {
   @ViewChild('addToCartDialogTriggerEl') addToCartDialogTriggerEl: ElementRef;
 
   maxQuantity: number;
+  
   sapUnit: string;
 
+  disabled: boolean = false;
+  
   hasStock: boolean = false;
   inventoryThreshold: boolean = false;
 
@@ -76,7 +79,7 @@ export class AddToCartComponent implements OnInit, OnDestroy {
 
   quantity = 1;
 
-  subscription: Subscription;
+  subscription = new Subscription();
 
   addToCartForm = new UntypedFormGroup({
     quantity: new UntypedFormControl(1, { updateOn: 'blur' }),
@@ -137,17 +140,19 @@ export class AddToCartComponent implements OnInit, OnDestroy {
       } else if (this.featureToggles.showRealTimeStockInPDP) {
         productObservable$ = this.currentProductService.getProduct([
           ProductScope.UNIT,
+          ProductScope.DETAILS
         ]);
       } else {
         productObservable$ = this.currentProductService.getProduct();
       }
-      this.subscription = productObservable$
+      this.subscription.add(productObservable$
         .pipe(filter(isNotNullable))
         .subscribe((product) => {
           this.productCode = product.code ?? '';
           this.sapUnit = product.sapUnit?.sapCode ?? '';
           this.setStockInfo(product);
-        });
+        })
+      );
     }
   }
 
@@ -260,9 +265,25 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     return newEvent;
   }
 
-  ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
+  onPickupOptionsCompLoaded() {
+    if (this.featureConfigService.isEnabled('a11yPickupOptionsTabs')) {
+      this.subscription.add(
+        this.pickupOptionCompRef.instance.intendedPickupChange.subscribe(
+          (
+            intendedPickupLocation:
+              | { pickupOption?: 'pickup' | 'delivery'; displayName?: string }
+              | undefined
+          ) => {
+            this.disabled =
+              intendedPickupLocation?.pickupOption === 'pickup' &&
+              !intendedPickupLocation.displayName;
+          }
+        )
+      );
     }
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
