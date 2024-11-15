@@ -52,14 +52,14 @@ export class OpfCheckoutBillingAddressFormService {
     OpfCheckoutPaymentWrapperService
   );
 
-  protected readonly billingAddressSub = new BehaviorSubject<
+  protected readonly _$billingAddressSub = new BehaviorSubject<
     Address | undefined
   >(undefined);
   protected readonly _$isLoadingAddress = new BehaviorSubject(false);
   protected readonly _$isSameAsDelivery = new BehaviorSubject(true);
   protected billingAddressId: string | undefined;
 
-  billingAddress$ = this.billingAddressSub.asObservable();
+  billingAddress$ = this._$billingAddressSub.asObservable();
   isLoadingAddress$ = this._$isLoadingAddress.asObservable();
   isSameAsDelivery$ = this._$isSameAsDelivery.asObservable();
 
@@ -87,12 +87,12 @@ export class OpfCheckoutBillingAddressFormService {
         ]) => {
           if (!paymentAddress && !!deliveryAddress) {
             this.setBillingAddress(deliveryAddress);
-            this.billingAddressSub.next(deliveryAddress);
+            this._$billingAddressSub.next(deliveryAddress);
           }
 
           if (!!paymentAddress && !!deliveryAddress) {
             this.billingAddressId = paymentAddress.id;
-            this.billingAddressSub.next(paymentAddress);
+            this._$billingAddressSub.next(paymentAddress);
             this._$isSameAsDelivery.next(false);
           }
 
@@ -136,7 +136,7 @@ export class OpfCheckoutBillingAddressFormService {
           if (!!billingAddress && !!billingAddress.id) {
             this.billingAddressId = billingAddress.id;
 
-            this.billingAddressSub.next(billingAddress);
+            this._$billingAddressSub.next(billingAddress);
             this.opfCheckoutPaymentWrapperService.reloadPaymentMode();
           }
         }),
@@ -152,10 +152,6 @@ export class OpfCheckoutBillingAddressFormService {
         }),
         take(1)
       );
-  }
-
-  get billingAddressValue(): Address | undefined {
-    return this.billingAddressSub.value;
   }
 
   get isSameAsDeliveryValue(): boolean {

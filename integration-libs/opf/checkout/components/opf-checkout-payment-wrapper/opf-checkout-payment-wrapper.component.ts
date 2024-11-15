@@ -48,11 +48,11 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
 
   sub: Subscription = new Subscription();
 
-  renderHtml(html: string): SafeHtml {
+  bypassSecurityTrustHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
-  renderUrl(url: string): SafeResourceUrl {
+  bypassSecurityTrustResourceUrl(url: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
