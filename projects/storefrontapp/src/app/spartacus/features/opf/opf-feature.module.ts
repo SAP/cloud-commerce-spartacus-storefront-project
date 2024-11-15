@@ -26,7 +26,6 @@ import {
   opfPaymentTranslations,
 } from '@spartacus/opf/payment/assets';
 
-import { OpfOccOrderNormalizer } from '@spartacus/opf/base/core';
 import { OPF_CTA_FEATURE, OpfCtaRootModule } from '@spartacus/opf/cta/root';
 import {
   OPF_GLOBAL_FUNCTIONS_FEATURE,
@@ -40,7 +39,6 @@ import {
   OPF_QUICK_BUY_FEATURE,
   OpfQuickBuyRootModule,
 } from '@spartacus/opf/quick-buy/root';
-import { ORDER_NORMALIZER } from '@spartacus/order/root';
 import { environment } from '../../../../environments/environment';
 
 const extensionProviders: Provider[] = [];
@@ -60,11 +58,6 @@ if (environment.b2b) {
     OpfQuickBuyRootModule,
   ],
   providers: [
-    {
-      provide: ORDER_NORMALIZER,
-      useExisting: OpfOccOrderNormalizer,
-      multi: true,
-    },
     provideConfig({
       featureModules: {
         [OPF_BASE_FEATURE]: {
