@@ -5,7 +5,7 @@
  */
 
 import { DOCUMENT, isPlatformServer } from '@angular/common';
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { ScriptLoader } from '@spartacus/core';
 
 import {
@@ -16,13 +16,10 @@ import {
 @Injectable({
   providedIn: 'root',
 })
-export class OpfResourceLoaderService extends ScriptLoader {
-  constructor(
-    @Inject(DOCUMENT) protected document: any,
-    @Inject(PLATFORM_ID) protected platformId: Object
-  ) {
-    super(document, platformId);
-  }
+export class OpfResourceLoaderService {
+  protected scriptLoader = inject(ScriptLoader);
+  protected document = inject(DOCUMENT);
+  protected platformId = inject(PLATFORM_ID);
 
   protected readonly OPF_RESOURCE_ATTRIBUTE_KEY = 'data-opf-resource';
 
@@ -54,10 +51,6 @@ export class OpfResourceLoaderService extends ScriptLoader {
 
   protected hasStyles(src?: string): boolean {
     return !!this.document.querySelector(`link[href="${src}"]`);
-  }
-
-  protected hasScript(src?: string): boolean {
-    return super.hasScript(src);
   }
 
   protected handleLoadingResourceError(
@@ -97,8 +90,8 @@ export class OpfResourceLoaderService extends ScriptLoader {
       });
     }
 
-    if (resource.url && !this.hasScript(resource.url)) {
-      super.embedScript({
+    if (resource.url && !this.scriptLoader.hasScript(resource.url)) {
+      this.scriptLoader.embedScript({
         src: resource.url,
         attributes: attributes,
         callback: () => {

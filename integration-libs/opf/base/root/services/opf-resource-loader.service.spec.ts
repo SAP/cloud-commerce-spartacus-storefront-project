@@ -41,11 +41,6 @@ describe('OpfResourceLoaderService', () => {
     expect(opfResourceLoaderService).toBeTruthy();
   });
 
-  it('should create OpfResourceLoaderService instance', () => {
-    opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
-    expect(opfResourceLoaderService instanceof ScriptLoader).toBe(true);
-  });
-
   describe('loadProviderResources', () => {
     beforeEach(() => {
       opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
@@ -297,7 +292,8 @@ describe('OpfResourceLoaderService', () => {
         type: OpfDynamicScriptResourceType.SCRIPT,
       };
 
-      spyOn<any>(opfResourceLoaderService, 'embedScript').and.callThrough();
+      const scriptLoader = TestBed.inject(ScriptLoader);
+      spyOn<any>(scriptLoader, 'embedScript').and.callThrough();
       spyOn<any>(
         opfResourceLoaderService,
         'markResourceAsLoaded'
@@ -308,7 +304,7 @@ describe('OpfResourceLoaderService', () => {
 
       opfResourceLoaderService.loadProviderResources([mockScriptResource]);
 
-      expect(opfResourceLoaderService['embedScript']).not.toHaveBeenCalled();
+      expect(scriptLoader.embedScript).not.toHaveBeenCalled();
       expect(
         opfResourceLoaderService['markResourceAsLoaded']
       ).toHaveBeenCalled();
