@@ -6,9 +6,9 @@
 
 import { NgModule, Type } from '@angular/core';
 import { OmfOrderModule } from '@spartacus/omf/order';
+import { OpfOrderModule } from '@spartacus/opf/order';
 import { OrderModule } from '@spartacus/order';
 import { S4ServiceOrderModule } from '@spartacus/s4-service/order';
-import { OpfOrderModule } from 'integration-libs/opf/order/opf-order.module';
 import { environment } from '../../../../environments/environment';
 
 const extensions: Type<any>[] = [];
