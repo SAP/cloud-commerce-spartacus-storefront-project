@@ -430,7 +430,7 @@ describe('OpfCheckoutPaymentWrapperService', () => {
 
     activeCartServiceMock.getActiveCartId.and.returnValue(of(mockActiveCartId));
 
-    const config = service['setPaymentInitiationConfig'](
+    const config = service['getPaymentInitiationConfig'](
       mockOtpKey,
       mockPaymentOptionId
     );
