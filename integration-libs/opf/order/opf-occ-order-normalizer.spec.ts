@@ -1,9 +1,15 @@
+/*
+ * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import { TestBed } from '@angular/core/testing';
 import { Order } from '@spartacus/order/root';
 import { OpfOccOrder } from './model';
 import { OpfOccOrderNormalizer } from './opf-occ-order-normalizer';
 
-fdescribe('OpfOccOrderNormalizer', () => {
+describe('OpfOccOrderNormalizer', () => {
   let normalizer: OpfOccOrderNormalizer;
 
   beforeEach(() => {
