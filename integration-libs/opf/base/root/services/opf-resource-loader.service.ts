@@ -128,7 +128,7 @@ export class OpfResourceLoaderService extends ScriptLoader {
     if (resource.url && !this.hasStyles(resource.url)) {
       this.embedStyles({
         src: resource.url,
-        sri: resource.sri,
+        sri: resource?.sri,
         callback: () => this.markResourceAsLoaded(resource, resources, resolve),
         errorCallback: () => {
           this.handleLoadingResourceError(resolve);
