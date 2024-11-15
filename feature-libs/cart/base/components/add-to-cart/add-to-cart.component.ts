@@ -165,13 +165,13 @@ export class AddToCartComponent implements OnInit, OnDestroy {
       this.showQuantity = false;
     }
 
-    if (this.featureToggles.showRealTimeStockInPDP) {
+    if (this.featureToggles.showRealTimeStockInPDP && this.sapUnit) {
       this.currentProductService
         .getRealTimeStock(this.productCode, this.sapUnit)
         .pipe(take(1))
         .subscribe(({ quantity, status }) => {
           this.maxQuantity = Number(quantity);
-          this.hasStock = Boolean(status && status !== 'outOfStock');
+          this.hasStock = Boolean(status && status !== 'OUT_OF_STOCK');
           this.cd.markForCheck();
         });
     } else {

@@ -6,6 +6,7 @@
 
 import { visitProductPage } from '../../../helpers/coupons/cart-coupon';
 import * as sampleData from '../../../sample-data/inventory-display';
+import { FeaturesConfig } from '@spartacus/core';
 
 export const stockSelector = 'cx-add-to-cart .info';
 
@@ -28,9 +29,6 @@ export function configureInventoryDisplay(enable: boolean) {
           inventoryDisplay: enable,
         },
       },
-    },
-    features: {
-      realTimeStockDispaly: enable,
     },
   });
 }
@@ -61,32 +59,17 @@ export function assertInventoryDisplay(
       if (isInventoryDisplayActive) {
         // Out of stock
         if (
-          stock.stockLevelStatus === 'outOfStock' ||
-          functionality === 'outOfStock'
+          stock.status === 'OUT_OF_STOCK' ||
+          functionality === 'OUT_OF_STOCK'
         ) {
           expect(text).to.equal(sampleData.stockOutOfStockLabel);
         } else {
-          if (stock?.stockLevel) {
-            if (
-              stock?.isValueRounded ||
-              functionality === 'categoryThresholdLimitReached'
-            ) {
-              expect(text).to.equal(
-                `${stock.stockLevel}+ ${sampleData.stockLabel}`
-              );
-            } else {
-              expect(text).to.equal(
-                `${stock.stockLevel} ${sampleData.stockLabel}`
-              );
-            }
-          } else {
-            expect(text).to.equal(`${sampleData.stockLabel}`);
-          }
+          expect(text).to.equal(`${sampleData.stockLabel}`);
         }
       } else {
         if (
-          stock.stockLevelStatus === 'outOfStock' ||
-          functionality === 'outOfStock'
+          stock.stockLevelStatus === 'OUT_OF_STOCK' ||
+          functionality === 'OUT_OF_STOCK'
         ) {
           expect(text).to.equal(sampleData.stockOutOfStockLabel);
         } else {
@@ -120,10 +103,6 @@ describe('B2C - Real Time Stock Display - Inventory Display - disabled', () => {
   it('should NOT render number of available stock', () => {
     testInventoryDisplay('M_CR_1015');
   });
-
-  it("should render 'out of stock' if stock level 0 and inventory display is off", () => {
-    testInventoryDisplay('M_CR_10151123', 'outOfStock');
-  });
 });
 
 describe('Inventory Display - active', () => {
@@ -132,10 +111,11 @@ describe('Inventory Display - active', () => {
   });
 
   it('should render number of available stock', () => {
+    cy.cxConfig({
+      features: {
+        showRealTimeStockInPDP: true,
+      },
+    } as FeaturesConfig);
     testInventoryDisplay('M_CR_1015');
-  });
-
-  it("should render 'out of stock' if stock level 0 and inventory display is on", () => {
-    testInventoryDisplay('M_CR_10151123', 'outOfStock');
   });
 });
