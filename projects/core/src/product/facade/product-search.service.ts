@@ -17,8 +17,8 @@ import { ProductSelectors } from '../store/selectors/index';
   providedIn: 'root',
 })
 export class ProductSearchService {
-  constructor(protected store: Store<StateWithProduct>) {}
-
+  constructor(protected store: Store<StateWithProduct>) {
+  }
   search(query: string | undefined, searchConfig?: SearchConfig): void {
     if (query) {
       this.store.dispatch(

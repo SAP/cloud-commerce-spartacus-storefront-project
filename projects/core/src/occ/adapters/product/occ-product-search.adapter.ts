@@ -97,6 +97,14 @@ export class OccProductSearchAdapter implements ProductSearchAdapter {
     );
   }
 
+  searchByCategory(category: string, scope?: string): Observable<{ products: Product[] }> {
+    return this.search(`brand:${category}`,{}, scope).pipe(
+      map((productSearchPage) => ({
+        products: productSearchPage?.products ?? [],
+      }))
+    );;
+  }
+
   loadSuggestions(
     term: string,
     pageSize: number = 3
@@ -110,7 +118,16 @@ export class OccProductSearchAdapter implements ProductSearchAdapter {
         this.converter.pipeableMany(PRODUCT_SUGGESTION_NORMALIZER)
       );
   }
-
+  protected getSearchByCategoryEndpoint(
+    query: string,
+    searchConfig: SearchConfig,
+    scope?: string
+  ): string {
+    return this.occEndpoints.buildUrl('productSearchByCategory', {
+      queryParams: { query, ...searchConfig },
+      scope,
+    });
+  }
   protected getSearchEndpoint(
     query: string,
     searchConfig: SearchConfig,

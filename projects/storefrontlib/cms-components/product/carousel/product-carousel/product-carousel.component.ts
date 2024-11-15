@@ -12,8 +12,9 @@ import {
   ProductScope,
   ProductService,
   ProductSearchByCodeService,
+  ProductSearchByCategoryService
 } from '@spartacus/core';
-import { Observable } from 'rxjs';
+import {Observable, tap} from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { CmsComponentData } from '../../../../cms-structure/page/model/cms-component-data';
 
@@ -28,6 +29,7 @@ export class ProductCarouselComponent {
   protected productSearchByCodeService: ProductSearchByCodeService = inject(
     ProductSearchByCodeService
   );
+  protected productSearchByCategoryService: ProductSearchByCategoryService = inject(ProductSearchByCategoryService);
   protected readonly PRODUCT_SCOPE = [ProductScope.LIST, ProductScope.STOCK];
 
   protected readonly PRODUCT_SCOPE_ITEM = [ProductScope.LIST_ITEM];
@@ -52,6 +54,11 @@ export class ProductCarouselComponent {
    */
   items$: Observable<Observable<Product | undefined>[]> =
     this.componentData$.pipe(
+      tap((data) => {
+        if (data.categoryCodes) {
+this.productSearchByCategoryService.get({categoryCode: data.categoryCodes}).subscribe(console.log)
+        }
+      }),
       map((data) => {
         const componentMappingExist = !!data.composition?.inner?.length;
         const codes = data.productCodes?.trim().split(' ') ?? [];
