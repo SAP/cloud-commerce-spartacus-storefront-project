@@ -7,7 +7,7 @@ import {
   GlobalFunctionsInput,
   OpfGlobalFunctionsFacade,
 } from '@spartacus/opf/global-functions/root';
-import { PaymentPattern } from '@spartacus/opf/payment/root';
+import { OpfPaymentRenderPattern } from '@spartacus/opf/payment/root';
 import { of } from 'rxjs';
 import { OpfCheckoutPaymentWrapperComponent } from './opf-checkout-payment-wrapper.component';
 import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper.service';
@@ -58,18 +58,18 @@ describe('OpfCheckoutPaymentWrapperComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should renderHtml call bypassSecurityTrustHtml', () => {
+  it('should bypassSecurityTrustHtml call bypassSecurityTrustHtml', () => {
     const html = '<script>console.log("script");</script>';
     spyOn(domSanitizer, 'bypassSecurityTrustHtml').and.stub();
-    component.renderHtml(html);
+    component.bypassSecurityTrustHtml(html);
 
     expect(domSanitizer.bypassSecurityTrustHtml).toHaveBeenCalledWith(html);
   });
 
-  it('should renderUrl call bypassSecurityTrustResourceUrl', () => {
+  it('should bypassSecurityTrustResourceUrl call bypassSecurityTrustResourceUrl', () => {
     const url = 'https://sap.com';
     spyOn(domSanitizer, 'bypassSecurityTrustResourceUrl').and.stub();
-    component.renderUrl(url);
+    component.bypassSecurityTrustResourceUrl(url);
 
     expect(domSanitizer.bypassSecurityTrustResourceUrl).toHaveBeenCalledWith(
       url
@@ -79,7 +79,7 @@ describe('OpfCheckoutPaymentWrapperComponent', () => {
   it('should call initiatePayment on ngOnInit', () => {
     const mockPaymentSessionData = {
       paymentSessionId: 'session123',
-      pattern: PaymentPattern.HOSTED_FIELDS,
+      pattern: OpfPaymentRenderPattern.HOSTED_FIELDS,
     };
 
     mockService.initiatePayment.and.returnValue(of(mockPaymentSessionData));
@@ -101,7 +101,7 @@ describe('OpfCheckoutPaymentWrapperComponent', () => {
   it('should call removeGlobalFunctions if paymentSessionData is not HOSTED_FIELDS', () => {
     const mockPaymentSessionData = {
       paymentSessionId: 'session123',
-      pattern: PaymentPattern.FULL_PAGE,
+      pattern: OpfPaymentRenderPattern.FULL_PAGE,
     };
 
     mockService.initiatePayment.and.returnValue(of(mockPaymentSessionData));

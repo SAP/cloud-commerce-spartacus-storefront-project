@@ -10,6 +10,7 @@ import {
   Input,
   OnDestroy,
   OnInit,
+  inject,
 } from '@angular/core';
 import {
   GlobalMessageService,
@@ -17,7 +18,7 @@ import {
   QueryState,
 } from '@spartacus/core';
 import {
-  ActiveConfiguration,
+  OpfActiveConfiguration,
   OpfBaseFacade,
   OpfMetadataModel,
   OpfMetadataStoreService,
@@ -31,12 +32,16 @@ import { tap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
+  protected opfBaseService = inject(OpfBaseFacade);
+  protected opfMetadataStoreService = inject(OpfMetadataStoreService);
+  protected globalMessageService = inject(GlobalMessageService);
+
   protected subscription = new Subscription();
 
   activeConfigurations$ = this.opfBaseService
     .getActiveConfigurationsState()
     .pipe(
-      tap((state: QueryState<ActiveConfiguration[] | undefined>) => {
+      tap((state: QueryState<OpfActiveConfiguration[] | undefined>) => {
         if (state.error) {
           this.displayError('loadActiveConfigurations');
         } else if (!state.loading && !Boolean(state.data?.length)) {
@@ -58,12 +63,6 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   explicitTermsAndConditions: boolean | null | undefined;
 
   selectedPaymentId?: number;
-
-  constructor(
-    protected opfBaseService: OpfBaseFacade,
-    protected opfMetadataStoreService: OpfMetadataStoreService,
-    protected globalMessageService: GlobalMessageService
-  ) {}
 
   /**
    * Method pre-selects (based on terms and conditions state)
@@ -105,7 +104,7 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
     );
   }
 
-  changePayment(payment: ActiveConfiguration): void {
+  changePayment(payment: OpfActiveConfiguration): void {
     this.selectedPaymentId = payment.id;
     this.opfMetadataStoreService.updateOpfMetadata({
       selectedPaymentOptionId: this.selectedPaymentId,

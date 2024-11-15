@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
   ActiveCartFacade,
   CartAccessCodeFacade,
@@ -28,9 +28,9 @@ import {
 import { OPF_PAYMENT_AND_REVIEW_SEMANTIC_ROUTE } from '@spartacus/opf/checkout/root';
 import {
   OpfPaymentFacade,
-  OpfRenderPaymentMethodEvent,
-  PaymentPattern,
-  PaymentSessionData,
+  OpfPaymentRenderMethodEvent,
+  OpfPaymentRenderPattern,
+  OpfPaymentSessionData,
 } from '@spartacus/opf/payment/root';
 import { OrderFacade } from '@spartacus/order/root';
 import {
@@ -44,27 +44,25 @@ import { catchError, filter, map, switchMap, take, tap } from 'rxjs/operators';
 
 @Injectable()
 export class OpfCheckoutPaymentWrapperService {
+  protected opfPaymentFacade = inject(OpfPaymentFacade);
+  protected opfResourceLoaderService = inject(OpfResourceLoaderService);
+  protected userIdService = inject(UserIdService);
+  protected activeCartService = inject(ActiveCartFacade);
+  protected routingService = inject(RoutingService);
+  protected globalMessageService = inject(GlobalMessageService);
+  protected orderFacade = inject(OrderFacade);
+  protected opfMetadataStoreService = inject(OpfMetadataStoreService);
+  protected cartAccessCodeFacade = inject(CartAccessCodeFacade);
+
   protected lastPaymentOptionId?: number;
 
   protected activeCartId?: string;
 
   protected renderPaymentMethodEvent$ =
-    new BehaviorSubject<OpfRenderPaymentMethodEvent>({
+    new BehaviorSubject<OpfPaymentRenderMethodEvent>({
       isLoading: false,
       isError: false,
     });
-
-  constructor(
-    protected opfPaymentFacade: OpfPaymentFacade,
-    protected opfResourceLoaderService: OpfResourceLoaderService,
-    protected userIdService: UserIdService,
-    protected activeCartService: ActiveCartFacade,
-    protected routingService: RoutingService,
-    protected globalMessageService: GlobalMessageService,
-    protected orderFacade: OrderFacade,
-    protected opfMetadataStoreService: OpfMetadataStoreService,
-    protected cartAccessCodeFacade: CartAccessCodeFacade
-  ) {}
 
   protected executeScriptFromHtml(html: string): void {
     /**
@@ -87,13 +85,13 @@ export class OpfCheckoutPaymentWrapperService {
       });
   }
 
-  getRenderPaymentMethodEvent(): Observable<OpfRenderPaymentMethodEvent> {
+  getRenderPaymentMethodEvent(): Observable<OpfPaymentRenderMethodEvent> {
     return this.renderPaymentMethodEvent$.asObservable();
   }
 
   initiatePayment(
     paymentOptionId: number
-  ): Observable<PaymentSessionData | Error> {
+  ): Observable<OpfPaymentSessionData | Error> {
     this.lastPaymentOptionId = paymentOptionId;
     this.renderPaymentMethodEvent$.next({
       isLoading: true,
@@ -119,7 +117,7 @@ export class OpfCheckoutPaymentWrapperService {
         this.setPaymentInitiationConfig(otpKey, paymentOptionId)
       ),
       switchMap((params) => this.opfPaymentFacade.initiatePayment(params)),
-      tap((paymentOptionConfig: PaymentSessionData | Error) => {
+      tap((paymentOptionConfig: OpfPaymentSessionData | Error) => {
         if (!(paymentOptionConfig instanceof Error)) {
           this.storePaymentSessionId(paymentOptionConfig);
           this.renderPaymentGateway(paymentOptionConfig);
@@ -138,9 +136,9 @@ export class OpfCheckoutPaymentWrapperService {
     );
   }
 
-  protected storePaymentSessionId(paymentOptionConfig: PaymentSessionData) {
+  protected storePaymentSessionId(paymentOptionConfig: OpfPaymentSessionData) {
     const paymentSessionId =
-      paymentOptionConfig.pattern === PaymentPattern.FULL_PAGE &&
+      paymentOptionConfig.pattern === OpfPaymentRenderPattern.FULL_PAGE &&
       paymentOptionConfig.paymentSessionId
         ? paymentOptionConfig.paymentSessionId
         : undefined;
@@ -153,7 +151,7 @@ export class OpfCheckoutPaymentWrapperService {
     }
   }
 
-  renderPaymentGateway(config: PaymentSessionData) {
+  renderPaymentGateway(config: OpfPaymentSessionData) {
     if (config?.destination) {
       this.renderPaymentMethodEvent$.next({
         isLoading: false,
@@ -165,11 +163,7 @@ export class OpfCheckoutPaymentWrapperService {
       return;
     }
 
-    if (
-      config?.dynamicScript &&
-      (config?.pattern === PaymentPattern.HOSTED_FIELDS ||
-        config?.pattern === PaymentPattern.FULL_PAGE)
-    ) {
+    if (config?.dynamicScript) {
       const html = config?.dynamicScript?.html;
 
       this.opfResourceLoaderService

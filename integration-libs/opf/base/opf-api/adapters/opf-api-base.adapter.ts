@@ -17,8 +17,8 @@ import {
   OpfEndpointsService,
 } from '@spartacus/opf/base/core';
 import {
-  ActiveConfiguration,
   OPF_CC_PUBLIC_KEY_HEADER,
+  OpfActiveConfiguration,
   OpfConfig,
 } from '@spartacus/opf/base/root';
 import { Observable } from 'rxjs';
@@ -26,14 +26,11 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class OpfApiBaseAdapter implements OpfBaseAdapter {
+  protected http = inject(HttpClient);
+  protected converter = inject(ConverterService);
+  protected opfEndpointsService = inject(OpfEndpointsService);
+  protected config = inject(OpfConfig);
   protected logger = inject(LoggerService);
-
-  constructor(
-    protected http: HttpClient,
-    protected converter: ConverterService,
-    protected opfEndpointsService: OpfEndpointsService,
-    protected config: OpfConfig
-  ) {}
 
   protected headerWithNoLanguage: { [name: string]: string } = {
     accept: 'application/json',
@@ -49,14 +46,14 @@ export class OpfApiBaseAdapter implements OpfBaseAdapter {
     'Content-Language': 'en-us',
   };
 
-  getActiveConfigurations(): Observable<ActiveConfiguration[]> {
+  getActiveConfigurations(): Observable<OpfActiveConfiguration[]> {
     const headers = new HttpHeaders(this.header).set(
       OPF_CC_PUBLIC_KEY_HEADER,
       this.config.opf?.commerceCloudPublicKey || ''
     );
 
     return this.http
-      .get<ActiveConfiguration[]>(this.getActiveConfigurationsEndpoint(), {
+      .get<OpfActiveConfiguration[]>(this.getActiveConfigurationsEndpoint(), {
         headers,
       })
       .pipe(
