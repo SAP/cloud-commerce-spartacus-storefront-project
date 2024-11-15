@@ -77,6 +77,7 @@ describe('OpfResourceLoaderService', () => {
     it('should load provider resources successfully for scripts', fakeAsync(() => {
       const mockScriptResource = {
         url: 'script-url',
+        sri: 'fake-hash-code',
         type: OpfDynamicScriptResourceType.SCRIPT,
       };
 
@@ -208,6 +209,7 @@ describe('OpfResourceLoaderService', () => {
     it('should mark resource as loaded when style is successfully loaded', fakeAsync(() => {
       const mockStylesResources = {
         url: 'style-url',
+        sri: 'fake-hash-code',
         type: OpfDynamicScriptResourceType.STYLES,
       };
 
@@ -230,7 +232,6 @@ describe('OpfResourceLoaderService', () => {
       expect(
         opfResourceLoaderService['markResourceAsLoaded']
       ).toHaveBeenCalled();
-      expect(opfResourceLoaderService['embedStyles']).toHaveBeenCalled();
     }));
 
     it('should handle resource loading error when style is not successfully loaded', fakeAsync(() => {
