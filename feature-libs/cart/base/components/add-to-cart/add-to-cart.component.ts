@@ -66,11 +66,11 @@ export class AddToCartComponent implements OnInit, OnDestroy {
   @ViewChild('addToCartDialogTriggerEl') addToCartDialogTriggerEl: ElementRef;
 
   maxQuantity: number;
-  
+
   sapUnit: string;
 
   disabled: boolean = false;
-  
+
   hasStock: boolean = false;
   inventoryThreshold: boolean = false;
 
@@ -140,14 +140,13 @@ export class AddToCartComponent implements OnInit, OnDestroy {
       } else if (this.featureToggles.showRealTimeStockInPDP) {
         productObservable$ = this.currentProductService.getProduct([
           ProductScope.UNIT,
-          ProductScope.DETAILS
+          ProductScope.DETAILS,
         ]);
       } else {
         productObservable$ = this.currentProductService.getProduct();
       }
-      this.subscription.add(productObservable$
-        .pipe(filter(isNotNullable))
-        .subscribe((product) => {
+      this.subscription.add(
+        productObservable$.pipe(filter(isNotNullable)).subscribe((product) => {
           this.productCode = product.code ?? '';
           this.sapUnit = product.sapUnit?.sapCode ?? '';
           this.setStockInfo(product);
