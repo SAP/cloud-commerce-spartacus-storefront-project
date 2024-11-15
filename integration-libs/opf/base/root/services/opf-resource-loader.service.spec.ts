@@ -232,6 +232,7 @@ describe('OpfResourceLoaderService', () => {
       expect(
         opfResourceLoaderService['markResourceAsLoaded']
       ).toHaveBeenCalled();
+      expect(opfResourceLoaderService['embedStyles']).toHaveBeenCalled();
     }));
 
     it('should handle resource loading error when style is not successfully loaded', fakeAsync(() => {
