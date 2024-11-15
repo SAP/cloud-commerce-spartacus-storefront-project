@@ -56,7 +56,11 @@ export class ProductCarouselComponent {
     this.componentData$.pipe(
       tap((data) => {
         if (data.categoryCodes) {
-this.productSearchByCategoryService.get({categoryCode: data.categoryCodes}).subscribe(console.log)
+          const categories = data.categoryCodes.split(' ')
+          categories.forEach((categoryCode) => {
+            console.log(categoryCode)
+            this.productSearchByCategoryService.get({categoryCode}).subscribe(console.log);
+          })
         }
       }),
       map((data) => {

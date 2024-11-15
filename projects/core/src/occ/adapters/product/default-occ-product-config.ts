@@ -43,8 +43,8 @@ export const defaultOccProductConfig: OccConfig = {
         },
         productSearchByCategory: {
           default:
-            'categories/${categoryCode}?fields=DEFAULT',
-          list: 'categories/${categoryCode}?fields=code',
+            'categories/${categoryCode}/products?fields=DEFAULT',
+          list: 'categories/${categoryCode}/products?fields=code',
         },
         /* eslint-enable */
         productSuggestions: 'products/suggestions',
