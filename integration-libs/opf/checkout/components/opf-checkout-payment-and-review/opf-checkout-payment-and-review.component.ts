@@ -15,17 +15,9 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import { ActiveCartFacade, Cart, PaymentType } from '@spartacus/cart/base/root';
-import {
-  CheckoutReviewSubmitComponent,
-  CheckoutStepService,
-} from '@spartacus/checkout/base/components';
-import {
-  CheckoutDeliveryAddressFacade,
-  CheckoutDeliveryModesFacade,
-  CheckoutPaymentFacade,
-} from '@spartacus/checkout/base/root';
-import { CmsService, Page, TranslationService } from '@spartacus/core';
+import { Cart, PaymentType } from '@spartacus/cart/base/root';
+import { CheckoutReviewSubmitComponent } from '@spartacus/checkout/base/components';
+import { CmsService, Page } from '@spartacus/core';
 import { OpfMetadataStoreService } from '@spartacus/opf/base/root';
 import { OPF_EXPLICIT_TERMS_AND_CONDITIONS_COMPONENT } from '@spartacus/opf/checkout/root';
 
@@ -42,18 +34,10 @@ export class OpfCheckoutPaymentAndReviewComponent
   implements OnInit
 {
   protected fb = inject(UntypedFormBuilder);
-  protected checkoutDeliveryAddressFacade = inject(
-    CheckoutDeliveryAddressFacade
-  );
-  protected checkoutPaymentFacade = inject(CheckoutPaymentFacade);
-  protected activeCartFacade = inject(ActiveCartFacade);
-  protected translationService = inject(TranslationService);
-  protected checkoutStepService = inject(CheckoutStepService);
-  protected checkoutDeliveryModesFacade = inject(CheckoutDeliveryModesFacade);
   protected opfMetadataStoreService = inject(OpfMetadataStoreService);
+  protected cmsService = inject(CmsService);
 
   protected defaultTermsAndConditionsFieldValue = false;
-  protected cmsService = inject(CmsService);
 
   explicitTermsAndConditions$: Observable<boolean | undefined> = this.cmsService
     .getCurrentPage()
@@ -85,17 +69,6 @@ export class OpfCheckoutPaymentAndReviewComponent
     return this.activeCartFacade
       .getActive()
       .pipe(map((cart: Cart) => cart.paymentType));
-  }
-
-  constructor() {
-    super(
-      this.checkoutDeliveryAddressFacade,
-      this.checkoutPaymentFacade,
-      this.activeCartFacade,
-      this.translationService,
-      this.checkoutStepService,
-      this.checkoutDeliveryModesFacade
-    );
   }
 
   protected isCmsComponentInPage(cmsComponentUid: string, page: Page): boolean {
