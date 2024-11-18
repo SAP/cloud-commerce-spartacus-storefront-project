@@ -404,7 +404,7 @@ describe('OpfPaymentVerificationService', () => {
           done();
         });
     });
-    
+
     it('should failed when loadProviderResources fails', (done) => {
       opfPaymentServiceMock.getAfterRedirectScripts.and.returnValue(
         of({ afterRedirectScript: { dynamicScriptMock, html: undefined } })
