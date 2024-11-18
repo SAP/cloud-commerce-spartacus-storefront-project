@@ -77,7 +77,7 @@ export class ApplePayObservableFactory {
 
       if (
         config.onShippingContactSelected &&
-        this.isShippingTypeNotPickup(config)
+        !this.isShippingTypePickup(config)
       ) {
         session.addEventListener(
           ApplePayEvent.SHIPPING_CONTACT_SELECTED,
@@ -99,7 +99,7 @@ export class ApplePayObservableFactory {
 
       if (
         config.onShippingMethodSelected &&
-        this.isShippingTypeNotPickup(config)
+        !this.isShippingTypePickup(config)
       ) {
         session.addEventListener(
           ApplePayEvent.SHIPPING_METHOD_SELECTED,
@@ -143,7 +143,7 @@ export class ApplePayObservableFactory {
     });
   }
 
-  protected isShippingTypeNotPickup(config: any) {
-    return config.request.shippingType !== ApplePayShippingType.STORE_PICKUP;
+  protected isShippingTypePickup(config: any) {
+    return config.request.shippingType === ApplePayShippingType.STORE_PICKUP;
   }
 }
