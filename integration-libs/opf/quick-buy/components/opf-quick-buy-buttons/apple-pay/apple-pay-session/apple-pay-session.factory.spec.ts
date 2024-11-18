@@ -143,13 +143,13 @@ describe('ApplePaySessionFactory', () => {
   });
 
   it('should create ApplePaySession if available', () => {
-    const applePaySession = applePaySessionFactory['createApplePaySession']();
+    const applePaySession = applePaySessionFactory['getApplePaySession']();
     expect(applePaySession).toBeDefined();
   });
 
   it('should not create ApplePaySession if not available', () => {
     (windowRef as any).nativeWindow['ApplePaySession'] = null;
-    const applePaySession = applePaySessionFactory['createApplePaySession']();
+    const applePaySession = applePaySessionFactory['getApplePaySession']();
     expect(applePaySession).not.toBeDefined();
   });
 
@@ -177,21 +177,21 @@ describe('ApplePaySessionFactory', () => {
     expect(applePaySessionFactory.statusFailure).toEqual(1);
   });
 
-  it('should return true for isApplePaySupported$ when device is supported', (done: DoneFn) => {
+  it('should return true for isApplePaySupported when device is supported', (done: DoneFn) => {
     applePaySessionFactory.setIsDeviceSupported(true);
     const merchantId = 'merchantId';
     applePaySessionFactory
-      .isApplePaySupported$(merchantId)
+      .isApplePaySupported(merchantId)
       .subscribe((result) => {
         expect(result).toEqual(true);
         done();
       });
   });
-  it('should return false for isApplePaySupported$ when device is not supported', (done: DoneFn) => {
+  it('should return false for isApplePaySupported when device is not supported', (done: DoneFn) => {
     applePaySessionFactory.setIsDeviceSupported(false);
     const merchantId = 'merchantId';
     applePaySessionFactory
-      .isApplePaySupported$(merchantId)
+      .isApplePaySupported(merchantId)
       .subscribe((result) => {
         expect(result).toEqual(false);
         done();
