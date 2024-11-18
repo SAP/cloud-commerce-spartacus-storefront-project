@@ -36,14 +36,10 @@ export function configureInventoryDisplay(enable: boolean) {
 export function assertInventoryDisplay(
   productCode: string,
   alias: string,
-  functionality: string
+  functionality: string,
+  isInventoryDisplayActive: boolean
 ) {
   cy.get(`${alias}`).then((xhr) => {
-    let isInventoryDisplayActive;
-    cy.getCookie('cxConfigE2E')
-      .should('exist')
-      .then((data) => (isInventoryDisplayActive = data.value.includes('true')));
-
     const body = xhr.response.body;
     const code =
       body.availabilities?.availabilityItems[0]?.unitAvailabilities[0]
@@ -82,7 +78,8 @@ export function assertInventoryDisplay(
 
 export function testInventoryDisplay(
   productCode: string,
-  functionality: string = ''
+  functionality: string = '',
+  isInventoryDisplayActive: boolean
 ) {
   const productDetailsAlias = interceptProductAvailability(productCode);
   visitProductPage(productCode);
@@ -91,7 +88,12 @@ export function testInventoryDisplay(
     .its('response.statusCode')
     .should('eq', 200);
 
-  assertInventoryDisplay(productCode, `@${productDetailsAlias}`, functionality);
+  assertInventoryDisplay(
+    productCode,
+    `@${productDetailsAlias}`,
+    functionality,
+    isInventoryDisplayActive
+  );
 }
 
 describe('B2C - Real Time Stock Display - Inventory Display - disabled', () => {
@@ -101,7 +103,7 @@ describe('B2C - Real Time Stock Display - Inventory Display - disabled', () => {
   });
 
   it('should NOT render number of available stock', () => {
-    testInventoryDisplay('M_CR_1015');
+    testInventoryDisplay('M_CR_1015', '', false);
   });
 });
 
@@ -116,6 +118,6 @@ describe('Inventory Display - active', () => {
         showRealTimeStockInPDP: true,
       },
     } as FeaturesConfig);
-    testInventoryDisplay('M_CR_1015');
+    testInventoryDisplay('M_CR_1015', '', true);
   });
 });

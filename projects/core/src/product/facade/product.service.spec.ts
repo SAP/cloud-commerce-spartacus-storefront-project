@@ -1,11 +1,7 @@
 import { inject, TestBed } from '@angular/core/testing';
 import * as ngrxStore from '@ngrx/store';
 import { Store, StoreModule } from '@ngrx/store';
-import {
-  DEFAULT_SCOPE,
-  ProductConnector,
-  ProductLoadingService,
-} from '@spartacus/core';
+import { DEFAULT_SCOPE, ProductLoadingService } from '@spartacus/core';
 import { lastValueFrom, of } from 'rxjs';
 import { Product } from '../../model/product.model';
 import { PRODUCT_FEATURE, StateWithProduct } from '../store/product-state';
@@ -19,12 +15,6 @@ function mockProduct(code: string, scopes = [DEFAULT_SCOPE]) {
 class MockProductLoadingService {
   get(code: string, scopes: string[]) {
     return of(mockProduct(code, scopes));
-  }
-}
-
-class MockProductConnector {
-  getRealTimeStock(_productCode: string, _unit: string) {
-    return of('10', 'IN_STOCK');
   }
 }
 
@@ -47,10 +37,6 @@ describe('ProductService', () => {
         {
           provide: ProductLoadingService,
           useClass: MockProductLoadingService,
-        },
-        {
-          provide: ProductConnector,
-          useClass: MockProductConnector,
         },
       ],
     });
@@ -150,19 +136,5 @@ describe('ProductService', () => {
       );
       expect(result).toBeTruthy();
     });
-  });
-  it('should call getRealTimeStock and return mock data', (done) => {
-    const mockProductCode = '12345';
-    const mockUnit = 'unit1';
-    const mockStockData = { quantity: '10', availability: 'inStock' };
-
-    spyOn(service, 'getRealTimeStock').and.returnValue(of(mockStockData));
-
-    service
-      .getRealTimeStock(mockProductCode, mockUnit)
-      .subscribe((stockData) => {
-        expect(stockData).toEqual(mockStockData);
-        done();
-      });
   });
 });

@@ -4,7 +4,6 @@ import { UntypedFormControl } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import {
   Product,
-  ProductConnector,
   ProductService,
   RouterState,
   RoutingService,
@@ -37,7 +36,6 @@ class MockedWindowRef extends WindowRef {
     return this.isBrowser() ? <any>mockedWindow : undefined;
   }
 }
-class MockProductConnector {}
 
 let isGroupVisited: Observable<boolean> = of(false);
 const testSelector = 'test-configurator-overview-menu';
@@ -160,10 +158,6 @@ describe('ConfiguratorStorefrontUtilsService', () => {
         {
           provide: ProductService,
           useClass: MockProductService,
-        },
-        {
-          provide: ProductConnector,
-          useValue: MockProductConnector,
         },
         { provide: WindowRef, useClass: MockedWindowRef },
       ],

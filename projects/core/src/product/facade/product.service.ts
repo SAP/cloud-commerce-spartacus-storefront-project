@@ -4,12 +4,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
-import { Product, ProductAvailabilities } from '../../model/product.model';
+import { Product } from '../../model/product.model';
 import { DEFAULT_SCOPE } from '../../occ/occ-models/occ-endpoints.model';
-import { ProductConnector } from '../connectors';
 import { ProductScope } from '../model/product-scope';
 import { ProductLoadingService } from '../services/product-loading.service';
 import { StateWithProduct } from '../store/product-state';
@@ -19,7 +18,6 @@ import { ProductSelectors } from '../store/selectors/index';
   providedIn: 'root',
 })
 export class ProductService {
-  protected productConnector = inject(ProductConnector);
   constructor(
     protected store: Store<StateWithProduct>,
     protected productLoading: ProductLoadingService
@@ -87,12 +85,5 @@ export class ProductService {
         ProductSelectors.getSelectedProductErrorFactory(productCode, scope)
       )
     );
-  }
-
-  getRealTimeStock(
-    productCode: string,
-    sapCode: string
-  ): Observable<ProductAvailabilities> {
-    return this.productConnector.getRealTimeStock(productCode, sapCode);
   }
 }

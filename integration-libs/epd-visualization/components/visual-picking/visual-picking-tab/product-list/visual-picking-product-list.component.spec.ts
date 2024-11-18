@@ -13,7 +13,7 @@ import {
   CmsComponent,
   I18nTestingModule,
   Product,
-  ProductConnector,
+  ProductAvailabilityAdapter,
   ProductReference,
   UrlModule,
 } from '@spartacus/core';
@@ -131,7 +131,7 @@ class MockVisualPickingProductListService {
   template: 'mock',
 })
 class MockPageLayoutComponent {}
-class MockProductConnector {}
+class MockProductAvailabilityAdapter {}
 
 describe('VisualPickingProductListComponent', () => {
   let visualPickingProductListComponent: VisualPickingProductListComponent;
@@ -169,8 +169,8 @@ describe('VisualPickingProductListComponent', () => {
           useValue: MockCmsComponentData,
         },
         {
-          provide: ProductConnector,
-          useValue: MockProductConnector,
+          provide: ProductAvailabilityAdapter,
+          useClass: MockProductAvailabilityAdapter,
         },
       ],
     })

@@ -5,7 +5,7 @@
  */
 
 import { Observable } from 'rxjs';
-import { Product, ProductAvailabilities } from '../../../model/product.model';
+import { Product } from '../../../model/product.model';
 import { ScopedProductData } from './scoped-product-data';
 
 export abstract class ProductAdapter {
@@ -27,9 +27,4 @@ export abstract class ProductAdapter {
    * @param products
    */
   abstract loadMany?(products: ScopedProductData[]): ScopedProductData[];
-
-  abstract loadRealTimeStock(
-    productCode: string,
-    sapCode: string
-  ): Observable<ProductAvailabilities>;
 }

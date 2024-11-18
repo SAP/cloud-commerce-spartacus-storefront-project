@@ -6,8 +6,8 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, take, distinctUntilChanged, map } from 'rxjs';
-import { Product, ProductAvailabilities } from '../../../model/product.model';
+import { Observable } from 'rxjs';
+import { Product } from '../../../model/product.model';
 import { PRODUCT_NORMALIZER } from '../../../product/connectors/product/converters';
 import { ProductAdapter } from '../../../product/connectors/product/product.adapter';
 import { ScopedProductData } from '../../../product/connectors/product/scoped-product-data';
@@ -25,30 +25,6 @@ export class OccProductAdapter implements ProductAdapter {
     protected converter: ConverterService,
     protected requestsOptimizer: OccRequestsOptimizerService
   ) {}
-
-  loadRealTimeStock(
-    productCode: string,
-    sapCode: string
-  ): Observable<ProductAvailabilities> {
-    const availabilityUrl = this.occEndpoints.buildUrl(
-      'productAvailabilities',
-      {
-        urlParams: {
-          productCode: productCode,
-          sapCode: sapCode,
-        },
-      }
-    );
-
-    return this.http.get(availabilityUrl).pipe(
-      take(1),
-      distinctUntilChanged(),
-      map(
-        (availabilities: any) =>
-          availabilities?.availabilityItems?.[0]?.unitAvailabilities?.[0] || {}
-      )
-    );
-  }
 
   load(productCode: string, scope?: string): Observable<Product> {
     return this.http

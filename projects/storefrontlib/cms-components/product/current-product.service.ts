@@ -8,7 +8,6 @@ import { Injectable } from '@angular/core';
 import {
   isNotUndefined,
   Product,
-  ProductAvailabilities,
   ProductScope,
   ProductService,
   RoutingService,
@@ -55,11 +54,5 @@ export class CurrentProductService {
     return this.routingService
       .getRouterState()
       .pipe(map((state) => state.state.params['productCode']));
-  }
-  getRealTimeStock(
-    productCode: string,
-    sapCode: string
-  ): Observable<ProductAvailabilities> {
-    return this.productService.getRealTimeStock(productCode, sapCode);
   }
 }

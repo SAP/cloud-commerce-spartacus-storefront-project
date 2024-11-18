@@ -31,6 +31,7 @@ import {
   FeatureConfigService,
   FeatureToggles,
   Product,
+  ProductAvailabilityService,
   ProductScope,
   isNotNullable,
   useFeatureStyles,
@@ -67,8 +68,6 @@ export class AddToCartComponent implements OnInit, OnDestroy {
 
   maxQuantity: number;
 
-  sapUnit: string;
-
   disabled: boolean = false;
 
   hasStock: boolean = false;
@@ -78,6 +77,8 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     this.component?.data$.pipe(map((data) => data.inventoryDisplay));
 
   quantity = 1;
+
+  sapUnit: string;
 
   subscription = new Subscription();
 
@@ -93,6 +94,7 @@ export class AddToCartComponent implements OnInit, OnDestroy {
 
   private featureConfigService = inject(FeatureConfigService);
   private featureToggles = inject(FeatureToggles);
+  private productAvailabilityService = inject(ProductAvailabilityService);
 
   /**
    * We disable the dialog launch on quantity input,
@@ -134,19 +136,19 @@ export class AddToCartComponent implements OnInit, OnDestroy {
       this.hasStock = true;
       this.cd.markForCheck();
     } else {
-      let productObservable$: Observable<Product | null>;
+      let product$: Observable<Product | null>;
       if (this.productListItemContext) {
-        productObservable$ = this.productListItemContext.product$;
+        product$ = this.productListItemContext.product$;
       } else if (this.featureToggles.showRealTimeStockInPDP) {
-        productObservable$ = this.currentProductService.getProduct([
+        product$ = this.currentProductService.getProduct([
           ProductScope.UNIT,
           ProductScope.DETAILS,
         ]);
       } else {
-        productObservable$ = this.currentProductService.getProduct();
+        product$ = this.currentProductService.getProduct();
       }
       this.subscription.add(
-        productObservable$.pipe(filter(isNotNullable)).subscribe((product) => {
+        product$.pipe(filter(isNotNullable)).subscribe((product) => {
           this.productCode = product.code ?? '';
           this.sapUnit = product.sapUnit?.sapCode ?? '';
           this.setStockInfo(product);
@@ -164,8 +166,12 @@ export class AddToCartComponent implements OnInit, OnDestroy {
       this.showQuantity = false;
     }
 
+    /**
+     * When removing the feature toggle in the future, let's leave the if-else block.
+     * In case of absent sapUnit we want to fallback to the stock info from the product object.
+     */
     if (this.featureToggles.showRealTimeStockInPDP && this.sapUnit) {
-      this.currentProductService
+      this.productAvailabilityService
         .getRealTimeStock(this.productCode, this.sapUnit)
         .pipe(take(1))
         .subscribe(({ quantity, status }) => {

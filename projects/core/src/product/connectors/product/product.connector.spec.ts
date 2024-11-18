@@ -5,9 +5,6 @@ import { ProductConnector } from './product.connector';
 import createSpy = jasmine.createSpy;
 
 class MockProductAdapter implements ProductAdapter {
-  loadRealTimeStock = createSpy(
-    'ProductAdapter.loadRealTimeStock'
-  ).and.callFake((code) => of('quantity' + code));
   load = createSpy('ProductAdapter.load').and.callFake((code) =>
     of('product' + code)
   );
@@ -38,15 +35,6 @@ describe('ProductConnector', () => {
     service.get('333').subscribe((res) => (result = res));
     expect(result).toBe('product333');
     expect(adapter.load).toHaveBeenCalledWith('333', '');
-  });
-
-  it('getRealTimeStock should call adapter', () => {
-    const adapter = TestBed.inject(ProductAdapter);
-
-    let result;
-    service.getRealTimeStock('333', 'EA').subscribe((res) => (result = res));
-    expect(result).toBe('quantity333');
-    expect(adapter.loadRealTimeStock).toHaveBeenCalledWith('333', 'EA');
   });
 
   it('getMany should call adapter', () => {

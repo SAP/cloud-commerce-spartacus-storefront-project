@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { UntypedFormControl } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
-import {
-  I18nTestingModule,
-  ProductConnector,
-  TranslationService,
-} from '@spartacus/core';
+import { I18nTestingModule, TranslationService } from '@spartacus/core';
 import { BehaviorSubject } from 'rxjs';
 import { ConfiguratorCommonsService } from '../../../../core/facade/configurator-commons.service';
 import { Configurator } from '../../../../core/model/configurator.model';
@@ -89,7 +85,6 @@ class ExampleConfiguratorAttributeSingleSelectionComponent extends ConfiguratorA
     );
   }
 }
-class MockProductConnector {}
 
 describe('ConfiguratorAttributeSingleSelectionBaseComponent', () => {
   let component: ConfiguratorAttributeSingleSelectionBaseComponent;
@@ -119,10 +114,6 @@ describe('ConfiguratorAttributeSingleSelectionBaseComponent', () => {
         {
           provide: ConfiguratorCommonsService,
           useClass: MockConfiguratorCommonsService,
-        },
-        {
-          provide: ProductConnector,
-          useValue: MockProductConnector,
         },
       ],
     }).compileComponents();

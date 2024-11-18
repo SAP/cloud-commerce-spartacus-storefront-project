@@ -1,4 +1,3 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   Product,
@@ -37,9 +36,6 @@ class MockProductService {
     }
     return of(mockProduct);
   }
-  getRealTimeStock(_productCode: string) {
-    return of('25'); // Mock response
-  }
 }
 
 describe('CurrentProductService', () => {
@@ -49,7 +45,7 @@ describe('CurrentProductService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [],
       providers: [
         CurrentProductService,
         {
@@ -102,30 +98,6 @@ describe('CurrentProductService', () => {
       .subscribe((product) => (result = product))
       .unsubscribe();
     expect(result).toBe(null);
-  });
-
-  it('should emit real-time stock data for the given product code and unit', (done) => {
-    const mockProductCode = '12345';
-    const mockQuantity = '25';
-    const mockstatus = 'inStock';
-    const mockUnit = 'EA';
-
-    const mockStockData = {
-      quantity: mockQuantity,
-      status: mockstatus,
-    };
-
-    spyOn(productService, 'getRealTimeStock').and.returnValue(
-      of(mockStockData)
-    );
-
-    currentProductService
-      .getRealTimeStock(mockProductCode, mockUnit)
-      .subscribe(({ quantity, status }) => {
-        expect(quantity).toBe(mockQuantity);
-        expect(status).toBe(mockstatus);
-        done();
-      });
   });
 
   it('should not emit old product data and fetch NEW product data', () => {
