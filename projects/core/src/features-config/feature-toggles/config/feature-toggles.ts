@@ -741,6 +741,16 @@ export interface FeatureTogglesInterface {
    *
    */
   useExtendedMediaComponentConfiguration?: boolean;
+
+  /**
+   * Enables the product carousel to include products based on specified category codes.
+   *
+   * - When this feature is enabled, the carousel will fetch and display products
+   *   associated with the `categoryCodes` provided.
+   * - The `categoryCodes` are configured and managed through SmartEdit
+   *
+   */
+  enableCarouselCategoryProducts?: boolean;
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
@@ -855,4 +865,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
   useExtendedMediaComponentConfiguration: false,
+  enableCarouselCategoryProducts: false,
 };

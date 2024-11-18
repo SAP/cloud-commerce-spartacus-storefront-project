@@ -13,7 +13,13 @@ import { ProductActions, ProductSelectors } from '../store';
 export class ProductSearchByCategoryService {
   protected store = inject(Store<StateWithProduct>);
 
-  load({ categoryCode, scope }: { categoryCode: string; scope?: string }): void {
+  load({
+    categoryCode,
+    scope,
+  }: {
+    categoryCode: string;
+    scope?: string;
+  }): void {
     this.store.dispatch(
       new ProductActions.ProductSearchLoadByCategory({
         categoryCode,
@@ -23,9 +29,9 @@ export class ProductSearchByCategoryService {
   }
 
   get({
-        categoryCode,
-        scope,
-      }: {
+    categoryCode,
+    scope,
+  }: {
     categoryCode: string;
     scope?: string;
   }): Observable<Product[] | undefined> {

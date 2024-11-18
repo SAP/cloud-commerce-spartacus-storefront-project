@@ -4,19 +4,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {inject, Injectable} from '@angular/core';
-import {Actions, createEffect, ofType} from '@ngrx/effects';
-import {Action} from '@ngrx/store';
-import {AuthActions} from '../../../auth/user-auth/store/actions';
-import {normalizeHttpError} from '../../../util/normalize-http-error';
-import { forkJoin, Observable} from 'rxjs';
-import {catchError, groupBy, map, mergeMap} from 'rxjs/operators';
-import {LoggerService} from '../../../logger/logger.service';
-import {SiteContextActions} from '../../../site-context/store/actions/index';
-import {bufferDebounceTime} from '../../../util/rxjs/buffer-debounce-time';
-import {withdrawOn} from '../../../util/rxjs/withdraw-on';
-import {ProductSearchConnector} from '../../connectors/search/product-search.connector';
-import {ProductActions} from '../actions/index';
+import { inject, Injectable } from '@angular/core';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
+import { AuthActions } from '../../../auth/user-auth/store/actions';
+import { normalizeHttpError } from '../../../util/normalize-http-error';
+import { forkJoin, Observable } from 'rxjs';
+import { catchError, groupBy, map, mergeMap } from 'rxjs/operators';
+import { LoggerService } from '../../../logger/logger.service';
+import { SiteContextActions } from '../../../site-context/store/actions/index';
+import { bufferDebounceTime } from '../../../util/rxjs/buffer-debounce-time';
+import { withdrawOn } from '../../../util/rxjs/withdraw-on';
+import { ProductSearchConnector } from '../../connectors/search/product-search.connector';
+import { ProductActions } from '../actions/index';
 
 @Injectable()
 export class ProductSearchByCategoryEffects {
@@ -33,7 +33,7 @@ export class ProductSearchByCategoryEffects {
 
   searchByCategory$ = createEffect(
     () =>
-      ({scheduler, debounce = 0} = {}): Observable<
+      ({ scheduler, debounce = 0 } = {}): Observable<
         | ProductActions.ProductSearchLoadByCategorySuccess
         | ProductActions.ProductSearchLoadByCategoryFail
       > =>
@@ -55,41 +55,49 @@ export class ProductSearchByCategoryEffects {
 
               bufferDebounceTime(debounce, scheduler),
 
-              mergeMap((payloads: { categoryCode: string; scope: string }[]) => {
-                const categoryCodes = payloads.map(
-                  (payload) => payload.categoryCode
-                );
+              mergeMap(
+                (payloads: { categoryCode: string; scope: string }[]) => {
+                  const categoryCodes = payloads.map(
+                    (payload) => payload.categoryCode
+                  );
 
-                return forkJoin(
-                  categoryCodes.map((categoryCode) =>
-                    this.productSearchConnector.searchByCategory(categoryCode, scope)
-                  )
-                ).pipe(
-                  mergeMap((searchResults, _index) => {
-                    return categoryCodes.map((categoryCode, idx) => {
-                      const categoryProducts = searchResults[idx]?.products ?? [];
-                      return new ProductActions.ProductSearchLoadByCategorySuccess({
+                  return forkJoin(
+                    categoryCodes.map((categoryCode) =>
+                      this.productSearchConnector.searchByCategory(
                         categoryCode,
-                        scope,
-                        products: categoryProducts,
+                        scope
+                      )
+                    )
+                  ).pipe(
+                    mergeMap((searchResults, _index) => {
+                      return categoryCodes.map((categoryCode, idx) => {
+                        const categoryProducts =
+                          searchResults[idx]?.products ?? [];
+                        return new ProductActions.ProductSearchLoadByCategorySuccess(
+                          {
+                            categoryCode,
+                            scope,
+                            products: categoryProducts,
+                          }
+                        );
                       });
-                    });
-                  }),
-                  catchError(
-                    (
-                      error
-                    ): ProductActions.ProductSearchLoadByCategoryFail[] => {
-                      return payloads.map(
-                        (payload) =>
-                          new ProductActions.ProductSearchLoadByCategoryFail({
-                            ...payload,
-                            error: normalizeHttpError(error, this.logger),
-                          })
-                      );
-                    }
-                  )
-                );
-              })
+                    }),
+                    catchError(
+                      (
+                        error
+                      ): ProductActions.ProductSearchLoadByCategoryFail[] => {
+                        return payloads.map(
+                          (payload) =>
+                            new ProductActions.ProductSearchLoadByCategoryFail({
+                              ...payload,
+                              error: normalizeHttpError(error, this.logger),
+                            })
+                        );
+                      }
+                    )
+                  );
+                }
+              )
             );
           }),
           withdrawOn(this.contextChange$)

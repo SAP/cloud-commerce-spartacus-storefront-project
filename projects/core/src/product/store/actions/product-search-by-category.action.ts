@@ -1,4 +1,4 @@
-import {EntityScopedLoaderActions} from "../../../state/utils/scoped-loader/entity-scoped-loader.actions";
+import { EntityScopedLoaderActions } from '../../../state/utils/scoped-loader/entity-scoped-loader.actions';
 
 import { StateUtils } from '../../../state/utils';
 import { PRODUCT_SEARCH_RESULTS_BY_CATEGORY_ENTITY } from '../product-state';
@@ -22,13 +22,21 @@ export class ProductSearchLoadByCategory extends EntityScopedLoaderActions.Entit
       scope: string;
     }
   ) {
-    super(PRODUCT_SEARCH_RESULTS_BY_CATEGORY_ENTITY, payload.categoryCode, payload.scope);
+    super(
+      PRODUCT_SEARCH_RESULTS_BY_CATEGORY_ENTITY,
+      payload.categoryCode,
+      payload.scope
+    );
   }
 }
 
 export class ProductSearchLoadByCategorySuccess extends EntityScopedLoaderActions.EntityScopedSuccessAction {
   readonly type = PRODUCT_SEARCH_LOAD_BY_CATEGORY_SUCCESS;
-  constructor(payload: { products: Product[]; categoryCode: string; scope: string }) {
+  constructor(payload: {
+    products: Product[];
+    categoryCode: string;
+    scope: string;
+  }) {
     super(
       PRODUCT_SEARCH_RESULTS_BY_CATEGORY_ENTITY,
       payload.categoryCode,

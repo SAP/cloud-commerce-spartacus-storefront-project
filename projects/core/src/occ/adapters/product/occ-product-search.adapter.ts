@@ -4,23 +4,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {HttpClient, HttpContext} from '@angular/common/http';
-import {inject, Injectable} from '@angular/core';
-import {forkJoin, Observable, of} from 'rxjs';
-import {Product} from '../../../model';
-import { map, tap} from 'rxjs/operators';
-import {ProductSearchPage, Suggestion,} from '../../../model/product-search.model';
+import { HttpClient, HttpContext } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { forkJoin, Observable, of } from 'rxjs';
+import { Product } from '../../../model';
+import { map, tap } from 'rxjs/operators';
+import {
+  ProductSearchPage,
+  Suggestion,
+} from '../../../model/product-search.model';
 import {
   PRODUCT_SEARCH_PAGE_NORMALIZER,
   PRODUCT_SUGGESTION_NORMALIZER,
 } from '../../../product/connectors/search/converters';
-import {ProductSearchAdapter} from '../../../product/connectors/search/product-search.adapter';
-import {SearchConfig} from '../../../product/model/search-config';
-import {ConverterService} from '../../../util/converter.service';
-import {Occ} from '../../occ-models/occ.models';
-import {OccEndpointsService} from '../../services/occ-endpoints.service';
-import {OCC_HTTP_TOKEN} from '../../utils';
-import {Router} from '@angular/router';
+import { ProductSearchAdapter } from '../../../product/connectors/search/product-search.adapter';
+import { SearchConfig } from '../../../product/model/search-config';
+import { ConverterService } from '../../../util/converter.service';
+import { Occ } from '../../occ-models/occ.models';
+import { OccEndpointsService } from '../../services/occ-endpoints.service';
+import { OCC_HTTP_TOKEN } from '../../utils';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class OccProductSearchAdapter implements ProductSearchAdapter {
@@ -32,8 +35,7 @@ export class OccProductSearchAdapter implements ProductSearchAdapter {
     protected http: HttpClient,
     protected occEndpoints: OccEndpointsService,
     protected converter: ConverterService
-  ) {
-  }
+  ) {}
 
   readonly DEFAULT_SEARCH_CONFIG: SearchConfig = {
     pageSize: 20,
@@ -49,7 +51,7 @@ export class OccProductSearchAdapter implements ProductSearchAdapter {
     });
 
     return this.http
-      .get(this.getSearchEndpoint(query, searchConfig, scope), {context})
+      .get(this.getSearchEndpoint(query, searchConfig, scope), { context })
       .pipe(
         this.converter.pipeable(PRODUCT_SEARCH_PAGE_NORMALIZER),
         tap(
@@ -65,7 +67,7 @@ export class OccProductSearchAdapter implements ProductSearchAdapter {
     scope?: string
   ): Observable<{ products: Product[] }> {
     if (codes.length === 0) {
-      return of({products: []});
+      return of({ products: [] });
     }
 
     const CHUNK_SIZE = 100; // Max limit of ProductSearch OCC
@@ -96,8 +98,12 @@ export class OccProductSearchAdapter implements ProductSearchAdapter {
     );
   }
 
-  searchByCategory(category: string, scope?: string): Observable<{ products: Product[] }> {
-    return this.http.get<Product[]>(this.getSearchByCategoryEndpoint(category, scope))
+  searchByCategory(
+    category: string,
+    scope?: string
+  ): Observable<{ products: Product[] }> {
+    return this.http
+      .get<Product[]>(this.getSearchByCategoryEndpoint(category, scope))
       .pipe(
         this.converter.pipeable(PRODUCT_SEARCH_PAGE_NORMALIZER),
         map((productSearchPage) => ({
@@ -139,7 +145,7 @@ export class OccProductSearchAdapter implements ProductSearchAdapter {
     scope?: string
   ): string {
     return this.occEndpoints.buildUrl('productSearchByCategory', {
-      urlParams: {categoryCode},
+      urlParams: { categoryCode },
       scope,
     });
   }
@@ -150,14 +156,14 @@ export class OccProductSearchAdapter implements ProductSearchAdapter {
     scope?: string
   ): string {
     return this.occEndpoints.buildUrl('productSearch', {
-      queryParams: {query, ...searchConfig},
+      queryParams: { query, ...searchConfig },
       scope,
     });
   }
 
   protected getSuggestionEndpoint(term: string, max: string): string {
     return this.occEndpoints.buildUrl('productSuggestions', {
-      queryParams: {term, max},
+      queryParams: { term, max },
     });
   }
 }

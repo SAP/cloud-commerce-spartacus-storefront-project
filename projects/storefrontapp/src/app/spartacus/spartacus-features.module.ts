@@ -396,6 +396,7 @@ if (environment.cpq) {
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
         useExtendedMediaComponentConfiguration: true,
+        enableCarouselCategoryProducts: true,
       };
       return appFeatureToggles;
     }),

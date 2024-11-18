@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   CmsProductCarouselComponent as model,
   FeatureConfigService,
@@ -12,11 +12,11 @@ import {
   ProductScope,
   ProductSearchByCategoryService,
   ProductSearchByCodeService,
-  ProductService
+  ProductService,
 } from '@spartacus/core';
-import {Observable, of, switchMap, zip} from 'rxjs';
-import { filter, map} from 'rxjs/operators';
-import {CmsComponentData} from '../../../../cms-structure/page/model/cms-component-data';
+import { Observable, of, switchMap, zip } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { CmsComponentData } from '../../../../cms-structure/page/model/cms-component-data';
 
 @Component({
   selector: 'cx-product-carousel',
@@ -29,7 +29,8 @@ export class ProductCarouselComponent {
   protected productSearchByCodeService: ProductSearchByCodeService = inject(
     ProductSearchByCodeService
   );
-  protected productSearchByCategoryService: ProductSearchByCategoryService = inject(ProductSearchByCategoryService);
+  protected productSearchByCategoryService: ProductSearchByCategoryService =
+    inject(ProductSearchByCategoryService);
   protected readonly PRODUCT_SCOPE = [ProductScope.LIST, ProductScope.STOCK];
 
   protected readonly PRODUCT_SCOPE_ITEM = [ProductScope.LIST_ITEM];
@@ -56,31 +57,40 @@ export class ProductCarouselComponent {
     this.componentData$.pipe(
       switchMap((data) => {
         const categories = data?.categoryCodes?.split(' ');
-        return categories
-          ?
-          zip(
-            categories.map((categoryCode) =>
-              this.productSearchByCategoryService
-                .get({categoryCode, scope: ProductScope.LIST}))
-          )
-            .pipe(
+        return categories &&
+          this.featureConfigService.isEnabled('enableCarouselCategoryProducts')
+          ? zip(
+              categories.map((categoryCode) =>
+                this.productSearchByCategoryService.get({
+                  categoryCode,
+                  scope: ProductScope.LIST,
+                })
+              )
+            ).pipe(
               map((results) => {
-                const codes = results.flat().map((product) => product?.code).join(' ')
+                const codes = results
+                  .flat()
+                  .map((product) => product?.code)
+                  .join(' ');
 
-              return {...data, productCodes: data.productCodes + " " +codes};
-            }))
+                return {
+                  ...data,
+                  productCodes: data.productCodes + ' ' + codes,
+                };
+              })
+            )
           : of(data);
       }),
       map((data) => {
         const componentMappingExist = !!data.composition?.inner?.length;
         const codes = data.productCodes?.trim().split(' ') ?? [];
-        return {componentMappingExist, codes};
+        return { componentMappingExist, codes };
       }),
-      map(({componentMappingExist, codes}) => {
+      map(({ componentMappingExist, codes }) => {
         if (this.featureConfigService.isEnabled('useProductCarouselBatchApi')) {
           const scope = componentMappingExist ? 'carousel' : 'carouselMinimal';
           return codes.map((code: string) =>
-            this.productSearchByCodeService.get({code, scope})
+            this.productSearchByCodeService.get({ code, scope })
           );
         } else {
           const productScope = componentMappingExist
@@ -96,6 +106,5 @@ export class ProductCarouselComponent {
   constructor(
     protected componentData: CmsComponentData<model>,
     protected productService: ProductService
-  ) {
-  }
+  ) {}
 }

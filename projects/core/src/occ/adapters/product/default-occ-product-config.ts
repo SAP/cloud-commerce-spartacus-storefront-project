@@ -42,8 +42,7 @@ export const defaultOccProductConfig: OccConfig = {
             'products/search?fields=products(code,name,price(formattedValue),images(DEFAULT),baseProduct)',
         },
         productSearchByCategory: {
-          default:
-            'categories/${categoryCode}/products?fields=DEFAULT',
+          default: 'categories/${categoryCode}/products?fields=DEFAULT',
           list: 'categories/${categoryCode}/products?fields=products(code)',
         },
         /* eslint-enable */
