@@ -143,7 +143,7 @@ export class ApplePayObservableFactory {
     });
   }
 
-  protected isShippingTypeNotPickup(config: any) {
-    return config.request.shippingType !== ApplePayShippingType.STORE_PICKUP;
+  protected isShippingTypePickup(config: any) {
+    return config.request.shippingType === ApplePayShippingType.STORE_PICKUP;
   }
 }

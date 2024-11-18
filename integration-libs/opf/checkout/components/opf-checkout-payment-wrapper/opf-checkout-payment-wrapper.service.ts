@@ -97,7 +97,7 @@ export class OpfCheckoutPaymentWrapperService {
       isLoading: true,
       isError: false,
     });
-    this.opfResourceLoaderService.clearAllProviderResources();
+    this.opfResourceLoaderService.clearAllResources();
 
     return combineLatest([
       this.userIdService.getUserId(),
@@ -114,7 +114,7 @@ export class OpfCheckoutPaymentWrapperService {
       }),
       filter((response) => Boolean(response?.accessCode)),
       map(({ accessCode: otpKey }) =>
-        this.setPaymentInitiationConfig(otpKey, paymentOptionId)
+        this.getPaymentInitiationConfig(otpKey, paymentOptionId)
       ),
       switchMap((params) => this.opfPaymentFacade.initiatePayment(params)),
       tap((paymentOptionConfig: OpfPaymentSessionData | Error) => {
@@ -167,7 +167,7 @@ export class OpfCheckoutPaymentWrapperService {
       const html = config?.dynamicScript?.html;
 
       this.opfResourceLoaderService
-        .loadProviderResources(
+        .loadResources(
           config.dynamicScript.jsUrls,
           config.dynamicScript.cssUrls
         )
@@ -254,7 +254,7 @@ export class OpfCheckoutPaymentWrapperService {
     );
   }
 
-  protected setPaymentInitiationConfig(
+  protected getPaymentInitiationConfig(
     otpKey: string,
     paymentOptionId: number
   ) {
