@@ -22,6 +22,7 @@ import {
   SPARTACUS_OPF_CTA_ROOT,
   SPARTACUS_OPF_GLOBAL_FUNCTIONS,
   SPARTACUS_OPF_GLOBAL_FUNCTIONS_ROOT,
+  SPARTACUS_OPF_ORDER,
   SPARTACUS_OPF_PAYMENT,
   SPARTACUS_OPF_PAYMENT_ASSETS,
   SPARTACUS_OPF_PAYMENT_ROOT,
@@ -141,10 +142,16 @@ export const OPF_CHECKOUT_SCHEMATICS_CONFIG: SchematicConfig = {
   },
   folderName: OPF_FOLDER_NAME,
   moduleName: OPF_MODULE_NAME,
-  featureModule: {
-    name: OPF_CHECKOUT_MODULE,
-    importPath: SPARTACUS_OPF_CHECKOUT,
-  },
+  featureModule: [
+    {
+      name: OPF_CHECKOUT_MODULE,
+      importPath: SPARTACUS_OPF_CHECKOUT,
+    },
+    {
+      name: OPF_ORDER_MODULE,
+      importPath: SPARTACUS_OPF_ORDER,
+    },
+  ],
   rootModule: {
     name: OPF_CHECKOUT_ROOT_MODULE,
     importPath: SPARTACUS_OPF_CHECKOUT_ROOT,
