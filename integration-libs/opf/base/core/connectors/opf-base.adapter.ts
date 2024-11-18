@@ -4,12 +4,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { OpfActiveConfiguration } from '@spartacus/opf/base/root';
+import {
+  OpfActiveConfigurationQuery,
+  OpfActiveConfigurationResponse,
+} from '@spartacus/opf/base/root';
 import { Observable } from 'rxjs';
 
 export abstract class OpfBaseAdapter {
   /**
    * Abstract method used to get payment active configurations
    */
-  abstract getActiveConfigurations(): Observable<OpfActiveConfiguration[]>;
+  abstract getActiveConfigurations(
+    query?: OpfActiveConfigurationQuery
+  ): Observable<OpfActiveConfigurationResponse>;
 }

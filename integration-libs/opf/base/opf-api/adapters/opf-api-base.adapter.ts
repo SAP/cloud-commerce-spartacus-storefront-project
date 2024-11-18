@@ -18,7 +18,8 @@ import {
 } from '@spartacus/opf/base/core';
 import {
   OPF_CC_PUBLIC_KEY_HEADER,
-  OpfActiveConfiguration,
+  OpfActiveConfigurationQuery,
+  OpfActiveConfigurationResponse,
   OpfConfig,
 } from '@spartacus/opf/base/root';
 import { Observable } from 'rxjs';
@@ -46,16 +47,21 @@ export class OpfApiBaseAdapter implements OpfBaseAdapter {
     'Content-Language': 'en-us',
   };
 
-  getActiveConfigurations(): Observable<OpfActiveConfiguration[]> {
+  getActiveConfigurations(
+    query?: OpfActiveConfigurationQuery
+  ): Observable<OpfActiveConfigurationResponse> {
     const headers = new HttpHeaders(this.header).set(
       OPF_CC_PUBLIC_KEY_HEADER,
       this.config.opf?.commerceCloudPublicKey || ''
     );
 
     return this.http
-      .get<OpfActiveConfiguration[]>(this.getActiveConfigurationsEndpoint(), {
-        headers,
-      })
+      .get<OpfActiveConfigurationResponse>(
+        this.getActiveConfigurationsEndpoint(query),
+        {
+          headers,
+        }
+      )
       .pipe(
         catchError((error) => {
           throw tryNormalizeHttpError(error, this.logger);
@@ -64,7 +70,11 @@ export class OpfApiBaseAdapter implements OpfBaseAdapter {
       );
   }
 
-  protected getActiveConfigurationsEndpoint(): string {
-    return this.opfEndpointsService.buildUrl('getActiveConfigurations');
+  protected getActiveConfigurationsEndpoint(
+    query?: OpfActiveConfigurationQuery
+  ): string {
+    return this.opfEndpointsService.buildUrl('getActiveConfigurations', {
+      queryParams: query,
+    });
   }
 }

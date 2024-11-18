@@ -9,6 +9,7 @@ import {
 } from '@spartacus/core';
 import {
   OpfActiveConfiguration,
+  OpfActiveConfigurationResponse,
   OpfBaseFacade,
   OpfMetadataModel,
   OpfMetadataStoreService,
@@ -41,18 +42,20 @@ const mockActiveConfigurations: OpfActiveConfiguration[] = [
 ];
 class MockOpfBaseFacade implements Partial<OpfBaseFacade> {
   getActiveConfigurationsState(): Observable<
-    QueryState<OpfActiveConfiguration[] | undefined>
+    QueryState<OpfActiveConfigurationResponse | undefined>
   > {
     return activeConfigurationsState$.asObservable();
   }
 }
 
 const activeConfigurationsState$ = new BehaviorSubject<
-  QueryState<OpfActiveConfiguration[] | undefined>
+  QueryState<OpfActiveConfigurationResponse | undefined>
 >({
   loading: false,
   error: false,
-  data: [],
+  data: {
+    value: [],
+  },
 });
 
 class MockGlobalMessageService implements Partial<GlobalMessageService> {
@@ -134,7 +137,9 @@ describe('OpfCheckoutPaymentsComponent', () => {
     activeConfigurationsState$.next({
       loading: false,
       error: false,
-      data: [],
+      data: {
+        value: [],
+      },
     });
 
     fixture.detectChanges();
@@ -149,7 +154,9 @@ describe('OpfCheckoutPaymentsComponent', () => {
     activeConfigurationsState$.next({
       error: new Error('Request failed'),
       loading: false,
-      data: undefined,
+      data: {
+        value: undefined,
+      },
     });
 
     fixture.detectChanges();
@@ -182,7 +189,9 @@ describe('OpfCheckoutPaymentsComponent', () => {
     activeConfigurationsState$.next({
       loading: false,
       error: false,
-      data: mockActiveConfigurations,
+      data: {
+        value: mockActiveConfigurations,
+      },
     });
 
     fixture.detectChanges();
