@@ -43,7 +43,8 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
 
   protected paginationIndex = 0;
 
-  protected paginationPageSize = 6;
+  @Input()
+  elementsPerPage?: number;
 
   @Input()
   disabled = true;
@@ -62,7 +63,7 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   > {
     return this.opfBaseService
       .getActiveConfigurationsState({
-        pageSize: this.paginationPageSize,
+        pageSize: this.elementsPerPage,
         pageNumber: this.paginationIndex + 1,
       })
       .pipe(
@@ -136,9 +137,7 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   getPaginationModel(
     pagination?: OpfActiveConfigurationPagination
   ): PaginationModel {
-    let paginationModel: PaginationModel;
-
-    paginationModel = {
+    const paginationModel: PaginationModel = {
       currentPage: this.paginationIndex,
       pageSize: pagination?.size,
       totalPages: pagination?.totalPages,

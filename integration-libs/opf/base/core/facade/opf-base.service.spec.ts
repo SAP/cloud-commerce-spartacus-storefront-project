@@ -84,7 +84,6 @@ describe('OpfBaseService', () => {
     };
 
     queryService.create.and.returnValue(mockQuery);
-    // service['activeConfigurationsQuery'] = mockQuery;
   });
 
   it('should be created', () => {
