@@ -28,14 +28,15 @@ export class ApplePaySessionOrchestrator {
   );
 
   /**
-   * Configures and starts a native `ApplePaySession` for a payment request.
+   * Starts a new payment process using the native `ApplePaySession` API
+   *
+   * It creates a new `ApplePaySession` instance and binds the provided
+   * handlers (callbacks) for the `ApplePaySession` instance events.
    *
    * It returns an Observable that:
    * a) emits the payment result. Then the observable is immediately completed.
    * b) OR emits an RxJS error if any error occurs during the process
    *    (e.g. a merchant validation fails, the user cancels the payment, etc.)
-   *
-   * Note: when used many times, each call creates a new instance of `ApplePaySession`.
    */
   start(config: ApplePaySessionConfig): Observable<any> {
     return new Observable<any>((observer) => {
