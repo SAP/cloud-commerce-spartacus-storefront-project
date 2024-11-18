@@ -122,7 +122,7 @@ export class OpfResourceLoaderService extends ScriptLoader {
     }
   }
 
-  clearAllProviderResources() {
+  clearAllResources() {
     this.document
       .querySelectorAll(`[${this.OPF_RESOURCE_ATTRIBUTE_KEY}]`)
       .forEach((resource: undefined | HTMLLinkElement | HTMLScriptElement) => {
@@ -138,7 +138,7 @@ export class OpfResourceLoaderService extends ScriptLoader {
    * The returned Promise is resolved when all resources are loaded.
    * The returned Promise is also resolved (not rejected!) immediately when any loading error occurs.
    */
-  loadProviderResources(
+  loadResources(
     scripts: OpfDynamicScriptResource[] = [],
     styles: OpfDynamicScriptResource[] = []
   ): Promise<void> {

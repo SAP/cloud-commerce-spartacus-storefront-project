@@ -46,7 +46,7 @@ describe('OpfResourceLoaderService', () => {
     expect(opfResourceLoaderService instanceof ScriptLoader).toBe(true);
   });
 
-  describe('loadProviderResources', () => {
+  describe('loadResources', () => {
     beforeEach(() => {
       opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
     });
@@ -65,7 +65,7 @@ describe('OpfResourceLoaderService', () => {
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
 
-      opfResourceLoaderService.loadProviderResources(
+      opfResourceLoaderService.loadResources(
         [mockScriptResource],
         [mockStyleResource]
       );
@@ -83,7 +83,7 @@ describe('OpfResourceLoaderService', () => {
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
 
-      opfResourceLoaderService.loadProviderResources([mockScriptResource]);
+      opfResourceLoaderService.loadResources([mockScriptResource]);
 
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadScript']).toHaveBeenCalled();
@@ -98,7 +98,7 @@ describe('OpfResourceLoaderService', () => {
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
 
-      opfResourceLoaderService.loadProviderResources([], [mockStyleResource]);
+      opfResourceLoaderService.loadResources([], [mockStyleResource]);
 
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadStyles']).toHaveBeenCalled();
@@ -112,7 +112,7 @@ describe('OpfResourceLoaderService', () => {
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
 
-      opfResourceLoaderService.loadProviderResources([], [mockStyleResource]);
+      opfResourceLoaderService.loadResources([], [mockStyleResource]);
 
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
@@ -122,7 +122,7 @@ describe('OpfResourceLoaderService', () => {
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
 
-      opfResourceLoaderService.loadProviderResources();
+      opfResourceLoaderService.loadResources();
 
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
@@ -143,7 +143,7 @@ describe('OpfResourceLoaderService', () => {
         }
       );
 
-      opfResourceLoaderService.loadProviderResources([mockScriptResource]);
+      opfResourceLoaderService.loadResources([mockScriptResource]);
 
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadScript']).toHaveBeenCalled();
@@ -165,7 +165,7 @@ describe('OpfResourceLoaderService', () => {
         }
       );
 
-      opfResourceLoaderService.loadProviderResources([mockScriptResource]);
+      opfResourceLoaderService.loadResources([mockScriptResource]);
 
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadScript']).toHaveBeenCalled();
@@ -188,7 +188,7 @@ describe('OpfResourceLoaderService', () => {
         }
       );
 
-      opfResourceLoaderService.loadProviderResources([], [mockStylesResources]);
+      opfResourceLoaderService.loadResources([], [mockStylesResources]);
 
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadStyles']).toHaveBeenCalled();
@@ -210,7 +210,7 @@ describe('OpfResourceLoaderService', () => {
         }
       );
 
-      opfResourceLoaderService.loadProviderResources([], [mockStylesResources]);
+      opfResourceLoaderService.loadResources([], [mockStylesResources]);
 
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
 
@@ -230,7 +230,7 @@ describe('OpfResourceLoaderService', () => {
         .createSpy('querySelector')
         .and.returnValue({} as Element);
 
-      opfResourceLoaderService.loadProviderResources([], [mockStyleResource]);
+      opfResourceLoaderService.loadResources([], [mockStyleResource]);
 
       expect(opfResourceLoaderService['embedStyles']).not.toHaveBeenCalled();
     }));
@@ -247,13 +247,13 @@ describe('OpfResourceLoaderService', () => {
         .createSpy('querySelector')
         .and.returnValue({} as Element);
 
-      opfResourceLoaderService.loadProviderResources([mockScriptResource]);
+      opfResourceLoaderService.loadResources([mockScriptResource]);
 
       expect(opfResourceLoaderService['embedScript']).not.toHaveBeenCalled();
     }));
   });
 
-  describe('loadProviderResources using server platform', () => {
+  describe('loadResources using server platform', () => {
     beforeEach(() => {
       TestBed.overrideProvider(PLATFORM_ID, { useValue: 'server' });
       opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
@@ -266,7 +266,7 @@ describe('OpfResourceLoaderService', () => {
       };
 
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
-      opfResourceLoaderService.loadProviderResources([], [mockStyleResource]);
+      opfResourceLoaderService.loadResources([], [mockStyleResource]);
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
     }));
 
@@ -276,12 +276,12 @@ describe('OpfResourceLoaderService', () => {
         type: OpfDynamicScriptResourceType.SCRIPT,
       };
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
-      opfResourceLoaderService.loadProviderResources([], [mockScriptResource]);
+      opfResourceLoaderService.loadResources([], [mockScriptResource]);
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
     }));
   });
 
-  describe('clearAllProviderResources', () => {
+  describe('clearAllResources', () => {
     it('should clear all provider resources', () => {
       opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
 
@@ -293,7 +293,7 @@ describe('OpfResourceLoaderService', () => {
         .createSpy('querySelectorAll')
         .and.returnValue([mockLinkElement]);
 
-      opfResourceLoaderService.clearAllProviderResources();
+      opfResourceLoaderService.clearAllResources();
 
       expect(mockLinkElement.remove).toHaveBeenCalled();
     });
