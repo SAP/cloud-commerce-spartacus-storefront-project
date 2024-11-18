@@ -781,7 +781,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   shouldHideAddToCartForUnpurchasableProducts: false,
   useExtractedBillingAddressComponent: false,
   showBillingAddressInDigitalPayments: false,
-  showDownloadProposalButton: false,
+  showDownloadProposalButton: true,
   showPromotionsInPDP: true,
   searchBoxV2: false,
   recentSearches: true,
