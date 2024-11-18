@@ -136,7 +136,7 @@ export class OpfResourceLoaderService {
     }
   }
 
-  clearAllProviderResources() {
+  clearAllResources() {
     this.document
       .querySelectorAll(`[${this.OPF_RESOURCE_ATTRIBUTE_KEY}]`)
       .forEach((resource: undefined | HTMLLinkElement | HTMLScriptElement) => {
@@ -146,7 +146,7 @@ export class OpfResourceLoaderService {
       });
   }
 
-  loadProviderResources(
+  loadResources(
     scripts: OpfDynamicScriptResource[] = [],
     styles: OpfDynamicScriptResource[] = []
   ): Promise<void> {
