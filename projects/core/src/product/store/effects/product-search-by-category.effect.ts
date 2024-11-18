@@ -9,7 +9,7 @@ import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Action} from '@ngrx/store';
 import {AuthActions} from '../../../auth/user-auth/store/actions';
 import {normalizeHttpError} from '../../../util/normalize-http-error';
-import {forkJoin, Observable} from 'rxjs';
+import { forkJoin, Observable} from 'rxjs';
 import {catchError, groupBy, map, mergeMap} from 'rxjs/operators';
 import {LoggerService} from '../../../logger/logger.service';
 import {SiteContextActions} from '../../../site-context/store/actions/index';
@@ -65,12 +65,14 @@ export class ProductSearchByCategoryEffects {
                     this.productSearchConnector.searchByCategory(categoryCode, scope)
                   )
                 ).pipe(
-                  map((searchResults, _index) => {
-                    const allProducts = searchResults.flatMap((result) => result.products ?? []);
-                    return new ProductActions.ProductSearchLoadByCategorySuccess({
-                      categoryCode: categoryCodes[0],
-                      scope,
-                      products: allProducts,
+                  mergeMap((searchResults, _index) => {
+                    return categoryCodes.map((categoryCode, idx) => {
+                      const categoryProducts = searchResults[idx]?.products ?? [];
+                      return new ProductActions.ProductSearchLoadByCategorySuccess({
+                        categoryCode,
+                        scope,
+                        products: categoryProducts,
+                      });
                     });
                   }),
                   catchError(
