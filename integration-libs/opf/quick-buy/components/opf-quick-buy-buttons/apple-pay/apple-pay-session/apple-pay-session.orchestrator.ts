@@ -9,24 +9,39 @@ import { Injectable, inject } from '@angular/core';
 import { OpfPaymentErrorType } from '@spartacus/opf/payment/root';
 import {
   ApplePayEvent,
-  ApplePayObservableConfig,
+  ApplePaySessionConfig,
   ApplePayShippingType,
 } from '@spartacus/opf/quick-buy/root';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { ApplePaySessionFactory } from '../apple-pay-session/apple-pay-session.factory';
+import { ApplePaySessionWrapperService } from './apple-pay-session-wrapper.service';
 
+/**
+ * Orchestrates a payment process using the native `ApplePaySession` API.
+ */
 @Injectable({
   providedIn: 'root',
 })
-export class ApplePayObservableFactory {
-  protected applePaySessionFactory = inject(ApplePaySessionFactory);
+export class ApplePaySessionOrchestrator {
+  protected applePaySessionWrapperService = inject(
+    ApplePaySessionWrapperService
+  );
 
-  initApplePayEventsHandler(config: ApplePayObservableConfig): Observable<any> {
+  /**
+   * Configures and starts a native `ApplePaySession` for a payment request.
+   *
+   * It returns an Observable that:
+   * a) emits the payment result. Then the observable is immediately completed.
+   * b) OR emits an RxJS error if any error occurs during the process
+   *    (e.g. a merchant validation fails, the user cancels the payment, etc.)
+   *
+   * Note: when used many times, each call creates a new instance of `ApplePaySession`.
+   */
+  start(config: ApplePaySessionConfig): Observable<any> {
     return new Observable<any>((observer) => {
       let session: ApplePaySession;
       try {
-        session = this.applePaySessionFactory.startApplePaySession(
+        session = this.applePaySessionWrapperService.createSession(
           config.request
         ) as ApplePaySession;
       } catch (err) {
