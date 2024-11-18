@@ -58,7 +58,7 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
     QueryState<OpfActiveConfigurationResponse | undefined>
   >;
 
-  getActiveConfiguration(): Observable<
+  getActiveConfigurations(): Observable<
     QueryState<OpfActiveConfigurationResponse | undefined>
   > {
     return this.opfBaseService
@@ -84,7 +84,7 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   }
 
   updateActiveConfiguration() {
-    this.activeConfigurations$ = this.getActiveConfiguration();
+    this.activeConfigurations$ = this.getActiveConfigurations();
   }
 
   /**

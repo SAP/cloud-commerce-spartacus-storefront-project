@@ -4,6 +4,7 @@ import {
   GlobalMessageService,
   GlobalMessageType,
   I18nTestingModule,
+  PaginationModel,
   QueryState,
   Translatable,
 } from '@spartacus/core';
@@ -16,11 +17,26 @@ import {
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
 
-import { DebugElement } from '@angular/core';
+import {
+  Component,
+  DebugElement,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { OpfCheckoutTermsAndConditionsAlertModule } from '../opf-checkout-terms-and-conditions-alert';
 import { OpfCheckoutPaymentsComponent } from './opf-checkout-payments.component';
+
+@Component({
+  template: '',
+  selector: 'cx-pagination',
+})
+class MockPaginationComponent {
+  @Input() pagination: PaginationModel;
+  @Output() viewPageEvent = new EventEmitter<string>();
+}
 
 const mockActiveConfigurations: OpfActiveConfiguration[] = [
   {
@@ -48,7 +64,7 @@ class MockOpfBaseFacade implements Partial<OpfBaseFacade> {
   }
 }
 
-const activeConfigurationsState$ = new BehaviorSubject<
+let activeConfigurationsState$ = new BehaviorSubject<
   QueryState<OpfActiveConfigurationResponse | undefined>
 >({
   loading: false,
@@ -92,7 +108,7 @@ describe('OpfCheckoutPaymentsComponent', () => {
     );
     await TestBed.configureTestingModule({
       imports: [I18nTestingModule, OpfCheckoutTermsAndConditionsAlertModule],
-      declarations: [OpfCheckoutPaymentsComponent],
+      declarations: [OpfCheckoutPaymentsComponent, MockPaginationComponent],
       providers: [
         {
           provide: OpfBaseFacade,
@@ -215,5 +231,31 @@ describe('OpfCheckoutPaymentsComponent', () => {
         expect(logoElement).toBeFalsy();
       }
     });
+  });
+
+  it('should render pagination component', () => {
+    activeConfigurationsState$ = new BehaviorSubject<
+      QueryState<OpfActiveConfigurationResponse | undefined>
+    >({
+      loading: false,
+      error: false,
+      data: {
+        value: mockActiveConfigurations,
+        page: {
+          size: 1,
+          totalPages: mockActiveConfigurations.length,
+          totalElements: mockActiveConfigurations.length,
+          number: 1,
+        },
+      },
+    });
+
+    fixture.detectChanges();
+
+    const paginationElement = el.query(
+      By.css('.cx-payment-options-list-pagination')
+    );
+
+    expect(paginationElement).toBeTruthy();
   });
 });
