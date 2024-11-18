@@ -8,7 +8,7 @@ import {HttpClient, HttpContext} from '@angular/common/http';
 import {inject, Injectable} from '@angular/core';
 import {forkJoin, Observable, of} from 'rxjs';
 import {Product} from '../../../model';
-import {map, tap} from 'rxjs/operators';
+import { map, tap} from 'rxjs/operators';
 import {ProductSearchPage, Suggestion,} from '../../../model/product-search.model';
 import {
   PRODUCT_SEARCH_PAGE_NORMALIZER,
@@ -105,7 +105,21 @@ export class OccProductSearchAdapter implements ProductSearchAdapter {
         }))
       );
   }
-
+  // searchByCategory(categories: string[], scope?: string): Observable<{ products: Product[] }> {
+  //   return forkJoin(
+  //     categories.map((category) =>
+  //       this.http.get<Product[]>(this.getSearchByCategoryEndpoint(category, scope)).pipe(
+  //         this.converter.pipeable(PRODUCT_SEARCH_PAGE_NORMALIZER),
+  //         map((productSearchPage) => productSearchPage.products ?? []),
+  //         catchError(() => of([]))
+  //       )
+  //     )
+  //   ).pipe(
+  //     map((results) => ({
+  //       products: results.flat(),
+  //     }))
+  //   );
+  // }
   loadSuggestions(
     term: string,
     pageSize: number = 3

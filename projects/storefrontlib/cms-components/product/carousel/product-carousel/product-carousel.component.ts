@@ -56,11 +56,13 @@ export class ProductCarouselComponent {
     this.componentData$.pipe(
       tap((data) => {
         if (data.categoryCodes) {
-          const categories = data.categoryCodes.split(' ')
+          const categories = data.categoryCodes.split(' ');
           categories.forEach((categoryCode) => {
-            console.log(categoryCode)
-            this.productSearchByCategoryService.get({categoryCode}).subscribe(console.log);
-          })
+            this.productSearchByCategoryService.get({categoryCode, scope: ProductScope.LIST})
+              .subscribe((x) => {
+                console.log(x)
+              });
+          });
         }
       }),
       map((data) => {

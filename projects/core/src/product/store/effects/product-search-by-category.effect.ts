@@ -4,19 +4,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { inject, Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Action } from '@ngrx/store';
-import { AuthActions } from '../../../auth/user-auth/store/actions';
-import { normalizeHttpError } from '../../../util/normalize-http-error';
-import { Observable } from 'rxjs';
-import { catchError, groupBy, map, mergeMap, switchMap } from 'rxjs/operators';
-import { LoggerService } from '../../../logger/logger.service';
-import { SiteContextActions } from '../../../site-context/store/actions/index';
-import { bufferDebounceTime } from '../../../util/rxjs/buffer-debounce-time';
-import { withdrawOn } from '../../../util/rxjs/withdraw-on';
-import { ProductSearchConnector } from '../../connectors/search/product-search.connector';
-import { ProductActions } from '../actions/index';
+import {inject, Injectable} from '@angular/core';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
+import {Action} from '@ngrx/store';
+import {AuthActions} from '../../../auth/user-auth/store/actions';
+import {normalizeHttpError} from '../../../util/normalize-http-error';
+import {forkJoin, Observable} from 'rxjs';
+import {catchError, groupBy, map, mergeMap} from 'rxjs/operators';
+import {LoggerService} from '../../../logger/logger.service';
+import {SiteContextActions} from '../../../site-context/store/actions/index';
+import {bufferDebounceTime} from '../../../util/rxjs/buffer-debounce-time';
+import {withdrawOn} from '../../../util/rxjs/withdraw-on';
+import {ProductSearchConnector} from '../../connectors/search/product-search.connector';
+import {ProductActions} from '../actions/index';
 
 @Injectable()
 export class ProductSearchByCategoryEffects {
@@ -33,7 +33,7 @@ export class ProductSearchByCategoryEffects {
 
   searchByCategory$ = createEffect(
     () =>
-      ({ scheduler, debounce = 0 } = {}): Observable<
+      ({scheduler, debounce = 0} = {}): Observable<
         | ProductActions.ProductSearchLoadByCategorySuccess
         | ProductActions.ProductSearchLoadByCategoryFail
       > =>
@@ -60,37 +60,33 @@ export class ProductSearchByCategoryEffects {
                   (payload) => payload.categoryCode
                 );
 
-                return this.productSearchConnector
-                  .searchByCategory(categoryCodes[0], scope)
-                  .pipe(
-                    switchMap(
-                      (
-                        searchResults
-                      ): ProductActions.ProductSearchLoadByCategorySuccess[] => {
-                        return searchResults.products?.map(
-                          (product, index) =>
-                            // constructor(payload: { products: Product[]; categoryCode: string; scope: string }) {
-                            new ProductActions.ProductSearchLoadByCategorySuccess({
-                              ...payloads[index],
-                             products: [product],
-                            })
-                        );
-                      }
-                    ),
-                    catchError(
-                      (
-                        error
-                      ): ProductActions.ProductSearchLoadByCategoryFail[] => {
-                        return payloads.map(
-                          (payload) =>
-                            new ProductActions.ProductSearchLoadByCategoryFail({
-                              ...payload,
-                              error: normalizeHttpError(error, this.logger),
-                            })
-                        );
-                      }
-                    )
-                  );
+                return forkJoin(
+                  categoryCodes.map((categoryCode) =>
+                    this.productSearchConnector.searchByCategory(categoryCode, scope)
+                  )
+                ).pipe(
+                  map((searchResults, _index) => {
+                    const allProducts = searchResults.flatMap((result) => result.products ?? []);
+                    return new ProductActions.ProductSearchLoadByCategorySuccess({
+                      categoryCode: categoryCodes[0],
+                      scope,
+                      products: allProducts,
+                    });
+                  }),
+                  catchError(
+                    (
+                      error
+                    ): ProductActions.ProductSearchLoadByCategoryFail[] => {
+                      return payloads.map(
+                        (payload) =>
+                          new ProductActions.ProductSearchLoadByCategoryFail({
+                            ...payload,
+                            error: normalizeHttpError(error, this.logger),
+                          })
+                      );
+                    }
+                  )
+                );
               })
             );
           }),
