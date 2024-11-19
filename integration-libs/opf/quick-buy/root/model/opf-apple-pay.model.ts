@@ -38,7 +38,10 @@ export interface ApplePayTransactionInput {
   countryCode?: string;
 }
 
-export interface ApplePayObservableConfig {
+/**
+ * Configuration needed for starting an ApplePaySession
+ */
+export interface ApplePaySessionConfig {
   request: any;
   onValidateMerchant: (event: any) => Observable<any>;
   onShippingContactSelected: (event: any) => Observable<any>;

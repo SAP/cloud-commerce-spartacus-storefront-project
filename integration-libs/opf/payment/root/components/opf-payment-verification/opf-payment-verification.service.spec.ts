@@ -26,10 +26,7 @@ import {
   OpfPaymentVerificationResult,
 } from '../../model';
 
-import {
-  GlobalFunctionsDomain,
-  OpfGlobalFunctionsFacade,
-} from '@spartacus/opf/global-functions/root';
+import { OpfGlobalFunctionsFacade } from '@spartacus/opf/global-functions/root';
 import { OpfPaymentVerificationService } from './opf-payment-verification.service';
 
 describe('OpfPaymentVerificationService', () => {
@@ -144,6 +141,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: mockPaymentSessionId,
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
@@ -183,6 +181,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: undefined,
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
@@ -214,6 +213,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: undefined,
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
@@ -362,7 +362,6 @@ describe('OpfPaymentVerificationService', () => {
 
       service
         .runHostedFieldsPattern(
-          GlobalFunctionsDomain.REDIRECT,
           'paymentSessionIdTest',
           {} as ViewContainerRef,
           [{ key: 'key test', value: 'value test' }]
@@ -390,7 +389,6 @@ describe('OpfPaymentVerificationService', () => {
 
       service
         .runHostedFieldsPattern(
-          GlobalFunctionsDomain.REDIRECT,
           'paymentSessionIdTest',
           {} as ViewContainerRef,
           [{ key: 'key test', value: 'value test' }]
@@ -418,7 +416,6 @@ describe('OpfPaymentVerificationService', () => {
 
       service
         .runHostedFieldsPattern(
-          GlobalFunctionsDomain.REDIRECT,
           'paymentSessionIdTest',
           {} as ViewContainerRef,
           [{ key: 'key test', value: 'value test' }]
@@ -444,7 +441,6 @@ describe('OpfPaymentVerificationService', () => {
 
       service
         .runHostedFieldsPattern(
-          GlobalFunctionsDomain.REDIRECT,
           'paymentSessionIdTest',
           {} as ViewContainerRef,
           [{ key: 'key test', value: 'value test' }]
@@ -505,6 +501,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: '111111',
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
@@ -526,6 +523,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: '111111',
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
