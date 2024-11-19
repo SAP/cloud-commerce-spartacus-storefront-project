@@ -41,11 +41,9 @@ export function assertInventoryDisplay(
 ) {
   cy.get(`${alias}`).then((xhr) => {
     const body = xhr.response.body;
-    const code =
-      body.availabilities?.availabilityItems[0]?.unitAvailabilities[0]
-        .productCode;
-    const stock =
-      body.availabilities?.availabilityItems[0]?.unitAvailabilities[0].quantity;
+    const code = body.availabilityItems[0]?.productCode;
+    const stock = body.availabilityItems[0]?.unitAvailabilities[0]?.quantity;
+    const status = body.availabilityItems[0]?.unitAvailabilities[0]?.status;
 
     expect(code).to.equal(productCode);
 
@@ -54,19 +52,13 @@ export function assertInventoryDisplay(
 
       if (isInventoryDisplayActive) {
         // Out of stock
-        if (
-          stock.status === 'OUT_OF_STOCK' ||
-          functionality === 'OUT_OF_STOCK'
-        ) {
+        if (status === 'OUT_OF_STOCK' || functionality === 'OUT_OF_STOCK') {
           expect(text).to.equal(sampleData.stockOutOfStockLabel);
         } else {
           expect(text).to.equal(`${sampleData.stockLabel}`);
         }
       } else {
-        if (
-          stock.stockLevelStatus === 'OUT_OF_STOCK' ||
-          functionality === 'OUT_OF_STOCK'
-        ) {
+        if (status === 'OUT_OF_STOCK' || functionality === 'OUT_OF_STOCK') {
           expect(text).to.equal(sampleData.stockOutOfStockLabel);
         } else {
           expect(text).to.equal(`${sampleData.stockLabel}`);
