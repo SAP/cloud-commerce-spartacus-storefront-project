@@ -56,11 +56,11 @@ export class ProductCarouselComponent {
   items$: Observable<Observable<Product | undefined>[]> =
     this.componentData$.pipe(
       switchMap((data) => {
-        const categories = data?.categoryCodes?.split(' ');
-        return categories &&
+        const categoryCodes = data?.categoryCodes?.split(' ');
+        return categoryCodes &&
           this.featureConfigService.isEnabled('enableCarouselCategoryProducts')
           ? zip(
-              categories.map((categoryCode) =>
+              categoryCodes.map((categoryCode) =>
                 this.productSearchByCategoryService.get({
                   categoryCode,
                   scope: ProductScope.LIST,

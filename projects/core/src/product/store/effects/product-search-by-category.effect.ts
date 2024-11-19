@@ -7,8 +7,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
-import { AuthActions } from '../../../auth/user-auth/store/actions';
-import { normalizeHttpError } from '../../../util/normalize-http-error';
 import { forkJoin, Observable } from 'rxjs';
 import { catchError, groupBy, map, mergeMap } from 'rxjs/operators';
 import { LoggerService } from '../../../logger/logger.service';
@@ -17,6 +15,7 @@ import { bufferDebounceTime } from '../../../util/rxjs/buffer-debounce-time';
 import { withdrawOn } from '../../../util/rxjs/withdraw-on';
 import { ProductSearchConnector } from '../../connectors/search/product-search.connector';
 import { ProductActions } from '../actions/index';
+import { tryNormalizeHttpError } from '@spartacus/core';
 
 @Injectable()
 export class ProductSearchByCategoryEffects {
@@ -90,7 +89,7 @@ export class ProductSearchByCategoryEffects {
                           (payload) =>
                             new ProductActions.ProductSearchLoadByCategoryFail({
                               ...payload,
-                              error: normalizeHttpError(error, this.logger),
+                              error: tryNormalizeHttpError(error, this.logger),
                             })
                         );
                       }
@@ -103,12 +102,4 @@ export class ProductSearchByCategoryEffects {
           withdrawOn(this.contextChange$)
         )
   );
-
-  clearState$: Observable<ProductActions.ClearProductSearchByCategoryState> =
-    createEffect(() =>
-      this.actions$.pipe(
-        ofType(AuthActions.LOGOUT, AuthActions.LOGIN),
-        map(() => new ProductActions.ClearProductSearchByCategoryState())
-      )
-    );
 }
