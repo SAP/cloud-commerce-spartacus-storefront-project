@@ -111,21 +111,7 @@ export class OccProductSearchAdapter implements ProductSearchAdapter {
         }))
       );
   }
-  // searchByCategory(categories: string[], scope?: string): Observable<{ products: Product[] }> {
-  //   return forkJoin(
-  //     categories.map((category) =>
-  //       this.http.get<Product[]>(this.getSearchByCategoryEndpoint(category, scope)).pipe(
-  //         this.converter.pipeable(PRODUCT_SEARCH_PAGE_NORMALIZER),
-  //         map((productSearchPage) => productSearchPage.products ?? []),
-  //         catchError(() => of([]))
-  //       )
-  //     )
-  //   ).pipe(
-  //     map((results) => ({
-  //       products: results.flat(),
-  //     }))
-  //   );
-  // }
+
   loadSuggestions(
     term: string,
     pageSize: number = 3
