@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import { EntityScopedLoaderActions } from '../../../state/utils/scoped-loader/entity-scoped-loader.actions';
 
 import { PRODUCT_SEARCH_RESULTS_BY_CATEGORY_ENTITY } from '../product-state';
