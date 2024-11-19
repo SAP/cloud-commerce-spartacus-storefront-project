@@ -5,7 +5,11 @@
  */
 
 import { inject, Injectable } from '@angular/core';
-import { Command, CommandService, CommandStrategy } from '../../../src/util/command-query';
+import {
+  Command,
+  CommandService,
+  CommandStrategy,
+} from '../../../src/util/command-query';
 import { Observable } from 'rxjs';
 import { ProductAvailabilities } from '../../model/product.model';
 import { ProductAvailabilityConnector } from '../connectors';
