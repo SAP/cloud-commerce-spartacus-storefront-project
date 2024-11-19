@@ -675,6 +675,16 @@ export interface FeatureTogglesInterface {
   a11yDeleteButton2First?: boolean;
 
   /**
+   * In `CustomerListComponent`, `OrderApprovalListComponent`, and `ConfiguratorAttriuteSingleSelectionBundleDropdownComponent`, show label of every `ng-select` and `select`.
+   */
+  a11yShowLabelOfSelect?: boolean;
+
+  /**
+   * In `SiteContextSelectComponent` and `SiteThemeSwitcherComponent`, update style of caret.
+   */
+  a11yShowDownArrowOnFocusedSelectMenu?: boolean;
+
+  /**
    * Fixes text formatting issues while a11y text spacing is enabled.
    * Affects: ListComponent, CSAgentLoginFormComponent
    */
@@ -787,7 +797,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   shouldHideAddToCartForUnpurchasableProducts: false,
   useExtractedBillingAddressComponent: false,
   showBillingAddressInDigitalPayments: false,
-  showDownloadProposalButton: false,
+  showDownloadProposalButton: true,
   showPromotionsInPDP: true,
   searchBoxV2: false,
   recentSearches: true,
@@ -887,6 +897,8 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,
   a11yDeleteButton2First: false,
+  a11yShowLabelOfSelect: false,
+  a11yShowDownArrowOnFocusedSelectMenu: false,
   a11yTextSpacingAdjustments: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
