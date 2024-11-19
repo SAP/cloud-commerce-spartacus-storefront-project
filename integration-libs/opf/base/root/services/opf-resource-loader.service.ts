@@ -122,7 +122,7 @@ export class OpfResourceLoaderService {
   clearAllResources() {
     this.document
       .querySelectorAll(`[${this.OPF_RESOURCE_ATTRIBUTE_KEY}]`)
-      .forEach((resource: undefined | HTMLLinkElement | HTMLScriptElement) => {
+      .forEach((resource) => {
         if (resource) {
           resource.remove();
         }
