@@ -137,8 +137,8 @@ export class OpfGooglePayService {
     this.updateGooglePaymentClient();
   }
 
-  loadProviderResources(): Promise<void> {
-    return this.opfResourceLoaderService.loadProviderResources([
+  loadResources(): Promise<void> {
+    return this.opfResourceLoaderService.loadResources([
       { url: this.GOOGLE_PAY_JS_URL },
     ]);
   }
@@ -361,7 +361,11 @@ export class OpfGooglePayService {
               return this.opfPaymentFacade.submitPayment({
                 additionalData: [],
                 paymentSessionId: '',
-                callbackArray: [() => {}, () => {}, () => {}],
+                callbackArray: {
+                  onSuccess: () => {},
+                  onPending: () => {},
+                  onFailure: () => {},
+                },
                 paymentMethod: OpfQuickBuyProviderType.GOOGLE_PAY as any,
                 encryptedToken,
               });

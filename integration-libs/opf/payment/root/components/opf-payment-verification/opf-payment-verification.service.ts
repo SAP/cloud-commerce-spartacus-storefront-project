@@ -208,19 +208,18 @@ export class OpfPaymentVerificationService {
   }
 
   runHostedFieldsPattern(
-    domain: GlobalFunctionsDomain,
     paymentSessionId: string,
     vcr: ViewContainerRef,
     paramsMap: Array<OpfKeyValueMap>
   ): Observable<boolean> {
     this.globalFunctionsService.registerGlobalFunctions({
-      domain,
+      domain: GlobalFunctionsDomain.REDIRECT,
       paymentSessionId,
       vcr,
       paramsMap,
     });
 
-    return this.opfPaymentFacade.afterRedirectScripts(paymentSessionId).pipe(
+    return this.opfPaymentFacade.getAfterRedirectScripts(paymentSessionId).pipe(
       concatMap((response) => {
         if (!response?.afterRedirectScript) {
           return throwError(this.opfDefaultPaymentError);
@@ -239,7 +238,7 @@ export class OpfPaymentVerificationService {
 
     return new Promise((resolve: (value: boolean) => void) => {
       this.opfResourceLoaderService
-        .loadProviderResources(script.jsUrls, script.cssUrls)
+        .loadResources(script.jsUrls, script.cssUrls)
         .then(() => {
           if (html) {
             this.opfResourceLoaderService.executeScriptFromHtml(html);
@@ -255,9 +254,9 @@ export class OpfPaymentVerificationService {
   }
 
   removeResourcesAndGlobalFunctions(): void {
-    this.globalFunctionsService.removeGlobalFunctions(
+    this.globalFunctionsService.unregisterGlobalFunctions(
       GlobalFunctionsDomain.REDIRECT
     );
-    this.opfResourceLoaderService.clearAllProviderResources();
+    this.opfResourceLoaderService.clearAllResources();
   }
 }
