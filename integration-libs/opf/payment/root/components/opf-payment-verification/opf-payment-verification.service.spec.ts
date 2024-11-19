@@ -26,10 +26,7 @@ import {
   OpfPaymentVerificationResult,
 } from '../../model';
 
-import {
-  GlobalFunctionsDomain,
-  OpfGlobalFunctionsFacade,
-} from '@spartacus/opf/global-functions/root';
+import { OpfGlobalFunctionsFacade } from '@spartacus/opf/global-functions/root';
 import { OpfPaymentVerificationService } from './opf-payment-verification.service';
 
 describe('OpfPaymentVerificationService', () => {
@@ -52,7 +49,7 @@ describe('OpfPaymentVerificationService', () => {
     ]);
     opfPaymentServiceMock = jasmine.createSpyObj('OpfPaymentFacade', [
       'verifyPayment',
-      'afterRedirectScripts',
+      'getAfterRedirectScripts',
     ]);
     opfMetadataStoreServiceMock = jasmine.createSpyObj(
       'OpfMetadataStoreService',
@@ -144,6 +141,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: mockPaymentSessionId,
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
@@ -183,6 +181,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: undefined,
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
@@ -214,6 +213,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: undefined,
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
@@ -350,7 +350,7 @@ describe('OpfPaymentVerificationService', () => {
     };
 
     it('should call renderAfterRedirectScripts', (done) => {
-      opfPaymentServiceMock.afterRedirectScripts.and.returnValue(
+      opfPaymentServiceMock.getAfterRedirectScripts.and.returnValue(
         of({ afterRedirectScript: dynamicScriptMock })
       );
       globalFunctionsServiceMock.registerGlobalFunctions.and.returnValue();
@@ -362,7 +362,6 @@ describe('OpfPaymentVerificationService', () => {
 
       service
         .runHostedFieldsPattern(
-          GlobalFunctionsDomain.REDIRECT,
           'paymentSessionIdTest',
           {} as ViewContainerRef,
           [{ key: 'key test', value: 'value test' }]
@@ -378,7 +377,7 @@ describe('OpfPaymentVerificationService', () => {
     });
 
     it('should not executeScriptFromHtml when no html snippet', (done) => {
-      opfPaymentServiceMock.afterRedirectScripts.and.returnValue(
+      opfPaymentServiceMock.getAfterRedirectScripts.and.returnValue(
         of({ afterRedirectScript: { dynamicScriptMock, html: undefined } })
       );
       globalFunctionsServiceMock.registerGlobalFunctions.and.returnValue();
@@ -390,7 +389,6 @@ describe('OpfPaymentVerificationService', () => {
 
       service
         .runHostedFieldsPattern(
-          GlobalFunctionsDomain.REDIRECT,
           'paymentSessionIdTest',
           {} as ViewContainerRef,
           [{ key: 'key test', value: 'value test' }]
@@ -405,8 +403,8 @@ describe('OpfPaymentVerificationService', () => {
         });
     });
 
-    it('should failed when loadResources fails', (done) => {
-      opfPaymentServiceMock.afterRedirectScripts.and.returnValue(
+    it('should failed when loadProviderResources fails', (done) => {
+      opfPaymentServiceMock.getAfterRedirectScripts.and.returnValue(
         of({ afterRedirectScript: { dynamicScriptMock, html: undefined } })
       );
       globalFunctionsServiceMock.registerGlobalFunctions.and.returnValue();
@@ -418,7 +416,6 @@ describe('OpfPaymentVerificationService', () => {
 
       service
         .runHostedFieldsPattern(
-          GlobalFunctionsDomain.REDIRECT,
           'paymentSessionIdTest',
           {} as ViewContainerRef,
           [{ key: 'key test', value: 'value test' }]
@@ -434,7 +431,7 @@ describe('OpfPaymentVerificationService', () => {
     });
 
     it('should throw error when missing afterRedirectScript property', (done) => {
-      opfPaymentServiceMock.afterRedirectScripts.and.returnValue(
+      opfPaymentServiceMock.getAfterRedirectScripts.and.returnValue(
         of({ afterRedirectScript: undefined })
       );
       globalFunctionsServiceMock.registerGlobalFunctions.and.returnValue();
@@ -444,7 +441,6 @@ describe('OpfPaymentVerificationService', () => {
 
       service
         .runHostedFieldsPattern(
-          GlobalFunctionsDomain.REDIRECT,
           'paymentSessionIdTest',
           {} as ViewContainerRef,
           [{ key: 'key test', value: 'value test' }]
@@ -505,6 +501,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: '111111',
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
@@ -526,6 +523,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: '111111',
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(

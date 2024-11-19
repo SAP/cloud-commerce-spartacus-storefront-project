@@ -208,19 +208,18 @@ export class OpfPaymentVerificationService {
   }
 
   runHostedFieldsPattern(
-    domain: GlobalFunctionsDomain,
     paymentSessionId: string,
     vcr: ViewContainerRef,
     paramsMap: Array<OpfKeyValueMap>
   ): Observable<boolean> {
     this.globalFunctionsService.registerGlobalFunctions({
-      domain,
+      domain: GlobalFunctionsDomain.REDIRECT,
       paymentSessionId,
       vcr,
       paramsMap,
     });
 
-    return this.opfPaymentFacade.afterRedirectScripts(paymentSessionId).pipe(
+    return this.opfPaymentFacade.getAfterRedirectScripts(paymentSessionId).pipe(
       concatMap((response) => {
         if (!response?.afterRedirectScript) {
           return throwError(this.opfDefaultPaymentError);
