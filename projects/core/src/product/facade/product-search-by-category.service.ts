@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {inject, Injectable} from '@angular/core';
-import {select, Store} from '@ngrx/store';
-import {Observable, using} from 'rxjs';
-import {auditTime, map, tap} from 'rxjs/operators';
-import {Product} from '../../model';
-import {StateWithProduct} from '../store/product-state';
-import {ProductActions, ProductSelectors} from '../store';
+import { inject, Injectable } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Observable, using } from 'rxjs';
+import { auditTime, map, tap } from 'rxjs/operators';
+import { Product } from '../../model';
+import { StateWithProduct } from '../store/product-state';
+import { ProductActions, ProductSelectors } from '../store';
 
 @Injectable({
   providedIn: 'root',
@@ -19,9 +19,9 @@ export class ProductSearchByCategoryService {
   protected store = inject(Store<StateWithProduct>);
 
   load({
-         categoryCode,
-         scope,
-       }: {
+    categoryCode,
+    scope,
+  }: {
     categoryCode: string;
     scope?: string;
   }): void {
@@ -34,9 +34,9 @@ export class ProductSearchByCategoryService {
   }
 
   get({
-        categoryCode,
-        scope,
-      }: {
+    categoryCode,
+    scope,
+  }: {
     categoryCode: string;
     scope?: string;
   }): Observable<Product[] | undefined> {
@@ -53,7 +53,7 @@ export class ProductSearchByCategoryService {
       auditTime(0),
       tap((state) => {
         if (!(state.loading || state.success || state.error)) {
-          this.load({categoryCode, scope});
+          this.load({ categoryCode, scope });
         }
       })
     );
