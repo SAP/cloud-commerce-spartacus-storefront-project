@@ -88,6 +88,7 @@ const mockOpfMetadata: OpfMetadataModel = {
   termsAndConditionsChecked: true,
   defaultSelectedPaymentOptionId: 1,
   paymentSessionId: '111111',
+  isTermsAndConditionsAlertClosed: false,
 };
 
 describe('OpfCheckoutPaymentsComponent', () => {
@@ -193,6 +194,7 @@ describe('OpfCheckoutPaymentsComponent', () => {
         termsAndConditionsChecked: true,
         defaultSelectedPaymentOptionId,
         paymentSessionId: '111111',
+        isTermsAndConditionsAlertClosed: false,
       })
     );
 

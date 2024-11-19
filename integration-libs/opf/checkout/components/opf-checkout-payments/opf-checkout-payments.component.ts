@@ -149,7 +149,7 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
     return paginationModel;
   }
 
-  pageChange(page: number) {
+  pageChange(page: number): void {
     this.paginationIndex = page;
     this.updateActiveConfiguration();
   }
