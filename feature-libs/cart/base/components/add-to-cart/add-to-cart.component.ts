@@ -78,8 +78,6 @@ export class AddToCartComponent implements OnInit, OnDestroy {
 
   quantity = 1;
 
-  sapUnit: string;
-
   subscription = new Subscription();
 
   addToCartForm = new UntypedFormGroup({
@@ -150,7 +148,6 @@ export class AddToCartComponent implements OnInit, OnDestroy {
       this.subscription.add(
         product$.pipe(filter(isNotNullable)).subscribe((product) => {
           this.productCode = product.code ?? '';
-          this.sapUnit = product.sapUnit?.sapCode ?? '';
           this.setStockInfo(product);
         })
       );
@@ -170,9 +167,12 @@ export class AddToCartComponent implements OnInit, OnDestroy {
      * When removing the feature toggle in the future, let's leave the if-else block.
      * In case of absent sapUnit we want to fallback to the stock info from the product object.
      */
-    if (this.featureToggles.showRealTimeStockInPDP && this.sapUnit) {
+    if (
+      this.featureToggles.showRealTimeStockInPDP &&
+      product.sapUnit?.sapCode
+    ) {
       this.productAvailabilityService
-        .getRealTimeStock(this.productCode, this.sapUnit)
+        .getRealTimeStock(this.productCode, product.sapUnit?.sapCode)
         .pipe(take(1))
         .subscribe(({ quantity, status }) => {
           this.maxQuantity = Number(quantity);
