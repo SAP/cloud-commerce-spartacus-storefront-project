@@ -6,8 +6,8 @@
 
 import { InjectionToken } from '@angular/core';
 import { Converter } from '@spartacus/core';
-import { OpfActiveConfigurationResponse } from '@spartacus/opf/base/root';
+import { OpfActiveConfigurationsResponse } from '@spartacus/opf/base/root';
 
 export const OPF_ACTIVE_CONFIGURATIONS_NORMALIZER = new InjectionToken<
-  Converter<any, OpfActiveConfigurationResponse>
+  Converter<any, OpfActiveConfigurationsResponse>
 >('OpfActiveConfigurationsNormalizer');

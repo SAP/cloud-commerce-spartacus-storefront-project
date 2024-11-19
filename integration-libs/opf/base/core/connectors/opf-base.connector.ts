@@ -6,8 +6,8 @@
 
 import { Injectable, inject } from '@angular/core';
 import {
-  OpfActiveConfigurationQuery,
-  OpfActiveConfigurationResponse,
+  OpfActiveConfigurationsQuery,
+  OpfActiveConfigurationsResponse,
 } from '@spartacus/opf/base/root';
 import { Observable } from 'rxjs';
 import { OpfBaseAdapter } from './opf-base.adapter';
@@ -17,8 +17,8 @@ export class OpfBaseConnector {
   protected adapter = inject(OpfBaseAdapter);
 
   public getActiveConfigurations(
-    query?: OpfActiveConfigurationQuery
-  ): Observable<OpfActiveConfigurationResponse> {
+    query?: OpfActiveConfigurationsQuery
+  ): Observable<OpfActiveConfigurationsResponse> {
     return this.adapter.getActiveConfigurations(query);
   }
 }

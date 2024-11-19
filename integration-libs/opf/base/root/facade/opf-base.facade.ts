@@ -9,8 +9,8 @@ import { facadeFactory, QueryState } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { OPF_BASE_FEATURE } from '../feature-name';
 import {
-  OpfActiveConfigurationQuery,
-  OpfActiveConfigurationResponse,
+  OpfActiveConfigurationsQuery,
+  OpfActiveConfigurationsResponse,
 } from '../model';
 
 @Injectable({
@@ -27,6 +27,6 @@ export abstract class OpfBaseFacade {
    * Get payment active configurations
    */
   abstract getActiveConfigurationsState(
-    query?: OpfActiveConfigurationQuery
-  ): Observable<QueryState<OpfActiveConfigurationResponse | undefined>>;
+    query?: OpfActiveConfigurationsQuery
+  ): Observable<QueryState<OpfActiveConfigurationsResponse | undefined>>;
 }

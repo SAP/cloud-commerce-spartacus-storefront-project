@@ -5,8 +5,8 @@
  */
 
 import {
-  OpfActiveConfigurationQuery,
-  OpfActiveConfigurationResponse,
+  OpfActiveConfigurationsQuery,
+  OpfActiveConfigurationsResponse,
 } from '@spartacus/opf/base/root';
 import { Observable } from 'rxjs';
 
@@ -15,6 +15,6 @@ export abstract class OpfBaseAdapter {
    * Abstract method used to get payment active configurations
    */
   abstract getActiveConfigurations(
-    query?: OpfActiveConfigurationQuery
-  ): Observable<OpfActiveConfigurationResponse>;
+    query?: OpfActiveConfigurationsQuery
+  ): Observable<OpfActiveConfigurationsResponse>;
 }

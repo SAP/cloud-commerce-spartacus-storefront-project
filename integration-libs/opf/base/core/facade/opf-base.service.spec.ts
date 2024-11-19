@@ -7,7 +7,7 @@
 import { TestBed } from '@angular/core/testing';
 import { QueryService, QueryState } from '@spartacus/core';
 import {
-  OpfActiveConfigurationResponse,
+  OpfActiveConfigurationsResponse,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
 import { of } from 'rxjs';
@@ -39,7 +39,7 @@ describe('OpfBaseService', () => {
       OpfBaseConnector
     ) as jasmine.SpyObj<OpfBaseConnector>;
 
-    const mockActiveConfigurations: OpfActiveConfigurationResponse = {
+    const mockActiveConfigurations: OpfActiveConfigurationsResponse = {
       page: {
         number: 1,
         totalElements: 2,
@@ -94,7 +94,7 @@ describe('OpfBaseService', () => {
     service
       .getActiveConfigurationsState()
       .subscribe(
-        (state: QueryState<OpfActiveConfigurationResponse | undefined>) => {
+        (state: QueryState<OpfActiveConfigurationsResponse | undefined>) => {
           expect(state.loading).toBeFalsy();
           expect(state.error).toBeUndefined();
           expect(state.data?.value).toEqual([

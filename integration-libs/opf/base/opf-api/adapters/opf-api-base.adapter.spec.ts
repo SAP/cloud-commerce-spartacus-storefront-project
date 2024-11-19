@@ -15,15 +15,15 @@ import { OpfEndpointsService } from '@spartacus/opf/base/core';
 import {
   OPF_CC_PUBLIC_KEY_HEADER,
   OpfActiveConfiguration,
-  OpfActiveConfigurationPagination,
-  OpfActiveConfigurationResponse,
+  OpfActiveConfigurationsPagination,
+  OpfActiveConfigurationsResponse,
   OpfConfig,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
 import { map } from 'rxjs';
 import { OpfApiBaseAdapter } from './opf-api-base.adapter';
 
-const mockActiveConfigurationsPagination: OpfActiveConfigurationPagination = {
+const mockActiveConfigurationsPagination: OpfActiveConfigurationsPagination = {
   totalPages: 1,
   number: 1,
   totalElements: 2,
@@ -49,7 +49,7 @@ const mockActiveConfigurations: OpfActiveConfiguration[] = [
   },
 ];
 
-const mockActiveConfigurationsResponse: OpfActiveConfigurationResponse = {
+const mockActiveConfigurationsResponse: OpfActiveConfigurationsResponse = {
   value: mockActiveConfigurations,
   page: mockActiveConfigurationsPagination,
 };

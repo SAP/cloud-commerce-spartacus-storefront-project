@@ -10,7 +10,7 @@ import {
 } from '@spartacus/core';
 import {
   OpfActiveConfiguration,
-  OpfActiveConfigurationResponse,
+  OpfActiveConfigurationsResponse,
   OpfBaseFacade,
   OpfMetadataModel,
   OpfMetadataStoreService,
@@ -58,14 +58,14 @@ const mockActiveConfigurations: OpfActiveConfiguration[] = [
 ];
 class MockOpfBaseFacade implements Partial<OpfBaseFacade> {
   getActiveConfigurationsState(): Observable<
-    QueryState<OpfActiveConfigurationResponse | undefined>
+    QueryState<OpfActiveConfigurationsResponse | undefined>
   > {
     return activeConfigurationsState$.asObservable();
   }
 }
 
 let activeConfigurationsState$ = new BehaviorSubject<
-  QueryState<OpfActiveConfigurationResponse | undefined>
+  QueryState<OpfActiveConfigurationsResponse | undefined>
 >({
   loading: false,
   error: false,
@@ -235,7 +235,7 @@ describe('OpfCheckoutPaymentsComponent', () => {
 
   it('should render pagination component', () => {
     activeConfigurationsState$ = new BehaviorSubject<
-      QueryState<OpfActiveConfigurationResponse | undefined>
+      QueryState<OpfActiveConfigurationsResponse | undefined>
     >({
       loading: false,
       error: false,

@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { CmsService, Page, Product, QueryState } from '@spartacus/core';
 import {
-  OpfActiveConfigurationResponse,
+  OpfActiveConfigurationsResponse,
   OpfBaseFacade,
   OpfDynamicScript,
   OpfPaymentProviderType,
@@ -318,7 +318,7 @@ describe('OpfCtaScriptsService', () => {
   };
 
   const activeConfigurationsMock: QueryState<
-    OpfActiveConfigurationResponse | undefined
+    OpfActiveConfigurationsResponse | undefined
   > = {
     loading: false,
     error: false,

@@ -9,7 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { CheckoutConfig } from '@spartacus/checkout/base/root';
 import { AuthService, QueryState, RoutingService } from '@spartacus/core';
 import {
-  OpfActiveConfigurationResponse,
+  OpfActiveConfigurationsResponse,
   OpfBaseFacade,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
@@ -61,7 +61,7 @@ describe('OpfQuickBuyButtonsService', () => {
       opfBaseFacadeMock.getActiveConfigurationsState.and.returnValue(
         of({
           data: { value: mockConfigurations },
-        } as QueryState<OpfActiveConfigurationResponse>)
+        } as QueryState<OpfActiveConfigurationsResponse>)
       );
 
       service.getPaymentGatewayConfiguration().subscribe((result) => {
@@ -73,7 +73,7 @@ describe('OpfQuickBuyButtonsService', () => {
       opfBaseFacadeMock.getActiveConfigurationsState.and.returnValue(
         of({
           data: { value: undefined },
-        } as QueryState<OpfActiveConfigurationResponse>)
+        } as QueryState<OpfActiveConfigurationsResponse>)
       );
 
       service.getPaymentGatewayConfiguration().subscribe((result) => {
@@ -86,7 +86,7 @@ describe('OpfQuickBuyButtonsService', () => {
       opfBaseFacadeMock.getActiveConfigurationsState.and.returnValue(
         of({
           data: { value: mockConfigurations },
-        } as QueryState<OpfActiveConfigurationResponse>)
+        } as QueryState<OpfActiveConfigurationsResponse>)
       );
 
       service.getPaymentGatewayConfiguration().subscribe((result) => {

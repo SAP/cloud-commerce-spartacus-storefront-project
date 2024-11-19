@@ -20,8 +20,8 @@ import {
 } from '@spartacus/core';
 import {
   OpfActiveConfiguration,
-  OpfActiveConfigurationPagination,
-  OpfActiveConfigurationResponse,
+  OpfActiveConfigurationsPagination,
+  OpfActiveConfigurationsResponse,
   OpfBaseFacade,
   OpfMetadataModel,
   OpfMetadataStoreService,
@@ -55,11 +55,11 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   selectedPaymentId?: number;
 
   activeConfigurations$: Observable<
-    QueryState<OpfActiveConfigurationResponse | undefined>
+    QueryState<OpfActiveConfigurationsResponse | undefined>
   >;
 
   getActiveConfigurations(): Observable<
-    QueryState<OpfActiveConfigurationResponse | undefined>
+    QueryState<OpfActiveConfigurationsResponse | undefined>
   > {
     return this.opfBaseService
       .getActiveConfigurationsState({
@@ -67,19 +67,21 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
         pageNumber: this.paginationIndex + 1,
       })
       .pipe(
-        tap((state: QueryState<OpfActiveConfigurationResponse | undefined>) => {
-          if (state.error) {
-            this.displayError('loadActiveConfigurations');
-          } else if (!state.loading && !Boolean(state.data?.value?.length)) {
-            this.displayError('noActiveConfigurations');
-          }
+        tap(
+          (state: QueryState<OpfActiveConfigurationsResponse | undefined>) => {
+            if (state.error) {
+              this.displayError('loadActiveConfigurations');
+            } else if (!state.loading && !Boolean(state.data?.value?.length)) {
+              this.displayError('noActiveConfigurations');
+            }
 
-          if (state.data?.value && !state.error && !state.loading) {
-            this.opfMetadataStoreService.updateOpfMetadata({
-              defaultSelectedPaymentOptionId: state.data?.value[0]?.id,
-            });
+            if (state.data?.value && !state.error && !state.loading) {
+              this.opfMetadataStoreService.updateOpfMetadata({
+                defaultSelectedPaymentOptionId: state.data?.value[0]?.id,
+              });
+            }
           }
-        })
+        )
       );
   }
 
@@ -135,7 +137,7 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   }
 
   getPaginationModel(
-    pagination?: OpfActiveConfigurationPagination
+    pagination?: OpfActiveConfigurationsPagination
   ): PaginationModel {
     const paginationModel: PaginationModel = {
       currentPage: this.paginationIndex,
