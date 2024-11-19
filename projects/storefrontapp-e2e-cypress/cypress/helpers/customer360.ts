@@ -53,7 +53,7 @@ function placeOrder(): void {
   checkout.goToCheapProductDetailsPage();
   checkout.addCheapProductToCartAndBeginCheckoutForSignedInCustomer();
   checkout.fillAddressFormWithCheapProduct();
-  checkout.verifyDeliveryMethod();
+  checkout.verifyDeliveryOptions();
   checkout.fillPaymentFormWithCheapProduct();
   checkout.verifyReviewOrderPage();
   checkout.placeOrderWithCheapProduct();
@@ -94,7 +94,7 @@ function addProductToCart(): void {
 
 function writeReview(): void {
   checkout.goToProductDetailsPage();
-  productDetails.verifyShowReviewsLink();
+  productDetails.verifyReviewsLink();
   productDetails.verifyReviewForm();
 }
 

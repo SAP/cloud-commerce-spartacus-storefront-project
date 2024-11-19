@@ -4,9 +4,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { SiteContext } from '@spartacus/core';
-import { Observable } from 'rxjs';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  Input,
+} from '@angular/core';
+import {
+  SiteContext,
+  TranslationService,
+  useFeatureStyles,
+} from '@spartacus/core';
+import { map, Observable } from 'rxjs';
 import { ICON_TYPE } from '../icon/icon.model';
 import { SiteContextComponentService } from './site-context-component.service';
 import { SiteContextType } from './site-context.model';
@@ -28,7 +37,11 @@ export class SiteContextSelectorComponent {
    */
   @Input() context: SiteContextType;
 
-  constructor(private componentService: SiteContextComponentService) {}
+  protected translationService = inject(TranslationService);
+
+  constructor(private componentService: SiteContextComponentService) {
+    useFeatureStyles('a11yShowDownArrowOnFocusedSelectMenu');
+  }
 
   get items$(): Observable<any> {
     return this.componentService.getItems(this.context);
@@ -44,5 +57,13 @@ export class SiteContextSelectorComponent {
 
   get label$(): Observable<any> {
     return this.componentService.getLabel(this.context);
+  }
+
+  ariaLabel$(label: string, index: number, length: number): Observable<string> {
+    return this.translationService.translate('common.of').pipe(
+      map((translation) => {
+        return `${label}, ${index + 1} ${translation} ${length}`;
+      })
+    );
   }
 }
