@@ -343,7 +343,7 @@ describe('OccUserProfileAdapter', () => {
       expect(mockReq.cancelled).toBeFalsy();
       expect(mockReq.request.body).toEqual({
         oldPassword: oldPassword,
-        newPassword: newPassword
+        newPassword: newPassword,
       });
       mockReq.flush('');
     });
