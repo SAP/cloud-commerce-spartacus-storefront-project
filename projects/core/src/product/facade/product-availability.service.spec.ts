@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { Command, CommandService } from '@spartacus/core';
+import { Command, CommandService } from '../../../src/util/command-query';
 import { of } from 'rxjs';
 import { ProductAvailabilities } from '../../model/product.model';
 import { ProductAvailabilityConnector } from '../connectors';
