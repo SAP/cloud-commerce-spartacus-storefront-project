@@ -83,9 +83,6 @@ class MockCaptchaService implements CaptchaRenderer {
   renderCaptcha(): Observable<string> {
     return of('');
   }
-  
-  resetCaptcha(): void {
-}
 }
 
 const mockCaptchaApiConfig: CaptchaApiConfig = {
@@ -346,7 +343,7 @@ describe('OccUserProfileAdapter', () => {
       expect(mockReq.cancelled).toBeFalsy();
       expect(mockReq.request.body).toEqual({
         oldPassword: oldPassword,
-        newPassword: newPassword,
+        newPassword: newPassword
       });
       mockReq.flush('');
     });
