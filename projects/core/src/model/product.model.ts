@@ -201,6 +201,10 @@ export interface Product {
   variantType?: VariantType;
   volumePrices?: Price[];
   volumePricesFlag?: boolean;
+
+  /**
+   * Default unit of measure to be used for the product stock availability
+   */
   sapUnit?: SapUnit;
 }
 
