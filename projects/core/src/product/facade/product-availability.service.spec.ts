@@ -36,7 +36,7 @@ describe('ProductAvailabilityService', () => {
   });
 
   describe('getRealTimeStock', () => {
-    it('should call getRealTimeStockCommand.execute with correct parameters', (done) => {
+    it('should call getRealTimeStockCommand.execute with correct parameters', () => {
       const productCode = 'testProductCode';
       const sapCode = 'testSapCode';
       const expectedStockData: ProductAvailabilities = {
@@ -54,7 +54,6 @@ describe('ProductAvailabilityService', () => {
           sapCode,
         });
         expect(stockData).toEqual(expectedStockData);
-        done();
       });
     });
 
