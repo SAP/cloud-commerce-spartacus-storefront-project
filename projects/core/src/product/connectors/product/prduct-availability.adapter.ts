@@ -11,12 +11,12 @@ export abstract class ProductAvailabilityAdapter {
   /**
    * Abstract method used to load real time stock data for a product
    * @param productCode
-   * @param sapCode
+   * @param unitSapCode
    * @returns {Observable<ProductAvailabilities>}
    */
 
   abstract loadRealTimeStock(
     productCode: string,
-    sapCode: string
+    unitSapCode: string
   ): Observable<ProductAvailabilities>;
 }

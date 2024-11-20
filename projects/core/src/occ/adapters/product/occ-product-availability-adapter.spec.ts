@@ -3,9 +3,9 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { ProductAvailabilities } from '../../../model/product.model';
 import { OccEndpointsService } from '../../services/occ-endpoints.service';
 import { OccProductAvailabilityAdapter } from './occ-product-availability-adapter';
-import { ProductAvailabilities } from '../../../model/product.model';
 
 describe('OccProductAvailabilityAdapter', () => {
   let adapter: OccProductAvailabilityAdapter;
@@ -13,8 +13,8 @@ describe('OccProductAvailabilityAdapter', () => {
   let occEndpointsService: OccEndpointsService;
 
   const mockProductCode = '12345';
-  const mockSapCode = 'EA';
-  const mockAvailabilityUrl = `https://example.com/productAvailabilities?filters=${mockProductCode}:${mockSapCode}`;
+  const mockUnitSapCode = 'EA';
+  const mockAvailabilityUrl = `https://example.com/productAvailabilities?filters=${mockProductCode}:${mockUnitSapCode}`;
   const mockResponse = {
     availabilityItems: [
       {
@@ -61,7 +61,7 @@ describe('OccProductAvailabilityAdapter', () => {
     let result: ProductAvailabilities | undefined;
 
     adapter
-      .loadRealTimeStock(mockProductCode, mockSapCode)
+      .loadRealTimeStock(mockProductCode, mockUnitSapCode)
       .subscribe((data) => {
         result = data;
       });
@@ -78,7 +78,7 @@ describe('OccProductAvailabilityAdapter', () => {
       {
         urlParams: {
           productCode: mockProductCode,
-          sapCode: mockSapCode,
+          unitSapCode: mockUnitSapCode,
         },
       }
     );
@@ -89,7 +89,7 @@ describe('OccProductAvailabilityAdapter', () => {
     let result: ProductAvailabilities | undefined;
 
     adapter
-      .loadRealTimeStock(mockProductCode, mockSapCode)
+      .loadRealTimeStock(mockProductCode, mockUnitSapCode)
       .subscribe((data) => {
         result = data;
       });

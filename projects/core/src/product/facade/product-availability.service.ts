@@ -5,12 +5,12 @@
  */
 
 import { inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import {
   Command,
   CommandService,
   CommandStrategy,
 } from '../../../src/util/command-query';
-import { Observable } from 'rxjs';
 import { ProductAvailabilities } from '../../model/product.model';
 import { ProductAvailabilityConnector } from '../connectors';
 
@@ -31,11 +31,11 @@ export class ProductAvailabilityService {
    * Command to get real-time stock data for a product.
    */
   protected getRealTimeStockCommand: Command<
-    { productCode: string; sapCode: string },
+    { productCode: string; unitSapCode: string },
     ProductAvailabilities
   > = this.command.create(
     (payload) =>
-      this.connector.getRealTimeStock(payload.productCode, payload.sapCode),
+      this.connector.getRealTimeStock(payload.productCode, payload.unitSapCode),
     {
       strategy: CommandStrategy.CancelPrevious,
     }
@@ -45,13 +45,16 @@ export class ProductAvailabilityService {
    * Executes the command to fetch real-time stock data.
    *
    * @param productCode The product code for which to fetch stock data.
-   * @param sapCode The SAP code associated with the product.
+   * @param unitSapCode The SAP code associated with the product.
    * @returns An observable of `ProductAvailabilities`.
    */
   getRealTimeStock(
     productCode: string,
-    sapCode: string
+    unitSapCode: string
   ): Observable<ProductAvailabilities> {
-    return this.getRealTimeStockCommand.execute({ productCode, sapCode });
+    return this.getRealTimeStockCommand.execute({
+      productCode,
+      unitSapCode,
+    });
   }
 }

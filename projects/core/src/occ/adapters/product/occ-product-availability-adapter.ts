@@ -20,14 +20,14 @@ export class OccProductAvailabilityAdapter
 
   loadRealTimeStock(
     productCode: string,
-    sapCode: string
+    unitSapCode: string
   ): Observable<ProductAvailabilities> {
     const availabilityUrl = this.occEndpoints.buildUrl(
       'productAvailabilities',
       {
         urlParams: {
           productCode: productCode,
-          sapCode: sapCode,
+          unitSapCode: unitSapCode,
         },
       }
     );

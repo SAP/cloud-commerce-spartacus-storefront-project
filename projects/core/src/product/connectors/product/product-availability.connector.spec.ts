@@ -9,7 +9,7 @@ describe('ProductAvailabilityConnector', () => {
   let adapter: jasmine.SpyObj<ProductAvailabilityAdapter>;
 
   const mockProductCode = '12345';
-  const mockSapCode = 'SAP001';
+  const mockUnitSapCode = 'SAP001';
   const mockProductAvailabilities: ProductAvailabilities = {
     quantity: '10',
     status: 'inStock',
@@ -41,12 +41,12 @@ describe('ProductAvailabilityConnector', () => {
     adapter.loadRealTimeStock.and.returnValue(of(mockProductAvailabilities));
 
     connector
-      .getRealTimeStock(mockProductCode, mockSapCode)
+      .getRealTimeStock(mockProductCode, mockUnitSapCode)
       .subscribe((data) => {
         expect(data).toEqual(mockProductAvailabilities);
         expect(adapter.loadRealTimeStock).toHaveBeenCalledWith(
           mockProductCode,
-          mockSapCode
+          mockUnitSapCode
         );
         done();
       });
@@ -56,12 +56,12 @@ describe('ProductAvailabilityConnector', () => {
     adapter.loadRealTimeStock.and.returnValue(of(null as any));
 
     connector
-      .getRealTimeStock(mockProductCode, mockSapCode)
+      .getRealTimeStock(mockProductCode, mockUnitSapCode)
       .subscribe((data) => {
         expect(data).toBeNull();
         expect(adapter.loadRealTimeStock).toHaveBeenCalledWith(
           mockProductCode,
-          mockSapCode
+          mockUnitSapCode
         );
         done();
       });
