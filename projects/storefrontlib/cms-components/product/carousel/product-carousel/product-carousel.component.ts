@@ -63,7 +63,7 @@ export class ProductCarouselComponent {
               categoryCodes.map((categoryCode) =>
                 this.productSearchByCategoryService.get({
                   categoryCode,
-                  scope: ProductScope.LIST,
+                  scope: ProductScope.CODE,
                 })
               )
             ).pipe(
