@@ -27,7 +27,7 @@ export const defaultOccProductConfig: OccConfig = {
             'products/${productCode}?fields=code,name,price(formattedValue),images(DEFAULT),baseProduct',
         },
         productAvailabilities:
-          'productAvailabilities?filters=${productCode}:${sapCode}',
+          'productAvailabilities?filters=${productCode}:${unitSapCode}',
         productReviews: 'products/${productCode}/reviews',
         // Uncomment this when occ gets configured
         // productReferences:
