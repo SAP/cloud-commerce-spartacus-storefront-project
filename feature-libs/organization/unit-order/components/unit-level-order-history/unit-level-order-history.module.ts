@@ -16,7 +16,7 @@ import {
   provideDefaultConfig,
   UrlModule,
 } from '@spartacus/core';
-import { ListNavigationModule } from '@spartacus/storefront';
+import { BtnLikeLinkModule, ListNavigationModule } from '@spartacus/storefront';
 import { UnitLevelOrdersViewerGuard } from '@spartacus/organization/unit-order/core';
 import { UnitLevelOrderHistoryComponent } from './unit-level-order-history.component';
 import { UnitLevelOrderHistoryFilterModule } from './filter/unit-level-order-history-filter.module';
@@ -31,6 +31,7 @@ import { UnitLevelOrderHistoryFilterModule } from './filter/unit-level-order-his
     UrlModule,
     I18nModule,
     UnitLevelOrderHistoryFilterModule,
+    BtnLikeLinkModule,
   ],
   declarations: [UnitLevelOrderHistoryComponent],
   exports: [UnitLevelOrderHistoryComponent],

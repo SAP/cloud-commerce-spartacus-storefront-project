@@ -14,7 +14,7 @@ import {
   provideDefaultConfig,
   UrlModule,
 } from '@spartacus/core';
-import { ListNavigationModule } from '@spartacus/storefront';
+import { BtnLikeLinkModule, ListNavigationModule } from '@spartacus/storefront';
 import { defaultReplenishmentOrderCancellationLayoutConfig } from '../replenishment-order-details/default-replenishment-order-cancellation-layout.config';
 import { ReplenishmentOrderHistoryComponent } from './replenishment-order-history.component';
 
@@ -25,6 +25,7 @@ import { ReplenishmentOrderHistoryComponent } from './replenishment-order-histor
     ListNavigationModule,
     UrlModule,
     I18nModule,
+    BtnLikeLinkModule,
   ],
   providers: [
     provideDefaultConfig(defaultReplenishmentOrderCancellationLayoutConfig),
