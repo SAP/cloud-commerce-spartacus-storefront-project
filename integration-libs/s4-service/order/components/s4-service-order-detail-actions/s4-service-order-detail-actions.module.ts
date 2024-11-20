@@ -18,7 +18,13 @@ import { BtnLikeLinkModule } from '@spartacus/storefront';
 
 @NgModule({
   declarations: [S4ServiceOrderDetailActionsComponent],
-  imports: [CommonModule, I18nModule, RouterModule, UrlModule, BtnLikeLinkModule],
+  imports: [
+    CommonModule,
+    I18nModule,
+    RouterModule,
+    UrlModule,
+    BtnLikeLinkModule,
+  ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {

@@ -14,7 +14,11 @@ import {
   provideDefaultConfig,
   UrlModule,
 } from '@spartacus/core';
-import { AtMessageModule, BtnLikeLinkModule, IconModule } from '@spartacus/storefront';
+import {
+  AtMessageModule,
+  BtnLikeLinkModule,
+  IconModule,
+} from '@spartacus/storefront';
 import { AddToWishListComponent } from './add-to-wish-list.component';
 
 @NgModule({

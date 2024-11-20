@@ -14,9 +14,7 @@ const event = {
 
 @Component({
   template: `
-    <a class="btn affected-link"
-        [role]="button"
-        (click)="onClick('Affected')">
+    <a class="btn affected-link" [role]="button" (click)="onClick('Affected')">
       Affected Link
     </a>
     <a class="unaffected-link" [role]="button" (click)="onClick('Unaffected')">
@@ -25,14 +23,14 @@ const event = {
   `,
 })
 class TestContainerComponent {
-  link1 = Link1
-  link2 = Link2
+  link1 = Link1;
+  link2 = Link2;
   onClick(_value: string) {}
 }
 
 describe('BtnLikeLinkDirective', () => {
   let fixture: ComponentFixture<TestContainerComponent>;
-  
+
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [],
@@ -46,21 +44,22 @@ describe('BtnLikeLinkDirective', () => {
 
   it('should add react on enter and spacebar clicks', () => {
     // TODO: implement!
-    expect(true).toBe(false)
+    expect(true).toBe(false);
     const spy = spyOn(fixture.componentInstance, 'onClick');
     const nodes = fixture.debugElement.nativeElement.childNodes;
-    
+
     const affectedLink = fixture.debugElement.query(By.css('.affected-link'));
-    const unaffectedLink = fixture.debugElement.query(By.css('.unaffected-link'));
-    
+    const unaffectedLink = fixture.debugElement.query(
+      By.css('.unaffected-link')
+    );
+
     affectedLink.triggerEventHandler('keydown.escape', event);
     unaffectedLink.triggerEventHandler('keydown.escape', event);
     fixture.detectChanges();
     expect(spy).toHaveBeenCalledTimes(2);
-    expect(spy).toHaveBeenCalledWith(event, Link1]);
+    expect(spy).toHaveBeenCalledWith(event, Link1);
 
     // expect(spy).toHaveBeenCalledWith(SKIP_KEY_1, nodes[0]);
     // expect(spy).toHaveBeenCalledWith(SKIP_KEY_2, nodes[1]);
   });
-
 });

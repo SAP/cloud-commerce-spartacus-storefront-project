@@ -8,9 +8,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BtnLikeLinkDirective } from './btn-like-link.directive';
 
-const directives = [
-  BtnLikeLinkDirective
-];
+const directives = [BtnLikeLinkDirective];
 
 @NgModule({
   imports: [CommonModule],
