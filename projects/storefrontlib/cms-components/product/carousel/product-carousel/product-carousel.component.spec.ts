@@ -118,7 +118,7 @@ const mockProductsFromSearchByCategory: Record<
   Record<string, Product[]>
 > = {
   electronics: {
-    list: [{ code: 'prod3' }, { code: 'prod4' }, { code: 'prod5' }],
+    code: [{ code: 'prod3' }, { code: 'prod4' }, { code: 'prod5' }],
   },
 };
 
