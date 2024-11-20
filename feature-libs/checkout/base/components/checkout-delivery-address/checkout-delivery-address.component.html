@@ -3,7 +3,9 @@
     featureConfigService?.isEnabled('a11yCheckoutStepsLandmarks');
     else content
   "
-  [attr.aria-label]="'checkoutAddress.shippingAddress' | cxTranslate"
+  [attr.aria-label]="
+    ('checkoutAddress.shippingAddress' | cxTranslate) + 'Help me my'
+  "
 >
   <ng-template [ngTemplateOutlet]="content"></ng-template>
 </section>
