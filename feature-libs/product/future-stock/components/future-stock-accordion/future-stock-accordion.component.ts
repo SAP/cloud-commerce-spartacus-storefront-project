@@ -19,7 +19,7 @@ export class FutureStockAccordionComponent {
   iconType = ICON_TYPE;
 
   constructor(protected futureStockService: FutureStockFacade) {
-    useFeatureStyles('a11yVisibleFocusOverflows');
+    useFeatureStyles('a11yCroppedFocusRing');
   }
 
   toggle(): void {
