@@ -36,7 +36,7 @@ describe('ProductAvailabilityService', () => {
   });
 
   describe('getRealTimeStock', () => {
-    it('should call getRealTimeStockCommand.execute with correct parameters', () => {
+    it('should call getRealTimeStockCommand.execute with correct parameters', (done) => {
       const productCode = 'testProductCode';
       const unitSapCode = 'testUnitSapCode';
       const expectedStockData: ProductAvailabilities = {
@@ -56,10 +56,11 @@ describe('ProductAvailabilityService', () => {
             unitSapCode,
           });
           expect(stockData).toEqual(expectedStockData);
+          done();
         });
     });
 
-    it('should return observable of ProductAvailabilities when command executes successfully', () => {
+    it('should return observable of ProductAvailabilities when command executes successfully', (done) => {
       const productCode = 'testProductCode';
       const unitSapCode = 'testUnitSapCode';
       const mockStockData: ProductAvailabilities = {
@@ -72,6 +73,7 @@ describe('ProductAvailabilityService', () => {
 
       service.getRealTimeStock(productCode, unitSapCode).subscribe((result) => {
         expect(result).toEqual(mockStockData);
+        done();
       });
     });
   });
