@@ -208,6 +208,9 @@ export interface Product {
   sapUnit?: SapUnit;
 }
 
+/**
+ * Unit of measure used for the product stock availability
+ */
 export interface SapUnit {
   code?: string;
   name?: string;
