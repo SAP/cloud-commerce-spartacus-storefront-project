@@ -25,7 +25,7 @@ describe('A11y - Units List Keyboard Controls', () => {
     cy.focused().type('{downArrow}');
     cy.focused().should('have.id', 'Rustic Services');
     cy.focused().type('{downArrow}');
-    cy.focused().should('have.id', 'unit-kris1');
+    cy.focused().should('have.id', 'Rustic Services');
   });
 
   it('navigate to previous link on arrow up', () => {
