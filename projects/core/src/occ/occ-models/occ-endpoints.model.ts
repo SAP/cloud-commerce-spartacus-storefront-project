@@ -277,4 +277,9 @@ export interface OccEndpoints {
    * @member {string}
    */
   productSearchByCategory?: string | OccEndpoint;
+  /** Endpoint to returns Product Availabilities
+   *
+   * @member {string}
+   */
+  productAvailabilities?: string | OccEndpoint;
 }
