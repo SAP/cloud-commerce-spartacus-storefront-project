@@ -188,7 +188,7 @@ export const unitConfig: MyCompanyConfig = {
             showInTable: true,
             showInDetails: true,
             useInUrl: true,
-            formLabel: 'ID*',
+            formLabel: 'ID',
           },
           {
             label: 'Approval process',
