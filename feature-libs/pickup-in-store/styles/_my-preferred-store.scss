@@ -77,6 +77,18 @@
         }
       }
     }
+
+    @include forFeature('a11yImproveButtonsInCardComponent') {
+      cx-card {
+        .cx-card-actions:not(:disabled):not(.disabled):active {
+          background-color: unset;
+        }
+        .cx-card-actions {
+          border: unset;
+          margin-top: 0;
+        }
+      }
+    }
   }
   @include cx-highContrastTheme {
     .btn-outline-text {

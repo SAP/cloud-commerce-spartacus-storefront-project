@@ -131,8 +131,8 @@
     </div>
     <!-- Actions -->
     <div *ngIf="content.actions && !editMode" class="cx-card-actions">
-      <div *ngFor="let action of content.actions">
-        <div>
+      <ng-container *cxFeature="'!a11yImproveButtonsInCardComponent'">
+        <div *ngFor="let action of content.actions">
           <ng-container *ngIf="isCardAction(action)" [ngSwitch]="action.event">
             <button
               type="button"
@@ -180,7 +180,59 @@
             {{ action.name }}
           </a>
         </div>
-      </div>
+      </ng-container>
+      <ng-container *cxFeature="'a11yImproveButtonsInCardComponent'">
+        <div *ngFor="let action of content.actions" class="cx-card-action-item">
+          <ng-container *ngIf="isCardAction(action)" [ngSwitch]="action.event">
+            <button
+              type="button"
+              *ngSwitchCase="'delete'"
+              class="btn btn-tertiary"
+              (click)="delete()"
+            >
+              {{ action.name }}
+            </button>
+            <button
+              type="button"
+              *ngSwitchCase="'default'"
+              class="btn btn-tertiary"
+              (click)="setDefault()"
+            >
+              {{ action.name }}
+            </button>
+            <button
+              type="button"
+              *ngSwitchCase="'send'"
+              class="btn btn-tertiary"
+              (click)="send()"
+              [attr.aria-describedby]="
+                index >= 0 && content.header && !editMode
+                  ? 'content-header-' + index
+                  : null
+              "
+            >
+              {{ action.name }}
+            </button>
+            <button
+              type="button"
+              *ngSwitchCase="'edit'"
+              class="btn btn-tertiary"
+              (click)="edit()"
+            >
+              {{ action.name }}
+            </button>
+          </ng-container>
+          <cx-generic-link
+            *ngIf="isCardLinkAction(action)"
+            [url]="action.link"
+            [ariaLabel]="
+              action.ariaLabel ? (action.ariaLabel | cxTranslate) : null
+            "
+            [target]="action.target ?? null"
+            >{{ action.name }}</cx-generic-link
+          >
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

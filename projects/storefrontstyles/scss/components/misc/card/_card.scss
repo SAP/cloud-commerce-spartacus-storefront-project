@@ -73,6 +73,21 @@
     padding: 1.25rem 0 0 0;
   }
 
+  @include forFeature('a11yImproveButtonsInCardComponent') {
+    .cx-card-actions {
+      gap: 16px;
+      cx-generic-link {
+        font-weight: 700;
+        color: var(--cx-color-primary);
+        text-decoration: underline;
+      }
+      .cx-card-action-item {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
   .cx-card-link {
     margin-inline-start: 1rem;
   }

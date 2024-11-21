@@ -4,10 +4,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import {
   CmsService,
   Page,
+  FeatureConfigService,
   PointOfService,
   RoutingService,
   useFeatureStyles,
@@ -22,6 +28,14 @@ import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map, switchMap, take, tap } from 'rxjs/operators';
 
+interface PreferredStoreContent {
+  header: string;
+  actions: Array<
+    | { event: string; name: string }
+    | { link: string; name: string; ariaLabel?: string; target?: string }
+  >;
+}
+
 @Component({
   selector: 'cx-my-preferred-store',
   templateUrl: 'my-preferred-store.component.html',
@@ -29,7 +43,7 @@ import { filter, map, switchMap, take, tap } from 'rxjs/operators';
 })
 export class MyPreferredStoreComponent implements OnInit {
   preferredStore$: Observable<PointOfService>;
-  content = {
+  content: PreferredStoreContent = {
     header: 'My Store',
     actions: [
       { event: 'send', name: 'Get Directions' },
@@ -41,6 +55,7 @@ export class MyPreferredStoreComponent implements OnInit {
   pointOfService: PointOfService;
   isStoreFinder = false;
 
+  private featureConfigService = inject(FeatureConfigService);
   constructor(
     private preferredStoreFacade: PreferredStoreFacade,
     protected pickupLocationsSearchService: PickupLocationsSearchFacade,
@@ -69,24 +84,78 @@ export class MyPreferredStoreComponent implements OnInit {
     );
 
     useFeatureStyles('a11yViewHoursButtonIconContrast');
+    useFeatureStyles('a11yImproveButtonsInCardComponent');
   }
 
   ngOnInit(): void {
-    this.cmsService
-      .getCurrentPage()
+    const source$ = this.cmsService.getCurrentPage().pipe(
+      filter<Page>(Boolean),
+      take(1),
+      tap(
+        (cmsPage) => (this.isStoreFinder = cmsPage.pageId === 'storefinderPage')
+      )
+    );
+
+    source$
       .pipe(
-        filter<Page>(Boolean),
-        take(1),
-        tap(
-          (cmsPage) =>
-            (this.isStoreFinder = cmsPage.pageId === 'storefinderPage')
-        ),
         filter(() => this.isStoreFinder),
         tap(() => {
-          this.content = {
+          let content: PreferredStoreContent = {
             header: '',
             actions: [{ event: 'send', name: 'Get Directions' }],
           };
+          if (
+            this.featureConfigService.isEnabled(
+              'a11yImproveButtonsInCardComponent'
+            )
+          ) {
+            const link = this.storeFinderService.getDirections(
+              this.pointOfService
+            );
+            content = {
+              ...content,
+              actions: [
+                {
+                  link,
+                  name: 'Get Directions',
+                  ariaLabel: 'cardActions.getDirections',
+                  target: '_blank',
+                },
+              ],
+            };
+          }
+          this.content = content;
+        })
+      )
+      .subscribe();
+
+    source$
+      .pipe(
+        filter(() => !this.isStoreFinder),
+        tap(() => {
+          let content = this.content;
+          if (
+            this.featureConfigService.isEnabled(
+              'a11yImproveButtonsInCardComponent'
+            )
+          ) {
+            const link = this.storeFinderService.getDirections(
+              this.pointOfService
+            );
+            content = {
+              ...content,
+              actions: [
+                {
+                  link,
+                  name: 'Get Directions',
+                  ariaLabel: 'cardActions.getDirections',
+                  target: '_blank',
+                },
+                { event: 'edit', name: 'Change Store' },
+              ],
+            };
+          }
+          this.content = content;
         })
       )
       .subscribe();
