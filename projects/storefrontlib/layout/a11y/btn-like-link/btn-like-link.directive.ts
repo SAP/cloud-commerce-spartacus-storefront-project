@@ -16,7 +16,7 @@ import { Directive } from '@angular/core';
  * to be using this consider it as a good 'code smell' for using BUttons instead of links.
  */
 @Directive({
-  selector: '[cxBtnLikeLink]', // 'a.btn'
+  selector: 'a[cxBtnLikeLink].btn', // 'a.btn'
   host: {
     // Adding [tabindex] allows tab-based access to this element.
     tabindex: '0',
