@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import {
   AuthGuard,
   CmsConfig,
+  FeaturesConfigModule,
   I18nModule,
   provideDefaultConfig,
   UrlModule,
@@ -26,6 +27,7 @@ import { ReplenishmentOrderHistoryComponent } from './replenishment-order-histor
     UrlModule,
     I18nModule,
     BtnLikeLinkModule,
+    FeaturesConfigModule,
   ],
   providers: [
     provideDefaultConfig(defaultReplenishmentOrderCancellationLayoutConfig),

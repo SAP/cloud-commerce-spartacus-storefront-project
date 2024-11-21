@@ -12,14 +12,15 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import {
   AuthGuard,
   CmsConfig,
+  FeaturesConfigModule,
   I18nModule,
   provideDefaultConfig,
   UrlModule,
 } from '@spartacus/core';
 import { BtnLikeLinkModule, ListNavigationModule } from '@spartacus/storefront';
 import { UnitLevelOrdersViewerGuard } from '@spartacus/organization/unit-order/core';
-import { UnitLevelOrderHistoryComponent } from './unit-level-order-history.component';
 import { UnitLevelOrderHistoryFilterModule } from './filter/unit-level-order-history-filter.module';
+import { UnitLevelOrderHistoryComponent } from './unit-level-order-history.component';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { UnitLevelOrderHistoryFilterModule } from './filter/unit-level-order-his
     I18nModule,
     UnitLevelOrderHistoryFilterModule,
     BtnLikeLinkModule,
+    FeaturesConfigModule,
   ],
   declarations: [UnitLevelOrderHistoryComponent],
   exports: [UnitLevelOrderHistoryComponent],
