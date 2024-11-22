@@ -26,27 +26,9 @@ function run_all_unit_tests {
 if [ "${GITHUB_EVENT_NAME}" == "pull_request" ]; then
     if [[ "${GITHUB_HEAD_REF}" == epic/* ]]; then
         run_all_unit_tests
-        run_all_unit_tests
-        run_all_unit_tests
-        run_all_unit_tests
-        run_all_unit_tests
-        run_all_unit_tests
-        run_all_unit_tests
-        run_all_unit_tests
-        run_all_unit_tests
-        run_all_unit_tests
     else 
         run_affected_unit_tests
     fi
 else
-    run_all_unit_tests
-    run_all_unit_tests
-    run_all_unit_tests
-    run_all_unit_tests
-    run_all_unit_tests
-    run_all_unit_tests
-    run_all_unit_tests
-    run_all_unit_tests
-    run_all_unit_tests
     run_all_unit_tests
 fi
