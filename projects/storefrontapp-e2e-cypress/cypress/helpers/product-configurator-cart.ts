@@ -10,6 +10,16 @@ import * as configurationVc from './product-configurator-vc';
 const cartItemQuantityStepperSelector = '.cx-value cx-item-counter';
 
 /**
+ * Alias used for patching the quantity
+ */
+export const PATCH_QUANTITY_ALIAS = '@patchQuantity';
+
+/**
+ * Alias used for reading the cart
+ */
+export const GET_CART_ALIAS = '@getCart';
+
+/**
  * Clicks on the 'Edit Configuration' link in cart for a certain cart item.
  *
  * @param {number} cartItemIndex - Index of cart item
@@ -125,6 +135,20 @@ export function checkQuantityStepper(cartItemIndex: number, quantity: number) {
 }
 
 function changeQuantityValue(cartItemIndex: number, sign: string) {
+  cy.intercept(
+    'PATCH',
+    `${Cypress.env('OCC_PREFIX')}/${Cypress.env(
+      'BASE_SITE'
+    )}/users/*/carts/*/entries/0?lang=en&curr=USD`
+  ).as(PATCH_QUANTITY_ALIAS.substring(1));
+
+  cy.intercept(
+    'GET',
+    `${Cypress.env('OCC_PREFIX')}/${Cypress.env(
+      'BASE_SITE'
+    )}/users/*/carts/*?fields=DEFAULT*`
+  ).as(GET_CART_ALIAS.substring(1));
+
   cy.get('cx-cart-item-list .cx-item-list-row')
     .eq(cartItemIndex)
     .find('.cx-quantity')
@@ -148,19 +172,24 @@ export function checkItemsList(items: number) {
 }
 
 /**
- * Increase a quantity value of the quantity stepper.
+ * Increase a quantity value of the quantity stepper and
+ * wait for the patch and get requests to complete.
  *
  * @param {number} cartItemIndex - Index of cart item
  */
-export function increaseQuantity(cartItemIndex: number) {
+export function increaseQuantityAndWait(cartItemIndex: number) {
   changeQuantityValue(cartItemIndex, '+');
+  cy.wait(PATCH_QUANTITY_ALIAS);
+  cy.wait(GET_CART_ALIAS);
 }
 
 /**
- * Decrease a quantity value of the quantity stepper.
+ * Decrease a quantity value of the quantity stepper and
+ * wait for the patch and get requests to complete.
  *
  * @param {number} cartItemIndex - Index of cart item
  */
-export function decreaseQuantity(cartItemIndex: number) {
+export function decreaseQuantityAndWait(cartItemIndex: number) {
   changeQuantityValue(cartItemIndex, '-');
+  cy.wait(PATCH_QUANTITY_ALIAS);
 }

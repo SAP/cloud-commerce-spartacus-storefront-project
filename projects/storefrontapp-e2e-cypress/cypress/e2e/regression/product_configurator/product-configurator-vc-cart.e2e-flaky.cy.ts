@@ -122,9 +122,9 @@ context('Product Configuration', () => {
       configurationOverviewVc.checkQuantityNotDisplayed();
       configurationVc.goToCart(electronicsShop);
       configurationCart.checkQuantityStepper(0, 10);
-      configurationCart.increaseQuantity(0);
-      configurationCart.increaseQuantity(0);
-      configurationCart.decreaseQuantity(0);
+      configurationCart.increaseQuantityAndWait(0);
+      configurationCart.increaseQuantityAndWait(0);
+      configurationCart.decreaseQuantityAndWait(0);
       configurationCart.checkQuantityStepper(0, 11);
       configurationCart.clickOnEditConfigurationLink(0);
       configuration.checkQuantityStepperNotDisplayed();
