@@ -9,6 +9,7 @@
     "billingAddress": "Billing Address",
     "paymentOption": "Payment option",
     "termsAndConditions": "Terms & Conditions",
+    "closeTermsAndConditionsAlert": "Close alert",
     "itemsToBeShipped": "Items to be shipped",
     "proceedPayment": "Place Order",
     "retryPayment": "Retry to Continue",

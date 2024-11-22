@@ -1,8 +1,15 @@
 <!-- For B2B Account payment, OPF should not be displayed -->
-<ng-container *ngIf="(paymentType$ | async)?.code !== 'ACCOUNT'">
+<section
+  *ngIf="(paymentType$ | async)?.code !== 'ACCOUNT'"
+  [attr.aria-label]="'opfCheckout.tabs.paymentAndReview' | cxTranslate"
+>
+  <h2 class="cx-checkout-title d-none d-lg-block d-xl-block">
+    {{ 'opfCheckout.tabs.paymentAndReview' | cxTranslate }}
+  </h2>
   <div
-    class="cx-opf-terms-and-conditions"
     *ngIf="explicitTermsAndConditions$ | async"
+    class="cx-opf-terms-and-conditions"
+    [attr.aria-label]="'opfCheckout.termsAndConditions' | cxTranslate"
   >
     <h3>{{ 'opfCheckout.termsAndConditions' | cxTranslate }}</h3>
 
@@ -129,4 +136,4 @@
       </ng-template>
     </div>
   </ng-container>
-</ng-container>
+</section>
