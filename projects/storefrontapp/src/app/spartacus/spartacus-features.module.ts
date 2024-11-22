@@ -400,6 +400,7 @@ if (environment.cpq) {
         sciEnabled: true,
         useExtendedMediaComponentConfiguration: true,
         a11yWrapReviewOrderInSection: true,
+        enableBundles: true,
       };
       return appFeatureToggles;
     }),
