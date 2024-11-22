@@ -88,7 +88,7 @@ describe('OpfGooglePayService', () => {
       ['getQuickBuyProviderConfig']
     );
 
-    const mockOpfQuickBuyConfig = {
+    mockOpfQuickBuyConfig = {
       providers: {
         [OPF_GOOGLE_PAY_PROVIDER_NAME]: {
           resourceUrl: 'fakeUrl',
