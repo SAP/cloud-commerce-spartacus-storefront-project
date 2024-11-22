@@ -136,7 +136,7 @@ describe('CmsParagraphComponent in CmsLib', () => {
       expect(router.navigateByUrl).not.toHaveBeenCalled();
     });
 
-    xit('should NOT use router navigation for other protocols', () => {
+    it('should NOT use router navigation for other protocols', () => {
       const url = 'mailto:test-email@test.com';
       const link = setupLink(url);
       link.click();
