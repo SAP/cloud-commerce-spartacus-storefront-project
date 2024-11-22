@@ -88,18 +88,19 @@ export class MyPreferredStoreComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const source$ = this.cmsService.getCurrentPage().pipe(
-      filter<Page>(Boolean),
-      take(1),
-      tap(
-        (cmsPage) => (this.isStoreFinder = cmsPage.pageId === 'storefinderPage')
-      )
-    );
-
-    source$
+    this.cmsService
+      .getCurrentPage()
       .pipe(
-        filter(() => this.isStoreFinder),
-        tap(() => {
+        filter<Page>(Boolean),
+        take(1),
+        map((cmsPage) => {
+          this.isStoreFinder = cmsPage.pageId === 'storefinderPage';
+          return this.isStoreFinder;
+        })
+      )
+      .subscribe((isStoreFinder) => {
+        const link = this.storeFinderService.getDirections(this.pointOfService);
+        if (isStoreFinder) {
           let content: PreferredStoreContent = {
             header: '',
             actions: [{ event: 'send', name: 'Get Directions' }],
@@ -109,9 +110,6 @@ export class MyPreferredStoreComponent implements OnInit {
               'a11yImproveButtonsInCardComponent'
             )
           ) {
-            const link = this.storeFinderService.getDirections(
-              this.pointOfService
-            );
             content = {
               ...content,
               actions: [
@@ -125,25 +123,14 @@ export class MyPreferredStoreComponent implements OnInit {
             };
           }
           this.content = content;
-        })
-      )
-      .subscribe();
-
-    source$
-      .pipe(
-        filter(() => !this.isStoreFinder),
-        tap(() => {
-          let content = this.content;
+        } else {
           if (
             this.featureConfigService.isEnabled(
               'a11yImproveButtonsInCardComponent'
             )
           ) {
-            const link = this.storeFinderService.getDirections(
-              this.pointOfService
-            );
-            content = {
-              ...content,
+            this.content = {
+              ...this.content,
               actions: [
                 {
                   link,
@@ -155,10 +142,8 @@ export class MyPreferredStoreComponent implements OnInit {
               ],
             };
           }
-          this.content = content;
-        })
-      )
-      .subscribe();
+        }
+      });
   }
 
   /**
