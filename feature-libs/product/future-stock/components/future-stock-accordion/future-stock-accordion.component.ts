@@ -5,9 +5,9 @@
  */
 
 import { Component } from '@angular/core';
-import { ICON_TYPE } from '@spartacus/storefront';
-import { FutureStockFacade } from '@spartacus/product/future-stock/root';
 import { useFeatureStyles } from '@spartacus/core';
+import { FutureStockFacade } from '@spartacus/product/future-stock/root';
+import { ICON_TYPE } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-future-stock-accordion',

@@ -354,7 +354,7 @@ if (environment.cpq) {
         a11yEmptyWishlistHeading: true,
         a11yScreenReaderBloatFix: true,
         a11yUseButtonsForBtnLinks: true,
-        a11yTabComponent: false,
+        a11yTabComponent: true,
         a11yCarouselArrowKeysNavigation: true,
         a11yPickupOptionsTabs: true,
         a11yNotificationsOnConsentChange: true,
@@ -394,7 +394,9 @@ if (environment.cpq) {
         a11yDeleteButton2First: true,
         a11yShowLabelOfSelect: true,
         a11yShowDownArrowOnFocusedSelectMenu: true,
+        a11yCroppedFocusRing: true,
         a11yTextSpacingAdjustments: true,
+        a11yTableHeaderReadout: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
@@ -403,6 +405,7 @@ if (environment.cpq) {
         a11yPdpGridArrangement: true,
         sciEnabled: true,
         useExtendedMediaComponentConfiguration: true,
+        showRealTimeStockInPDP: false,
         a11yWrapReviewOrderInSection: true,
       };
       return appFeatureToggles;
