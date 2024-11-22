@@ -122,7 +122,7 @@ describe('MyPreferredStoreComponent', () => {
     spyOn(component, 'getDirectionsToStore');
 
     const getDirectionBtn =
-      fixture.debugElement.nativeElement.querySelector('.cx-action-link');
+      fixture.debugElement.nativeElement.querySelector('.btn');
     getDirectionBtn.click();
 
     expect(component.getDirectionsToStore).toHaveBeenCalled();
