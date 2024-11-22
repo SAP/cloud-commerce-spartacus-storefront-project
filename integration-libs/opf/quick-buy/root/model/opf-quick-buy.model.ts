@@ -54,5 +54,5 @@ export enum OpfQuickBuyProviderType {
 export const OPF_GOOGLE_PAY_PROVIDER_NAME = 'googlePay';
 
 export interface OpfQuickBuyGooglePayProvider {
-  resourceUrl: string;
+  resourceUrl?: string;
 }

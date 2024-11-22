@@ -11,11 +11,9 @@ import {
 import { OpfQuickBuyConfig } from './opf-quick-buy-config';
 
 export const defaultOpfQuickBuyConfig: OpfQuickBuyConfig = {
-  providers: [
-    {
-      [OPF_GOOGLE_PAY_PROVIDER_NAME]: {
-        resourceUrl: '',
-      } as OpfQuickBuyGooglePayProvider,
-    },
-  ],
+  providers: {
+    [OPF_GOOGLE_PAY_PROVIDER_NAME]: {
+      resourceUrl: '',
+    } as OpfQuickBuyGooglePayProvider,
+  },
 };
