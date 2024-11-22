@@ -685,10 +685,25 @@ export interface FeatureTogglesInterface {
   a11yShowDownArrowOnFocusedSelectMenu?: boolean;
 
   /**
+   * Fixes various instances of the focus ring being cropped in the UI.
+   * The focus ring on interactive elements should have all its sides visible and not include any extra padding.
+   * Affects styles of: 'CartItemListComponent, CartItemComponent, ListComponent, FutureStockAccordionComponent, QuoteConfirmDialogComponent, MessagingComponent
+   */
+  a11yCroppedFocusRing?: boolean;
+
+  /**
    * Fixes text formatting issues while a11y text spacing is enabled.
    * Affects: ListComponent, CSAgentLoginFormComponent
    */
   a11yTextSpacingAdjustments?: boolean;
+
+  /**
+   * Ensures the table column header gets properly narrated by the screen readers.
+   * Affects tables in the following components: SavedCartListComponent, ReplenishmentOrderHistoryComponent, OrderReturnRequestListComponent,
+   * AccountSummaryDocumentComponent, OrderDetailPermissionResultsComponent, OrderApprovalListComponent, UnitLevelOrderHistoryComponent,
+   * InvoicesListComponent, MyInterestsComponent
+   */
+  a11yTableHeaderReadout?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -899,7 +914,9 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yDeleteButton2First: false,
   a11yShowLabelOfSelect: false,
   a11yShowDownArrowOnFocusedSelectMenu: false,
+  a11yCroppedFocusRing: false,
   a11yTextSpacingAdjustments: false,
+  a11yTableHeaderReadout: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
