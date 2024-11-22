@@ -129,7 +129,7 @@ describe('CmsParagraphComponent in CmsLib', () => {
       expect(router.navigateByUrl).toHaveBeenCalledWith(url);
     });
 
-    xit('should NOT use router navigation for external links', () => {
+    it('should NOT use router navigation for external links', () => {
       const url = 'http://example.com';
       const link = setupLink(url);
       link.click();
