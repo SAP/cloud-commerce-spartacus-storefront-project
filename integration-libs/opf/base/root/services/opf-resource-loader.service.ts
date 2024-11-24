@@ -22,6 +22,7 @@ export class OpfResourceLoaderService {
   protected platformId = inject(PLATFORM_ID);
 
   protected readonly OPF_RESOURCE_ATTRIBUTE_KEY = 'data-opf-resource';
+  protected readonly OPF_RESOURCE_LOAD_ONCE_ATTR_KEY = 'opf-load-once';
 
   protected embedStyles(embedOptions: {
     src: string;
@@ -59,6 +60,15 @@ export class OpfResourceLoaderService {
     return this.scriptLoader.hasScript(src);
   }
 
+  protected addOpfAttribute(attributes: any): any {
+    if (!attributes[this.OPF_RESOURCE_LOAD_ONCE_ATTR_KEY]) {
+      attributes[this.OPF_RESOURCE_ATTRIBUTE_KEY] = true;
+    } else {
+      delete attributes[this.OPF_RESOURCE_LOAD_ONCE_ATTR_KEY];
+    }
+    return attributes;
+  }
+
   /**
    * Loads a script specified in the resource object.
    *
@@ -69,7 +79,6 @@ export class OpfResourceLoaderService {
     return new Promise((resolve, reject) => {
       const attributes: any = {
         type: 'text/javascript',
-        [this.OPF_RESOURCE_ATTRIBUTE_KEY]: true,
       };
 
       if (resource?.sri) {
@@ -85,7 +94,7 @@ export class OpfResourceLoaderService {
       if (resource.url && !this.hasScript(resource.url)) {
         this.scriptLoader.embedScript({
           src: resource.url,
-          attributes: attributes,
+          attributes: this.addOpfAttribute(attributes),
           callback: () => resolve(),
           errorCallback: () => reject(),
         });
