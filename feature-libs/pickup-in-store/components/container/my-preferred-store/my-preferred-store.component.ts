@@ -6,6 +6,7 @@
 
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   inject,
   OnInit,
@@ -61,7 +62,8 @@ export class MyPreferredStoreComponent implements OnInit {
     protected pickupLocationsSearchService: PickupLocationsSearchFacade,
     protected routingService: RoutingService,
     protected storeFinderService: StoreFinderFacade,
-    protected cmsService: CmsService
+    protected cmsService: CmsService,
+    protected cdr: ChangeDetectorRef
   ) {
     this.preferredStore$ = this.preferredStoreFacade.getPreferredStore$().pipe(
       filter((preferredStore) => preferredStore !== null),
@@ -88,30 +90,26 @@ export class MyPreferredStoreComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cmsService
-      .getCurrentPage()
-      .pipe(
-        filter<Page>(Boolean),
-        take(1),
-        map((cmsPage) => {
-          this.isStoreFinder = cmsPage.pageId === 'storefinderPage';
-          return this.isStoreFinder;
-        })
-      )
-      .subscribe((isStoreFinder) => {
-        const link = this.storeFinderService.getDirections(this.pointOfService);
-        if (isStoreFinder) {
-          let content: PreferredStoreContent = {
-            header: '',
-            actions: [{ event: 'send', name: 'Get Directions' }],
-          };
-          if (
-            this.featureConfigService.isEnabled(
-              'a11yImproveButtonsInCardComponent'
-            )
-          ) {
-            content = {
-              ...content,
+    if (
+      this.featureConfigService.isEnabled('a11yImproveButtonsInCardComponent')
+    ) {
+      this.cmsService
+        .getCurrentPage()
+        .pipe(
+          filter<Page>(Boolean),
+          take(1),
+          map((cmsPage) => {
+            this.isStoreFinder = cmsPage.pageId === 'storefinderPage';
+            return this.isStoreFinder;
+          })
+        )
+        .subscribe((isStoreFinder) => {
+          const link = this.storeFinderService.getDirections(
+            this.pointOfService
+          );
+          if (isStoreFinder) {
+            this.content = {
+              header: '',
               actions: [
                 {
                   link,
@@ -121,14 +119,7 @@ export class MyPreferredStoreComponent implements OnInit {
                 },
               ],
             };
-          }
-          this.content = content;
-        } else {
-          if (
-            this.featureConfigService.isEnabled(
-              'a11yImproveButtonsInCardComponent'
-            )
-          ) {
+          } else {
             this.content = {
               ...this.content,
               actions: [
@@ -142,8 +133,28 @@ export class MyPreferredStoreComponent implements OnInit {
               ],
             };
           }
-        }
-      });
+          this.cdr.detectChanges();
+        });
+    } else {
+      this.cmsService
+        .getCurrentPage()
+        .pipe(
+          filter<Page>(Boolean),
+          take(1),
+          tap(
+            (cmsPage) =>
+              (this.isStoreFinder = cmsPage.pageId === 'storefinderPage')
+          ),
+          filter(() => this.isStoreFinder),
+          tap(() => {
+            this.content = {
+              header: '',
+              actions: [{ event: 'send', name: 'Get Directions' }],
+            };
+          })
+        )
+        .subscribe();
+    }
   }
 
   /**

@@ -226,7 +226,7 @@
             *ngIf="isCardLinkAction(action)"
             [url]="action.link"
             [ariaLabel]="
-              action.ariaLabel ? (action.ariaLabel | cxTranslate) : null
+              action.ariaLabel ? (action.ariaLabel | cxTranslate) : undefined
             "
             [target]="action.target ?? null"
             >{{ action.name }}</cx-generic-link
