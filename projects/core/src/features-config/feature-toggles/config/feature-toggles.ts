@@ -929,6 +929,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yCroppedFocusRing: false,
   a11yTextSpacingAdjustments: false,
   a11yTableHeaderReadout: false,
+  a11ySearchboxAssistiveMessage: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
