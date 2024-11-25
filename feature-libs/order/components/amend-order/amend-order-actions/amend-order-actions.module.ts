@@ -12,7 +12,13 @@ import { AmendOrderActionsComponent } from './amend-order-actions.component';
 import { BtnLikeLinkModule } from '@spartacus/storefront';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, UrlModule, I18nModule, BtnLikeLinkModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    UrlModule,
+    I18nModule,
+    BtnLikeLinkModule,
+  ],
   declarations: [AmendOrderActionsComponent],
   exports: [AmendOrderActionsComponent],
 })
