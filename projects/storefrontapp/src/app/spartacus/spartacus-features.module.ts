@@ -390,7 +390,7 @@ if (environment.cpq) {
         a11yPasswordVisibilityBtnValueOverflow: true,
         a11yItemCounterFocus: true,
         a11yScrollToReviewByShowReview: true,
-        a11yViewHoursButtonIconContrast: true,
+        a11yStoreImproveIconsContrast: true,
         a11yCheckoutStepsLandmarks: true,
         a11yQTY2Quantity: true,
         a11yApprovalProcessWithNoClearable: true,

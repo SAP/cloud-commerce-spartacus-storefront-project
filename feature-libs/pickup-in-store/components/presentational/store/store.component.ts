@@ -31,7 +31,7 @@ export class StoreComponent implements OnInit {
 
   constructor() {
     useFeatureStyles('a11yVisibleFocusOverflows');
-    useFeatureStyles('a11yViewHoursButtonIconContrast');
+    useFeatureStyles('a11yStoreImproveIconsContrast');
   }
 
   ngOnInit(): void {

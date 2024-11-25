@@ -10,7 +10,7 @@
     .cx-store-opening-hours-icon {
       color: var(--cx-color-secondary);
       opacity: var(--cx-opacity, 0.5);
-      @include forFeature('a11yViewHoursButtonIconContrast') {
+      @include forFeature('a11yStoreImproveIconsContrast') {
         opacity: var(--cx-opacity, 1);
       }
     }
