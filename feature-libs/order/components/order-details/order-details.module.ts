@@ -31,7 +31,7 @@ import {
   PromotionsModule,
   ProvideOutletOptions,
   SpinnerModule,
-  BtnLikeLinkModule
+  BtnLikeLinkModule,
 } from '@spartacus/storefront';
 import {
   MyAccountV2ConsignmentTrackingComponent,
