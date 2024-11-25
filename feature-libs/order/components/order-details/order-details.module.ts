@@ -50,6 +50,7 @@ import { OrderDetailTotalsComponent } from './order-detail-totals/order-detail-t
 import { OrderOverviewComponent } from './order-overview/order-overview.component';
 import { defaultReorderLayoutConfig } from './reoder-layout.config';
 import { OrderOverviewComponentService } from './order-overview/order-overview-component.service';
+import { BtnLikeLinkModule } from '@spartacus/storefront';
 
 function registerOrderOutletFactory(): () => void {
   const isMyAccountV2 = inject(USE_MY_ACCOUNT_V2_ORDER);
@@ -110,6 +111,7 @@ const moduleComponents = [
     IconModule,
     MyAccountV2DownloadInvoicesModule,
     AbstractOrderContextModule,
+    BtnLikeLinkModule,
   ],
   providers: [
     OrderOverviewComponentService,
