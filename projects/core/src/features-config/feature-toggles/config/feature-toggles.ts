@@ -685,6 +685,13 @@ export interface FeatureTogglesInterface {
   a11yShowDownArrowOnFocusedSelectMenu?: boolean;
 
   /**
+   * Fixes various instances of the focus ring being cropped in the UI.
+   * The focus ring on interactive elements should have all its sides visible and not include any extra padding.
+   * Affects styles of: 'CartItemListComponent, CartItemComponent, ListComponent, FutureStockAccordionComponent, QuoteConfirmDialogComponent, MessagingComponent
+   */
+  a11yCroppedFocusRing?: boolean;
+
+  /**
    * Fixes text formatting issues while a11y text spacing is enabled.
    * Affects: ListComponent, CSAgentLoginFormComponent
    */
@@ -748,6 +755,13 @@ export interface FeatureTogglesInterface {
    *       in the future together with this feature toggle.
    */
   allPageMetaResolversEnabledInCsr?: boolean;
+
+  /**
+   * Modifies grid arrangement in Product Details Page for better accessibility:
+   * - add to cart button should be last step
+   * - future stock accordion is moved before add to cart button
+   */
+  a11yPdpGridArrangement?: boolean;
 
   /**
    * CDS/ISS is integrated into the SAP Cloud Identity Service (SCI). The downstream services use different domains and URL formats.
@@ -907,6 +921,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yDeleteButton2First: false,
   a11yShowLabelOfSelect: false,
   a11yShowDownArrowOnFocusedSelectMenu: false,
+  a11yCroppedFocusRing: false,
   a11yTextSpacingAdjustments: false,
   a11yTableHeaderReadout: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
@@ -915,6 +930,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   enableConsecutiveCharactersPasswordRequirement: false,
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
+  a11yPdpGridArrangement: false,
   sciEnabled: false,
   useExtendedMediaComponentConfiguration: false,
   showRealTimeStockInPDP: false,
