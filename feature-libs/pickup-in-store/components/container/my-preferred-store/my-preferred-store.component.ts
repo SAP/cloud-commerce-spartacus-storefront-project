@@ -29,6 +29,9 @@ import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map, switchMap, take, tap } from 'rxjs/operators';
 
+const getDirectionsName = 'Get Directions';
+const changeStoreName = 'Change Store';
+
 interface PreferredStoreContent {
   header: string;
   actions: Array<
@@ -47,8 +50,8 @@ export class MyPreferredStoreComponent implements OnInit {
   content: PreferredStoreContent = {
     header: 'My Store',
     actions: [
-      { event: 'send', name: 'Get Directions' },
-      { event: 'edit', name: 'Change Store' },
+      { event: 'send', name: getDirectionsName },
+      { event: 'edit', name: changeStoreName },
     ],
   };
   openHoursOpen = false;
@@ -113,7 +116,7 @@ export class MyPreferredStoreComponent implements OnInit {
               actions: [
                 {
                   link,
-                  name: 'Get Directions',
+                  name: getDirectionsName,
                   ariaLabel: 'cardActions.getDirections',
                   target: '_blank',
                 },
@@ -125,7 +128,7 @@ export class MyPreferredStoreComponent implements OnInit {
               actions: [
                 {
                   link,
-                  name: 'Get Directions',
+                  name: getDirectionsName,
                   ariaLabel: 'cardActions.getDirections',
                   target: '_blank',
                 },
@@ -149,7 +152,7 @@ export class MyPreferredStoreComponent implements OnInit {
           tap(() => {
             this.content = {
               header: '',
-              actions: [{ event: 'send', name: 'Get Directions' }],
+              actions: [{ event: 'send', name: getDirectionsName }],
             };
           })
         )
