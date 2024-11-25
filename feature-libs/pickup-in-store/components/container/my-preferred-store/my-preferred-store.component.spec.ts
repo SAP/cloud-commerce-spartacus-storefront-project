@@ -19,11 +19,7 @@ import {
 import { StoreFinderService } from '@spartacus/storefinder/core';
 import { StoreFinderFacade } from '@spartacus/storefinder/root';
 import { CardModule, IconTestingModule } from '@spartacus/storefront';
-import {
-  // EMPTY,
-  Observable,
-  of,
-} from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { MockPickupLocationsSearchService } from '../../../core/facade/pickup-locations-search.service.spec';
 import { MockPreferredStoreService } from '../../../core/services/preferred-store.service.spec';
 import { MyPreferredStoreComponent } from './my-preferred-store.component';
