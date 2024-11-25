@@ -7,10 +7,7 @@
   >
     <ng-container *ngIf="!activeConfigurationsState?.loading; else loading">
       <div class="cx-payment-options-list">
-        <cx-opf-checkout-terms-and-conditions-alert
-          [isVisible]="disabled"
-          [isExplicit]="explicitTermsAndConditions"
-        ></cx-opf-checkout-terms-and-conditions-alert>
+        <ng-content></ng-content>
         <div
           class="form-check"
           *ngFor="let configuration of activeConfigurationsState?.data?.value"
@@ -20,7 +17,7 @@
             class="form-check-input"
             role="radio"
             type="radio"
-            aria-checked="true"
+            [attr.aria-checked]="configuration.id === selectedPaymentId"
             (change)="changePayment(configuration)"
             [value]="configuration.id"
             [checked]="configuration.id === selectedPaymentId"
@@ -41,6 +38,22 @@
               />
             </div>
           </label>
+          <div
+            *ngIf="configuration.id === selectedPaymentId"
+            class="cx-payment-info-box"
+          >
+            <span class="alert-icon" aria-hidden="true">
+              <cx-icon [type]="iconTypes.INFO"></cx-icon>
+            </span>
+            <p
+              class="cx-payment-info-box-message"
+              tabindex="0"
+              role="alert"
+              aria-live="polite"
+            >
+              {{ 'opfCheckout.paymentInfoMessage' | cxTranslate }}
+            </p>
+          </div>
           <cx-opf-checkout-payment-wrapper
             *ngIf="selectedPaymentId && configuration.id === selectedPaymentId"
             [selectedPaymentId]="selectedPaymentId"

@@ -26,6 +26,7 @@ import {
   OpfMetadataModel,
   OpfMetadataStoreService,
 } from '@spartacus/opf/base/root';
+import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -57,6 +58,8 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   activeConfigurations$: Observable<
     QueryState<OpfActiveConfigurationsResponse | undefined>
   >;
+
+  iconTypes = ICON_TYPE;
 
   getActiveConfigurations(): Observable<
     QueryState<OpfActiveConfigurationsResponse | undefined>

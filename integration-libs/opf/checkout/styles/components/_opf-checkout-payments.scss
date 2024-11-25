@@ -45,4 +45,17 @@
   .cx-payment-options-list-pagination {
     justify-content: flex-end;
   }
+
+  .cx-payment-info-box {
+    display: flex;
+    margin: 12px 0;
+
+    cx-icon {
+      color: var(--cx-color-info);
+    }
+  }
+
+  .cx-payment-info-box-message {
+    text-transform: none;
+  }
 }

@@ -12,6 +12,7 @@
       }}
     </p>
     <button
+      *ngIf="isDismissible"
       class="close"
       type="button"
       (click)="close()"
