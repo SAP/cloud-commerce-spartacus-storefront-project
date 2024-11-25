@@ -85,6 +85,16 @@
         display: flex;
         align-items: center;
       }
+
+      button.btn-tertiary {
+        color: var(--cx-color-primary);
+        border-radius: var(--cx-buttons-border-radius);
+        padding: 12px 16px;
+        border-style: none;
+        &:focus {
+          @include visible-focus();
+        }
+      }
     }
   }
 

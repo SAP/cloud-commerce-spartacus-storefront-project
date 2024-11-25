@@ -1,4 +1,6 @@
 %cx-my-preferred-store {
+  @import 'bootstrap/scss/buttons';
+
   .cx-store-opening-hours-toggle {
     @include type('6');
     color: $cx-color-link-primary;
