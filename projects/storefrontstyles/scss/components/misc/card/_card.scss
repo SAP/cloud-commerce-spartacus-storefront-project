@@ -77,7 +77,7 @@
     .cx-card-actions {
       gap: 16px;
       cx-generic-link {
-        font-weight: 700;
+        font-weight: var(--cx-font-weight-semi);
         color: var(--cx-color-primary);
         text-decoration: underline;
       }
