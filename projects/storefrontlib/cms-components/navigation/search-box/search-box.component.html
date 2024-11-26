@@ -386,37 +386,21 @@
   <span id="initialDescription" class="cx-visually-hidden">
     {{ 'searchBox.initialDescription' | cxTranslate }}
   </span>
-  <ng-container *cxFeature="'a11ySearchboxAssistiveMessage'">
-    <div
-      *ngIf="result.suggestions?.length || result.products?.length"
-      aria-live="assertive"
-      class="cx-visually-hidden"
-    >
-      {{
-        'searchBox.suggestionsResult'
-          | cxTranslate: { count: result.suggestions?.length }
-      }}
-      {{
-        'searchBox.productsResult'
-          | cxTranslate: { count: result.products?.length }
-      }}
-    </div>
-  </ng-container>
-  <ng-container *cxFeature="'!a11ySearchboxAssistiveMessage'">
-    <div
-      *ngIf="result.suggestions?.length || result.products?.length"
-      aria-live="assertive"
-      class="cx-visually-hidden"
-    >
-      {{
-        'searchBox.suggestionsResult'
-          | cxTranslate: { count: result.suggestions?.length }
-      }}
-      {{
-        'searchBox.productsResult'
-          | cxTranslate: { count: result.products?.length }
-      }}
+  <div
+    *ngIf="result.suggestions?.length || result.products?.length"
+    aria-live="assertive"
+    class="cx-visually-hidden"
+  >
+    {{
+      'searchBox.suggestionsResult'
+        | cxTranslate: { count: result.suggestions?.length }
+    }}
+    {{
+      'searchBox.productsResult'
+        | cxTranslate: { count: result.products?.length }
+    }}
+    <ng-container *cxFeature="'!a11ySearchboxAssistiveMessage'">
       {{ 'searchBox.initialDescription' | cxTranslate }}
-    </div>
-  </ng-container>
+    </ng-container>
+  </div>
 </div>
