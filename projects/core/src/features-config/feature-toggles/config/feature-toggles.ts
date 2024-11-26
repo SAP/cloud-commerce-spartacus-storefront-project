@@ -725,7 +725,7 @@ export interface FeatureTogglesInterface {
 
   /**
    * Adds additional styling to help differentiate between focused and selected items in the list.
-   * Affects:
+   * Affects: ConfiguratorAttributeSingleSelectionImageComponent, ProductImagesComponent
    */
   a11yDifferentiateFocusedAndSelected?: boolean;
 
