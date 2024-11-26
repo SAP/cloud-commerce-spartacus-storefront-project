@@ -139,10 +139,10 @@ export class CardComponent implements OnInit {
    */
   protected get ariaDescribedBy() {
     if (this.content && this.content.title) {
-      return `${this.idOfContentTitle} ${this.idOfContentBody}`;
+      return `${this.getLabel('content-title')} ${this.getLabel('cx-card-container')}`;
     }
 
-    return this.idOfContentBody;
+    return `${this.getLabel('cx-card-container')}`;
   }
 
   /**
@@ -152,28 +152,17 @@ export class CardComponent implements OnInit {
    * @returns {string} The 'aria-labelledby' value.
    */
   protected get ariaLabelledBy() {
-    return 'content-header' + (this.index >= 0 ? '-' + this.index : '');
+    return this.getLabel('content-header');
   }
 
   /**
-   * idOfContentTitle: Computes the ID for the content title element.
-   * If `index` is provided (non-negative), it appends the index to the base string 'content-title'.
-   * If no index is available, it returns just 'content-title'.
+   * getLabel: Computes a label string by concatenating the provided prefix with the index.
+   * If the index is greater than or equal to 0, it appends the index to the prefix; otherwise, it just returns the prefix.
    *
-   * @returns {string} The computed ID for the content title element.
+   * @param {string} prefix - The string to prefix to the label.
+   * @returns {string} The computed label, including the index if it's available.
    */
-  protected get idOfContentTitle() {
-    return 'content-title' + (this.index >= 0 ? '-' + this.index : '');
-  }
-
-  /**
-   * idOfContentBody: Computes the ID for the content body element.
-   * If `index` is provided (non-negative), it appends the index to the base string 'cx-card-container'.
-   * If no index is available, it returns just 'cx-card-container'.
-   *
-   * @returns {string} The computed ID for the content body element.
-   */
-  protected get idOfContentBody() {
-    return 'cx-card-container' + (this.index >= 0 ? '-' + this.index : '');
+  protected getLabel(prefix: string): string {
+    return prefix + (this.index >= 0 ? '-' + this.index : '');
   }
 }
