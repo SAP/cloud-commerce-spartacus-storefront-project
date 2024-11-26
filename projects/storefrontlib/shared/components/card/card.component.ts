@@ -130,7 +130,30 @@ export class CardComponent implements OnInit {
     // Intentional empty method
   }
 
+  /**
+   * ariaDescribedBy: Computes the value for the 'aria-describedby' attribute.
+   * If `content` has a `title`, it returns a string including the title and container IDs, with index if available.
+   * If no title, it returns only the container ID with the index if available.
+   *
+   * @returns {string} The 'aria-describedby' value.
+   */
   protected get ariaDescribedBy() {
-    return `cx-card-container-${this.index}`;
+    if (this.content && this.content.title) {
+      if (this.index >= 0)
+        return `content-title-${this.index} cx-card-container-${this.index}`;
+      return 'content-title cx-card-container';
+    }
+
+    return 'cx-card-container' + (this.index >= 0 ? '-' + this.index : '');
+  }
+
+  /**
+   * ariaLabelledBy: Computes the value for the 'aria-labelledby' attribute.
+   * Returns 'content-header' with index if available.
+   *
+   * @returns {string} The 'aria-labelledby' value.
+   */
+  protected get ariaLabelledBy() {
+    return 'content-header' + (this.index >= 0 ? '-' + this.index : '');
   }
 }
