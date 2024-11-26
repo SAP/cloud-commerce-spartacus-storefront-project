@@ -644,10 +644,15 @@ export interface FeatureTogglesInterface {
   a11yScrollToReviewByShowReview?: boolean;
 
   /**
-   * `StoreComponent and MyPreferredStoreComponent` improve a contrast of icons
-   * in `View Hours` button and `In Stock` section
+   * `StoreComponent and MyPreferredStoreComponent` an icon in a button that triggers showing
+   * store's opening hours has an acceptable contrast ratio in a default theme
    */
-  a11yStoreImproveIconsContrast?: boolean;
+  a11yViewHoursButtonIconContrast?: boolean;
+
+  /**
+   * `StoreComponent` `In Stock` icon has an acceptable contrast ratio in a default theme
+   */
+  a11yStoreInStockIconContrast?: boolean;
 
   /**
    * `Checkout` add a landmarks to content representing steps
@@ -912,7 +917,8 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yPasswordVisibilityBtnValueOverflow: false,
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
-  a11yStoreImproveIconsContrast: false,
+  a11yViewHoursButtonIconContrast: false,
+  a11yStoreInStockIconContrast: false,
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
   a11yWrapReviewOrderInSection: false,

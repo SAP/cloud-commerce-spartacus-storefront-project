@@ -68,7 +68,7 @@ export class MyPreferredStoreComponent implements OnInit {
       })
     );
 
-    useFeatureStyles('a11yStoreImproveIconsContrast');
+    useFeatureStyles('a11yViewHoursButtonIconContrast');
   }
 
   ngOnInit(): void {
