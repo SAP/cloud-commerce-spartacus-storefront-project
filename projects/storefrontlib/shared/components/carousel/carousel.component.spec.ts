@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { I18nTestingModule, LoggerService, Product } from '@spartacus/core';
-import { ICON_TYPE } from '@spartacus/storefront';
+import { ICON_TYPE, SelectFocusUtility } from '@spartacus/storefront';
 import { EMPTY, Observable, of } from 'rxjs';
 import { CarouselComponent } from './carousel.component';
 import { CarouselService } from './carousel.service';
@@ -15,6 +15,12 @@ class MockCarouselService {
     _itemWidth: number
   ): Observable<number> {
     return EMPTY;
+  }
+}
+
+class MockSelectFocusUtility {
+  findFocusable(_element: HTMLElement): HTMLElement[] {
+    return [];
   }
 }
 
@@ -46,6 +52,7 @@ describe('Carousel Component', () => {
   let component: CarouselComponent;
   let fixture: ComponentFixture<CarouselComponent>;
   let service: CarouselService;
+  let selectFocusUtil: MockSelectFocusUtility;
 
   let templateFixture: ComponentFixture<MockTemplateComponent>;
   let template: TemplateRef<any>;
@@ -58,7 +65,10 @@ describe('Carousel Component', () => {
         MockTemplateComponent,
         MockFeatureDirective,
       ],
-      providers: [{ provide: CarouselService, useClass: MockCarouselService }],
+      providers: [
+        { provide: CarouselService, useClass: MockCarouselService },
+        { provide: SelectFocusUtility, useClass: MockSelectFocusUtility },
+      ],
     }).compileComponents();
   }));
 
@@ -66,6 +76,9 @@ describe('Carousel Component', () => {
     fixture = TestBed.createComponent(CarouselComponent);
     component = fixture.componentInstance;
     service = TestBed.inject(CarouselService);
+    selectFocusUtil = TestBed.inject(
+      SelectFocusUtility
+    ) as unknown as MockSelectFocusUtility;
 
     templateFixture = TestBed.createComponent(MockTemplateComponent);
     const compiled = templateFixture.debugElement.nativeElement;
@@ -594,6 +607,77 @@ describe('Carousel Component', () => {
 
         expect(focusableElements[initialIndex].focus).not.toHaveBeenCalled();
         expect(component.activeSlide).toBe(0);
+      });
+    });
+
+    describe('handleTab', () => {
+      let nativeElement: HTMLElement;
+      beforeEach(() => {
+        component.template = template;
+        nativeElement = fixture.nativeElement;
+
+        for (let i = 0; i < 10; i++) {
+          const element = document.createElement('div');
+          element.setAttribute('cxFocusableCarouselItem', '');
+          nativeElement.appendChild(element);
+        }
+        fixture.detectChanges();
+      });
+
+      it('should move focus to the next focusable element when Tab is pressed', () => {
+        const carouselItems: HTMLElement[] = Array.from(
+          nativeElement.querySelectorAll('[cxFocusableCarouselItem]')
+        );
+        const focusableElements = [
+          document.createElement('div'),
+          ...carouselItems,
+          document.createElement('div'),
+        ];
+        spyOn(selectFocusUtil, 'findFocusable').and.returnValue(
+          focusableElements
+        );
+        const event = new KeyboardEvent('keydown', { key: 'Tab' });
+        spyOn(event, 'preventDefault');
+        const expectedFocusedElement =
+          focusableElements[focusableElements.length - 1];
+        spyOn(expectedFocusedElement, 'focus');
+        carouselItems[1].dispatchEvent(event);
+        expect(event.preventDefault).toHaveBeenCalled();
+        expect(expectedFocusedElement.focus).toHaveBeenCalled();
+      });
+
+      it('should move focus to the previous focusable element when Shift+Tab is pressed', () => {
+        const carouselItems: HTMLElement[] = Array.from(
+          nativeElement.querySelectorAll('[cxFocusableCarouselItem]')
+        );
+        const focusableElements = [
+          document.createElement('div'),
+          ...carouselItems,
+          document.createElement('div'),
+        ];
+        spyOn(selectFocusUtil, 'findFocusable').and.returnValue(
+          focusableElements
+        );
+        const event = new KeyboardEvent('keydown', {
+          key: 'Tab',
+          shiftKey: true,
+        });
+        spyOn(event, 'preventDefault');
+        const expectedFocusedElement = focusableElements[0];
+        spyOn(expectedFocusedElement, 'focus');
+        carouselItems[0].dispatchEvent(event);
+        expect(event.preventDefault).toHaveBeenCalled();
+        expect(expectedFocusedElement.focus).toHaveBeenCalled();
+      });
+
+      it('should not move focus if there are no focusable elements', () => {
+        spyOn(selectFocusUtil, 'findFocusable').and.returnValue([]);
+        const event = new KeyboardEvent('keydown', { key: 'Tab' });
+        spyOn(event, 'preventDefault');
+
+        component['handleTab'](event);
+
+        expect(event.preventDefault).not.toHaveBeenCalled();
       });
     });
   });
