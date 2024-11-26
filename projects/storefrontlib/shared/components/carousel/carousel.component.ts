@@ -13,7 +13,6 @@ import {
   isDevMode,
   OnChanges,
   OnInit,
-  Optional,
   Output,
   TemplateRef,
 } from '@angular/core';
@@ -22,8 +21,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
 import { CarouselService } from './carousel.service';
-import { SelectFocusUtility } from '../../../layout/a11y/keyboard-focus/services/select-focus.util';
-import { DOCUMENT } from '@angular/common';
 
 /**
  * Generic carousel component that can be used to render any carousel items,
@@ -92,10 +89,6 @@ export class CarouselComponent implements OnInit, OnChanges {
   size$: Observable<number>;
 
   protected logger = inject(LoggerService);
-  protected selectFocusUtil = inject(SelectFocusUtility);
-  @Optional() protected document = inject(DOCUMENT, {
-    optional: true,
-  });
 
   constructor(
     protected el: ElementRef,
@@ -129,43 +122,38 @@ export class CarouselComponent implements OnInit, OnChanges {
         );
         break;
       case 'Tab':
-        this.handleTab(event);
+        this.skipTabForCarouselItems();
         break;
     }
   }
 
   /**
-   * Handles "Tab" and "Shift + Tab" keyboard navigation for the carousel component.
+   * Handles "Tab" navigation within the carousel.
    *
-   * When the "Tab" key is pressed, this method moves the focus to the next focusable element
-   * outside the carousel, following the normal DOM order. When "Shift + Tab" is pressed,
-   * it moves the focus to the previous focusable element outside the carousel, following
-   * the normal DOM order.
+   * Temporarily removes all `cxFocusableCarouselItem` elements from the tab flow
+   * and restores them after a short delay. While using `requestAnimationFrame` may seem like
+   * a bad code smell, it is justified here as it ensures natural tabbing flow in
+   * cases where determining the next focusable element is complex(e.g. if `TrapFocusDirective` is used).
    *
-   * The method uses all focusable elements in the DOM and identifies the boundaries of
-   * the carousel using elements with the `cxFocusableCarouselItem` directive. This ensures
-   * that this "Tab/Shift+Tab" override works only if `cxFocusableCarouselItem` is used
-   *
-   * @param {KeyboardEvent} event - The keyboard event triggered by the "Tab" or "Shift + Tab" key press.
+   * The `cxFocusableCarouselItem` selector is used because it identifies carousel
+   * items that have `ArrowRight`/`ArrowLeft` navigation enabled. These items should not
+   * use tab navigation according to a11y requirements.
    */
-  protected handleTab(event: KeyboardEvent): void {
-    const carouselElements: HTMLElement[] =
-      this.el.nativeElement.querySelectorAll('[cxFocusableCarouselItem]');
+  protected skipTabForCarouselItems(): void {
+    const carouselElements: HTMLElement[] = Array.from(
+      this.el.nativeElement.querySelectorAll('[cxFocusableCarouselItem]')
+    );
     if (!carouselElements.length) {
       return;
     }
-    const focusableElements = this.selectFocusUtil.findFocusable(
-      this.document?.body
-    );
-    const index = focusableElements.indexOf(
-      carouselElements[event.shiftKey ? 0 : carouselElements.length - 1]
-    );
-    const direction = event.shiftKey ? -1 : 1;
-    if (!focusableElements[index + direction]) {
-      return;
-    }
-    event.preventDefault();
-    focusableElements[index + direction].focus();
+    carouselElements.forEach((element) => {
+      element.tabIndex = -1;
+    });
+    requestAnimationFrame(() => {
+      carouselElements.forEach((element) => {
+        element.tabIndex = 0;
+      });
+    });
   }
 
   /**
