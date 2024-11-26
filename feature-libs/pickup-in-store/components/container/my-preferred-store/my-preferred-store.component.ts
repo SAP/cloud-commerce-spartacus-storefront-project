@@ -22,6 +22,12 @@ import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map, switchMap, take, tap } from 'rxjs/operators';
 
+const getDirectionsAction = {
+  event: 'send',
+  name: 'Get Directions',
+  ariaLabel: 'cardActions.getDirections',
+};
+
 @Component({
   selector: 'cx-my-preferred-store',
   templateUrl: 'my-preferred-store.component.html',
@@ -31,11 +37,14 @@ export class MyPreferredStoreComponent implements OnInit {
   preferredStore$: Observable<PointOfService>;
   content = {
     header: 'My Store',
-    actions: [
-      { event: 'send', name: 'Get Directions' },
-      { event: 'edit', name: 'Change Store' },
-    ],
   };
+  actions = [
+    getDirectionsAction,
+    {
+      event: 'edit',
+      name: 'Change Store',
+    },
+  ];
   openHoursOpen = false;
   readonly ICON_TYPE = ICON_TYPE;
   pointOfService: PointOfService;
@@ -69,6 +78,7 @@ export class MyPreferredStoreComponent implements OnInit {
     );
 
     useFeatureStyles('a11yViewHoursButtonIconContrast');
+    useFeatureStyles('a11yImproveCardActionButtons');
   }
 
   ngOnInit(): void {
@@ -85,8 +95,8 @@ export class MyPreferredStoreComponent implements OnInit {
         tap(() => {
           this.content = {
             header: '',
-            actions: [{ event: 'send', name: 'Get Directions' }],
           };
+          this.actions = [getDirectionsAction];
         })
       )
       .subscribe();

@@ -72,6 +72,12 @@
     justify-content: flex-end;
     padding: 1.25rem 0 0 0;
   }
+  @include forFeature('a11yImproveCardActionButtons') {
+    .cx-card-action-item {
+      display: flex;
+      align-items: center;
+    }
+  }
 
   .cx-card-link {
     margin-inline-start: 1rem;

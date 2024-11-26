@@ -131,46 +131,84 @@
     </div>
     <!-- Actions -->
     <div *ngIf="content.actions && !editMode" class="cx-card-actions">
-      <div *ngFor="let action of content.actions">
+      <div *ngFor="let action of content.actions" class="cx-card-action-item">
         <div>
           <ng-container *ngIf="isCardAction(action)" [ngSwitch]="action.event">
-            <button
-              type="button"
-              *ngSwitchCase="'delete'"
-              class="link cx-action-link"
-              (click)="delete()"
-            >
-              {{ action.name }}
-            </button>
-            <button
-              type="button"
-              *ngSwitchCase="'default'"
-              class="link cx-action-link"
-              (click)="setDefault()"
-            >
-              {{ action.name }}
-            </button>
-            <button
-              type="button"
-              *ngSwitchCase="'send'"
-              class="link cx-action-link"
-              (click)="send()"
-              [attr.aria-describedby]="
-                index >= 0 && content.header && !editMode
-                  ? 'content-header-' + index
-                  : null
-              "
-            >
-              {{ action.name }}
-            </button>
-            <button
-              type="button"
-              *ngSwitchCase="'edit'"
-              class="link cx-action-link"
-              (click)="edit()"
-            >
-              {{ action.name }}
-            </button>
+            <ng-container *cxFeature="'a11yImproveCardActionButtons'">
+              <button
+                *ngSwitchCase="'delete'"
+                class="btn btn-tertiary"
+                (click)="delete()"
+              >
+                {{ action.name }}
+              </button>
+              <button
+                *ngSwitchCase="'default'"
+                class="btn btn-tertiary"
+                (click)="setDefault()"
+              >
+                {{ action.name }}
+              </button>
+
+              <button
+                *ngSwitchCase="'send'"
+                class="btn btn-tertiary"
+                (click)="send()"
+                [attr.aria-describedby]="
+                  index >= 0 && content.header && !editMode
+                    ? 'content-header-' + index
+                    : null
+                "
+              >
+                {{ action.name }}
+              </button>
+              <button
+                *ngSwitchCase="'edit'"
+                class="btn btn-tertiary"
+                (click)="edit()"
+              >
+                {{ action.name }}
+              </button>
+            </ng-container>
+            <ng-container *cxFeature="'!a11yImproveCardActionButtons'">
+              <button
+                type="button"
+                *ngSwitchCase="'delete'"
+                class="link cx-action-link"
+                (click)="delete()"
+              >
+                {{ action.name }}
+              </button>
+              <button
+                type="button"
+                *ngSwitchCase="'default'"
+                class="link cx-action-link"
+                (click)="setDefault()"
+              >
+                {{ action.name }}
+              </button>
+              <button
+                type="button"
+                *ngSwitchCase="'send'"
+                class="link cx-action-link"
+                (click)="send()"
+                [attr.aria-describedby]="
+                  index >= 0 && content.header && !editMode
+                    ? 'content-header-' + index
+                    : null
+                "
+              >
+                {{ action.name }}
+              </button>
+              <button
+                type="button"
+                *ngSwitchCase="'edit'"
+                class="link cx-action-link"
+                (click)="edit()"
+              >
+                {{ action.name }}
+              </button>
+            </ng-container>
           </ng-container>
           <a
             *ngIf="isCardLinkAction(action)"
