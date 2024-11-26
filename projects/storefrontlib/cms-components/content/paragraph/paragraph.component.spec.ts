@@ -15,7 +15,7 @@ export class MockAnchorPipe implements PipeTransform {
   }
 }
 
-fdescribe('CmsParagraphComponent in CmsLib', () => {
+describe('CmsParagraphComponent in CmsLib', () => {
   let paragraphComponent: ParagraphComponent;
   let fixture: ComponentFixture<ParagraphComponent>;
   let el: DebugElement;
