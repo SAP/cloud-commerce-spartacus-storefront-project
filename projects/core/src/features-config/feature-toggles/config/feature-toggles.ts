@@ -787,6 +787,8 @@ export interface FeatureTogglesInterface {
    * Moves components to be children of this section element.
    */
   a11yWrapReviewOrderInSection?: boolean;
+
+  enableSecurePasswordValidation?: boolean;
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
@@ -909,4 +911,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   sciEnabled: false,
   useExtendedMediaComponentConfiguration: false,
   showRealTimeStockInPDP: false,
+  enableSecurePasswordValidation: false,
 };
