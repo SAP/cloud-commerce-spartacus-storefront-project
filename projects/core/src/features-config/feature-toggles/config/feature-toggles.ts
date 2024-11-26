@@ -650,6 +650,11 @@ export interface FeatureTogglesInterface {
   a11yViewHoursButtonIconContrast?: boolean;
 
   /**
+   * `StoreComponent` `In Stock` icon has an acceptable contrast ratio in a default theme
+   */
+  a11yStoreInStockIconContrast?: boolean;
+
+  /**
    * `Checkout` add a landmarks to content representing steps
    */
   a11yCheckoutStepsLandmarks?: boolean;
@@ -658,6 +663,14 @@ export interface FeatureTogglesInterface {
    * In `CartItemListComponent`, change QTY into Quantity.
    */
   a11yQTY2Quantity?: boolean;
+
+  /**
+   * In `Card component`, replace button classes to .btn .btn-tertiary and use cx-generic link
+   * instead of regular <a> tag.
+   * In `My Preferred Store component`, replace a `Get directions` action from CardAction to CardLinkAction
+   * to so that Card component perceive it as a link;
+   */
+  a11yImproveButtonsInCardComponent?: boolean;
 
   /**
    * In `UnitFormComponent`, set 'clearable' as false for select of `ApprovalProcess`.
@@ -755,6 +768,13 @@ export interface FeatureTogglesInterface {
    *       in the future together with this feature toggle.
    */
   allPageMetaResolversEnabledInCsr?: boolean;
+
+  /**
+   * Modifies grid arrangement in Product Details Page for better accessibility:
+   * - add to cart button should be last step
+   * - future stock accordion is moved before add to cart button
+   */
+  a11yPdpGridArrangement?: boolean;
 
   /**
    * CDS/ISS is integrated into the SAP Cloud Identity Service (SCI). The downstream services use different domains and URL formats.
@@ -906,8 +926,10 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,
+  a11yStoreInStockIconContrast: false,
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
+  a11yImproveButtonsInCardComponent: false,
   a11yWrapReviewOrderInSection: false,
   a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,
@@ -923,6 +945,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   enableConsecutiveCharactersPasswordRequirement: false,
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
+  a11yPdpGridArrangement: false,
   sciEnabled: false,
   useExtendedMediaComponentConfiguration: false,
   showRealTimeStockInPDP: false,
