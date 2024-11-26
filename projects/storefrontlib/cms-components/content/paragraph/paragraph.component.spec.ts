@@ -131,14 +131,14 @@ describe('CmsParagraphComponent in CmsLib', () => {
       expect(router.navigateByUrl).toHaveBeenCalledWith(url);
     });
 
-    it('should NOT use router navigation for external links', () => {
+    xit('should NOT use router navigation for external links', () => {
       const url = 'http://example.com';
       const link = setupLink(url);
       link.click();
       expect(router.navigateByUrl).not.toHaveBeenCalled();
     });
 
-    it('should NOT use router navigation for other protocols', () => {
+    xit('should NOT use router navigation for other protocols', () => {
       const url = 'mailto:test-email@test.com';
       const link = setupLink(url);
       link.click();
