@@ -322,12 +322,26 @@ export interface FeatureTogglesInterface {
   a11yCartItemsLinksStyles?: boolean;
 
   /**
+   * When set to `true`, external links in `StoreFinderListItemComponent`
+   * adopt a more link-like style, appearing more like links instead of buttons. This is semantically more correct since they open content in a new window,
+   * providing a more intuitive user experience.
+   */
+  a11yStyleExternalLinksAsLinks?: boolean;
+
+  /**
    * If enabled, the "Select this address/payment" button
    * will not be displayed in `CheckoutPaymentMethodComponent`
    * and `CheckoutDeliveryAddressComponent` when the address
    * or payment method is already selected.
    */
   a11yHideSelectBtnForSelectedAddrOrPayment?: boolean;
+
+  /**
+   * If enabled, the "Checkout Shipping address/Payment" views
+   * will have a more a11y friendly selected label, including the context
+   * indicating weather the user is on a selected Address or Payment regsion.
+   */
+  a11ySelectLabelWithContextForSelectedAddrOrPayment?: boolean;
 
   /**
    * Determines whether the controls in the `CarouselComponent` are focusable and accessible from the keyboard.
@@ -469,6 +483,16 @@ export interface FeatureTogglesInterface {
   a11yCarouselArrowKeysNavigation?: boolean;
 
   /**
+   * Use tabs instead of radio group for pickup options. Improves SR narration and keyboard navigation pattern.
+   * Modified components:
+   *  - `PickupOptionsComponent`
+   *  - `PdpPickupOptionsContainerComponent`
+   *  - `CartPickupOptionsContainerComponent`
+   *  - `AddToCartComponent`
+   */
+  a11yPickupOptionsTabs?: boolean;
+
+  /**
    * `AnonymousConsentDialogComponent` - after consent was given/withdrawn the notification
    * will be displayed
    * `ConsentManagementComponent` - improve stability of notifications announcements by VoiceOver
@@ -535,6 +559,12 @@ export interface FeatureTogglesInterface {
   a11yNgSelectOptionsCount?: boolean;
 
   /**
+   * 'NgSelectA11yDirective' will close a dropdown with options on Escape key press
+   * when a screen reader is used.
+   */
+  a11yNgSelectCloseDropdownOnEscape?: boolean;
+
+  /**
    * Removes duplicated error message from 'CancelOrderComponent'.
    */
   a11yRepeatedCancelOrderError?: boolean;
@@ -593,9 +623,14 @@ export interface FeatureTogglesInterface {
   a11ySearchBoxFocusOnEscape?: boolean;
 
   /**
+   * In `AddedToCartDialogComponent`, `Updating cart...` should no longer read by a screen reader.
+   */
+  a11yUpdatingCartNoNarration?: boolean;
+
+  /**
    * Stops the inputs value from obstructing the 'PasswordVisibilityToggleComponent'.
    */
-  a11yPasswordVisibliltyBtnValueOverflow?: boolean;
+  a11yPasswordVisibilityBtnValueOverflow?: boolean;
 
   /**
    * In `ItemCounterComponenet`, Remove button no longer lose focus after activating when count is 2.
@@ -615,6 +650,11 @@ export interface FeatureTogglesInterface {
   a11yViewHoursButtonIconContrast?: boolean;
 
   /**
+   * `StoreComponent` `In Stock` icon has an acceptable contrast ratio in a default theme
+   */
+  a11yStoreInStockIconContrast?: boolean;
+
+  /**
    * `Checkout` add a landmarks to content representing steps
    */
   a11yCheckoutStepsLandmarks?: boolean;
@@ -623,6 +663,60 @@ export interface FeatureTogglesInterface {
    * In `CartItemListComponent`, change QTY into Quantity.
    */
   a11yQTY2Quantity?: boolean;
+
+  /**
+   * In `Card component`, replace button classes to .btn .btn-tertiary and use cx-generic link
+   * instead of regular <a> tag.
+   * In `My Preferred Store component`, replace a `Get directions` action from CardAction to CardLinkAction
+   * to so that Card component perceive it as a link;
+   */
+  a11yImproveButtonsInCardComponent?: boolean;
+
+  /**
+   * In `UnitFormComponent`, set 'clearable' as false for select of `ApprovalProcess`.
+   */
+  a11yApprovalProcessWithNoClearable?: boolean;
+
+  /**
+   * Changes the success message of successful registration to be more informative. Affects `RegisterComponentService`.
+   */
+  a11yPostRegisterSuccessMessage?: boolean;
+
+  /**
+   * In `CardComponent`, place `Delete` button before `Cancel` button.
+   */
+  a11yDeleteButton2First?: boolean;
+
+  /**
+   * In `CustomerListComponent`, `OrderApprovalListComponent`, and `ConfiguratorAttriuteSingleSelectionBundleDropdownComponent`, show label of every `ng-select` and `select`.
+   */
+  a11yShowLabelOfSelect?: boolean;
+
+  /**
+   * In `SiteContextSelectComponent` and `SiteThemeSwitcherComponent`, update style of caret.
+   */
+  a11yShowDownArrowOnFocusedSelectMenu?: boolean;
+
+  /**
+   * Fixes various instances of the focus ring being cropped in the UI.
+   * The focus ring on interactive elements should have all its sides visible and not include any extra padding.
+   * Affects styles of: 'CartItemListComponent, CartItemComponent, ListComponent, FutureStockAccordionComponent, QuoteConfirmDialogComponent, MessagingComponent
+   */
+  a11yCroppedFocusRing?: boolean;
+
+  /**
+   * Fixes text formatting issues while a11y text spacing is enabled.
+   * Affects: ListComponent, CSAgentLoginFormComponent
+   */
+  a11yTextSpacingAdjustments?: boolean;
+
+  /**
+   * Ensures the table column header gets properly narrated by the screen readers.
+   * Affects tables in the following components: SavedCartListComponent, ReplenishmentOrderHistoryComponent, OrderReturnRequestListComponent,
+   * AccountSummaryDocumentComponent, OrderDetailPermissionResultsComponent, OrderApprovalListComponent, UnitLevelOrderHistoryComponent,
+   * InvoicesListComponent, MyInterestsComponent
+   */
+  a11yTableHeaderReadout?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -676,6 +770,19 @@ export interface FeatureTogglesInterface {
   allPageMetaResolversEnabledInCsr?: boolean;
 
   /**
+   * Modifies grid arrangement in Product Details Page for better accessibility:
+   * - add to cart button should be last step
+   * - future stock accordion is moved before add to cart button
+   */
+  a11yPdpGridArrangement?: boolean;
+
+  /**
+   * CDS/ISS is integrated into the SAP Cloud Identity Service (SCI). The downstream services use different domains and URL formats.
+   * This feature toggle can be used to make the CDS module use these new URLs.
+   */
+  sciEnabled?: boolean;
+
+  /**
    * When enabled, allows to provide extended formats and media queries for <picture> element if used in MediaComponent.
    *
    * Important: After activation default HTML element in MediaComponent will be `<img>`
@@ -703,6 +810,18 @@ export interface FeatureTogglesInterface {
    *
    */
   useExtendedMediaComponentConfiguration?: boolean;
+
+  /**
+   * Enables Real time stock display in the PDP page.
+   * when set to `true`, the user will be able to see the real time stock in PDP
+   */
+  showRealTimeStockInPDP?: boolean;
+
+  /**
+   * Creates a section element with applied aria-label in "Review Order" page of the checkout.
+   * Moves components to be children of this section element.
+   */
+  a11yWrapReviewOrderInSection?: boolean;
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
@@ -713,7 +832,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   shouldHideAddToCartForUnpurchasableProducts: false,
   useExtractedBillingAddressComponent: false,
   showBillingAddressInDigitalPayments: false,
-  showDownloadProposalButton: false,
+  showDownloadProposalButton: true,
   showPromotionsInPDP: true,
   searchBoxV2: false,
   recentSearches: true,
@@ -750,35 +869,38 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yStoreFinderOverflow: true,
   a11yMobileFocusOnFirstNavigationItem: false,
   a11yCartSummaryHeadingOrder: true,
-  a11ySearchBoxMobileFocus: false,
-  a11yFacetKeyboardNavigation: false,
+  a11ySearchBoxMobileFocus: true,
+  a11yFacetKeyboardNavigation: true,
   a11yUnitsListKeyboardControls: true,
   a11yCartItemsLinksStyles: true,
+  a11yStyleExternalLinksAsLinks: false,
   a11ySearchboxLabel: false,
-  a11yHideSelectBtnForSelectedAddrOrPayment: false,
+  a11yHideSelectBtnForSelectedAddrOrPayment: true,
+  a11ySelectLabelWithContextForSelectedAddrOrPayment: false,
   a11yFocusableCarouselControls: true,
   a11yUseTrapTabInsteadOfTrapInDialogs: false,
-  cmsGuardsServiceUseGuardsComposer: false,
+  cmsGuardsServiceUseGuardsComposer: true,
   cartQuickOrderRemoveListeningToFailEvent: true,
   a11yKeyboardAccessibleZoom: false,
   a11yOrganizationLinkableCells: false,
-  a11yVisibleFocusOverflows: false,
-  a11yTruncatedTextForResponsiveView: false,
+  a11yVisibleFocusOverflows: true,
+  a11yTruncatedTextForResponsiveView: true,
   a11ySemanticPaginationLabel: false,
   a11yPreventCartItemsFormRedundantRecreation: false,
   a11yPreventSRFocusOnHiddenElements: false,
-  a11yMyAccountLinkOutline: false,
-  a11yCloseProductImageBtnFocus: false,
+  a11yMyAccountLinkOutline: true,
+  a11yCloseProductImageBtnFocus: true,
   a11yNotificationPreferenceFieldset: false,
   a11yImproveContrast: false,
-  a11yEmptyWishlistHeading: false,
+  a11yEmptyWishlistHeading: true,
   a11yScreenReaderBloatFix: false,
-  a11yUseButtonsForBtnLinks: false,
+  a11yUseButtonsForBtnLinks: true,
   a11yTabComponent: false,
   a11yCarouselArrowKeysNavigation: false,
+  a11yPickupOptionsTabs: false,
   a11yNotificationsOnConsentChange: false,
   a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields: false,
-  a11yFacetsDialogFocusHandling: false,
+  a11yFacetsDialogFocusHandling: true,
   headerLayoutForSmallerViewports: false,
   a11yStoreFinderAlerts: false,
   a11yFormErrorMuteIcon: false,
@@ -787,6 +909,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yRepeatedPageTitleFix: false,
   a11yDeliveryModeRadiogroup: false,
   a11yNgSelectOptionsCount: false,
+  a11yNgSelectCloseDropdownOnEscape: false,
   a11yRepeatedCancelOrderError: false,
   a11yAddedToCartActiveDialog: false,
   a11yNgSelectMobileReadout: false,
@@ -798,17 +921,32 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yDialogTriggerRefocus: false,
   a11yAddToWishlistFocus: false,
   a11ySearchBoxFocusOnEscape: false,
-  a11yPasswordVisibliltyBtnValueOverflow: false,
+  a11yUpdatingCartNoNarration: false,
+  a11yPasswordVisibilityBtnValueOverflow: false,
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,
+  a11yStoreInStockIconContrast: false,
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
+  a11yImproveButtonsInCardComponent: false,
+  a11yWrapReviewOrderInSection: false,
+  a11yApprovalProcessWithNoClearable: false,
+  a11yPostRegisterSuccessMessage: false,
+  a11yDeleteButton2First: false,
+  a11yShowLabelOfSelect: false,
+  a11yShowDownArrowOnFocusedSelectMenu: false,
+  a11yCroppedFocusRing: false,
+  a11yTextSpacingAdjustments: false,
+  a11yTableHeaderReadout: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
   enableConsecutiveCharactersPasswordRequirement: false,
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
+  a11yPdpGridArrangement: false,
+  sciEnabled: false,
   useExtendedMediaComponentConfiguration: false,
+  showRealTimeStockInPDP: false,
 };

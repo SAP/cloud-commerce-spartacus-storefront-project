@@ -15,6 +15,8 @@ export interface CardAction {
 export interface CardLinkAction {
   link: string;
   name: string;
+  ariaLabel?: string;
+  target?: string;
 }
 
 export interface Card {
@@ -24,6 +26,7 @@ export interface Card {
   text?: Array<string>;
   paragraphs?: Array<{ title?: string; text?: Array<string> }>;
   img?: string;
+  imgLabel?: string;
   actions?: Array<CardAction | CardLinkAction>;
   deleteMsg?: string;
   label?: string;
@@ -125,5 +128,9 @@ export class CardComponent implements OnInit {
   /* eslint @angular-eslint/no-empty-lifecycle-method: 1 */
   ngOnInit() {
     // Intentional empty method
+  }
+
+  protected get ariaDescribedBy() {
+    return `cx-card-container-${this.index}`;
   }
 }
