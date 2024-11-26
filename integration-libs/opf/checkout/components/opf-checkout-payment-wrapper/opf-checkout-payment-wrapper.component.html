@@ -16,6 +16,7 @@
     <div
       *ngIf="
         paymentLink.renderType === RENDER_PATTERN.FULL_PAGE &&
+        !paymentLink.destination?.form?.length &&
         paymentLink?.destination?.url
       "
       class="cx-payment-link"
@@ -26,19 +27,23 @@
     </div>
     <ng-container
       *ngIf="
-        paymentLink.data && paymentLink.renderType === RENDER_PATTERN.IFRAME
+        paymentLink.renderType === RENDER_PATTERN.IFRAME &&
+        !paymentLink?.destination?.form?.length &&
+        paymentLink.destination?.url
       "
     >
       <iframe
         class="cx-payment-iframe"
-        *ngIf="
-          !paymentLink.destination?.form?.length && paymentLink.destination?.url
-        "
         [src]="bypassSecurityTrustResourceUrl(paymentLink.destination?.url)"
       ></iframe>
-
+    </ng-container>
+    <div
+      *ngIf="
+        paymentLink?.destination?.form?.length && paymentLink?.destination?.url
+      "
+      class="cx-payment-link"
+    >
       <form
-        *ngIf="paymentLink.destination?.form?.length"
         [action]="paymentLink.destination?.url"
         [method]="paymentLink.destination?.method"
         [enctype]="paymentLink.destination?.contentType"
@@ -57,7 +62,8 @@
           [value]="'opfCheckout.proceedPayment' | cxTranslate"
         />
       </form>
-    </ng-container>
+    </div>
+
     <ng-container *ngIf="paymentLink.data && !paymentLink?.destination?.url">
       <div [innerHTML]="bypassSecurityTrustHtml(paymentLink.data)"></div>
     </ng-container>
