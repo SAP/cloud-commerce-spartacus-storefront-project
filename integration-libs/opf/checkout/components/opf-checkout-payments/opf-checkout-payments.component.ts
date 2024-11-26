@@ -17,12 +17,14 @@ import {
   GlobalMessageType,
   PaginationModel,
   QueryState,
+  TranslationService,
 } from '@spartacus/core';
 import {
   OpfActiveConfiguration,
   OpfActiveConfigurationsPagination,
   OpfActiveConfigurationsResponse,
   OpfBaseFacade,
+  OpfConfig,
   OpfMetadataModel,
   OpfMetadataStoreService,
 } from '@spartacus/opf/base/root';
@@ -37,6 +39,8 @@ import { tap } from 'rxjs/operators';
 })
 export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   protected opfBaseService = inject(OpfBaseFacade);
+  protected opfConfig = inject(OpfConfig);
+  protected translation = inject(TranslationService);
   protected opfMetadataStoreService = inject(OpfMetadataStoreService);
   protected globalMessageService = inject(GlobalMessageService);
 
@@ -90,6 +94,17 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
 
   updateActiveConfiguration() {
     this.activeConfigurations$ = this.getActiveConfigurations();
+  }
+
+  getPaymentInfoMessage(paymentId: number | undefined): Observable<string> {
+    const defaultMessage = 'opfCheckout.defaultPaymentInfoMessage';
+    const translationKey =
+      paymentId && this.opfConfig?.opf?.paymentInfoMessagesMap
+        ? (this.opfConfig.opf.paymentInfoMessagesMap[paymentId] ??
+          defaultMessage)
+        : defaultMessage;
+
+    return this.translation.translate(translationKey);
   }
 
   /**

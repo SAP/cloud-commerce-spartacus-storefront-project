@@ -51,7 +51,7 @@
               role="alert"
               aria-live="polite"
             >
-              {{ 'opfCheckout.paymentInfoMessage' | cxTranslate }}
+              {{ getPaymentInfoMessage(configuration.id) | async }}
             </p>
           </div>
           <cx-opf-checkout-payment-wrapper
