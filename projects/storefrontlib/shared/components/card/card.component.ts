@@ -139,13 +139,10 @@ export class CardComponent implements OnInit {
    */
   protected get ariaDescribedBy() {
     if (this.content && this.content.title) {
-      if (this.index >= 0) {
-        return `content-title-${this.index} cx-card-container-${this.index}`;
-      }
-      return 'content-title cx-card-container';
+      return `${this.idOfContentTitle} ${this.idOfContentBody}`;
     }
 
-    return 'cx-card-container' + (this.index >= 0 ? '-' + this.index : '');
+    return this.idOfContentBody;
   }
 
   /**
@@ -156,5 +153,27 @@ export class CardComponent implements OnInit {
    */
   protected get ariaLabelledBy() {
     return 'content-header' + (this.index >= 0 ? '-' + this.index : '');
+  }
+
+  /**
+   * idOfContentTitle: Computes the ID for the content title element.
+   * If `index` is provided (non-negative), it appends the index to the base string 'content-title'.
+   * If no index is available, it returns just 'content-title'.
+   *
+   * @returns {string} The computed ID for the content title element.
+   */
+  protected get idOfContentTitle() {
+    return 'content-title' + (this.index >= 0 ? '-' + this.index : '');
+  }
+
+  /**
+   * idOfContentBody: Computes the ID for the content body element.
+   * If `index` is provided (non-negative), it appends the index to the base string 'cx-card-container'.
+   * If no index is available, it returns just 'cx-card-container'.
+   *
+   * @returns {string} The computed ID for the content body element.
+   */
+  protected get idOfContentBody() {
+    return 'cx-card-container' + (this.index >= 0 ? '-' + this.index : '');
   }
 }
