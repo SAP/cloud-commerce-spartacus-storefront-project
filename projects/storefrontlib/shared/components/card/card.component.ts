@@ -139,8 +139,9 @@ export class CardComponent implements OnInit {
    */
   protected get ariaDescribedBy() {
     if (this.content && this.content.title) {
-      if (this.index >= 0)
+      if (this.index >= 0) {
         return `content-title-${this.index} cx-card-container-${this.index}`;
+      }
       return 'content-title cx-card-container';
     }
 
