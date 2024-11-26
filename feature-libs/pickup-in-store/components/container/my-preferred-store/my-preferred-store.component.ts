@@ -29,8 +29,8 @@ import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map, switchMap, take, tap } from 'rxjs/operators';
 
-const getDirectionsName = 'Get Directions';
-const changeStoreName = 'Change Store';
+const GET_DIRECTIONS_NAME = 'Get Directions';
+const CHANGE_STORE_NAME = 'Change Store';
 
 interface PreferredStoreContent {
   header: string;
@@ -50,8 +50,8 @@ export class MyPreferredStoreComponent implements OnInit {
   content: PreferredStoreContent = {
     header: 'My Store',
     actions: [
-      { event: 'send', name: getDirectionsName },
-      { event: 'edit', name: changeStoreName },
+      { event: 'send', name: GET_DIRECTIONS_NAME },
+      { event: 'edit', name: CHANGE_STORE_NAME },
     ],
   };
   openHoursOpen = false;
@@ -60,13 +60,14 @@ export class MyPreferredStoreComponent implements OnInit {
   isStoreFinder = false;
 
   private featureConfigService = inject(FeatureConfigService);
+  protected cdr = inject(ChangeDetectorRef, { optional: true });
+
   constructor(
     private preferredStoreFacade: PreferredStoreFacade,
     protected pickupLocationsSearchService: PickupLocationsSearchFacade,
     protected routingService: RoutingService,
     protected storeFinderService: StoreFinderFacade,
-    protected cmsService: CmsService,
-    protected cdr: ChangeDetectorRef
+    protected cmsService: CmsService
   ) {
     this.preferredStore$ = this.preferredStoreFacade.getPreferredStore$().pipe(
       filter((preferredStore) => preferredStore !== null),
@@ -116,7 +117,7 @@ export class MyPreferredStoreComponent implements OnInit {
               actions: [
                 {
                   link,
-                  name: getDirectionsName,
+                  name: GET_DIRECTIONS_NAME,
                   ariaLabel: 'cardActions.getDirections',
                   target: '_blank',
                 },
@@ -128,7 +129,7 @@ export class MyPreferredStoreComponent implements OnInit {
               actions: [
                 {
                   link,
-                  name: getDirectionsName,
+                  name: GET_DIRECTIONS_NAME,
                   ariaLabel: 'cardActions.getDirections',
                   target: '_blank',
                 },
@@ -136,7 +137,7 @@ export class MyPreferredStoreComponent implements OnInit {
               ],
             };
           }
-          this.cdr.detectChanges();
+          this.cdr?.detectChanges();
         });
     } else {
       this.cmsService
@@ -152,7 +153,7 @@ export class MyPreferredStoreComponent implements OnInit {
           tap(() => {
             this.content = {
               header: '',
-              actions: [{ event: 'send', name: getDirectionsName }],
+              actions: [{ event: 'send', name: GET_DIRECTIONS_NAME }],
             };
           })
         )
