@@ -23,18 +23,11 @@
       {{ content.deleteMsg }}
     </div>
     <!-- Card title -->
-    <span
-      *ngIf="content.title"
-      class="cx-card-title"
-      [id]="'content-title' + (index >= 0 ? '-' + index : '')"
-    >
+    <span *ngIf="content.title" class="cx-card-title" [id]="idOfContentTitle">
       {{ content.title }}
     </span>
     <!-- Card Content -->
-    <div
-      class="cx-card-container"
-      [id]="'cx-card-container' + (index >= 0 ? '-' + index : '')"
-    >
+    <div class="cx-card-container" [id]="idOfContentBody">
       <!-- Card Label -->
       <div class="cx-card-label-container">
         <div *ngIf="content.textBold" class="cx-card-label-bold">
