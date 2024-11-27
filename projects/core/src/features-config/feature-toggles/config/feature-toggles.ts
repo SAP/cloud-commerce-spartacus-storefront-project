@@ -650,6 +650,11 @@ export interface FeatureTogglesInterface {
   a11yViewHoursButtonIconContrast?: boolean;
 
   /**
+   * `StoreComponent` `In Stock` icon has an acceptable contrast ratio in a default theme
+   */
+  a11yStoreInStockIconContrast?: boolean;
+
+  /**
    * `Checkout` add a landmarks to content representing steps
    */
   a11yCheckoutStepsLandmarks?: boolean;
@@ -658,6 +663,14 @@ export interface FeatureTogglesInterface {
    * In `CartItemListComponent`, change QTY into Quantity.
    */
   a11yQTY2Quantity?: boolean;
+
+  /**
+   * In `Card component`, replace button classes to .btn .btn-tertiary and use cx-generic link
+   * instead of regular <a> tag.
+   * In `My Preferred Store component`, replace a `Get directions` action from CardAction to CardLinkAction
+   * to so that Card component perceive it as a link;
+   */
+  a11yImproveButtonsInCardComponent?: boolean;
 
   /**
    * In `UnitFormComponent`, set 'clearable' as false for select of `ApprovalProcess`.
@@ -704,6 +717,11 @@ export interface FeatureTogglesInterface {
    * InvoicesListComponent, MyInterestsComponent
    */
   a11yTableHeaderReadout?: boolean;
+
+  /**
+   * Removes the repetition of assistive message after the results are provided to the `SearchBoxComponent`.
+   */
+  a11ySearchboxAssistiveMessage?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -913,8 +931,10 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,
+  a11yStoreInStockIconContrast: false,
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
+  a11yImproveButtonsInCardComponent: false,
   a11yWrapReviewOrderInSection: false,
   a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,
@@ -924,6 +944,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yCroppedFocusRing: false,
   a11yTextSpacingAdjustments: false,
   a11yTableHeaderReadout: false,
+  a11ySearchboxAssistiveMessage: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
