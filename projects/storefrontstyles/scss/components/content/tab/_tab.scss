@@ -45,9 +45,9 @@
     @include forFeature('a11yCroppedFocusRing') {
       &:focus-visible {
         outline-offset: -3px;
-      }  
+      }
     }
-    
+
     &.active:after,
     &:hover:not([disabled]):after {
       width: 100%;
