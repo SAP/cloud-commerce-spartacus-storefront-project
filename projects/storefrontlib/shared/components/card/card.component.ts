@@ -146,16 +146,6 @@ export class CardComponent implements OnInit {
   }
 
   /**
-   * ariaLabelledBy: Computes the value for the 'aria-labelledby' attribute.
-   * Returns 'content-header' with index if available.
-   *
-   * @returns {string} The 'aria-labelledby' value.
-   */
-  protected get ariaLabelledBy() {
-    return this.getLabel('content-header');
-  }
-
-  /**
    * getLabel: Computes a label string by concatenating the provided prefix with the index.
    * If the index is greater than or equal to 0, it appends the index to the prefix; otherwise, it just returns the prefix.
    *
