@@ -1,5 +1,7 @@
 %cx-opf-checkout-terms-and-conditions-alert {
   .alert {
+    padding-inline-end: 2rem;
+
     .close {
       top: var(--cx-top, 50%);
       right: 1.5rem;
@@ -11,6 +13,7 @@
     .message {
       padding: 10px 0;
       margin: 0;
+      text-align: left;
     }
   }
 }
