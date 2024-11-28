@@ -139,7 +139,7 @@ describe('OpfPaymentVerificationService', () => {
             cxRoute: 'paymentVerificationResult',
           },
         },
-        queryParams: of({ opfAfterRedirectScriptFlag: 'true' }),
+        queryParams: of({ opfAfterRedirectFlag: 'true' }),
       } as unknown as ActivatedRoute;
 
       const mockOpfMetadata: OpfMetadataModel = {
@@ -157,7 +157,7 @@ describe('OpfPaymentVerificationService', () => {
       service.verifyResultUrl(mockRouteSnapshot).subscribe((result) => {
         expect(result.paymentSessionId).toEqual(mockPaymentSessionId);
         expect(result.paramsMap).toEqual([
-          { key: 'opfAfterRedirectScriptFlag', value: 'true' },
+          { key: 'opfAfterRedirectFlag', value: 'true' },
         ]);
         expect(result.afterRedirectScriptFlag).toEqual('true');
         done();
