@@ -41,7 +41,7 @@ export class OpfResourceLoaderService {
     if (sri) {
       link.integrity = sri;
     }
-    if (attributes) {
+    if (attributes?.length) {
       attributes.forEach((attribute) => {
         const { key, value } = attribute;
         if (!(key in link)) {
