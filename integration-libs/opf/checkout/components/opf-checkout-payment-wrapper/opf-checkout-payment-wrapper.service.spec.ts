@@ -313,13 +313,13 @@ describe('OpfCheckoutPaymentWrapperService', () => {
     };
     (service as any).storePaymentSessionId(mockPaymentSessionData);
     expect(opfMetadataStoreServiceMock.updateOpfMetadata).toHaveBeenCalledWith({
-      paymentSessionId: mockPaymentSessionId,
+      opfPaymentSessionId: mockPaymentSessionId,
     });
 
     mockPaymentSessionData.pattern = OpfPaymentRenderPattern.HOSTED_FIELDS;
     (service as any).storePaymentSessionId(mockPaymentSessionData);
     expect(opfMetadataStoreServiceMock.updateOpfMetadata).toHaveBeenCalledWith({
-      paymentSessionId: undefined,
+      opfPaymentSessionId: undefined,
     });
   });
 

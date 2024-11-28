@@ -140,7 +140,9 @@ export class OpfCheckoutPaymentWrapperService {
       paymentOptionConfig.paymentSessionId
         ? paymentOptionConfig.paymentSessionId
         : undefined;
-    this.opfMetadataStoreService.updateOpfMetadata({ paymentSessionId });
+    this.opfMetadataStoreService.updateOpfMetadata({
+      opfPaymentSessionId: paymentSessionId,
+    });
   }
 
   reloadPaymentMode(): void {

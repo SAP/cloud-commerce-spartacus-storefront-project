@@ -146,7 +146,7 @@ describe('OpfPaymentVerificationService', () => {
         isPaymentInProgress: true,
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
-        paymentSessionId: mockPaymentSessionId,
+        opfPaymentSessionId: mockPaymentSessionId,
         isTermsAndConditionsAlertClosed: false,
       };
 
@@ -186,7 +186,7 @@ describe('OpfPaymentVerificationService', () => {
         isPaymentInProgress: true,
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
-        paymentSessionId: undefined,
+        opfPaymentSessionId: undefined,
         isTermsAndConditionsAlertClosed: false,
       };
 
@@ -218,7 +218,7 @@ describe('OpfPaymentVerificationService', () => {
         isPaymentInProgress: true,
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
-        paymentSessionId: undefined,
+        opfPaymentSessionId: undefined,
         isTermsAndConditionsAlertClosed: false,
       };
 
@@ -506,7 +506,7 @@ describe('OpfPaymentVerificationService', () => {
         isPaymentInProgress: true,
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
-        paymentSessionId: '111111',
+        opfPaymentSessionId: '111111',
         isTermsAndConditionsAlertClosed: false,
       };
 
@@ -528,7 +528,7 @@ describe('OpfPaymentVerificationService', () => {
         isPaymentInProgress: false,
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
-        paymentSessionId: '111111',
+        opfPaymentSessionId: '111111',
         isTermsAndConditionsAlertClosed: false,
       };
 

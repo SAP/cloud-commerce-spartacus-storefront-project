@@ -125,7 +125,7 @@ export class OpfPaymentVerificationService {
   protected getPaymentSessionIdFromStorage(): Observable<string | undefined> {
     return this.opfMetadataStoreService.getOpfMetadataState().pipe(
       take(1),
-      map((opfMetaData) => opfMetaData?.paymentSessionId)
+      map((opfMetaData) => opfMetaData?.opfPaymentSessionId)
     );
   }
 
