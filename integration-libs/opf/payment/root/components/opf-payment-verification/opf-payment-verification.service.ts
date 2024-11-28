@@ -91,7 +91,7 @@ export class OpfPaymentVerificationService {
               paymentSessionId,
               paramsMap,
               afterRedirectScriptFlag: this.findInParamsMap(
-                'afterRedirectScriptFlag',
+                OpfPaymentVerificationUrlInput.OPF_AFTER_REDIRECT_SCRIPT_FLAG,
                 paramsMap
               ),
             });
@@ -108,7 +108,7 @@ export class OpfPaymentVerificationService {
   ): Observable<string | undefined> {
     if (paramMap?.length) {
       const paymentSessionId = this.findInParamsMap(
-        OpfPaymentVerificationUrlInput.PAYMENT_SESSION_ID,
+        OpfPaymentVerificationUrlInput.OPF_PAYMENT_SESSION_ID,
         paramMap
       );
       return paymentSessionId
