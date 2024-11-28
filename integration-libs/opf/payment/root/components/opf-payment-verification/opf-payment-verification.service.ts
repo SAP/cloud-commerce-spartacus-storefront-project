@@ -89,7 +89,11 @@ export class OpfPaymentVerificationService {
             }
             return of({
               paymentSessionId,
-              paramsMap,
+              paramsMap: paramsMap.filter(
+                (param) =>
+                  param.key !==
+                  OpfPaymentVerificationUrlInput.OPF_PAYMENT_SESSION_ID
+              ),
               afterRedirectScriptFlag: this.findInParamsMap(
                 OpfPaymentVerificationUrlInput.OPF_AFTER_REDIRECT_SCRIPT_FLAG,
                 paramsMap
