@@ -85,7 +85,7 @@ export class OpfPaymentVerificationService {
           }),
           concatMap((paymentSessionId: string | undefined) => {
             if (!paymentSessionId) {
-              return throwError(this.opfDefaultPaymentError);
+              return throwError(() => this.opfDefaultPaymentError);
             }
             return of({
               paymentSessionId,
@@ -97,10 +97,10 @@ export class OpfPaymentVerificationService {
             });
           })
         )
-      : throwError({
+      : throwError(() => ({
           ...this.opfDefaultPaymentError,
           message: 'opfPayment.errors.cancelPayment',
-        });
+        }));
   }
 
   protected getPaymentSessionId(
@@ -153,12 +153,12 @@ export class OpfPaymentVerificationService {
     ) {
       return of(true);
     } else if (response.result === OpfPaymentVerificationResult.CANCELLED) {
-      return throwError({
+      return throwError(() => ({
         ...this.opfDefaultPaymentError,
         message: 'opfPayment.errors.cancelPayment',
-      });
+      }));
     } else {
-      return throwError(this.opfDefaultPaymentError);
+      return throwError(() => this.opfDefaultPaymentError);
     }
   }
 
