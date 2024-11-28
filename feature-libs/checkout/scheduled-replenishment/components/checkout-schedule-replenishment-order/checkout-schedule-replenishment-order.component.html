@@ -50,11 +50,36 @@
   >
     <div class="cx-replenishment-form-data-container">
       <div *ngIf="!isMonthly" class="cx-days">
-        <span class="form-data-label">{{
-          'checkoutScheduledReplenishment.every' | cxTranslate
-        }}</span>
+        <span
+          class="form-data-label"
+          *cxFeature="'!a11yScheduleReplenishment'"
+          >{{ 'checkoutScheduledReplenishment.every' | cxTranslate }}</span
+        >
+        <label
+          class="form-data-label"
+          *cxFeature="'a11yScheduleReplenishment'"
+          for="order-replenishment-period-type"
+          >{{ 'checkoutScheduledReplenishment.every' | cxTranslate }}</label
+        >
         <ng-container *ngIf="isWeekly; else isDaily">
           <select
+            *cxFeature="'!a11yScheduleReplenishment'"
+            class="form-control"
+            (change)="changeNumberOfWeeks($event.target.value)"
+          >
+            <option
+              *ngFor="let nWeeks of numberOfWeeks"
+              [value]="nWeeks"
+              [selected]="
+                nWeeks === scheduleReplenishmentFormData.numberOfWeeks
+              "
+            >
+              {{ nWeeks }}
+            </option>
+          </select>
+          <select
+            *cxFeature="'a11yScheduleReplenishment'"
+            id="order-replenishment-period-type"
             class="form-control"
             (change)="changeNumberOfWeeks($event.target.value)"
           >
@@ -71,6 +96,21 @@
         </ng-container>
         <ng-template #isDaily>
           <select
+            *cxFeature="'!a11yScheduleReplenishment'"
+            class="form-control"
+            (change)="changeNumberOfDays($event.target.value)"
+          >
+            <option
+              *ngFor="let nDays of numberOfDays"
+              [value]="nDays"
+              [selected]="nDays === scheduleReplenishmentFormData.numberOfDays"
+            >
+              {{ nDays }}
+            </option>
+          </select>
+          <select
+            *cxFeature="'a11yScheduleReplenishment'"
+            id="order-replenishment-period-type"
             class="form-control"
             (change)="changeNumberOfDays($event.target.value)"
           >
@@ -85,10 +125,29 @@
         </ng-template>
       </div>
       <div class="cx-month">
-        <span *ngIf="isMonthly" class="form-data-label">{{
-          'checkoutScheduledReplenishment.every' | cxTranslate
-        }}</span>
+        <div *cxFeature="'!a11yScheduleReplenishment'">
+          <span *ngIf="isMonthly" class="form-data-label">{{
+            'checkoutScheduledReplenishment.every' | cxTranslate
+          }}</span>
+        </div>
+        <div *cxFeature="'a11yScheduleReplenishment'">
+          <label
+            *ngIf="isMonthly"
+            class="form-data-label"
+            for="order-replenishment-recurrence-period"
+            >{{ 'checkoutScheduledReplenishment.every' | cxTranslate }}</label
+          >
+          <label
+            *ngIf="!isMonthly"
+            class="form-data-label"
+            for="order-replenishment-recurrence-period"
+            >{{
+              'checkoutScheduledReplenishment.duration' | cxTranslate
+            }}</label
+          >
+        </div>
         <select
+          id="order-replenishment-recurrence-period"
           class="form-control"
           (change)="changeRecurrencePeriodType($event.target.value)"
         >
@@ -105,11 +164,36 @@
         </select>
       </div>
       <div *ngIf="isMonthly" class="cx-dayMonth">
-        <span class="form-data-label">{{
-          'checkoutScheduledReplenishment.dayOfMonth' | cxTranslate
-        }}</span>
+        <span
+          class="form-data-label"
+          *cxFeature="'!a11yScheduleReplenishment'"
+          >{{ 'checkoutScheduledReplenishment.dayOfMonth' | cxTranslate }}</span
+        >
+        <label
+          class="form-data-label"
+          *cxFeature="'a11yScheduleReplenishment'"
+          for="order-replenishment-day-of-month"
+          >{{
+            'checkoutScheduledReplenishment.dayOfMonth' | cxTranslate
+          }}</label
+        >
         <div class="cx-day-of-month">
           <select
+            *cxFeature="'!a11yScheduleReplenishment'"
+            class="form-control"
+            (change)="changeDayOfTheMonth($event.target.value)"
+          >
+            <option
+              *ngFor="let nDays of numberOfDays"
+              [value]="nDays"
+              [selected]="nDays === scheduleReplenishmentFormData.nthDayOfMonth"
+            >
+              {{ nDays }}
+            </option>
+          </select>
+          <select
+            *cxFeature="'a11yScheduleReplenishment'"
+            id="order-replenishment-day-of-month"
             class="form-control"
             (change)="changeDayOfTheMonth($event.target.value)"
           >
