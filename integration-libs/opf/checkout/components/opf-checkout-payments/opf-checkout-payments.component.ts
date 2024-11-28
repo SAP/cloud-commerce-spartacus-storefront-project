@@ -99,8 +99,8 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   getPaymentInfoMessage(paymentId: number | undefined): Observable<string> {
     const defaultMessage = 'opfCheckout.defaultPaymentInfoMessage';
     const translationKey =
-      paymentId && this.opfConfig?.opf?.paymentInfoMessagesMap
-        ? (this.opfConfig.opf.paymentInfoMessagesMap[paymentId] ??
+      paymentId && this.opfConfig?.opf?.paymentOption?.paymentInfoMessagesMap
+        ? (this.opfConfig.opf.paymentOption.paymentInfoMessagesMap[paymentId] ??
           defaultMessage)
         : defaultMessage;
 

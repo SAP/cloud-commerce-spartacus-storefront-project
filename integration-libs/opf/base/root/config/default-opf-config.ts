@@ -9,8 +9,8 @@ import { OpfConfig } from './opf-config';
 export const defaultOpfConfig: OpfConfig = {
   opf: {
     opfBaseUrl: '',
-    paymentInfoMessagesMap: {
-      213: 'opfCheckout.defaultPaymentInfoMessage1',
+    paymentOption: {
+      enableInfoMessage: true,
     },
   },
 };
