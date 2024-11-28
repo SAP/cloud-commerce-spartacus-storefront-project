@@ -46,8 +46,6 @@ export class OpfResourceLoaderService {
         const { key, value } = attribute;
         if (!(key in link)) {
           link.setAttribute(key, value);
-        } else {
-          (link as any)[key] = value;
         }
       });
     }
