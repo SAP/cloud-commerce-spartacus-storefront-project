@@ -90,7 +90,7 @@ describe('ScriptLoader', () => {
     expect(jsDomElement.getAttribute('mock-attr-key')).toBeFalsy();
   });
 
-  it('should add script with unrestricted attributes', () => {
+  it('should add script with unrestricted custom attributes', () => {
     spyOn(documentMock, 'createElement').and.returnValue(jsDomElement);
 
     scriptLoader.embedScript({
