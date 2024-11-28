@@ -38,22 +38,29 @@
               />
             </div>
           </label>
-          <div
-            *ngIf="configuration.id === selectedPaymentId"
-            class="cx-payment-info-box"
+          <ng-container
+            *ngIf="
+              getPaymentInfoMessage(configuration.id)
+                | async as paymentInfoMessage
+            "
           >
-            <span class="alert-icon" aria-hidden="true">
-              <cx-icon [type]="iconTypes.INFO"></cx-icon>
-            </span>
-            <p
-              class="cx-payment-info-box-message"
-              tabindex="0"
-              role="alert"
-              aria-live="polite"
+            <div
+              *ngIf="configuration.id === selectedPaymentId"
+              class="cx-payment-info-box"
             >
-              {{ getPaymentInfoMessage(configuration.id) | async }}
-            </p>
-          </div>
+              <span class="alert-icon" aria-hidden="true">
+                <cx-icon [type]="iconTypes.INFO"></cx-icon>
+              </span>
+              <p
+                class="cx-payment-info-box-message"
+                tabindex="0"
+                role="alert"
+                aria-live="polite"
+              >
+                {{ paymentInfoMessage }}
+              </p>
+            </div>
+          </ng-container>
           <cx-opf-checkout-payment-wrapper
             *ngIf="selectedPaymentId && configuration.id === selectedPaymentId"
             [selectedPaymentId]="selectedPaymentId"

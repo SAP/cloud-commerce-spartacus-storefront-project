@@ -29,6 +29,16 @@ export abstract class OpfConfig {
      * ```
      */
     paymentInfoMessagesMap?: Record<number, string>;
+
+    /**
+     * Enables payment info message section inside of the payment options
+     */
+    enableInfoMessage?: boolean;
+
+    paymentOption: {
+      paymentInfoMessagesMap?: Record<number, string>;
+      enableInfoMessage?: boolean;
+    };
   };
 }
 
