@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { I18nTestingModule, TranslationService } from '@spartacus/core';
 import { Order } from '@spartacus/order/root';

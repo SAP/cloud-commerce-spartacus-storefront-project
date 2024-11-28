@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { OpfPaymentMethodDetails } from '@spartacus/opf/payment/root';
+import { OpfPaymentMethodDetails } from './opf-payment.model';
 
 declare module '@spartacus/core' {
   interface PaymentDetails {
