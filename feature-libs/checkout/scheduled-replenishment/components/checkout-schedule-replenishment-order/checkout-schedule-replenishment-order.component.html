@@ -63,22 +63,6 @@
         >
         <ng-container *ngIf="isWeekly; else isDaily">
           <select
-            *cxFeature="'!a11yScheduleReplenishment'"
-            class="form-control"
-            (change)="changeNumberOfWeeks($event.target.value)"
-          >
-            <option
-              *ngFor="let nWeeks of numberOfWeeks"
-              [value]="nWeeks"
-              [selected]="
-                nWeeks === scheduleReplenishmentFormData.numberOfWeeks
-              "
-            >
-              {{ nWeeks }}
-            </option>
-          </select>
-          <select
-            *cxFeature="'a11yScheduleReplenishment'"
             id="order-replenishment-period-type"
             class="form-control"
             (change)="changeNumberOfWeeks($event.target.value)"
@@ -96,20 +80,6 @@
         </ng-container>
         <ng-template #isDaily>
           <select
-            *cxFeature="'!a11yScheduleReplenishment'"
-            class="form-control"
-            (change)="changeNumberOfDays($event.target.value)"
-          >
-            <option
-              *ngFor="let nDays of numberOfDays"
-              [value]="nDays"
-              [selected]="nDays === scheduleReplenishmentFormData.numberOfDays"
-            >
-              {{ nDays }}
-            </option>
-          </select>
-          <select
-            *cxFeature="'a11yScheduleReplenishment'"
             id="order-replenishment-period-type"
             class="form-control"
             (change)="changeNumberOfDays($event.target.value)"
@@ -179,20 +149,6 @@
         >
         <div class="cx-day-of-month">
           <select
-            *cxFeature="'!a11yScheduleReplenishment'"
-            class="form-control"
-            (change)="changeDayOfTheMonth($event.target.value)"
-          >
-            <option
-              *ngFor="let nDays of numberOfDays"
-              [value]="nDays"
-              [selected]="nDays === scheduleReplenishmentFormData.nthDayOfMonth"
-            >
-              {{ nDays }}
-            </option>
-          </select>
-          <select
-            *cxFeature="'a11yScheduleReplenishment'"
             id="order-replenishment-day-of-month"
             class="form-control"
             (change)="changeDayOfTheMonth($event.target.value)"
