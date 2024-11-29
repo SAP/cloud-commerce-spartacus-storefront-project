@@ -107,6 +107,10 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
     return this.translation.translate(translationKey);
   }
 
+  get ifPaymentInfoMessageVisible(): boolean {
+    return Boolean(this.opfConfig?.opf?.paymentOption?.enableInfoMessage);
+  }
+
   /**
    * Method pre-selects (based on terms and conditions state)
    * previously selected payment option ID by customer.
