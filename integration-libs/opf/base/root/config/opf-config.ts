@@ -15,7 +15,7 @@ export abstract class OpfConfig {
   opf?: {
     opfBaseUrl?: string;
     commerceCloudPublicKey?: string;
-    paymentOption: {
+    paymentOption?: {
       /**
        * The map of info message translation keys for specific payment configuration IDs
        * @example
