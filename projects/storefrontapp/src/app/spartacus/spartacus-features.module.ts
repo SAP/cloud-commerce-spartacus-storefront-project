@@ -414,6 +414,7 @@ if (environment.cpq) {
         useExtendedMediaComponentConfiguration: true,
         showRealTimeStockInPDP: false,
         a11yWrapReviewOrderInSection: true,
+        enableSecurePasswordValidation: true,
       };
       return appFeatureToggles;
     }),
