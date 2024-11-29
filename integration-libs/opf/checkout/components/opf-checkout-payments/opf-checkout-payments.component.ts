@@ -107,7 +107,7 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
     return this.translation.translate(translationKey);
   }
 
-  get ifPaymentInfoMessageVisible(): boolean {
+  get isPaymentInfoMessageVisible(): boolean {
     return Boolean(this.opfConfig?.opf?.paymentOption?.enableInfoMessage);
   }
 
