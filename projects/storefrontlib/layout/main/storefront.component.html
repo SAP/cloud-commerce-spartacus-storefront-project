@@ -3,7 +3,7 @@
     <header
       id="cx-header"
       cxSkipLink="cx-header"
-      [cxFocus]="{ disableMouseFocus: true }"
+      [cxFocus]="{ disableMouseFocus: true, trap: (isExpanded$ | async) || false }"
       [class.is-expanded]="isExpanded$ | async"
       (keydown.escape)="collapseMenu()"
       (click)="collapseMenuIfClickOutside($event)"

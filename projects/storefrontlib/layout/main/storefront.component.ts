@@ -4,29 +4,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {
-  Component,
-  ElementRef,
-  HostBinding,
-  HostListener,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-  inject,
-} from '@angular/core';
-import {
-  FeatureConfigService,
-  RoutingService,
-  useFeatureStyles,
-} from '@spartacus/core';
+import { Component, ElementRef, HostBinding, HostListener, inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { FeatureConfigService, RoutingService, useFeatureStyles } from '@spartacus/core';
 import { Observable, Subscription, tap } from 'rxjs';
-import {
-  FocusConfig,
-  KeyboardFocusService,
-} from '../a11y/keyboard-focus/index';
+import { FocusConfig, KeyboardFocusService } from '../a11y/keyboard-focus/index';
 import { SkipLinkComponent } from '../a11y/skip-link/index';
 import { HamburgerMenuService } from '../header/hamburger-menu/hamburger-menu.service';
 import { StorefrontOutlets } from './storefront-outlets.model';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'cx-storefront',
@@ -72,6 +57,40 @@ export class StorefrontComponent implements OnInit, OnDestroy {
       event
     );
   }
+
+  // private prevActiveElement: Element | null = null;
+
+  @HostListener('keyup.tab', ['$event'])
+  handleTab(_event: KeyboardEvent): void {
+    if (!this.hamburgerMenuService.isExpanded.value) {
+      return;
+    }
+
+    // const header = this.elementRef.nativeElement.querySelector('header');
+    // const activeElement = document.activeElement;
+    // const hamburgerMenuToggleButton = this.elementRef.nativeElement.querySelector<HTMLElement>('button.cx-hamburger');
+    // const loginLink = this.elementRef.nativeElement.querySelector<HTMLElement>('cx-login a');
+
+    // if (hamburgerMenuToggleButton === this.prevActiveElement) {
+    //   setTimeout(() => (loginLink as HTMLElement)?.focus());
+    // }
+    //
+    // if (header?.contains(document.activeElement)) {
+    //   this.prevActiveElement = activeElement;
+    //   return;
+    // }
+    //
+    // if (hamburgerMenuToggleButton) {
+    //   this.prevActiveElement = hamburgerMenuToggleButton;
+    //   setTimeout(() => hamburgerMenuToggleButton.focus());
+    // }
+  }
+
+  focusConfig$ = this.hamburgerMenuService.isExpanded.pipe(
+    map((isExpanded) => {
+      return { disableMouseFocus: true, trap: isExpanded };
+    }),
+  );
 
   constructor(
     private hamburgerMenuService: HamburgerMenuService,
