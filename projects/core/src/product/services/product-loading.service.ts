@@ -52,11 +52,6 @@ export class ProductLoadingService {
     scopes = this.loadingScopes.expand('product', scopes);
 
     this.initProductScopes(productCode, scopes);
-
-    Object.entries(this.products[u])
-      .forEach((value) => value[1].subscribe((product) => console.log(value[0] + ":" + JSON.stringify(product) + ",")));
-
-
     return this.products[productCode][this.getScopesIndex(scopes)];
   }
 
