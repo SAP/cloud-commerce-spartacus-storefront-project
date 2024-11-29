@@ -700,7 +700,7 @@ export interface FeatureTogglesInterface {
   /**
    * Fixes various instances of the focus ring being cropped in the UI.
    * The focus ring on interactive elements should have all its sides visible and not include any extra padding.
-   * Affects styles of: 'CartItemListComponent, CartItemComponent, ListComponent, FutureStockAccordionComponent, QuoteConfirmDialogComponent, MessagingComponent
+   * Affects styles of: 'CartItemListComponent, CartItemComponent, ListComponent, FutureStockAccordionComponent, QuoteConfirmDialogComponent, MessagingComponent, TabComponent
    */
   a11yCroppedFocusRing?: boolean;
 
@@ -722,6 +722,12 @@ export interface FeatureTogglesInterface {
    * Removes the repetition of assistive message after the results are provided to the `SearchBoxComponent`.
    */
   a11ySearchboxAssistiveMessage?: boolean;
+
+  /**
+   * Adds additional styling to help differentiate between focused and selected items in the list.
+   * Affects: ConfiguratorAttributeSingleSelectionImageComponent, ProductImagesComponent
+   */
+  a11yDifferentiateFocusedAndSelected?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -947,6 +953,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yTextSpacingAdjustments: false,
   a11yTableHeaderReadout: false,
   a11ySearchboxAssistiveMessage: false,
+  a11yDifferentiateFocusedAndSelected: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
