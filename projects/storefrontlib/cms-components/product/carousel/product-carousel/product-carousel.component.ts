@@ -55,32 +55,7 @@ export class ProductCarouselComponent {
    */
   items$: Observable<Observable<Product | undefined>[]> =
     this.componentData$.pipe(
-      switchMap((data) => {
-        const categoryCodes = data?.categoryCodes?.split(' ');
-        return categoryCodes &&
-          this.featureConfigService.isEnabled('enableCarouselCategoryProducts')
-          ? zip(
-              categoryCodes.map((categoryCode) =>
-                this.productSearchByCategoryService.get({
-                  categoryCode,
-                  scope: ProductScope.CODE,
-                })
-              )
-            ).pipe(
-              map((results) => {
-                const codes = results
-                  .flat()
-                  .map((product) => product?.code)
-                  .join(' ');
-
-                return {
-                  ...data,
-                  productCodes: data.productCodes + ' ' + codes,
-                };
-              })
-            )
-          : of(data);
-      }),
+      switchMap((data) => this.handleCategoryCodes(data)),
       map((data) => {
         const componentMappingExist = !!data.composition?.inner?.length;
         const codes = data.productCodes?.trim().split(' ') ?? [];
@@ -107,4 +82,36 @@ export class ProductCarouselComponent {
     protected componentData: CmsComponentData<model>,
     protected productService: ProductService
   ) {}
+  handleCategoryCodes(data: model): Observable<model> {
+    const categoryCodes = data?.categoryCodes?.split(' ');
+
+    // Try to add category codes to the carousel product codes
+    if (
+      categoryCodes &&
+      this.featureConfigService.isEnabled('enableCarouselCategoryProducts')
+    ) {
+      return zip(
+        categoryCodes.map((categoryCode) =>
+          this.productSearchByCategoryService.get({
+            categoryCode,
+            scope: ProductScope.CODE,
+          })
+        )
+      ).pipe(
+        map((results) => {
+          const codes = results
+            .flat()
+            .map((product) => product?.code)
+            .join(' ');
+
+          return {
+            ...data,
+            productCodes: data.productCodes + ' ' + codes,
+          };
+        })
+      );
+    }
+
+    return of(data);
+  }
 }
