@@ -125,12 +125,12 @@
         </ng-template>
       </div>
       <div class="cx-month">
-        <div *cxFeature="'!a11yScheduleReplenishment'">
+        <ng-container *cxFeature="'!a11yScheduleReplenishment'">
           <span *ngIf="isMonthly" class="form-data-label">{{
             'checkoutScheduledReplenishment.every' | cxTranslate
           }}</span>
-        </div>
-        <div *cxFeature="'a11yScheduleReplenishment'">
+        </ng-container>
+        <ng-container *cxFeature="'a11yScheduleReplenishment'">
           <label
             *ngIf="isMonthly"
             class="form-data-label"
@@ -145,7 +145,7 @@
               'checkoutScheduledReplenishment.duration' | cxTranslate
             }}</label
           >
-        </div>
+        </ng-container>
         <select
           id="order-replenishment-recurrence-period"
           class="form-control"
