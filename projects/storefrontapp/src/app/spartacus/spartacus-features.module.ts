@@ -411,7 +411,7 @@ if (environment.cpq) {
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
         a11yPdpGridArrangement: true,
-        sciEnabled: false,
+        sciEnabled: true,
         useExtendedMediaComponentConfiguration: true,
         showRealTimeStockInPDP: false,
         a11yWrapReviewOrderInSection: true,
