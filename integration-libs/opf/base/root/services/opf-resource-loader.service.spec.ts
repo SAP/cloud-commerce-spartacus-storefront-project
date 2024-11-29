@@ -161,7 +161,10 @@ describe('OpfResourceLoaderService', () => {
         }
       );
 
-      opfResourceLoaderService.loadResources([mockScriptResource]);
+      opfResourceLoaderService
+        .loadResources([mockScriptResource])
+        .then(() => {})
+        .catch(() => {});
 
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadScript']).toHaveBeenCalled();
@@ -208,7 +211,10 @@ describe('OpfResourceLoaderService', () => {
         }
       );
 
-      opfResourceLoaderService.loadResources([], [mockStylesResources]);
+      opfResourceLoaderService
+        .loadResources([], [mockStylesResources])
+        .then(() => {})
+        .catch(() => {});
 
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
 
