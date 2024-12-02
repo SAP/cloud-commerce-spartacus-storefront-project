@@ -731,6 +731,11 @@ export interface FeatureTogglesInterface {
   a11yDifferentiateFocusedAndSelected?: boolean;
 
   /**
+   * Adds styles for active and focused states in the `SearchBoxComponent`.
+   */
+  a11yActiveAndFocusedSearchBoxComponent?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -949,6 +954,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yTableHeaderReadout: false,
   a11ySearchboxAssistiveMessage: false,
   a11yDifferentiateFocusedAndSelected: false,
+  a11yActiveAndFocusedSearchBoxComponent: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,

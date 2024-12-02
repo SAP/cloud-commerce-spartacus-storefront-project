@@ -296,6 +296,17 @@
         z-index: 20;
         padding-top: 25px;
       }
+
+      @include forFeature('a11yActiveAndFocusedSearchBoxComponent') {
+        &:focus-within,
+        &:active {
+          outline-style: solid;
+          outline-color: var(--cx-color-visual-focus);
+          outline-width: var(--cx-visual-focus-width, 2px);
+          outline-offset: 4px;
+          transition: none;
+        }
+      }
     }
 
     input {
