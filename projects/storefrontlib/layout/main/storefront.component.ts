@@ -4,14 +4,31 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Component, ElementRef, HostBinding, HostListener, inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { FeatureConfigService, RoutingService, useFeatureStyles } from '@spartacus/core';
+import {
+  Component,
+  DestroyRef,
+  ElementRef,
+  HostBinding,
+  HostListener,
+  inject,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import {
+  FeatureConfigService,
+  RoutingService,
+  useFeatureStyles,
+} from '@spartacus/core';
 import { Observable, Subscription, tap } from 'rxjs';
-import { FocusConfig, KeyboardFocusService } from '../a11y/keyboard-focus/index';
+import {
+  FocusConfig,
+  KeyboardFocusService,
+} from '../a11y/keyboard-focus/index';
 import { SkipLinkComponent } from '../a11y/skip-link/index';
 import { HamburgerMenuService } from '../header/hamburger-menu/hamburger-menu.service';
 import { StorefrontOutlets } from './storefront-outlets.model';
-import { map } from 'rxjs/operators';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'cx-storefront',
@@ -19,11 +36,13 @@ import { map } from 'rxjs/operators';
 })
 export class StorefrontComponent implements OnInit, OnDestroy {
   navigateSubscription: Subscription;
+  focusConfig: FocusConfig = { disableMouseFocus: true, trap: false };
   isExpanded$: Observable<boolean> = this.hamburgerMenuService.isExpanded;
 
   readonly StorefrontOutlets = StorefrontOutlets;
 
   private featureConfigService = inject(FeatureConfigService);
+  protected destroyRef = inject(DestroyRef);
 
   @HostBinding('class.start-navigating') startNavigating: boolean;
   @HostBinding('class.stop-navigating') stopNavigating: boolean;
@@ -58,40 +77,6 @@ export class StorefrontComponent implements OnInit, OnDestroy {
     );
   }
 
-  // private prevActiveElement: Element | null = null;
-
-  @HostListener('keyup.tab', ['$event'])
-  handleTab(_event: KeyboardEvent): void {
-    if (!this.hamburgerMenuService.isExpanded.value) {
-      return;
-    }
-
-    // const header = this.elementRef.nativeElement.querySelector('header');
-    // const activeElement = document.activeElement;
-    // const hamburgerMenuToggleButton = this.elementRef.nativeElement.querySelector<HTMLElement>('button.cx-hamburger');
-    // const loginLink = this.elementRef.nativeElement.querySelector<HTMLElement>('cx-login a');
-
-    // if (hamburgerMenuToggleButton === this.prevActiveElement) {
-    //   setTimeout(() => (loginLink as HTMLElement)?.focus());
-    // }
-    //
-    // if (header?.contains(document.activeElement)) {
-    //   this.prevActiveElement = activeElement;
-    //   return;
-    // }
-    //
-    // if (hamburgerMenuToggleButton) {
-    //   this.prevActiveElement = hamburgerMenuToggleButton;
-    //   setTimeout(() => hamburgerMenuToggleButton.focus());
-    // }
-  }
-
-  focusConfig$ = this.hamburgerMenuService.isExpanded.pipe(
-    map((isExpanded) => {
-      return { disableMouseFocus: true, trap: isExpanded };
-    }),
-  );
-
   constructor(
     private hamburgerMenuService: HamburgerMenuService,
     private routingService: RoutingService,
@@ -124,6 +109,15 @@ export class StorefrontComponent implements OnInit, OnDestroy {
         })
       );
     }
+
+    if (this.featureConfigService.isEnabled('a11yHamburgerMenuTrapFocus')) {
+      this.isExpanded$
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe((isExpanded) => {
+          this.focusConfig = { ...this.focusConfig, trap: isExpanded };
+          this.excludeFromFocus(isExpanded);
+        });
+    }
   }
 
   collapseMenuIfClickOutside(event: any): void {
@@ -138,6 +132,16 @@ export class StorefrontComponent implements OnInit, OnDestroy {
 
   collapseMenu(): void {
     this.hamburgerMenuService.toggle(true);
+  }
+
+  excludeFromFocus(isExpanded: boolean): void {
+    const tabindex = isExpanded ? '-1' : '0';
+    const logo = this.elementRef.nativeElement.querySelector('cx-banner a');
+    const search = this.elementRef.nativeElement.querySelector('button.search');
+    const cart = this.elementRef.nativeElement.querySelector('cx-mini-cart a');
+    [logo, search, cart].forEach((item) =>
+      item?.setAttribute('tabindex', tabindex)
+    );
   }
 
   protected focusOnFirstNavigationItem() {
