@@ -161,6 +161,10 @@ label {
       font-weight: var(--cx-font-weight-semi);
     }
   }
+  
+  abbr[title="required"] {
+    color: var(--cx-color-danger);
+  }
 }
 
 .notes-content {
