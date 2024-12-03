@@ -396,6 +396,7 @@ export interface FeatureTogglesInterface {
    * 2. `QuickOrderFormComponent` - search combobox options are not truncated
    * 3. `BreadcrumbComponent` - breadcrumb heading is not truncated
    * 4. `CheckoutProgressMobileTopComponent` - checkout step names do not have huge vertical white space
+   * 5. 'UnitLevelOrderHistoryComponent' - sorting dropdown options will not be truncated
    */
   a11yTruncatedTextForResponsiveView?: boolean;
 
@@ -788,12 +789,6 @@ export interface FeatureTogglesInterface {
   a11yPdpGridArrangement?: boolean;
 
   /**
-   * CDS/ISS is integrated into the SAP Cloud Identity Service (SCI). The downstream services use different domains and URL formats.
-   * This feature toggle can be used to make the CDS module use these new URLs.
-   */
-  sciEnabled?: boolean;
-
-  /**
    * When enabled, allows to provide extended formats and media queries for <picture> element if used in MediaComponent.
    *
    * Important: After activation default HTML element in MediaComponent will be `<img>`
@@ -833,6 +828,8 @@ export interface FeatureTogglesInterface {
    * Moves components to be children of this section element.
    */
   a11yWrapReviewOrderInSection?: boolean;
+
+  enableSecurePasswordValidation?: boolean;
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
@@ -959,7 +956,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
   a11yPdpGridArrangement: false,
-  sciEnabled: false,
   useExtendedMediaComponentConfiguration: false,
   showRealTimeStockInPDP: false,
+  enableSecurePasswordValidation: false,
 };
