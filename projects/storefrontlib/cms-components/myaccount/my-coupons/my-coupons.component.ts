@@ -13,6 +13,7 @@ import {
 import { combineLatest, Observable, Subscription } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../misc/icon/icon.model';
+import { LaunchDialogService, LAUNCH_CALLER } from '../../../layout/index';
 import { MyCouponsComponentService } from './my-coupons.component.service';
 
 @Component({
@@ -66,7 +67,8 @@ export class MyCouponsComponent implements OnInit, OnDestroy {
 
   constructor(
     protected couponService: CustomerCouponService,
-    protected myCouponsComponentService: MyCouponsComponentService
+    protected myCouponsComponentService: MyCouponsComponentService,
+    protected launchDialogService: LaunchDialogService,
   ) {}
 
   ngOnInit(): void {
@@ -107,6 +109,24 @@ export class MyCouponsComponent implements OnInit, OnDestroy {
           this.subscriptionFail(error);
         })
     );
+
+    var hashStr=location.hash;
+    var resultStr = decodeURIComponent(hashStr);
+    var index = resultStr.indexOf('#');
+    if(index !==-1)
+    {
+      const couponCode=hashStr.substring(index + 1);
+      if(couponCode!==undefined && couponCode.length>0)
+      {
+      this.launchDialogService.openDialogAndSubscribe(
+        LAUNCH_CALLER.CLAIM_DIALOG,
+         undefined,
+         { coupon: couponCode, pageSize: this.PAGE_SIZE }
+       );
+
+      }
+    }
+
   }
 
   private subscriptionFail(error: boolean) {

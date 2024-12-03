@@ -79,6 +79,22 @@ export class OccCustomerCouponAdapter implements CustomerCouponAdapter {
     return this.http.post(url, { headers });
   }
 
+  claimCustomerCouponByPost(
+    userId: string,
+    couponCode: string
+  ): Observable<CustomerCoupon2Customer> {
+
+    const url = this.occEndpoints.buildUrl('claimCustomerCoupon', {
+      urlParams: { userId},
+    });
+    const toClaim = {
+      couponCode: couponCode
+    };
+    const headers = this.newHttpHeader();
+
+    return this.http.post(url, toClaim, { headers });
+  }
+
   claimCustomerCoupon(
     userId: string,
     couponCode: string
