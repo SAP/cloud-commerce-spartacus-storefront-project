@@ -30,13 +30,13 @@
   }
   .cx-store-address-street {
     white-space: nowrap;
+    @include forFeature('a11yTruncatedTextStoreFinder') {
+      white-space: unset;
+    }
     overflow: hidden;
     text-overflow: ellipsis;
 
     @include media-breakpoint-down(md) {
-      white-space: normal;
-    }
-    @include forFeature('a11yTruncatedTextStoreFinder') {
       white-space: normal;
     }
   }
