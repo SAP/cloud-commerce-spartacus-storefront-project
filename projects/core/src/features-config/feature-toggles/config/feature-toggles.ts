@@ -807,7 +807,7 @@ export interface FeatureTogglesInterface {
 
   /**
    * Header. Fixes trapping focus on menu items on mobile when the menu is expanded.
-   * Sets tabindex property to Logo, Search and Card to '-1' to exclude them from
+   * Sets `tabindex` attribute  to `-1` for all visible focusable elements in the header section to exclude them from
    * keyboard navigation
    */
   a11yHamburgerMenuTrapFocus?: boolean;
