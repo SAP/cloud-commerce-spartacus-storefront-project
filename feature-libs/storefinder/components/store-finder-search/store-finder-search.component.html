@@ -1,30 +1,41 @@
 <div class="container">
-  <div class="row">
+  <div class="row align-items-end">
     <div class="col-md-12 col-lg-6">
-      <div class="form-group search-wrapper">
-        <input
-          #queryInput
-          [formControl]="searchBox"
-          (keyup)="onKey($event)"
-          type="text"
-          class="form-control"
-          [attr.aria-label]="'storeFinder.searchBoxLabel' | cxTranslate"
-          placeholder="{{ 'storeFinder.searchBox' | cxTranslate }}"
-        />
-        <cx-icon
-          [attr.tabindex]="queryInput.value?.length ? 0 : -1"
-          [type]="iconTypes.SEARCH"
-          role="button"
-          [attr.aria-label]="'storeFinder.searchNearestStores' | cxTranslate"
-          [attr.title]="'storeFinder.searchNearestStores' | cxTranslate"
-          class="search"
-          (keyup)="onKey($event)"
-          [routerLink]="['/store-finder/find']"
-          [queryParams]="{ query: queryInput.value }"
-          [ngClass]="{
-            'disabled-action': !(queryInput.value && queryInput.value.length),
-          }"
-        ></cx-icon>
+      <div class="form-group">
+        <label class="">
+          <span class="text-left label-content">
+            {{ 'storeFinder.findStoreBy' | cxTranslate }}
+          </span>
+          <div class="search-wrapper">
+            <input
+              #queryInput
+              [formControl]="searchBox"
+              (keyup)="onKey($event)"
+              type="text"
+              class="form-control"
+              [attr.aria-label]="'storeFinder.searchBoxLabel' | cxTranslate"
+              placeholder="{{ 'storeFinder.searchBox' | cxTranslate }}"
+            />
+            <cx-icon
+              [attr.tabindex]="queryInput.value?.length ? 0 : -1"
+              [type]="iconTypes.SEARCH"
+              role="button"
+              [attr.aria-label]="
+                'storeFinder.searchNearestStores' | cxTranslate
+              "
+              [attr.title]="'storeFinder.searchNearestStores' | cxTranslate"
+              class="search"
+              (keyup)="onKey($event)"
+              [routerLink]="['/store-finder/find']"
+              [queryParams]="{ query: queryInput.value }"
+              [ngClass]="{
+                'disabled-action': !(
+                  queryInput.value && queryInput.value.length
+                ),
+              }"
+            ></cx-icon>
+          </div>
+        </label>
       </div>
     </div>
     <div class="col-md-12 col-lg-6">
