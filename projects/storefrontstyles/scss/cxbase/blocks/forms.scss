@@ -162,7 +162,7 @@ label {
     }
   }
 
-  abbr[title='required'] {
+  abbr.required-asterisk {
     color: var(--cx-color-danger);
   }
 }
