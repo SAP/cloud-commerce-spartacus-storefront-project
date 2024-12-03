@@ -407,7 +407,7 @@ if (environment.cpq) {
         a11yDifferentiateFocusedAndSelected: true,
         a11yActiveAndFocusedSearchBoxComponent: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
-        useSiteThemeService: true,
+        useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
