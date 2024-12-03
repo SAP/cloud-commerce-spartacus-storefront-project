@@ -82,6 +82,6 @@ import { FormErrorsModule } from '../../../shared/components/form/form-errors';
     }),
     provideDefaultConfig(defaultCouponLayoutConfig),
   ],
-  exports: [MyCouponsComponent, CouponClaimComponent],
+  exports: [MyCouponsComponent, CouponClaimComponent, ClaimDialogComponent],
 })
 export class MyCouponsModule {}
