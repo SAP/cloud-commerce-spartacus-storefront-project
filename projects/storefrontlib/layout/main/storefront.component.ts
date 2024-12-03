@@ -134,13 +134,31 @@ export class StorefrontComponent implements OnInit, OnDestroy {
     this.hamburgerMenuService.toggle(true);
   }
 
-  excludeFromFocus(isExpanded: boolean): void {
+  protected excludeFromFocus(isExpanded: boolean): void {
     const tabindex = isExpanded ? '-1' : '0';
-    const logo = this.elementRef.nativeElement.querySelector('cx-banner a');
-    const search = this.elementRef.nativeElement.querySelector('button.search');
-    const cart = this.elementRef.nativeElement.querySelector('cx-mini-cart a');
-    [logo, search, cart].forEach((item) =>
-      item?.setAttribute('tabindex', tabindex)
+    const focusableElementsSelector =
+      'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"]';
+    const targetSlot = this.elementRef.nativeElement.querySelector<HTMLElement>(
+      'cx-page-layout[section="header"]'
+    );
+    const focusableElements = targetSlot?.querySelectorAll<HTMLElement>(
+      focusableElementsSelector
+    );
+    Array.from(focusableElements || []).forEach((element) => {
+      const isHamburgerMenuButton = element.matches('button.cx-hamburger');
+      if (!isHamburgerMenuButton && this.isElementVisible(element)) {
+        element.setAttribute('tabindex', tabindex);
+      }
+    });
+  }
+
+  protected isElementVisible(element: HTMLElement): boolean {
+    const style = window.getComputedStyle(element);
+    return (
+      style.visibility !== 'hidden' &&
+      style.display !== 'none' &&
+      element.offsetWidth > 0 &&
+      element.offsetHeight > 0
     );
   }
 
