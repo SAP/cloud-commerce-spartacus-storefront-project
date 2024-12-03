@@ -36,6 +36,9 @@
     @include media-breakpoint-down(md) {
       white-space: normal;
     }
+    @include forFeature('a11yTruncatedTextStoreFinder') {
+      white-space: normal;
+    }
   }
   .cx-store-open {
     font-size: var(--cx-font-size, 0.875rem);
