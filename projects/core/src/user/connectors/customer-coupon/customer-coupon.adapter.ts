@@ -33,7 +33,7 @@ export abstract class CustomerCouponAdapter {
     userId: string,
     couponCode: string
   ): Observable<CustomerCoupon2Customer>;
-  
+
   abstract claimCustomerCoupon(
     userId: string,
     couponCode: string

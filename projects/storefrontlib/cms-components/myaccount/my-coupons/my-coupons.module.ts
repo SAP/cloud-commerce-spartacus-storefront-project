@@ -7,7 +7,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-//import { ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import {
   AuthGuard,
   CmsConfig,
@@ -22,7 +22,7 @@ import { KeyboardFocusModule } from '../../../layout/index';
 import { CardModule } from '../../../shared/components/card/card.module';
 import { ListNavigationModule } from '../../../shared/components/list-navigation/list-navigation.module';
 import { SpinnerModule } from '../../../shared/components/spinner/spinner.module';
-// import { FormErrorsModule } from '../../../shared/components/form/form-errors/form-errors.module';
+
 import { IconModule } from '../../misc/icon/icon.module';
 import { CouponCardComponent } from './coupon-card/coupon-card.component';
 import { CouponDialogComponent } from './coupon-card/coupon-dialog/coupon-dialog.component';
@@ -30,12 +30,13 @@ import { ClaimDialogComponent } from './claim-dialog/claim-dialog.component';
 import { CouponClaimComponent } from './coupon-claim/coupon-claim.component';
 import { defaultCouponLayoutConfig } from './default-coupon-card-layout.config';
 import { MyCouponsComponent } from './my-coupons.component';
+import { FormErrorsModule } from '../../../shared/components/form/form-errors';
 
 @NgModule({
   imports: [
     CommonModule,
-   // ReactiveFormsModule,
-    // FormErrorsModule,
+    ReactiveFormsModule,
+    FormErrorsModule,
     CardModule,
     SpinnerModule,
     I18nModule,
@@ -81,6 +82,6 @@ import { MyCouponsComponent } from './my-coupons.component';
     }),
     provideDefaultConfig(defaultCouponLayoutConfig),
   ],
-  exports: [MyCouponsComponent, CouponClaimComponent, ClaimDialogComponent],
+  exports: [MyCouponsComponent, CouponClaimComponent],
 })
 export class MyCouponsModule {}

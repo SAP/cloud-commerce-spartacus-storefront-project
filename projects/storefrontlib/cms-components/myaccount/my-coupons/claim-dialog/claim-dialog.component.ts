@@ -31,7 +31,7 @@ import {
   useFeatureStyles,
 } from '@spartacus/core';
 import { FocusConfig, LaunchDialogService } from '../../../../layout/index';
-import { ICON_TYPE } from '@spartacus/storefront';
+import { ICON_TYPE } from '../../../../cms-components/misc/icon/index';
 
 
 @Component({
