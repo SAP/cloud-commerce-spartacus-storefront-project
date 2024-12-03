@@ -285,6 +285,11 @@
         min-width: 300px;
         max-width: 550px;
         background-color: var(--cx-color-inverse);
+
+        @include forFeature('a11yActiveAndFocusedSearchBoxComponent') {
+          position: relative;
+          padding: 0;
+        }
       }
 
       @include media-breakpoint-down(sm) {
@@ -295,17 +300,6 @@
         background-color: var(--cx-color-inverse);
         z-index: 20;
         padding-top: 25px;
-      }
-
-      @include forFeature('a11yActiveAndFocusedSearchBoxComponent') {
-        &:focus-within,
-        &:active {
-          outline-style: solid;
-          outline-color: var(--cx-color-visual-focus);
-          outline-width: var(--cx-visual-focus-width, 2px);
-          outline-offset: 4px;
-          transition: none;
-        }
       }
     }
 
@@ -335,6 +329,15 @@
           color: var(--cx-color-dark);
         }
       }
+
+      @include forFeature('a11yActiveAndFocusedSearchBoxComponent') {
+        height: 47px;
+        padding: 7px 42px 7px 12px;
+        &:focus {
+          @include visible-focus();
+          z-index: 20;
+        }
+      }
     }
 
     button,
@@ -348,6 +351,16 @@
 
       @include forFeature('a11yImproveContrast') {
         color: var(--cx-color-secondary);
+      }
+
+      @include forFeature('a11yActiveAndFocusedSearchBoxComponent') {
+        .reset,
+        div.search-icon {
+          position: absolute;
+          right: 6px;
+          top: 4px;
+          z-index: 30;
+        }
       }
 
       @include media-breakpoint-down(sm) {

@@ -408,7 +408,7 @@ if (environment.cpq) {
         a11yQuickOrderSearchBoxRefocusOnClose: true,
         a11yActiveAndFocusedSearchBoxComponent: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
-        useSiteThemeService: true,
+        useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
