@@ -496,13 +496,7 @@ export class OpfGooglePayService {
     this.googlePaymentRequest.allowedPaymentMethods = [
       {
         parameters: {
-          ...(this.defaultGooglePayCardParameters as Pick<
-            google.payments.api.CardParameters,
-            | 'allowedAuthMethods'
-            | 'allowedCardNetworks'
-            | 'billingAddressRequired'
-            | 'billingAddressParameters'
-          >),
+          ...this.defaultGooglePayCardParameters,
         },
         tokenizationSpecification: {
           parameters: {

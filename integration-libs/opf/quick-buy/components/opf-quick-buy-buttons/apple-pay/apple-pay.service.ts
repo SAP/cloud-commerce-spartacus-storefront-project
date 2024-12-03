@@ -175,14 +175,7 @@ export class ApplePayService {
     this.transactionDetails = this.initTransactionDetails(transactionInput);
     const countryCode = transactionInput?.countryCode || '';
     const initialRequest: ApplePayJS.ApplePayPaymentRequest = {
-      ...(this.defaultApplePayCardParameters as Pick<
-        ApplePayJS.ApplePayPaymentRequest,
-        | 'shippingMethods'
-        | 'merchantCapabilities'
-        | 'supportedNetworks'
-        | 'requiredShippingContactFields'
-        | 'requiredBillingContactFields'
-      >),
+      ...this.defaultApplePayCardParameters,
       currencyCode: this.transactionDetails.total.currency,
       total: {
         amount: this.transactionDetails.total.amount,
