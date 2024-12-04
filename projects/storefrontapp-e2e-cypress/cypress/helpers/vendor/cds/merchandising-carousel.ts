@@ -295,12 +295,12 @@ export function verifyMerchandisingCarouselRendersOnPDPPage(
 }
 
 export function applyFacet(facetGroup: string, facetName: string): void {
-  cy.get('cx-facet .heading')
-    .contains(facetGroup)
-    .parents('cx-facet')
+  cy.get('cx-product-facet-navigation') 
+    .contains('button.tab-btn', facetGroup) 
+    .parents('cx-product-facet-navigation') 
     .within(() => {
-      cy.get('a.value').contains(facetName).click();
-    });
+      cy.get('a.value').contains(facetName).click()
+    })
 }
 
 export function verifyFirstCarouselItemTextContent(
