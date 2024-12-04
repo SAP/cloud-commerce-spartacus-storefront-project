@@ -7,6 +7,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FeaturesConfigModule } from '@spartacus/core';
 import { GlobalMessageComponentModule } from '../../cms-components/misc/global-message/global-message.module';
 import { OutletRefModule } from '../../cms-structure/outlet/outlet-ref/outlet-ref.module';
 import { OutletModule } from '../../cms-structure/outlet/outlet.module';
@@ -27,6 +28,7 @@ import { SkipLinkModule } from '../a11y/skip-link/skip-link.module';
     PageSlotModule,
     KeyboardFocusModule,
     SkipLinkModule,
+    FeaturesConfigModule,
   ],
   declarations: [StorefrontComponent],
   exports: [StorefrontComponent],

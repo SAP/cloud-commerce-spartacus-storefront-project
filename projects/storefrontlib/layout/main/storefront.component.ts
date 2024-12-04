@@ -23,6 +23,7 @@ import {
 import { Observable, Subscription, tap } from 'rxjs';
 import {
   FocusConfig,
+  SkipFocusConfig,
   KeyboardFocusService,
 } from '../a11y/keyboard-focus/index';
 import { SkipLinkComponent } from '../a11y/skip-link/index';
@@ -37,6 +38,10 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export class StorefrontComponent implements OnInit, OnDestroy {
   navigateSubscription: Subscription;
   focusConfig: FocusConfig = { disableMouseFocus: true, trap: false };
+  skipFocusConfig: SkipFocusConfig = {
+    isEnabled: false,
+    skipSelectors: ['button.cx-hamburger'],
+  };
   isExpanded$: Observable<boolean> = this.hamburgerMenuService.isExpanded;
 
   readonly StorefrontOutlets = StorefrontOutlets;
@@ -115,7 +120,10 @@ export class StorefrontComponent implements OnInit, OnDestroy {
         .pipe(takeUntilDestroyed(this.destroyRef))
         .subscribe((isExpanded) => {
           this.focusConfig = { ...this.focusConfig, trap: isExpanded };
-          this.excludeFromFocus(isExpanded);
+          this.skipFocusConfig = {
+            ...this.skipFocusConfig,
+            isEnabled: isExpanded,
+          };
         });
     }
   }
@@ -132,34 +140,6 @@ export class StorefrontComponent implements OnInit, OnDestroy {
 
   collapseMenu(): void {
     this.hamburgerMenuService.toggle(true);
-  }
-
-  protected excludeFromFocus(isExpanded: boolean): void {
-    const tabindex = isExpanded ? '-1' : '0';
-    const focusableElementsSelector =
-      'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"]';
-    const targetSlot = this.elementRef.nativeElement.querySelector<HTMLElement>(
-      'cx-page-layout[section="header"]'
-    );
-    const focusableElements = targetSlot?.querySelectorAll<HTMLElement>(
-      focusableElementsSelector
-    );
-    Array.from(focusableElements || []).forEach((element) => {
-      const isHamburgerMenuButton = element.matches('button.cx-hamburger');
-      if (!isHamburgerMenuButton && this.isElementVisible(element)) {
-        element.setAttribute('tabindex', tabindex);
-      }
-    });
-  }
-
-  protected isElementVisible(element: HTMLElement): boolean {
-    const style = window.getComputedStyle(element);
-    return (
-      style.visibility !== 'hidden' &&
-      style.display !== 'none' &&
-      element.offsetWidth > 0 &&
-      element.offsetHeight > 0
-    );
   }
 
   protected focusOnFirstNavigationItem() {

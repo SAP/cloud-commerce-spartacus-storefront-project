@@ -8,7 +8,17 @@
       (keydown.escape)="collapseMenu()"
       (click)="collapseMenuIfClickOutside($event)"
     >
-      <cx-page-layout section="header"></cx-page-layout>
+      <ng-container *cxFeature="'a11yHamburgerMenuTrapFocus'">
+        <cx-page-layout
+          [cxSkipFocus]="skipFocusConfig"
+          section="header"
+        ></cx-page-layout>
+      </ng-container>
+
+      <ng-container *cxFeature="'!a11yHamburgerMenuTrapFocus'">
+        <cx-page-layout section="header"></cx-page-layout>
+      </ng-container>
+
       <cx-page-layout section="navigation"></cx-page-layout>
     </header>
     <cx-page-slot
