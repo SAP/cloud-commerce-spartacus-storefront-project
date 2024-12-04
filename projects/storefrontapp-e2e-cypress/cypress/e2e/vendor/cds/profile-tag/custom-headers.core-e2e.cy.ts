@@ -10,6 +10,7 @@ import { navigation } from '../../../../helpers/navigation';
 import {
   QUERY_ALIAS,
   createProductQuery,
+  searchUrlPrefix,
 } from '../../../../helpers/product-search';
 import {
   cdsHelper,
@@ -63,7 +64,7 @@ describe('Custom header additions to occ calls', () => {
       // withdraw consent
       cy.get('button.btn.btn-link').contains('Consent').click();
       cy.get('input.form-check-input').uncheck();
-      cy.get('button.close').click();
+      cy.get('button.close').first().click();
       navigation.visitHomePage({
         options: {
           onBeforeLoad: profileTagHelper.interceptProfileTagJs,
