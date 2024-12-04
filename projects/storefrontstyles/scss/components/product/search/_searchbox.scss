@@ -279,17 +279,24 @@
       padding-bottom: 6px;
       padding-inline-start: 10px;
 
+      @include forFeature('a11yActiveAndFocusedSearchBoxComponent') {
+        &:focus-within {
+          @include visible-focus();
+        }
+
+        &.mouse-focus {
+          &:focus-within {
+            outline: none;
+          }
+        }
+      }
+
       @include media-breakpoint-up(md) {
         border: 1px solid var(--cx-color-medium);
         width: 27vw;
         min-width: 300px;
         max-width: 550px;
         background-color: var(--cx-color-inverse);
-
-        @include forFeature('a11yActiveAndFocusedSearchBoxComponent') {
-          position: relative;
-          padding: 0;
-        }
       }
 
       @include media-breakpoint-down(sm) {
@@ -329,15 +336,6 @@
           color: var(--cx-color-dark);
         }
       }
-
-      @include forFeature('a11yActiveAndFocusedSearchBoxComponent') {
-        height: 47px;
-        padding: 7px 42px 7px 12px;
-        &:focus {
-          @include visible-focus();
-          z-index: 20;
-        }
-      }
     }
 
     button,
@@ -351,16 +349,6 @@
 
       @include forFeature('a11yImproveContrast') {
         color: var(--cx-color-secondary);
-      }
-
-      @include forFeature('a11yActiveAndFocusedSearchBoxComponent') {
-        .reset,
-        div.search-icon {
-          position: absolute;
-          right: 6px;
-          top: 4px;
-          z-index: 30;
-        }
       }
 
       @include media-breakpoint-down(sm) {
