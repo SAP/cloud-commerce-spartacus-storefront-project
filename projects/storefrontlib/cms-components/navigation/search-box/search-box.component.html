@@ -68,11 +68,76 @@
   class="cx-searchbox-container"
 >
   <label
+    *cxFeature="'!a11yActiveAndFocusedSearchBoxComponent'"
     class="searchbox cxFeat_a11ySearchboxLabel"
     [class.dirty]="!!searchInput?.value"
   >
     <span class="cx-input-label">{{ 'common.search' | cxTranslate }}</span>
     <div class="cx-label-inner-container">
+      <input
+        #searchInput
+        [placeholder]="'searchBox.placeholder' | cxTranslate"
+        autocomplete="off"
+        aria-describedby="initialDescription"
+        aria-controls="results"
+        [attr.tabindex]="
+          a11ySearchBoxMobileFocusEnabled ? getTabIndex(isMobile | async) : null
+        "
+        (focus)="a11ySearchBoxMobileFocusEnabled ? null : open()"
+        (click)="open()"
+        (input)="search(searchInput.value)"
+        (blur)="close($any($event))"
+        (keydown.tab)="
+          a11ySearchBoxMobileFocusEnabled ? close($any($event)) : null
+        "
+        (keydown.escape)="close($any($event))"
+        (keydown.enter)="
+          close($any($event), true);
+          launchSearchResult($any($event), searchInput.value);
+          updateChosenWord(searchInput.value)
+        "
+        (keydown.arrowup)="focusPreviousChild($any($event))"
+        (keydown.arrowdown)="focusNextChild($any($event))"
+        value="{{ chosenWord }}"
+      />
+
+      <button
+        [attr.aria-label]="'common.reset' | cxTranslate"
+        [title]="'common.reset' | cxTranslate"
+        (click)="clear(searchInput)"
+        class="reset"
+      >
+        <cx-icon [type]="iconTypes.RESET"></cx-icon>
+      </button>
+
+      <div
+        role="presentation"
+        class="search-icon"
+        [title]="'common.search' | cxTranslate"
+      >
+        <cx-icon [type]="iconTypes.SEARCH"></cx-icon>
+      </div>
+    </div>
+    <button
+      #searchButton
+      [attr.aria-label]="'common.search' | cxTranslate"
+      [title]="'common.search' | cxTranslate"
+      class="search"
+      (click)="open()"
+    >
+      <cx-icon [type]="iconTypes.SEARCH"></cx-icon>
+    </button>
+  </label>
+  <label
+    *cxFeature="'a11yActiveAndFocusedSearchBoxComponent'"
+    class="searchbox cxFeat_a11ySearchboxLabel"
+    [class.dirty]="!!searchInput?.value"
+  >
+    <span class="cx-input-label">{{ 'common.search' | cxTranslate }}</span>
+    <div
+      class="cx-label-inner-container"
+      [cxFocus]="{ disableMouseFocus: true }"
+    >
       <input
         #searchInput
         [placeholder]="'searchBox.placeholder' | cxTranslate"
