@@ -223,7 +223,7 @@ describe('QuickOrderFormComponent', () => {
       expect(ev.preventDefault).toHaveBeenCalled();
     });
 
-    it('sets focus back to the input if results box was open', () => {
+    it('sets focus back to the input if results box was open', (done) => {
       const inputSearch: HTMLElement = fixture.debugElement.query(
         By.css('input')
       ).nativeElement;
@@ -231,8 +231,9 @@ describe('QuickOrderFormComponent', () => {
       component.open();
       expect(inputSearch).not.toBe(getFocusedElement());
       component.clear();
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         expect(inputSearch).toBe(getFocusedElement());
+        done();
       });
     });
   });
