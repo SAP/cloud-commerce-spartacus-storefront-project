@@ -1,6 +1,7 @@
 import {
   Component,
   DebugElement,
+  ElementRef,
   EventEmitter,
   Input,
   Output,
@@ -15,8 +16,9 @@ import {
   FeaturesConfig,
   I18nTestingModule,
 } from '@spartacus/core';
+import { LAUNCH_CALLER, LaunchDialogService } from '../../../layout/index';
 import { MockFeatureDirective } from 'projects/storefrontlib/shared/test/mock-feature-directive';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject,EMPTY, Observable, of } from 'rxjs';
 import { SpinnerModule } from '../../../shared/components/spinner/spinner.module';
 import { ICON_TYPE } from '../../misc/icon/icon.model';
 import { MyCouponsComponent } from './my-coupons.component';
@@ -143,6 +145,15 @@ class MockSortingComponent {
   @Output() sortListEvent = new EventEmitter<string>();
 }
 
+class MockLaunchDialogService implements Partial<LaunchDialogService> {
+  openDialogAndSubscribe(
+    _caller: LAUNCH_CALLER,
+    _openElement?: ElementRef,
+  ) {
+    return EMPTY;
+  }
+}
+
 describe('MyCouponsComponent', () => {
   let component: MyCouponsComponent;
   let fixture: ComponentFixture<MyCouponsComponent>;
@@ -183,6 +194,7 @@ describe('MyCouponsComponent', () => {
           provide: MyCouponsComponentService,
           useValue: myCouponsComponentService,
         },
+        { provide: LaunchDialogService, useClass: MockLaunchDialogService },
         {
           provide: FeaturesConfig,
           useValue: {

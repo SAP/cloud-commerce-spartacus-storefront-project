@@ -15,8 +15,8 @@ import {
 } from '@angular/core';
 
 import {
-    UntypedFormControl,
-    UntypedFormGroup,
+    FormControl,
+    FormGroup,
     Validators,
   } from '@angular/forms';
 
@@ -56,9 +56,9 @@ export class ClaimDialogComponent implements OnDestroy, OnInit {
     focusOnEscape: true,
   };
 
-  form: UntypedFormGroup = new UntypedFormGroup(
+  form: FormGroup = new FormGroup(
         {
-          couponCode: new UntypedFormControl('', [Validators.required]),
+          couponCode: new FormControl('', [Validators.required]),
         }
   );
 
@@ -85,7 +85,7 @@ export class ClaimDialogComponent implements OnDestroy, OnInit {
         if (data) {
           this.couponCode = data.coupon;
           this.pageSize=data.pageSize;
-          (this.form.get('couponCode') as UntypedFormControl).setValue(this.couponCode);
+          (this.form.get('couponCode') as FormControl).setValue(this.couponCode);
         }
       })
     );
@@ -96,7 +96,7 @@ export class ClaimDialogComponent implements OnDestroy, OnInit {
       this.form.markAllAsTouched();
       return;
     }
-      const couponVal = (this.form.get('couponCode') as UntypedFormControl).value;
+      const couponVal = (this.form.get('couponCode') as FormControl).value;
       if (couponVal) {
         this.couponService.claimCustomerCoupon(couponVal);
         this.subscription = this.couponService
@@ -128,6 +128,6 @@ export class ClaimDialogComponent implements OnDestroy, OnInit {
   }
 
   cancelEdit(): void {
-    (this.form.get('couponCode') as UntypedFormControl).setValue(this.couponCode);
+    (this.form.get('couponCode') as FormControl).setValue(this.couponCode);
   }
 }
