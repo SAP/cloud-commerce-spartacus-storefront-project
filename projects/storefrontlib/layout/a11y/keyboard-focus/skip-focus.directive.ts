@@ -47,9 +47,9 @@ export class SkipFocusDirective implements OnChanges {
     Array.from(focusableElements || []).forEach((el) => {
       const element = el as HTMLElement;
       const shouldSkip = skipSelectors.some((selector) => {
-        return (element as HTMLElement).matches(selector);
+        return element.matches(selector);
       });
-      if (!shouldSkip && this.isElementVisible(element as HTMLElement)) {
+      if (!shouldSkip && this.isElementVisible(element)) {
         element.setAttribute('tabindex', tabindex);
       }
     });
