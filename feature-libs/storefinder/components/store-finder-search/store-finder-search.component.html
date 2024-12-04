@@ -33,18 +33,18 @@
   <div class="row align-items-end" *cxFeature="'a11yStoreFinderLabel'">
     <div class="col-md-12 col-lg-6">
       <div class="form-group">
-        <label>
+        <label for="store-finder-search-input">
           <span class="text-left label-content">
             {{ 'storeFinder.findStoreBy' | cxTranslate }}
           </span>
           <div class="search-wrapper">
             <input
               #queryInput
+              id="store-finder-search-input"
               [formControl]="searchBox"
               (keyup)="onKey($event)"
               type="text"
               class="form-control"
-              [attr.aria-label]="'storeFinder.searchBoxLabel' | cxTranslate"
               placeholder="{{ 'storeFinder.searchBox' | cxTranslate }}"
             />
             <cx-icon
