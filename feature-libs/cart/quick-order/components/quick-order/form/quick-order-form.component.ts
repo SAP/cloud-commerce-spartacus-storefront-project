@@ -91,7 +91,7 @@ export class QuickOrderFormComponent implements OnInit, OnDestroy {
           'a11yQuickOrderSearchBoxRefocusOnClose'
         )
       ) {
-        setTimeout(() => {
+        requestAnimationFrame(() => {
           this.quickOrderInput.nativeElement.focus();
         });
       }
