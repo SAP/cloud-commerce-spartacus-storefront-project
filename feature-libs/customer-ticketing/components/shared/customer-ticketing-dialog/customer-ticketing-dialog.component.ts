@@ -94,7 +94,7 @@ export abstract class CustomerTicketingDialogComponent {
     protected customerTicketingFacade: CustomerTicketingFacade,
     protected routingService: RoutingService
   ) {
-    useFeatureStyles('a11yRemovePaddingOfCloseButton');
+    useFeatureStyles('a11yExpandedFocusIndicator');
   }
 
   protected buildForm(): void {

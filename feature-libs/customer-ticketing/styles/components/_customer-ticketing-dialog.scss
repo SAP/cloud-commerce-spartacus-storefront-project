@@ -90,13 +90,6 @@
           }
         }
       }
-
-      @include forFeature('a11yRemovePaddingOfCloseButton') {
-        .cx-customer-ticket-form-close {
-          padding: 0;
-        }
-      }
-
       @include cx-highContrastTheme {
         color: var(--cx-color-text);
         background-color: var(--cx-color-background);
