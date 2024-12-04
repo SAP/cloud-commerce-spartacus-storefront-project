@@ -8,7 +8,7 @@
 // NOT exposing all it to the public API.
 export * from './focus.directive';
 export { FocusConfig, TrapFocus, TrapFocusType } from './keyboard-focus.model';
-export { SkipFocusConfig } from './skip-focus.directive';
+export * from './skip-focus.directive';
 export * from './keyboard-focus.module';
 export * from './focus-testing.module';
 export * from './services/index';
