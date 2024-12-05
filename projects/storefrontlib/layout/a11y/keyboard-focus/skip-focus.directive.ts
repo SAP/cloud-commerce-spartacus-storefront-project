@@ -48,7 +48,7 @@ export class SkipFocusDirective implements OnChanges {
     isEnabled: boolean,
     skipSelectors: string[] = []
   ): void {
-    if(!this.winRef.isBrowser()) {
+    if (!this.winRef.isBrowser()) {
       return;
     }
     const tabindex = isEnabled ? '-1' : '0';
