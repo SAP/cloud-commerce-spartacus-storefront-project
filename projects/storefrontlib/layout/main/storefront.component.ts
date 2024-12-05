@@ -30,6 +30,7 @@ import { SkipLinkComponent } from '../a11y/skip-link/index';
 import { HamburgerMenuService } from '../header/hamburger-menu/hamburger-menu.service';
 import { StorefrontOutlets } from './storefront-outlets.model';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'cx-storefront',
@@ -40,7 +41,7 @@ export class StorefrontComponent implements OnInit, OnDestroy {
   focusConfig: FocusConfig = { disableMouseFocus: true, trap: false };
   skipFocusConfig: SkipFocusConfig = {
     isEnabled: false,
-    skipSelectors: ['button.cx-hamburger'],
+    activeElementSelectors: ['button.cx-hamburger'],
   };
   isExpanded$: Observable<boolean> = this.hamburgerMenuService.isExpanded;
 
@@ -117,7 +118,7 @@ export class StorefrontComponent implements OnInit, OnDestroy {
 
     if (this.featureConfigService.isEnabled('a11yHamburgerMenuTrapFocus')) {
       this.isExpanded$
-        .pipe(takeUntilDestroyed(this.destroyRef))
+        .pipe(distinctUntilChanged(), takeUntilDestroyed(this.destroyRef))
         .subscribe((isExpanded) => {
           this.focusConfig = { ...this.focusConfig, trap: isExpanded };
           this.skipFocusConfig = {

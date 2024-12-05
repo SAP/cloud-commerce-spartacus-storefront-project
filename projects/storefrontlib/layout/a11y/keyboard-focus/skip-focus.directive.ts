@@ -7,30 +7,42 @@
 import {
   Directive,
   ElementRef,
+  inject,
   Input,
   OnChanges,
-  SimpleChanges,
+  Renderer2,
 } from '@angular/core';
 import { WindowRef } from '@spartacus/core';
 
 export interface SkipFocusConfig {
   isEnabled: boolean;
-  skipSelectors?: string[];
+  /**
+   * elements selectors that should not be skipped
+   * for ex `activeElementSelectors: ['button.cx-hamburger']`
+   */
+  activeElementSelectors?: string[];
 }
-
+/**
+ * Directive that removes all visible and focusable elements
+ *
+ * in a host container from `tab` or `shift-tab` navigation
+ * except elements in `activeElementSelectors` config.
+ */
 @Directive({
   selector: '[cxSkipFocus]',
 })
 export class SkipFocusDirective implements OnChanges {
   @Input('cxSkipFocus') config: SkipFocusConfig = { isEnabled: false };
 
-  constructor(
-    protected elementRef: ElementRef,
-    protected winRef: WindowRef
-  ) {}
+  protected elementRef = inject(ElementRef);
+  protected winRef = inject(WindowRef);
+  protected renderer = inject(Renderer2);
 
-  public ngOnChanges(_changes: SimpleChanges): void {
-    this.excludeFromFocus(this.config.isEnabled, this.config.skipSelectors);
+  public ngOnChanges(): void {
+    this.excludeFromFocus(
+      this.config.isEnabled,
+      this.config.activeElementSelectors
+    );
   }
 
   protected excludeFromFocus(
@@ -50,7 +62,7 @@ export class SkipFocusDirective implements OnChanges {
         return element.matches(selector);
       });
       if (!shouldSkip && this.isElementVisible(element)) {
-        element.setAttribute('tabindex', tabindex);
+        this.renderer.setAttribute(element, 'tabindex', tabindex);
       }
     });
   }
