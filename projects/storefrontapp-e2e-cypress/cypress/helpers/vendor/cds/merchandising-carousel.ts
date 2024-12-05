@@ -295,21 +295,25 @@ export function verifyMerchandisingCarouselRendersOnPDPPage(
 }
 
 export function applyFacet(facetGroup: string, facetName: string): void {
-  cy.get('cx-product-facet-navigation') 
+  cy.get('cx-product-facet-navigation')
     .contains('button.tab-btn', facetGroup)
-    .parents('cx-product-facet-navigation') 
+    .parents('cx-product-facet-navigation')
     .within(() => {
-      cy.get('a.value').contains(facetName).click()
-    })
+      cy.get('a.value').contains(facetName).click();
+    });
 }
 
-export function openHiddenFacetAndApply(facetGroup: string, facetName: string): void {
-  cy.get('cx-product-facet-navigation') 
-    .contains('button.tab-btn', facetGroup).click ()
-    .parents('cx-product-facet-navigation') 
+export function openHiddenFacetAndApply(
+  facetGroup: string,
+  facetName: string
+): void {
+  cy.get('cx-product-facet-navigation')
+    .contains('button.tab-btn', facetGroup)
+    .click()
+    .parents('cx-product-facet-navigation')
     .within(() => {
-      cy.get('a.value').contains(facetName).click()
-    })
+      cy.get('a.value').contains(facetName).click();
+    });
 }
 
 export function verifyFirstCarouselItemTextContent(

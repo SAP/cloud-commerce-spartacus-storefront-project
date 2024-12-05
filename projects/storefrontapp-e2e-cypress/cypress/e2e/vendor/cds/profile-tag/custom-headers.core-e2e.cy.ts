@@ -90,7 +90,9 @@ describe('Custom header additions to occ calls', () => {
         expect(consentAccepted[2].data.granted).to.eq(true);
       });
 
-      cy.intercept({ method: 'GET', path: `${searchUrlPrefix}**` }).as("getSearch");
+      cy.intercept({ method: 'GET', path: `${searchUrlPrefix}**` }).as(
+        'getSearch'
+      );
 
       // search for cameras
       createProductQuery(QUERY_ALIAS.CAMERA, 'camera', 12);
