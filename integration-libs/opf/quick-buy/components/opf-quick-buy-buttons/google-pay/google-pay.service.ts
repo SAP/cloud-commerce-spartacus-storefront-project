@@ -16,9 +16,12 @@ import {
 import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
 import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
+  OPF_GOOGLE_PAY_PROVIDER_NAME,
   OPF_QUICK_BUY_ADDRESS_FIELD_PLACEHOLDER,
   OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
+  OpfQuickBuyConfig,
   OpfQuickBuyDeliveryType,
+  OpfQuickBuyGooglePayProvider,
   OpfQuickBuyLocation,
   OpfQuickBuyProviderType,
   QuickBuyTransactionDetails,
@@ -39,9 +42,7 @@ export class OpfGooglePayService {
     OpfQuickBuyTransactionService
   );
   protected opfQuickBuyButtonsService = inject(OpfQuickBuyButtonsService);
-
-  protected readonly GOOGLE_PAY_JS_URL =
-    'https://pay.google.com/gp/p/js/pay.js';
+  protected opfQuickBuyConfig = inject(OpfQuickBuyConfig);
 
   private googlePaymentClient: google.payments.api.PaymentsClient;
 
@@ -74,6 +75,22 @@ export class OpfGooglePayService {
         phoneNumberRequired: false,
       },
     };
+
+  protected readonly defaultGooglePayCardParameters: any = {
+    allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+    allowedCardNetworks: [
+      'AMEX',
+      'DISCOVER',
+      'INTERAC',
+      'JCB',
+      'MASTERCARD',
+      'VISA',
+    ],
+    billingAddressRequired: true,
+    billingAddressParameters: {
+      format: 'FULL',
+    },
+  };
 
   private initialTransactionInfo: google.payments.api.TransactionInfo = {
     totalPrice: '0.00',
@@ -138,8 +155,16 @@ export class OpfGooglePayService {
   }
 
   loadResources(): Promise<void> {
+    const opfGooglePayConfig: OpfQuickBuyGooglePayProvider | undefined =
+      this.opfQuickBuyConfig?.providers?.[OPF_GOOGLE_PAY_PROVIDER_NAME];
+
+    if (!opfGooglePayConfig?.resourceUrl?.length) {
+      return Promise.reject('Config not found');
+    }
     return this.opfResourceLoaderService.loadResources([
-      { url: this.GOOGLE_PAY_JS_URL },
+      {
+        url: opfGooglePayConfig.resourceUrl,
+      },
     ]);
   }
 
@@ -471,19 +496,7 @@ export class OpfGooglePayService {
     this.googlePaymentRequest.allowedPaymentMethods = [
       {
         parameters: {
-          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-          allowedCardNetworks: [
-            'AMEX',
-            'DISCOVER',
-            'INTERAC',
-            'JCB',
-            'MASTERCARD',
-            'VISA',
-          ],
-          billingAddressRequired: true,
-          billingAddressParameters: {
-            format: 'FULL',
-          },
+          ...this.defaultGooglePayCardParameters,
         },
         tokenizationSpecification: {
           parameters: {

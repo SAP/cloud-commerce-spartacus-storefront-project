@@ -172,6 +172,11 @@ export interface OpfPaymentRenderMethodEvent {
   isLoading: boolean;
   isError: boolean;
   renderType?: OpfPaymentRenderPattern;
-  data?: string | null;
+  html?: string | null;
   destination?: OpfPaymentDestination;
+}
+
+export interface OpfPaymentMethodDetails {
+  code?: string;
+  name?: string;
 }
