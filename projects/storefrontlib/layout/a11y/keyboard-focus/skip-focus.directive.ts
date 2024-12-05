@@ -24,7 +24,6 @@ export interface SkipFocusConfig {
 }
 /**
  * Directive that removes all visible and focusable elements
- *
  * in a host container from `tab` or `shift-tab` navigation
  * except elements in `activeElementSelectors` config.
  */
@@ -49,10 +48,12 @@ export class SkipFocusDirective implements OnChanges {
     isEnabled: boolean,
     skipSelectors: string[] = []
   ): void {
+    if(!this.winRef.isBrowser()) {
+      return;
+    }
     const tabindex = isEnabled ? '-1' : '0';
     const focusableElementsSelector =
       'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"]';
-
     const focusableElements = this.elementRef.nativeElement.querySelectorAll(
       focusableElementsSelector
     );
