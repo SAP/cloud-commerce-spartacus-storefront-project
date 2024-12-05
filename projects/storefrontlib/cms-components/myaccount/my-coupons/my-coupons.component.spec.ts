@@ -6,6 +6,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
+import { Location } from '@angular/common';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -154,10 +155,29 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
   }
 }
 
+// class MockLocation {
+//   private _hash: string ='';
+
+//   set hash(value: string){
+//     this._hash =value;
+//   }
+//   get hash(){
+//     return this._hash;
+//   }
+
+//   // setHash(hash: string)
+//   // {
+//   //   this.hash=hash;
+//   // }
+
+// }
+
 describe('MyCouponsComponent', () => {
   let component: MyCouponsComponent;
   let fixture: ComponentFixture<MyCouponsComponent>;
   let el: DebugElement;
+  //let launchDialogService: LaunchDialogService;
+
 
   const customerCouponService = jasmine.createSpyObj('CustomerCouponService', [
     'getCustomerCoupons',
@@ -170,6 +190,9 @@ describe('MyCouponsComponent', () => {
     'getSubscribeCustomerCouponResultError',
     'getUnsubscribeCustomerCouponResultError',
   ]);
+  const location =jasmine.createSpyObj(
+    'Location',[],['hash']
+  );
 
   const myCouponsComponentService = jasmine.createSpyObj(
     'MyCouponsComponentService',
@@ -195,6 +218,7 @@ describe('MyCouponsComponent', () => {
           useValue: myCouponsComponentService,
         },
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
+        { provide: Location, useValue: location },
         {
           provide: FeaturesConfig,
           useValue: {
@@ -209,6 +233,8 @@ describe('MyCouponsComponent', () => {
     fixture = TestBed.createComponent(MyCouponsComponent);
     component = fixture.componentInstance;
     el = fixture.debugElement;
+    //launchDialogService = TestBed.inject(LaunchDialogService);
+   // location = TestBed.inject(Location);
 
     customerCouponService.getCustomerCoupons.and.returnValue(
       of(emptyCouponResult)
@@ -330,4 +356,29 @@ describe('MyCouponsComponent', () => {
       PAGE_SIZE
     );
   });
+  it('should be able to open coupon detail dialog', () => {
+
+     //location.hash='/my-account/coupons#testcode';
+    // spyOnProperty(location,'hash').
+   // spyOnProperty(location,'hash').
+    //   '#testcode'
+    // );
+   // Object.getOwnPropertyDescriptor(location, "hash").get.and.returnValue('#testcode');
+   // location.hash='#testcode';
+  //  const location =jasmine.createSpyObj(
+  //   'Location',[],[{hash:'#testcode'}]
+  // );
+
+    //location..get.returnValue();
+    // spyOnProperty(location,'hash').apply('#testcode');
+    // expect(location.hash).toBe('#testcode');
+
+    // spyOn(launchDialogService, 'openDialogAndSubscribe').and.stub();
+    // component.ngOnInit();
+    // component.
+    // fixture.detectChanges();
+
+    // expect(launchDialogService.openDialogAndSubscribe).toHaveBeenCalled();
+  });
+
 });

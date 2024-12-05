@@ -235,4 +235,42 @@ describe('OccCustomerCouponAdapter', () => {
       mockReq.flush(customerCoupon2Customer);
     });
   });
+  describe('claim customer coupon with code in body', () => {
+    it('should claim a customer coupon for a given user id and coupon code with security way', () => {
+      const customerCoupon: CustomerCoupon = {
+        couponId: couponCode,
+        name: 'coupon 1',
+        startDate: '',
+        endDate: '',
+        status: 'Effective',
+        description: '',
+        notificationOn: true,
+      };
+      const customerCoupon2Customer: CustomerCoupon2Customer = {
+        coupon: customerCoupon,
+        customer: {},
+      };
+
+      occCustomerCouponAdapter
+        .claimCustomerCouponByPost(userId, couponCode)
+        .subscribe((result) => {
+          expect(result).toEqual(customerCoupon2Customer);
+        });
+
+      const mockReq = httpMock.expectOne((req) => {
+        return req.method === 'POST';
+      });
+
+      expect(occEnpointsService.buildUrl).toHaveBeenCalledWith('claimCustomerCoupon', {
+        urlParams: {
+          userId: userId,
+        },
+      });
+
+      expect(mockReq.cancelled).toBeFalsy();
+      expect(mockReq.request.body).toEqual({ couponCode: couponCode });
+      expect(mockReq.request.responseType).toEqual('json');
+      mockReq.flush(customerCoupon2Customer);
+    });
+  });
 });

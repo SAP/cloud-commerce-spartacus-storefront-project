@@ -136,7 +136,7 @@ describe('ClaimDialogComponent', () => {
 
   describe('Form Interactions', () => {
 
-    it('should call the service method on submit', () => {
+    it('should succeed on submit', () => {
       (form.get('couponCode') as FormControl).setValue(mockCoupon);
 
 
@@ -157,6 +157,26 @@ describe('ClaimDialogComponent', () => {
       expect(couponService.loadCustomerCoupons).toHaveBeenCalledTimes(1);
 
     });
+
+    it('should fail on submit', () => {
+      (form.get('couponCode') as FormControl).setValue(mockCoupon);
+
+
+      fixture.detectChanges();
+
+      couponService.claimCustomerCoupon.and.stub();
+      couponService.loadCustomerCoupons.and.stub();
+      couponService.getClaimCustomerCouponResultSuccess.and.returnValue(of(false));
+      routingService.go.and.stub();
+      globalMessageService.add.and.stub();
+      component.onSubmit();
+
+      expect(routingService.go).toHaveBeenCalledWith({ cxRoute: 'coupons' });
+
+    });
+
+
   });
+
 
 });
