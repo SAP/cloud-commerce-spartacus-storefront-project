@@ -279,15 +279,9 @@
       padding-bottom: 6px;
       padding-inline-start: 10px;
 
-      @include forFeature('a11yActiveAndFocusedSearchBoxComponent') {
+      @include forFeature('a11yKeyboardFocusInSearchBox') {
         &:focus-within {
           @include visible-focus();
-        }
-
-        &.mouse-focus {
-          &:focus-within {
-            outline: none;
-          }
         }
       }
 

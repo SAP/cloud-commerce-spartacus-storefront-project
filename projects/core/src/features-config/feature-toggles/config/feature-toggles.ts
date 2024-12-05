@@ -759,9 +759,10 @@ export interface FeatureTogglesInterface {
   a11yQuickOrderSearchBoxRefocusOnClose?: boolean;
 
   /**
-   * Adds styles for active and focused states in the `SearchBoxComponent`.
+   * Adds a visible focus indicator for keyboard navigation in the `SearchBoxComponent` without affecting the visual state for mouse interactions.
+   * Affects: SearchBoxComponent
    */
-  a11yActiveAndFocusedSearchBoxComponent?: boolean;
+  a11yKeyboardFocusInSearchBox?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -991,7 +992,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yDifferentiateFocusedAndSelected: false,
   a11yAddPaddingToCarouselPanel: false,
   a11yQuickOrderSearchBoxRefocusOnClose: false,
-  a11yActiveAndFocusedSearchBoxComponent: false,
+  a11yKeyboardFocusInSearchBox: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
