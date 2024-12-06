@@ -301,6 +301,12 @@
         background-color: var(--cx-color-inverse);
         z-index: 20;
         padding-top: 25px;
+
+        @include forFeature('a11yKeyboardFocusInSearchBox') {
+          &:focus-within {
+            outline: 0;
+          }
+        }
       }
     }
 
@@ -316,6 +322,13 @@
         height: 48px;
         border: 1px solid var(--cx-color-medium);
         border-radius: 4px;
+
+        @include forFeature('a11yKeyboardFocusInSearchBox') {
+          margin-right: 6px;
+          &:focus {
+            @include visible-focus();
+          }
+        }
       }
 
       flex-basis: 100%;
