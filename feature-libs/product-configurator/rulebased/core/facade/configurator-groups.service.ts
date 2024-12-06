@@ -270,6 +270,28 @@ export class ConfiguratorGroupsService {
   }
 
   /**
+   * Returns the description of the next group.
+   *
+   * @param {Configurator.Configuration} configuration - Configuration
+   * @returns {string} the description of the next group
+   */
+  getNextGroupDescription(configuration: Configurator.Configuration): string {
+    let description: string = '';
+    this.getNextGroupId(configuration.owner)
+      .pipe(take(1))
+      .subscribe((groupId) => {
+        if (groupId) {
+          const group = this.configuratorUtilsService.getGroupById(
+            configuration.groups,
+            groupId
+          );
+          description = group.description || '';
+        }
+      });
+    return description;
+  }
+
+  /**
    * Returns the group ID of the group that is preceding the current one in a sequential order.
    *
    * @param {CommonConfigurator.Owner} owner - Configuration owner
@@ -279,6 +301,30 @@ export class ConfiguratorGroupsService {
     owner: CommonConfigurator.Owner
   ): Observable<string | undefined> {
     return this.getNeighboringGroupId(owner, -1);
+  }
+
+  /**
+   * Returns the description of the previous group.
+   *
+   * @param {Configurator.Configuration} configuration - Configuration
+   * @returns {string} the description of the previous group
+   */
+  getPreviousGroupDescription(
+    configuration: Configurator.Configuration
+  ): string {
+    let description: string = '';
+    this.getPreviousGroupId(configuration.owner)
+      .pipe(take(1))
+      .subscribe((groupId) => {
+        if (groupId) {
+          const group = this.configuratorUtilsService.getGroupById(
+            configuration.groups,
+            groupId
+          );
+          description = group.description || '';
+        }
+      });
+    return description;
   }
 
   /**

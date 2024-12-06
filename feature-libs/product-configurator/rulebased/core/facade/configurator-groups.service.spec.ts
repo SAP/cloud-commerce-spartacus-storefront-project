@@ -10,7 +10,9 @@ import {
   GROUP_ID_2,
   GROUP_ID_3,
   GROUP_ID_4,
+  GROUP_ID_10,
   GROUP_ID_CONFLICT_3,
+  DESCRIPTION_FOR,
   productConfiguration,
   productConfigurationWithConflicts,
 } from '../../testing/configurator-test-data';
@@ -231,6 +233,28 @@ describe('ConfiguratorGroupsService', () => {
     });
   });
 
+  describe('getNextGroupDescription', () => {
+    it('should return description of next group', () => {
+      spyOn(configuratorCommonsService, 'getConfiguration').and.returnValue(
+        of(productConfiguration)
+      );
+      expect(classUnderTest.getNextGroupDescription(productConfiguration)).toBe(
+        DESCRIPTION_FOR + GROUP_ID_4
+      );
+    });
+
+    it('should return empty string if no next group exists', () => {
+      spyOn(configuratorCommonsService, 'getConfiguration').and.returnValue(
+        of(productConfiguration)
+      );
+      productConfiguration.interactionState.currentGroup = GROUP_ID_10;
+      expect(classUnderTest.getNextGroupDescription(productConfiguration)).toBe(
+        ''
+      );
+      productConfiguration.interactionState.currentGroup = GROUP_ID_2;
+    });
+  });
+
   describe('getPreviousGroupId', () => {
     it('should return a previous group ID', (done) => {
       spyOn(configuratorCommonsService, 'getConfiguration').and.returnValue(
@@ -287,6 +311,28 @@ describe('ConfiguratorGroupsService', () => {
         expect(groupId).toBe(GROUP_ID_1);
         done();
       });
+    });
+  });
+
+  describe('getPreviousGroupDescription', () => {
+    it('should return description of previous group', () => {
+      spyOn(configuratorCommonsService, 'getConfiguration').and.returnValue(
+        of(productConfiguration)
+      );
+      expect(
+        classUnderTest.getPreviousGroupDescription(productConfiguration)
+      ).toBe(DESCRIPTION_FOR + GROUP_ID_1);
+    });
+
+    it('should return empty string if no previous group exists', () => {
+      spyOn(configuratorCommonsService, 'getConfiguration').and.returnValue(
+        of(productConfiguration)
+      );
+      productConfiguration.interactionState.currentGroup = GROUP_ID_1;
+      expect(
+        classUnderTest.getPreviousGroupDescription(productConfiguration)
+      ).toBe('');
+      productConfiguration.interactionState.currentGroup = GROUP_ID_2;
     });
   });
 
