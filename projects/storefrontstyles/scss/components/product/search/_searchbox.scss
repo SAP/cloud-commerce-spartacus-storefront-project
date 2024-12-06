@@ -304,9 +304,7 @@
 
         @include forFeature('a11yKeyboardFocusInSearchBox') {
           &:focus-within {
-            padding-top: 27px;
-            padding-right: 10px;
-            padding-bottom: 8px;
+            padding: 27px 10px 8px;
             outline: 0;
           }
         }
