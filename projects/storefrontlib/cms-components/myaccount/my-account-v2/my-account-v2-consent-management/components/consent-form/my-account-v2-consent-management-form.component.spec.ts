@@ -4,9 +4,16 @@ import { By } from '@angular/platform-browser';
 import {
   ANONYMOUS_CONSENT_STATUS,
   ConsentTemplate,
+  FeatureConfigService,
   I18nTestingModule,
 } from '@spartacus/core';
 import { MyAccountV2ConsentManagementFormComponent } from './my-account-v2-consent-management-form.component';
+
+class MockFeatureConfigService {
+  isEnabled(): boolean {
+    return true;
+  }
+}
 
 describe('MyAccountV2ConsentManagementFormComponent', () => {
   let component: MyAccountV2ConsentManagementFormComponent;
@@ -17,6 +24,12 @@ describe('MyAccountV2ConsentManagementFormComponent', () => {
     TestBed.configureTestingModule({
       imports: [I18nTestingModule],
       declarations: [MyAccountV2ConsentManagementFormComponent],
+      providers: [
+        {
+          provide: FeatureConfigService,
+          useClass: MockFeatureConfigService,
+        },
+      ],
     }).compileComponents();
   }));
 
@@ -78,15 +91,16 @@ describe('MyAccountV2ConsentManagementFormComponent', () => {
         id: 'mock ID',
       };
       it('should emit an event', () => {
-        const consentGiven = true;
-        component.consentGiven = consentGiven;
+        component.consent = {
+          consentState: ANONYMOUS_CONSENT_STATUS.GIVEN,
+        };
         component.consentTemplate = mockConsentTemplate;
         spyOn(component.consentChanged, 'emit').and.stub();
 
         component.onConsentChange();
 
         expect(component.consentChanged.emit).toHaveBeenCalledWith({
-          given: !consentGiven,
+          given: false,
           template: mockConsentTemplate,
         });
       });

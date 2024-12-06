@@ -4,7 +4,7 @@
       type="checkbox"
       class="form-check-input"
       (change)="onConsentChange()"
-      [checked]="consentGiven"
+      [checked]="useGetterForIsConsentGiven ? isConsentGiven : consentGiven"
       [name]="consentTemplate.id"
       [disabled]="disabled || isRequired(consentTemplate?.id)"
     />
