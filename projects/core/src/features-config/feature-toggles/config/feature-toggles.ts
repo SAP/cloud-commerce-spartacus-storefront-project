@@ -266,6 +266,11 @@ export interface FeatureTogglesInterface {
   a11yCartImportConfirmationMessage?: boolean;
 
   /**
+   * In `AnonymousConsentDialogComponent` display notifications inside the modal without closing it
+   */
+  a11yAnonymousConsentMessageInDialog?: boolean;
+
+  /**
    * Changes 'order days' check list into a fieldset inside of 'CheckoutScheduleReplenishmentOrderComponent'.
    */
   a11yReplenishmentOrderFieldset?: boolean;
@@ -736,6 +741,15 @@ export interface FeatureTogglesInterface {
   a11ySearchboxAssistiveMessage?: boolean;
 
   /**
+   * Use getter for consent given state in order to react to updates in the consent state.
+   *
+   * Components affected:
+   * - `ConsentManagementFormComponent`
+   * - `MyAccountV2ConsentManagementFormComponent`
+   */
+  useGetterForIsConsentGiven?: boolean;
+
+  /**
    * Adds additional styling to help differentiate between focused and selected items in the list.
    * Affects: ConfiguratorAttributeSingleSelectionImageComponent, ProductImagesComponent
    */
@@ -889,6 +903,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yOrganizationsBanner: true,
   a11yOrganizationListHeadingOrder: true,
   a11yCartImportConfirmationMessage: false,
+  a11yAnonymousConsentMessageInDialog: false,
   a11yReplenishmentOrderFieldset: true,
   a11yListOversizedFocus: true,
   a11yStoreFinderOverflow: true,
@@ -967,6 +982,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yTextSpacingAdjustments: false,
   a11yTableHeaderReadout: false,
   a11ySearchboxAssistiveMessage: false,
+  useGetterForIsConsentGiven: false,
   a11yDifferentiateFocusedAndSelected: false,
   a11yAddPaddingToCarouselPanel: false,
   occCartNameAndDescriptionInHttpRequestBody: false,

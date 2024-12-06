@@ -4,11 +4,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import {
   AnonymousConsent,
   ANONYMOUS_CONSENT_STATUS,
   ConsentTemplate,
+  FeatureConfigService,
 } from '@spartacus/core';
 
 @Component({
@@ -35,6 +43,26 @@ export class ConsentManagementFormComponent implements OnInit {
     template: ConsentTemplate;
   }>();
 
+  get isConsentGiven(): boolean {
+    if (this.consent) {
+      return this.consent.consentState === ANONYMOUS_CONSENT_STATUS.GIVEN;
+    }
+    if (this.consentTemplate?.currentConsent) {
+      return (
+        !this.consentTemplate.currentConsent.consentWithdrawnDate &&
+        !!this.consentTemplate.currentConsent.consentGivenDate
+      );
+    }
+    return false;
+  }
+
+  private featureConfigService = inject(FeatureConfigService, {
+    optional: true,
+  });
+  get useGetterForIsConsentGiven(): boolean {
+    return !!this.featureConfigService?.isEnabled('useGetterForIsConsentGiven');
+  }
+
   constructor() {
     // Intentional empty constructor
   }
@@ -59,7 +87,9 @@ export class ConsentManagementFormComponent implements OnInit {
     this.consentGiven = !this.consentGiven;
 
     this.consentChanged.emit({
-      given: this.consentGiven,
+      given: this.useGetterForIsConsentGiven
+        ? !this.isConsentGiven
+        : this.consentGiven,
       template: this.consentTemplate,
     });
   }
