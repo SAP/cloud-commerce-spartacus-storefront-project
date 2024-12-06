@@ -24,8 +24,8 @@ import {
   FeatureConfigService,
   PageType,
   RoutingService,
-  WindowRef,
   useFeatureStyles,
+  WindowRef,
 } from '@spartacus/core';
 import { Observable, of, Subscription } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
@@ -480,6 +480,9 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
     ];
     // Focus on first index moving to last
     if (results.length) {
+      this.winRef.document
+        .querySelector('header')
+        ?.classList.remove('mouse-focus');
       if (focusedIndex >= results.length - 1) {
         results[0].focus();
       } else {
