@@ -157,6 +157,9 @@ export class QuickOrderFormComponent implements OnInit, OnDestroy {
 
     // Focus on first index moving to last
     if (results.length) {
+      this.winRef.document
+        .querySelector('main')
+        ?.classList.remove('mouse-focus');
       if (focusedIndex >= results.length - 1) {
         results[0].focus();
       } else {
