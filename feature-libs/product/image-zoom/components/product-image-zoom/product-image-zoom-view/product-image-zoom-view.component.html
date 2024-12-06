@@ -4,8 +4,8 @@
       <button
         class="btn btn-link"
         id="previouButton"
-        [attr.aria-label]="'carousel.previousSlide' | cxTranslate"
-        [attr.title]="'carousel.previousSlide' | cxTranslate"
+        [attr.aria-label]="'productImageZoomDialog.previousSlide' | cxTranslate"
+        [attr.title]="'productImageZoomDialog.previousSlide' | cxTranslate"
         *ngIf="getPreviousProduct(thumbs) | async as previousProduct"
         (click)="openImage(previousProduct.container)"
       >
@@ -85,8 +85,8 @@
       <button
         id="nextButton"
         class="btn btn-link"
-        [attr.aria-label]="'carousel.nextSlide' | cxTranslate"
-        [attr.title]="'carousel.nextSlide' | cxTranslate"
+        [attr.aria-label]="'productImageZoomDialog.nextSlide' | cxTranslate"
+        [attr.title]="'productImageZoomDialog.nextSlide' | cxTranslate"
         *ngIf="getNextProduct(thumbs) | async as nextProduct"
         (click)="openImage(nextProduct.container)"
       >
