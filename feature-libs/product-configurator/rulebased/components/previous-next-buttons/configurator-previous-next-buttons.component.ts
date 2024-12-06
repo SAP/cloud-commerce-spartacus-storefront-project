@@ -76,6 +76,20 @@ export class ConfiguratorPreviousNextButtonsComponent {
     );
   }
 
+  getPreviousGroupDescription(
+    configuration: Configurator.Configuration
+  ): string {
+    return this.configuratorGroupsService.getPreviousGroupDescription(
+      configuration
+    );
+  }
+
+  getNextGroupDescription(configuration: Configurator.Configuration): string {
+    return this.configuratorGroupsService.getNextGroupDescription(
+      configuration
+    );
+  }
+
   isFirstGroup(owner: CommonConfigurator.Owner): Observable<boolean> {
     return this.configuratorGroupsService
       .getPreviousGroupId(owner)
