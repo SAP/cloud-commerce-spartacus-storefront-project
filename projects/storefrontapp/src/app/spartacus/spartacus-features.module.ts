@@ -412,6 +412,7 @@ if (environment.cpq) {
         a11yQuickOrderSearchBoxRefocusOnClose: true,
         a11yKeyboardFocusInSearchBox: true,
         a11ySearchableDropdownFirstElementFocus: true,
+        a11yAlignConsentManagementButtonCenter: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,

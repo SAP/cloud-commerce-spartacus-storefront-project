@@ -10,9 +10,10 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { LaunchDialogService } from '../../../layout/launch-dialog/services/launch-dialog.service';
-import { LAUNCH_CALLER } from '../../../layout/launch-dialog/config/launch-config';
+import { useFeatureStyles } from '@spartacus/core';
 import { take } from 'rxjs/operators';
+import { LAUNCH_CALLER } from '../../../layout/launch-dialog/config/launch-config';
+import { LaunchDialogService } from '../../../layout/launch-dialog/services/launch-dialog.service';
 
 @Component({
   selector: 'cx-anonymous-consent-open-dialog',
@@ -24,7 +25,9 @@ export class AnonymousConsentOpenDialogComponent {
   constructor(
     protected vcr: ViewContainerRef,
     protected launchDialogService: LaunchDialogService
-  ) {}
+  ) {
+    useFeatureStyles('a11yAlignConsentManagementButtonCenter');
+  }
 
   openDialog(): void {
     const dialog = this.launchDialogService.openDialog(
