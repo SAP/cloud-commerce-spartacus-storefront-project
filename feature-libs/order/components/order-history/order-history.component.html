@@ -1,11 +1,11 @@
 <ng-container
   *ngIf="{
     orderHistory: orders$ | async,
-    replenishmentOrder: hasReplenishmentOrder$ | async
+    replenishmentOrder: hasReplenishmentOrder$ | async,
   } as type"
 >
   <ng-container *ngIf="type.orderHistory">
-    <div>
+    <div class="cx-order-history-container">
       <!-- HEADER -->
       <div
         [ngClass]="
@@ -103,7 +103,7 @@
                     [routerLink]="
                       {
                         cxRoute: 'orderDetails',
-                        params: order
+                        params: order,
                       } | cxUrl
                     "
                     [queryParams]="getQueryParams(order)"
@@ -122,7 +122,7 @@
                       [routerLink]="
                         {
                           cxRoute: 'orderDetails',
-                          params: order
+                          params: order,
                         } | cxUrl
                       "
                       [queryParams]="getQueryParams(order)"
@@ -140,7 +140,7 @@
                       [routerLink]="
                         {
                           cxRoute: 'orderDetails',
-                          params: order
+                          params: order,
                         } | cxUrl
                       "
                       [queryParams]="getQueryParams(order)"
@@ -159,7 +159,7 @@
                     [routerLink]="
                       {
                         cxRoute: 'orderDetails',
-                        params: order
+                        params: order,
                       } | cxUrl
                     "
                     [queryParams]="getQueryParams(order)"
@@ -175,7 +175,7 @@
                     [routerLink]="
                       {
                         cxRoute: 'orderDetails',
-                        params: order
+                        params: order,
                       } | cxUrl
                     "
                     [queryParams]="getQueryParams(order)"
@@ -195,7 +195,7 @@
                     [routerLink]="
                       {
                         cxRoute: 'orderDetails',
-                        params: order
+                        params: order,
                       } | cxUrl
                     "
                     [queryParams]="getQueryParams(order)"
@@ -243,6 +243,7 @@
                   [routerLink]="{ cxRoute: 'home' } | cxUrl"
                   routerLinkActive="active"
                   class="btn btn-primary btn-block"
+                  cxBtnLikeLink
                   >{{ 'orderHistory.startShopping' | cxTranslate }}</a
                 >
               </ng-template>

@@ -161,6 +161,10 @@ label {
       font-weight: var(--cx-font-weight-semi);
     }
   }
+
+  abbr.required-asterisk {
+    color: var(--cx-color-danger);
+  }
 }
 
 .notes-content {
@@ -502,5 +506,12 @@ form {
         background-color 0s 600000s,
         color 0s 600000s !important;
     }
+  }
+}
+
+input[cxpasswordvisibilityswitch] {
+  @include forFeature('a11yPasswordVisibilityBtnValueOverflow') {
+    $password-visibility-btn-width: 30px;
+    padding-inline-end: calc($password-visibility-btn-width + $input-padding-x);
   }
 }

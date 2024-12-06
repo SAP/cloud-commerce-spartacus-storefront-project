@@ -9,11 +9,13 @@ import {
   ChangeDetectorRef,
   Component,
   ComponentRef,
+  ElementRef,
   HostListener,
   Input,
   OnDestroy,
   OnInit,
   Optional,
+  ViewChild,
   inject,
 } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
@@ -27,8 +29,12 @@ import {
   CmsAddToCartComponent,
   EventService,
   FeatureConfigService,
+  FeatureToggles,
   Product,
+  ProductAvailabilityService,
+  ProductScope,
   isNotNullable,
+  useFeatureStyles,
 } from '@spartacus/core';
 import {
   CmsComponentData,
@@ -55,7 +61,14 @@ export class AddToCartComponent implements OnInit, OnDestroy {
    */
   @Input() product: Product;
 
+  /**
+   * Element responsible for opening the modal. The reference is used to refocus the modal after it closes.
+   */
+  @ViewChild('addToCartDialogTriggerEl') addToCartDialogTriggerEl: ElementRef;
+
   maxQuantity: number;
+
+  disabled: boolean = false;
 
   hasStock: boolean = false;
   inventoryThreshold: boolean = false;
@@ -65,7 +78,7 @@ export class AddToCartComponent implements OnInit, OnDestroy {
 
   quantity = 1;
 
-  subscription: Subscription;
+  subscription = new Subscription();
 
   addToCartForm = new UntypedFormGroup({
     quantity: new UntypedFormControl(1, { updateOn: 'blur' }),
@@ -77,9 +90,9 @@ export class AddToCartComponent implements OnInit, OnDestroy {
 
   iconTypes = ICON_TYPE;
 
-  @Optional() featureConfigService = inject(FeatureConfigService, {
-    optional: true,
-  });
+  private featureConfigService = inject(FeatureConfigService);
+  private featureToggles = inject(FeatureToggles);
+  private productAvailabilityService = inject(ProductAvailabilityService);
 
   /**
    * We disable the dialog launch on quantity input,
@@ -107,30 +120,37 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     protected component: CmsComponentData<CmsAddToCartComponent>,
     protected eventService: EventService,
     @Optional() protected productListItemContext?: ProductListItemContext
-  ) {}
+  ) {
+    useFeatureStyles('a11yQTY2Quantity');
+  }
 
   ngOnInit() {
     if (this.product) {
       this.productCode = this.product.code ?? '';
       this.setStockInfo(this.product);
-      this.cd.markForCheck();
     } else if (this.productCode) {
       // force hasStock and quantity for the time being, as we do not have more info:
       this.quantity = 1;
       this.hasStock = true;
       this.cd.markForCheck();
     } else {
-      this.subscription = (
-        this.productListItemContext
-          ? this.productListItemContext.product$
-          : this.currentProductService.getProduct()
-      )
-        .pipe(filter(isNotNullable))
-        .subscribe((product) => {
+      let product$: Observable<Product | null>;
+      if (this.productListItemContext) {
+        product$ = this.productListItemContext.product$;
+      } else if (this.featureToggles.showRealTimeStockInPDP) {
+        product$ = this.currentProductService.getProduct([
+          ProductScope.UNIT,
+          ProductScope.DETAILS,
+        ]);
+      } else {
+        product$ = this.currentProductService.getProduct();
+      }
+      this.subscription.add(
+        product$.pipe(filter(isNotNullable)).subscribe((product) => {
           this.productCode = product.code ?? '';
           this.setStockInfo(product);
-          this.cd.markForCheck();
-        });
+        })
+      );
     }
   }
 
@@ -138,17 +158,33 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     this.quantity = 1;
 
     this.addToCartForm.controls['quantity'].setValue(1);
-
-    this.hasStock = Boolean(product.stock?.stockLevelStatus !== 'outOfStock');
-
     this.inventoryThreshold = product.stock?.isValueRounded ?? false;
-
-    if (this.hasStock && product.stock?.stockLevel) {
-      this.maxQuantity = product.stock.stockLevel;
-    }
-
     if (this.productListItemContext) {
       this.showQuantity = false;
+    }
+
+    /**
+     * When removing the feature toggle in the future, let's leave the if-else block.
+     * In case of absent sapUnit we want to fallback to the stock info from the product object.
+     */
+    if (
+      this.featureToggles.showRealTimeStockInPDP &&
+      product.sapUnit?.sapCode
+    ) {
+      this.productAvailabilityService
+        .getRealTimeStock(this.productCode, product.sapUnit?.sapCode)
+        .pipe(take(1))
+        .subscribe(({ quantity, status }) => {
+          this.maxQuantity = Number(quantity);
+          this.hasStock = Boolean(status && status !== 'OUT_OF_STOCK');
+          this.cd.markForCheck();
+        });
+    } else {
+      this.hasStock = Boolean(product.stock?.stockLevelStatus !== 'outOfStock');
+      if (this.hasStock && product.stock?.stockLevel) {
+        this.maxQuantity = product.stock.stockLevel;
+      }
+      this.cd.markForCheck();
     }
   }
 
@@ -228,12 +264,34 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     newEvent.quantity = quantity;
     newEvent.numberOfEntriesBeforeAdd = numberOfEntriesBeforeAdd;
     newEvent.pickupStoreName = storeName;
+    if (this.featureConfigService.isEnabled('a11yDialogTriggerRefocus')) {
+      newEvent.triggerElementRef = this.addToCartDialogTriggerEl;
+    }
     return newEvent;
   }
 
-  ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
+  onPickupOptionsCompLoaded() {
+    if (
+      this.featureConfigService.isEnabled('a11yPickupOptionsTabs') &&
+      this.pickupOptionCompRef instanceof ComponentRef
+    ) {
+      this.subscription.add(
+        this.pickupOptionCompRef.instance.intendedPickupChange.subscribe(
+          (
+            intendedPickupLocation:
+              | { pickupOption?: 'pickup' | 'delivery'; displayName?: string }
+              | undefined
+          ) => {
+            this.disabled =
+              intendedPickupLocation?.pickupOption === 'pickup' &&
+              !intendedPickupLocation.displayName;
+          }
+        )
+      );
     }
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

@@ -11,11 +11,12 @@
           [routerLink]="
             {
               cxRoute: 'cancelServiceDetails',
-              params: order
+              params: order,
             } | cxUrl
           "
           [attr.aria-label]="'cancelService.action' | cxTranslate"
           class="btn btn-secondary"
+          cxBtnLikeLink
         >
           {{ 'cancelService.action' | cxTranslate }}
         </a>
@@ -27,13 +28,14 @@
           [routerLink]="
             {
               cxRoute: 'rescheduleServiceDetails',
-              params: order
+              params: order,
             } | cxUrl
           "
           [attr.aria-label]="
             'rescheduleService.actionButtonLabel' | cxTranslate
           "
           class="btn btn-secondary"
+          cxBtnLikeLink
         >
           {{ 'rescheduleService.actionButtonLabel' | cxTranslate }}
         </a>

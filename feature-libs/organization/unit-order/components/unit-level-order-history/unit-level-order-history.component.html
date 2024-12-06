@@ -1,6 +1,6 @@
 <ng-container
   *ngIf="{
-    orderHistory: orders$ | async
+    orderHistory: orders$ | async,
   } as type"
 >
   <ng-container *ngIf="type.orderHistory as orderHistory">
@@ -50,7 +50,10 @@
             id="order-history-table"
             class="table cx-unit-level-order-history-table"
           >
-            <thead class="cx-unit-level-order-history-thead-mobile">
+            <thead
+              *cxFeature="'!a11yTableHeaderReadout'"
+              class="cx-unit-level-order-history-thead-mobile"
+            >
               <th scope="col">
                 {{ 'unitLevelOrderHistory.orderId' | cxTranslate }}
               </th>
@@ -70,6 +73,31 @@
                 {{ 'unitLevelOrderHistory.total' | cxTranslate }}
               </th>
             </thead>
+            <thead
+              *cxFeature="'a11yTableHeaderReadout'"
+              class="cx-unit-level-order-history-thead-mobile"
+            >
+              <tr>
+                <th scope="col">
+                  {{ 'unitLevelOrderHistory.orderId' | cxTranslate }}
+                </th>
+                <th scope="col">
+                  {{ 'unitLevelOrderHistory.date' | cxTranslate }}
+                </th>
+                <th scope="col">
+                  {{ 'unitLevelOrderHistory.status' | cxTranslate }}
+                </th>
+                <th scope="col">
+                  {{ 'unitLevelOrderHistory.buyer' | cxTranslate }}
+                </th>
+                <th scope="col">
+                  {{ 'unitLevelOrderHistory.unit' | cxTranslate }}
+                </th>
+                <th scope="col">
+                  {{ 'unitLevelOrderHistory.total' | cxTranslate }}
+                </th>
+              </tr>
+            </thead>
             <tbody>
               <tr
                 *ngFor="let order of orderHistory?.orders"
@@ -83,7 +111,7 @@
                     [routerLink]="
                       {
                         cxRoute: 'unitLevelOrderDetail',
-                        params: order
+                        params: order,
                       } | cxUrl
                     "
                     class="cx-unit-level-order-history-value"
@@ -99,7 +127,7 @@
                     [routerLink]="
                       {
                         cxRoute: 'unitLevelOrderDetail',
-                        params: order
+                        params: order,
                       } | cxUrl
                     "
                     class="cx-unit-level-order-history-value"
@@ -115,7 +143,7 @@
                     [routerLink]="
                       {
                         cxRoute: 'unitLevelOrderDetail',
-                        params: order
+                        params: order,
                       } | cxUrl
                     "
                     class="cx-unit-level-order-history-value"
@@ -134,7 +162,7 @@
                     [routerLink]="
                       {
                         cxRoute: 'unitLevelOrderDetail',
-                        params: order
+                        params: order,
                       } | cxUrl
                     "
                     class="cx-unit-level-order-history-value"
@@ -153,7 +181,7 @@
                     [routerLink]="
                       {
                         cxRoute: 'unitLevelOrderDetail',
-                        params: order
+                        params: order,
                       } | cxUrl
                     "
                     class="cx-unit-level-order-history-value"
@@ -169,7 +197,7 @@
                     [routerLink]="
                       {
                         cxRoute: 'unitLevelOrderDetail',
-                        params: order
+                        params: order,
                       } | cxUrl
                     "
                     class="cx-unit-level-order-history-value"
@@ -223,6 +251,7 @@
                 [routerLink]="{ cxRoute: 'home' } | cxUrl"
                 routerLinkActive="active"
                 class="btn btn-primary btn-block"
+                cxBtnLikeLink
                 >{{ 'unitLevelOrderHistory.startShopping' | cxTranslate }}</a
               >
             </div>

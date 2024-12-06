@@ -15,9 +15,10 @@
         [routerLink]="
           {
             cxRoute: 'orderCancel',
-            params: order
+            params: order,
           } | cxUrl
         "
+        cxBtnLikeLink
         class="btn btn-block btn-secondary"
       >
         {{ 'orderDetails.cancellationAndReturn.cancelAction' | cxTranslate }}
@@ -28,9 +29,10 @@
         [routerLink]="
           {
             cxRoute: 'orderReturn',
-            params: order
+            params: order,
           } | cxUrl
         "
+        cxBtnLikeLink
         class="btn btn-block btn-secondary"
       >
         {{ 'orderDetails.cancellationAndReturn.returnAction' | cxTranslate }}
