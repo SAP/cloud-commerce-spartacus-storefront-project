@@ -748,6 +748,12 @@ export interface FeatureTogglesInterface {
   a11yAddPaddingToCarouselPanel?: boolean;
 
   /**
+   * Aligns the 'Consent Management' button to the center and ensures a strong, clear four-sided visible focus when navigated via keyboard.
+   * Affects: AnonymousConsentOpenDialogComponent
+   */
+  a11yAlignConsentManagementButtonCenter?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -975,6 +981,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11ySearchboxAssistiveMessage: false,
   a11yDifferentiateFocusedAndSelected: false,
   a11yAddPaddingToCarouselPanel: false,
+  a11yAlignConsentManagementButtonCenter: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,

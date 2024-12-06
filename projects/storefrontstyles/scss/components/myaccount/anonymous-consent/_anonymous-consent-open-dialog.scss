@@ -3,6 +3,10 @@
   justify-content: center;
   margin: 0 3vw 3vw 3vw;
 
+  @include forFeature('a11yAlignConsentManagementButtonCenter') {
+    margin: 1.5vw 3vw;
+  }
+
   @include media-breakpoint-down(sm) {
     justify-content: flex-start;
   }
