@@ -1,9 +1,8 @@
 <ng-container *ngIf="mainImage$ | async as main">
   <div class="cx-main-image-group" *ngIf="thumbnails$ | async as thumbs">
-    <div class="cx-navigate-image" aria-labelledby="previouButton">
+    <div class="cx-navigate-image">
       <button
         class="btn btn-link"
-        id="previouButton"
         [attr.aria-label]="'productImageZoomDialog.previousSlide' | cxTranslate"
         [attr.title]="'productImageZoomDialog.previousSlide' | cxTranslate"
         *ngIf="getPreviousProduct(thumbs) | async as previousProduct"
@@ -81,9 +80,8 @@
         >
         </cx-media></div
     ></ng-container>
-    <div class="cx-navigate-image" aria-labelledby="nextButton">
+    <div class="cx-navigate-image">
       <button
-        id="nextButton"
         class="btn btn-link"
         [attr.aria-label]="'productImageZoomDialog.nextSlide' | cxTranslate"
         [attr.title]="'productImageZoomDialog.nextSlide' | cxTranslate"
