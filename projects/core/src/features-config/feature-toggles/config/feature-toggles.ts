@@ -852,6 +852,12 @@ export interface FeatureTogglesInterface {
    */
   a11yWrapReviewOrderInSection?: boolean;
 
+  /**
+   * When enabled, enforces stronger password validation rules,
+   * including requirements for a mix of uppercase letters, lowercase letters,
+   * special characters, digits, and no consecutive characters,
+   * as well as enforcing both a minimum and maximum password length.
+   */
   enableSecurePasswordValidation?: boolean;
 }
 
