@@ -117,15 +117,7 @@ export class StorefrontComponent implements OnInit, OnDestroy {
     }
 
     if (this.featureConfigService.isEnabled('a11yHamburgerMenuTrapFocus')) {
-      this.isExpanded$
-        .pipe(distinctUntilChanged(), takeUntilDestroyed(this.destroyRef))
-        .subscribe((isExpanded) => {
-          this.focusConfig = { ...this.focusConfig, trap: isExpanded };
-          this.skipFocusConfig = {
-            ...this.skipFocusConfig,
-            isEnabled: isExpanded,
-          };
-        });
+      this.trapFocusOnMenuIfExpanded();
     }
   }
 
@@ -141,6 +133,18 @@ export class StorefrontComponent implements OnInit, OnDestroy {
 
   collapseMenu(): void {
     this.hamburgerMenuService.toggle(true);
+  }
+
+  protected trapFocusOnMenuIfExpanded(): void {
+    this.isExpanded$
+      .pipe(distinctUntilChanged(), takeUntilDestroyed(this.destroyRef))
+      .subscribe((isExpanded) => {
+        this.focusConfig = { ...this.focusConfig, trap: isExpanded };
+        this.skipFocusConfig = {
+          ...this.skipFocusConfig,
+          isEnabled: isExpanded,
+        };
+      });
   }
 
   protected focusOnFirstNavigationItem() {
