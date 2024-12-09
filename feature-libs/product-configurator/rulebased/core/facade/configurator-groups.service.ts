@@ -272,23 +272,31 @@ export class ConfiguratorGroupsService {
   /**
    * Returns the description of the next group.
    *
-   * @param {Configurator.Configuration} configuration - Configuration
-   * @returns {string} the description of the next group
+   * @param {Configurator.Configuration} configuration - configuration
+   * @returns {Observable<string>}  The description of the next group
    */
-  getNextGroupDescription(configuration: Configurator.Configuration): string {
-    let description: string = '';
-    this.getNextGroupId(configuration.owner)
-      .pipe(take(1))
-      .subscribe((groupId) => {
-        if (groupId) {
-          const group = this.configuratorUtilsService.getGroupById(
-            configuration.groups,
-            groupId
-          );
-          description = group.description || '';
-        }
-      });
-    return description;
+  getNextGroupDescription(
+    configuration: Configurator.Configuration
+  ): Observable<string> {
+    return this.getNextGroupId(configuration.owner).pipe(
+      map((groupId) =>
+        groupId ? this.getDescriptionForGroupId(groupId, configuration) : ''
+      )
+    );
+  }
+
+  protected getDescriptionForGroupId(
+    groupId: string,
+    configuration: Configurator.Configuration
+  ): string {
+    if (groupId) {
+      const group = this.configuratorUtilsService.getGroupById(
+        configuration.groups,
+        groupId
+      );
+      return group.description || '';
+    }
+    return '';
   }
 
   /**
@@ -306,25 +314,17 @@ export class ConfiguratorGroupsService {
   /**
    * Returns the description of the previous group.
    *
-   * @param {Configurator.Configuration} configuration - Configuration
-   * @returns {string} the description of the previous group
+   * @param {Configurator.Configuration} configuration - configuration
+   * @returns {Observable<string>}  The description of the previous group
    */
   getPreviousGroupDescription(
     configuration: Configurator.Configuration
-  ): string {
-    let description: string = '';
-    this.getPreviousGroupId(configuration.owner)
-      .pipe(take(1))
-      .subscribe((groupId) => {
-        if (groupId) {
-          const group = this.configuratorUtilsService.getGroupById(
-            configuration.groups,
-            groupId
-          );
-          description = group.description || '';
-        }
-      });
-    return description;
+  ): Observable<string> {
+    return this.getPreviousGroupId(configuration.owner).pipe(
+      map((groupId) =>
+        groupId ? this.getDescriptionForGroupId(groupId, configuration) : ''
+      )
+    );
   }
 
   /**

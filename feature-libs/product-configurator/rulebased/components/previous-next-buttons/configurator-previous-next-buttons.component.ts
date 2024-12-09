@@ -78,13 +78,15 @@ export class ConfiguratorPreviousNextButtonsComponent {
 
   getPreviousGroupDescription(
     configuration: Configurator.Configuration
-  ): string {
+  ): Observable<string> {
     return this.configuratorGroupsService.getPreviousGroupDescription(
       configuration
     );
   }
 
-  getNextGroupDescription(configuration: Configurator.Configuration): string {
+  getNextGroupDescription(
+    configuration: Configurator.Configuration
+  ): Observable<string> {
     return this.configuratorGroupsService.getNextGroupDescription(
       configuration
     );
