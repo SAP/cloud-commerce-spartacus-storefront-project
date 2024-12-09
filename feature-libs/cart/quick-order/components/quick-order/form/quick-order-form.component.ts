@@ -9,6 +9,7 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  inject,
   Input,
   OnDestroy,
   OnInit,
@@ -16,7 +17,13 @@ import {
 } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { QuickOrderFacade } from '@spartacus/cart/quick-order/root';
-import { Config, Product, WindowRef, useFeatureStyles } from '@spartacus/core';
+import {
+  Config,
+  FeatureConfigService,
+  Product,
+  useFeatureStyles,
+  WindowRef,
+} from '@spartacus/core';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import {
@@ -47,6 +54,7 @@ export class QuickOrderFormComponent implements OnInit, OnDestroy {
 
   protected subscription = new Subscription();
   protected searchSubscription = new Subscription();
+  private featureConfigService = inject(FeatureConfigService);
 
   constructor(
     public config: Config,
@@ -140,9 +148,15 @@ export class QuickOrderFormComponent implements OnInit, OnDestroy {
 
     // Focus on first index moving to last
     if (results.length) {
-      this.winRef.document
-        .querySelector('main')
-        ?.classList.remove('mouse-focus');
+      if (
+        this.featureConfigService.isEnabled(
+          'a11ySearchableDropdownFirstElementFocus'
+        )
+      ) {
+        this.winRef.document
+          .querySelector('main')
+          ?.classList.remove('mouse-focus');
+      }
       if (focusedIndex >= results.length - 1) {
         results[0].focus();
       } else {
