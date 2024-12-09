@@ -70,8 +70,25 @@ export function verifyClaimCouponSuccess(couponCode: string) {
   });
 }
 
+export function verifynewClaimCouponSuccess(couponCode: string) {
+  claimCouponWithCodeInBody(couponCode);
+  cy.location('pathname').should('contain', myCouponsUrl);
+  cy.get('.cx-coupon-card').within(() => {
+    cy.get('.cx-coupon-card-id').should('contain', couponCode);
+  });
+}
+
 export function verifyClaimCouponFail(couponCode: string) {
   claimCoupon(couponCode);
+  cy.location('pathname').should('contain', myCouponsUrl);
+  cy.get('.cx-coupon-card').within(() => {
+    cy.get('.cx-coupon-card-id').should('not.contain', couponCode);
+  });
+}
+
+
+export function verifyClaimCouponFailWithCodeInBody(couponCode: string) {
+  claimCouponWithCodeInBody(couponCode);
   cy.location('pathname').should('contain', myCouponsUrl);
   cy.get('.cx-coupon-card').within(() => {
     cy.get('.cx-coupon-card-id').should('not.contain', couponCode);
@@ -114,6 +131,26 @@ export function claimCoupon(couponCode: string) {
   cy.wait(`@${couponsPage}`);
   cy.wait(`@${getCoupons}`);
 }
+
+export function claimCouponWithCodeInBody(couponCode: string) {
+  const claimCoupon = waitForClaimCouponWithCodeInBody(couponCode);
+  const getCoupons = waitForGetCoupons();
+  const couponsPage = waitForPage(myCouponsUrl, 'getCouponsPage');
+  cy.visit(myCouponsUrl + '#'+couponCode);
+ 
+  verifyClaimDialog();
+  cy.wait(`@${claimCoupon}`);
+
+  cy.wait(`@${couponsPage}`);
+  cy.wait(`@${getCoupons}`);
+}
+
+
+export function verifyResetClaimCouponCode(couponCode: string) {
+  cy.visit(myCouponsUrl + '#'+ couponCode);
+  verifyResetByClickButton(couponCode);
+}
+
 
 export function createStandardUser() {
   standardUser.registrationData.email = generateMail(randomString(), true);
@@ -174,6 +211,22 @@ export function verifyReadMore() {
   cy.get('.cx-dialog-header span').click();
 }
 
+
+export function verifyClaimDialog() {
+  cy.get('cx-claim-dialog').should('exist');
+  cy.get('.cx-dialog-body .cx-dialog-row-submit-button .btn:first').click({ force: true });
+}
+
+export function verifyResetByClickButton(couponCode: string) {
+  cy.get('cx-claim-dialog').should('exist');
+  cy.get('.cx-dialog-body input').should('have.value', couponCode);
+  cy.get('[formcontrolname="couponCode"]').clear().type('resetTest');
+  cy.get('.cx-dialog-body input').should('have.value', 'resetTest');
+  cy.get('.cx-dialog-body .cx-dialog-row--reset-button .btn:first').click({ force: true });
+  cy.get('.cx-dialog-body input').should('have.value', couponCode);
+}
+
+
 export function verifyFindProduct(couponCode: string, productNumber: number) {
   const productSearchPage = waitForPage('search', 'getProductSearchPage');
 
@@ -205,6 +258,15 @@ export function waitForClaimCoupon(couponCode: string): string {
   return `${aliasName}`;
 }
 
+export function waitForClaimCouponWithCodeInBody(couponCode: string): string {
+  const aliasName = `claimCouponInBody_${couponCode}`;
+  cy.intercept({
+    method: 'POST',
+    url: `${pageUrl}/users/current/customercoupons/claim*`,
+  }).as(aliasName);
+  return `${aliasName}`;
+}
+
 export function waitForGetCoupons(): string {
   const aliasName = 'getCoupons';
   cy.intercept({
@@ -224,6 +286,25 @@ export function testClaimCustomerCoupon() {
     it('should not claim invalid customer coupon', () => {
       cy.restoreLocalStorage();
       verifyClaimCouponFail(invalidCouponCode);
+    });
+  });
+}
+
+export function testClaimCustomerCouponWithCodeInBody() {
+  describe('Claim customer coupon with code in requestBody', () => {
+    it('should claim customer coupon successfully with code in requestBody', () => {
+      verifynewClaimCouponSuccess(validCouponCode);
+      cy.saveLocalStorage();
+    });
+
+    it('should not claim invalid customer coupon', () => {
+      cy.restoreLocalStorage();
+      verifyClaimCouponFailWithCodeInBody(invalidCouponCode);
+    });
+
+    it('should reset coupon', () => {
+      cy.restoreLocalStorage();
+      verifyResetClaimCouponCode(validCouponCode);
     });
   });
 }

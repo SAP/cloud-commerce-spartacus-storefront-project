@@ -136,12 +136,21 @@ describe('ClaimDialogComponent', () => {
 
   describe('Form Interactions', () => {
 
+    it('should reset the coupon code after click reset button', () => {
+
+      component.ngOnInit();
+      expect(component.couponCode).toBe(mockCoupon);
+
+      (form.get('couponCode') as FormControl).setValue('testcodechanged');
+
+      component.cancelEdit();
+      fixture.detectChanges();
+      expect((form.get('couponCode') as FormControl).value).toBe(mockCoupon);
+    });
+
     it('should succeed on submit', () => {
       (form.get('couponCode') as FormControl).setValue(mockCoupon);
-
-
       fixture.detectChanges();
-
       couponService.claimCustomerCoupon.and.stub();
       couponService.loadCustomerCoupons.and.stub();
       couponService.getClaimCustomerCouponResultSuccess.and.returnValue(of(true));
@@ -154,27 +163,23 @@ describe('ClaimDialogComponent', () => {
         GlobalMessageType.MSG_TYPE_CONFIRMATION
       );
       expect(routingService.go).toHaveBeenCalledWith({ cxRoute: 'coupons' });
+      expect(couponService.claimCustomerCoupon).toHaveBeenCalledTimes(1);
       expect(couponService.loadCustomerCoupons).toHaveBeenCalledTimes(1);
 
     });
 
     it('should fail on submit', () => {
       (form.get('couponCode') as FormControl).setValue(mockCoupon);
-
-
       fixture.detectChanges();
-
       couponService.claimCustomerCoupon.and.stub();
       couponService.loadCustomerCoupons.and.stub();
       couponService.getClaimCustomerCouponResultSuccess.and.returnValue(of(false));
       routingService.go.and.stub();
       globalMessageService.add.and.stub();
       component.onSubmit();
-
       expect(routingService.go).toHaveBeenCalledWith({ cxRoute: 'coupons' });
 
     });
-
 
   });
 

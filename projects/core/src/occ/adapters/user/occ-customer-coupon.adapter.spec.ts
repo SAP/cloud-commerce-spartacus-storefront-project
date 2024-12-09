@@ -252,7 +252,7 @@ describe('OccCustomerCouponAdapter', () => {
       };
 
       occCustomerCouponAdapter
-        .claimCustomerCouponByPost(userId, couponCode)
+        .claimCustomerCouponWithCodeInBody(userId, couponCode)
         .subscribe((result) => {
           expect(result).toEqual(customerCoupon2Customer);
         });

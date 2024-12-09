@@ -155,28 +155,11 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
   }
 }
 
-// class MockLocation {
-//   private _hash: string ='';
-
-//   set hash(value: string){
-//     this._hash =value;
-//   }
-//   get hash(){
-//     return this._hash;
-//   }
-
-//   // setHash(hash: string)
-//   // {
-//   //   this.hash=hash;
-//   // }
-
-// }
-
 describe('MyCouponsComponent', () => {
   let component: MyCouponsComponent;
   let fixture: ComponentFixture<MyCouponsComponent>;
   let el: DebugElement;
-  //let launchDialogService: LaunchDialogService;
+  let launchDialogService: LaunchDialogService;
 
 
   const customerCouponService = jasmine.createSpyObj('CustomerCouponService', [
@@ -233,7 +216,7 @@ describe('MyCouponsComponent', () => {
     fixture = TestBed.createComponent(MyCouponsComponent);
     component = fixture.componentInstance;
     el = fixture.debugElement;
-    //launchDialogService = TestBed.inject(LaunchDialogService);
+    launchDialogService = TestBed.inject(LaunchDialogService);
    // location = TestBed.inject(Location);
 
     customerCouponService.getCustomerCoupons.and.returnValue(
@@ -356,29 +339,12 @@ describe('MyCouponsComponent', () => {
       PAGE_SIZE
     );
   });
-  it('should be able to open coupon detail dialog', () => {
-
-     //location.hash='/my-account/coupons#testcode';
-    // spyOnProperty(location,'hash').
-   // spyOnProperty(location,'hash').
-    //   '#testcode'
-    // );
-   // Object.getOwnPropertyDescriptor(location, "hash").get.and.returnValue('#testcode');
-   // location.hash='#testcode';
-  //  const location =jasmine.createSpyObj(
-  //   'Location',[],[{hash:'#testcode'}]
-  // );
-
-    //location..get.returnValue();
-    // spyOnProperty(location,'hash').apply('#testcode');
-    // expect(location.hash).toBe('#testcode');
-
-    // spyOn(launchDialogService, 'openDialogAndSubscribe').and.stub();
-    // component.ngOnInit();
-    // component.
-    // fixture.detectChanges();
-
-    // expect(launchDialogService.openDialogAndSubscribe).toHaveBeenCalled();
+  it('should be able to open coupon claim dialog if has hash str in location', () => {
+   spyOn(component,"getHashStr").and.returnValue(String('#testcode'));
+   component.ngOnInit();
+   spyOn(launchDialogService, 'openDialogAndSubscribe').and.stub();
+   fixture.detectChanges();
+   expect(launchDialogService.openDialogAndSubscribe).toHaveBeenCalled();
   });
 
 });

@@ -8,7 +8,8 @@
     .cx-coupon-container {
       @extend .modal-content;
       .cx-dialog-item {
-        padding-inline-end: 1rem;
+        padding-inline-end: 1.75rem;
+        padding-inline-start: 1.75rem;
       }
 
       .cx-dialog-header {
@@ -44,11 +45,10 @@
         display: flex;
         padding: 0 0 2.875rem;
         max-width: 100%;
-        flex-wrap: wrap;
-        margin-top: 3rem;
+        margin-top: 2.875rem;
+        margin-bottom: 1.5rem;
 
         @include media-breakpoint-down(sm) {
-          flex-direction: column;
           padding: 0;
         }
       }

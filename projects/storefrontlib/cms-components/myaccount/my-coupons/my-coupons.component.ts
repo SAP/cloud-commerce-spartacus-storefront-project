@@ -110,12 +110,11 @@ export class MyCouponsComponent implements OnInit, OnDestroy {
         })
     );
 
-    var hashStr=location.hash;
-    var resultStr = decodeURIComponent(hashStr);
+    var resultStr = decodeURIComponent(this.getHashStr());
     var index = resultStr.indexOf('#');
     if(index !==-1)
     {
-      const couponCode=hashStr.substring(index + 1);
+      const couponCode=resultStr.substring(index + 1);
       if(couponCode!==undefined && couponCode.length>0)
       {
       this.launchDialogService.openDialogAndSubscribe(
@@ -127,6 +126,11 @@ export class MyCouponsComponent implements OnInit, OnDestroy {
       }
     }
 
+  }
+
+  getHashStr()
+  {
+    return location.hash;
   }
 
   private subscriptionFail(error: boolean) {

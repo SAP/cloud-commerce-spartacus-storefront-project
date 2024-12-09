@@ -9,11 +9,9 @@ import {
   Component,
   OnDestroy,
   OnInit,
-  Input,
   ElementRef,
   HostListener,
 } from '@angular/core';
-
 import {
     FormControl,
     FormGroup,
@@ -21,8 +19,6 @@ import {
   } from '@angular/forms';
 
 import { Subscription } from 'rxjs';
-
-
 import {
   RoutingService,
   CustomerCouponService,
@@ -32,7 +28,6 @@ import {
 } from '@spartacus/core';
 import { FocusConfig, LaunchDialogService } from '../../../../layout/index';
 import { ICON_TYPE } from '../../../../cms-components/misc/icon/index';
-
 
 @Component({
   selector: 'cx-claim-dialog',
@@ -47,7 +42,7 @@ export class ClaimDialogComponent implements OnDestroy, OnInit {
   iconTypes = ICON_TYPE;
   private pageSize = 10;
 
-  @Input() couponCode: string;
+  couponCode: string;
 
   focusConfig: FocusConfig = {
     trap: true,

@@ -79,7 +79,7 @@ export class OccCustomerCouponAdapter implements CustomerCouponAdapter {
     return this.http.post(url, { headers });
   }
 
-  claimCustomerCouponByPost(
+  claimCustomerCouponWithCodeInBody(
     userId: string,
     couponCode: string
   ): Observable<CustomerCoupon2Customer> {
