@@ -47,11 +47,11 @@ class MockConfiguratorGroupsService {
   navigateToGroup() {}
 
   getPreviousGroupDescription() {
-    return 'previousGroupDescription';
+    return of('previousGroupDescription');
   }
 
   getNextGroupDescription() {
-    return 'nextGroupDescription';
+    return of('nextGroupDescription');
   }
 }
 
