@@ -21,6 +21,9 @@ class MockUserAdapter implements CustomerCouponAdapter {
   claimCustomerCoupon = createSpy('claimCustomerCoupon').and.callFake(
     (userId) => of(`claim-${userId}`)
   );
+  claimCustomerCouponWithCodeInBody = createSpy('claimCustomerCouponWithCodeInBody').and.callFake(
+    (userId) => of(`claim-${userId}`)
+  );
   disclaimCustomerCoupon = createSpy('disclaimCustomerCoupon').and.callFake(
     (userId) => of(`disclaim-${userId}`)
   );
@@ -90,6 +93,18 @@ describe('CustomerCouponConnector', () => {
       .subscribe((res) => (result = res));
     expect(result).toEqual('claim-userId');
     expect(adapter.claimCustomerCoupon).toHaveBeenCalledWith(
+      'userId',
+      'couponCode'
+    );
+  });
+
+  it('claimCustomerCouponWithCodeInBody should call adapter', () => {
+    let result;
+    service
+      .claimCustomerCoupon('userId', 'couponCode')
+      .subscribe((res) => (result = res));
+    expect(result).toEqual('claim-userId');
+    expect(adapter.claimCustomerCouponWithCodeInBody).toHaveBeenCalledWith(
       'userId',
       'couponCode'
     );
