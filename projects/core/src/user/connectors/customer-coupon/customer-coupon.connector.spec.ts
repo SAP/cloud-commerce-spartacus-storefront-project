@@ -92,18 +92,6 @@ describe('CustomerCouponConnector', () => {
       .claimCustomerCoupon('userId', 'couponCode')
       .subscribe((res) => (result = res));
     expect(result).toEqual('claim-userId');
-    expect(adapter.claimCustomerCoupon).toHaveBeenCalledWith(
-      'userId',
-      'couponCode'
-    );
-  });
-
-  it('claimCustomerCouponWithCodeInBody should call adapter', () => {
-    let result;
-    service
-      .claimCustomerCoupon('userId', 'couponCode')
-      .subscribe((res) => (result = res));
-    expect(result).toEqual('claim-userId');
     expect(adapter.claimCustomerCouponWithCodeInBody).toHaveBeenCalledWith(
       'userId',
       'couponCode'
