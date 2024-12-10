@@ -21,9 +21,9 @@ class MockUserAdapter implements CustomerCouponAdapter {
   claimCustomerCoupon = createSpy('claimCustomerCoupon').and.callFake(
     (userId) => of(`claim-${userId}`)
   );
-  claimCustomerCouponWithCodeInBody = createSpy('claimCustomerCouponWithCodeInBody').and.callFake(
-    (userId) => of(`claim-${userId}`)
-  );
+  claimCustomerCouponWithCodeInBody = createSpy(
+    'claimCustomerCouponWithCodeInBody'
+  ).and.callFake((userId) => of(`claim-${userId}`));
   disclaimCustomerCoupon = createSpy('disclaimCustomerCoupon').and.callFake(
     (userId) => of(`disclaim-${userId}`)
   );

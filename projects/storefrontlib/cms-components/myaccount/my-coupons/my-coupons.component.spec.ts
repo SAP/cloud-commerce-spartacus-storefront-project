@@ -146,10 +146,7 @@ class MockSortingComponent {
 }
 
 class MockLaunchDialogService implements Partial<LaunchDialogService> {
-  openDialogAndSubscribe(
-    _caller: LAUNCH_CALLER,
-    _openElement?: ElementRef,
-  ) {
+  openDialogAndSubscribe(_caller: LAUNCH_CALLER, _openElement?: ElementRef) {
     return EMPTY;
   }
 }
@@ -334,10 +331,10 @@ describe('MyCouponsComponent', () => {
   });
 
   it('should be able to open coupon claim dialog if has hash str in location', () => {
-    spyOn(component,"getHashStr").and.returnValue(String('#testcode'));
+    spyOn(component, 'getHashStr').and.returnValue(String('#testcode'));
     component.ngOnInit();
     spyOn(launchDialogService, 'openDialogAndSubscribe').and.stub();
     fixture.detectChanges();
     expect(launchDialogService.openDialogAndSubscribe).toHaveBeenCalled();
-   });
+  });
 });

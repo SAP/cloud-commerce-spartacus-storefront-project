@@ -68,8 +68,8 @@
       "label": "Coupon Code",
       "placeholder": "Enter the coupon code to claim a coupon"
     },
-    "reset":"RESET",
-    "claim":"CLAIM",
+    "reset": "RESET",
+    "claim": "CLAIM",
     "claimCustomerCoupon": "You have successfully claimed this coupon.",
     "myCoupons": "My coupons",
     "startDateAsc": "Start Date (ascending)",

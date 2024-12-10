@@ -12,11 +12,7 @@ import {
   ElementRef,
   HostListener,
 } from '@angular/core';
-import {
-    FormControl,
-    FormGroup,
-    Validators,
-  } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Subscription } from 'rxjs';
 import {
@@ -33,11 +29,8 @@ import { ICON_TYPE } from '../../../../cms-components/misc/icon/index';
   selector: 'cx-claim-dialog',
   templateUrl: './claim-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-
 })
-
 export class ClaimDialogComponent implements OnDestroy, OnInit {
-
   private subscription = new Subscription();
   iconTypes = ICON_TYPE;
   private pageSize = 10;
@@ -51,11 +44,9 @@ export class ClaimDialogComponent implements OnDestroy, OnInit {
     focusOnEscape: true,
   };
 
-  form: FormGroup = new FormGroup(
-        {
-          couponCode: new FormControl('', [Validators.required]),
-        }
-  );
+  form: FormGroup = new FormGroup({
+    couponCode: new FormControl('', [Validators.required]),
+  });
 
   @HostListener('click', ['$event'])
   handleClick(event: UIEvent): void {
@@ -69,7 +60,6 @@ export class ClaimDialogComponent implements OnDestroy, OnInit {
     protected messageService: GlobalMessageService,
     protected launchDialogService: LaunchDialogService,
     protected el: ElementRef
-
   ) {
     useFeatureStyles('a11yExpandedFocusIndicator');
   }
@@ -79,8 +69,10 @@ export class ClaimDialogComponent implements OnDestroy, OnInit {
       this.launchDialogService.data$.subscribe((data) => {
         if (data) {
           this.couponCode = data.coupon;
-          this.pageSize=data.pageSize;
-          (this.form.get('couponCode') as FormControl).setValue(this.couponCode);
+          this.pageSize = data.pageSize;
+          (this.form.get('couponCode') as FormControl).setValue(
+            this.couponCode
+          );
         }
       })
     );
@@ -91,28 +83,26 @@ export class ClaimDialogComponent implements OnDestroy, OnInit {
       this.form.markAllAsTouched();
       return;
     }
-      const couponVal = (this.form.get('couponCode') as FormControl).value;
-      if (couponVal) {
-        this.couponService.claimCustomerCoupon(couponVal);
-        this.subscription = this.couponService
-          .getClaimCustomerCouponResultSuccess()
-          .subscribe((success) => {
-            if (success) {
-              this.messageService.add(
-                { key: 'myCoupons.claimCustomerCoupon' },
-                GlobalMessageType.MSG_TYPE_CONFIRMATION
-              );
-            }
-            this.routingService.go({ cxRoute: 'coupons'});
-            this.couponService.loadCustomerCoupons(this.pageSize);
-            this.close('Cross click');
-          });
-      } else {
-        this.routingService.go({ cxRoute: 'notFound' });
-      }
-
+    const couponVal = (this.form.get('couponCode') as FormControl).value;
+    if (couponVal) {
+      this.couponService.claimCustomerCoupon(couponVal);
+      this.subscription = this.couponService
+        .getClaimCustomerCouponResultSuccess()
+        .subscribe((success) => {
+          if (success) {
+            this.messageService.add(
+              { key: 'myCoupons.claimCustomerCoupon' },
+              GlobalMessageType.MSG_TYPE_CONFIRMATION
+            );
+          }
+          this.routingService.go({ cxRoute: 'coupons' });
+          this.couponService.loadCustomerCoupons(this.pageSize);
+          this.close('Cross click');
+        });
+    } else {
+      this.routingService.go({ cxRoute: 'notFound' });
+    }
   }
-
 
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();

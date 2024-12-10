@@ -261,11 +261,14 @@ describe('OccCustomerCouponAdapter', () => {
         return req.method === 'POST';
       });
 
-      expect(occEnpointsService.buildUrl).toHaveBeenCalledWith('claimCustomerCoupon', {
-        urlParams: {
-          userId: userId,
-        },
-      });
+      expect(occEnpointsService.buildUrl).toHaveBeenCalledWith(
+        'claimCustomerCoupon',
+        {
+          urlParams: {
+            userId: userId,
+          },
+        }
+      );
 
       expect(mockReq.cancelled).toBeFalsy();
       expect(mockReq.request.body).toEqual({ couponCode: couponCode });

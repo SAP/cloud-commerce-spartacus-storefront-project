@@ -112,23 +112,19 @@ export class MyCouponsComponent implements OnInit, OnDestroy {
 
     const resultStr = decodeURIComponent(this.getHashStr());
     const index = resultStr.indexOf('#');
-    if(index !== -1)
-    {
-      const couponCode=resultStr.substring(index + 1);
-      if(couponCode!==undefined && couponCode.length>0)
-      {
-      this.launchDialogService.openDialogAndSubscribe(
-        LAUNCH_CALLER.CLAIM_DIALOG,
-         undefined,
-         { coupon: couponCode, pageSize: this.PAGE_SIZE }
-       );
-
+    if (index !== -1) {
+      const couponCode = resultStr.substring(index + 1);
+      if (couponCode !== undefined && couponCode.length > 0) {
+        this.launchDialogService.openDialogAndSubscribe(
+          LAUNCH_CALLER.CLAIM_DIALOG,
+          undefined,
+          { coupon: couponCode, pageSize: this.PAGE_SIZE }
+        );
       }
     }
   }
 
-  getHashStr()
-  {
+  getHashStr() {
     return location.hash;
   }
 

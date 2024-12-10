@@ -40,9 +40,8 @@ viewportContext(['mobile', 'desktop'], () => {
         win.sessionStorage.clear();
       });
       cy.requireLoggedIn();
-    });  
+    });
     myCoupons.testClaimCustomerCouponWithCodeInBody();
-
   });
 
   describe('My coupons - Authenticated user', () => {

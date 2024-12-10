@@ -135,7 +135,7 @@ export function claimCouponWithCodeInBody(couponCode: string) {
   const claimCoupon = waitForClaimCouponWithCodeInBody(couponCode);
   const getCoupons = waitForGetCoupons();
   const couponsPage = waitForPage(myCouponsUrl, 'getCouponsPage');
-  cy.visit(myCouponsUrl + '#'+couponCode);
+  cy.visit(myCouponsUrl + '#' + couponCode);
 
   verifyClaimDialog();
   cy.wait(`@${claimCoupon}`);
@@ -145,7 +145,7 @@ export function claimCouponWithCodeInBody(couponCode: string) {
 }
 
 export function verifyResetClaimCouponCode(couponCode: string) {
-  cy.visit(myCouponsUrl + '#'+ couponCode);
+  cy.visit(myCouponsUrl + '#' + couponCode);
   verifyResetByClickButton(couponCode);
 }
 
@@ -210,7 +210,9 @@ export function verifyReadMore() {
 
 export function verifyClaimDialog() {
   cy.get('cx-claim-dialog').should('exist');
-  cy.get('.cx-dialog-body .cx-dialog-row-submit-button .btn:first').click({ force: true });
+  cy.get('.cx-dialog-body .cx-dialog-row-submit-button .btn:first').click({
+    force: true,
+  });
 }
 
 export function verifyResetByClickButton(couponCode: string) {
@@ -218,7 +220,9 @@ export function verifyResetByClickButton(couponCode: string) {
   cy.get('.cx-dialog-body input').should('have.value', couponCode);
   cy.get('[formcontrolname="couponCode"]').clear().type('resetTest');
   cy.get('.cx-dialog-body input').should('have.value', 'resetTest');
-  cy.get('.cx-dialog-body .cx-dialog-row--reset-button .btn:first').click({ force: true });
+  cy.get('.cx-dialog-body .cx-dialog-row--reset-button .btn:first').click({
+    force: true,
+  });
   cy.get('.cx-dialog-body input').should('have.value', couponCode);
 }
 

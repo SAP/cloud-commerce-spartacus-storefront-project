@@ -38,7 +38,6 @@
     <!-- Modal Body -->
     <div class="cx-dialog-body modal-body">
       <form (ngSubmit)="onSubmit()" [formGroup]="form" class="cx-dialog-item">
-      
         <label>
           <span class="label-content"
             >{{ 'myCoupons.claimCouponCode.label' | cxTranslate }}
@@ -54,7 +53,7 @@
             }}"
             class="form-control"
           />
-  
+
           <!-- TODO: (CXSPA-7315) Remove feature toggle in the next major -->
           <cx-form-errors
             *cxFeature="'formErrorsDescriptiveMessages'"
@@ -67,29 +66,30 @@
             *cxFeature="'!formErrorsDescriptiveMessages'"
             [control]="form.get('couponCode')"
           ></cx-form-errors>
-        </label>  
-      <div class="cx-dialog-row">
-        <div class="col-md-6 cx-dialog-row--reset-button">
-        <a
-        role="button"
-        class="btn btn-block btn-secondary"
-        (click)="cancelEdit()"
-         >
-        {{ 'myCoupons.reset' | cxTranslate }}
-        </a>
-        </div>       
-        <div class="col-md-6 cx-dialog-row-submit-button">
-    
-         <button class="btn btn-block btn-primary" [disabled]="form.disabled">
-        {{ 'myCoupons.claim' | cxTranslate }}
-         </button>
-      </div>
-    </div>
-      </form> 
+        </label>
+        <div class="cx-dialog-row">
+          <div class="col-md-6 cx-dialog-row--reset-button">
+            <a
+              role="button"
+              class="btn btn-block btn-secondary"
+              (click)="cancelEdit()"
+            >
+              {{ 'myCoupons.reset' | cxTranslate }}
+            </a>
+          </div>
+          <div class="col-md-6 cx-dialog-row-submit-button">
+            <button
+              class="btn btn-block btn-primary"
+              [disabled]="form.disabled"
+            >
+              {{ 'myCoupons.claim' | cxTranslate }}
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>
-
 
 <ng-template #requiredAsterisk>
   <abbr
