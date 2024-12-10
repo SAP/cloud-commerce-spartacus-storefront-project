@@ -368,8 +368,8 @@ if (environment.cpq) {
         a11yFacetsDialogFocusHandling: true,
         headerLayoutForSmallerViewports: true,
         a11yStoreFinderAlerts: true,
-        a11yStoreFinderLabel: true,
         a11yFormErrorMuteIcon: true,
+        a11yStoreFinderLabel: true,
         a11yCxMessageFocus: true,
         occCartNameAndDescriptionInHttpRequestBody: true,
         a11yLinkBtnsToTertiaryBtns: true,
@@ -415,9 +415,9 @@ if (environment.cpq) {
         allPageMetaResolversEnabledInCsr: true,
         a11yPdpGridArrangement: true,
         useExtendedMediaComponentConfiguration: true,
-        a11yScrollToTopPositioning: true,
         showRealTimeStockInPDP: false,
         a11yWrapReviewOrderInSection: true,
+        enableCarouselCategoryProducts: true,
         enableSecurePasswordValidation: true,
       };
       return appFeatureToggles;
