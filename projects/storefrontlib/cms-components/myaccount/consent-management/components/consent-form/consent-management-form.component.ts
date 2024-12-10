@@ -9,8 +9,10 @@ import {
   EventEmitter,
   inject,
   Input,
+  OnChanges,
   OnInit,
   Output,
+  SimpleChanges,
 } from '@angular/core';
 import {
   AnonymousConsent,
@@ -23,7 +25,7 @@ import {
   selector: 'cx-consent-management-form',
   templateUrl: './consent-management-form.component.html',
 })
-export class ConsentManagementFormComponent implements OnInit {
+export class ConsentManagementFormComponent implements OnInit, OnChanges {
   consentGiven = false;
 
   @Input()
@@ -43,31 +45,41 @@ export class ConsentManagementFormComponent implements OnInit {
     template: ConsentTemplate;
   }>();
 
-  get isConsentGiven(): boolean {
-    if (this.consent) {
-      return this.consent.consentState === ANONYMOUS_CONSENT_STATUS.GIVEN;
-    }
-    if (this.consentTemplate?.currentConsent) {
-      return (
-        !this.consentTemplate.currentConsent.consentWithdrawnDate &&
-        !!this.consentTemplate.currentConsent.consentGivenDate
-      );
-    }
-    return false;
-  }
-
   private featureConfigService = inject(FeatureConfigService, {
     optional: true,
   });
-  get useGetterForIsConsentGiven(): boolean {
-    return !!this.featureConfigService?.isEnabled('useGetterForIsConsentGiven');
-  }
 
   constructor() {
     // Intentional empty constructor
   }
 
   ngOnInit(): void {
+    this.updateConsentGiven();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (
+      this.featureConfigService?.isEnabled('updateConsentGivenInOnChanges') &&
+      (changes.consent || changes.consentTemplate)
+    ) {
+      this.updateConsentGiven();
+    }
+  }
+
+  onConsentChange(): void {
+    this.consentGiven = !this.consentGiven;
+
+    this.consentChanged.emit({
+      given: this.consentGiven,
+      template: this.consentTemplate,
+    });
+  }
+
+  isRequired(templateId: string | undefined): boolean {
+    return templateId ? this.requiredConsents.includes(templateId) : false;
+  }
+
+  protected updateConsentGiven(): void {
     if (this.consent) {
       this.consentGiven = Boolean(
         this.consent.consentState === ANONYMOUS_CONSENT_STATUS.GIVEN
@@ -81,20 +93,5 @@ export class ConsentManagementFormComponent implements OnInit {
         }
       }
     }
-  }
-
-  onConsentChange(): void {
-    this.consentGiven = !this.consentGiven;
-
-    this.consentChanged.emit({
-      given: this.useGetterForIsConsentGiven
-        ? !this.isConsentGiven
-        : this.consentGiven,
-      template: this.consentTemplate,
-    });
-  }
-
-  isRequired(templateId: string | undefined): boolean {
-    return templateId ? this.requiredConsents.includes(templateId) : false;
   }
 }

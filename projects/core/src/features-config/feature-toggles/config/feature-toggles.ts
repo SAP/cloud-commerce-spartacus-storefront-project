@@ -741,13 +741,13 @@ export interface FeatureTogglesInterface {
   a11ySearchboxAssistiveMessage?: boolean;
 
   /**
-   * Use getter for consent given state in order to react to updates in the consent state.
+   * Updates the derivative `consentGiven` state when `consent` is updated.
    *
    * Components affected:
    * - `ConsentManagementFormComponent`
    * - `MyAccountV2ConsentManagementFormComponent`
    */
-  useGetterForIsConsentGiven?: boolean;
+  updateConsentGivenInOnChanges?: boolean;
 
   /**
    * Adds additional styling to help differentiate between focused and selected items in the list.
@@ -982,7 +982,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yTextSpacingAdjustments: false,
   a11yTableHeaderReadout: false,
   a11ySearchboxAssistiveMessage: false,
-  useGetterForIsConsentGiven: false,
+  updateConsentGivenInOnChanges: false,
   a11yDifferentiateFocusedAndSelected: false,
   a11yAddPaddingToCarouselPanel: false,
   occCartNameAndDescriptionInHttpRequestBody: false,

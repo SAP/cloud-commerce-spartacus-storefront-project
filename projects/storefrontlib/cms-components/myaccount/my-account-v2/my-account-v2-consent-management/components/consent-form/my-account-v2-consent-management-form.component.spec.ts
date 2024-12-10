@@ -91,16 +91,15 @@ describe('MyAccountV2ConsentManagementFormComponent', () => {
         id: 'mock ID',
       };
       it('should emit an event', () => {
-        component.consent = {
-          consentState: ANONYMOUS_CONSENT_STATUS.GIVEN,
-        };
+        const consentGiven = true;
+        component.consentGiven = consentGiven;
         component.consentTemplate = mockConsentTemplate;
         spyOn(component.consentChanged, 'emit').and.stub();
 
         component.onConsentChange();
 
         expect(component.consentChanged.emit).toHaveBeenCalledWith({
-          given: false,
+          given: !consentGiven,
           template: mockConsentTemplate,
         });
       });
