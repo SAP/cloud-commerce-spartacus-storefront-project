@@ -1,3 +1,13 @@
-<button #open class="btn btn-link" (click)="openDialog()">
-  {{ 'anonymousConsents.dialog.title' | cxTranslate }}
-</button>
+<ng-container *cxFeature="'!a11yHideConsentButtonWhenBannerVisible'">
+  <button #open class="btn btn-link" (click)="openDialog()">
+    {{ 'anonymousConsents.dialog.title' | cxTranslate }}
+  </button>
+</ng-container>
+
+<ng-container *cxFeature="'a11yHideConsentButtonWhenBannerVisible'">
+  <ng-container *ngIf="!(bannerVisible$ | async)">
+    <button #open class="btn btn-link" (click)="openDialog()">
+      {{ 'anonymousConsents.dialog.title' | cxTranslate }}
+    </button>
+  </ng-container>
+</ng-container>

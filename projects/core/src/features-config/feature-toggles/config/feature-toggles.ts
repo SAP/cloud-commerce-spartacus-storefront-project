@@ -796,10 +796,13 @@ export interface FeatureTogglesInterface {
   a11ySearchableDropdownFirstElementFocus?: boolean;
 
   /**
-   * Aligns the 'Consent Management' button to the center and ensures a strong, clear four-sided visible focus when navigated via keyboard.
-   * Affects: AnonymousConsentOpenDialogComponent
+   * Hides the 'Consent Management' button from the tab order when the cookies banner is visible.
+   * Ensures the button is re-enabled and part of the tab order once consent is given and the banner disappears.
+   * Renames the button from "View Details" to "Consent Management" after consent is given.
+   * Ensures the button is centered in the `AnonymousConsentOpenDialogComponent` and has clear, four-sided visible focus when navigated via keyboard.
+   * Affects: AnonymousConsentOpenDialogComponent, AnonymousConsentManagementBannerComponent
    */
-  a11yAlignConsentManagementButtonCenter?: boolean;
+  a11yHideConsentButtonWhenBannerVisible?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -1042,7 +1045,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yQuickOrderSearchBoxRefocusOnClose: false,
   a11yKeyboardFocusInSearchBox: false,
   a11ySearchableDropdownFirstElementFocus: false,
-  a11yAlignConsentManagementButtonCenter: false,
+  a11yHideConsentButtonWhenBannerVisible: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
