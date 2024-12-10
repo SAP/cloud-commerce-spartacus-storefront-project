@@ -10,7 +10,8 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { useFeatureStyles } from '@spartacus/core';
+import { AnonymousConsentsService, useFeatureStyles } from '@spartacus/core';
+import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { LAUNCH_CALLER } from '../../../layout/launch-dialog/config/launch-config';
 import { LaunchDialogService } from '../../../layout/launch-dialog/services/launch-dialog.service';
@@ -21,12 +22,15 @@ import { LaunchDialogService } from '../../../layout/launch-dialog/services/laun
 })
 export class AnonymousConsentOpenDialogComponent {
   @ViewChild('open') openElement: ElementRef;
+  bannerVisible$: Observable<boolean> =
+    this.anonymousConsentsService.isBannerVisible();
 
   constructor(
     protected vcr: ViewContainerRef,
+    protected anonymousConsentsService: AnonymousConsentsService,
     protected launchDialogService: LaunchDialogService
   ) {
-    useFeatureStyles('a11yAlignConsentManagementButtonCenter');
+    useFeatureStyles('a11yHideConsentButtonWhenBannerVisible');
   }
 
   openDialog(): void {
