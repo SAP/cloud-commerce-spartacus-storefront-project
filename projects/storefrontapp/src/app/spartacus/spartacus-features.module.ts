@@ -416,6 +416,7 @@ if (environment.cpq) {
         a11yPdpGridArrangement: true,
         useExtendedMediaComponentConfiguration: true,
         showRealTimeStockInPDP: false,
+        a11yScrollToTopPositioning: false,
         a11yWrapReviewOrderInSection: true,
         enableCarouselCategoryProducts: true,
         enableSecurePasswordValidation: true,
