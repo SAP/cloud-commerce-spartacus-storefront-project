@@ -24,7 +24,7 @@
     "typescript": "^5.2.2"
   },
   "ssr-tests": {
-    "@spartacus/core": "2211.32.0-1",
+    "@spartacus/core": "2211.32.0",
     "http-proxy": "^1.18.1",
     "jest-circus": "^29.0.0",
     "jest-environment-node": "^29.0.0"
@@ -400,11 +400,11 @@
     "@angular/forms": "^18.2.9",
     "@angular/router": "^18.2.9",
     "@sapui5/ts-types-esm": "1.120.1",
-    "@spartacus/cart": "2211.32.0-1",
-    "@spartacus/core": "2211.32.0-1",
-    "@spartacus/schematics": "2211.32.0-1",
-    "@spartacus/storefront": "2211.32.0-1",
-    "@spartacus/styles": "2211.32.0-1",
+    "@spartacus/cart": "2211.32.0",
+    "@spartacus/core": "2211.32.0",
+    "@spartacus/schematics": "2211.32.0",
+    "@spartacus/storefront": "2211.32.0",
+    "@spartacus/styles": "2211.32.0",
     "bootstrap": "^4.6.2",
     "rxjs": "^7.8.0"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@spartacus/cdp",
-  "version": "2211.32.0-1",
+  "version": "2211.32.0",
   "description": "Customer Data Platform Integration library for Spartacus",
   "keywords": [
     "spartacus",
