@@ -5,9 +5,12 @@
 </ng-container>
 
 <ng-container *cxFeature="'a11yHideConsentButtonWhenBannerVisible'">
-  <ng-container *ngIf="!(bannerVisible$ | async)">
-    <button #open class="btn btn-link" (click)="openDialog()">
-      {{ 'anonymousConsents.dialog.title' | cxTranslate }}
-    </button>
-  </ng-container>
+  <button
+    *ngIf="!(bannerVisible$ | async)"
+    #open
+    class="btn btn-link"
+    (click)="openDialog()"
+  >
+    {{ 'anonymousConsents.dialog.title' | cxTranslate }}
+  </button>
 </ng-container>
