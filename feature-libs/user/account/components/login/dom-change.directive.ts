@@ -13,19 +13,19 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[buttonAdded]',
+  selector: '[cxButtonAdded]',
 })
 export class DomChangeDirective implements OnDestroy {
   private changes: MutationObserver;
 
   @Output()
-  public buttonAdded = new EventEmitter();
+  public cxButtonAdded = new EventEmitter();
 
   constructor(private elementRef: ElementRef) {
     this.changes = new MutationObserver((mutations: MutationRecord[]) => {
       mutations
         .filter((mutation) => mutation.target?.nodeName === 'BUTTON')
-        .forEach((mutation) => this.buttonAdded.emit(mutation));
+        .forEach((mutation) => this.cxButtonAdded.emit(mutation));
     });
 
     this.changes.observe(this.elementRef.nativeElement, {
