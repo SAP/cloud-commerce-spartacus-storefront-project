@@ -7,10 +7,10 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  inject,
   OnDestroy,
   OnInit,
   Optional,
-  inject,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
@@ -28,7 +28,7 @@ import {
   TranslationService,
   UserPaymentService,
 } from '@spartacus/core';
-import { Card, ICON_TYPE } from '@spartacus/storefront';
+import { Card, ICON_TYPE, SelectFocusUtility } from '@spartacus/storefront';
 import {
   BehaviorSubject,
   combineLatest,
@@ -58,6 +58,7 @@ export class CheckoutPaymentMethodComponent implements OnInit, OnDestroy {
   @Optional() protected featureConfigService = inject(FeatureConfigService, {
     optional: true,
   });
+  @Optional() protected focusService = inject(SelectFocusUtility);
 
   cards$: Observable<{ content: Card; paymentMethod: PaymentDetails }[]>;
   iconTypes = ICON_TYPE;
@@ -218,6 +219,9 @@ export class CheckoutPaymentMethodComponent implements OnInit, OnDestroy {
     );
 
     this.savePaymentMethod(paymentDetails);
+    if (this.featureConfigService?.isEnabled('a11yFocusOnCardAfterSelecting')) {
+      this.focusService.focusCardAfterSelecting(this.isUpdating$);
+    }
   }
 
   showNewPaymentForm(): void {

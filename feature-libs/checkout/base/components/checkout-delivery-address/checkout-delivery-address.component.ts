@@ -26,7 +26,11 @@ import {
   UserAddressService,
   getLastValueSync,
 } from '@spartacus/core';
-import { Card, getAddressNumbers } from '@spartacus/storefront';
+import {
+  Card,
+  SelectFocusUtility,
+  getAddressNumbers,
+} from '@spartacus/storefront';
 import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
 import {
   distinctUntilChanged,
@@ -78,6 +82,8 @@ export class CheckoutDeliveryAddressComponent implements OnInit {
       distinctUntilChanged((prev, curr) => prev?.id === curr?.id)
     );
   }
+
+  @Optional() protected focusService = inject(SelectFocusUtility);
 
   constructor(
     protected userAddressService: UserAddressService,
@@ -155,6 +161,9 @@ export class CheckoutDeliveryAddressComponent implements OnInit {
     );
 
     this.setAddress(address);
+    if (this.featureConfigService?.isEnabled('a11yFocusOnCardAfterSelecting')) {
+      this.focusService.focusCardAfterSelecting(this.isUpdating$);
+    }
   }
 
   addAddress(address: Address | undefined): void {

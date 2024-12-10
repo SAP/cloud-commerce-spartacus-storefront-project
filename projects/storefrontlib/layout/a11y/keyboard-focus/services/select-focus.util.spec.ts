@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+  waitForAsync,
+} from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { of } from 'rxjs';
 import { SelectFocusUtility } from './select-focus.util';
 
 @Component({
@@ -175,5 +182,23 @@ describe('SelectFocusUtility', () => {
       const host = fixture.debugElement.query(By.css('#b')).nativeElement;
       expect(service.query(host, '')).toEqual([]);
     });
+  });
+
+  describe('focusCardAfterSelecting', () => {
+    it('should focus the selected card after selecting', fakeAsync(() => {
+      const card = document.createElement('cx-card');
+      const selectButton = document.createElement('button');
+      card.appendChild(selectButton);
+      card.tabIndex = 0;
+      document.body.appendChild(card);
+      selectButton.focus();
+      spyOn(card, 'focus');
+      spyOn(service, 'findFirstFocusable').and.returnValue(card);
+
+      service.focusCardAfterSelecting(of(false));
+      tick(16); // Wait for requestAnimationFrame
+
+      expect(card.focus).toHaveBeenCalled();
+    }));
   });
 });
