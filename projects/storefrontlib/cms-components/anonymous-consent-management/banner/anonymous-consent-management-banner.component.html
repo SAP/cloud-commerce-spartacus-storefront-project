@@ -34,11 +34,7 @@
         </div>
 
         <div class="col-xl-5 col-lg-6 col-xs-12 cx-banner-buttons">
-          <button
-            *cxFeature="'a11yHideConsentButtonWhenBannerVisible'"
-            class="btn btn-secondary"
-            (click)="viewDetails()"
-          >
+          <button class="btn btn-secondary" (click)="viewDetails()">
             {{ 'anonymousConsents.banner.consentManagement' | cxTranslate }}
           </button>
           <button class="btn btn-primary" (click)="allowAll()">
