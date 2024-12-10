@@ -205,7 +205,7 @@ describe('ResetPasswordComponentService', () => {
             );
           });
 
-          it('should not show error message', () => {
+          it('should not show error message when error is null', () => {
             spyOn(userPasswordService, 'reset').and.returnValue(
               throwError(() => null)
             );
@@ -213,7 +213,7 @@ describe('ResetPasswordComponentService', () => {
             expect(globalMessageService.add).not.toHaveBeenCalled();
           });
 
-          it('should not show error message', () => {
+          it('should not display an error message when HttpErrorModel has no details', () => {
             spyOn(userPasswordService, 'reset').and.returnValue(
               throwError(() => new HttpErrorModel())
             );
