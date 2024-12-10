@@ -405,7 +405,7 @@ if (environment.cpq) {
         a11yTextSpacingAdjustments: true,
         a11yTableHeaderReadout: true,
         a11ySearchboxAssistiveMessage: true,
-        useGetterForIsConsentGiven: true,
+        updateConsentGivenInOnChanges: true,
         a11yDifferentiateFocusedAndSelected: true,
         a11yAddPaddingToCarouselPanel: true,
         a11yQuickOrderSearchBoxRefocusOnClose: true,
