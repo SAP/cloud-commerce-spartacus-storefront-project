@@ -6,7 +6,7 @@
 
 import { DIALOG_TYPE, LayoutConfig } from '../../../layout/index';
 import { CouponDialogComponent } from './coupon-card/coupon-dialog/coupon-dialog.component';
-import { ClaimDialogComponent } from './claim-dialog/claim-dialog.component'
+import { ClaimDialogComponent } from './claim-dialog/claim-dialog.component';
 
 export const defaultCouponLayoutConfig: LayoutConfig = {
   launch: {

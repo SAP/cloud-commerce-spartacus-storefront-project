@@ -238,10 +238,10 @@ export interface OccEndpoints {
    */
   claimCoupon?: string | OccEndpoint;
    /**
-   * Endpoint for claiming coupon with code in request body
-   *
-   * @member {string}
-   */
+    * Endpoint for claiming coupon with code in request body
+    *
+    * @member {string}
+    */
    claimCustomerCoupon?: string | OccEndpoint;
   /**
    * Endpoint for coupons
