@@ -110,7 +110,7 @@ export class MyCouponsComponent implements OnInit, OnDestroy {
         })
     );
 
-    let resultStr = decodeURIComponent(this.getHashStr());
+    const resultStr = decodeURIComponent(this.getHashStr());
     const index = resultStr.indexOf('#');
     if(index !== -1)
     {
