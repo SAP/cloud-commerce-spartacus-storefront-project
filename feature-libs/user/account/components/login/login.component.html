@@ -4,7 +4,8 @@
       {{ greeting$ | async }}
     </div>
     <cx-page-slot
-      (cxButtonAdded)="onDomChange(greeting)"
+      (cxDomChange)="onRootNavBtnAdded($event, greeting)"
+      cxDomChangeTargetSelector="nav ul li:first-child button"
       id="account-nav"
       position="HeaderLinks"
     ></cx-page-slot>

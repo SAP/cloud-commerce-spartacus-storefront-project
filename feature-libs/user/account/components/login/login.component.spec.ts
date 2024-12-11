@@ -159,15 +159,18 @@ describe('LoginComponent', () => {
     });
 
     it('should contain the dynamic slot: HeaderLinks', () => {
-      spyOn(component, 'onDomChange').and.callThrough();
+      spyOn(component, 'onRootNavBtnAdded').and.callThrough();
       component.ngOnInit();
       fixture.detectChanges();
       expectedGreeting = 'Testing;';
-      component.onDomChange(expectedGreeting);
       const expectedRootNavBtn = fixture.debugElement.query(
         By.css('cx-navigation-ui nav ul li:first-child button')
       );
-      console.log('Button', expectedRootNavBtn);
+      const mockedMutation = {
+        target: expectedRootNavBtn.nativeNode,
+      } as MutationRecord;
+      expect(expectedRootNavBtn.nativeElement.ariaLabel).toBe(null);
+      component.onRootNavBtnAdded(mockedMutation, expectedGreeting);
       expect(expectedRootNavBtn).not.toBeNull();
       expect(expectedRootNavBtn.nativeElement.ariaLabel).toBe(expectedGreeting);
     });

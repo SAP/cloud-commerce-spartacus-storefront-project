@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   AuthService,
   TranslationService,
@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private userAccount: UserAccountFacade,
-    private elemRef: ElementRef,
     private translation: TranslationService
   ) {
     useFeatureStyles('a11yMyAccountLinkOutline');
@@ -50,12 +49,7 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  onDomChange(greeting: string) {
-    const target = this.elemRef.nativeElement.querySelector(
-      'cx-navigation-ui nav ul li:first-child button'
-    );
-    if (target) {
-      target.setAttribute('aria-label', greeting);
-    }
+  onRootNavBtnAdded($event: MutationRecord, greeting: string) {
+    ($event.target as HTMLElement).setAttribute('aria-label', greeting);
   }
 }
