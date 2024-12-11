@@ -13,12 +13,18 @@ import {
   provideDefaultConfig,
   UrlModule,
 } from '@spartacus/core';
-import { PageSlotModule } from '@spartacus/storefront';
+import { DomChangeModule, PageSlotModule } from '@spartacus/storefront';
 import { LoginComponent } from './login.component';
-import { DomChangeDirective } from './dom-change.directive';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, UrlModule, PageSlotModule, I18nModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    UrlModule,
+    PageSlotModule,
+    I18nModule,
+    DomChangeModule,
+  ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {
@@ -28,6 +34,6 @@ import { DomChangeDirective } from './dom-change.directive';
       },
     }),
   ],
-  declarations: [LoginComponent, DomChangeDirective],
+  declarations: [LoginComponent],
 })
 export class LoginModule {}

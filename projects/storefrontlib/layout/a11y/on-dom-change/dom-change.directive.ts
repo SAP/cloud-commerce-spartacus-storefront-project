@@ -28,7 +28,7 @@ import {
   selector: '[cxDomChange]',
 })
 export class DomChangeDirective implements OnDestroy {
-  private changes: MutationObserver;
+  protected changes: MutationObserver;
 
   /**
    * Optional Css Selector Input filtering DOM mutations to those targeting only elements described via provided selector
