@@ -8,6 +8,7 @@ import {
   Directive,
   ElementRef,
   EventEmitter,
+  inject,
   Input,
   OnDestroy,
   Output,
@@ -38,7 +39,10 @@ export class DomChangeDirective implements OnDestroy {
   @Output()
   public cxDomChange = new EventEmitter<MutationRecord>();
 
-  constructor(private elementRef: ElementRef) {
+  protected elementRef: ElementRef;
+
+  constructor() {
+    this.elementRef = inject(ElementRef);
     this.changes = new MutationObserver((mutations: MutationRecord[]) => {
       const affectedMutations = this.cxDomChangeTargetSelector
         ? mutations.filter(
