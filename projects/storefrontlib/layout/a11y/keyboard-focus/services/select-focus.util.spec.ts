@@ -183,22 +183,4 @@ describe('SelectFocusUtility', () => {
       expect(service.query(host, '')).toEqual([]);
     });
   });
-
-  describe('focusCardAfterSelecting', () => {
-    it('should focus the selected card after selecting', fakeAsync(() => {
-      const card = document.createElement('cx-card');
-      const selectButton = document.createElement('button');
-      card.appendChild(selectButton);
-      card.tabIndex = 0;
-      document.body.appendChild(card);
-      selectButton.focus();
-      spyOn(card, 'focus');
-      spyOn(service, 'findFirstFocusable').and.returnValue(card);
-
-      service.focusCardAfterSelecting(of(false));
-      tick(16); // Wait for requestAnimationFrame
-
-      expect(card.focus).toHaveBeenCalled();
-    }));
-  });
 });

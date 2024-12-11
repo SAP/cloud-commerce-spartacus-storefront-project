@@ -4,9 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { inject, Injectable, Optional } from '@angular/core';
-import { WindowRef } from '@spartacus/core';
-import { filter, Observable, take } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { AutoFocusConfig } from '../keyboard-focus.model';
 
 @Injectable({
@@ -33,8 +31,6 @@ export class SelectFocusUtility {
 
   protected focusableSelectorSuffix =
     ':not([disabled]):not([hidden]):not([aria-hidden])';
-
-  @Optional() protected windowRef = inject(WindowRef);
 
   query(host: HTMLElement | null | undefined, selector: string): HTMLElement[] {
     if (!selector || selector === '') {
@@ -95,35 +91,5 @@ export class SelectFocusUtility {
    */
   protected isHidden(el: HTMLElement): boolean {
     return el.offsetParent === null;
-  }
-
-  /**
-   * Restores the focus to the Card component after it has been selected and the checkout has finished updating.
-   * It is used for cases where the focus is lost due to DOM changes making it impossible to target elements that have been modified.
-   * @param isUpdating$ An observable that emits a boolean to indicate whether the component is updating.
-   */
-  focusCardAfterSelecting(isUpdating$: Observable<boolean>): void {
-    const cardNodes = Array.from(
-      this.windowRef?.document.querySelectorAll('cx-card')
-    );
-    const triggeredCard =
-      this.windowRef?.document.activeElement?.closest('cx-card');
-
-    if (triggeredCard) {
-      const selectedCardIndex = cardNodes.indexOf(triggeredCard);
-      isUpdating$
-        .pipe(
-          filter((isUpdating) => !isUpdating),
-          take(1)
-        )
-        .subscribe(() => {
-          requestAnimationFrame(() => {
-            const selectedCard = this.windowRef?.document.querySelectorAll(
-              'cx-card'
-            )[selectedCardIndex] as HTMLElement;
-            this.findFirstFocusable(selectedCard)?.focus();
-          });
-        });
-    }
   }
 }
