@@ -21,12 +21,26 @@ import { CmsMerchandisingCarouselComponent as model } from '../../../cds-models/
 import { MerchandisingProduct } from '../../model/index';
 import { MerchandisingCarouselComponentService } from './merchandising-carousel.component.service';
 import { MerchandisingCarouselModel } from './model/index';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { AttributesDirective } from '../directives/attributes/attributes.directive';
+import { CarouselComponent } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { MediaComponent } from '@spartacus/storefront';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-merchandising-carousel',
   templateUrl: './merchandising-carousel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    AttributesDirective,
+    CarouselComponent,
+    RouterLink,
+    MediaComponent,
+    AsyncPipe,
+    UrlPipe,
+  ],
 })
 export class MerchandisingCarouselComponent {
   protected lastEventModelId: string;

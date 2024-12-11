@@ -14,11 +14,12 @@ import {
 import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-customer-ticketing-create',
   templateUrl: './customer-ticketing-create.component.html',
-  standalone: false,
+  imports: [TranslatePipe],
 })
 export class CustomerTicketingCreateComponent implements OnDestroy {
   protected subscription = new Subscription();

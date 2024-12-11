@@ -12,11 +12,14 @@ import {
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { IconComponent } from '../icon/icon.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-global-message',
   templateUrl: './global-message.component.html',
-  standalone: false,
+  imports: [NgIf, NgFor, IconComponent, AsyncPipe, TranslatePipe],
 })
 export class GlobalMessageComponent implements OnInit {
   iconTypes = ICON_TYPE;

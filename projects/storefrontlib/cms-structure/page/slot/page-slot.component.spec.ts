@@ -56,7 +56,6 @@ class MockDynamicAttributeService {
       class="existing-style and-more"
     ></cx-page-slot>
   `,
-  standalone: false,
 })
 class MockHostComponent {}
 
@@ -64,7 +63,6 @@ class MockHostComponent {}
   template: `
     <div cx-page-slot position="Section2" class="existing-style and-more"></div>
   `,
-  standalone: false,
 })
 class MockHostWithDivComponent {}
 
@@ -77,10 +75,7 @@ class MockDeferLoaderService {
 class MockPageSlotService implements Partial<PageSlotService> {
   getComponentDeferOptions = () => undefined;
 }
-@Directive({
-  selector: '[cxComponentWrapper]',
-  standalone: false,
-})
+@Directive({ selector: '[cxComponentWrapper]' })
 class MockComponentWrapperDirective {
   @Input() cxComponentWrapper;
 }
@@ -114,7 +109,7 @@ describe('PageSlotComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         PageSlotComponent,
         OutletDirective,
         SkipLinkDirective,

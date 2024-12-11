@@ -35,12 +35,28 @@ import { ICON_TYPE } from '../../../../misc/icon/icon.model';
 import { FacetGroupCollapsedState, FacetList } from '../facet.model';
 import { FacetComponent } from '../facet/facet.component';
 import { FacetService } from '../services/facet.service';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FocusDirective } from '../../../../../layout/a11y/keyboard-focus/focus.directive';
+import { IconComponent } from '../../../../misc/icon/icon.component';
+import { FeatureDirective } from '@spartacus/core';
+import { TabComponent } from '../../../../content/tab/tab.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-facet-list',
   templateUrl: './facet-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FocusDirective,
+    IconComponent,
+    FeatureDirective,
+    TabComponent,
+    NgFor,
+    FacetComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class FacetListComponent implements OnInit, OnDestroy, AfterViewInit {
   protected subscriptions = new Subscription();

@@ -69,7 +69,13 @@ const mockEntries: OrderEntry[] = [{ entryNumber: 123 }, { entryNumber: 456 }];
 @Component({
   selector: 'cx-card',
   template: '',
-  standalone: false,
+  imports: [
+    I18nTestingModule,
+    PromotionsModule,
+    RouterTestingModule,
+    IconTestingModule,
+    OutletModule,
+  ],
 })
 class MockCardComponent {
   @Input()
@@ -135,10 +141,7 @@ class MockCheckoutStepService {
   getCheckoutStep = createSpy().and.returnValue(mockCheckoutStep);
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -155,8 +158,6 @@ describe('CheckoutReviewSubmitComponent', () => {
         RouterTestingModule,
         IconTestingModule,
         OutletModule,
-      ],
-      declarations: [
         CheckoutReviewSubmitComponent,
         MockCardComponent,
         MockUrlPipe,

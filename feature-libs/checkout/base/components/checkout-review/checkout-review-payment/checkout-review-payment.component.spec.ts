@@ -66,17 +66,14 @@ class MockCheckoutStepService {
 @Component({
   selector: 'cx-card',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, RouterTestingModule, IconTestingModule],
 })
 class MockCardComponent {
   @Input()
   content: Card;
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -87,8 +84,10 @@ describe('CheckoutReviewPaymentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule, IconTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        IconTestingModule,
         CheckoutReviewPaymentComponent,
         MockUrlPipe,
         MockCardComponent,

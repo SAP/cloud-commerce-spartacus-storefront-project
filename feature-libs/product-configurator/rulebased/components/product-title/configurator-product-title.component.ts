@@ -16,12 +16,16 @@ import { map, switchMap, tap } from 'rxjs/operators';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
 import { ConfiguratorExpertModeService } from '../../core/services/configurator-expert-mode.service';
 import { Configurator } from '../../core/model/configurator.model';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
+import { MediaComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-product-title',
   templateUrl: './configurator-product-title.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, IconComponent, MediaComponent, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorProductTitleComponent {
   @HostBinding('class.ghost') ghostStyle = true;

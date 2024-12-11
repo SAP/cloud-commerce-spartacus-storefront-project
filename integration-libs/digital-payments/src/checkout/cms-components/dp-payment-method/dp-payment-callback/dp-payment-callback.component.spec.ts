@@ -82,7 +82,6 @@ const mockPaymentDetails: PaymentDetails = {
 @Component({
   selector: 'cx-spinner',
   template: '',
-  standalone: false,
 })
 class MockSpinnerComponent {}
 class MockLaunchDialogService {
@@ -105,8 +104,9 @@ describe('DpPaymentCallbackComponent with success query param', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterModule.forRoot([]), StoreModule.forRoot({})],
-      declarations: [
+      imports: [
+        RouterModule.forRoot([]),
+        StoreModule.forRoot({}),
         DpPaymentCallbackComponent,
         MockTranslatePipe,
         MockSpinnerComponent,
@@ -358,8 +358,9 @@ describe('DpPaymentCallbackComponent without query param', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterModule.forRoot([]), StoreModule.forRoot({})],
-      declarations: [
+      imports: [
+        RouterModule.forRoot([]),
+        StoreModule.forRoot({}),
         DpPaymentCallbackComponent,
         MockTranslatePipe,
         MockSpinnerComponent,

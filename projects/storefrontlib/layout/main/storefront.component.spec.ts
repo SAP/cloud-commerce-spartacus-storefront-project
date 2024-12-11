@@ -11,28 +11,28 @@ import { StorefrontComponent } from './storefront.component';
 @Component({
   selector: 'cx-header',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule],
 })
 class MockHeaderComponent {}
 
 @Component({
   selector: 'cx-global-message',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule],
 })
 class MockGlobalMessageComponent {}
 
 @Component({
   selector: 'cx-page-slot',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule],
 })
 class DynamicSlotComponent {}
 
 @Component({
   selector: 'cx-footer',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule],
 })
 class MockFooterComponent {}
 
@@ -45,14 +45,14 @@ class MockRoutingService {
 @Component({
   selector: 'cx-schema',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule],
 })
 class MockSchemaComponent {}
 
 @Component({
   selector: 'cx-page-layout',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule],
 })
 class MockPageLayoutComponent {}
 
@@ -60,10 +60,7 @@ class MockHamburgerMenuService {
   toggle(_forceCollapse?: boolean): void {}
 }
 
-@Directive({
-  selector: '[cxOutlet]',
-  standalone: false,
-})
+@Directive({ selector: '[cxOutlet]' })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;
 }
@@ -76,8 +73,8 @@ describe('StorefrontComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
         StorefrontComponent,
         MockHeaderComponent,
         MockGlobalMessageComponent,

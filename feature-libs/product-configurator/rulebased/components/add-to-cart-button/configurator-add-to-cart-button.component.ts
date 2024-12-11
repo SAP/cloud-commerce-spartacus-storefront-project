@@ -47,6 +47,10 @@ import { ConfiguratorGroupsService } from '../../core/facade/configurator-groups
 import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorQuantityService } from '../../core/services/configurator-quantity.service';
 import { ConfiguratorStorefrontUtilsService } from '../service/configurator-storefront-utils.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { ItemCounterComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 const CX_SELECTOR = 'cx-configurator-add-to-cart-button';
 
@@ -54,7 +58,13 @@ const CX_SELECTOR = 'cx-configurator-add-to-cart-button';
   selector: CX_SELECTOR,
   templateUrl: './configurator-add-to-cart-button.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    ItemCounterComponent,
+    IconComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ConfiguratorAddToCartButtonComponent implements OnInit, OnDestroy {
   protected subscription = new Subscription();

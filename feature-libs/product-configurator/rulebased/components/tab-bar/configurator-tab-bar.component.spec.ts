@@ -87,10 +87,7 @@ class MockConfigUtilsService {
 
 class MockConfiguratorGroupsService {}
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -109,8 +106,13 @@ describe('ConfigTabBarComponent', () => {
 
     routerStateObservable = of(mockRouterState);
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterModule, RouterTestingModule],
-      declarations: [ConfiguratorTabBarComponent, MockUrlPipe],
+      imports: [
+        I18nTestingModule,
+        RouterModule,
+        RouterTestingModule,
+        ConfiguratorTabBarComponent,
+        MockUrlPipe,
+      ],
       providers: [
         {
           provide: RoutingService,

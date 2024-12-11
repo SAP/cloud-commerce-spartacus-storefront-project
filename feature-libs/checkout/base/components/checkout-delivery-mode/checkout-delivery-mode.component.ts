@@ -14,6 +14,8 @@ import {
   UntypedFormBuilder,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ActiveCartFacade, CartOutlets } from '@spartacus/cart/base/root';
@@ -34,12 +36,30 @@ import {
 } from 'rxjs/operators';
 import { CheckoutConfigService } from '../services/checkout-config.service';
 import { CheckoutStepService } from '../services/checkout-step.service';
+import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { OutletDirective } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { InnerComponentsHostDirective } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-delivery-mode',
   templateUrl: './checkout-delivery-mode.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    NgTemplateOutlet,
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgFor,
+    OutletDirective,
+    SpinnerComponent,
+    InnerComponentsHostDirective,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CheckoutDeliveryModeComponent {
   protected globalMessageService = inject(GlobalMessageService);

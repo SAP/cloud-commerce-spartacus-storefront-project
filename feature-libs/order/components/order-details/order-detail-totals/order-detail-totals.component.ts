@@ -8,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 import { CartOutlets } from '@spartacus/cart/base/root';
 import { Observable } from 'rxjs';
 import { OrderDetailsService } from '../order-details.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { OutletDirective } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-order-details-totals',
   templateUrl: './order-detail-totals.component.html',
-  standalone: false,
+  imports: [NgIf, OutletDirective, AsyncPipe],
 })
 export class OrderDetailTotalsComponent implements OnInit {
   constructor(protected orderDetailsService: OrderDetailsService) {}

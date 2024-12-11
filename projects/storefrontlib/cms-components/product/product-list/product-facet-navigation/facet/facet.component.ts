@@ -24,12 +24,29 @@ import { ICON_TYPE } from '../../../../../cms-components/misc/icon/icon.model';
 import { FocusDirective } from '../../../../../layout/a11y/keyboard-focus/focus.directive';
 import { FacetCollapseState } from '../facet.model';
 import { FacetService } from '../services/facet.service';
+import { NgIf, NgFor, AsyncPipe, SlicePipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '../../../../misc/icon/icon.component';
+import { RouterLink } from '@angular/router';
+import { AtMessageDirective } from '../../../../../shared/components/assistive-technology-message/assistive-technology-message.directive';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-facet',
   templateUrl: './facet.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    FocusDirective,
+    IconComponent,
+    NgFor,
+    RouterLink,
+    AtMessageDirective,
+    AsyncPipe,
+    SlicePipe,
+    TranslatePipe,
+  ],
 })
 export class FacetComponent implements AfterViewInit {
   protected _facet: Facet;

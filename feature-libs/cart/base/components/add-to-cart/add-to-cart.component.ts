@@ -18,7 +18,12 @@ import {
   ViewChild,
   inject,
 } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import {
+  UntypedFormControl,
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import {
   ActiveCartFacade,
   CartItemComponentOptions,
@@ -41,12 +46,29 @@ import {
 } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
+import { NgIf, NgClass, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { ItemCounterComponent } from '@spartacus/storefront';
+import { OutletDirective } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-add-to-cart',
   templateUrl: './add-to-cart.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    ItemCounterComponent,
+    OutletDirective,
+    NgClass,
+    IconComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class AddToCartComponent implements OnInit, OnDestroy {
   @Input() productCode: string;

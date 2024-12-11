@@ -14,11 +14,32 @@ import { combineLatest, Observable, Subscription } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../misc/icon/icon.model';
 import { MyCouponsComponentService } from './my-coupons.component.service';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { SortingComponent } from '../../../shared/components/list-navigation/sorting/sorting.component';
+import { PaginationComponent } from '../../../shared/components/list-navigation/pagination/pagination.component';
+import { CouponCardComponent } from './coupon-card/coupon-card.component';
+import { IconComponent } from '../../misc/icon/icon.component';
+import { RouterLink } from '@angular/router';
+import { SpinnerComponent } from '../../../shared/components/spinner/spinner.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-my-coupons',
   templateUrl: './my-coupons.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    SortingComponent,
+    PaginationComponent,
+    NgFor,
+    CouponCardComponent,
+    IconComponent,
+    RouterLink,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class MyCouponsComponent implements OnInit, OnDestroy {
   couponResult$: Observable<CustomerCouponSearchResult>;

@@ -56,8 +56,13 @@ describe('StoreFinderDisplayListComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       schemas: [NO_ERRORS_SCHEMA],
-      declarations: [StoreFinderListComponent, StoreFinderMapComponent],
-      imports: [RouterTestingModule, SpinnerModule, I18nTestingModule],
+      imports: [
+        RouterTestingModule,
+        SpinnerModule,
+        I18nTestingModule,
+        StoreFinderListComponent,
+        StoreFinderMapComponent,
+      ],
       providers: [
         {
           provide: GoogleMapRendererService,

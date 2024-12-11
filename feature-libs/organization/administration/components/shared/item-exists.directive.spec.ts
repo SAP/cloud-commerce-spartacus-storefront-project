@@ -14,7 +14,6 @@ const mockCode = 'mc1';
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'cx-host',
   template: `<div [cxOrgItemExists]>TEST</div>`,
-  standalone: false,
 })
 class TestComponent {
   form: UntypedFormGroup = new UntypedFormGroup({});
@@ -52,7 +51,7 @@ describe('ItemExistsDirective', () => {
 
   function configureTestingModule(service) {
     TestBed.configureTestingModule({
-      declarations: [ItemExistsDirective, TestComponent],
+      imports: [ItemExistsDirective, TestComponent],
       providers: [
         {
           provide: ItemService,

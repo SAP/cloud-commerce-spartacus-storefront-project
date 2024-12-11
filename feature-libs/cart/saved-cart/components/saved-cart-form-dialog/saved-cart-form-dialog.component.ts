@@ -16,6 +16,8 @@ import {
   UntypedFormControl,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import {
   Cart,
@@ -42,6 +44,12 @@ import {
 } from '@spartacus/storefront';
 import { Observable, Subscription, combineLatest, merge } from 'rxjs';
 import { map, take } from 'rxjs/operators';
+import { NgIf, NgSwitch, NgSwitchCase, AsyncPipe } from '@angular/common';
+import { FocusDirective } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 export interface SavedCartFormDialogOptions {
   cart: Cart;
@@ -52,7 +60,19 @@ export interface SavedCartFormDialogOptions {
   selector: 'cx-saved-cart-form-dialog',
   templateUrl: './saved-cart-form-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FocusDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgSwitch,
+    FeatureDirective,
+    NgSwitchCase,
+    IconComponent,
+    FormErrorsComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class SavedCartFormDialogComponent implements OnInit, OnDestroy {
   private subscription = new Subscription();

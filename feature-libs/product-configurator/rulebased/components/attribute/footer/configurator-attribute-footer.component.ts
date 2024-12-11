@@ -13,12 +13,15 @@ import { Configurator } from '../../../core/model/configurator.model';
 import { ConfiguratorStorefrontUtilsService } from '../../service/configurator-storefront-utils.service';
 import { ConfiguratorAttributeCompositionContext } from '../composition/configurator-attribute-composition.model';
 import { ConfiguratorAttributeBaseComponent } from '../types/base/configurator-attribute-base.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-attribute-footer',
   templateUrl: './configurator-attribute-footer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorAttributeFooterComponent
   extends ConfiguratorAttributeBaseComponent

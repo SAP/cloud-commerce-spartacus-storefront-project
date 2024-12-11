@@ -11,7 +11,11 @@ import {
   OnInit,
 } from '@angular/core';
 
-import { UntypedFormControl } from '@angular/forms';
+import {
+  UntypedFormControl,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Config, TranslationService, useFeatureStyles } from '@spartacus/core';
 import { ConfiguratorCommonsService } from '../../../../core/facade/configurator-commons.service';
 import { Configurator } from '../../../../core/model/configurator.model';
@@ -21,13 +25,35 @@ import { ConfiguratorStorefrontUtilsService } from '../../../service/configurato
 import { ConfiguratorAttributeQuantityService } from '../../quantity/configurator-attribute-quantity.service';
 import { ConfiguratorAttributeSingleSelectionBaseComponent } from '../base/configurator-attribute-single-selection-base.component';
 import { ConfiguratorAttributePriceChangeService } from '../../price-change/configurator-attribute-price-change.service';
+import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
+import { FocusDirective } from '@spartacus/storefront';
+import { ConfiguratorShowMoreComponent } from '../../../show-more/configurator-show-more.component';
+import { ConfiguratorPriceComponent } from '../../../price/configurator-price.component';
+import { ConfiguratorAttributeQuantityComponent } from '../../quantity/configurator-attribute-quantity.component';
+import { ConfiguratorAttributeNumericInputFieldComponent } from '../numeric-input-field/configurator-attribute-numeric-input-field.component';
+import { ConfiguratorAttributeInputFieldComponent } from '../input-field/configurator-attribute-input-field.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-attribute-drop-down',
   templateUrl: './configurator-attribute-drop-down.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [ConfiguratorAttributePriceChangeService],
-  standalone: false,
+  imports: [
+    NgIf,
+    FormsModule,
+    NgClass,
+    ReactiveFormsModule,
+    FocusDirective,
+    NgFor,
+    ConfiguratorShowMoreComponent,
+    ConfiguratorPriceComponent,
+    ConfiguratorAttributeQuantityComponent,
+    ConfiguratorAttributeNumericInputFieldComponent,
+    ConfiguratorAttributeInputFieldComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ConfiguratorAttributeDropDownComponent
   extends ConfiguratorAttributeSingleSelectionBaseComponent

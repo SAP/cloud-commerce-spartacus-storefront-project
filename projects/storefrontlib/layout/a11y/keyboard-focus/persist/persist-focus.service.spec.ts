@@ -11,7 +11,6 @@ class MockSelectFocusUtility {}
     <div id="a"></div>
     <div id="b" tabindex="5" data-cx-focus-group="pg"></div>
   `,
-  standalone: false,
 })
 class MockComponent {}
 
@@ -21,7 +20,7 @@ describe('PersistFocusService', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [MockComponent],
+      imports: [MockComponent],
       providers: [
         PersistFocusService,
         {

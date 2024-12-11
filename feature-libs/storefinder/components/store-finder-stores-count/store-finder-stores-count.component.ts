@@ -8,11 +8,25 @@ import { Component, OnInit, Optional, inject } from '@angular/core';
 import { RoutingService, useFeatureStyles } from '@spartacus/core';
 import { StoreFinderService } from '@spartacus/storefinder/core';
 import { Observable } from 'rxjs';
+import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { RouterLink } from '@angular/router';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-store-finder-stores-count',
   templateUrl: './store-finder-stores-count.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    NgFor,
+    RouterLink,
+    NgClass,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class StoreFinderStoresCountComponent implements OnInit {
   // TODO: CXSPA-6884 Make service required in next major.

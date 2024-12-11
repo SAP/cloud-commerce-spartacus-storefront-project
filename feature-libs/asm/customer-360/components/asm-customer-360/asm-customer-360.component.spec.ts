@@ -112,7 +112,7 @@ describe('AsmCustomer360Component', () => {
   @Component({
     selector: 'cx-asm-customer-360-section',
     template: '',
-    standalone: false,
+    imports: [I18nTestingModule],
   })
   class MockAsmCustomer360SectionComponent {}
 
@@ -174,8 +174,8 @@ describe('AsmCustomer360Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         AsmCustomer360Component,
         MockAsmCustomer360SectionComponent,
         ArgsPipe,

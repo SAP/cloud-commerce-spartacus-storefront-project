@@ -108,7 +108,7 @@ const mockOrderInvoiceList: OrderInvoiceList = {
 @Component({
   template: '',
   selector: 'cx-pagination',
-  standalone: false,
+  imports: [I18nTestingModule, IconTestingModule],
 })
 class MockPaginationComponent {
   @Input() pagination: any;
@@ -117,7 +117,7 @@ class MockPaginationComponent {
 @Component({
   template: '',
   selector: 'cx-sorting',
-  standalone: false,
+  imports: [I18nTestingModule, IconTestingModule],
 })
 class MockSortingComponent {
   @Input() sortOptions: any;
@@ -193,8 +193,9 @@ describe('InvoicesListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule, IconTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        IconTestingModule,
         InvoicesListComponent,
         MockPaginationComponent,
         MockSortingComponent,

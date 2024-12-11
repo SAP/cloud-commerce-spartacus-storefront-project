@@ -10,10 +10,7 @@ import { AmendOrderActionsComponent } from './amend-order-actions.component';
 import { StoreModule } from '@ngrx/store';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -37,8 +34,9 @@ describe('AmendOrderActionsComponent', () => {
         RouterTestingModule,
         I18nTestingModule,
         StoreModule.forRoot({}),
+        MockUrlPipe,
+        AmendOrderActionsComponent,
       ],
-      declarations: [MockUrlPipe, AmendOrderActionsComponent],
       providers: [
         {
           provide: RoutingConfigService,

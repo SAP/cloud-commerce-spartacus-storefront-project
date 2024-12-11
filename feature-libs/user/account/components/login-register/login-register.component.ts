@@ -5,13 +5,24 @@
  */
 
 import { Component, OnInit, Optional, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { RoutingService } from '@spartacus/core';
+import { FeatureDirective } from '@spartacus/core';
+import { NgClass, NgIf } from '@angular/common';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-login-register',
   templateUrl: './login-register.component.html',
-  standalone: false,
+  imports: [
+    FeatureDirective,
+    NgClass,
+    NgIf,
+    RouterLink,
+    UrlPipe,
+    TranslatePipe,
+  ],
 })
 export class LoginRegisterComponent implements OnInit {
   loginAsGuest = false;

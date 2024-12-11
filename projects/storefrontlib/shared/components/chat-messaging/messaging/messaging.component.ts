@@ -17,6 +17,8 @@ import {
   UntypedFormControl,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { WindowRef } from '@spartacus/core';
 import { Observable } from 'rxjs';
@@ -28,11 +30,30 @@ import {
   MessageEventBoundItem,
   MessagingConfigs,
 } from './messaging.model';
+import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
+import { AvatarComponent } from '../avatar/avatar.component';
+import { IconComponent } from '../../../../cms-components/misc/icon/icon.component';
+import { FormErrorsComponent } from '../../form/form-errors/form-errors.component';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-messaging',
   templateUrl: './messaging.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    NgFor,
+    NgClass,
+    AvatarComponent,
+    IconComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    FileUploadComponent,
+    FormErrorsComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class MessagingComponent implements OnInit, AfterViewChecked {
   // can be undefined if you press add message button very fast on slow network

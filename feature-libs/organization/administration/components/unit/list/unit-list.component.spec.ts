@@ -11,7 +11,7 @@ import createSpy = jasmine.createSpy;
 @Component({
   template: '<ng-content select="[actions]"></ng-content>',
   selector: 'cx-org-list',
-  standalone: false,
+  imports: [I18nTestingModule, UrlTestingModule],
 })
 class MockListComponent {
   @Input() key: any;
@@ -37,8 +37,12 @@ describe('UnitListComponent', () => {
   let collapseAll: HTMLElement;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, UrlTestingModule],
-      declarations: [MockListComponent, UnitListComponent],
+      imports: [
+        I18nTestingModule,
+        UrlTestingModule,
+        MockListComponent,
+        UnitListComponent,
+      ],
       providers: [
         {
           provide: UnitTreeService,

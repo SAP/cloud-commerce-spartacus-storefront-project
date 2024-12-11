@@ -9,12 +9,25 @@ import { ActivatedRoute } from '@angular/router';
 import { GeoPoint, useFeatureStyles } from '@spartacus/core';
 import { StoreFinderService } from '@spartacus/storefinder/core';
 import { Observable } from 'rxjs';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { StoreFinderListItemComponent } from '../store-finder-list-item/store-finder-list-item.component';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-store-finder-grid',
   templateUrl: './store-finder-grid.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    NgFor,
+    StoreFinderListItemComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class StoreFinderGridComponent implements OnInit {
   defaultLocation: GeoPoint;

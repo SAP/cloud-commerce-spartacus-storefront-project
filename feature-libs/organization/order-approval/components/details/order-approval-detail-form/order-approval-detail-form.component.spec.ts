@@ -47,7 +47,7 @@ class MockOrderApprovalDetailService {
 @Component({
   selector: 'cx-form-errors',
   template: '',
-  standalone: false,
+  imports: [ReactiveFormsModule, I18nTestingModule, RouterTestingModule],
 })
 class MockFormErrorsComponent {
   @Input() control: UntypedFormControl;
@@ -58,14 +58,11 @@ class MockFormErrorsComponent {
 @Component({
   selector: 'cx-spinner',
   template: '',
-  standalone: false,
+  imports: [ReactiveFormsModule, I18nTestingModule, RouterTestingModule],
 })
 class MockSpinnerComponent {}
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -92,8 +89,10 @@ describe('OrderApprovalDetailFormComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, I18nTestingModule, RouterTestingModule],
-      declarations: [
+      imports: [
+        ReactiveFormsModule,
+        I18nTestingModule,
+        RouterTestingModule,
         OrderApprovalDetailFormComponent,
         MockFormErrorsComponent,
         MockSpinnerComponent,

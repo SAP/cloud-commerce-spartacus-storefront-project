@@ -30,21 +30,18 @@ import { CxApiService } from './services/cx-api.service';
 @Component({
   selector: 'cx-inner-a',
   template: `_A_`,
-  standalone: false,
 })
 class InnerAComponent {}
 
 @Component({
   selector: 'cx-inner-b',
   template: `_B_`,
-  standalone: false,
 })
 class InnerBComponent {}
 
 @Component({
   selector: 'cx-host',
   template: `<div [cxInnerComponentsHost]></div>`,
-  standalone: false,
 })
 class HostComponent {}
 
@@ -108,8 +105,8 @@ describe('InnerComponentsHostDirective', () => {
 
     beforeEach(waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [PageComponentModule.forRoot()],
-        declarations: [
+        imports: [
+          PageComponentModule.forRoot(),
           HostComponent,
           InnerComponentsHostDirective,
           ComponentWrapperDirective,

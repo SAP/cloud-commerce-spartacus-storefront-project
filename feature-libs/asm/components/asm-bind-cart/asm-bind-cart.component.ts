@@ -13,7 +13,13 @@ import {
   ViewChild,
   inject,
 } from '@angular/core';
-import { FormControl, ValidatorFn, Validators } from '@angular/forms';
+import {
+  FormControl,
+  ValidatorFn,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { AsmBindCartFacade } from '@spartacus/asm/root';
 import {
   ActiveCartFacade,
@@ -51,12 +57,25 @@ import {
 import { BIND_CART_DIALOG_ACTION } from '../asm-bind-cart-dialog/asm-bind-cart-dialog.component';
 import { SAVE_CART_DIALOG_ACTION } from '../asm-save-cart-dialog/asm-save-cart-dialog.component';
 import { AsmComponentService } from '../services/asm-component.service';
+import { NgClass, NgIf, AsyncPipe } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
+import { DotSpinnerComponent } from '../dot-spinner/dot-spinner.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-asm-bind-cart',
   templateUrl: './asm-bind-cart.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FormsModule,
+    NgClass,
+    ReactiveFormsModule,
+    NgIf,
+    IconComponent,
+    DotSpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class AsmBindCartComponent implements OnInit, OnDestroy {
   activeCartValidator: ValidatorFn = (control) => {

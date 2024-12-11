@@ -17,12 +17,14 @@ import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { OrderDetailsService } from '../order-details.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-details-reorder',
   templateUrl: './order-detail-reorder.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class OrderDetailReorderComponent implements OnInit, OnDestroy {
   constructor(

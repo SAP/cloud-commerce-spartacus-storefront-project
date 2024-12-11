@@ -17,6 +17,8 @@ import {
   UntypedFormBuilder,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import {
   CheckoutDeliveryAddressFacade,
@@ -46,12 +48,37 @@ import {
 import { BehaviorSubject, EMPTY, Observable, combineLatest } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { CheckoutBillingAddressFormService } from '../../checkout-billing-address';
+import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { NgSelectA11yDirective } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { CardComponent } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { CheckoutBillingAddressFormComponent } from '../../checkout-billing-address/checkout-billing-address-form.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-payment-form',
   templateUrl: './checkout-payment-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgTemplateOutlet,
+    NgSelectComponent,
+    NgSelectA11yDirective,
+    FormErrorsComponent,
+    IconComponent,
+    CardComponent,
+    SpinnerComponent,
+    CheckoutBillingAddressFormComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CheckoutPaymentFormComponent implements OnInit {
   iconTypes = ICON_TYPE;

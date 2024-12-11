@@ -7,7 +7,7 @@ import { FileUploadComponent } from './file-upload.component';
 
 @Component({
   selector: 'cx-form-errors',
-  standalone: false,
+  imports: [I18nTestingModule, ReactiveFormsModule],
 })
 class MockFormErrorComponent {
   @Input() control: UntypedFormControl;
@@ -35,8 +35,12 @@ describe('FileUploadComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule],
-      declarations: [FileUploadComponent, MockFormErrorComponent],
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
+        FileUploadComponent,
+        MockFormErrorComponent,
+      ],
     }).compileComponents();
   });
 

@@ -15,13 +15,26 @@ import { NavigationMode } from './models/navigation-mode';
 import { SelectionMode } from './models/selection-mode';
 import { VisualizationLoadInfo } from './models/visualization-load-info';
 import { VisualViewerService } from './visual-viewer.service';
+import { NgIf } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { VisualViewerToolbarButtonComponent } from './toolbar/visual-viewer-toolbar-button/visual-viewer-toolbar-button.component';
+import { VisualViewerAnimationSliderComponent } from './toolbar/visual-viewer-animation-slider/visual-viewer-animation-slider.component';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-epd-visualization-viewer',
   templateUrl: './visual-viewer.component.html',
   providers: [VisualViewerService],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    VisualViewerToolbarButtonComponent,
+    VisualViewerAnimationSliderComponent,
+    SpinnerComponent,
+    TranslatePipe,
+  ],
 })
 export class VisualViewerComponent {
   constructor(protected visualViewerService: VisualViewerService) {}

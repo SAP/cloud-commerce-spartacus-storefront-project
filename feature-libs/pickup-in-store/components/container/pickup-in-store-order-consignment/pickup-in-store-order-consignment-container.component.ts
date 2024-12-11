@@ -10,6 +10,8 @@ import { Consignment } from '@spartacus/order/root';
 import { OutletContextData } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 export type IOutletContextData = { item: Consignment };
 
@@ -19,7 +21,7 @@ export type IOutletContextData = { item: Consignment };
 @Component({
   selector: 'cx-pickup-in-store-order-consignment',
   templateUrl: './pickup-in-store-order-consignment-container.component.html',
-  standalone: false,
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class PickupInStoreOrderConsignmentContainerComponent implements OnInit {
   constructor(

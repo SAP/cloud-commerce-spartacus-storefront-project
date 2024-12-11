@@ -11,7 +11,6 @@ import { of } from 'rxjs';
 @Component({
   selector: 'cx-test',
   template: '',
-  standalone: false,
 })
 class TestComponent {}
 
@@ -38,6 +37,7 @@ describe('ThemeService', () => {
     mockSiteThemeService = new MockSiteThemeService();
     mockFeatureConfigService = new MockFeatureConfigService();
     TestBed.configureTestingModule({
+      imports: [TestComponent],
       providers: [
         ThemeService,
         {
@@ -47,7 +47,6 @@ describe('ThemeService', () => {
         { provide: SiteThemeService, useValue: mockSiteThemeService },
         { provide: FeatureConfigService, useValue: mockFeatureConfigService },
       ],
-      declarations: [TestComponent],
     }).compileComponents();
 
     service = TestBed.inject(ThemeService);

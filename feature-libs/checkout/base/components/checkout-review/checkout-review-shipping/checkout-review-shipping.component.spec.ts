@@ -107,10 +107,7 @@ class MockActiveCartService implements Partial<ActiveCartFacade> {
   getDeliveryEntries = createSpy().and.returnValue(of(mockEntries));
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -118,7 +115,12 @@ class MockUrlPipe implements PipeTransform {
 @Component({
   selector: 'cx-card',
   template: '',
-  standalone: false,
+  imports: [
+    I18nTestingModule,
+    RouterTestingModule,
+    IconTestingModule,
+    OutletModule,
+  ],
 })
 class MockCardComponent {
   @Input()
@@ -142,8 +144,6 @@ describe('CheckoutReviewShippingComponent', () => {
         RouterTestingModule,
         IconTestingModule,
         OutletModule,
-      ],
-      declarations: [
         CheckoutReviewShippingComponent,
         MockUrlPipe,
         MockCardComponent,

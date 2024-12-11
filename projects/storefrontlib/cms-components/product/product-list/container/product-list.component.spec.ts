@@ -27,7 +27,14 @@ import createSpy = jasmine.createSpy;
 @Component({
   selector: 'cx-star-rating',
   template: '',
-  standalone: false,
+  imports: [
+    ListNavigationModule,
+    FormsModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    InfiniteScrollModule,
+    SpinnerModule,
+  ],
 })
 class MockStarRatingComponent {
   @Input() rating;
@@ -46,17 +53,21 @@ class MockPageLayoutService {
 @Component({
   template: '',
   selector: 'cx-product-list-item',
-  standalone: false,
+  imports: [
+    ListNavigationModule,
+    FormsModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    InfiniteScrollModule,
+    SpinnerModule,
+  ],
 })
 class MockProductListItemComponent {
   @Input()
   product;
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -64,7 +75,14 @@ class MockUrlPipe implements PipeTransform {
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [
+    ListNavigationModule,
+    FormsModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    InfiniteScrollModule,
+    SpinnerModule,
+  ],
 })
 class MockCxIconComponent {
   @Input() type;
@@ -73,7 +91,14 @@ class MockCxIconComponent {
 @Component({
   selector: 'cx-add-to-cart',
   template: '<button>add to cart</button>',
-  standalone: false,
+  imports: [
+    ListNavigationModule,
+    FormsModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    InfiniteScrollModule,
+    SpinnerModule,
+  ],
 })
 class MockAddToCartComponent {
   @Input() product;
@@ -115,6 +140,18 @@ describe('ProductListComponent', () => {
         I18nTestingModule,
         InfiniteScrollModule,
         SpinnerModule,
+        ProductListComponent,
+        ProductFacetNavigationComponent,
+        ProductGridItemComponent,
+        MockStarRatingComponent,
+        MockAddToCartComponent,
+        MediaComponent,
+        ProductViewComponent,
+        MockProductListItemComponent,
+        MockUrlPipe,
+        MockCxIconComponent,
+        ProductScrollComponent,
+        MockFeatureLevelDirective,
       ],
       providers: [
         {
@@ -133,20 +170,6 @@ describe('ProductListComponent', () => {
           provide: GlobalMessageService,
           useClass: MockGlobalMessageService,
         },
-      ],
-      declarations: [
-        ProductListComponent,
-        ProductFacetNavigationComponent,
-        ProductGridItemComponent,
-        MockStarRatingComponent,
-        MockAddToCartComponent,
-        MediaComponent,
-        ProductViewComponent,
-        MockProductListItemComponent,
-        MockUrlPipe,
-        MockCxIconComponent,
-        ProductScrollComponent,
-        MockFeatureLevelDirective,
       ],
     }).compileComponents();
   }));

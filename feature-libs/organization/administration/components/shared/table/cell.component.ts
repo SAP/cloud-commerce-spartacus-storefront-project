@@ -16,12 +16,15 @@ import {
   TableDataOutletContext,
   TableFieldOptions,
 } from '@spartacus/storefront';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-cell',
   templateUrl: './cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, RouterLink, NgTemplateOutlet, UrlPipe],
 })
 export class CellComponent {
   @Optional() featuteConfigService = inject(FeatureConfigService, {

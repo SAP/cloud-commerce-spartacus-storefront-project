@@ -15,12 +15,29 @@ import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { OrderApproval } from '../../core/model/order-approval.model';
 import { OrderApprovalService } from '../../core/services/order-approval.service';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { SortingComponent } from '@spartacus/storefront';
+import { PaginationComponent } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-approval-list',
   templateUrl: './order-approval-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    SortingComponent,
+    PaginationComponent,
+    NgFor,
+    RouterLink,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class OrderApprovalListComponent implements OnInit {
   constructor(

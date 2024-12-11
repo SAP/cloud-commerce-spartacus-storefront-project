@@ -11,12 +11,28 @@ import {
   ProductImagesComponent,
 } from '@spartacus/storefront';
 import { Product } from '@spartacus/core';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { MediaComponent } from '@spartacus/storefront';
+import { ProductImageZoomTriggerComponent } from '../product-image-zoom-trigger/product-image-zoom-trigger.component';
+import { CarouselComponent } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { FocusableCarouselItemDirective } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-images',
   templateUrl: './product-image-zoom-product-images.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    MediaComponent,
+    ProductImageZoomTriggerComponent,
+    CarouselComponent,
+    FeatureDirective,
+    FocusableCarouselItemDirective,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ProductImageZoomProductImagesComponent extends ProductImagesComponent {
   expandImage = new BehaviorSubject(false);

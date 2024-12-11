@@ -10,7 +10,6 @@ import { KeyboardFocusService } from './services';
     id="a"
     [cxFocus]="{ autofocus: true, refreshFocus: modelA }"
   ></div>`,
-  standalone: false,
 })
 class MockComponent {
   modelA = '';
@@ -33,7 +32,7 @@ describe('FocusDirective', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [FocusDirective, MockComponent],
+      imports: [FocusDirective, MockComponent],
       providers: [
         {
           provide: KeyboardFocusService,

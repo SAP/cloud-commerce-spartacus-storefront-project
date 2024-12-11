@@ -122,7 +122,7 @@ describe('AsmCustomer360ActiveCartComponent', () => {
   @Component({
     template: '',
     selector: 'cx-media',
-    standalone: false,
+    imports: [I18nTestingModule],
   })
   class MockMediaComponent {
     @Input() container: any;
@@ -132,8 +132,8 @@ describe('AsmCustomer360ActiveCartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         AsmCustomer360ActiveCartComponent,
         AsmCustomer360ProductListingComponent,
         AsmCustomer360ProductItemComponent,

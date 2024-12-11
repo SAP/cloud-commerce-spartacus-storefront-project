@@ -20,6 +20,8 @@ import {
   UntypedFormBuilder,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { AsmService } from '@spartacus/asm/core';
 import {
@@ -37,6 +39,12 @@ import {
 } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { FeatureDirective } from '@spartacus/core';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
+import { DotSpinnerComponent } from '../dot-spinner/dot-spinner.component';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-customer-selection',
@@ -44,7 +52,18 @@ import { debounceTime } from 'rxjs/operators';
   host: {
     '(document:click)': 'onDocumentClick($event)',
   },
-  standalone: false,
+  imports: [
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgIf,
+    IconComponent,
+    NgFor,
+    DotSpinnerComponent,
+    FormErrorsComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CustomerSelectionComponent implements OnInit, OnDestroy {
   customerSelectionForm: UntypedFormGroup;

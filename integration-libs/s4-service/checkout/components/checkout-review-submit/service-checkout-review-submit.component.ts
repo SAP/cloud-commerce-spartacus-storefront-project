@@ -28,12 +28,43 @@ import {
   ServiceDateTime,
   S4ServiceDeliveryModeConfig,
 } from '@spartacus/s4-service/root';
+import {
+  NgIf,
+  NgFor,
+  NgSwitch,
+  NgSwitchCase,
+  NgTemplateOutlet,
+  NgClass,
+  AsyncPipe,
+} from '@angular/common';
+import { CardComponent } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { IconComponent } from '@spartacus/storefront';
+import { OutletDirective } from '@spartacus/storefront';
+import { PromotionsComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-review-submit',
   templateUrl: './service-checkout-review-submit.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    NgFor,
+    NgSwitch,
+    NgSwitchCase,
+    NgTemplateOutlet,
+    NgClass,
+    CardComponent,
+    RouterLink,
+    IconComponent,
+    OutletDirective,
+    PromotionsComponent,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+  ],
 })
 export class ServiceCheckoutReviewSubmitComponent extends B2BCheckoutReviewSubmitComponent {
   checkoutStepTypeServiceDetails = CheckoutStepType.SERVICE_DETAILS;

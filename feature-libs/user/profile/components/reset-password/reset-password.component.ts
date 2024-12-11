@@ -5,17 +5,37 @@
  */
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { useFeatureStyles } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { ResetPasswordComponentService } from './reset-password-component.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { PasswordVisibilityToggleDirective } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-reset-password',
   templateUrl: './reset-password.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'user-form' },
-  standalone: false,
+  imports: [
+    NgIf,
+    SpinnerComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    PasswordVisibilityToggleDirective,
+    FeatureDirective,
+    FormErrorsComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ResetPasswordComponent {
   form: UntypedFormGroup = this.service.form;

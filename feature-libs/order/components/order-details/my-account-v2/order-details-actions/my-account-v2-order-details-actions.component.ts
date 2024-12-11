@@ -8,11 +8,15 @@ import { Component, inject, OnInit } from '@angular/core';
 import { EventService } from '@spartacus/core';
 import { DownloadOrderInvoicesEvent, Order } from '@spartacus/order/root';
 import { OrderDetailActionsComponent } from '../../order-detail-actions/order-detail-actions.component';
+import { NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-my-account-v2-order-details-actions',
   templateUrl: './my-account-v2-order-details-actions.component.html',
-  standalone: false,
+  imports: [NgIf, RouterLink, TranslatePipe, UrlPipe],
 })
 export class MyAccountV2OrderDetailsActionsComponent
   extends OrderDetailActionsComponent

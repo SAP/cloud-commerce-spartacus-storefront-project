@@ -70,7 +70,13 @@ let focusService: KeyboardFocusService;
 @Component({
   selector: 'cx-configurator-price',
   template: '',
-  standalone: false,
+  imports: [
+    I18nTestingModule,
+    ReactiveFormsModule,
+    RouterTestingModule,
+    UrlTestingModule,
+    MediaModule,
+  ],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -79,17 +85,20 @@ class MockConfiguratorPriceComponent {
 @Component({
   selector: 'cx-configurator-attribute-quantity',
   template: '',
-  standalone: false,
+  imports: [
+    I18nTestingModule,
+    ReactiveFormsModule,
+    RouterTestingModule,
+    UrlTestingModule,
+    MediaModule,
+  ],
 })
 class MockConfiguratorAttributeQuantityComponent {
   @Input() quantityOptions: ConfiguratorAttributeQuantityComponentOptions;
   @Output() changeQuantity = new EventEmitter<number>();
 }
 
-@Directive({
-  selector: '[cxFocus]',
-  standalone: false,
-})
+@Directive({ selector: '[cxFocus]' })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: any;
 }
@@ -163,8 +172,6 @@ describe('ConfiguratorAttributeProductCardComponent', () => {
         RouterTestingModule,
         UrlTestingModule,
         MediaModule,
-      ],
-      declarations: [
         ConfiguratorAttributeProductCardComponent,
         ConfiguratorShowMoreComponent,
         ItemCounterComponent,

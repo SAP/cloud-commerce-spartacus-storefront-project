@@ -10,7 +10,12 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { AbstractControl, UntypedFormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { B2BApprovalProcess, B2BUnit, isNotUndefined } from '@spartacus/core';
 import {
   B2BUnitNode,
@@ -23,6 +28,12 @@ import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { CurrentUnitService } from '../services/current-unit.service';
 import { UnitItemService } from '../services/unit-item.service';
+import { FormComponent } from '../../shared/form/form.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-unit-form',
@@ -39,7 +50,17 @@ import { UnitItemService } from '../services/unit-item.service';
       useExisting: CurrentUnitService,
     },
   ],
-  standalone: false,
+  imports: [
+    FormComponent,
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    FormErrorsComponent,
+    NgSelectComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class UnitFormComponent implements OnInit {
   @Input() i18nRoot = 'orgUnit';

@@ -17,11 +17,21 @@ import {
   PaymentCardCode,
 } from '@spartacus/asm/customer-360/root';
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
+import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
+import { CardComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-asm-customer-360-profile',
   templateUrl: './asm-customer-360-profile.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    NgTemplateOutlet,
+    NgFor,
+    CardComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class AsmCustomer360ProfileComponent implements OnInit {
   focusConfig: FocusConfig = {

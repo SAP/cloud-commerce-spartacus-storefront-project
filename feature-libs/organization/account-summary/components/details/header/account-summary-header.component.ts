@@ -18,12 +18,15 @@ import {
 import { Card } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { CardComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-account-summary-header',
   templateUrl: './account-summary-header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, CardComponent, NgFor, AsyncPipe, TranslatePipe],
 })
 export class AccountSummaryHeaderComponent implements OnInit, OnDestroy {
   notApplicable: string;

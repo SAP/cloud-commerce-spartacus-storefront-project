@@ -26,10 +26,7 @@ class MockLoginFormComponentService
   isUpdating$ = isBusySubject;
   login = createSpy().and.stub();
 }
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -48,8 +45,10 @@ describe('LoginFormComponent', () => {
         I18nTestingModule,
         FormErrorsModule,
         SpinnerModule,
+        LoginFormComponent,
+        MockUrlPipe,
+        MockFeatureDirective,
       ],
-      declarations: [LoginFormComponent, MockUrlPipe, MockFeatureDirective],
       providers: [
         {
           provide: LoginFormComponentService,

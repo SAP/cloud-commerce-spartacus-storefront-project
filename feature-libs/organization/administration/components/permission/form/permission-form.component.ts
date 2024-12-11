@@ -5,7 +5,11 @@
  */
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import {
   Currency,
   CurrencyService,
@@ -24,6 +28,12 @@ import { CurrentItemService } from '../../shared/current-item.service';
 import { ItemService } from '../../shared/item.service';
 import { CurrentPermissionService } from '../services/current-permission.service';
 import { PermissionItemService } from '../services/permission-item.service';
+import { FormComponent } from '../../shared/form/form.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-permission-form',
@@ -40,7 +50,17 @@ import { PermissionItemService } from '../services/permission-item.service';
       useExisting: CurrentPermissionService,
     },
   ],
-  standalone: false,
+  imports: [
+    FormComponent,
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    FormErrorsComponent,
+    NgSelectComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class PermissionFormComponent implements OnInit {
   form: UntypedFormGroup | null = this.itemService.getForm();

@@ -24,17 +24,11 @@ import { MockFeatureLevelDirective } from 'projects/storefrontlib/shared/test/mo
 import { CartItemComponent } from './cart-item.component';
 import { CartItemContextSource } from './model/cart-item-context-source.model';
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
-@Directive({
-  selector: '[cxOutlet]',
-  standalone: false,
-})
+@Directive({ selector: '[cxOutlet]' })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;
 }
@@ -42,7 +36,12 @@ class MockOutletDirective implements Partial<OutletDirective> {
 @Component({
   template: '',
   selector: 'cx-media',
-  standalone: false,
+  imports: [
+    RouterTestingModule,
+    ReactiveFormsModule,
+    I18nTestingModule,
+    OutletModule,
+  ],
 })
 class MockMediaComponent {
   @Input() container;
@@ -52,7 +51,12 @@ class MockMediaComponent {
 @Component({
   template: '',
   selector: 'cx-item-counter',
-  standalone: false,
+  imports: [
+    RouterTestingModule,
+    ReactiveFormsModule,
+    I18nTestingModule,
+    OutletModule,
+  ],
 })
 class MockItemCounterComponent {
   @Input() control;
@@ -64,7 +68,12 @@ class MockItemCounterComponent {
 @Component({
   template: '',
   selector: 'cx-promotions',
-  standalone: false,
+  imports: [
+    RouterTestingModule,
+    ReactiveFormsModule,
+    I18nTestingModule,
+    OutletModule,
+  ],
 })
 class MockPromotionsComponent {
   @Input() promotions;
@@ -95,16 +104,18 @@ const mockProduct = {
 @Component({
   selector: 'cx-cart-item-validation-warning',
   template: '',
-  standalone: false,
+  imports: [
+    RouterTestingModule,
+    ReactiveFormsModule,
+    I18nTestingModule,
+    OutletModule,
+  ],
 })
 class MockCartItemValidationWarningComponent {
   @Input() code: string;
 }
 
-@Directive({
-  selector: '[cxAtMessage]',
-  standalone: false,
-})
+@Directive({ selector: '[cxAtMessage]' })
 class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;
 }
@@ -127,8 +138,6 @@ describe('CartItemComponent', () => {
         ReactiveFormsModule,
         I18nTestingModule,
         OutletModule,
-      ],
-      declarations: [
         CartItemComponent,
         MockMediaComponent,
         MockItemCounterComponent,

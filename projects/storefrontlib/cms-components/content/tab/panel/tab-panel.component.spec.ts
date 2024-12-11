@@ -11,7 +11,6 @@ const mockTab: Tab | any = {
   template: `<ng-template #templateRef
     ><span id="tempRef">hello</span></ng-template
   >`,
-  standalone: false,
 })
 class MockComponent {
   @ViewChild('templateRef') templateRef: TemplateRef<any>;
@@ -23,7 +22,7 @@ describe('TabPanelComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TabPanelComponent, MockComponent],
+      imports: [TabPanelComponent, MockComponent],
     }).compileComponents();
   }));
 

@@ -7,12 +7,15 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CartVoucherFacade, Voucher } from '@spartacus/cart/base/root';
 import { ICON_TYPE } from '@spartacus/storefront';
+import { NgIf, NgFor } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-applied-coupons',
   templateUrl: './applied-coupons.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, NgFor, IconComponent, TranslatePipe],
 })
 export class AppliedCouponsComponent {
   @Input()

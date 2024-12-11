@@ -67,7 +67,7 @@ class MockCurrentProductService {
 @Component({
   selector: 'cx-media',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockMediaComponent {
   @Input() container: any;
@@ -82,7 +82,7 @@ class MockMediaComponent {
       ></ng-container>
     </ng-container>
   `,
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockCarouselComponent {
   @Input() items: any;
@@ -94,7 +94,7 @@ class MockCarouselComponent {
 @Component({
   selector: 'cx-product-image-zoom-trigger',
   template: ``,
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockProductImageZoomTriggerComponent {
   @Input() expandImage: any;
@@ -109,8 +109,8 @@ describe('ProductImagesComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         ProductImageZoomProductImagesComponent,
         MockMediaComponent,
         MockCarouselComponent,

@@ -15,6 +15,8 @@ import {
   UntypedFormBuilder,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import {
   ActiveCartFacade,
@@ -31,12 +33,24 @@ import {
 } from '@spartacus/core';
 import { Observable, Subscription } from 'rxjs';
 import { first, map } from 'rxjs/operators';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-cart-quick-order-form',
   templateUrl: './cart-quick-order-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    FormErrorsComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CartQuickOrderFormComponent implements OnInit, OnDestroy {
   private featureConfig = inject(FeatureConfigService);

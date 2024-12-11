@@ -37,6 +37,12 @@ import {
 } from 'rxjs/operators';
 import { CheckoutConfigService } from '../services';
 import { CheckoutStepService } from '../services/checkout-step.service';
+import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { CardComponent } from '@spartacus/storefront';
+import { AddressFormComponent } from '@spartacus/user/profile/components';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 export interface CardWithAddress {
   card: Card;
@@ -47,7 +53,17 @@ export interface CardWithAddress {
   selector: 'cx-delivery-address',
   templateUrl: './checkout-delivery-address.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    NgTemplateOutlet,
+    FeatureDirective,
+    NgFor,
+    CardComponent,
+    AddressFormComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CheckoutDeliveryAddressComponent implements OnInit {
   protected checkoutConfigService = inject(CheckoutConfigService);

@@ -9,6 +9,8 @@ import {
   UntypedFormBuilder,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import {
   AuthService,
@@ -19,11 +21,22 @@ import {
 import { CustomFormValidators } from '@spartacus/storefront';
 import { UserRegisterFacade } from '@spartacus/user/profile/root';
 import { Subscription } from 'rxjs';
+import { PasswordVisibilityToggleDirective } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-guest-register-form',
   templateUrl: './order-guest-register-form.component.html',
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    PasswordVisibilityToggleDirective,
+    FeatureDirective,
+    FormErrorsComponent,
+    TranslatePipe,
+  ],
 })
 export class OrderGuestRegisterFormComponent implements OnDestroy {
   // TODO: (CXSPA-7315) Remove feature toggle in the next major

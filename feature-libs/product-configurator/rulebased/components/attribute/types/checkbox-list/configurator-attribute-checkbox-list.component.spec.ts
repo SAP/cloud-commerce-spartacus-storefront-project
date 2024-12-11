@@ -27,10 +27,7 @@ import { Observable, of } from 'rxjs';
 
 class MockGroupService {}
 
-@Directive({
-  selector: '[cxFocus]',
-  standalone: false,
-})
+@Directive({ selector: '[cxFocus]' })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: any;
 }
@@ -38,7 +35,7 @@ export class MockFocusDirective {
 @Component({
   selector: 'cx-configurator-attribute-quantity',
   template: '',
-  standalone: false,
+  imports: [ReactiveFormsModule, NgSelectModule, I18nTestingModule],
 })
 class MockConfiguratorAttributeQuantityComponent {
   @Input() quantityOptions: ConfiguratorAttributeQuantityComponentOptions;
@@ -48,7 +45,7 @@ class MockConfiguratorAttributeQuantityComponent {
 @Component({
   selector: 'cx-configurator-price',
   template: '',
-  standalone: false,
+  imports: [ReactiveFormsModule, NgSelectModule, I18nTestingModule],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -57,7 +54,7 @@ class MockConfiguratorPriceComponent {
 @Component({
   selector: 'cx-configurator-show-more',
   template: '',
-  standalone: false,
+  imports: [ReactiveFormsModule, NgSelectModule, I18nTestingModule],
 })
 class MockConfiguratorShowMoreComponent {
   @Input() text: string;
@@ -112,14 +109,16 @@ describe('ConfiguratorAttributeCheckBoxListComponent', () => {
       },
     });
     TestBed.configureTestingModule({
-      declarations: [
+      imports: [
+        ReactiveFormsModule,
+        NgSelectModule,
+        I18nTestingModule,
         ConfiguratorAttributeCheckBoxListComponent,
         MockFocusDirective,
         MockConfiguratorAttributeQuantityComponent,
         MockConfiguratorPriceComponent,
         MockConfiguratorShowMoreComponent,
       ],
-      imports: [ReactiveFormsModule, NgSelectModule, I18nTestingModule],
       providers: [
         {
           provide: ConfiguratorStorefrontUtilsService,

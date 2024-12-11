@@ -17,12 +17,27 @@ import { OrderEntry } from '@spartacus/cart/base/root';
 import { QuickOrderFacade } from '@spartacus/cart/quick-order/root';
 import { useFeatureStyles } from '@spartacus/core';
 import { Subscription } from 'rxjs';
+import { NgClass } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { MediaComponent } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { ItemCounterComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: '[cx-quick-order-item], cx-quick-order-item',
   templateUrl: './quick-order-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgClass,
+    RouterLink,
+    MediaComponent,
+    FeatureDirective,
+    ItemCounterComponent,
+    TranslatePipe,
+    UrlPipe,
+  ],
 })
 export class QuickOrderItemComponent implements OnInit, OnDestroy {
   quantityControl: UntypedFormControl;

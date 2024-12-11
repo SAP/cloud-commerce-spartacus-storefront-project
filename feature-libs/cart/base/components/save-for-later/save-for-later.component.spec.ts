@@ -15,7 +15,7 @@ import { SaveForLaterComponent } from './save-for-later.component';
 @Component({
   template: '',
   selector: 'cx-cart-item-list',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockCartItemListComponent {
   @Input() readonly = false;
@@ -49,8 +49,11 @@ describe('SaveForLaterComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [SaveForLaterComponent, MockCartItemListComponent],
-      imports: [I18nTestingModule],
+      imports: [
+        I18nTestingModule,
+        SaveForLaterComponent,
+        MockCartItemListComponent,
+      ],
       providers: [
         { provide: CmsService, useValue: mockCmsService },
         { provide: ActiveCartFacade, useValue: mockActiveCartService },

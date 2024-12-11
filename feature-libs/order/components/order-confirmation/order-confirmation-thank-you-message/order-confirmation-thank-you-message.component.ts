@@ -19,12 +19,22 @@ import {
 import { Order, OrderFacade, ReplenishmentOrder } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 import { filter, take, tap, withLatestFrom } from 'rxjs/operators';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { OrderGuestRegisterFormComponent } from '../order-guest-register-form/order-guest-register-form.component';
+import { AddToHomeScreenBannerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-confirmation-thank-you-message',
   templateUrl: './order-confirmation-thank-you-message.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    OrderGuestRegisterFormComponent,
+    AddToHomeScreenBannerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class OrderConfirmationThankYouMessageComponent
   implements OnInit, AfterViewInit, OnDestroy

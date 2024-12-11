@@ -10,17 +10,42 @@ import {
   Optional,
   inject,
 } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { RoutingService, useFeatureStyles } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { UpdatePasswordComponentService } from './update-password-component.service';
+import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { PasswordVisibilityToggleDirective } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-update-password',
   templateUrl: './update-password.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'user-form' },
-  standalone: false,
+  imports: [
+    NgIf,
+    SpinnerComponent,
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgTemplateOutlet,
+    PasswordVisibilityToggleDirective,
+    FormErrorsComponent,
+    RouterLink,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+  ],
 })
 export class UpdatePasswordComponent {
   @Optional() protected routingService = inject(RoutingService, {

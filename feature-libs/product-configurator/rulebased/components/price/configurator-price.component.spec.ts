@@ -6,10 +6,7 @@ import { CommonConfiguratorTestUtilsService } from '../../../common/testing/comm
 import { ConfiguratorPriceComponent } from './configurator-price.component';
 import { ConfiguratorTestUtils } from '../../testing/configurator-test-utils';
 
-@Pipe({
-  name: 'cxNumeric',
-  standalone: false,
-})
+@Pipe({ name: 'cxNumeric' })
 class MockNumericPipe implements PipeTransform {
   transform(value: string): string {
     return value;
@@ -42,8 +39,7 @@ describe('ConfiguratorPriceComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ConfiguratorPriceComponent, MockNumericPipe],
-      imports: [I18nTestingModule],
+      imports: [I18nTestingModule, ConfiguratorPriceComponent, MockNumericPipe],
       providers: [
         {
           provide: DirectionService,

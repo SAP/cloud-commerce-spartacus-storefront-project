@@ -11,6 +11,8 @@ import {
   UntypedFormControl,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import {
   AnonymousConsent,
@@ -31,11 +33,39 @@ import { Title, UserSignUp } from '@spartacus/user/profile/root';
 import { BehaviorSubject, Observable, Subscription, combineLatest } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { RegisterComponentService } from './register-component.service';
+import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { NgSelectA11yDirective } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { PasswordVisibilityToggleDirective } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { CaptchaComponent } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-register',
   templateUrl: './register.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgSelectComponent,
+    NgSelectA11yDirective,
+    NgTemplateOutlet,
+    FormErrorsComponent,
+    PasswordVisibilityToggleDirective,
+    NgFor,
+    RouterLink,
+    CaptchaComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+  ],
 })
 export class RegisterComponent implements OnInit, OnDestroy {
   // TODO: (CXSPA-7315) Remove feature toggle in the next major

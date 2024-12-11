@@ -8,12 +8,14 @@ import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { CartOutlets } from '@spartacus/cart/base/root';
 import { Order, OrderFacade } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { OutletDirective } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-order-confirmation-totals',
   templateUrl: './order-confirmation-totals.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, OutletDirective, AsyncPipe],
 })
 export class OrderConfirmationTotalsComponent implements OnDestroy {
   readonly cartOutlets = CartOutlets;

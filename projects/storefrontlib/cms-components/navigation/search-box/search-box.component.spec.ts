@@ -56,20 +56,14 @@ class MockCmsComponentData {
   }
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {
     return ['test', 'url'];
   }
 }
 
-@Pipe({
-  name: 'cxHighlight',
-  standalone: false,
-})
+@Pipe({ name: 'cxHighlight' })
 class MockHighlightPipe implements PipeTransform {
   transform(): any {}
 }
@@ -77,7 +71,7 @@ class MockHighlightPipe implements PipeTransform {
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type;
@@ -86,7 +80,7 @@ class MockCxIconComponent {
 @Component({
   selector: 'cx-media',
   template: '<img>',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockMediaComponent {
   @Input() container;
@@ -169,8 +163,6 @@ describe('SearchBoxComponent', () => {
         BrowserAnimationsModule,
         RouterModule.forRoot([]),
         I18nTestingModule,
-      ],
-      declarations: [
         SearchBoxComponent,
         MockUrlPipe,
         MockHighlightPipe,

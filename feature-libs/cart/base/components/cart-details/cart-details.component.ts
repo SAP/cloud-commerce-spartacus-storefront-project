@@ -16,12 +16,24 @@ import {
 import { AuthService, RoutingService } from '@spartacus/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CartValidationWarningsComponent } from '../validation/cart-warnings/cart-validation-warnings.component';
+import { PromotionsComponent } from '@spartacus/storefront';
+import { CartItemListComponent } from '../cart-shared/cart-item-list/cart-item-list.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-cart-details',
   templateUrl: './cart-details.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    CartValidationWarningsComponent,
+    PromotionsComponent,
+    CartItemListComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CartDetailsComponent implements OnInit {
   cart$: Observable<Cart>;

@@ -33,8 +33,8 @@ import { OrderApprovalListComponent } from './order-approval-list.component';
     RouterModule,
     ListNavigationModule,
     I18nModule,
+    OrderApprovalListComponent,
   ],
-  declarations: [OrderApprovalListComponent],
   exports: [OrderApprovalListComponent],
 })
 export class OrderApprovalListModule {}

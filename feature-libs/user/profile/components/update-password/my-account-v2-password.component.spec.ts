@@ -25,7 +25,14 @@ import { UpdatePasswordComponentService } from './update-password-component.serv
 @Component({
   selector: 'cx-spinner',
   template: '',
-  standalone: false,
+  imports: [
+    ReactiveFormsModule,
+    I18nTestingModule,
+    FormErrorsModule,
+    RouterTestingModule,
+    UrlTestingModule,
+    PasswordVisibilityToggleModule,
+  ],
 })
 class MockCxSpinnerComponent {}
 
@@ -59,8 +66,9 @@ describe('MyAccountV2PasswordComponent', () => {
         RouterTestingModule,
         UrlTestingModule,
         PasswordVisibilityToggleModule,
+        MyAccountV2PasswordComponent,
+        MockCxSpinnerComponent,
       ],
-      declarations: [MyAccountV2PasswordComponent, MockCxSpinnerComponent],
       providers: [
         {
           provide: UpdatePasswordComponentService,

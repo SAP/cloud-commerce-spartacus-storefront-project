@@ -11,12 +11,15 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
 import { Configurator } from '../../core/model/configurator.model';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configuration-conflict-and-error-messages',
   templateUrl: './configurator-conflict-and-error-messages.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, IconComponent, NgFor, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorConflictAndErrorMessagesComponent {
   iconTypes = ICON_TYPE;

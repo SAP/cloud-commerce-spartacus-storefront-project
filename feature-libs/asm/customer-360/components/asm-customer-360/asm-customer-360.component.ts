@@ -44,12 +44,34 @@ import {
 import { BehaviorSubject, Observable, Subscription, of } from 'rxjs';
 import { catchError, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { AsmCustomer360Config } from '../config/asm-customer-360-config';
+import { FocusDirective } from '@spartacus/storefront';
+import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { MessageComponent } from '@spartacus/storefront';
+import { MediaComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { AsmCustomer360SectionComponent } from '../sections/asm-customer-360-section/asm-customer-360-section.component';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
+import { ArgsPipe } from '@spartacus/asm/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'cx-asm-customer-360',
   templateUrl: './asm-customer-360.component.html',
-  standalone: false,
+  imports: [
+    FocusDirective,
+    NgTemplateOutlet,
+    NgIf,
+    MessageComponent,
+    MediaComponent,
+    IconComponent,
+    NgFor,
+    AsmCustomer360SectionComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+    ArgsPipe,
+  ],
 })
 export class AsmCustomer360Component implements OnDestroy, OnInit {
   @HostBinding('attr.role') role = 'dialog';

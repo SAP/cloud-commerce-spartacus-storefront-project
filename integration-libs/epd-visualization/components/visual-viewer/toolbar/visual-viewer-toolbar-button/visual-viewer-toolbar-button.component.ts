@@ -5,12 +5,13 @@
  */
 
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { IconComponent } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-epd-visualization-viewer-toolbar-button',
   templateUrl: './visual-viewer-toolbar-button.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [IconComponent],
 })
 export class VisualViewerToolbarButtonComponent {
   @Input() text = '';

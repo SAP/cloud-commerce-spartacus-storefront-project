@@ -28,9 +28,18 @@ import {
   FormBuilder,
   FormGroup,
   ValidationErrors,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { DatePickerComponent } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { NgSelectA11yDirective } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 interface ItemType {
   code: string;
@@ -47,7 +56,18 @@ interface GroupValidator {
   selector: 'cx-account-summary-document-filter',
   templateUrl: './account-summary-document-filter.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    NgIf,
+    FeatureDirective,
+    DatePickerComponent,
+    FormErrorsComponent,
+    NgSelectComponent,
+    NgSelectA11yDirective,
+    NgTemplateOutlet,
+    TranslatePipe,
+  ],
 })
 export class AccountSummaryDocumentFilterComponent
   implements OnInit, OnDestroy

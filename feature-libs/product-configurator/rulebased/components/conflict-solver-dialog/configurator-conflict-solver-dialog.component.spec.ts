@@ -59,10 +59,7 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
   closeDialog(_reason: string): void {}
 }
 
-@Directive({
-  selector: '[cxFocus]',
-  standalone: false,
-})
+@Directive({ selector: '[cxFocus]' })
 export class MockKeyboardFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
 }
@@ -70,7 +67,7 @@ export class MockKeyboardFocusDirective {
 @Component({
   selector: 'cx-configurator-group',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, IconModule],
 })
 class MockConfiguratorDefaultFormComponent {
   @Input() group: Configurator.Group;
@@ -95,8 +92,9 @@ describe('ConfiguratorConflictSolverDialogComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, IconModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        IconModule,
         MockConfiguratorDefaultFormComponent,
         ConfiguratorConflictSolverDialogComponent,
         MockKeyboardFocusDirective,

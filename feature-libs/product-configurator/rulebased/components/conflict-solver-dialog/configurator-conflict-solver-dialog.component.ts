@@ -22,12 +22,26 @@ import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
 import { take } from 'rxjs/operators';
 import { ConfiguratorStorefrontUtilsService } from '../service/configurator-storefront-utils.service';
+import { FocusDirective } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '@spartacus/storefront';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { ConfiguratorGroupComponent } from '../group/configurator-group.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-conflict-solver-dialog',
   templateUrl: './configurator-conflict-solver-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FocusDirective,
+    FeatureDirective,
+    IconComponent,
+    NgIf,
+    ConfiguratorGroupComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ConfiguratorConflictSolverDialogComponent
   implements OnInit, OnDestroy

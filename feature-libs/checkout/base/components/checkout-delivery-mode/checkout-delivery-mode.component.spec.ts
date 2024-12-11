@@ -35,7 +35,7 @@ import createSpy = jasmine.createSpy;
 @Component({
   selector: 'cx-spinner',
   template: '',
-  standalone: false,
+  imports: [ReactiveFormsModule, I18nTestingModule, OutletModule],
 })
 class MockSpinnerComponent {}
 
@@ -133,8 +133,10 @@ describe('CheckoutDeliveryModeComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, I18nTestingModule, OutletModule],
-      declarations: [
+      imports: [
+        ReactiveFormsModule,
+        I18nTestingModule,
+        OutletModule,
         CheckoutDeliveryModeComponent,
         MockSpinnerComponent,
         MockFeatureDirective,

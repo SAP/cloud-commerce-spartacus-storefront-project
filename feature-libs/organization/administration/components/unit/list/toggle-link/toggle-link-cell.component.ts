@@ -26,12 +26,17 @@ import {
 import { take } from 'rxjs';
 import { CellComponent } from '../../../shared/table/cell.component';
 import { UnitTreeService } from '../../services/unit-tree.service';
+import { NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { IconComponent } from '@spartacus/storefront';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-toggle-link-cell',
   templateUrl: './toggle-link-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, RouterLink, IconComponent, UrlPipe, TranslatePipe],
 })
 export class ToggleLinkCellComponent extends CellComponent {
   @HostBinding('style.--cx-depth-level')

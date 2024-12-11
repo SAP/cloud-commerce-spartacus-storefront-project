@@ -72,7 +72,7 @@ class MockBreakpointService {
 @Component({
   selector: 'cx-hamburger-menu',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockHamburgerMenuComponent {}
 
@@ -96,8 +96,10 @@ describe('ConfiguratorGroupTitleComponent', () => {
   beforeEach(waitForAsync(() => {
     routerStateObservable = of(ConfigurationTestData.mockRouterState);
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
+        NgSelectModule,
         ConfiguratorGroupTitleComponent,
         MockHamburgerMenuComponent,
       ],
@@ -111,7 +113,6 @@ describe('ConfiguratorGroupTitleComponent', () => {
           provide: RoutingService,
           useClass: MockRoutingService,
         },
-
         {
           provide: ConfiguratorCommonsService,
           useClass: MockConfiguratorCommonsService,

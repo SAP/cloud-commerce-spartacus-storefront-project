@@ -17,6 +17,8 @@ import { BaseSiteService, LanguageService, WindowRef } from '@spartacus/core';
 import { CmsComponentData } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { distinctUntilChanged, take, tap } from 'rxjs/operators';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-gigya-raas',
@@ -24,7 +26,7 @@ import { distinctUntilChanged, take, tap } from 'rxjs/operators';
   styleUrls: ['./gigya-raas.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class GigyaRaasComponent implements OnInit {
   protected renderScreenSet = true;

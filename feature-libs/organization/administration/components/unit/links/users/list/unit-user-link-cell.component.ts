@@ -14,6 +14,11 @@ import {
 import { Observable } from 'rxjs';
 import { ItemService } from '../../../../shared/item.service';
 import { CellComponent } from '../../../../shared/table/cell.component';
+import { FeatureDirective } from '@spartacus/core';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-unit-user-link-cell',
@@ -42,7 +47,14 @@ import { CellComponent } from '../../../../shared/table/cell.component';
     </ng-container>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FeatureDirective,
+    NgIf,
+    RouterLink,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+  ],
 })
 export class UnitUserRolesCellComponent extends CellComponent {
   unitKey$: Observable<string> = this.itemService.key$;

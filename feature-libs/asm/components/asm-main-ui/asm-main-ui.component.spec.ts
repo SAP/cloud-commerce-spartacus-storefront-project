@@ -48,7 +48,7 @@ class MockAuthService implements Partial<AuthService> {
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -104,21 +104,21 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
 @Component({
   selector: 'cx-asm-toggle-ui',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockAsmToggleUiComponent {}
 
 @Component({
   selector: 'cx-asm-session-timer',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockAsmSessionTimerComponent {}
 
 @Component({
   selector: 'cx-customer-selection',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockCustomerSelectionComponent {
   @Output()
@@ -127,7 +127,7 @@ class MockCustomerSelectionComponent {
 @Component({
   selector: 'cx-csagent-login-form',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockCSAgentLoginFormComponent {
   @Output()
@@ -138,7 +138,7 @@ class MockCSAgentLoginFormComponent {
 @Component({
   template: '',
   selector: 'cx-customer-emulation',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockCustomerEmulationComponent {}
 
@@ -187,8 +187,8 @@ describe('AsmMainUiComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         AsmMainUiComponent,
         MockAsmToggleUiComponent,
         MockCSAgentLoginFormComponent,

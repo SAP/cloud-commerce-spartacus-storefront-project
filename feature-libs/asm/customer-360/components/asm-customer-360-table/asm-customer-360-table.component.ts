@@ -17,6 +17,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import {
+  ArgsPipe,
   byBoolean,
   byComparison,
   byNullish,
@@ -38,12 +39,25 @@ import {
 } from './asm-customer-360-table.model';
 import { AsmCustomer360Config } from '../config/asm-customer-360-config';
 import { KeyBoardEventCode } from '@spartacus/asm/customer-360/root';
+import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
+import { StarRatingComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'cx-asm-customer-360-table',
   templateUrl: './asm-customer-360-table.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    NgFor,
+    NgClass,
+    StarRatingComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+    ArgsPipe,
+  ],
 })
 export class AsmCustomer360TableComponent
   implements OnChanges, AfterViewChecked

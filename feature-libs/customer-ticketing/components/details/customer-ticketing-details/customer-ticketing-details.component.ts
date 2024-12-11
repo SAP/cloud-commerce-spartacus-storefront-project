@@ -21,12 +21,16 @@ import {
 import { Card } from '@spartacus/storefront';
 import { combineLatest, Observable, Subscription } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CardComponent } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-customer-ticketing-details',
   templateUrl: './customer-ticketing-details.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, CardComponent, SpinnerComponent, AsyncPipe, CxDatePipe],
 })
 export class CustomerTicketingDetailsComponent implements OnDestroy {
   dateFormat = DATE_FORMAT;

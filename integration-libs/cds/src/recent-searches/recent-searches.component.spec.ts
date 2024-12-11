@@ -20,18 +20,12 @@ import { I18nTestingModule } from '@spartacus/core';
 import { CUSTOM_ELEMENTS_SCHEMA, Pipe, PipeTransform } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 
-@Pipe({
-  name: 'cxHighlight',
-  standalone: false,
-})
+@Pipe({ name: 'cxHighlight' })
 class MockHighlightPipe implements PipeTransform {
   transform(): any {}
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {
     return ['test', 'url'];
@@ -60,8 +54,13 @@ describe('RecentSearchesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule],
-      declarations: [RecentSearchesComponent, MockHighlightPipe, MockUrlPipe],
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        RecentSearchesComponent,
+        MockHighlightPipe,
+        MockUrlPipe,
+      ],
       providers: [
         {
           provide: RecentSearchesService,

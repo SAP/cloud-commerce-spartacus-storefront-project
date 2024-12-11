@@ -13,11 +13,25 @@ import {
   StoreFinderService,
   StoreFinderConfig,
 } from '@spartacus/storefinder/core';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { PaginationComponent } from '@spartacus/storefront';
+import { StoreFinderListComponent } from './store-finder-list/store-finder-list.component';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-store-finder-search-result',
   templateUrl: './store-finder-search-result.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    PaginationComponent,
+    StoreFinderListComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class StoreFinderSearchResultComponent implements OnInit, OnDestroy {
   locations: any;

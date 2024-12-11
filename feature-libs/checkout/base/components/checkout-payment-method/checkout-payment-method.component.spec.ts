@@ -27,7 +27,7 @@ import createSpy = jasmine.createSpy;
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -147,7 +147,7 @@ const mockAddress: Address = {
 @Component({
   selector: 'cx-payment-form',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockPaymentFormComponent {
   @Input()
@@ -163,7 +163,7 @@ class MockPaymentFormComponent {
 @Component({
   selector: 'cx-spinner',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockSpinnerComponent {}
 
@@ -185,8 +185,8 @@ describe('CheckoutPaymentMethodComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         CheckoutPaymentMethodComponent,
         MockPaymentFormComponent,
         CardComponent,

@@ -7,6 +7,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ListService } from '../../../shared/list/list.service';
 import { UserAssignedApproverListService } from './user-assigned-approver-list.service';
+import { SubListComponent } from '../../../shared/sub-list/sub-list.component';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-user-assigned-approver-list',
@@ -19,6 +22,6 @@ import { UserAssignedApproverListService } from './user-assigned-approver-list.s
       useExisting: UserAssignedApproverListService,
     },
   ],
-  standalone: false,
+  imports: [SubListComponent, RouterLink, TranslatePipe],
 })
 export class UserAssignedApproverListComponent {}

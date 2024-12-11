@@ -10,18 +10,47 @@ import {
   Optional,
   inject,
 } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Title } from '@spartacus/user/profile/root';
 import { Observable } from 'rxjs';
 import { UpdateProfileComponentService } from './update-profile-component.service';
 import { RoutingService } from '@spartacus/core';
+import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { NgSelectComponent, NgOptionComponent } from '@ng-select/ng-select';
+import { NgSelectA11yDirective } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-update-profile',
   templateUrl: './update-profile.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'user-form' },
-  standalone: false,
+  imports: [
+    NgIf,
+    SpinnerComponent,
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgSelectComponent,
+    NgSelectA11yDirective,
+    NgFor,
+    NgOptionComponent,
+    NgTemplateOutlet,
+    FormErrorsComponent,
+    RouterLink,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+  ],
 })
 export class UpdateProfileComponent {
   @Optional() protected routingService = inject(RoutingService, {

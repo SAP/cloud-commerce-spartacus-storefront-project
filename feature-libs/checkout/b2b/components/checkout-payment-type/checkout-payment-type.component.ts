@@ -34,12 +34,23 @@ import {
   map,
   tap,
 } from 'rxjs/operators';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-payment-type',
   templateUrl: './checkout-payment-type.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    NgFor,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CheckoutPaymentTypeComponent {
   @ViewChild('poNumber', { static: false })

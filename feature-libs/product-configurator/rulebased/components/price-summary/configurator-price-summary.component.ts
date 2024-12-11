@@ -10,12 +10,14 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
 import { Configurator } from '../../core/model/configurator.model';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-price-summary',
   templateUrl: './configurator-price-summary.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorPriceSummaryComponent {
   configuration$: Observable<Configurator.Configuration> =

@@ -31,6 +31,11 @@ import { BREAKPOINT, BreakpointService } from '../../../layout';
 import { ICON_TYPE } from '../../misc/icon/index';
 import { HamburgerMenuService } from './../../../layout/header/hamburger-menu/hamburger-menu.service';
 import { NavigationNode } from './navigation-node.model';
+import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { IconComponent } from '../../misc/icon/icon.component';
+import { FeatureDirective } from '@spartacus/core';
+import { GenericLinkComponent } from '../../../shared/components/generic-link/generic-link.component';
+import { TranslatePipe } from '@spartacus/core';
 
 const ARIA_EXPANDED_ATTR = 'aria-expanded';
 
@@ -38,7 +43,16 @@ const ARIA_EXPANDED_ATTR = 'aria-expanded';
   selector: 'cx-navigation-ui',
   templateUrl: './navigation-ui.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    IconComponent,
+    NgFor,
+    NgTemplateOutlet,
+    FeatureDirective,
+    GenericLinkComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class NavigationUIComponent implements OnInit, OnDestroy {
   /**

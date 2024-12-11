@@ -14,12 +14,24 @@ import { asapScheduler, BehaviorSubject, interval, Observable, of } from 'rxjs';
 import { delayWhen, observeOn, switchMap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../../cms-components/misc/icon/icon.model';
 import { BreakpointService } from '../../../../layout/breakpoint/breakpoint.service';
+import { IconComponent } from '../../../misc/icon/icon.component';
+import { ActiveFacetsComponent } from './active-facets/active-facets.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FacetListComponent } from './facet-list/facet-list.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-facet-navigation',
   templateUrl: './product-facet-navigation.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    IconComponent,
+    ActiveFacetsComponent,
+    NgIf,
+    FacetListComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ProductFacetNavigationComponent {
   iconTypes = ICON_TYPE;

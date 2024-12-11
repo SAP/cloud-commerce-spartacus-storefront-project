@@ -16,6 +16,12 @@ import { tap } from 'rxjs/operators';
 import { ItemService } from '../item.service';
 import { MessageService } from '../message/services/message.service';
 import { BaseItem } from '../organization.model';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { PopoverDirective } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { MessageComponent } from '../message/message.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-card',
@@ -23,7 +29,17 @@ import { BaseItem } from '../organization.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'content-wrapper' },
   providers: [MessageService],
-  standalone: false,
+  imports: [
+    ViewComponent,
+    NgIf,
+    PopoverDirective,
+    IconComponent,
+    RouterLink,
+    MessageComponent,
+    RouterOutlet,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CardComponent<T extends BaseItem> {
   @Input() i18nRoot: string;

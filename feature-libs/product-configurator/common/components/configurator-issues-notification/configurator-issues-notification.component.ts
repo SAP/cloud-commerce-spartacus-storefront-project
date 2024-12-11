@@ -10,11 +10,21 @@ import { CartItemContext, OrderEntry } from '@spartacus/cart/base/root';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { EMPTY, Observable } from 'rxjs';
 import { CommonConfiguratorUtilsService } from '../../shared/utils/common-configurator-utils.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
+import { ConfigureCartEntryComponent } from '../configure-cart-entry/configure-cart-entry.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-issues-notification',
   templateUrl: './configurator-issues-notification.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    IconComponent,
+    ConfigureCartEntryComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ConfiguratorIssuesNotificationComponent {
   iconTypes = ICON_TYPE;

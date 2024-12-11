@@ -26,10 +26,7 @@ class MockQuickOrderFacade implements Partial<QuickOrderFacade> {
   }
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -37,7 +34,7 @@ class MockUrlPipe implements PipeTransform {
 @Component({
   template: '',
   selector: 'cx-item-counter',
-  standalone: false,
+  imports: [ReactiveFormsModule, I18nTestingModule, RouterTestingModule],
 })
 class MockItemCounterComponent {
   @Input() max: number;
@@ -48,7 +45,7 @@ class MockItemCounterComponent {
 @Component({
   template: '',
   selector: 'cx-media',
-  standalone: false,
+  imports: [ReactiveFormsModule, I18nTestingModule, RouterTestingModule],
 })
 class MockMediaComponent {
   @Input() container;
@@ -62,8 +59,10 @@ describe('QuickOrderItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, I18nTestingModule, RouterTestingModule],
-      declarations: [
+      imports: [
+        ReactiveFormsModule,
+        I18nTestingModule,
+        RouterTestingModule,
         QuickOrderItemComponent,
         MockUrlPipe,
         MockItemCounterComponent,

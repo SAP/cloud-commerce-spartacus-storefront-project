@@ -6,7 +6,7 @@ import { By } from '@angular/platform-browser';
 @Component({
   selector: 'cx-test-cmp',
   template: '',
-  standalone: false,
+  imports: [FeaturesConfigModule],
 })
 class TestComponent {}
 
@@ -27,8 +27,7 @@ describe('cxFeatureLevel directive', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TestComponent],
-      imports: [FeaturesConfigModule],
+      imports: [FeaturesConfigModule, TestComponent],
       providers: [
         {
           provide: FeaturesConfig,

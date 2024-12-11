@@ -27,8 +27,8 @@ import { UnitFormComponent } from './unit-form.component';
     FormErrorsModule,
     ItemActiveModule,
     FeaturesConfigModule,
+    UnitFormComponent,
   ],
-  declarations: [UnitFormComponent],
   exports: [UnitFormComponent],
 })
 export class UnitFormModule {}

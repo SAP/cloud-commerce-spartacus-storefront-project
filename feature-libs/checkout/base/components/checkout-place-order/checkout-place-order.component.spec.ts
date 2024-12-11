@@ -32,10 +32,7 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
   clear = createSpy();
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -55,8 +52,9 @@ describe('CheckoutPlaceOrderComponent', () => {
         RouterTestingModule,
         I18nTestingModule,
         AtMessageModule,
+        MockUrlPipe,
+        CheckoutPlaceOrderComponent,
       ],
-      declarations: [MockUrlPipe, CheckoutPlaceOrderComponent],
       providers: [
         { provide: OrderFacade, useClass: MockOrderFacade },
         { provide: RoutingService, useClass: MockRoutingService },

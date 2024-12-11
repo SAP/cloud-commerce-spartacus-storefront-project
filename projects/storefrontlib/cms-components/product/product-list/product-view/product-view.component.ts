@@ -12,6 +12,9 @@ import {
   Output,
 } from '@angular/core';
 import { ICON_TYPE } from '../../../misc/icon/icon.model';
+import { NgClass, NgIf } from '@angular/common';
+import { IconComponent } from '../../../misc/icon/icon.component';
+import { TranslatePipe } from '@spartacus/core';
 
 export enum ViewModes {
   Grid = 'grid',
@@ -22,7 +25,7 @@ export enum ViewModes {
   selector: 'cx-product-view',
   templateUrl: './product-view.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgClass, NgIf, IconComponent, TranslatePipe],
 })
 export class ProductViewComponent {
   iconTypes = ICON_TYPE;

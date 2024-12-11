@@ -11,6 +11,15 @@ import { startWith, switchMap } from 'rxjs/operators';
 import { ItemService } from '../../shared/item.service';
 import { UserItemService } from '../services/user-item.service';
 import { B2BUserService } from '@spartacus/organization/administration/core';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { CardComponent } from '../../shared/card/card.component';
+import { FocusDirective } from '@spartacus/storefront';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ToggleStatusComponent } from '../../shared/detail/toggle-status-action/toggle-status.component';
+import { DisableInfoComponent } from '../../shared/detail/disable-info/disable-info.component';
+import { ItemExistsDirective } from '../../shared/item-exists.directive';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-user-details',
@@ -23,7 +32,20 @@ import { B2BUserService } from '@spartacus/organization/administration/core';
     },
   ],
   host: { class: 'content-wrapper' },
-  standalone: false,
+  imports: [
+    NgIf,
+    CardComponent,
+    FocusDirective,
+    RouterLink,
+    ToggleStatusComponent,
+    DisableInfoComponent,
+    ItemExistsDirective,
+    NgFor,
+    RouterLinkActive,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+  ],
 })
 export class UserDetailsComponent {
   userGuardSubscription: Subscription;

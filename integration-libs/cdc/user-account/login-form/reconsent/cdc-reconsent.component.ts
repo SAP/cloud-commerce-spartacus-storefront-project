@@ -20,12 +20,27 @@ import {
 import { Observable, of, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CdcReconsentComponentService } from './cdc-reconsent-component.service';
+import { FocusDirective } from '@spartacus/storefront';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
+import { ConsentManagementFormComponent } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-anonymous-consent-dialog', //reusing existing selector
   templateUrl: './cdc-reconsent.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FocusDirective,
+    NgIf,
+    IconComponent,
+    NgFor,
+    ConsentManagementFormComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CdcReconsentComponent implements OnInit, OnDestroy {
   protected subscription = new Subscription();

@@ -49,10 +49,7 @@ function createValue(
   return value;
 }
 
-@Directive({
-  selector: '[cxFocus]',
-  standalone: false,
-})
+@Directive({ selector: '[cxFocus]' })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: any;
 }
@@ -60,7 +57,7 @@ export class MockFocusDirective {
 @Component({
   selector: 'cx-configurator-attribute-quantity',
   template: '',
-  standalone: false,
+  imports: [ReactiveFormsModule, NgSelectModule, I18nTestingModule],
 })
 class MockConfiguratorAttributeQuantityComponent {
   @Input() quantityOptions: ConfiguratorAttributeQuantityComponentOptions;
@@ -70,7 +67,7 @@ class MockConfiguratorAttributeQuantityComponent {
 @Component({
   selector: 'cx-configurator-price',
   template: '',
-  standalone: false,
+  imports: [ReactiveFormsModule, NgSelectModule, I18nTestingModule],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -79,7 +76,7 @@ class MockConfiguratorPriceComponent {
 @Component({
   selector: 'cx-configurator-show-more',
   template: '',
-  standalone: false,
+  imports: [ReactiveFormsModule, NgSelectModule, I18nTestingModule],
 })
 class MockConfiguratorShowMoreComponent {
   @Input() text: string;
@@ -173,7 +170,12 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
       },
     });
     TestBed.configureTestingModule({
-      declarations: [
+      imports: [
+        ReactiveFormsModule,
+        NgSelectModule,
+        I18nTestingModule,
+        StoreModule.forRoot({}),
+        StoreModule.forFeature(CONFIGURATOR_FEATURE, getConfiguratorReducers),
         ConfiguratorAttributeDropDownComponent,
         ConfiguratorAttributeInputFieldComponent,
         ConfiguratorAttributeNumericInputFieldComponent,
@@ -182,13 +184,6 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
         MockConfiguratorPriceComponent,
         MockFeatureLevelDirective,
         MockConfiguratorShowMoreComponent,
-      ],
-      imports: [
-        ReactiveFormsModule,
-        NgSelectModule,
-        I18nTestingModule,
-        StoreModule.forRoot({}),
-        StoreModule.forFeature(CONFIGURATOR_FEATURE, getConfiguratorReducers),
       ],
       providers: [
         {

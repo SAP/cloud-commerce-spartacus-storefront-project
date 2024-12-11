@@ -17,12 +17,24 @@ import { ImageGroup, isNotNullable } from '@spartacus/core';
 import { ThumbnailsGroup } from '@spartacus/product/image-zoom/root';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CarouselComponent } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { MediaComponent } from '@spartacus/storefront';
+import { FocusableCarouselItemDirective } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-product-image-zoom-thumbnails',
   templateUrl: './product-image-zoom-thumbnails.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    CarouselComponent,
+    FeatureDirective,
+    MediaComponent,
+    FocusableCarouselItemDirective,
+    AsyncPipe,
+  ],
 })
 export class ProductImageZoomThumbnailsComponent implements OnInit, OnDestroy {
   private mainMediaContainer = new BehaviorSubject<ImageGroup>({});

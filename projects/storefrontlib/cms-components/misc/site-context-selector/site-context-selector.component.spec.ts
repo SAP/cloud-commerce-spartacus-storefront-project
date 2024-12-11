@@ -25,10 +25,7 @@ import { CmsComponentData } from '../../../cms-structure/page/model/cms-componen
 import { SiteContextComponentService } from './site-context-component.service';
 import { SiteContextSelectorComponent } from './site-context-selector.component';
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -36,7 +33,6 @@ class MockUrlPipe implements PipeTransform {
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type;
@@ -84,8 +80,8 @@ describe('SiteContextSelectorComponent in CmsLib', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule],
-      declarations: [
+      imports: [
+        BrowserAnimationsModule,
         SiteContextSelectorComponent,
         MockUrlPipe,
         MockCxIconComponent,

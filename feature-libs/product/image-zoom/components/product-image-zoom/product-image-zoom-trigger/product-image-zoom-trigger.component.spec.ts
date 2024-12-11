@@ -14,7 +14,7 @@ import { ProductImageZoomTriggerComponent } from './product-image-zoom-trigger.c
 
 @Component({
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class TestDialogComponent {
   @Input() galleryItem: number;
@@ -37,17 +37,17 @@ describe('ProductImageZoomTriggerComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
+      imports: [
+        I18nTestingModule,
+        ProductImageZoomTriggerComponent,
+        TestDialogComponent,
+        MockFeatureDirective,
+      ],
       providers: [
         {
           provide: LaunchDialogService,
           useClass: MockLaunchDialogService,
         },
-      ],
-      declarations: [
-        ProductImageZoomTriggerComponent,
-        TestDialogComponent,
-        MockFeatureDirective,
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();

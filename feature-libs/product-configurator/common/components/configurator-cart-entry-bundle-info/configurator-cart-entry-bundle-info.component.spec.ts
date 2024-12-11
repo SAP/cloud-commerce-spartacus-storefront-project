@@ -27,10 +27,7 @@ import { take, toArray } from 'rxjs/operators';
 import { CommonConfiguratorTestUtilsService } from '../../testing/common-configurator-test-utils.service';
 import { ConfiguratorCartEntryBundleInfoComponent } from './configurator-cart-entry-bundle-info.component';
 
-@Pipe({
-  name: 'cxNumeric',
-  standalone: false,
-})
+@Pipe({ name: 'cxNumeric' })
 class MockNumericPipe implements PipeTransform {
   transform(value: string): string {
     return value;
@@ -40,7 +37,7 @@ class MockNumericPipe implements PipeTransform {
 @Component({
   selector: 'cx-configure-cart-entry',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockConfigureCartEntryComponent {
   @Input() cartEntry: OrderEntry;
@@ -105,8 +102,8 @@ describe('ConfiguratorCartEntryBundleInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         ConfiguratorCartEntryBundleInfoComponent,
         MockNumericPipe,
         MockConfigureCartEntryComponent,
@@ -931,8 +928,7 @@ describe('ConfiguratorCartEntryBundleInfoComponent without cart item context', (
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [ConfiguratorCartEntryBundleInfoComponent],
+      imports: [I18nTestingModule, ConfiguratorCartEntryBundleInfoComponent],
     }).compileComponents();
   }));
 

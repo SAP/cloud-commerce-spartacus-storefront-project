@@ -14,8 +14,7 @@ describe('StoreSearchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [StoreSearchComponent, MockFeatureDirective],
-      imports: [I18nTestingModule],
+      imports: [I18nTestingModule, StoreSearchComponent, MockFeatureDirective],
       providers: [
         {
           provide: CurrentLocationService,
@@ -81,7 +80,6 @@ describe('StoreSearchComponent', () => {
 @Component({
   selector: 'cx-store-search',
   template: '',
-  standalone: false,
 })
 export class StoreSearchStubComponent {
   @Input() hideOutOfStock = false;

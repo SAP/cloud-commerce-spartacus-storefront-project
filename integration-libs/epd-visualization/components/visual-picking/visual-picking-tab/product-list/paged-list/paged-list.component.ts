@@ -18,6 +18,8 @@ import {
 import { LoggerService } from '@spartacus/core';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
+import { NgIf, NgTemplateOutlet, NgFor, SlicePipe } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
 /**
  * Generic in-memory paged list component that can be used to render arbitrary items in
  * a vertical orientation.
@@ -30,7 +32,7 @@ import { Observable } from 'rxjs';
   selector: 'cx-epd-visualization-paged-list',
   templateUrl: './paged-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, NgTemplateOutlet, NgFor, IconComponent, SlicePipe],
 })
 export class PagedListComponent implements OnInit {
   /**

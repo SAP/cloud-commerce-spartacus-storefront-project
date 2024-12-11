@@ -16,12 +16,22 @@ import {
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { CmsComponentData } from '../../../../cms-structure/page/model/cms-component-data';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CarouselComponent } from '../../../../shared/components/carousel/carousel.component';
+import { ProductCarouselItemComponent } from '../product-carousel-item/product-carousel-item.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-carousel',
   templateUrl: './product-carousel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    CarouselComponent,
+    ProductCarouselItemComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ProductCarouselComponent {
   private featureConfigService: FeatureConfigService =

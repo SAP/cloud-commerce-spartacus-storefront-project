@@ -10,6 +10,11 @@ import { Observable, of } from 'rxjs';
 import { ListService } from '../../../shared/list/list.service';
 import { CurrentUnitService } from '../../services/current-unit.service';
 import { UnitChildrenService } from './unit-children.service';
+import { SubListComponent } from '../../../shared/sub-list/sub-list.component';
+import { RouterLink } from '@angular/router';
+import { DisableInfoComponent } from '../../../shared/detail/disable-info/disable-info.component';
+import { TranslatePipe } from '@spartacus/core';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-org-unit-children',
@@ -22,7 +27,13 @@ import { UnitChildrenService } from './unit-children.service';
       useExisting: UnitChildrenService,
     },
   ],
-  standalone: false,
+  imports: [
+    SubListComponent,
+    RouterLink,
+    DisableInfoComponent,
+    TranslatePipe,
+    AsyncPipe,
+  ],
 })
 export class UnitChildrenComponent {
   unit$: Observable<B2BUnit | undefined> = this.currentUnitService

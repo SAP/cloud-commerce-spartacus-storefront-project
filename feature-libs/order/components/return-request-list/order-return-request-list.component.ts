@@ -12,12 +12,29 @@ import {
 } from '@spartacus/order/root';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { SortingComponent } from '@spartacus/storefront';
+import { PaginationComponent } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-return-request-list',
   templateUrl: './order-return-request-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    SortingComponent,
+    PaginationComponent,
+    NgFor,
+    RouterLink,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class OrderReturnRequestListComponent implements OnDestroy {
   constructor(

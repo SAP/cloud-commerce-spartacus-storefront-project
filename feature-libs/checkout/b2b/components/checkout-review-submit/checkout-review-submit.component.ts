@@ -28,12 +28,41 @@ import {
 import { Card } from '@spartacus/storefront';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import {
+  NgIf,
+  NgFor,
+  NgSwitch,
+  NgSwitchCase,
+  NgTemplateOutlet,
+  AsyncPipe,
+} from '@angular/common';
+import { CardComponent } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { IconComponent } from '@spartacus/storefront';
+import { OutletDirective } from '@spartacus/storefront';
+import { PromotionsComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-review-submit',
   templateUrl: './checkout-review-submit.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    NgFor,
+    NgSwitch,
+    NgSwitchCase,
+    NgTemplateOutlet,
+    CardComponent,
+    RouterLink,
+    IconComponent,
+    OutletDirective,
+    PromotionsComponent,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+  ],
 })
 export class B2BCheckoutReviewSubmitComponent extends CheckoutReviewSubmitComponent {
   checkoutStepTypePaymentType = CheckoutStepType.PAYMENT_TYPE;

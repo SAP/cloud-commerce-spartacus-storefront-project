@@ -6,11 +6,15 @@
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CellComponent } from '../cell.component';
+import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-roles-cell',
   templateUrl: './roles-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, RouterLink, NgTemplateOutlet, NgFor, UrlPipe, TranslatePipe],
 })
 export class RolesCellComponent extends CellComponent {}

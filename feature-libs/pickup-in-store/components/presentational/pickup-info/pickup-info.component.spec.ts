@@ -11,12 +11,8 @@ describe('PickupInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        PickupInfoComponent,
-        StoreAddressStubComponent,
-        StoreScheduleStubComponent,
-      ],
-      imports: [I18nTestingModule],
+      declarations: [StoreAddressStubComponent, StoreScheduleStubComponent],
+      imports: [I18nTestingModule, PickupInfoComponent],
     }).compileComponents();
   });
 
@@ -38,7 +34,6 @@ describe('PickupInfoComponent', () => {
 @Component({
   selector: 'cx-pickup-info',
   template: '',
-  standalone: false,
 })
 export class PickupInfoStubComponent {
   @Input() storeDetails: PointOfService;

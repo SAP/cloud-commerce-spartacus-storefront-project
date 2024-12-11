@@ -8,11 +8,15 @@ import { Component, Input, OnDestroy, OnInit, Optional } from '@angular/core';
 import { Cart } from '@spartacus/cart/base/root';
 import { OutletContextData } from '@spartacus/storefront';
 import { Subscription } from 'rxjs';
+import { FeatureDirective } from '@spartacus/core';
+import { NgIf } from '@angular/common';
+import { AppliedCouponsComponent } from '../../cart-coupon/applied-coupons/applied-coupons.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-summary',
   templateUrl: './order-summary.component.html',
-  standalone: false,
+  imports: [FeatureDirective, NgIf, AppliedCouponsComponent, TranslatePipe],
 })
 export class OrderSummaryComponent implements OnInit, OnDestroy {
   @Input()

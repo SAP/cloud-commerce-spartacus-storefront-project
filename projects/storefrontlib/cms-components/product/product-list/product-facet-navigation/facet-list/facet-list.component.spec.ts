@@ -26,7 +26,7 @@ import { TabModule } from 'projects/storefrontlib/cms-components/content/tab/tab
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, RouterTestingModule, TabModule],
 })
 class MockIconComponent {
   @Input() type: ICON_TYPE;
@@ -35,16 +35,13 @@ class MockIconComponent {
 @Component({
   selector: 'cx-facet',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, RouterTestingModule, TabModule],
 })
 class MockFacetComponent {
   @Input() facet;
 }
 
-@Directive({
-  selector: '[cxFocus]',
-  standalone: false,
-})
+@Directive({ selector: '[cxFocus]' })
 class MockKeyboadFocusDirective {
   @Input() cxFocus;
 }
@@ -74,8 +71,10 @@ describe('FacetListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule, TabModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        TabModule,
         FacetListComponent,
         MockIconComponent,
         MockFacetComponent,

@@ -16,12 +16,14 @@ import {
   VariantQualifier,
 } from '@spartacus/core';
 import { filter, take } from 'rxjs/operators';
+import { NgFor } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-variant-size-selector',
   templateUrl: './product-variant-size-selector.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgFor, TranslatePipe],
 })
 export class ProductVariantSizeSelectorComponent {
   constructor(

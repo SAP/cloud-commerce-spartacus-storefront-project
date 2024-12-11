@@ -27,12 +27,44 @@ import { tap } from 'rxjs/operators';
 import { ItemService } from '../item.service';
 import { OrganizationTableType } from '../organization.model';
 import { CreateButtonType, ListService } from './list.service';
+import { SplitViewComponent } from '@spartacus/storefront';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { ViewComponent } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { PopoverDirective } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { NgSelectComponent, NgOptionComponent } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+import { RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
+import { TableComponent } from '@spartacus/storefront';
+import { PaginationComponent } from '@spartacus/storefront';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-list',
   templateUrl: './list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    SplitViewComponent,
+    NgIf,
+    ViewComponent,
+    FeatureDirective,
+    PopoverDirective,
+    IconComponent,
+    NgSelectComponent,
+    FormsModule,
+    NgFor,
+    NgOptionComponent,
+    RouterLinkActive,
+    RouterLink,
+    TableComponent,
+    PaginationComponent,
+    RouterOutlet,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+  ],
 })
 export class ListComponent<T = any, P = PaginationModel> {
   readonly trapFocus = TrapFocus;

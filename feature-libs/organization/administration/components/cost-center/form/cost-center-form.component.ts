@@ -5,7 +5,12 @@
  */
 
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { AbstractControl, UntypedFormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { CostCenter, Currency, CurrencyService } from '@spartacus/core';
 import {
   B2BUnitNode,
@@ -18,6 +23,12 @@ import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { CostCenterItemService } from '../services/cost-center-item.service';
 import { CurrentCostCenterService } from '../services/current-cost-center.service';
+import { FormComponent } from '../../shared/form/form.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-cost-center-form',
@@ -34,7 +45,17 @@ import { CurrentCostCenterService } from '../services/current-cost-center.servic
       useExisting: CurrentCostCenterService,
     },
   ],
-  standalone: false,
+  imports: [
+    FormComponent,
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    FormErrorsComponent,
+    NgSelectComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CostCenterFormComponent {
   form: UntypedFormGroup | null = this.itemService.getForm();

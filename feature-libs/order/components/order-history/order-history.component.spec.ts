@@ -90,7 +90,7 @@ const mockReplenishmentOrder$ = new BehaviorSubject<ReplenishmentOrder>(
 @Component({
   template: '',
   selector: 'cx-pagination',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockPaginationComponent {
   @Input() pagination;
@@ -99,7 +99,7 @@ class MockPaginationComponent {
 @Component({
   template: '',
   selector: 'cx-sorting',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockSortingComponent {
   @Input() sortOptions;
@@ -109,10 +109,7 @@ class MockSortingComponent {
   @Output() sortListEvent = new EventEmitter<string>();
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -161,8 +158,9 @@ describe('OrderHistoryComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
         OrderHistoryComponent,
         MockUrlPipe,
         MockPaginationComponent,

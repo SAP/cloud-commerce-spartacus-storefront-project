@@ -5,17 +5,42 @@
  */
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { useFeatureStyles } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { UpdateEmailComponentService } from './update-email-component.service';
+import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { PasswordVisibilityToggleDirective } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-update-email',
   templateUrl: './update-email.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'user-form' },
-  standalone: false,
+  imports: [
+    NgIf,
+    SpinnerComponent,
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgTemplateOutlet,
+    FormErrorsComponent,
+    PasswordVisibilityToggleDirective,
+    RouterLink,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+  ],
 })
 export class UpdateEmailComponent {
   constructor(protected service: UpdateEmailComponentService) {

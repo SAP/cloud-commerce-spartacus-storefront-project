@@ -6,12 +6,15 @@
 
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { ConsignmentView } from '@spartacus/order/root';
+import { NgFor, NgIf } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-my-account-v2-consignment-entries',
   templateUrl: './my-account-v2-consignment-entries.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgFor, NgIf, TranslatePipe, CxDatePipe],
 })
 export class MyAccountV2ConsignmentEntriesComponent {
   @Input()

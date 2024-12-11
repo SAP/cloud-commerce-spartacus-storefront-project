@@ -23,12 +23,22 @@ import { ConfiguratorUISettingsConfig } from '../../config/configurator-ui-setti
 import { ConfiguratorStorefrontUtilsService } from '../../service/configurator-storefront-utils.service';
 import { ConfiguratorAttributeCompositionContext } from '../composition/configurator-attribute-composition.model';
 import { ConfiguratorAttributeBaseComponent } from '../types/base/configurator-attribute-base.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
+import { ConfiguratorShowMoreComponent } from '../../show-more/configurator-show-more.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-attribute-header',
   templateUrl: './configurator-attribute-header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    IconComponent,
+    ConfiguratorShowMoreComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ConfiguratorAttributeHeaderComponent
   extends ConfiguratorAttributeBaseComponent

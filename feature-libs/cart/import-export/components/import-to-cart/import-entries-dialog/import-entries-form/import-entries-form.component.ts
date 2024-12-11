@@ -16,6 +16,8 @@ import {
   UntypedFormControl,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { OrderEntriesSource, ProductData } from '@spartacus/cart/base/root';
 import { ImportExportConfig } from '@spartacus/cart/import-export/core';
@@ -29,12 +31,29 @@ import { of, Subject } from 'rxjs';
 import { filter, startWith, switchMap, take, tap } from 'rxjs/operators';
 import { ImportProductsFromCsvService } from '../../import-products-from-csv.service';
 import { GlobalMessageType } from '@spartacus/core';
+import { NgIf } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { MessageComponent } from '@spartacus/storefront';
+import { FocusDirective } from '@spartacus/storefront';
+import { FileUploadComponent } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-import-entries-form',
   templateUrl: './import-entries-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    MessageComponent,
+    FocusDirective,
+    FileUploadComponent,
+    FormErrorsComponent,
+    TranslatePipe,
+  ],
 })
 export class ImportEntriesFormComponent implements OnInit {
   form: UntypedFormGroup;

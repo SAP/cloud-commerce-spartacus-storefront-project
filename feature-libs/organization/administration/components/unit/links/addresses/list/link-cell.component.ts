@@ -13,6 +13,9 @@ import {
 import { Observable } from 'rxjs';
 import { ItemService } from '../../../../shared/item.service';
 import { CellComponent } from '../../../../shared/table/cell.component';
+import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-link-cell',
@@ -32,7 +35,7 @@ import { CellComponent } from '../../../../shared/table/cell.component';
     </ng-template>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, RouterLink, NgTemplateOutlet, AsyncPipe, UrlPipe],
 })
 export class LinkCellComponent extends CellComponent {
   unitKey$: Observable<string> = this.itemService.key$;

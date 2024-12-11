@@ -16,12 +16,25 @@ import { CustomerCoupon, useFeatureStyles } from '@spartacus/core';
 import { Subscription } from 'rxjs';
 import { ICON_TYPE } from '../../../../../cms-components/misc/icon/index';
 import { FocusConfig, LaunchDialogService } from '../../../../../layout/index';
+import { FocusDirective } from '../../../../../layout/a11y/keyboard-focus/focus.directive';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '../../../../misc/icon/icon.component';
+import { LowerCasePipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-coupon-dialog',
   templateUrl: './coupon-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FocusDirective,
+    FeatureDirective,
+    IconComponent,
+    LowerCasePipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class CouponDialogComponent implements OnDestroy, OnInit {
   private subscription = new Subscription();

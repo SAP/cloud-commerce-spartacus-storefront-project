@@ -5,13 +5,23 @@
  */
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Address, B2BUnit, Country, Region, Title } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { ItemService } from '../../../../shared/item.service';
 import { CurrentUnitService } from '../../../services/current-unit.service';
 import { UnitAddressItemService } from '../services/unit-address-item.service';
 import { UnitAddressFormService } from './unit-address-form.service';
+import { FormComponent } from '../../../../shared/form/form.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-unit-address-form',
@@ -24,7 +34,17 @@ import { UnitAddressFormService } from './unit-address-form.service';
       useExisting: UnitAddressItemService,
     },
   ],
-  standalone: false,
+  imports: [
+    FormComponent,
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    NgSelectComponent,
+    FeatureDirective,
+    FormErrorsComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class UnitAddressFormComponent implements OnInit {
   form: UntypedFormGroup | null = this.itemService.getForm();

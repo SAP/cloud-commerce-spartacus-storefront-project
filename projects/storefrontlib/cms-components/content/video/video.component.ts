@@ -25,12 +25,16 @@ import {
   MediaContainer,
 } from '../../../shared/components/media/media.model';
 import { MediaService } from '../../../shared/components/media/media.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { SpinnerComponent } from '../../../shared/components/spinner/spinner.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-video',
   templateUrl: './video.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, RouterLink, SpinnerComponent, AsyncPipe, TranslatePipe],
 })
 export class VideoComponent {
   @HostBinding('class') styleClasses: string | undefined;

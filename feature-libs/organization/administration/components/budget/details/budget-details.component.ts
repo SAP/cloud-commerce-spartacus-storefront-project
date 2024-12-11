@@ -10,6 +10,16 @@ import { Observable } from 'rxjs';
 import { startWith, switchMap } from 'rxjs/operators';
 import { ItemService } from '../../shared/item.service';
 import { BudgetItemService } from '../services/budget-item.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CardComponent } from '../../shared/card/card.component';
+import { FocusDirective } from '@spartacus/storefront';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ToggleStatusComponent } from '../../shared/detail/toggle-status-action/toggle-status.component';
+import { DisableInfoComponent } from '../../shared/detail/disable-info/disable-info.component';
+import { ItemExistsDirective } from '../../shared/item-exists.directive';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-budget-details',
@@ -22,7 +32,20 @@ import { BudgetItemService } from '../services/budget-item.service';
     },
   ],
   host: { class: 'content-wrapper' },
-  standalone: false,
+  imports: [
+    NgIf,
+    CardComponent,
+    FocusDirective,
+    RouterLink,
+    ToggleStatusComponent,
+    DisableInfoComponent,
+    ItemExistsDirective,
+    RouterLinkActive,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class BudgetDetailsComponent implements OnInit {
   model$: Observable<Budget>;

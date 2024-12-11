@@ -12,7 +12,7 @@ import { CategoryNavigationComponent } from './category-navigation.component';
 @Component({
   template: '',
   selector: 'cx-navigation-ui',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockNavigationComponent {
   @Input() node: NavigationNode;
@@ -60,8 +60,12 @@ describe('CategoryNavigationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [CategoryNavigationComponent, MockNavigationComponent],
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
+        CategoryNavigationComponent,
+        MockNavigationComponent,
+      ],
       providers: [
         {
           provide: NavigationService,

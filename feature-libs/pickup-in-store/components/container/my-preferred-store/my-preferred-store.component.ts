@@ -21,12 +21,27 @@ import { StoreFinderFacade } from '@spartacus/storefinder/root';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map, switchMap, take, tap } from 'rxjs/operators';
+import { NgClass, NgIf, AsyncPipe } from '@angular/common';
+import { CardComponent } from '@spartacus/storefront';
+import { StoreAddressComponent } from '../../presentational/store/store-address/store-address.component';
+import { IconComponent } from '@spartacus/storefront';
+import { StoreScheduleComponent } from '../../presentational/store/store-schedule/store-schedule.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-my-preferred-store',
   templateUrl: 'my-preferred-store.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgClass,
+    CardComponent,
+    StoreAddressComponent,
+    NgIf,
+    IconComponent,
+    StoreScheduleComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class MyPreferredStoreComponent implements OnInit {
   preferredStore$: Observable<PointOfService>;

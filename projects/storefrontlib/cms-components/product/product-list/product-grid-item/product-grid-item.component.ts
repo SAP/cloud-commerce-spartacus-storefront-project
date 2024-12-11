@@ -16,6 +16,14 @@ import { ProductListOutlets } from '../../product-outlets.model';
 import { ProductListItemContextSource } from '../model/product-list-item-context-source.model';
 import { ProductListItemContext } from '../model/product-list-item-context.model';
 import { ProductListService } from '../product-list.service';
+import { RouterLink } from '@angular/router';
+import { MediaComponent } from '../../../../shared/components/media/media.component';
+import { OutletDirective } from '../../../../cms-structure/outlet/outlet.directive';
+import { NgIf } from '@angular/common';
+import { StarRatingComponent } from '../../../../shared/components/star-rating/star-rating.component';
+import { InnerComponentsHostDirective } from '../../../../cms-structure/page/component/inner-components-host.directive';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-grid-item',
@@ -28,7 +36,16 @@ import { ProductListService } from '../product-list.service';
       useExisting: ProductListItemContextSource,
     },
   ],
-  standalone: false,
+  imports: [
+    RouterLink,
+    MediaComponent,
+    OutletDirective,
+    NgIf,
+    StarRatingComponent,
+    InnerComponentsHostDirective,
+    TranslatePipe,
+    UrlPipe,
+  ],
 })
 export class ProductGridItemComponent implements OnChanges {
   protected productListService = inject(ProductListService);

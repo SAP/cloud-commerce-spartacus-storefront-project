@@ -7,11 +7,14 @@
 import { Component } from '@angular/core';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { FutureStockFacade } from '@spartacus/product/future-stock/root';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-future-stock-accordion',
   templateUrl: './future-stock-accordion.component.html',
-  standalone: false,
+  imports: [NgIf, IconComponent, NgFor, AsyncPipe, TranslatePipe],
 })
 export class FutureStockAccordionComponent {
   futureStocks$ = this.futureStockService.getFutureStock();

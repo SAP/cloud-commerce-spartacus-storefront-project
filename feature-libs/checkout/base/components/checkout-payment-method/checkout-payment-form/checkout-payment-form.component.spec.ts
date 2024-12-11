@@ -34,7 +34,13 @@ import createSpy = jasmine.createSpy;
 @Component({
   selector: 'cx-spinner',
   template: '',
-  standalone: false,
+  imports: [
+    ReactiveFormsModule,
+    NgSelectModule,
+    NgSelectA11yModule,
+    I18nTestingModule,
+    FormErrorsModule,
+  ],
 })
 class MockSpinnerComponent {}
 
@@ -96,7 +102,13 @@ const mockPayment: any = {
 @Component({
   selector: 'cx-billing-address-form',
   template: '',
-  standalone: false,
+  imports: [
+    ReactiveFormsModule,
+    NgSelectModule,
+    NgSelectA11yModule,
+    I18nTestingModule,
+    FormErrorsModule,
+  ],
 })
 class MockBillingAddressFormComponent {
   @Input()
@@ -108,7 +120,13 @@ class MockBillingAddressFormComponent {
 @Component({
   selector: 'cx-card',
   template: '',
-  standalone: false,
+  imports: [
+    ReactiveFormsModule,
+    NgSelectModule,
+    NgSelectA11yModule,
+    I18nTestingModule,
+    FormErrorsModule,
+  ],
 })
 class MockCardComponent {
   @Input()
@@ -118,7 +136,13 @@ class MockCardComponent {
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [
+    ReactiveFormsModule,
+    NgSelectModule,
+    NgSelectA11yModule,
+    I18nTestingModule,
+    FormErrorsModule,
+  ],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -209,8 +233,6 @@ describe('CheckoutPaymentFormComponent', () => {
         NgSelectA11yModule,
         I18nTestingModule,
         FormErrorsModule,
-      ],
-      declarations: [
         CheckoutPaymentFormComponent,
         MockCardComponent,
         MockBillingAddressFormComponent,

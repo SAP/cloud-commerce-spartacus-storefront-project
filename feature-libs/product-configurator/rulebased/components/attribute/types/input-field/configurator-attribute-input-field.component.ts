@@ -10,7 +10,11 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import {
+  UntypedFormControl,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { CommonConfigurator } from '@spartacus/product-configurator/common';
 import { Observable, Subscription, of, timer } from 'rxjs';
 import { debounce, map } from 'rxjs/operators';
@@ -20,12 +24,23 @@ import { ConfiguratorUISettingsConfig } from '../../../config/configurator-ui-se
 import { ConfiguratorStorefrontUtilsService } from '../../../service/configurator-storefront-utils.service';
 import { ConfiguratorAttributeCompositionContext } from '../../composition/configurator-attribute-composition.model';
 import { ConfiguratorAttributeBaseComponent } from '../base/configurator-attribute-base.component';
+import { NgIf, NgClass, AsyncPipe } from '@angular/common';
+import { FocusDirective } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-attribute-input-field',
   templateUrl: './configurator-attribute-input-field.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    NgClass,
+    FocusDirective,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ConfiguratorAttributeInputFieldComponent
   extends ConfiguratorAttributeBaseComponent

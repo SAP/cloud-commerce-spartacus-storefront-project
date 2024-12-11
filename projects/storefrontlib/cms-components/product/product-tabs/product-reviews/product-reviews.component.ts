@@ -15,6 +15,8 @@ import {
   UntypedFormBuilder,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import {
   isNotNullable,
@@ -31,12 +33,37 @@ import {
   tap,
 } from 'rxjs/operators';
 import { CurrentProductService } from '../../current-product.service';
+import {
+  NgIf,
+  NgFor,
+  NgTemplateOutlet,
+  AsyncPipe,
+  SlicePipe,
+} from '@angular/common';
+import { StarRatingComponent } from '../../../../shared/components/star-rating/star-rating.component';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '../../../../shared/components/form/form-errors/form-errors.component';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-reviews',
   templateUrl: './product-reviews.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    StarRatingComponent,
+    NgFor,
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgTemplateOutlet,
+    FormErrorsComponent,
+    AsyncPipe,
+    SlicePipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class ProductReviewsComponent {
   @ViewChild('titleInput', { static: false }) titleInput: ElementRef;

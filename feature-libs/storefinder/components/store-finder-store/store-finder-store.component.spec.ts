@@ -25,7 +25,7 @@ class MockStoreFinderService implements Partial<StoreFinderService> {
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [SpinnerModule, RouterTestingModule, I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -34,7 +34,7 @@ class MockCxIconComponent {
 @Component({
   selector: 'cx-store-finder-store-description',
   template: '',
-  standalone: false,
+  imports: [SpinnerModule, RouterTestingModule, I18nTestingModule],
 })
 class MockStoreFinderStoreDescriptionComponent {
   @Input() location: PointOfService;
@@ -57,8 +57,10 @@ describe('StoreFinderStoreComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [SpinnerModule, RouterTestingModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        SpinnerModule,
+        RouterTestingModule,
+        I18nTestingModule,
         StoreFinderStoreComponent,
         MockStoreFinderStoreDescriptionComponent,
         MockCxIconComponent,

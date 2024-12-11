@@ -5,10 +5,13 @@
  */
 
 import { Component } from '@angular/core';
+import { FeatureDirective } from '@spartacus/core';
+import { StoreFinderHeaderComponent } from '../store-finder-header/store-finder-header.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'cx-store-finder',
   templateUrl: './store-finder.component.html',
-  standalone: false,
+  imports: [FeatureDirective, StoreFinderHeaderComponent, RouterOutlet],
 })
 export class StoreFinderComponent {}

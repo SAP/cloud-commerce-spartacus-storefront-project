@@ -21,12 +21,27 @@ import { QuoteUIConfig } from '../../config/quote-ui.config';
 import {
   EditCard,
   SaveEvent,
+  QuoteHeaderBuyerEditComponent,
 } from '../buyer-edit/quote-header-buyer-edit.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { CardComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-quote-header-overview',
   templateUrl: './quote-header-overview.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    CardComponent,
+    IconComponent,
+    QuoteHeaderBuyerEditComponent,
+    NgFor,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class QuoteHeaderOverviewComponent {
   protected quoteFacade = inject(QuoteFacade);

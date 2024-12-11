@@ -67,10 +67,7 @@ class MockSavedCartFacade implements Partial<SavedCartFacade> {
   }
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -110,8 +107,13 @@ describe('SavedCartListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule],
-      declarations: [SavedCartListComponent, MockUrlPipe, MockFeatureDirective],
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        SavedCartListComponent,
+        MockUrlPipe,
+        MockFeatureDirective,
+      ],
       providers: [
         { provide: RoutingService, useClass: MockRoutingService },
         { provide: SavedCartFacade, useClass: MockSavedCartFacade },

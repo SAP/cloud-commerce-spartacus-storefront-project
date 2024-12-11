@@ -11,12 +11,22 @@ import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
 import { Configurator } from '../../core/model/configurator.model';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CarouselComponent } from '@spartacus/storefront';
+import { ProductCarouselItemComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-variant-carousel',
   templateUrl: './configurator-variant-carousel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    CarouselComponent,
+    ProductCarouselItemComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ConfiguratorVariantCarouselComponent {
   configuration$: Observable<Configurator.Configuration> =

@@ -23,12 +23,28 @@ import {
 import { CurrentProductService, ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { AtMessageDirective } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-add-to-wishlist',
   templateUrl: './add-to-wish-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    AtMessageDirective,
+    IconComponent,
+    RouterLink,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+  ],
 })
 export class AddToWishListComponent {
   product$: Observable<Product> = this.currentProductService.getProduct().pipe(

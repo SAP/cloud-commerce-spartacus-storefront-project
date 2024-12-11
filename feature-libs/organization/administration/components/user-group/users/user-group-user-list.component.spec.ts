@@ -22,7 +22,6 @@ class MockCurrentUserGroupService {
 @Component({
   selector: 'cx-org-sub-list',
   template: '',
-  standalone: false,
 })
 class MockSubListComponent {
   messageService = {
@@ -42,7 +41,12 @@ describe('UserGroupUserListComponent', () => {
   let userGroupUserListService: UserGroupUserListService;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SubListTestingModule, UrlTestingModule, I18nTestingModule],
+      imports: [
+        SubListTestingModule,
+        UrlTestingModule,
+        I18nTestingModule,
+        UserGroupUserListComponent,
+      ],
       providers: [
         {
           provide: UserGroupUserListService,
@@ -53,7 +57,6 @@ describe('UserGroupUserListComponent', () => {
           useClass: MockCurrentUserGroupService,
         },
       ],
-      declarations: [UserGroupUserListComponent],
     }).compileComponents();
 
     userGroupUserListService = TestBed.inject(UserGroupUserListService);

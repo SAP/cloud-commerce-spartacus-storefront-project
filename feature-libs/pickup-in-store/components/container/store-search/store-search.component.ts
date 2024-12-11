@@ -7,6 +7,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { LocationSearchParams } from '@spartacus/pickup-in-store/root';
 import { CurrentLocationService } from '../../services/current-location.service';
+import { FeatureDirective } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 /**
  * The search box and find my location button for finding points of
@@ -16,7 +18,7 @@ import { CurrentLocationService } from '../../services/current-location.service'
 @Component({
   selector: 'cx-store-search',
   templateUrl: './store-search.component.html',
-  standalone: false,
+  imports: [FeatureDirective, TranslatePipe],
 })
 export class StoreSearchComponent {
   /** Whether the hide out of stock checkbox appears checked */

@@ -45,6 +45,15 @@ import {
 import { CustomerListAction } from '../customer-list/customer-list.model';
 import { AsmComponentService } from '../services/asm-component.service';
 import { AsmDialogActionEvent } from '@spartacus/asm/customer-360/root';
+import { IconComponent } from '@spartacus/storefront';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { AsmToggleUiComponent } from '../asm-toggle-ui/asm-toggle-ui.component';
+import { AsmSessionTimerComponent } from '../asm-session-timer/asm-session-timer.component';
+import { CustomerEmulationComponent } from '../customer-emulation/customer-emulation.component';
+import { MessageComponent } from '@spartacus/storefront';
+import { CustomerSelectionComponent } from '../customer-selection/customer-selection.component';
+import { CSAgentLoginFormComponent } from '../csagent-login-form/csagent-login-form.component';
+import { TranslatePipe } from '@spartacus/core';
 interface CartTypeKey {
   [key: string]: string;
 }
@@ -56,7 +65,18 @@ export const CART_TYPE_KEY: CartTypeKey = {
 @Component({
   selector: 'cx-asm-main-ui',
   templateUrl: './asm-main-ui.component.html',
-  standalone: false,
+  imports: [
+    IconComponent,
+    NgIf,
+    AsmToggleUiComponent,
+    AsmSessionTimerComponent,
+    CustomerEmulationComponent,
+    MessageComponent,
+    CustomerSelectionComponent,
+    CSAgentLoginFormComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class AsmMainUiComponent implements OnInit, OnDestroy {
   customerSupportAgentLoggedIn$: Observable<boolean>;

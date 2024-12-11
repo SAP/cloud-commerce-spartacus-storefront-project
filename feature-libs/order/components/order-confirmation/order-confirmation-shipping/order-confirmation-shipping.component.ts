@@ -29,12 +29,24 @@ import {
 import { Card, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription, combineLatest, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CardComponent } from '@spartacus/storefront';
+import { AbstractOrderContextDirective } from '@spartacus/cart/base/components';
+import { OutletDirective } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-confirmation-shipping',
   templateUrl: './order-confirmation-shipping.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    CardComponent,
+    AbstractOrderContextDirective,
+    OutletDirective,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class OrderConfirmationShippingComponent implements OnInit, OnDestroy {
   @Input() showItemList: boolean = true;

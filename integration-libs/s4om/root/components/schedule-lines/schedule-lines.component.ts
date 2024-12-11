@@ -8,12 +8,14 @@ import { Component, Optional } from '@angular/core';
 import { CartItemContext, OrderEntry } from '@spartacus/cart/base/root';
 import { CxDatePipe, TranslationService } from '@spartacus/core';
 import { EMPTY, Observable } from 'rxjs';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-schedule-lines',
   templateUrl: './schedule-lines.component.html',
   providers: [CxDatePipe],
-  standalone: false,
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, CxDatePipe],
 })
 export class ScheduleLinesComponent {
   constructor(

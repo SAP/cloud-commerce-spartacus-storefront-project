@@ -9,6 +9,9 @@ import { ICON_TYPE } from '../icon/icon.model';
 import { Observable } from 'rxjs';
 import { SiteThemeSwitcherComponentService } from './site-theme-switcher.component.service';
 import { SiteTheme } from '@spartacus/core';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { IconComponent } from '../icon/icon.component';
+import { TranslatePipe } from '@spartacus/core';
 
 /**
  * Component for switching themes.
@@ -17,7 +20,7 @@ import { SiteTheme } from '@spartacus/core';
   selector: 'cx-site-theme-switcher',
   templateUrl: './site-theme-switcher.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, NgFor, IconComponent, AsyncPipe, TranslatePipe],
 })
 export class SiteThemeSwitcherComponent {
   iconTypes = ICON_TYPE;

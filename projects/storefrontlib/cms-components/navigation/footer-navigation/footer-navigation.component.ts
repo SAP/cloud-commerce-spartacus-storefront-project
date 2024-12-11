@@ -11,12 +11,15 @@ import { map } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import { NavigationNode } from '../navigation/navigation-node.model';
 import { NavigationService } from '../navigation/navigation.service';
+import { NgIf, NgClass, AsyncPipe } from '@angular/common';
+import { NavigationUIComponent } from '../navigation/navigation-ui.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-footer-navigation',
   templateUrl: './footer-navigation.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, NavigationUIComponent, NgClass, AsyncPipe, TranslatePipe],
 })
 export class FooterNavigationComponent {
   node$: Observable<NavigationNode> = this.service.getNavigationNode(

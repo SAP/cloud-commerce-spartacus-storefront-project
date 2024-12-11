@@ -21,7 +21,7 @@ class MockCarouselService {
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -29,7 +29,7 @@ class MockCxIconComponent {
 
 @Component({
   template: ` <div id="templateEl"></div> `,
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockTemplateComponent {}
 
@@ -53,8 +53,9 @@ describe('Carousel Component', () => {
   let template: TemplateRef<any>;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
         CarouselComponent,
         MockCxIconComponent,
         MockTemplateComponent,

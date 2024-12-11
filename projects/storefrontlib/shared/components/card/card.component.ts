@@ -6,6 +6,20 @@
 
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
+import {
+  NgIf,
+  NgFor,
+  NgTemplateOutlet,
+  NgSwitch,
+  NgSwitchCase,
+  NgClass,
+} from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '../../../cms-components/misc/icon/icon.component';
+import { AtMessageDirective } from '../assistive-technology-message/assistive-technology-message.directive';
+import { FocusDirective } from '../../../layout/a11y/keyboard-focus/focus.directive';
+import { TruncateTextPopoverComponent } from '../truncate-text-popover/truncate-text-popover.component';
+import { TranslatePipe } from '@spartacus/core';
 
 export interface CardAction {
   event: string;
@@ -34,7 +48,20 @@ export interface Card {
 @Component({
   selector: 'cx-card',
   templateUrl: './card.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    NgFor,
+    NgTemplateOutlet,
+    FeatureDirective,
+    IconComponent,
+    AtMessageDirective,
+    FocusDirective,
+    NgSwitch,
+    NgSwitchCase,
+    NgClass,
+    TruncateTextPopoverComponent,
+    TranslatePipe,
+  ],
 })
 export class CardComponent implements OnInit {
   iconTypes = ICON_TYPE;

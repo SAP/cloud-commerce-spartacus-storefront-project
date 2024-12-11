@@ -29,7 +29,7 @@ class MockLanguageService {
 @Component({
   selector: 'cx-schedule-lines',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule, ReactiveFormsModule, I18nTestingModule],
 })
 class MockConfigureScheduleLineComponent {
   @Input() cartEntry: Partial<OrderEntry & Array<ScheduleLine>>;
@@ -43,8 +43,10 @@ describe('ScheduleLinesCartEntryComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, ReactiveFormsModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        ReactiveFormsModule,
+        I18nTestingModule,
         ScheduleLinesComponent,
         MockConfigureScheduleLineComponent,
       ],

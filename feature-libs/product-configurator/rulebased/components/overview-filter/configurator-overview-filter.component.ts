@@ -5,16 +5,31 @@
  */
 
 import { Component, inject, Input, OnChanges } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import {
+  UntypedFormControl,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
 import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorStorefrontUtilsService } from '../service/configurator-storefront-utils.service';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { ConfiguratorOverviewFilterBarComponent } from '../overview-filter-bar/configurator-overview-filter-bar.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-overview-filter',
   templateUrl: './configurator-overview-filter.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    ConfiguratorOverviewFilterBarComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    NgFor,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ConfiguratorOverviewFilterComponent implements OnChanges {
   protected configuratorStorefrontUtilsService = inject(

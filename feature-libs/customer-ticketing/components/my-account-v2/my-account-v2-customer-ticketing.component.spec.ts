@@ -27,17 +27,11 @@ const mockTicketList: TicketList = {
   ],
 };
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
-@Pipe({
-  name: 'cxTranslate',
-  standalone: false,
-})
+@Pipe({ name: 'cxTranslate' })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
 }
@@ -71,8 +65,9 @@ describe('MyAccountV2CustomerTicketingComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
         MyAccountV2CustomerTicketingComponent,
         MockTranslatePipe,
         MockUrlPipe,

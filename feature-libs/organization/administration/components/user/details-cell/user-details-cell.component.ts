@@ -12,12 +12,17 @@ import {
   OutletContextData,
   TableDataOutletContext,
 } from '@spartacus/storefront';
+import { NgIf, NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { PopoverDirective } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-user-details-cell',
   templateUrl: './user-details-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, RouterLink, NgFor, PopoverDirective, TranslatePipe, UrlPipe],
 })
 export class UserDetailsCellComponent extends CellComponent {
   b2bUserModel: B2BUser;

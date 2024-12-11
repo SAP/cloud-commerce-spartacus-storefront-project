@@ -22,12 +22,14 @@ import {
 import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { NgIf } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-consignment-tracking',
   templateUrl: './consignment-tracking.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, TranslatePipe],
 })
 export class ConsignmentTrackingComponent implements OnInit, OnDestroy {
   consignmentStatus: string[] = [

@@ -79,7 +79,7 @@ const conflictGroup: Configurator.Group = {
 @Component({
   selector: 'cx-configurator-conflict-description',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockConfiguratorConflictDescriptionComponent {
   @Input() ownerType: CommonConfigurator.OwnerType;
@@ -89,7 +89,7 @@ class MockConfiguratorConflictDescriptionComponent {
 @Component({
   selector: 'cx-configurator-price',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -98,7 +98,7 @@ class MockConfiguratorPriceComponent {
 @Component({
   selector: 'cx-configurator-attribute-product-card',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockProductCardComponent {
   @Input() productCardOptions: ConfiguratorAttributeProductCardComponentOptions;
@@ -107,7 +107,7 @@ class MockProductCardComponent {
 @Component({
   selector: 'cx-configurator-attribute-input-field',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockConfiguratorAttributeInputFieldComponent {
   @Input() ownerType: CommonConfigurator.OwnerType;
@@ -121,7 +121,7 @@ class MockConfiguratorAttributeInputFieldComponent {
 @Component({
   selector: 'cx-configurator-attribute-numeric-input-field',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockConfiguratorAttributeNumericInputFieldComponent {
   @Input() ownerType: CommonConfigurator.OwnerType;
@@ -136,16 +136,13 @@ class MockConfiguratorAttributeNumericInputFieldComponent {
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
-@Directive({
-  selector: '[cxFocus]',
-  standalone: false,
-})
+@Directive({ selector: '[cxFocus]' })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: string;
 }
@@ -314,8 +311,10 @@ describe('ConfiguratorGroupComponent', () => {
     };
 
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
+        NgSelectModule,
         MockCxIconComponent,
         MockConfiguratorPriceComponent,
         MockFocusDirective,

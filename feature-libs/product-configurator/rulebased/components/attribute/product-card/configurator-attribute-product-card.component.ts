@@ -23,9 +23,21 @@ import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';
 import { Configurator } from '../../../core/model/configurator.model';
 import { QuantityUpdateEvent } from '../../form/configurator-form.event';
-import { ConfiguratorPriceComponentOptions } from '../../price/configurator-price.component';
-import { ConfiguratorAttributeQuantityComponentOptions } from '../quantity/configurator-attribute-quantity.component';
+import {
+  ConfiguratorPriceComponentOptions,
+  ConfiguratorPriceComponent,
+} from '../../price/configurator-price.component';
+import {
+  ConfiguratorAttributeQuantityComponentOptions,
+  ConfiguratorAttributeQuantityComponent,
+} from '../quantity/configurator-attribute-quantity.component';
 import { ConfiguratorAttributeBaseComponent } from '../types/base/configurator-attribute-base.component';
+import { NgIf, NgClass, AsyncPipe } from '@angular/common';
+import { MediaComponent } from '@spartacus/storefront';
+import { ConfiguratorShowMoreComponent } from '../../show-more/configurator-show-more.component';
+import { FocusDirective } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 export interface ConfiguratorAttributeProductCardComponentOptions {
   /** If set to `true`, all action buttons will be disabled.  */
@@ -55,7 +67,18 @@ export interface ConfiguratorAttributeProductCardComponentOptions {
   selector: 'cx-configurator-attribute-product-card',
   templateUrl: './configurator-attribute-product-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    NgClass,
+    MediaComponent,
+    ConfiguratorShowMoreComponent,
+    ConfiguratorAttributeQuantityComponent,
+    ConfiguratorPriceComponent,
+    FocusDirective,
+    IconComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ConfiguratorAttributeProductCardComponent
   extends ConfiguratorAttributeBaseComponent

@@ -145,7 +145,7 @@ export class MockIconFontLoaderService {
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockCxIconComponent {
   @Input() type: any;
@@ -154,7 +154,7 @@ class MockCxIconComponent {
 @Component({
   template: '',
   selector: 'cx-media',
-  standalone: false,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockMediaComponent {
   @Input() container: any;
@@ -324,8 +324,10 @@ function setDataForQuoteEntry() {
 describe('ConfigProductTitleComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
+        NgSelectModule,
         ConfiguratorProductTitleComponent,
         MockCxIconComponent,
         MockMediaComponent,

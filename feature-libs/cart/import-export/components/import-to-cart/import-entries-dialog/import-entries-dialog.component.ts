@@ -21,12 +21,30 @@ import {
 } from '@spartacus/storefront';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
+import { FocusDirective } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '@spartacus/storefront';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { ImportToNewSavedCartFormComponent } from './import-to-new-saved-cart-form/import-to-new-saved-cart-form.component';
+import { ImportEntriesFormComponent } from './import-entries-form/import-entries-form.component';
+import { ImportEntriesSummaryComponent } from './import-entries-summary/import-entries-summary.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-import-entries-dialog',
   templateUrl: './import-entries-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FocusDirective,
+    FeatureDirective,
+    IconComponent,
+    NgIf,
+    ImportToNewSavedCartFormComponent,
+    ImportEntriesFormComponent,
+    ImportEntriesSummaryComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ImportEntriesDialogComponent {
   iconTypes = ICON_TYPE;

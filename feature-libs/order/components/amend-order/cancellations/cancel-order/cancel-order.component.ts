@@ -11,12 +11,29 @@ import { GlobalMessageType } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { OrderAmendService } from '../../amend-order.service';
+import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { MessageComponent } from '@spartacus/storefront';
+import { CancelOrReturnItemsComponent } from '../../amend-order-items/amend-order-items.component';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { AmendOrderActionsComponent } from '../../amend-order-actions/amend-order-actions.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-cancel-order',
   templateUrl: './cancel-order.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    MessageComponent,
+    NgTemplateOutlet,
+    CancelOrReturnItemsComponent,
+    FeatureDirective,
+    FormErrorsComponent,
+    AmendOrderActionsComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CancelOrderComponent {
   orderCode: string;

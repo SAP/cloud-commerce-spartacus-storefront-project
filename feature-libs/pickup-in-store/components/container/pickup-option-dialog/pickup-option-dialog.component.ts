@@ -30,6 +30,14 @@ import {
 
 import { Observable, Subscription } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
+import { FocusDirective } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '@spartacus/storefront';
+import { StoreSearchComponent } from '../store-search/store-search.component';
+import { StoreListComponent } from '../store-list/store-list.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 /**
  * The dialog box to select the pickup location for a product.
@@ -37,7 +45,17 @@ import { filter, map, take, tap } from 'rxjs/operators';
 @Component({
   selector: 'cx-pickup-option-dialog',
   templateUrl: './pickup-option-dialog.component.html',
-  standalone: false,
+  imports: [
+    FocusDirective,
+    FeatureDirective,
+    IconComponent,
+    StoreSearchComponent,
+    StoreListComponent,
+    NgIf,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class PickupOptionDialogComponent implements OnInit, OnDestroy {
   productCode: string;

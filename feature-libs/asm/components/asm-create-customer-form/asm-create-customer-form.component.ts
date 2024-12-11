@@ -5,7 +5,12 @@
  */
 
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import {
   AsmCreateCustomerFacade,
   CustomerRegistrationForm,
@@ -25,11 +30,28 @@ import {
 import { BehaviorSubject } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { CreatedCustomer } from './asm-create-customer-form.model';
+import { FocusDirective } from '@spartacus/storefront';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { MessageComponent } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-asm-create-customer-form',
   templateUrl: './asm-create-customer-form.component.html',
-  standalone: false,
+  imports: [
+    FocusDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgIf,
+    MessageComponent,
+    NgFor,
+    FormErrorsComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class AsmCreateCustomerFormComponent {
   createdCustomer: CreatedCustomer;

@@ -15,7 +15,7 @@ import { ProductIntroComponent } from './product-intro.component';
 @Component({
   selector: 'cx-star-rating',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockStarRatingComponent {
   @Input() rating: number;
@@ -48,8 +48,8 @@ describe('ProductIntroComponent in product', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         ProductIntroComponent,
         MockStarRatingComponent,
         MockFeatureDirective,

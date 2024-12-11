@@ -17,11 +17,13 @@ import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { SavedCartDetailsService } from '../saved-cart-details.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-saved-cart-details-action',
   templateUrl: './saved-cart-details-action.component.html',
-  standalone: false,
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class SavedCartDetailsActionComponent implements OnDestroy {
   private subscription = new Subscription();

@@ -11,12 +11,31 @@ import {
   S4ServiceDeliveryModeConfig,
 } from '@spartacus/s4-service/root';
 import { Observable } from 'rxjs';
+import { FeatureDirective } from '@spartacus/core';
+import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OutletDirective } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { InnerComponentsHostDirective } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-delivery-mode',
   templateUrl: './service-checkout-delivery-mode.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FeatureDirective,
+    NgTemplateOutlet,
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    NgFor,
+    OutletDirective,
+    SpinnerComponent,
+    InnerComponentsHostDirective,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ServiceCheckoutDeliveryModeComponent extends CheckoutDeliveryModeComponent {
   protected checkoutServiceDetailsFacade = inject(CheckoutServiceDetailsFacade);

@@ -22,12 +22,24 @@ import {
   ReadOnlyPostfix,
 } from '../../core/model/common-configurator.model';
 import { ConfiguratorProductScope } from '../../core/model/configurator-product-scope';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { RouterLink } from '@angular/router';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configure-product',
   templateUrl: './configure-product.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    RouterLink,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+  ],
 })
 export class ConfigureProductComponent {
   nonConfigurable: Product = { configurable: false };

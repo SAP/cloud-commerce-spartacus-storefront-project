@@ -13,11 +13,30 @@ import {
 import { FormUtils } from '@spartacus/storefront';
 import { Subscription } from 'rxjs';
 import { CustomerTicketingDialogComponent } from '../../../shared/customer-ticketing-dialog/customer-ticketing-dialog.component';
+import { FocusDirective } from '@spartacus/storefront';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IconComponent } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { FileUploadComponent } from '@spartacus/storefront';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-customer-ticketing-reopen-dialog',
   templateUrl: './customer-ticketing-reopen-dialog.component.html',
-  standalone: false,
+  imports: [
+    FocusDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    IconComponent,
+    FormErrorsComponent,
+    FileUploadComponent,
+    NgIf,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CustomerTicketingReopenDialogComponent
   extends CustomerTicketingDialogComponent

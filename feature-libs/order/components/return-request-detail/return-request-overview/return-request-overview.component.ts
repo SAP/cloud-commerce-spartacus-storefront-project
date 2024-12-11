@@ -14,12 +14,14 @@ import { ReturnRequest } from '@spartacus/order/root';
 import { Observable, Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ReturnRequestService } from '../return-request.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-return-request-overview',
   templateUrl: './return-request-overview.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class ReturnRequestOverviewComponent implements OnInit, OnDestroy {
   constructor(protected returnRequestService: ReturnRequestService) {}

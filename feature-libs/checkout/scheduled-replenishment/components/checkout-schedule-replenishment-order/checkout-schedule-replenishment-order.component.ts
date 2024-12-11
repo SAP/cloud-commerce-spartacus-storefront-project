@@ -20,12 +20,31 @@ import {
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { CheckoutReplenishmentFormService } from '../services/checkout-replenishment-form.service';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '@spartacus/storefront';
+import {
+  NgFor,
+  NgIf,
+  AsyncPipe,
+  TitleCasePipe,
+  KeyValuePipe,
+} from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-schedule-replenishment-order',
   templateUrl: './checkout-schedule-replenishment-order.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FeatureDirective,
+    IconComponent,
+    NgFor,
+    NgIf,
+    AsyncPipe,
+    TitleCasePipe,
+    KeyValuePipe,
+    TranslatePipe,
+  ],
 })
 export class CheckoutScheduleReplenishmentOrderComponent
   implements OnInit, OnDestroy

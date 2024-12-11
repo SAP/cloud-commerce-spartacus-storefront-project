@@ -18,13 +18,32 @@ import {
 } from '@spartacus/core';
 import { QuoteState } from '@spartacus/quote/root';
 import { ICON_TYPE } from '@spartacus/storefront';
+import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
+import { SortingComponent } from '@spartacus/storefront';
+import { PaginationComponent } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-quote-list',
   templateUrl: './quote-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [CxDatePipe],
-  standalone: false,
+  imports: [
+    NgIf,
+    SortingComponent,
+    PaginationComponent,
+    NgFor,
+    RouterLink,
+    NgClass,
+    IconComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+    UrlPipe,
+  ],
 })
 export class QuoteListComponent implements OnInit {
   protected quoteListComponentService = inject(QuoteListComponentService);

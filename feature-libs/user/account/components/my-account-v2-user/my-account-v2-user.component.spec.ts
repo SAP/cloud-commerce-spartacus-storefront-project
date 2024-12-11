@@ -21,10 +21,7 @@ class MockAuthService {
   }
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): void {}
 }
@@ -53,8 +50,12 @@ describe('MyAccountV2UserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [MyAccountV2UserComponent, MockUrlPipe],
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
+        MyAccountV2UserComponent,
+        MockUrlPipe,
+      ],
       providers: [
         {
           provide: ActivatedRoute,

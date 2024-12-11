@@ -8,12 +8,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Product, ProductScope } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { CurrentProductService } from '../../current-product.service';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-attributes',
   templateUrl: './product-attributes.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe],
 })
 export class ProductAttributesComponent {
   product$: Observable<Product | null> = this.currentProductService.getProduct(

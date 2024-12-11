@@ -21,6 +21,7 @@ import { MessageService } from '../message/services/message.service';
 import { BaseItem } from '../organization.model';
 import { CellComponent } from '../table/cell.component';
 import { SubListService } from './sub-list.service';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'cx-org-assign-cell',
@@ -30,7 +31,7 @@ import { SubListService } from './sub-list.service';
     </button>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf],
 })
 export class AssignCellComponent<T extends BaseItem> extends CellComponent {
   constructor(

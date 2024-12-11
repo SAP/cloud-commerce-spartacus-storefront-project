@@ -6,6 +6,8 @@
 
 import { Component } from '@angular/core';
 import { FocusConfig, LaunchDialogService } from '@spartacus/storefront';
+import { FocusDirective } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 export enum BIND_CART_DIALOG_ACTION {
   CANCEL = 'CANCEL',
@@ -15,7 +17,7 @@ export enum BIND_CART_DIALOG_ACTION {
 @Component({
   selector: 'cx-asm-bind-cart-dialog',
   templateUrl: './asm-bind-cart-dialog.component.html',
-  standalone: false,
+  imports: [FocusDirective, TranslatePipe],
 })
 export class AsmBindCartDialogComponent {
   BIND_CART_ACTION = BIND_CART_DIALOG_ACTION;

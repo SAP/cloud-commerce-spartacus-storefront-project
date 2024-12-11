@@ -20,12 +20,14 @@ import {
   LAUNCH_CALLER,
 } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-import-order-entries',
   templateUrl: './import-order-entries.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class ImportOrderEntriesComponent {
   protected subscription = new Subscription();

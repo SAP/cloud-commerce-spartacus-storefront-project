@@ -23,7 +23,16 @@ import { UpdateProfileComponentService } from './update-profile-component.servic
 @Component({
   selector: 'cx-spinner',
   template: ` <div>spinner</div> `,
-  standalone: false,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    I18nTestingModule,
+    FormErrorsModule,
+    RouterTestingModule,
+    UrlTestingModule,
+    NgSelectModule,
+    FeaturesConfigModule,
+  ],
 })
 class MockCxSpinnerComponent {}
 
@@ -61,8 +70,9 @@ describe('MyAccountV2ProfileComponent', () => {
         UrlTestingModule,
         NgSelectModule,
         FeaturesConfigModule,
+        MyAccountV2ProfileComponent,
+        MockCxSpinnerComponent,
       ],
-      declarations: [MyAccountV2ProfileComponent, MockCxSpinnerComponent],
       providers: [
         {
           provide: UpdateProfileComponentService,

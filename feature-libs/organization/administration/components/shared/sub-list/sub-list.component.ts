@@ -17,13 +17,27 @@ import { Observable } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import { ListComponent } from '../list/list.component';
 import { MessageService } from '../message/services/message.service';
+import { CardComponent } from '../card/card.component';
+import { FocusDirective } from '@spartacus/storefront';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { TableComponent } from '@spartacus/storefront';
+import { PaginationComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-sub-list',
   templateUrl: './sub-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'content-wrapper' },
-  standalone: false,
+  imports: [
+    CardComponent,
+    FocusDirective,
+    NgIf,
+    TableComponent,
+    PaginationComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class SubListComponent extends ListComponent {
   hostClass = '';

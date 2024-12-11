@@ -11,7 +11,13 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { CartOutlets } from '@spartacus/cart/base/root';
 import {
   GlobalMessageService,
@@ -26,12 +32,29 @@ import {
   ServiceDateTime,
 } from '@spartacus/s4-service/root';
 import { combineLatest, map, Observable, Subject, takeUntil } from 'rxjs';
+import { DatePickerComponent } from '@spartacus/storefront';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { OutletDirective } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-reschedule-service-order',
   templateUrl: './reschedule-service-order.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    DatePickerComponent,
+    NgIf,
+    NgFor,
+    OutletDirective,
+    RouterLink,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+  ],
 })
 export class RescheduleServiceOrderComponent implements OnInit, OnDestroy {
   protected orderDetailsService = inject(OrderDetailsService);

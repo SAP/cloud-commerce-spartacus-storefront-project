@@ -12,13 +12,18 @@ import {
   OnInit,
   Optional,
 } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import { UntypedFormGroup, FormsModule } from '@angular/forms';
 import { LoadStatus } from '@spartacus/organization/administration/core';
 import { EMPTY, Observable } from 'rxjs';
 import { first, map, switchMap, take } from 'rxjs/operators';
 import { CardComponent } from '../card/card.component';
 import { ItemService } from '../item.service';
 import { MessageService } from '../message/services/message.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { ItemActiveDirective } from '../item-active.directive';
+import { FocusDirective } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@spartacus/core';
 
 const DISABLED_STATUS = 'DISABLED';
 
@@ -31,7 +36,16 @@ const DISABLED_STATUS = 'DISABLED';
   templateUrl: './form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'content-wrapper' },
-  standalone: false,
+  imports: [
+    NgIf,
+    FormsModule,
+    CardComponent,
+    ItemActiveDirective,
+    FocusDirective,
+    RouterLink,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class FormComponent<T> implements OnInit, OnDestroy {
   /**

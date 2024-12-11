@@ -11,7 +11,11 @@ import {
   OnInit,
   ViewContainerRef,
 } from '@angular/core';
-import { UntypedFormBuilder } from '@angular/forms';
+import {
+  UntypedFormBuilder,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { CheckoutPlaceOrderComponent } from '@spartacus/checkout/base/components';
 import { RoutingService } from '@spartacus/core';
 import {
@@ -24,12 +28,25 @@ import {
 import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { BehaviorSubject, merge, Subscription } from 'rxjs';
 import { CheckoutReplenishmentFormService } from '../services/checkout-replenishment-form.service';
+import { RouterLink } from '@angular/router';
+import { AtMessageDirective } from '@spartacus/storefront';
+import { AsyncPipe } from '@angular/common';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-place-order',
   templateUrl: './checkout-place-order.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    RouterLink,
+    AtMessageDirective,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+  ],
 })
 export class CheckoutScheduledReplenishmentPlaceOrderComponent
   extends CheckoutPlaceOrderComponent

@@ -44,10 +44,7 @@ class MockRoutingService implements Partial<RoutingService> {
   go = () => Promise.resolve(true);
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -67,8 +64,9 @@ describe('OneTimePasswordLoginFormComponent', () => {
         I18nTestingModule,
         FormErrorsModule,
         SpinnerModule,
+        OneTimePasswordLoginFormComponent,
+        MockUrlPipe,
       ],
-      declarations: [OneTimePasswordLoginFormComponent, MockUrlPipe],
       providers: [
         {
           provide: VerificationTokenFacade,

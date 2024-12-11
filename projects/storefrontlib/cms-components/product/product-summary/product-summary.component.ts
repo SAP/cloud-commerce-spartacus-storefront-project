@@ -9,12 +9,24 @@ import { FeatureConfigService, Product, ProductScope } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { CurrentProductService } from '../current-product.service';
 import { ProductDetailOutlets } from '../product-outlets.model';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { PromotionsComponent } from '../../misc/promotions/promotions.component';
+import { OutletDirective } from '../../../cms-structure/outlet/outlet.directive';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-summary',
   templateUrl: './product-summary.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    PromotionsComponent,
+    OutletDirective,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ProductSummaryComponent {
   private featureConfig = inject(FeatureConfigService);

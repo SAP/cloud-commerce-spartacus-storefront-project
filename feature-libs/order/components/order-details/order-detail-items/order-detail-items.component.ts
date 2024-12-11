@@ -18,11 +18,27 @@ import { Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { MyAccountV2OrderConsignmentsService } from '../my-account-v2-order-consignments.service';
 import { OrderDetailsService } from '../order-details.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { PromotionsComponent } from '@spartacus/storefront';
+import { OrderConsignedEntriesComponent } from './order-consigned-entries/order-consigned-entries.component';
+import { OutletDirective } from '@spartacus/storefront';
+import { AbstractOrderContextDirective } from '@spartacus/cart/base/components';
+import { AddToCartComponent } from '@spartacus/cart/base/components/add-to-cart';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-details-items',
   templateUrl: './order-detail-items.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    PromotionsComponent,
+    OrderConsignedEntriesComponent,
+    OutletDirective,
+    AbstractOrderContextDirective,
+    AddToCartComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class OrderDetailItemsComponent {
   protected orderConsignmentsService = inject(

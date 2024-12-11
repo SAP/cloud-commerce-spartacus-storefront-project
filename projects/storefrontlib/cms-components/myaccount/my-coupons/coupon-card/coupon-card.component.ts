@@ -19,12 +19,15 @@ import { LaunchDialogService, LAUNCH_CALLER } from '../../../../layout/index';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { MyCouponsComponentService } from '../my-coupons.component.service';
+import { AsyncPipe, LowerCasePipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-coupon-card',
   templateUrl: './coupon-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [AsyncPipe, LowerCasePipe, TranslatePipe, CxDatePipe],
 })
 export class CouponCardComponent {
   @Input() coupon: CustomerCoupon;

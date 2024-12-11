@@ -18,7 +18,7 @@ import { OrderOverviewComponentService } from './order-overview-component.servic
 @Component({
   selector: 'cx-card',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockCardComponent {
   @Input()
@@ -153,8 +153,7 @@ describe('OrderOverviewComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [OrderOverviewComponent, MockCardComponent],
+      imports: [I18nTestingModule, OrderOverviewComponent, MockCardComponent],
       providers: [
         { provide: TranslationService, useClass: MockTranslationService },
         {

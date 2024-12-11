@@ -34,6 +34,12 @@ import {
 import { Card } from '@spartacus/storefront';
 import { combineLatest, Observable, of, Subscription } from 'rxjs';
 import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { CardComponent } from '@spartacus/storefront';
+import { AddressFormComponent } from '@spartacus/user/profile/components';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 export interface CardWithAddress {
   card: Card;
@@ -44,7 +50,16 @@ export interface CardWithAddress {
   selector: 'cx-delivery-address',
   templateUrl: './checkout-delivery-address.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    NgFor,
+    CardComponent,
+    AddressFormComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class B2BCheckoutDeliveryAddressComponent
   extends CheckoutDeliveryAddressComponent

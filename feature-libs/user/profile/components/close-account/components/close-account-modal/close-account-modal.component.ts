@@ -26,12 +26,24 @@ import {
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FocusDirective } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-close-account-modal',
   templateUrl: './close-account-modal.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FocusDirective,
+    IconComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CloseAccountModalComponent implements OnInit {
   iconTypes = ICON_TYPE;

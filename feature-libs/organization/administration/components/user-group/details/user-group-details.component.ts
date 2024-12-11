@@ -10,6 +10,14 @@ import { Observable } from 'rxjs';
 import { startWith, switchMap } from 'rxjs/operators';
 import { ItemService } from '../../shared/item.service';
 import { UserGroupItemService } from '../services/user-group-item.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CardComponent } from '../../shared/card/card.component';
+import { FocusDirective } from '@spartacus/storefront';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { DeleteItemComponent } from '../../shared/detail/delete-item-action/delete-item.component';
+import { ItemExistsDirective } from '../../shared/item-exists.directive';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-user-group-details',
@@ -22,7 +30,18 @@ import { UserGroupItemService } from '../services/user-group-item.service';
     },
   ],
   host: { class: 'content-wrapper' },
-  standalone: false,
+  imports: [
+    NgIf,
+    CardComponent,
+    FocusDirective,
+    RouterLink,
+    DeleteItemComponent,
+    ItemExistsDirective,
+    RouterLinkActive,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+  ],
 })
 export class UserGroupDetailsComponent {
   model$: Observable<UserGroup> = this.itemService.key$.pipe(

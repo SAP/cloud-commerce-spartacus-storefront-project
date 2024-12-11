@@ -22,11 +22,23 @@ import {
 import { Observable, Subscription } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
 import { SavedCartDetailsService } from '../saved-cart-details.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CardComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-saved-cart-details-overview',
   templateUrl: './saved-cart-details-overview.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    CardComponent,
+    IconComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class SavedCartDetailsOverviewComponent implements OnDestroy {
   private subscription = new Subscription();

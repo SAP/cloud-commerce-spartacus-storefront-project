@@ -12,14 +12,28 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { OrderHistoryQueryParams } from '@spartacus/organization/unit-order/core';
 import { ICON_TYPE } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { NgIf } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-unit-level-order-history-filter',
   templateUrl: './unit-level-order-history-filter.component.html',
-  standalone: false,
+  imports: [
+    IconComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    NgIf,
+    TranslatePipe,
+  ],
 })
 export class UnitLevelOrderHistoryFilterComponent {
   iconTypes = ICON_TYPE;

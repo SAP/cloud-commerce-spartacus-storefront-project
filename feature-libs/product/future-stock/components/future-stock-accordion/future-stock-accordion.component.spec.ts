@@ -11,7 +11,7 @@ import { FutureStockAccordionComponent } from './future-stock-accordion.componen
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -51,8 +51,11 @@ describe('FutureStockAccordionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [MockCxIconComponent, FutureStockAccordionComponent],
+      imports: [
+        I18nTestingModule,
+        MockCxIconComponent,
+        FutureStockAccordionComponent,
+      ],
       providers: [
         { provide: FutureStockFacade, useClass: MockFutureStockService },
       ],

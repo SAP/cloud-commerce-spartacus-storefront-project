@@ -103,7 +103,13 @@ class MockCurrentProductService {
 @Component({
   template: '',
   selector: 'cx-item-counter',
-  standalone: false,
+  imports: [
+    RouterTestingModule,
+    SpinnerModule,
+    I18nTestingModule,
+    ReactiveFormsModule,
+    OutletModule,
+  ],
 })
 class MockItemCounterComponent {
   @Input() min;
@@ -135,8 +141,9 @@ describe('AddToCartComponent', () => {
         I18nTestingModule,
         ReactiveFormsModule,
         OutletModule,
+        AddToCartComponent,
+        MockItemCounterComponent,
       ],
-      declarations: [AddToCartComponent, MockItemCounterComponent],
       providers: [
         { provide: ActiveCartFacade, useClass: MockActiveCartService },
         {

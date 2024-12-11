@@ -5,7 +5,13 @@
  */
 
 import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import {
   AssociatedObject,
   Category,
@@ -23,11 +29,28 @@ import {
   TranslationService,
 } from '@spartacus/core';
 import { catchError, first, tap } from 'rxjs/operators';
+import { FocusDirective } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FileUploadComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-customer-ticketing-create-dialog',
   templateUrl: './customer-ticketing-create-dialog.component.html',
-  standalone: false,
+  imports: [
+    FocusDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    IconComponent,
+    FormErrorsComponent,
+    NgIf,
+    NgFor,
+    FileUploadComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CustomerTicketingCreateDialogComponent
   extends CustomerTicketingDialogComponent

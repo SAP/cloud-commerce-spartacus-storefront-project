@@ -16,7 +16,7 @@ describe('AsmCustomer360PromotionListingComponent', () => {
   @Component({
     selector: 'cx-icon',
     template: '',
-    standalone: false,
+    imports: [I18nTestingModule],
   })
   class MockCxIconComponent {
     @Input() type: ICON_TYPE;
@@ -25,7 +25,7 @@ describe('AsmCustomer360PromotionListingComponent', () => {
   @Component({
     selector: 'cx-message',
     template: '',
-    standalone: false,
+    imports: [I18nTestingModule],
   })
   class MockCxMessageComponent {
     @Input() text: string;
@@ -75,7 +75,7 @@ describe('AsmCustomer360PromotionListingComponent', () => {
       >
       </cx-asm-customer-360-promotion-listing>
     `,
-    standalone: false,
+    imports: [I18nTestingModule],
   })
   class TestHostComponent {
     @Input() headerText: string;
@@ -101,8 +101,8 @@ describe('AsmCustomer360PromotionListingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         TestHostComponent,
         AsmCustomer360PromotionListingComponent,
         MockCxIconComponent,

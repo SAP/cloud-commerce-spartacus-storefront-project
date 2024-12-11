@@ -5,8 +5,16 @@
  */
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import {
+  UntypedFormControl,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { DatePickerService } from './date-picker.service';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '../form-errors/form-errors.component';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 /**
  * Component that adds a date control. While the native date picker works in most
@@ -21,7 +29,14 @@ import { DatePickerService } from './date-picker.service';
 @Component({
   selector: 'cx-date-picker',
   templateUrl: './date-picker.component.html',
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    FormErrorsComponent,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class DatePickerComponent {
   constructor(protected service: DatePickerService) {}

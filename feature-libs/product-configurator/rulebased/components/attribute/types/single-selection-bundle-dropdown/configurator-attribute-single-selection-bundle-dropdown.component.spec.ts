@@ -35,7 +35,13 @@ const VALUE_DISPLAY_NAME = 'Lorem Ipsum Dolor';
 @Component({
   selector: 'cx-configurator-attribute-product-card',
   template: '',
-  standalone: false,
+  imports: [
+    ReactiveFormsModule,
+    NgSelectModule,
+    I18nTestingModule,
+    RouterTestingModule,
+    UrlTestingModule,
+  ],
 })
 class MockProductCardComponent {
   @Input() productCardOptions: ConfiguratorAttributeProductCardComponentOptions;
@@ -44,7 +50,13 @@ class MockProductCardComponent {
 @Component({
   selector: 'cx-configurator-attribute-quantity',
   template: '',
-  standalone: false,
+  imports: [
+    ReactiveFormsModule,
+    NgSelectModule,
+    I18nTestingModule,
+    RouterTestingModule,
+    UrlTestingModule,
+  ],
 })
 class MockConfiguratorAttributeQuantityComponent {
   @Input() quantityOptions: ConfiguratorAttributeQuantityComponentOptions;
@@ -53,16 +65,19 @@ class MockConfiguratorAttributeQuantityComponent {
 @Component({
   selector: 'cx-configurator-price',
   template: '',
-  standalone: false,
+  imports: [
+    ReactiveFormsModule,
+    NgSelectModule,
+    I18nTestingModule,
+    RouterTestingModule,
+    UrlTestingModule,
+  ],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
 }
 
-@Directive({
-  selector: '[cxFocus]',
-  standalone: false,
-})
+@Directive({ selector: '[cxFocus]' })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: any;
 }
@@ -194,15 +209,6 @@ describe('ConfiguratorAttributeSingleSelectionBundleDropdownComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        ConfiguratorAttributeSingleSelectionBundleDropdownComponent,
-        ConfiguratorShowMoreComponent,
-        MockProductCardComponent,
-        MockConfiguratorAttributeQuantityComponent,
-        MockConfiguratorPriceComponent,
-        MockFocusDirective,
-        MockFeatureLevelDirective,
-      ],
       imports: [
         ReactiveFormsModule,
         NgSelectModule,
@@ -211,8 +217,14 @@ describe('ConfiguratorAttributeSingleSelectionBundleDropdownComponent', () => {
         UrlTestingModule,
         StoreModule.forRoot({}),
         StoreModule.forFeature(CONFIGURATOR_FEATURE, getConfiguratorReducers),
+        ConfiguratorAttributeSingleSelectionBundleDropdownComponent,
+        ConfiguratorShowMoreComponent,
+        MockProductCardComponent,
+        MockConfiguratorAttributeQuantityComponent,
+        MockConfiguratorPriceComponent,
+        MockFocusDirective,
+        MockFeatureLevelDirective,
       ],
-
       providers: [
         {
           provide: ConfiguratorAttributeCompositionContext,

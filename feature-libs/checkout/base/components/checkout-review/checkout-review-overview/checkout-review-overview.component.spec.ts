@@ -27,8 +27,11 @@ describe('CheckoutReviewOverviewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CheckoutReviewOverviewComponent],
-      imports: [I18nTestingModule, PromotionsModule],
+      imports: [
+        I18nTestingModule,
+        PromotionsModule,
+        CheckoutReviewOverviewComponent,
+      ],
       providers: [
         { provide: ActiveCartFacade, useClass: MockActiveCartService },
       ],

@@ -8,7 +8,6 @@ import { MessageComponent } from './message.component';
 
 @Component({
   template: `<cx-message>Test</cx-message>`,
-  standalone: false,
 })
 class TestHostComponent {}
 
@@ -22,16 +21,13 @@ const mockCssClassForMessage: Record<string, boolean> = {
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
-@Directive({
-  selector: '[cxAtMessage]',
-  standalone: false,
-})
+@Directive({ selector: '[cxAtMessage]' })
 class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;
 }
@@ -43,8 +39,8 @@ describe('MessageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         MessageComponent,
         MockCxIconComponent,
         MockAtMessageDirective,

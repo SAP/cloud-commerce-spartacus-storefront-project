@@ -39,7 +39,7 @@ function initializeMocks() {
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -48,16 +48,13 @@ class MockCxIconComponent {
 @Component({
   selector: 'cx-configurator-overview-filter',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockConfiguratorOverviewFilterComponent {
   @Input() showFilterBar: boolean = true;
   @Input() config: Configurator.ConfigurationWithOverview;
 }
-@Directive({
-  selector: '[cxFocus]',
-  standalone: false,
-})
+@Directive({ selector: '[cxFocus]' })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
 }
@@ -66,14 +63,14 @@ describe('ConfiguratorOverviewFilterDialogComponent', () => {
   beforeEach(waitForAsync(() => {
     initializeMocks();
     TestBed.configureTestingModule({
-      declarations: [
+      imports: [
+        I18nTestingModule,
         ConfiguratorOverviewFilterDialogComponent,
         MockCxIconComponent,
         MockConfiguratorOverviewFilterComponent,
         MockKeyboadFocusDirective,
         MockFeatureDirective,
       ],
-      imports: [I18nTestingModule],
       providers: [
         { provide: LaunchDialogService, useValue: mockLaunchDialogService },
       ],

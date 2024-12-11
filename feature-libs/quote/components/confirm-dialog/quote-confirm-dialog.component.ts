@@ -20,13 +20,26 @@ import {
 import { Observable } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
 import { ConfirmationContext } from './quote-confirm-dialog.model';
+import { FocusDirective } from '@spartacus/storefront';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-quote-confirm-dialog',
   templateUrl: './quote-confirm-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [CxDatePipe],
-  standalone: false,
+  imports: [
+    FocusDirective,
+    NgIf,
+    FeatureDirective,
+    IconComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class QuoteConfirmDialogComponent implements OnInit {
   protected launchDialogService = inject(LaunchDialogService);

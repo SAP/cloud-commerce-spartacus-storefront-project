@@ -24,6 +24,11 @@ import { ComponentWrapperDirective } from '../../../cms-structure/page/component
 import { CmsComponentData } from '../../../cms-structure/page/model/index';
 import { BREAKPOINT } from '../../../layout/config/layout-config';
 import { Tab, TabConfig } from '../tab/tab.model';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { OutletDirective } from '../../../cms-structure/outlet/outlet.directive';
+import { TabComponent } from '../tab/tab.component';
+import { TranslatePipe } from '@spartacus/core';
 
 const defaultTabConfig = {
   openTabs: [0],
@@ -34,7 +39,16 @@ const defaultTabConfig = {
   selector: 'cx-tab-paragraph-container',
   templateUrl: './tab-paragraph-container.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    NgFor,
+    OutletDirective,
+    ComponentWrapperDirective,
+    TabComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class TabParagraphContainerComponent implements AfterViewInit, OnInit {
   /**

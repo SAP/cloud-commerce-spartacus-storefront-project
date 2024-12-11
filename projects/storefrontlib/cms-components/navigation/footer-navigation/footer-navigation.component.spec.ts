@@ -18,7 +18,7 @@ import createSpy = jasmine.createSpy;
 @Component({
   selector: 'cx-navigation-ui',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockNavigationUIComponent {
   @Input() flyout = true;
@@ -35,7 +35,7 @@ const mockAnonymousConsentsConfig = {
 @Component({
   selector: 'cx-generic-link',
   template: '<ng-content></ng-content>',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockGenericLinkComponent {
   @Input() url: string | any[];
@@ -74,8 +74,9 @@ describe('FooterNavigationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
         FooterNavigationComponent,
         NavigationComponent,
         MockNavigationUIComponent,

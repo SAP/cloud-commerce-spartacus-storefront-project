@@ -26,12 +26,22 @@ import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
 import { FocusConfig } from '../../../layout/a11y/keyboard-focus/keyboard-focus.model';
 import { PositioningService } from '../../services/positioning/positioning.service';
 import { PopoverEvent, PopoverPosition } from './popover.model';
+import { FocusDirective } from '../../../layout/a11y/keyboard-focus/focus.directive';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { IconComponent } from '../../../cms-components/misc/icon/icon.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-popover',
   templateUrl: './popover.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FocusDirective,
+    NgIf,
+    IconComponent,
+    NgTemplateOutlet,
+    TranslatePipe,
+  ],
 })
 export class PopoverComponent implements OnInit, OnDestroy, AfterViewChecked {
   /**

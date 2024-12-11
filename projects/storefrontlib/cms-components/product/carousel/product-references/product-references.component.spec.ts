@@ -28,7 +28,7 @@ import { ProductReferencesComponent } from './product-references.component';
       ></ng-container>
     </ng-container>
   `,
-  standalone: false,
+  imports: [RouterTestingModule],
 })
 class MockCarouselComponent {
   @Input() title: string;
@@ -36,10 +36,7 @@ class MockCarouselComponent {
   @Input() items: any[];
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -47,7 +44,7 @@ class MockUrlPipe implements PipeTransform {
 @Component({
   selector: 'cx-media',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule],
 })
 class MockMediaComponent {
   @Input() container: any;
@@ -126,8 +123,8 @@ describe('ProductReferencesComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
         ProductReferencesComponent,
         MockCarouselComponent,
         MockMediaComponent,

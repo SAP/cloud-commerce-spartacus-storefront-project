@@ -27,12 +27,30 @@ import {
 import { FileDownloadService, ICON_TYPE } from '@spartacus/storefront';
 import { BehaviorSubject, combineLatest, Observable, Subscription } from 'rxjs';
 import { skip, switchMap, take, tap } from 'rxjs/operators';
+import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
+import { AccountSummaryDocumentFilterComponent } from './filter/account-summary-document-filter.component';
+import { SortingComponent } from '@spartacus/storefront';
+import { PaginationComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-account-summary-document',
   templateUrl: './account-summary-document.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    AccountSummaryDocumentFilterComponent,
+    SortingComponent,
+    PaginationComponent,
+    IconComponent,
+    NgFor,
+    NgClass,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class AccountSummaryDocumentComponent implements OnInit, OnDestroy {
   /* For Enum use in HTML */

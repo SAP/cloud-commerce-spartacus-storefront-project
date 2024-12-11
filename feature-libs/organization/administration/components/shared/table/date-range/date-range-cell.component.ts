@@ -12,12 +12,16 @@ import {
 } from '@angular/core';
 import { FeatureConfigService } from '@spartacus/core';
 import { CellComponent } from '../cell.component';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { UrlPipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-date-range-cell',
   templateUrl: './date-range-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, RouterLink, NgTemplateOutlet, UrlPipe, CxDatePipe],
 })
 export class DateRangeCellComponent extends CellComponent {
   @Optional() featuteConfigService = inject(FeatureConfigService, {

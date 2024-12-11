@@ -34,7 +34,7 @@ import { MyCouponsComponentService } from './my-coupons.component.service';
       (click)="notificationChange()"
     />
   `,
-  standalone: false,
+  imports: [I18nTestingModule, RouterTestingModule, SpinnerModule],
 })
 class MockedCouponCardComponent {
   @Input()
@@ -60,7 +60,7 @@ class MockedCouponCardComponent {
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, RouterTestingModule, SpinnerModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -127,7 +127,7 @@ const sortLabels = {
 @Component({
   template: '',
   selector: 'cx-pagination',
-  standalone: false,
+  imports: [I18nTestingModule, RouterTestingModule, SpinnerModule],
 })
 class MockPaginationComponent {
   @Input() pagination;
@@ -137,7 +137,7 @@ class MockPaginationComponent {
 @Component({
   template: '',
   selector: 'cx-sorting',
-  standalone: false,
+  imports: [I18nTestingModule, RouterTestingModule, SpinnerModule],
 })
 class MockSortingComponent {
   @Input() sortOptions;
@@ -172,8 +172,10 @@ describe('MyCouponsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule, SpinnerModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        SpinnerModule,
         MyCouponsComponent,
         MockedCouponCardComponent,
         MockCxIconComponent,

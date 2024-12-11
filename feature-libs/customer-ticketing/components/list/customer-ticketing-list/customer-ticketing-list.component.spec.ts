@@ -150,7 +150,7 @@ const mockTicketList2: TicketList = {
 @Component({
   template: '',
   selector: 'cx-pagination',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockPaginationComponent {
   @Input() pagination: any;
@@ -159,7 +159,7 @@ class MockPaginationComponent {
 @Component({
   template: '',
   selector: 'cx-sorting',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockSortingComponent {
   @Input() sortOptions: any;
@@ -169,10 +169,7 @@ class MockSortingComponent {
   @Output() sortListEvent = new EventEmitter<string>();
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -200,7 +197,7 @@ class MockCustomerTicketingFacade {
 }
 @Component({
   selector: 'cx-customer-ticketing-create',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockCustomerTicketingCreateComponent {}
 
@@ -212,8 +209,9 @@ describe('CustomerTicketingListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
         CustomerTicketingListComponent,
         MockPaginationComponent,
         MockSortingComponent,

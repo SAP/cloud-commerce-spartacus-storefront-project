@@ -16,14 +16,18 @@ import {
   NavigationCancel,
   NavigationEnd,
   Router,
+  RouterLink,
 } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ProgressButtonComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-cart-proceed-to-checkout',
   templateUrl: './cart-proceed-to-checkout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [ProgressButtonComponent, RouterLink, TranslatePipe, UrlPipe],
 })
 export class CartProceedToCheckoutComponent implements OnInit, OnDestroy {
   cartValidationInProgress = false;

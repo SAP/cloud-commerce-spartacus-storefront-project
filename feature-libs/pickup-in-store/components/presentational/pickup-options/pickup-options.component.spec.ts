@@ -20,8 +20,13 @@ describe('PickupOptionsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PickupOptionsComponent, MockFeatureDirective],
-      imports: [CommonModule, I18nTestingModule, ReactiveFormsModule],
+      imports: [
+        CommonModule,
+        I18nTestingModule,
+        ReactiveFormsModule,
+        PickupOptionsComponent,
+        MockFeatureDirective,
+      ],
       providers: [
         { provide: FeatureConfigService, useClass: MockFeatureConfigService },
       ],
@@ -159,7 +164,6 @@ describe('PickupOptionsComponent', () => {
 @Component({
   selector: 'cx-pickup-options',
   template: '',
-  standalone: false,
 })
 export class PickupOptionsStubComponent {
   @Input() selectedOption: PickupOption;

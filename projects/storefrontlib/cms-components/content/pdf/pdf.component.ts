@@ -10,12 +10,15 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import { MediaService } from '../../../shared/components/media/media.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { IconComponent } from '../../misc/icon/icon.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-pdf',
   templateUrl: './pdf.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe],
 })
 export class PDFComponent {
   url?: string;

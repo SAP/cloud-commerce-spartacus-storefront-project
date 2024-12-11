@@ -10,11 +10,29 @@ import { MyAccountV2OrderHistoryService } from '@spartacus/order/core';
 import { Order, OrderHistoryListView } from '@spartacus/order/root';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { MediaComponent } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-my-account-v2-orders',
   templateUrl: './my-account-v2-orders.component.html',
-  standalone: false,
+  imports: [
+    RouterLink,
+    NgIf,
+    NgFor,
+    MediaComponent,
+    RouterLinkActive,
+    SpinnerComponent,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class MyAccountV2OrdersComponent implements OnDestroy {
   protected service = inject(MyAccountV2OrderHistoryService);

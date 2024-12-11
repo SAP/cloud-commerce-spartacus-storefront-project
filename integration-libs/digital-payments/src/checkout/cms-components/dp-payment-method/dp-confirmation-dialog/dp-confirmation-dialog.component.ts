@@ -12,12 +12,16 @@ import {
 } from '@spartacus/storefront';
 import { DP_CARD_REGISTRATION_STATUS } from '../../../../utils/dp-constants';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FocusDirective } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-dp-confirmation-dialog',
   templateUrl: './dp-confirmation-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [FocusDirective, FeatureDirective, IconComponent, TranslatePipe],
 })
 export class DpConfirmationDialogComponent {
   focusConfig: FocusConfig = {

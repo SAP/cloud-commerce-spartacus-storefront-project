@@ -23,7 +23,7 @@ import { ConfiguratorAttributeSingleSelectionBundleComponent } from './configura
 @Component({
   selector: 'cx-configurator-attribute-product-card',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, RouterTestingModule, ReactiveFormsModule],
 })
 class MockProductCardComponent {
   @Input() productCardOptions: ConfiguratorAttributeProductCardComponentOptions;
@@ -32,7 +32,7 @@ class MockProductCardComponent {
 @Component({
   selector: 'cx-configurator-price',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, RouterTestingModule, ReactiveFormsModule],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -41,7 +41,7 @@ class MockConfiguratorPriceComponent {
 @Component({
   selector: 'cx-configurator-attribute-quantity',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, RouterTestingModule, ReactiveFormsModule],
 })
 class MockConfiguratorAttributeQuantityComponent {
   @Input() quantityOptions: ConfiguratorAttributeQuantityComponentOptions;
@@ -104,8 +104,6 @@ describe('ConfiguratorAttributeSingleSelectionBundleComponent', () => {
         ReactiveFormsModule,
         StoreModule.forRoot({}),
         StoreModule.forFeature(CONFIGURATOR_FEATURE, getConfiguratorReducers),
-      ],
-      declarations: [
         ConfiguratorAttributeSingleSelectionBundleComponent,
         ConfiguratorShowMoreComponent,
         ItemCounterComponent,

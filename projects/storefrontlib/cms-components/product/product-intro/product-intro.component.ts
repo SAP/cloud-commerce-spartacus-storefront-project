@@ -19,12 +19,23 @@ import {
   ComponentDestroyEvent,
 } from '../../../cms-structure';
 import { CurrentProductService } from '../current-product.service';
+import { NgIf, AsyncPipe, DecimalPipe } from '@angular/common';
+import { StarRatingComponent } from '../../../shared/components/star-rating/star-rating.component';
+import { FeatureDirective } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-intro',
   templateUrl: './product-intro.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    StarRatingComponent,
+    FeatureDirective,
+    AsyncPipe,
+    DecimalPipe,
+    TranslatePipe,
+  ],
 })
 export class ProductIntroComponent {
   product$: Observable<Product | null> =

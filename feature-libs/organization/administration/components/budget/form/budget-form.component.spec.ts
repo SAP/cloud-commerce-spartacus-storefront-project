@@ -54,7 +54,13 @@ class MockItemService {
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'cx-date-picker',
   template: '',
-  standalone: false,
+  imports: [
+    I18nTestingModule,
+    UrlTestingModule,
+    ReactiveFormsModule,
+    NgSelectModule,
+    FormTestingModule,
+  ],
 })
 class MockDatePickerComponent {
   @Input() control: UntypedFormControl;
@@ -77,8 +83,6 @@ describe('BudgetFormComponent', () => {
         ReactiveFormsModule,
         NgSelectModule,
         FormTestingModule,
-      ],
-      declarations: [
         BudgetFormComponent,
         FormErrorsComponent,
         MockDatePickerComponent,

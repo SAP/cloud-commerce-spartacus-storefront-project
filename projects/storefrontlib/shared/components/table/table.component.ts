@@ -21,6 +21,8 @@ import {
   TableOptions,
   TableStructure,
 } from './table.model';
+import { NgIf, NgFor } from '@angular/common';
+import { OutletDirective } from '../../../cms-structure/outlet/outlet.directive';
 
 /**
  * The table component provides a generic table DOM structure, with 3 layout types:
@@ -50,7 +52,7 @@ import {
   selector: 'cx-table',
   templateUrl: './table.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, NgFor, OutletDirective],
 })
 export class TableComponent<T> {
   @HostBinding('attr.__cx-table-type') tableType: string;

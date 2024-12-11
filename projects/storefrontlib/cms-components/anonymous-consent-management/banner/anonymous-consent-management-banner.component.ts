@@ -10,11 +10,13 @@ import { Observable, Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { LAUNCH_CALLER } from '../../../layout/launch-dialog/config/launch-config';
 import { LaunchDialogService } from '../../../layout/launch-dialog/services/launch-dialog.service';
+import { NgIf, NgClass, AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-anonymous-consent-management-banner',
   templateUrl: './anonymous-consent-management-banner.component.html',
-  standalone: false,
+  imports: [NgIf, NgClass, AsyncPipe, TranslatePipe],
 })
 export class AnonymousConsentManagementBannerComponent implements OnDestroy {
   private subscriptions = new Subscription();

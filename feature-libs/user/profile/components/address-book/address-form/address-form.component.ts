@@ -19,6 +19,8 @@ import {
   UntypedFormBuilder,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import {
   Address,
@@ -40,12 +42,29 @@ import {
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { BehaviorSubject, Observable, Subscription, combineLatest } from 'rxjs';
 import { filter, map, switchMap, take, tap } from 'rxjs/operators';
+import { FeatureDirective } from '@spartacus/core';
+import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { NgSelectA11yDirective } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-address-form',
   templateUrl: './address-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgIf,
+    NgTemplateOutlet,
+    NgSelectComponent,
+    NgSelectA11yDirective,
+    FormErrorsComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class AddressFormComponent implements OnInit, OnDestroy {
   countries$: Observable<Country[]>;

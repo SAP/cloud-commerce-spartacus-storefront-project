@@ -11,12 +11,14 @@ import {
   Input,
 } from '@angular/core';
 import { Configurator } from '../../core/model/configurator.model';
+import { NgIf } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-conflict-suggestion',
   templateUrl: './configurator-conflict-suggestion.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, TranslatePipe],
 })
 export class ConfiguratorConflictSuggestionComponent {
   @Input() currentGroup: Configurator.Group;

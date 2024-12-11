@@ -88,7 +88,19 @@ class MockItemService {
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'cx-table',
   template: '',
-  standalone: false,
+  imports: [
+    CommonModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    UrlTestingModule,
+    SplitViewTestingModule,
+    PaginationTestingModule,
+    IconTestingModule,
+    NgSelectModule,
+    FormsModule,
+    KeyboardFocusTestingModule,
+    PopoverModule,
+  ],
 })
 class MockTableComponent {
   @Input() data;
@@ -101,7 +113,19 @@ class MockTableComponent {
 
 @Component({
   templateUrl: './list.component.html',
-  standalone: false,
+  imports: [
+    CommonModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    UrlTestingModule,
+    SplitViewTestingModule,
+    PaginationTestingModule,
+    IconTestingModule,
+    NgSelectModule,
+    FormsModule,
+    KeyboardFocusTestingModule,
+    PopoverModule,
+  ],
 })
 class MockListComponent extends ListComponent<Mock> {
   constructor(
@@ -133,8 +157,6 @@ describe('ListComponent', () => {
         FormsModule,
         KeyboardFocusTestingModule,
         PopoverModule,
-      ],
-      declarations: [
         MockListComponent,
         MockTableComponent,
         MockFeatureDirective,

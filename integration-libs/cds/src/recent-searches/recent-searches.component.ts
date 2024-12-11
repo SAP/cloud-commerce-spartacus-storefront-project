@@ -18,6 +18,11 @@ import {
 import { RecentSearchesService } from './recent-searches.service';
 import { map, tap } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@spartacus/core';
+import { HighlightPipe } from '@spartacus/storefront';
+import { UrlPipe } from '@spartacus/core';
 
 export interface SearchBoxOutlet {
   search: string;
@@ -31,7 +36,15 @@ const MAX_RECENT_SEARCHES = 5;
   selector: 'cx-recent-searches',
   templateUrl: './recent-searches.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    NgFor,
+    RouterLink,
+    AsyncPipe,
+    TranslatePipe,
+    HighlightPipe,
+    UrlPipe,
+  ],
 })
 export class RecentSearchesComponent implements OnInit {
   public result$: Observable<string[]>;

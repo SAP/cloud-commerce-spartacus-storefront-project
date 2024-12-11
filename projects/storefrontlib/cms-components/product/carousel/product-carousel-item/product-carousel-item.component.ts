@@ -16,6 +16,10 @@ import {
   ProductListItemContext,
   ProductListItemContextSource,
 } from '../../product-list';
+import { RouterLink } from '@angular/router';
+import { MediaComponent } from '../../../../shared/components/media/media.component';
+import { InnerComponentsHostDirective } from '../../../../cms-structure/page/component/inner-components-host.directive';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-carousel-item',
@@ -28,7 +32,7 @@ import {
     },
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [RouterLink, MediaComponent, InnerComponentsHostDirective, UrlPipe],
 })
 export class ProductCarouselItemComponent implements OnChanges {
   @Input() item: Product;

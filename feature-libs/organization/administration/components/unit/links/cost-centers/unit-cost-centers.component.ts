@@ -10,6 +10,11 @@ import { Observable, of } from 'rxjs';
 import { ListService } from '../../../shared/list/list.service';
 import { CurrentUnitService } from '../../services/current-unit.service';
 import { UnitCostCenterListService } from './unit-cost-centers.service';
+import { SubListComponent } from '../../../shared/sub-list/sub-list.component';
+import { RouterLink } from '@angular/router';
+import { DisableInfoComponent } from '../../../shared/detail/disable-info/disable-info.component';
+import { TranslatePipe } from '@spartacus/core';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-org-unit-cost-centers',
@@ -22,7 +27,13 @@ import { UnitCostCenterListService } from './unit-cost-centers.service';
       useExisting: UnitCostCenterListService,
     },
   ],
-  standalone: false,
+  imports: [
+    SubListComponent,
+    RouterLink,
+    DisableInfoComponent,
+    TranslatePipe,
+    AsyncPipe,
+  ],
 })
 export class UnitCostCenterListComponent {
   unit$: Observable<B2BUnit | undefined> = this.currentUnitService

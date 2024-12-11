@@ -41,17 +41,14 @@ class MockUserAccountFacade {
 @Component({
   selector: 'cx-page-slot',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockDynamicSlotComponent {
   @Input()
   position: string;
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): void {}
 }
@@ -64,8 +61,13 @@ describe('LoginComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [LoginComponent, MockDynamicSlotComponent, MockUrlPipe],
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
+        LoginComponent,
+        MockDynamicSlotComponent,
+        MockUrlPipe,
+      ],
       providers: [
         {
           provide: ActivatedRoute,

@@ -20,13 +20,27 @@ import {
 import { Observable, of } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { Configurator } from '../../core/model/configurator.model';
-import { ConfiguratorPriceComponentOptions } from '../price/configurator-price.component';
+import {
+  ConfiguratorPriceComponentOptions,
+  ConfiguratorPriceComponent,
+} from '../price/configurator-price.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { MediaComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { CxNumericPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-cpq-overview-attribute',
   templateUrl: './configurator-overview-bundle-attribute.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    MediaComponent,
+    ConfiguratorPriceComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxNumericPipe,
+  ],
 })
 export class ConfiguratorOverviewBundleAttributeComponent implements OnInit {
   product$: Observable<Product>;

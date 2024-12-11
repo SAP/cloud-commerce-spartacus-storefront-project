@@ -19,6 +19,13 @@ import {
   ProductListItemContext,
   ProductListItemContextSource,
 } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { MediaComponent } from '@spartacus/storefront';
+import { NgIf, NgFor } from '@angular/common';
+import { InnerComponentsHostDirective } from '@spartacus/storefront';
+import { AtMessageDirective } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: '[cx-wish-list-item], cx-wish-list-item',
@@ -31,7 +38,16 @@ import {
       useExisting: ProductListItemContextSource,
     },
   ],
-  standalone: false,
+  imports: [
+    RouterLink,
+    MediaComponent,
+    NgIf,
+    NgFor,
+    InnerComponentsHostDirective,
+    AtMessageDirective,
+    TranslatePipe,
+    UrlPipe,
+  ],
 })
 export class WishListItemComponent implements OnChanges {
   @Input()

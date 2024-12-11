@@ -10,11 +10,26 @@ import {
   TicketList,
 } from '@spartacus/customer-ticketing/root';
 import { Observable } from 'rxjs';
+import { RouterLink } from '@angular/router';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-my-account-v2-customer-ticketing',
   templateUrl: './my-account-v2-customer-ticketing.component.html',
-  standalone: false,
+  imports: [
+    RouterLink,
+    NgIf,
+    NgFor,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+    UrlPipe,
+  ],
 })
 export class MyAccountV2CustomerTicketingComponent {
   protected readonly PAGE_SIZE = 1;

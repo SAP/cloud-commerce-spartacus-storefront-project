@@ -19,7 +19,12 @@ import createSpy = jasmine.createSpy;
 @Component({
   template: '',
   selector: 'cx-amend-order-actions',
-  standalone: false,
+  imports: [
+    CommonModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    ReactiveFormsModule,
+  ],
 })
 class MockAmendOrderActionComponent {
   @Input() orderCode: string;
@@ -31,7 +36,12 @@ class MockAmendOrderActionComponent {
 @Component({
   template: '',
   selector: 'cx-amend-order-items',
-  standalone: false,
+  imports: [
+    CommonModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    ReactiveFormsModule,
+  ],
 })
 class MockCancelOrReturnItemsComponent {
   @Input() entries: OrderEntry[];
@@ -75,14 +85,12 @@ describe('CancelOrderConfirmationComponent', () => {
         RouterTestingModule,
         I18nTestingModule,
         ReactiveFormsModule,
-      ],
-      providers: [
-        { provide: OrderAmendService, useClass: MockOrderAmendService },
-      ],
-      declarations: [
         CancelOrderConfirmationComponent,
         MockAmendOrderActionComponent,
         MockCancelOrReturnItemsComponent,
+      ],
+      providers: [
+        { provide: OrderAmendService, useClass: MockOrderAmendService },
       ],
     }).compileComponents();
   }));

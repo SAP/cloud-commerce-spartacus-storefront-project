@@ -5,7 +5,7 @@
  */
 
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
-import { Params } from '@angular/router';
+import { Params, RouterLink, RouterLinkActive } from '@angular/router';
 import {
   isNotUndefined,
   RoutingService,
@@ -19,12 +19,30 @@ import {
 } from '@spartacus/order/root';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
+import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
+import { SortingComponent } from '@spartacus/storefront';
+import { PaginationComponent } from '@spartacus/storefront';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-history',
   templateUrl: './order-history.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    NgClass,
+    SortingComponent,
+    PaginationComponent,
+    NgFor,
+    RouterLink,
+    RouterLinkActive,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class OrderHistoryComponent implements OnDestroy {
   constructor(

@@ -22,6 +22,9 @@ import {
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 /**
  * Renders translated form errors for a given form control, based on its `errors` property.
@@ -36,7 +39,7 @@ import { map, startWith } from 'rxjs/operators';
   selector: 'cx-form-errors',
   templateUrl: './form-errors.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, NgFor, FeatureDirective, AsyncPipe, TranslatePipe],
 })
 export class FormErrorsComponent implements DoCheck {
   private featureConfigService = inject(FeatureConfigService);

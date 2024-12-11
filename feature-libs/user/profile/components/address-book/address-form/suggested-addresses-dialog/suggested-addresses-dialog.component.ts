@@ -18,12 +18,27 @@ import {
   LaunchDialogService,
 } from '@spartacus/storefront';
 import { take } from 'rxjs/operators';
+import { FocusDirective } from '@spartacus/storefront';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '@spartacus/storefront';
+import { FormsModule } from '@angular/forms';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-suggested-addresses-dialog',
   templateUrl: './suggested-addresses-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FocusDirective,
+    NgIf,
+    FeatureDirective,
+    IconComponent,
+    FormsModule,
+    NgFor,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class SuggestedAddressDialogComponent implements OnInit {
   iconTypes = ICON_TYPE;

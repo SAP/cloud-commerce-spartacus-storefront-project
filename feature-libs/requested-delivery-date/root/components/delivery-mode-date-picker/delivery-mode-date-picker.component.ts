@@ -6,7 +6,12 @@
 
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit, Optional } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Cart } from '@spartacus/cart/base/root';
 import { CheckoutSupportedDeliveryModesQueryReloadEvent } from '@spartacus/checkout/base/root';
 import {
@@ -22,12 +27,25 @@ import { Observable, Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { RequestedDeliveryDateFacade } from '../../facade/requested-delivery-date.facade';
 import { DateValidationService } from '../shared/date-validation.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CardComponent } from '@spartacus/storefront';
+import { DatePickerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-request-delivery-date',
   templateUrl: './delivery-mode-date-picker.component.html',
   providers: [CxDatePipe],
-  standalone: false,
+  imports: [
+    NgIf,
+    CardComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    DatePickerComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class DeliveryModeDatePickerComponent implements OnInit, OnDestroy {
   constructor(

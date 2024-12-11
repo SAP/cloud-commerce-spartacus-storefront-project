@@ -5,7 +5,12 @@
  */
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { AbstractControl, UntypedFormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Currency, CurrencyService } from '@spartacus/core';
 import {
   B2BUnitNode,
@@ -19,6 +24,13 @@ import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { BudgetItemService } from '../services/budget-item.service';
 import { CurrentBudgetService } from '../services/current-budget.service';
+import { FormComponent } from '../../shared/form/form.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { DatePickerComponent } from '@spartacus/storefront';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-budget-form',
@@ -35,7 +47,18 @@ import { CurrentBudgetService } from '../services/current-budget.service';
       useExisting: CurrentBudgetService,
     },
   ],
-  standalone: false,
+  imports: [
+    FormComponent,
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    FormErrorsComponent,
+    DatePickerComponent,
+    NgSelectComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class BudgetFormComponent implements OnInit {
   form: UntypedFormGroup | null = this.itemService.getForm();

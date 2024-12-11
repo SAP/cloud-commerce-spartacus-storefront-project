@@ -110,10 +110,7 @@ describe('StockNotificationComponent', () => {
   const removeSuccess = new BehaviorSubject<boolean>(false);
   const addFail = new BehaviorSubject<boolean>(false);
 
-  @Pipe({
-    name: 'cxUrl',
-    standalone: false,
-  })
+  @Pipe({ name: 'cxUrl' })
   class MockUrlPipe implements PipeTransform {
     transform(): any {}
   }
@@ -122,8 +119,10 @@ describe('StockNotificationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule, SpinnerModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        SpinnerModule,
         StockNotificationComponent,
         StockNotificationDialogComponent,
         MockUrlPipe,

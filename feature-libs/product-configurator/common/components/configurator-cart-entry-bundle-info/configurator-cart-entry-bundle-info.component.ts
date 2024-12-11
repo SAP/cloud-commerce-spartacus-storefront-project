@@ -14,6 +14,10 @@ import { map, take } from 'rxjs/operators';
 import { CommonConfiguratorUtilsService } from '../../shared/utils/common-configurator-utils.service';
 import { LineItem } from './configurator-cart-entry-bundle-info.model';
 import { ConfiguratorCartEntryBundleInfoService } from './configurator-cart-entry-bundle-info.service';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { ConfigureCartEntryComponent } from '../configure-cart-entry/configure-cart-entry.component';
+import { TranslatePipe } from '@spartacus/core';
+import { CxNumericPipe } from '@spartacus/core';
 
 /**
  * Requires default change detection strategy, as the disabled state of the quantity from control may change,
@@ -22,7 +26,14 @@ import { ConfiguratorCartEntryBundleInfoService } from './configurator-cart-entr
 @Component({
   selector: 'cx-configurator-cart-entry-bundle-info',
   templateUrl: './configurator-cart-entry-bundle-info.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    NgFor,
+    ConfigureCartEntryComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxNumericPipe,
+  ],
 })
 export class ConfiguratorCartEntryBundleInfoComponent {
   constructor(

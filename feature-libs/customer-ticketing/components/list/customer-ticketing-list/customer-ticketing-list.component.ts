@@ -16,11 +16,33 @@ import {
 import { ICON_TYPE } from '@spartacus/storefront';
 import { combineLatest, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
+import { SortingComponent } from '@spartacus/storefront';
+import { CustomerTicketingCreateComponent } from '../customer-ticketing-create/customer-ticketing-create.component';
+import { RouterLink } from '@angular/router';
+import { PaginationComponent } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-customer-ticketing-list',
   templateUrl: './customer-ticketing-list.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    SortingComponent,
+    CustomerTicketingCreateComponent,
+    NgFor,
+    RouterLink,
+    NgClass,
+    PaginationComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+    UrlPipe,
+  ],
 })
 export class CustomerTicketingListComponent {
   constructor(

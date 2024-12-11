@@ -23,8 +23,12 @@ describe('SetPreferredStoreComponent without outlet.context$', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SetPreferredStoreComponent],
-      imports: [I18nTestingModule, IconTestingModule, CommonModule],
+      imports: [
+        I18nTestingModule,
+        IconTestingModule,
+        CommonModule,
+        SetPreferredStoreComponent,
+      ],
       providers: [
         { provide: PreferredStoreFacade, useClass: MockPreferredStoreService },
       ],
@@ -72,8 +76,12 @@ describe('SetPreferredStoreComponent with outlet.context$', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SetPreferredStoreComponent],
-      imports: [I18nTestingModule, IconTestingModule, CommonModule],
+      imports: [
+        I18nTestingModule,
+        IconTestingModule,
+        CommonModule,
+        SetPreferredStoreComponent,
+      ],
       providers: [
         { provide: PreferredStoreFacade, useClass: MockPreferredStoreService },
         { provide: OutletContextData, useValue: { context$ } },
@@ -115,7 +123,6 @@ describe('SetPreferredStoreComponent with outlet.context$', () => {
 @Component({
   selector: 'cx-set-preferred-store',
   template: '',
-  standalone: false,
 })
 export class SetPreferredStoreStubComponent {
   @Input() pointOfServiceName: PointOfServiceNames;

@@ -6,12 +6,16 @@
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CellComponent } from '../cell.component';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-status-cell',
   templateUrl: './status-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, RouterLink, NgTemplateOutlet, UrlPipe, TranslatePipe],
 })
 export class StatusCellComponent extends CellComponent {
   get label() {

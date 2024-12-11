@@ -5,7 +5,11 @@
  */
 
 import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { B2BUser, B2BUserRole, B2BUserRight } from '@spartacus/core';
 import {
   B2BUserService,
@@ -18,6 +22,11 @@ import { MessageService } from '../../../../shared/message/services/message.serv
 import { UserItemService } from '../../../../user/services/user-item.service';
 import { UnitUserRolesFormService } from './unit-user-roles-form.service';
 import { UnitUserRolesItemService } from './unit-user-roles-item.service';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { CardComponent } from '../../../../shared/card/card.component';
+import { FocusDirective } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-unit-user-roles',
@@ -30,7 +39,17 @@ import { UnitUserRolesItemService } from './unit-user-roles-item.service';
       useExisting: UnitUserRolesItemService,
     },
   ],
-  standalone: false,
+  imports: [
+    NgIf,
+    FormsModule,
+    CardComponent,
+    FocusDirective,
+    RouterLink,
+    ReactiveFormsModule,
+    NgFor,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class UnitUserRolesFormComponent {
   protected item: B2BUser | undefined;

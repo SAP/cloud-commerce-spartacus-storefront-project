@@ -9,13 +9,30 @@ import {
   UntypedFormBuilder,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { useFeatureStyles } from '@spartacus/core';
+import { NgIf } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { PasswordVisibilityToggleDirective } from '@spartacus/storefront';
+import { DotSpinnerComponent } from '../dot-spinner/dot-spinner.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-csagent-login-form',
   templateUrl: './csagent-login-form.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    FormErrorsComponent,
+    PasswordVisibilityToggleDirective,
+    DotSpinnerComponent,
+    TranslatePipe,
+  ],
 })
 export class CSAgentLoginFormComponent implements OnInit {
   csAgentLoginForm: UntypedFormGroup;

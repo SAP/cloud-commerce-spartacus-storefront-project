@@ -22,12 +22,21 @@ import { catchError, map } from 'rxjs/operators';
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
 import { CustomerCouponEntry } from './asm-customer-360-customer-coupon.model';
 import { ICON_TYPE } from '@spartacus/storefront';
+import { AsmCustomer360PromotionListingComponent } from '../../asm-customer-360-promotion-listing/asm-customer-360-promotion-listing.component';
+import { IconComponent } from '@spartacus/storefront';
+import { AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'cx-asm-customer-360-customer-coupon',
   templateUrl: './asm-customer-360-customer-coupon.component.html',
-  standalone: false,
+  imports: [
+    AsmCustomer360PromotionListingComponent,
+    IconComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class AsmCustomer360CustomerCouponComponent
   implements OnInit, OnDestroy

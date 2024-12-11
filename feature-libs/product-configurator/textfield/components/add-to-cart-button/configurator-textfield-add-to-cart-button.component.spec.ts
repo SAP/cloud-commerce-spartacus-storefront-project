@@ -54,10 +54,7 @@ class MockConfiguratorTextfieldService {
   updateCartEntry(): void {}
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -84,8 +81,9 @@ describe('ConfigTextfieldAddToCartButtonComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
         ConfiguratorTextfieldAddToCartButtonComponent,
         MockUrlPipe,
       ],

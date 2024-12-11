@@ -16,8 +16,8 @@ import { PickupOptionsComponent } from './pickup-options.component';
     I18nModule,
     ReactiveFormsModule,
     FeaturesConfigModule,
+    PickupOptionsComponent,
   ],
-  declarations: [PickupOptionsComponent],
   exports: [PickupOptionsComponent],
 })
 export class PickupOptionsModule {}

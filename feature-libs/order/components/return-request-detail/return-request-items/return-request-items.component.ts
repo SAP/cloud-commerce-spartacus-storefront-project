@@ -8,12 +8,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ReturnRequest } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 import { ReturnRequestService } from '../return-request.service';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { MediaComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-return-request-items',
   templateUrl: './return-request-items.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, NgFor, MediaComponent, AsyncPipe, TranslatePipe],
 })
 export class ReturnRequestItemsComponent {
   constructor(protected returnRequestService: ReturnRequestService) {}

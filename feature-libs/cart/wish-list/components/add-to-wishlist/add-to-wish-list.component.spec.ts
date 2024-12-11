@@ -86,16 +86,13 @@ class MockCurrentProductService {
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, RouterTestingModule],
 })
 class MockIconComponent {
   @Input() type;
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -106,10 +103,7 @@ class MockFeatureConfigService {
   }
 }
 
-@Directive({
-  selector: '[cxAtMessage]',
-  standalone: false,
-})
+@Directive({ selector: '[cxAtMessage]' })
 class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;
 }
@@ -122,8 +116,9 @@ describe('AddToWishListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
         AddToWishListComponent,
         MockIconComponent,
         MockUrlPipe,

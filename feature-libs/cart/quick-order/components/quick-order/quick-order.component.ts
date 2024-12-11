@@ -29,12 +29,27 @@ import { CmsComponentData } from '@spartacus/storefront';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { first, map, tap } from 'rxjs/operators';
 import { QuickOrderFormComponent } from './form/quick-order-form.component';
+import { NgIf, NgFor, AsyncPipe, KeyValuePipe } from '@angular/common';
+import { MessageComponent } from '@spartacus/storefront';
+import { QuickOrderTableComponent } from './table/quick-order-table.component';
+import { ProgressButtonComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-quick-order',
   templateUrl: './quick-order.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    MessageComponent,
+    NgFor,
+    QuickOrderFormComponent,
+    QuickOrderTableComponent,
+    ProgressButtonComponent,
+    AsyncPipe,
+    KeyValuePipe,
+    TranslatePipe,
+  ],
 })
 export class QuickOrderComponent implements OnInit, OnDestroy {
   cartId$: Observable<string>;

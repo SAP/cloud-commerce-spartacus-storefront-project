@@ -9,7 +9,7 @@ describe('AccountSummaryListComponent', () => {
   @Component({
     template: '<ng-content select="[actions]"></ng-content>',
     selector: 'cx-org-list',
-    standalone: false,
+    imports: [I18nTestingModule, UrlTestingModule],
   })
   class MockListComponent {
     @Input() key: any;
@@ -21,8 +21,13 @@ describe('AccountSummaryListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule, UrlTestingModule, StoreModule.forRoot({})],
-      declarations: [AccountSummaryListComponent, MockListComponent],
+      imports: [
+        I18nTestingModule,
+        UrlTestingModule,
+        StoreModule.forRoot({}),
+        AccountSummaryListComponent,
+        MockListComponent,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AccountSummaryListComponent);

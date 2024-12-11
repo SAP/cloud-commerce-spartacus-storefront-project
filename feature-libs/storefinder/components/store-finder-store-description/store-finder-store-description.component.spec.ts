@@ -13,7 +13,7 @@ class StoreFinderServiceMock {
 @Component({
   selector: 'cx-schedule',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockScheduleComponent {
   @Input() location;
@@ -22,7 +22,7 @@ class MockScheduleComponent {
 @Component({
   selector: 'cx-store-finder-map',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockStoreFinderMapComponent {
   @Input() locations;
@@ -34,8 +34,9 @@ describe('StoreFinderStoreDescriptionComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
         StoreFinderStoreDescriptionComponent,
         MockScheduleComponent,
         MockStoreFinderMapComponent,

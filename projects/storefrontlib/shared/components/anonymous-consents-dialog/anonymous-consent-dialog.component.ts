@@ -29,11 +29,28 @@ import { distinctUntilChanged, take, tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/index';
 import { FocusConfig } from '../../../layout/a11y/keyboard-focus/index';
 import { LaunchDialogService } from '../../../layout/launch-dialog/services/launch-dialog.service';
+import { FocusDirective } from '../../../layout/a11y/keyboard-focus/focus.directive';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '../spinner/spinner.component';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '../../../cms-components/misc/icon/icon.component';
+import { ConsentManagementFormComponent } from '../../../cms-components/myaccount/consent-management/components/consent-form/consent-management-form.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-anonymous-consent-dialog',
   templateUrl: './anonymous-consent-dialog.component.html',
-  standalone: false,
+  imports: [
+    FocusDirective,
+    NgIf,
+    SpinnerComponent,
+    FeatureDirective,
+    IconComponent,
+    NgFor,
+    ConsentManagementFormComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class AnonymousConsentDialogComponent implements OnInit, OnDestroy {
   @HostBinding('attr.role') role = 'dialog';

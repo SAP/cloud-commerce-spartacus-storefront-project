@@ -28,12 +28,26 @@ import {
 import { Observable, Subscription } from 'rxjs';
 import { map, switchMap, take, tap } from 'rxjs/operators';
 import { SavedCartDetailsService } from '../saved-cart-details.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { OutletDirective } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { AddToCartComponent } from '@spartacus/cart/base/components/add-to-cart';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-saved-cart-details-items',
   templateUrl: './saved-cart-details-items.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    OutletDirective,
+    SpinnerComponent,
+    AddToCartComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class SavedCartDetailsItemsComponent implements OnInit, OnDestroy {
   private subscription = new Subscription();

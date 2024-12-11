@@ -14,6 +14,8 @@ import {
   UntypedFormArray,
   UntypedFormControl,
   UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { B2BUser, B2BUserRole, B2BUserRight, Title } from '@spartacus/core';
 import {
@@ -28,6 +30,12 @@ import { CurrentItemService } from '../../shared/current-item.service';
 import { ItemService } from '../../shared/item.service';
 import { CurrentUserService } from '../services/current-user.service';
 import { UserItemService } from '../services/user-item.service';
+import { FormComponent } from '../../shared/form/form.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { FeatureDirective } from '@spartacus/core';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-user-form',
@@ -44,7 +52,18 @@ import { UserItemService } from '../services/user-item.service';
       useExisting: CurrentUserService,
     },
   ],
-  standalone: false,
+  imports: [
+    FormComponent,
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    NgSelectComponent,
+    FeatureDirective,
+    FormErrorsComponent,
+    NgFor,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class UserFormComponent implements OnInit {
   form: UntypedFormGroup | null = this.itemService.getForm();

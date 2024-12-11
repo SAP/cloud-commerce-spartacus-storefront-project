@@ -32,7 +32,7 @@ const blob = new Blob();
 @Component({
   template: '',
   selector: 'cx-pagination',
-  standalone: false,
+  imports: [I18nTestingModule, IconTestingModule],
 })
 class MockPaginationComponent {
   @Input() pagination: any;
@@ -41,7 +41,7 @@ class MockPaginationComponent {
 @Component({
   template: '',
   selector: 'cx-sorting',
-  standalone: false,
+  imports: [I18nTestingModule, IconTestingModule],
 })
 class MockSortingComponent {
   @Input() sortOptions: any;
@@ -54,7 +54,7 @@ class MockSortingComponent {
 @Component({
   template: '',
   selector: 'cx-account-summary-document-filter',
-  standalone: false,
+  imports: [I18nTestingModule, IconTestingModule],
 })
 class MockAccountSummaryDocumentFilterComponent {
   @Input() documentTypeOptions: any;
@@ -97,8 +97,9 @@ describe('AccountSummaryDocumentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule, IconTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        IconTestingModule,
         AccountSummaryDocumentComponent,
         MockAccountSummaryDocumentFilterComponent,
         MockPaginationComponent,

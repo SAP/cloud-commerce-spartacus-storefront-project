@@ -64,7 +64,7 @@ class MockComponentService {
 @Component({
   selector: 'cx-address-form',
   template: '',
-  standalone: false,
+  imports: [SpinnerModule, I18nTestingModule, CardModule, RouterTestingModule],
 })
 class MockAddressFormComponent {
   @Input()
@@ -105,6 +105,9 @@ describe('AddressBookComponent', () => {
         I18nTestingModule,
         CardModule,
         RouterTestingModule,
+        AddressBookComponent,
+        MockAddressFormComponent,
+        MockFeatureDirective,
       ],
       providers: [
         {
@@ -112,11 +115,6 @@ describe('AddressBookComponent', () => {
           useClass: MockComponentService,
         },
         { provide: GlobalMessageService, useClass: MockGlobalMessageService },
-      ],
-      declarations: [
-        AddressBookComponent,
-        MockAddressFormComponent,
-        MockFeatureDirective,
       ],
     }).compileComponents();
   }));

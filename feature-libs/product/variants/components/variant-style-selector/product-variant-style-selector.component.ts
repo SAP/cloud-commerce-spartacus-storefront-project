@@ -17,12 +17,14 @@ import {
   VariantQualifier,
 } from '@spartacus/core';
 import { filter, take } from 'rxjs/operators';
+import { NgIf, NgFor, NgClass } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-variant-style-selector',
   templateUrl: './product-variant-style-selector.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, NgFor, NgClass, TranslatePipe],
 })
 export class ProductVariantStyleSelectorComponent {
   constructor(

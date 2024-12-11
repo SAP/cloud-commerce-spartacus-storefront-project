@@ -29,7 +29,13 @@ import { ConfiguratorStorefrontUtilsService } from '../../../service/configurato
 @Component({
   selector: 'cx-configurator-attribute-product-card',
   template: '',
-  standalone: false,
+  imports: [
+    I18nTestingModule,
+    RouterTestingModule,
+    UrlTestingModule,
+    ReactiveFormsModule,
+    MediaModule,
+  ],
 })
 class MockProductCardComponent {
   @Input()
@@ -39,7 +45,13 @@ class MockProductCardComponent {
 @Component({
   selector: 'cx-configurator-attribute-quantity',
   template: '',
-  standalone: false,
+  imports: [
+    I18nTestingModule,
+    RouterTestingModule,
+    UrlTestingModule,
+    ReactiveFormsModule,
+    MediaModule,
+  ],
 })
 class MockConfiguratorAttributeQuantityComponent {
   @Input() quantityOptions: ConfiguratorAttributeQuantityComponentOptions;
@@ -49,7 +61,13 @@ class MockConfiguratorAttributeQuantityComponent {
 @Component({
   selector: 'cx-configurator-price',
   template: '',
-  standalone: false,
+  imports: [
+    I18nTestingModule,
+    RouterTestingModule,
+    UrlTestingModule,
+    ReactiveFormsModule,
+    MediaModule,
+  ],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -109,8 +127,6 @@ describe('ConfiguratorAttributeMultiSelectionBundleComponent', () => {
         UrlTestingModule,
         ReactiveFormsModule,
         MediaModule,
-      ],
-      declarations: [
         ConfiguratorAttributeMultiSelectionBundleComponent,
         ConfiguratorShowMoreComponent,
         ItemCounterComponent,

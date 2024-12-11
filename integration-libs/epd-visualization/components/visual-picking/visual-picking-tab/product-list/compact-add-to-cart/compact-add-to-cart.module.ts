@@ -24,13 +24,12 @@ import { CompactAddToCartComponent } from './compact-add-to-cart.component';
     RouterModule,
     SpinnerModule,
     PromotionsModule,
-
     UrlModule,
     IconModule,
     I18nModule,
     ItemCounterModule,
+    CompactAddToCartComponent,
   ],
-  declarations: [CompactAddToCartComponent],
   exports: [CompactAddToCartComponent],
 })
 export class CompactAddToCartModule {}

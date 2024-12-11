@@ -5,7 +5,13 @@
  */
 
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { OrderEntry } from '@spartacus/cart/base/root';
 import {
   GlobalMessageService,
@@ -19,11 +25,23 @@ import {
 } from '@spartacus/s4-service/root';
 import { Observable, throwError } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 @Component({
   selector: 'cx-cancel-service-order',
   templateUrl: './cancel-service-order.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    NgIf,
+    RouterLink,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+  ],
 })
 export class CancelServiceOrderComponent {
   protected orderDetailsService = inject(OrderDetailsService);

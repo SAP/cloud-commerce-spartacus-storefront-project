@@ -39,6 +39,16 @@ import {
   SearchBoxSuggestionSelectedEvent,
 } from './search-box.events';
 import { SearchBoxConfig, SearchResults } from './search-box.model';
+import { IconComponent } from '../../misc/icon/icon.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { FeatureDirective } from '@spartacus/core';
+import { OutletDirective } from '../../../cms-structure/outlet/outlet.directive';
+import { MediaComponent } from '../../../shared/components/media/media.component';
+import { CarouselComponent } from '../../../shared/components/carousel/carousel.component';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { HighlightPipe } from './highlight.pipe';
 
 const DEFAULT_SEARCH_BOX_CONFIG: SearchBoxConfig = {
   minCharactersBeforeRequest: 1,
@@ -58,7 +68,20 @@ const SEARCHBOX_IS_ACTIVE = 'searchbox-is-active';
   selector: 'cx-searchbox',
   templateUrl: './search-box.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    IconComponent,
+    NgIf,
+    NgFor,
+    RouterLink,
+    FeatureDirective,
+    OutletDirective,
+    MediaComponent,
+    CarouselComponent,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    HighlightPipe,
+  ],
 })
 export class SearchBoxComponent implements OnInit, OnDestroy {
   private elementRef = inject(ElementRef);

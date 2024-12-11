@@ -11,12 +11,20 @@ import { forkJoin, Observable, of } from 'rxjs';
 import { concatMap, filter, take } from 'rxjs/operators';
 
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { AsmCustomer360ProductListingComponent } from '../../asm-customer-360-product-listing/asm-customer-360-product-listing.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'cx-asm-customer-360-product-interests',
   templateUrl: './asm-customer-360-product-interests.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    AsmCustomer360ProductListingComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class AsmCustomer360ProductInterestsComponent {
   products$: Observable<Array<Product>>;

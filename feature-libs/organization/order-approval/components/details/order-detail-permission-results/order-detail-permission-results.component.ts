@@ -8,12 +8,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { OrderDetailsService } from '@spartacus/order/components';
 import { Order } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-detail-permission-results',
   templateUrl: './order-detail-permission-results.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe],
 })
 export class OrderDetailPermissionResultsComponent {
   order$: Observable<Order> = this.orderDetailsService.getOrderDetails();

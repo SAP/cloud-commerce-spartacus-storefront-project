@@ -26,8 +26,6 @@ import { CustomerTicketingCreateComponent } from './customer-ticketing-create.co
     ReactiveFormsModule,
     FormErrorsModule,
     FileUploadModule,
-  ],
-  declarations: [
     CustomerTicketingCreateComponent,
     CustomerTicketingCreateDialogComponent,
   ],

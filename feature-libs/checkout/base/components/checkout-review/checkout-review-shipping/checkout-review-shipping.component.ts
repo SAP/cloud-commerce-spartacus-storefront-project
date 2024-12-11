@@ -26,12 +26,28 @@ import { Card, ICON_TYPE } from '@spartacus/storefront';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { CheckoutStepService } from '../../services/checkout-step.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CardComponent } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { IconComponent } from '@spartacus/storefront';
+import { OutletDirective } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-checkout-review-shipping',
   templateUrl: './checkout-review-shipping.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    CardComponent,
+    RouterLink,
+    IconComponent,
+    OutletDirective,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+  ],
 })
 export class CheckoutReviewShippingComponent {
   protected featureConfig = inject(FeatureConfigService);

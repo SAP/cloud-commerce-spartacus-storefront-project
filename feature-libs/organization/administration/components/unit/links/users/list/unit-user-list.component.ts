@@ -12,6 +12,11 @@ import { ListService } from '../../../../shared/list/list.service';
 import { CurrentUnitService } from '../../../services/current-unit.service';
 import { UnitUserListService } from '../services/unit-user-list.service';
 import { B2BUserService } from '@spartacus/organization/administration/core';
+import { SubListComponent } from '../../../../shared/sub-list/sub-list.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { DisableInfoComponent } from '../../../../shared/detail/disable-info/disable-info.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-unit-user-list',
@@ -24,7 +29,14 @@ import { B2BUserService } from '@spartacus/organization/administration/core';
       useExisting: UnitUserListService,
     },
   ],
-  standalone: false,
+  imports: [
+    SubListComponent,
+    NgIf,
+    RouterLink,
+    DisableInfoComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class UnitUserListComponent {
   routerKey = ROUTE_PARAMS.userCode;

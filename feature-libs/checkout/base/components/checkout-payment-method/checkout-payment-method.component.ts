@@ -45,12 +45,28 @@ import {
   tap,
 } from 'rxjs/operators';
 import { CheckoutStepService } from '../services/checkout-step.service';
+import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { CardComponent } from '@spartacus/storefront';
+import { CheckoutPaymentFormComponent } from './checkout-payment-form/checkout-payment-form.component';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-payment-method',
   templateUrl: './checkout-payment-method.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    NgTemplateOutlet,
+    FeatureDirective,
+    NgFor,
+    CardComponent,
+    CheckoutPaymentFormComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CheckoutPaymentMethodComponent implements OnInit, OnDestroy {
   protected subscriptions = new Subscription();

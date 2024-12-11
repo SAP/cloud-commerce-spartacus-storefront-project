@@ -11,7 +11,11 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import {
+  UntypedFormControl,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import {
   AsmConfig,
   AsmCustomerListFacade,
@@ -37,11 +41,35 @@ import {
 import { combineLatest, NEVER, Observable, Subscription } from 'rxjs';
 import { distinctUntilChanged, map, tap } from 'rxjs/operators';
 import { CustomerListAction } from './customer-list.model';
+import { FocusDirective } from '@spartacus/storefront';
+import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { PaginationComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { SortingComponent } from '@spartacus/storefront';
+import { NgSelectA11yDirective } from '@spartacus/storefront';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-customer-list',
   templateUrl: './customer-list.component.html',
-  standalone: false,
+  imports: [
+    FocusDirective,
+    NgTemplateOutlet,
+    NgIf,
+    SpinnerComponent,
+    NgFor,
+    PaginationComponent,
+    IconComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    SortingComponent,
+    NgSelectA11yDirective,
+    NgSelectComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CustomerListComponent implements OnInit, OnDestroy {
   protected DEFAULT_PAGE_SIZE = 5;

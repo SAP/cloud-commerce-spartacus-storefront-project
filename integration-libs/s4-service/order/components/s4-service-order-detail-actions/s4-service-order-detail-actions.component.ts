@@ -10,12 +10,16 @@ import { OrderDetailActionsComponent } from '@spartacus/order/components';
 import { Order } from '@spartacus/order/root';
 import { CheckoutServiceSchedulePickerService } from '@spartacus/s4-service/root';
 import { map, Observable } from 'rxjs';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-s4-service-order-detail-actions',
   templateUrl: './s4-service-order-detail-actions.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, RouterLink, AsyncPipe, TranslatePipe, UrlPipe],
 })
 export class S4ServiceOrderDetailActionsComponent extends OrderDetailActionsComponent {
   protected checkoutServiceSchedulePickerService = inject(

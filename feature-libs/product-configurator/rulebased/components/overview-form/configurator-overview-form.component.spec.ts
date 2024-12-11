@@ -129,7 +129,7 @@ function checkConfigurationOverviewObs(
 @Component({
   selector: 'cx-configurator-price',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -138,11 +138,12 @@ class MockConfiguratorPriceComponent {
 describe('ConfigurationOverviewFormComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
+        NgSelectModule,
         ConfiguratorOverviewFormComponent,
         ConfiguratorOverviewAttributeComponent,
-
         MockConfiguratorPriceComponent,
       ],
       providers: [

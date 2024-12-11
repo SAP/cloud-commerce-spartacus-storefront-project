@@ -14,7 +14,12 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import {
+  UntypedFormControl,
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { QuickOrderFacade } from '@spartacus/cart/quick-order/root';
 import { Config, Product, WindowRef, useFeatureStyles } from '@spartacus/core';
 import { ICON_TYPE } from '@spartacus/storefront';
@@ -26,6 +31,11 @@ import {
   switchMap,
   take,
 } from 'rxjs/operators';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { MediaComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 const SEARCH_BOX_ACTIVE_CLASS = 'quick-order-searchbox-is-active';
 
@@ -33,7 +43,17 @@ const SEARCH_BOX_ACTIVE_CLASS = 'quick-order-searchbox-is-active';
   selector: 'cx-quick-order-form',
   templateUrl: './quick-order-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    NgIf,
+    IconComponent,
+    FeatureDirective,
+    NgFor,
+    MediaComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class QuickOrderFormComponent implements OnInit, OnDestroy {
   form: UntypedFormGroup;

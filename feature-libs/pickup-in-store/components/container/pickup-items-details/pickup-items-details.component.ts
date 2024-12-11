@@ -16,12 +16,32 @@ import { CmsComponentData, ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
 import { DeliveryPointsService } from '../../services/delivery-points.service';
+import { NgClass, NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { StoreAddressComponent } from '../../presentational/store/store-address/store-address.component';
+import { StoreScheduleComponent } from '../../presentational/store/store-schedule/store-schedule.component';
+import { RouterLink } from '@angular/router';
+import { IconComponent } from '@spartacus/storefront';
+import { MediaComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-pick-up-in-store-items-details',
   templateUrl: './pickup-items-details.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgClass,
+    NgIf,
+    NgFor,
+    StoreAddressComponent,
+    StoreScheduleComponent,
+    RouterLink,
+    IconComponent,
+    MediaComponent,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+  ],
 })
 export class PickUpItemsDetailsComponent implements OnInit {
   @Input() showEdit: boolean;

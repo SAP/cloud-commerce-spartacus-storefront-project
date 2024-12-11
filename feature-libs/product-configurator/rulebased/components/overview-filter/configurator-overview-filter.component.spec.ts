@@ -63,7 +63,7 @@ function initTestComponent() {
 @Component({
   selector: 'cx-configurator-overview-filter-bar',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule, ReactiveFormsModule],
 })
 class MockConfiguratorOverviewFilterBarComponent {
   @Input() config: Configurator.ConfigurationWithOverview;
@@ -81,8 +81,9 @@ describe('ConfiguratorOverviewFilterComponent', () => {
     mockRouterState.state.params.displayOnly = false;
 
     return TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
         ConfiguratorOverviewFilterComponent,
         MockConfiguratorOverviewFilterBarComponent,
       ],

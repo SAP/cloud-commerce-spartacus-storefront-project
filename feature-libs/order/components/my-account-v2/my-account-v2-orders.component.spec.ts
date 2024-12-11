@@ -41,10 +41,7 @@ const mockEmptyOrderList: OrderHistoryListView = {
   pagination: { totalResults: 0, totalPages: 1 },
 };
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -77,7 +74,7 @@ class MockTranslationService {
 @Component({
   template: '',
   selector: 'cx-media',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockMediaComponent {
   @Input() container: any;
@@ -88,7 +85,7 @@ class MockMediaComponent {
 @Component({
   selector: 'cx-spinner',
   template: '',
-  standalone: false,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockSpinnerComponent {}
 
@@ -99,8 +96,9 @@ describe(' MyAccountV2OrdersComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
         MyAccountV2OrdersComponent,
         MockUrlPipe,
         MockMediaComponent,

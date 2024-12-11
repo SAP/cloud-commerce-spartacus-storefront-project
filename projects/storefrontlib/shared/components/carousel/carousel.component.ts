@@ -21,6 +21,17 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
 import { CarouselService } from './carousel.service';
+import {
+  NgIf,
+  NgClass,
+  NgFor,
+  NgTemplateOutlet,
+  AsyncPipe,
+  SlicePipe,
+} from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '../../../cms-components/misc/icon/icon.component';
+import { TranslatePipe } from '@spartacus/core';
 
 /**
  * Generic carousel component that can be used to render any carousel items,
@@ -41,7 +52,17 @@ import { CarouselService } from './carousel.service';
   selector: 'cx-carousel',
   templateUrl: './carousel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    NgClass,
+    FeatureDirective,
+    IconComponent,
+    NgFor,
+    NgTemplateOutlet,
+    AsyncPipe,
+    SlicePipe,
+    TranslatePipe,
+  ],
 })
 export class CarouselComponent implements OnInit, OnChanges {
   @Output() keybordEvent = new BehaviorSubject<KeyboardEvent | null>(null);

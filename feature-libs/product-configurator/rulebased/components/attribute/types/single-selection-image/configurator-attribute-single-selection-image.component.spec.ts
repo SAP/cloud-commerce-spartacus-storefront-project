@@ -30,10 +30,7 @@ import { Observable, of } from 'rxjs';
 const VALUE_DISPLAY_NAME = 'val2';
 class MockGroupService {}
 
-@Directive({
-  selector: '[cxFocus]',
-  standalone: false,
-})
+@Directive({ selector: '[cxFocus]' })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: string;
 }
@@ -41,7 +38,13 @@ export class MockFocusDirective {
 @Component({
   selector: 'cx-configurator-price',
   template: '',
-  standalone: false,
+  imports: [
+    ReactiveFormsModule,
+    NgSelectModule,
+    I18nTestingModule,
+    IconTestingModule,
+    PopoverModule,
+  ],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -86,17 +89,15 @@ describe('ConfiguratorAttributeSingleSelectionImageComponent', () => {
       }
     );
     TestBed.configureTestingModule({
-      declarations: [
-        ConfiguratorAttributeSingleSelectionImageComponent,
-        MockFocusDirective,
-        MockConfiguratorPriceComponent,
-      ],
       imports: [
         ReactiveFormsModule,
         NgSelectModule,
         I18nTestingModule,
         IconTestingModule,
         PopoverModule,
+        ConfiguratorAttributeSingleSelectionImageComponent,
+        MockFocusDirective,
+        MockConfiguratorPriceComponent,
       ],
       providers: [
         ConfiguratorStorefrontUtilsService,

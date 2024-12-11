@@ -15,14 +15,25 @@ import {
 } from '@spartacus/core';
 import { DpCheckoutPaymentService } from '../../../facade';
 import { Component, OnInit, EventEmitter, Output, inject } from '@angular/core';
-import { CheckoutBillingAddressFormService } from '@spartacus/checkout/base/components';
+import {
+  CheckoutBillingAddressFormComponent,
+  CheckoutBillingAddressFormService,
+} from '@spartacus/checkout/base/components';
 import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { take } from 'rxjs';
+import { NgIf } from '@angular/common';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-dp-payment-callback',
   templateUrl: './dp-payment-callback.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    CheckoutBillingAddressFormComponent,
+    SpinnerComponent,
+    TranslatePipe,
+  ],
 })
 export class DpPaymentCallbackComponent implements OnInit {
   @Output()

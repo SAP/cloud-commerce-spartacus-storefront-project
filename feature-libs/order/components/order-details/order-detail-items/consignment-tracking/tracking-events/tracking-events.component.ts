@@ -15,12 +15,25 @@ import {
 import { ConsignmentTracking, OrderHistoryFacade } from '@spartacus/order/root';
 import { FocusConfig, LaunchDialogService } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
+import { FocusDirective } from '@spartacus/storefront';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-tracking-events',
   templateUrl: './tracking-events.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FocusDirective,
+    NgIf,
+    NgFor,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class TrackingEventsComponent implements OnDestroy, OnInit {
   private subscription = new Subscription();

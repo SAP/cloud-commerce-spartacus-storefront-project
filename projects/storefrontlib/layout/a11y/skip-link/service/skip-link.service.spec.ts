@@ -39,7 +39,7 @@ class MockKeyboadFocusService {
     <button class="target" id="skip1" tabindex="0">skip 1</button>
     <div class="target" id="skip2"></div>
   `,
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class TestContainerComponent {}
 
@@ -51,8 +51,7 @@ describe('SkipLinkService', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [TestContainerComponent],
+      imports: [I18nTestingModule, TestContainerComponent],
       providers: [
         SkipLinkService,
         {

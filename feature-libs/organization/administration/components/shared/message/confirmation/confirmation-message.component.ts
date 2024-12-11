@@ -16,6 +16,10 @@ import { BaseMessageComponent } from '../base-message.component';
 import { MessageData } from '../message.model';
 import { MessageService } from '../services/message.service';
 import { ConfirmationMessageData } from './confirmation-message.model';
+import { FocusDirective } from '@spartacus/storefront';
+import { NgIf } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 /**
  * Renders a confirmation message and cancel/confirm button in the message component.
@@ -24,7 +28,7 @@ import { ConfirmationMessageData } from './confirmation-message.model';
   selector: 'cx-org-confirmation',
   templateUrl: './confirmation-message.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [FocusDirective, NgIf, IconComponent, TranslatePipe],
 })
 export class ConfirmationMessageComponent
   extends BaseMessageComponent

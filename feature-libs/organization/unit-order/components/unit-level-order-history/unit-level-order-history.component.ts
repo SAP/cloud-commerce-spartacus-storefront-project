@@ -11,12 +11,34 @@ import { OrderHistoryQueryParams } from '@spartacus/organization/unit-order/core
 import { combineLatest, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { UnitOrderFacade } from '@spartacus/organization/unit-order/root';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { UnitLevelOrderHistoryFilterComponent } from './filter/unit-level-order-history-filter.component';
+import { SortingComponent } from '@spartacus/storefront';
+import { TotalComponent } from '@spartacus/storefront';
+import { PaginationComponent } from '@spartacus/storefront';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-unit-level-order-history',
   templateUrl: './unit-level-order-history.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    UnitLevelOrderHistoryFilterComponent,
+    SortingComponent,
+    TotalComponent,
+    PaginationComponent,
+    NgFor,
+    RouterLink,
+    RouterLinkActive,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class UnitLevelOrderHistoryComponent implements OnDestroy {
   private PAGE_SIZE = 5;

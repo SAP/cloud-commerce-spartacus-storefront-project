@@ -20,10 +20,7 @@ import { ConfiguratorAttributeCompositionContext } from '../../composition/confi
 import { ConfiguratorAttributePriceChangeService } from '../../price-change/configurator-attribute-price-change.service';
 import { ConfiguratorAttributeCheckBoxComponent } from './configurator-attribute-checkbox.component';
 
-@Directive({
-  selector: '[cxFocus]',
-  standalone: false,
-})
+@Directive({ selector: '[cxFocus]' })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: string;
 }
@@ -31,7 +28,7 @@ export class MockFocusDirective {
 @Component({
   selector: 'cx-configurator-price',
   template: '',
-  standalone: false,
+  imports: [ReactiveFormsModule, NgSelectModule, I18nTestingModule],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -40,7 +37,7 @@ class MockConfiguratorPriceComponent {
 @Component({
   selector: 'cx-configurator-show-more',
   template: '',
-  standalone: false,
+  imports: [ReactiveFormsModule, NgSelectModule, I18nTestingModule],
 })
 class MockConfiguratorShowMoreComponent {
   @Input() text: string;
@@ -89,13 +86,15 @@ describe('ConfigAttributeCheckBoxComponent', () => {
       },
     });
     TestBed.configureTestingModule({
-      declarations: [
+      imports: [
+        ReactiveFormsModule,
+        NgSelectModule,
+        I18nTestingModule,
         ConfiguratorAttributeCheckBoxComponent,
         MockFocusDirective,
         MockConfiguratorPriceComponent,
         MockConfiguratorShowMoreComponent,
       ],
-      imports: [ReactiveFormsModule, NgSelectModule, I18nTestingModule],
       providers: [
         {
           provide: ConfiguratorAttributeCompositionContext,

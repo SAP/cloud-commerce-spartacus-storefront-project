@@ -33,6 +33,11 @@ import {
 import { OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { map, startWith, tap } from 'rxjs/operators';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { OutletDirective } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { CartItemListRowComponent } from '../cart-item-list-row/cart-item-list-row.component';
+import { TranslatePipe } from '@spartacus/core';
 
 interface ItemListContext {
   readonly?: boolean;
@@ -48,7 +53,15 @@ interface ItemListContext {
   selector: 'cx-cart-item-list',
   templateUrl: './cart-item-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    OutletDirective,
+    FeatureDirective,
+    NgFor,
+    CartItemListRowComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class CartItemListComponent implements OnInit, OnDestroy {
   protected subscription = new Subscription();

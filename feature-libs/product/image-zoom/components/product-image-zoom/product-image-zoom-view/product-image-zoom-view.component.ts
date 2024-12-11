@@ -49,12 +49,26 @@ import {
   take,
   tap,
 } from 'rxjs/operators';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { IconComponent } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { MediaComponent } from '@spartacus/storefront';
+import { ProductImageZoomThumbnailsComponent } from '../product-image-zoom-thumbnails/product-image-zoom-thumbnails.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-image-zoom-view',
   templateUrl: './product-image-zoom-view.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    IconComponent,
+    FeatureDirective,
+    MediaComponent,
+    ProductImageZoomThumbnailsComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ProductImageZoomViewComponent implements OnInit, OnDestroy {
   iconType = ICON_TYPE;

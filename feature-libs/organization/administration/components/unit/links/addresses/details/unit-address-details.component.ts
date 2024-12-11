@@ -17,6 +17,13 @@ import {
 import { ItemService } from '../../../../shared/item.service';
 import { CurrentUnitService } from '../../../services/current-unit.service';
 import { UnitAddressItemService } from '../services/unit-address-item.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CardComponent } from '../../../../shared/card/card.component';
+import { FocusDirective } from '@spartacus/storefront';
+import { RouterLink } from '@angular/router';
+import { DeleteItemComponent } from '../../../../shared/detail/delete-item-action/delete-item.component';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-unit-address-details',
@@ -29,7 +36,16 @@ import { UnitAddressItemService } from '../services/unit-address-item.service';
       useExisting: UnitAddressItemService,
     },
   ],
-  standalone: false,
+  imports: [
+    NgIf,
+    CardComponent,
+    FocusDirective,
+    RouterLink,
+    DeleteItemComponent,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+  ],
 })
 export class UnitAddressDetailsComponent {
   unit$: Observable<B2BUnit | undefined> = this.currentUnitService.item$;

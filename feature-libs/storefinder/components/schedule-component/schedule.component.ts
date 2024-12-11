@@ -6,11 +6,13 @@
 
 import { Component, Input, OnInit } from '@angular/core';
 import { PointOfService, WeekdayOpeningDay } from '@spartacus/core';
+import { NgIf, NgFor } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-schedule',
   templateUrl: './schedule.component.html',
-  standalone: false,
+  imports: [NgIf, NgFor, TranslatePipe],
 })
 export class ScheduleComponent implements OnInit {
   @Input()

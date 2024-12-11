@@ -11,11 +11,29 @@ import {
   PromotionLocation,
 } from '@spartacus/cart/base/root';
 import { Consignment, Order, OrderOutlets } from '@spartacus/order/root';
+import { NgFor, NgIf } from '@angular/common';
+import { OutletDirective } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { ConsignmentTrackingComponent } from '../consignment-tracking/consignment-tracking.component';
+import { AbstractOrderContextDirective } from '@spartacus/cart/base/components';
+import { AddToCartComponent } from '@spartacus/cart/base/components/add-to-cart';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-consigned-entries',
   templateUrl: './order-consigned-entries.component.html',
-  standalone: false,
+  imports: [
+    NgFor,
+    OutletDirective,
+    NgIf,
+    FeatureDirective,
+    ConsignmentTrackingComponent,
+    AbstractOrderContextDirective,
+    AddToCartComponent,
+    TranslatePipe,
+    CxDatePipe,
+  ],
 })
 export class OrderConsignedEntriesComponent {
   @Input() consignments: Consignment[];

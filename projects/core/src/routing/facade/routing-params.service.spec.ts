@@ -7,7 +7,6 @@ import { RoutingParamsService } from './routing-params.service';
 @Component({
   selector: 'cx-mock',
   template: '',
-  standalone: false,
 })
 export class MockComponent {}
 
@@ -42,8 +41,8 @@ describe('RoutingParamsService', () => {
             ],
           },
         ]),
+        MockComponent,
       ],
-      declarations: [MockComponent],
       providers: [RoutingParamsService],
     });
     service = TestBed.inject(RoutingParamsService);

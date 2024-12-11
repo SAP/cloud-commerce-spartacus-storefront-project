@@ -15,12 +15,27 @@ import {
 import { combineLatest, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../cms-components/misc/icon';
-import { Card } from '../../../shared/components/card/card.component';
+import {
+  Card,
+  CardComponent,
+} from '../../../shared/components/card/card.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { SpinnerComponent } from '../../../shared/components/spinner/spinner.component';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-payment-methods',
   templateUrl: './payment-methods.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    SpinnerComponent,
+    NgFor,
+    CardComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class PaymentMethodsComponent implements OnInit {
   paymentMethods$: Observable<PaymentDetails[]>;

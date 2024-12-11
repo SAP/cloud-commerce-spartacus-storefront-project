@@ -44,10 +44,7 @@ class MockRoutingService {
   go = createSpy();
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -72,8 +69,9 @@ describe('VerificationTokenFormComponent', () => {
         I18nTestingModule,
         FormErrorsModule,
         SpinnerModule,
+        VerificationTokenFormComponent,
+        MockUrlPipe,
       ],
-      declarations: [VerificationTokenFormComponent, MockUrlPipe],
       providers: [
         {
           provide: VerificationTokenFormComponentService,

@@ -6,11 +6,15 @@
 
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CellComponent } from '../../shared';
+import { RouterLink } from '@angular/router';
+import { PopoverDirective } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-user-group-details-cell',
   templateUrl: './user-group-details-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [RouterLink, PopoverDirective, TranslatePipe, UrlPipe],
 })
 export class UserGroupDetailsCellComponent extends CellComponent {}

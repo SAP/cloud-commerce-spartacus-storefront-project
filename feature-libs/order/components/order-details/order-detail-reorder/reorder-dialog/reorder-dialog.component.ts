@@ -30,12 +30,25 @@ import {
   SelectFocusUtility,
 } from '@spartacus/storefront';
 import { BehaviorSubject } from 'rxjs';
+import { FocusDirective } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-reorder-dialog',
   templateUrl: './reorder-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FocusDirective,
+    IconComponent,
+    NgIf,
+    NgFor,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ReorderDialogComponent {
   iconTypes = ICON_TYPE;

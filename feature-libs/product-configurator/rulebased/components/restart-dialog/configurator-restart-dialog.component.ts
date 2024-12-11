@@ -15,11 +15,23 @@ import {
 import { Observable } from 'rxjs';
 import { filter, switchMap } from 'rxjs/operators';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FocusDirective } from '@spartacus/storefront';
+import { FeatureDirective } from '@spartacus/core';
+import { IconComponent } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-restart-dialog',
   templateUrl: './configurator-restart-dialog.component.html',
-  standalone: false,
+  imports: [
+    NgIf,
+    FocusDirective,
+    FeatureDirective,
+    IconComponent,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ConfiguratorRestartDialogComponent {
   constructor(

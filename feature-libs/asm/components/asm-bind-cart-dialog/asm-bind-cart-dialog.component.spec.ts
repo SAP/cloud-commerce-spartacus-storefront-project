@@ -7,10 +7,7 @@ import {
   BIND_CART_DIALOG_ACTION,
 } from './asm-bind-cart-dialog.component';
 
-@Pipe({
-  name: 'cxTranslate',
-  standalone: false,
-})
+@Pipe({ name: 'cxTranslate' })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
 }
@@ -27,11 +24,7 @@ describe('AsmBindCartDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AsmBindCartDialogComponent,
-        MockTranslatePipe,
-        FocusDirective,
-      ],
+      imports: [AsmBindCartDialogComponent, MockTranslatePipe, FocusDirective],
       providers: [
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
       ],

@@ -21,12 +21,15 @@ import { BehaviorSubject, Observable, Subscription, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { ActiveCartFacade, CartVoucherFacade } from '@spartacus/cart/base/root';
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
+import { AsmCustomer360PromotionListingComponent } from '../../asm-customer-360-promotion-listing/asm-customer-360-promotion-listing.component';
+import { AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'cx-asm-customer-360-coupon',
   templateUrl: './asm-customer-360-coupon.component.html',
-  standalone: false,
+  imports: [AsmCustomer360PromotionListingComponent, AsyncPipe, TranslatePipe],
 })
 export class AsmCustomer360CouponComponent implements OnInit, OnDestroy {
   showErrorAlert$ = new BehaviorSubject<boolean>(false);

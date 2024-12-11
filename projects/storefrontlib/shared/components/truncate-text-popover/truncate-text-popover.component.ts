@@ -5,12 +5,16 @@
  */
 
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { NgClass, NgIf } from '@angular/common';
+import { PopoverDirective } from '../popover/popover.directive';
+import { TranslatePipe } from '@spartacus/core';
+import { TruncatePipe } from './truncate.pipe';
 
 @Component({
   selector: 'cx-truncate-text-popover',
   templateUrl: './truncate-text-popover.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgClass, NgIf, PopoverDirective, TranslatePipe, TruncatePipe],
 })
 export class TruncateTextPopoverComponent {
   /**

@@ -16,7 +16,7 @@ import { ProductFacetNavigationComponent } from './product-facet-navigation.comp
 @Component({
   selector: 'cx-icon',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -24,7 +24,7 @@ class MockCxIconComponent {
 @Component({
   selector: 'cx-active-facets',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockActiveFacetsComponent {
   @Input() facetList;
@@ -32,7 +32,7 @@ class MockActiveFacetsComponent {
 @Component({
   selector: 'cx-facet-list',
   template: '',
-  standalone: false,
+  imports: [I18nTestingModule],
 })
 class MockFacetListComponent {
   @Input() isDialog;
@@ -52,8 +52,8 @@ describe('ProductFacetNavigationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         ProductFacetNavigationComponent,
         MockActiveFacetsComponent,
         MockFacetListComponent,

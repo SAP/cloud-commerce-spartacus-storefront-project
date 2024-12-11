@@ -12,12 +12,26 @@ import {
 } from '@spartacus/cart/base/root';
 import { Order, OrderFacade } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '@spartacus/core';
+import { PromotionsComponent } from '@spartacus/storefront';
+import { AbstractOrderContextDirective } from '@spartacus/cart/base/components';
+import { OutletDirective } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-confirmation-items',
   templateUrl: './order-confirmation-items.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    PromotionsComponent,
+    AbstractOrderContextDirective,
+    OutletDirective,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class OrderConfirmationItemsComponent implements OnDestroy {
   readonly cartOutlets = CartOutlets;

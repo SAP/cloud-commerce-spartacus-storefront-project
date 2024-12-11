@@ -29,12 +29,30 @@ import {
 } from 'rxjs/operators';
 import { CurrentProductService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
+import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
+import { FocusDirective } from '@spartacus/storefront';
+import { MediaComponent } from '@spartacus/storefront';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+import { NgSelectA11yDirective } from '@spartacus/storefront';
+import { TranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-multi-dimensional-selector',
   templateUrl: './product-multi-dimensional-selector.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    NgFor,
+    NgClass,
+    FocusDirective,
+    MediaComponent,
+    NgSelectComponent,
+    FormsModule,
+    NgSelectA11yDirective,
+    AsyncPipe,
+    TranslatePipe,
+  ],
 })
 export class ProductMultiDimensionalSelectorComponent {
   protected multiDimensionalService: ProductMultiDimensionalSelectorService =
