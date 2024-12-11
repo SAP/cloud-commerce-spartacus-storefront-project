@@ -402,7 +402,7 @@ There are couple of required changes to make sure schematics will work properly
   - `projects/storefrontapp/tsconfig.server.json`,
   - `projects/storefrontapp/tsconfig.app.prod.json`
 - add new feature lib schema.json elements in schematics folder - `feature-libs\<lib-name>\schematics\add-<lib-name>\schema.json` where the `lib-name` is the name of the new library
-  - if the library includes several features and some of them should be installed by default, add them to the `default` array (for 'no-interactive' mode) and add them `checked: true` flag (for interactive prompt), like in the following example:
+  - if the library includes several features and some of them should be installed by default, add them to the `default` array (for 'no-interactive' mode) and add them `checked: true` flag (for interactive prompt). Please note the `Feature1` in the following example:
   ```json
   {
     "$schema": "http://json-schema.org/schema",
