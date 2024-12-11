@@ -21,14 +21,12 @@ describe('DomChangeDirective', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [TestHostComponent, DomChangeDirective],
-      imports: [BrowserAnimationsModule]
+      imports: [BrowserAnimationsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestHostComponent);
-    
-    testElement = fixture.debugElement.query(
-      By.directive(DomChangeDirective)
-    );
+
+    testElement = fixture.debugElement.query(By.directive(DomChangeDirective));
   }));
 
   it('should emit when a child element is added', (done) => {
