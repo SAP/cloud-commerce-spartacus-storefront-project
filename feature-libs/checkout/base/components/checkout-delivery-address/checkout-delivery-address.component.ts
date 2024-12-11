@@ -24,6 +24,7 @@ import {
   GlobalMessageType,
   TranslationService,
   UserAddressService,
+  WindowRef,
   getLastValueSync,
 } from '@spartacus/core';
 import {
@@ -37,6 +38,7 @@ import {
   filter,
   map,
   switchMap,
+  take,
   tap,
 } from 'rxjs/operators';
 import { CheckoutConfigService } from '../services';
@@ -84,6 +86,7 @@ export class CheckoutDeliveryAddressComponent implements OnInit {
   }
 
   @Optional() protected focusService = inject(SelectFocusUtility);
+  @Optional() protected windowRef = inject(WindowRef);
 
   constructor(
     protected userAddressService: UserAddressService,
@@ -162,7 +165,36 @@ export class CheckoutDeliveryAddressComponent implements OnInit {
 
     this.setAddress(address);
     if (this.featureConfigService?.isEnabled('a11yFocusOnCardAfterSelecting')) {
-      this.focusService.focusCardAfterSelecting(this.isUpdating$);
+      this.focusCardAfterSelecting();
+    }
+  }
+
+  /**
+   * Restores the focus to the Card component after it has been selected and the checkout has finished updating.
+   * The focus is lost due to DOM changes making it otherwise impossible to target elements that have been removed.
+   */
+  focusCardAfterSelecting(): void {
+    const cardNodes = Array.from(
+      this.windowRef?.document.querySelectorAll('cx-card')
+    );
+    const triggeredCard =
+      this.windowRef?.document.activeElement?.closest('cx-card');
+
+    if (triggeredCard) {
+      const selectedCardIndex = cardNodes.indexOf(triggeredCard);
+      this.isUpdating$
+        .pipe(
+          filter((isUpdating) => !isUpdating),
+          take(1)
+        )
+        .subscribe(() => {
+          requestAnimationFrame(() => {
+            const selectedCard = this.windowRef?.document.querySelectorAll(
+              'cx-card'
+            )[selectedCardIndex] as HTMLElement;
+            this.focusService.findFirstFocusable(selectedCard)?.focus();
+          });
+        });
     }
   }
 
