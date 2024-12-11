@@ -51,7 +51,7 @@ SPARTACUS_PROJECTS=(
         )
 
 SPARTACUS_REPO_URL="https://github.com/SAP/spartacus.git"
-# TODO: change to `develop` after the February release 
+# TODO: CXSPA-9115 change to `develop` after the February release 
 BRANCH='develop-next-major' 
 
 # custom location for the installation output
