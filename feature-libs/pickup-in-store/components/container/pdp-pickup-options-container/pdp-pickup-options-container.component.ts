@@ -106,28 +106,24 @@ export class PdpPickupOptionsContainerComponent implements OnInit, OnDestroy {
       )
     );
 
-    this.displayPickupLocation$ = this.currentProductService
-      .getProduct()
-      .pipe(
-        filter(isProductWithCode),
-        map((product) => product.code),
-        switchMap((productCode) =>
-          this.intendedPickupLocationService
-            .getIntendedLocation(productCode)
-            .pipe(
-              map((intendedLocation) => ({ intendedLocation, productCode }))
-            )
-        ),
-        switchMap(({ intendedLocation, productCode }) => {
-          if (!!intendedLocation && !!intendedLocation.displayName) {
-            this.displayNameIsSet = true;
-            return of(getProperty(intendedLocation, 'displayName'));
-          } else {
-            this.setIntendedPickupLocation(productCode);
-            return of(undefined);
-          }
-        })
-      );
+    this.displayPickupLocation$ = this.currentProductService.getProduct().pipe(
+      filter(isProductWithCode),
+      map((product) => product.code),
+      switchMap((productCode) =>
+        this.intendedPickupLocationService
+          .getIntendedLocation(productCode)
+          .pipe(map((intendedLocation) => ({ intendedLocation, productCode })))
+      ),
+      switchMap(({ intendedLocation, productCode }) => {
+        if (!!intendedLocation && !!intendedLocation.displayName) {
+          this.displayNameIsSet = true;
+          return of(getProperty(intendedLocation, 'displayName'));
+        } else {
+          this.setIntendedPickupLocation(productCode);
+          return of(undefined);
+        }
+      })
+    );
 
     this.intendedPickupLocation$ = this.currentProductService.getProduct().pipe(
       filter(isProductWithCode),

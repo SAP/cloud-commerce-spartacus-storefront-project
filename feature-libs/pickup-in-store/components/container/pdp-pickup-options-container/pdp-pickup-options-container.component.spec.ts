@@ -233,9 +233,12 @@ describe('PdpPickupOptionsComponent', () => {
     });
 
     it('setIntendedPickupLocation should set pickupOption as delivery', async () => {
-      spyOn(preferredStoreFacade, 'getPreferredStoreWithProductInStock').and.returnValue(
+      spyOn(
+        preferredStoreFacade,
+        'getPreferredStoreWithProductInStock'
+      ).and.returnValue(
         of({ name: 'London School', displayName: 'London School' })
-        );
+      );
       component.setIntendedPickupLocation('productCode');
       expect(
         intendedPickupLocationService.setIntendedLocation
