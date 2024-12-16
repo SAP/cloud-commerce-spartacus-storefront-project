@@ -419,6 +419,7 @@ if (environment.cpq) {
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
         a11yPdpGridArrangement: true,
+        a11yHamburgerMenuTrapFocus: true,
         useExtendedMediaComponentConfiguration: true,
         showRealTimeStockInPDP: false,
         a11yWrapReviewOrderInSection: true,
