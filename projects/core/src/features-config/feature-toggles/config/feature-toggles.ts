@@ -642,7 +642,7 @@ export interface FeatureTogglesInterface {
   /**
    * Stops the inputs value from obstructing the 'PasswordVisibilityToggleComponent'.
    */
-  a11yPasswordVisibilityBtnValueOverflow?: boolean;
+  a11yPasswordVisibliltyBtnValueOverflow?: boolean;
 
   /**
    * In `ItemCounterComponenet`, Remove button no longer lose focus after activating when count is 2.
@@ -850,17 +850,27 @@ export interface FeatureTogglesInterface {
   showRealTimeStockInPDP?: boolean;
 
   /**
-   * When enabled, the scroll-to-top button adjusts its position when other UI elements
-   * (like cookie consent banner) appear at the bottom of the page to prevent overlapping
-   */
-  a11yScrollToTopPositioning?: boolean;
-
-  /**
    * Creates a section element with applied aria-label in "Review Order" page of the checkout.
    * Moves components to be children of this section element.
    */
   a11yWrapReviewOrderInSection?: boolean;
 
+  /**
+   * Enables the product carousel to include products based on specified category codes.
+   *
+   * - When this feature is enabled, the carousel will fetch and display products
+   *   associated with the `categoryCodes` provided.
+   * - The `categoryCodes` are configured and managed through SmartEdit
+   *
+   */
+  enableCarouselCategoryProducts?: boolean;
+
+  /**
+   * When enabled, enforces stronger password validation rules,
+   * including requirements for a mix of uppercase letters, lowercase letters,
+   * special characters, digits, and no consecutive characters,
+   * as well as enforcing both a minimum and maximum password length.
+   */
   enableSecurePasswordValidation?: boolean;
 }
 
@@ -870,8 +880,8 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   showSearchingCustomerByOrderInASM: false,
   showStyleChangesInASM: false,
   shouldHideAddToCartForUnpurchasableProducts: false,
-  useExtractedBillingAddressComponent: false,
-  showBillingAddressInDigitalPayments: false,
+  useExtractedBillingAddressComponent: true,
+  showBillingAddressInDigitalPayments: true,
   showDownloadProposalButton: true,
   showPromotionsInPDP: true,
   searchBoxV2: false,
@@ -922,25 +932,25 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   cmsGuardsServiceUseGuardsComposer: true,
   cartQuickOrderRemoveListeningToFailEvent: true,
   a11yKeyboardAccessibleZoom: false,
-  a11yOrganizationLinkableCells: false,
+  a11yOrganizationLinkableCells: true,
   a11yVisibleFocusOverflows: true,
   a11yTruncatedTextForResponsiveView: true,
   a11yTruncatedTextStoreFinder: false,
-  a11ySemanticPaginationLabel: false,
+  a11ySemanticPaginationLabel: true,
   a11yPreventCartItemsFormRedundantRecreation: false,
-  a11yPreventSRFocusOnHiddenElements: false,
+  a11yPreventSRFocusOnHiddenElements: true,
   a11yMyAccountLinkOutline: true,
   a11yCloseProductImageBtnFocus: true,
-  a11yNotificationPreferenceFieldset: false,
-  a11yImproveContrast: false,
+  a11yNotificationPreferenceFieldset: true,
+  a11yImproveContrast: true,
   a11yEmptyWishlistHeading: true,
-  a11yScreenReaderBloatFix: false,
+  a11yScreenReaderBloatFix: true,
   a11yUseButtonsForBtnLinks: true,
   a11yTabComponent: false,
   a11yCarouselArrowKeysNavigation: false,
   a11yPickupOptionsTabs: false,
   a11yNotificationsOnConsentChange: false,
-  a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields: false,
+  a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields: true,
   a11yFacetsDialogFocusHandling: true,
   headerLayoutForSmallerViewports: false,
   a11yStoreFinderAlerts: false,
@@ -964,7 +974,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yAddToWishlistFocus: false,
   a11ySearchBoxFocusOnEscape: false,
   a11yUpdatingCartNoNarration: false,
-  a11yPasswordVisibilityBtnValueOverflow: false,
+  a11yPasswordVisibliltyBtnValueOverflow: false,
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,
@@ -993,7 +1003,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   allPageMetaResolversEnabledInCsr: false,
   a11yPdpGridArrangement: false,
   useExtendedMediaComponentConfiguration: false,
-  a11yScrollToTopPositioning: false,
   showRealTimeStockInPDP: false,
   enableSecurePasswordValidation: false,
+  enableCarouselCategoryProducts: false,
 };
