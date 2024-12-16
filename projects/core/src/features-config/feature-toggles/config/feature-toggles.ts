@@ -406,6 +406,12 @@ export interface FeatureTogglesInterface {
   a11yTruncatedTextStoreFinder?: boolean;
 
   /**
+   * `UnitLevelOrderHistoryComponent` filter input label and table email address
+   * are not truncated
+   */
+  a11yTruncatedTextUnitLevelOrderHistory?: boolean;
+
+  /**
    * When enabled focus outline on the close button inside `ProductImageZoomDialogComponent`
    * will be fully visible
    */
@@ -821,6 +827,13 @@ export interface FeatureTogglesInterface {
   a11yPdpGridArrangement?: boolean;
 
   /**
+   * Header. Fixes trapping focus on menu items on mobile when the menu is expanded.
+   * Sets `tabindex` attribute  to `-1` for all visible focusable elements in the header section to exclude them from
+   * keyboard navigation
+   */
+  a11yHamburgerMenuTrapFocus?: boolean;
+
+  /**
    * When enabled, allows to provide extended formats and media queries for <picture> element if used in MediaComponent.
    *
    * Important: After activation default HTML element in MediaComponent will be `<img>`
@@ -942,6 +955,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yVisibleFocusOverflows: true,
   a11yTruncatedTextForResponsiveView: true,
   a11yTruncatedTextStoreFinder: false,
+  a11yTruncatedTextUnitLevelOrderHistory: false,
   a11ySemanticPaginationLabel: true,
   a11yPreventCartItemsFormRedundantRecreation: false,
   a11yPreventSRFocusOnHiddenElements: true,
@@ -1009,6 +1023,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
   a11yPdpGridArrangement: false,
+  a11yHamburgerMenuTrapFocus: false,
   useExtendedMediaComponentConfiguration: false,
   showRealTimeStockInPDP: false,
   enableSecurePasswordValidation: false,
