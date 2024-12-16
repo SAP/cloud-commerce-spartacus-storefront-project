@@ -748,6 +748,12 @@ export interface FeatureTogglesInterface {
   a11yAddPaddingToCarouselPanel?: boolean;
 
   /**
+   * Removes invalid aria-level usage on button elements and ensures buttons have a proper accessible name via aria-label or aria-labelledby.
+   * Affects: NavigationUIComponent
+   */
+  a11yButtonAriaFixes?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -979,6 +985,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11ySearchboxAssistiveMessage: false,
   a11yDifferentiateFocusedAndSelected: false,
   a11yAddPaddingToCarouselPanel: false,
+  a11yButtonAriaFixes: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
