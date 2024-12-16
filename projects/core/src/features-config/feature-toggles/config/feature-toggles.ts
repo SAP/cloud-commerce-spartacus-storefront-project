@@ -748,6 +748,15 @@ export interface FeatureTogglesInterface {
   a11yAddPaddingToCarouselPanel?: boolean;
 
   /**
+   * Hides the 'Consent Management' button from the tab order when the cookies banner is visible.
+   * Ensures the button is re-enabled and part of the tab order once consent is given and the banner disappears.
+   * Renames the button from "View Details" to "Consent Management" after consent is given.
+   * Ensures the button is centered in the `AnonymousConsentOpenDialogComponent` and has clear, four-sided visible focus when navigated via keyboard.
+   * Affects: AnonymousConsentOpenDialogComponent, AnonymousConsentManagementBannerComponent
+   */
+  a11yHideConsentButtonWhenBannerVisible?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -856,6 +865,12 @@ export interface FeatureTogglesInterface {
    */
   enableCarouselCategoryProducts?: boolean;
 
+  /**
+   * When enabled, enforces stronger password validation rules,
+   * including requirements for a mix of uppercase letters, lowercase letters,
+   * special characters, digits, and no consecutive characters,
+   * as well as enforcing both a minimum and maximum password length.
+   */
   enableSecurePasswordValidation?: boolean;
 }
 
@@ -864,9 +879,9 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   formErrorsDescriptiveMessages: true,
   showSearchingCustomerByOrderInASM: false,
   showStyleChangesInASM: false,
-  shouldHideAddToCartForUnpurchasableProducts: true,
-  useExtractedBillingAddressComponent: false,
-  showBillingAddressInDigitalPayments: false,
+  shouldHideAddToCartForUnpurchasableProducts: false,
+  useExtractedBillingAddressComponent: true,
+  showBillingAddressInDigitalPayments: true,
   showDownloadProposalButton: true,
   showPromotionsInPDP: true,
   searchBoxV2: false,
@@ -917,25 +932,25 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   cmsGuardsServiceUseGuardsComposer: true,
   cartQuickOrderRemoveListeningToFailEvent: true,
   a11yKeyboardAccessibleZoom: false,
-  a11yOrganizationLinkableCells: false,
+  a11yOrganizationLinkableCells: true,
   a11yVisibleFocusOverflows: true,
   a11yTruncatedTextForResponsiveView: true,
   a11yTruncatedTextStoreFinder: false,
-  a11ySemanticPaginationLabel: false,
+  a11ySemanticPaginationLabel: true,
   a11yPreventCartItemsFormRedundantRecreation: false,
-  a11yPreventSRFocusOnHiddenElements: false,
+  a11yPreventSRFocusOnHiddenElements: true,
   a11yMyAccountLinkOutline: true,
   a11yCloseProductImageBtnFocus: true,
-  a11yNotificationPreferenceFieldset: false,
-  a11yImproveContrast: false,
+  a11yNotificationPreferenceFieldset: true,
+  a11yImproveContrast: true,
   a11yEmptyWishlistHeading: true,
-  a11yScreenReaderBloatFix: false,
+  a11yScreenReaderBloatFix: true,
   a11yUseButtonsForBtnLinks: true,
   a11yTabComponent: false,
   a11yCarouselArrowKeysNavigation: false,
   a11yPickupOptionsTabs: false,
   a11yNotificationsOnConsentChange: false,
-  a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields: false,
+  a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields: true,
   a11yFacetsDialogFocusHandling: true,
   headerLayoutForSmallerViewports: false,
   a11yStoreFinderAlerts: false,
@@ -979,6 +994,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11ySearchboxAssistiveMessage: false,
   a11yDifferentiateFocusedAndSelected: false,
   a11yAddPaddingToCarouselPanel: false,
+  a11yHideConsentButtonWhenBannerVisible: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
