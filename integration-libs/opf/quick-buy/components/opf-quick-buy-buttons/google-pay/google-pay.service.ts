@@ -75,6 +75,7 @@ export class OpfGooglePayService {
       shippingAddressParameters: {
         phoneNumberRequired: false,
       },
+      emailRequired: true,
     };
 
   protected readonly defaultGooglePayCardParameters: any = {
@@ -379,6 +380,13 @@ export class OpfGooglePayService {
                 paymentDataResponse.paymentMethodData.info?.billingAddress
               )
             ),
+            switchMap(() => {
+              return paymentDataResponse?.email
+                ? this.opfQuickBuyTransactionService.updateCartGuestUserEmail(
+                    paymentDataResponse.email
+                  )
+                : of(true);
+            }),
             switchMap(() => {
               const encryptedToken = btoa(
                 paymentDataResponse.paymentMethodData.tokenizationData.token
