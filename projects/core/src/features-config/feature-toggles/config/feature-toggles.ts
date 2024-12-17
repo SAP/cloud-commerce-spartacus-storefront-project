@@ -266,6 +266,11 @@ export interface FeatureTogglesInterface {
   a11yCartImportConfirmationMessage?: boolean;
 
   /**
+   * In `AnonymousConsentDialogComponent` display notifications inside the modal without closing it
+   */
+  a11yAnonymousConsentMessageInDialog?: boolean;
+
+  /**
    * Changes 'order days' check list into a fieldset inside of 'CheckoutScheduleReplenishmentOrderComponent'.
    */
   a11yReplenishmentOrderFieldset?: boolean;
@@ -285,6 +290,11 @@ export interface FeatureTogglesInterface {
    * `StorefrontComponent` focuses on the first navigation item after hamburger menu expansion
    */
   a11yMobileFocusOnFirstNavigationItem?: boolean;
+
+  /**
+   * `QuickOrderFormComponent` - disable navigation with Tab/Shift+Tab for search results list
+   */
+  a11yQuickOrderSearchListKeyboardNavigation?: boolean;
 
   /**
    * Corrects heading order inside 'OrderSummaryComponent' template.
@@ -718,7 +728,8 @@ export interface FeatureTogglesInterface {
   /**
    * Fixes various instances of the focus ring being cropped in the UI.
    * The focus ring on interactive elements should have all its sides visible and not include any extra padding.
-   * Affects styles of: 'CartItemListComponent, CartItemComponent, ListComponent, FutureStockAccordionComponent, QuoteConfirmDialogComponent, MessagingComponent, TabComponent
+   * Affects styles of: 'CartItemListComponent, CartItemComponent, ListComponent, FutureStockAccordionComponent,
+   * QuoteConfirmDialogComponent, MessagingComponent, TabComponent, ProductImageZoomViewComponent
    */
   a11yCroppedFocusRing?: boolean;
 
@@ -740,6 +751,15 @@ export interface FeatureTogglesInterface {
    * Removes the repetition of assistive message after the results are provided to the `SearchBoxComponent`.
    */
   a11ySearchboxAssistiveMessage?: boolean;
+
+  /**
+   * Updates the derivative `consentGiven` state when `consent` is updated.
+   *
+   * Components affected:
+   * - `ConsentManagementFormComponent`
+   * - `MyAccountV2ConsentManagementFormComponent`
+   */
+  updateConsentGivenInOnChanges?: boolean;
 
   /**
    * Adds additional styling to help differentiate between focused and selected items in the list.
@@ -869,6 +889,12 @@ export interface FeatureTogglesInterface {
   showRealTimeStockInPDP?: boolean;
 
   /**
+   * When enabled, the scroll-to-top button adjusts its position when other UI elements
+   * (like cookie consent banner) appear at the bottom of the page to prevent overlapping
+   */
+  a11yScrollToTopPositioning?: boolean;
+
+  /**
    * Creates a section element with applied aria-label in "Review Order" page of the checkout.
    * Moves components to be children of this section element.
    */
@@ -933,10 +959,12 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yOrganizationsBanner: true,
   a11yOrganizationListHeadingOrder: true,
   a11yCartImportConfirmationMessage: false,
+  a11yAnonymousConsentMessageInDialog: false,
   a11yReplenishmentOrderFieldset: true,
   a11yListOversizedFocus: true,
   a11yStoreFinderOverflow: true,
   a11yMobileFocusOnFirstNavigationItem: false,
+  a11yQuickOrderSearchListKeyboardNavigation: false,
   a11yCartSummaryHeadingOrder: true,
   a11ySearchBoxMobileFocus: true,
   a11yFacetKeyboardNavigation: true,
@@ -1012,6 +1040,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yTextSpacingAdjustments: false,
   a11yTableHeaderReadout: false,
   a11ySearchboxAssistiveMessage: false,
+  updateConsentGivenInOnChanges: false,
   a11yDifferentiateFocusedAndSelected: false,
   a11yKeyboardFocusInSearchBox: false,
   a11yAddPaddingToCarouselPanel: false,
@@ -1026,6 +1055,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yHamburgerMenuTrapFocus: false,
   useExtendedMediaComponentConfiguration: false,
   showRealTimeStockInPDP: false,
+  a11yScrollToTopPositioning: false,
   enableSecurePasswordValidation: false,
   enableCarouselCategoryProducts: false,
 };
