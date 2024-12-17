@@ -20,6 +20,13 @@
     data-text="setPreferredStore.myStore"
     [attr.data-preferred-store]="pointOfServiceName.name"
     class="set-preferred-heading"
+    [attr.aria-label]="
+      (pointOfServiceName.name === (storeSelected$ | async)?.name
+        ? ('setPreferredStore.myStore' | cxTranslate)
+        : ('setPreferredStore.makeThisMyStore' | cxTranslate)) +
+      ', ' +
+      pointOfServiceName.displayName
+    "
   >
     {{
       pointOfServiceName.name === (storeSelected$ | async)?.name
