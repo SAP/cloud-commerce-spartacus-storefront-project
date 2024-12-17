@@ -54,7 +54,16 @@ export class SkipLinkService {
     }
   }
 
-  scrollToTarget(skipLink: SkipLink): void {
+  scrollToTarget(scrollTo: string | SkipLink): void {
+    const skipLink =
+      typeof scrollTo === 'string'
+        ? this.findSkipLinkByKey(scrollTo)
+        : scrollTo;
+
+    if (!skipLink) {
+      return;
+    }
+
     const target =
       skipLink.target instanceof HTMLElement
         ? skipLink.target
@@ -76,6 +85,10 @@ export class SkipLinkService {
     if (!hasTabindex) {
       firstFocusable?.removeAttribute('tabindex');
     }
+  }
+
+  protected findSkipLinkByKey(key: string): SkipLink | undefined {
+    return this.skipLinks$.value.find((skipLink) => skipLink.key === key);
   }
 
   protected getSkipLinkIndexInArray(key: string): number {
