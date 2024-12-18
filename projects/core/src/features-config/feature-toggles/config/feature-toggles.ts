@@ -986,6 +986,6 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yPdpGridArrangement: false,
   useExtendedMediaComponentConfiguration: false,
   showRealTimeStockInPDP: false,
-  enableSecurePasswordValidation: false,
   enableClaimCustomerCouponWithCodeInRequestBody: false,
+  enableSecurePasswordValidation: false,
 };
