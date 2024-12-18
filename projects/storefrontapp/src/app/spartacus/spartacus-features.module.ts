@@ -418,6 +418,7 @@ if (environment.cpq) {
         showRealTimeStockInPDP: false,
         a11yWrapReviewOrderInSection: true,
         enableSecurePasswordValidation: true,
+        enableClaimCustomerCouponWithCodeInRequestBody: true,
       };
       return appFeatureToggles;
     }),

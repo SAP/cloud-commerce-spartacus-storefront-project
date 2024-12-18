@@ -116,7 +116,7 @@ export function claimCoupon(couponCode: string) {
     'getClaimedCouponPage'
   );
 
-  const claimCoupon = waitForClaimCoupon(couponCode);
+  const claimCoupon = waitForClaimCouponWithCodeInBody(couponCode);
 
   const getCoupons = waitForGetCoupons();
 

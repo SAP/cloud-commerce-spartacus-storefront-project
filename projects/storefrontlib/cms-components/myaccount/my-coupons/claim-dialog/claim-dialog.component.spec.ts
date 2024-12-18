@@ -1,4 +1,4 @@
-import { Component, DebugElement, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { I18nTestingModule } from '@spartacus/core';
@@ -44,7 +44,6 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
 describe('ClaimDialogComponent', () => {
   let component: ClaimDialogComponent;
   let fixture: ComponentFixture<ClaimDialogComponent>;
-  let el: DebugElement;
   let launchDialogService: LaunchDialogService;
 
   const couponService = jasmine.createSpyObj('CustomerCouponService', [
@@ -77,7 +76,6 @@ describe('ClaimDialogComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ClaimDialogComponent);
-    el = fixture.debugElement;
     component = fixture.componentInstance;
     launchDialogService = TestBed.inject(LaunchDialogService);
     component.couponCode = mockCoupon;
@@ -110,19 +108,6 @@ describe('ClaimDialogComponent', () => {
     const closeBtn = fixture.debugElement.query(By.css('button'));
     closeBtn.nativeElement.click();
     expect(launchDialogService.closeDialog).toHaveBeenCalled();
-  });
-
-  it('should emit handleClick event', () => {
-    spyOn(component, 'handleClick').and.callThrough();
-    spyOn(component, 'close');
-
-    expect(component.handleClick).toHaveBeenCalledTimes(0);
-
-    el.nativeElement.click();
-    fixture.detectChanges();
-
-    expect(component.handleClick).toHaveBeenCalledTimes(1);
-    expect(component.close).toHaveBeenCalledWith('Cross click');
   });
 
   describe('Form Interactions', () => {

@@ -9,8 +9,7 @@ import {
   Component,
   OnDestroy,
   OnInit,
-  ElementRef,
-  HostListener,
+  inject,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -20,7 +19,6 @@ import {
   CustomerCouponService,
   GlobalMessageService,
   GlobalMessageType,
-  useFeatureStyles,
 } from '@spartacus/core';
 import { FocusConfig, LaunchDialogService } from '../../../../layout/index';
 import { ICON_TYPE } from '../../../../cms-components/misc/icon/index';
@@ -33,7 +31,7 @@ import { ICON_TYPE } from '../../../../cms-components/misc/icon/index';
 export class ClaimDialogComponent implements OnDestroy, OnInit {
   private subscription = new Subscription();
   iconTypes = ICON_TYPE;
-  private pageSize = 10;
+  protected pageSize = 10;
 
   couponCode: string;
 
@@ -48,21 +46,10 @@ export class ClaimDialogComponent implements OnDestroy, OnInit {
     couponCode: new FormControl('', [Validators.required]),
   });
 
-  @HostListener('click', ['$event'])
-  handleClick(event: UIEvent): void {
-    if ((event.target as any).tagName === this.el.nativeElement.tagName) {
-      this.close('Cross click');
-    }
-  }
-  constructor(
-    protected couponService: CustomerCouponService,
-    protected routingService: RoutingService,
-    protected messageService: GlobalMessageService,
-    protected launchDialogService: LaunchDialogService,
-    protected el: ElementRef
-  ) {
-    useFeatureStyles('a11yExpandedFocusIndicator');
-  }
+  protected couponService = inject(CustomerCouponService);
+  protected routingService = inject(RoutingService);
+  protected messageService = inject(GlobalMessageService);
+  protected launchDialogService = inject(LaunchDialogService);
 
   ngOnInit(): void {
     this.subscription.add(

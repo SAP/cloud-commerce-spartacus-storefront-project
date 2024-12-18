@@ -78,6 +78,7 @@ export class OccCustomerCouponAdapter implements CustomerCouponAdapter {
 
     return this.http.post(url, { headers });
   }
+
   claimCustomerCouponWithCodeInBody(
     userId: string,
     codeVal: string

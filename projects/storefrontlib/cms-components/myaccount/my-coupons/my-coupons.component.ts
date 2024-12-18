@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import {
   CustomerCouponSearchResult,
   CustomerCouponService,
@@ -65,10 +65,11 @@ export class MyCouponsComponent implements OnInit, OnDestroy {
     byEndDateDesc: string;
   }>;
 
+  protected launchDialogService = inject(LaunchDialogService);
+
   constructor(
     protected couponService: CustomerCouponService,
-    protected myCouponsComponentService: MyCouponsComponentService,
-    protected launchDialogService: LaunchDialogService
+    protected myCouponsComponentService: MyCouponsComponentService
   ) {}
 
   ngOnInit(): void {

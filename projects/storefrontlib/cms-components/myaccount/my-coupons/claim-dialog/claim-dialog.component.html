@@ -9,20 +9,9 @@
     <!-- Modal Header -->
 
     <div class="cx-dialog-header modal-header">
-      <h3
-        *cxFeature="'a11yDialogsHeading'"
-        id="dialogTitle"
-        class="cx-dialog-title modal-title"
-      >
+      <h3 id="dialogTitle" class="cx-dialog-title modal-title">
         {{ 'myCoupons.claimCoupondialogTitle' | cxTranslate }}
       </h3>
-      <div
-        *cxFeature="'!a11yDialogsHeading'"
-        id="dialogTitle"
-        class="cx-dialog-title modal-title"
-      >
-        {{ 'myCoupons.claimCoupondialogTitle' | cxTranslate }}
-      </div>
       <button
         type="button"
         class="close"
@@ -53,8 +42,6 @@
             }}"
             class="form-control"
           />
-
-          <!-- TODO: (CXSPA-7315) Remove feature toggle in the next major -->
           <cx-form-errors
             *cxFeature="'formErrorsDescriptiveMessages'"
             [translationParams]="{
