@@ -7,6 +7,16 @@
 import * as login from '../../../helpers/login';
 import { viewportContext } from '../../../helpers/viewport-context';
 
+function assertNavigationButtonsAttributes(buttonsSelector: string) {
+  cy.get(buttonsSelector).each(($btn) => {
+    const btnAriaLabel = $btn.attr('aria-label');
+    cy.wrap($btn)
+      .should('have.attr', 'title', `${btnAriaLabel} Menu`)
+      .should('have.attr', 'aria-label', btnAriaLabel)
+      .should('have.attr', 'aria-controls', btnAriaLabel);
+  });
+}
+
 describe('Navigation Login', () => {
   let user;
   viewportContext(['desktop'], () => {
@@ -21,29 +31,21 @@ describe('Navigation Login', () => {
       const tokenRevocationRequestAlias =
         login.listenForTokenRevocationRequest();
 
-      cy.get(
-        'cx-login > cx-page-slot > cx-navigation > cx-navigation-ui > nav > ul > li > button'
-      )
+      const profileMenuRootBtnSelector =
+        'cx-login > cx-page-slot nav ul li:first-child button';
+      cy.get(profileMenuRootBtnSelector)
         .contains('My Account')
         .invoke('attr', 'ariaLabel')
         .contains(`Hi, ${user.firstName} ${user.lastName}`);
 
-      cy.get(
-        'cx-page-slot[position="NavigationBar"] > cx-category-navigation > cx-navigation-ui > nav > ul button[aria-label="Brands"]'
-      )
-        .should('have.attr', `title`)
-        .should('eq', `Brands Menu`);
+      const mainCategoryMenuBrandsRootBtnSelector =
+        'cx-category-navigation li[role="listitem"] button[aria-controls]';
+      assertNavigationButtonsAttributes(mainCategoryMenuBrandsRootBtnSelector);
 
       login.signOutUser();
       cy.wait(tokenRevocationRequestAlias);
-      cy.get(
-        'cx-login > cx-page-slot > cx-navigation > cx-navigation-ui > nav > ul > li > button'
-      ).should('not.exist');
-      cy.get(
-        'cx-page-slot[position="NavigationBar"] > cx-category-navigation > cx-navigation-ui > nav > ul button[aria-label="Brands"]'
-      )
-        .should('have.attr', `title`)
-        .should('eq', `Brands Menu`);
+      cy.get(profileMenuRootBtnSelector).should('not.exist');
+      assertNavigationButtonsAttributes(mainCategoryMenuBrandsRootBtnSelector);
     });
   });
 });
