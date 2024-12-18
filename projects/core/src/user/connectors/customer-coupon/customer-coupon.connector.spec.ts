@@ -3,7 +3,7 @@ import { of } from 'rxjs';
 import { CustomerCouponAdapter } from './customer-coupon.adapter';
 import { CustomerCouponConnector } from './customer-coupon.connector';
 import createSpy = jasmine.createSpy;
-import { FeatureConfigService } from '@spartacus/core';
+import { FeatureConfigService } from '../../../features-config/services/feature-config.service';
 
 const PAGE_SIZE = 5;
 const currentPage = 1;

@@ -12,7 +12,7 @@ import {
   CustomerCouponSearchResult,
 } from '../../../model/customer-coupon.model';
 import { CustomerCouponAdapter } from './customer-coupon.adapter';
-import { FeatureConfigService } from '@spartacus/core';
+import { FeatureConfigService } from '../../../features-config/services/feature-config.service';
 
 @Injectable({
   providedIn: 'root',
