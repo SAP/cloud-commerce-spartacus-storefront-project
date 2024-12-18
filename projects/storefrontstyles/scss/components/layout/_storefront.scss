@@ -46,4 +46,10 @@
       background-color: var(--cx-color-background);
     }
   }
+
+  main {
+    @include cx-highContrastTheme {
+      background-color: var(--cx-color-background);
+    }
+  }
 }
