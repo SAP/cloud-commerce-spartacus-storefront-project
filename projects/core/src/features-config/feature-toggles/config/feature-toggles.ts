@@ -537,6 +537,11 @@ export interface FeatureTogglesInterface {
   a11yFacetsDialogFocusHandling?: boolean;
 
   /**
+   * Resets the focus after navigating to a new page.
+   */
+  a11yResetFocusAfterNavigating?: boolean;
+
+  /**
    * `StorefrontComponent`: Prevents header links from wrapping on smaller screen sizes.
    * Enables support for increased letter-spacing up to 0.12em for header layout
    */
@@ -699,6 +704,11 @@ export interface FeatureTogglesInterface {
    * to so that Card component perceive it as a link;
    */
   a11yImproveButtonsInCardComponent?: boolean;
+
+  /**
+   * In `MiniCart component`, improve visible focus contrast on mobile.
+   */
+  a11yMiniCartFocusOnMobile?: boolean;
 
   /**
    * In `UnitFormComponent`, set 'clearable' as false for select of `ApprovalProcess`.
@@ -921,10 +931,10 @@ export interface FeatureTogglesInterface {
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   showDeliveryOptionsTranslation: false,
-  formErrorsDescriptiveMessages: false,
+  formErrorsDescriptiveMessages: true,
   showSearchingCustomerByOrderInASM: false,
   showStyleChangesInASM: false,
-  shouldHideAddToCartForUnpurchasableProducts: false,
+  shouldHideAddToCartForUnpurchasableProducts: true,
   useExtractedBillingAddressComponent: true,
   showBillingAddressInDigitalPayments: true,
   showDownloadProposalButton: true,
@@ -1000,6 +1010,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yNotificationsOnConsentChange: false,
   a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields: true,
   a11yFacetsDialogFocusHandling: true,
+  a11yResetFocusAfterNavigating: false,
   headerLayoutForSmallerViewports: false,
   a11yStoreFinderAlerts: false,
   a11yStoreFinderLabel: false,
@@ -1030,6 +1041,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
   a11yImproveButtonsInCardComponent: false,
+  a11yMiniCartFocusOnMobile: false,
   a11yWrapReviewOrderInSection: false,
   a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,

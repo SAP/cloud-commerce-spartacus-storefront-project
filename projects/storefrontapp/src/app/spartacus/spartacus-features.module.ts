@@ -369,6 +369,7 @@ if (environment.cpq) {
         a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields:
           true,
         a11yFacetsDialogFocusHandling: true,
+        a11yResetFocusAfterNavigating: true,
         headerLayoutForSmallerViewports: true,
         a11yStoreFinderAlerts: true,
         a11yFormErrorMuteIcon: true,
@@ -400,6 +401,7 @@ if (environment.cpq) {
         a11yCheckoutStepsLandmarks: true,
         a11yQTY2Quantity: true,
         a11yImproveButtonsInCardComponent: true,
+        a11yMiniCartFocusOnMobile: true,
         a11yApprovalProcessWithNoClearable: true,
         a11yPostRegisterSuccessMessage: true,
         a11yDeleteButton2First: true,
