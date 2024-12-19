@@ -43,14 +43,9 @@
             class="form-control"
           />
           <cx-form-errors
-            *cxFeature="'formErrorsDescriptiveMessages'"
             [translationParams]="{
               label: 'myCoupons.claimCouponCode.label' | cxTranslate,
             }"
-            [control]="form.get('couponCode')"
-          ></cx-form-errors>
-          <cx-form-errors
-            *cxFeature="'!formErrorsDescriptiveMessages'"
             [control]="form.get('couponCode')"
           ></cx-form-errors>
         </label>
@@ -80,7 +75,6 @@
 
 <ng-template #requiredAsterisk>
   <abbr
-    *cxFeature="'a11yRequiredAsterisks'"
     aria-hidden="true"
     class="text-decoration-none"
     title="{{ 'common.required' | cxTranslate }}"
