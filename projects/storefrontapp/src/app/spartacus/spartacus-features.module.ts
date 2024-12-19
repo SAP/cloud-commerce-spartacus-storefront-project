@@ -417,7 +417,7 @@ if (environment.cpq) {
         a11yAddPaddingToCarouselPanel: true,
         a11yHideConsentButtonWhenBannerVisible: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
-        useSiteThemeService: false,
+        useSiteThemeService: true,
         enableConsecutiveCharactersPasswordRequirement: true,
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
