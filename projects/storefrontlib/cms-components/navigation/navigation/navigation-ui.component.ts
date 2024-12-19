@@ -403,4 +403,11 @@ export class NavigationUIComponent implements OnInit, OnDestroy {
   getAriaDescribedbyOfButton(node: NavigationNode): string | null {
     return node.title === 'My Account' ? 'greeting' : null;
   }
+
+  /**
+   * Returns the value for the `aria-control` and the `aria-label` attribute of a button.
+   */
+  getAriaLabelAndControl(node: NavigationNode): string | null {
+    return node.title || null;
+  }
 }
