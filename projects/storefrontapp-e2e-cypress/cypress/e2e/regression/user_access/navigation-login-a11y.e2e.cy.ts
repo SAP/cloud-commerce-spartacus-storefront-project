@@ -31,9 +31,8 @@ describe('Navigation Login', () => {
       const tokenRevocationRequestAlias =
         login.listenForTokenRevocationRequest();
 
-      const profileMenuRootBtnSelector =
-        'cx-login > cx-page-slot nav ul li:first-child button';
-      cy.get(profileMenuRootBtnSelector)
+      cy.get('cx-login button')
+        .as('myAccountBtn')
         .contains('My Account')
         .invoke('attr', 'ariaLabel')
         .contains(`Hi, ${user.firstName} ${user.lastName}`);
@@ -44,7 +43,7 @@ describe('Navigation Login', () => {
 
       login.signOutUser();
       cy.wait(tokenRevocationRequestAlias);
-      cy.get(profileMenuRootBtnSelector).should('not.exist');
+      cy.get('@myAccountBtn').should('not.exist');
       assertNavigationButtonsAttributes(mainCategoryMenuBrandsRootBtnSelector);
     });
   });
