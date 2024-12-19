@@ -32,7 +32,6 @@ export class ClaimDialogComponent implements OnDestroy, OnInit {
   private subscription = new Subscription();
   iconTypes = ICON_TYPE;
   protected pageSize = 10;
-
   couponCode: string;
 
   focusConfig: FocusConfig = {
