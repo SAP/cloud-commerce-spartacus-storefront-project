@@ -396,4 +396,11 @@ export class NavigationUIComponent implements OnInit, OnDestroy {
     }
     return depth > 0 && !node?.children ? -1 : 0;
   }
+
+  /**
+   * Returns the ID for the `aria-describedby` attribute of a button.
+   */
+  getAriaDescribedbyOfButton(node: NavigationNode): string | null {
+    return node.title === 'My Account' ? 'greeting' : null;
+  }
 }
