@@ -537,6 +537,11 @@ export interface FeatureTogglesInterface {
   a11yFacetsDialogFocusHandling?: boolean;
 
   /**
+   * Resets the focus after navigating to a new page.
+   */
+  a11yResetFocusAfterNavigating?: boolean;
+
+  /**
    * `StorefrontComponent`: Prevents header links from wrapping on smaller screen sizes.
    * Enables support for increased letter-spacing up to 0.12em for header layout
    */
@@ -874,20 +879,13 @@ export interface FeatureTogglesInterface {
    *  ```ts
    * provideConfig({
    *   pictureElementFormats: {
-   *    mediaQueries: {
-   *     'max-width': '767px',
-   *      ...
-   *    },
-   *    width: 50,
-   *    height: 50,
+   *    mediaQueries: '(max-width: 480px)',
    *   },
    * })
    * ```
    *
-   * After activating this toggle, new inputs in `MediaComponent` — specifically
-   * `width`, `height`, and `sizes` — will be passed to the template as HTML attributes.
-   *
-   * Toggle activates `@Input() elementType: 'img' | 'picture' = 'img'` in `MediaComponent`
+   * Toggle activates `@Input() elementType: 'img' | 'picture' = 'img'`
+   * and `@Input() sizesForImgElement: string` in `MediaComponent`
    *
    */
   useExtendedMediaComponentConfiguration?: boolean;
@@ -931,10 +929,10 @@ export interface FeatureTogglesInterface {
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   showDeliveryOptionsTranslation: false,
-  formErrorsDescriptiveMessages: false,
+  formErrorsDescriptiveMessages: true,
   showSearchingCustomerByOrderInASM: false,
   showStyleChangesInASM: false,
-  shouldHideAddToCartForUnpurchasableProducts: false,
+  shouldHideAddToCartForUnpurchasableProducts: true,
   useExtractedBillingAddressComponent: true,
   showBillingAddressInDigitalPayments: true,
   showDownloadProposalButton: true,
@@ -1010,6 +1008,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yNotificationsOnConsentChange: false,
   a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields: true,
   a11yFacetsDialogFocusHandling: true,
+  a11yResetFocusAfterNavigating: false,
   headerLayoutForSmallerViewports: false,
   a11yStoreFinderAlerts: false,
   a11yStoreFinderLabel: false,
