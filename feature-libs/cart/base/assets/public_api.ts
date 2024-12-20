@@ -9,7 +9,7 @@ import { cartBaseTranslationsEn } from './translations/translations';
 export * from './translations/translations';
 
 /**
- * @deprecated use **specific language** translations (suffixed with language code) instead,
+ * @deprecated Please use **specific language** translations (suffixed with language code) instead,
  * like in the following example:
  *             ```diff
  *               i18n: {
