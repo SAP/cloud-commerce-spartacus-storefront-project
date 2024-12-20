@@ -6,9 +6,7 @@
 
 import { en } from './en/index';
 import { extractTranslationChunksConfig } from '@spartacus/core';
-
-export const asmCustomer360TranslationChunksConfig =
-  extractTranslationChunksConfig(en);
+export const asmCustomer360TranslationChunksConfig = extractTranslationChunksConfig(en);
 
 export { cs as asmCustomer360TranslationsCs } from './cs/index';
 export { de as asmCustomer360TranslationsDe } from './de/index';

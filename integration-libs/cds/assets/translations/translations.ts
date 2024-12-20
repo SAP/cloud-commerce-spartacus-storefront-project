@@ -6,7 +6,6 @@
 
 import { en } from './en/index';
 import { extractTranslationChunksConfig } from '@spartacus/core';
-
 export const cdsTranslationChunksConfig = extractTranslationChunksConfig(en);
 
 export { cs as cdsTranslationsCs } from './cs/index';

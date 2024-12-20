@@ -6,9 +6,7 @@
 
 import { en } from './en/index';
 import { extractTranslationChunksConfig } from '@spartacus/core';
-
-export const cartBaseTranslationChunksConfig =
-  extractTranslationChunksConfig(en);
+export const cartBaseTranslationChunksConfig = extractTranslationChunksConfig(en);
 
 export { cs as cartBaseTranslationsCs } from './cs/index';
 export { de as cartBaseTranslationsDe } from './de/index';

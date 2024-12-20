@@ -6,9 +6,7 @@
 
 import { en } from './en/index';
 import { extractTranslationChunksConfig } from '@spartacus/core';
-
-export const multiDimensionalSelectorTranslationChunksConfig =
-  extractTranslationChunksConfig(en);
+export const multiDimensionalSelectorTranslationChunksConfig = extractTranslationChunksConfig(en);
 
 export { cs as multiDimensionalSelectorTranslationsCs } from './cs/index';
 export { de as multiDimensionalSelectorTranslationsDe } from './de/index';

@@ -6,9 +6,7 @@
 
 import { en } from './en/index';
 import { extractTranslationChunksConfig } from '@spartacus/core';
-
-export const cpqquoteTranslationChunksConfig =
-  extractTranslationChunksConfig(en);
+export const cpqquoteTranslationChunksConfig = extractTranslationChunksConfig(en);
 
 export { cs as cpqquoteTranslationsCs } from './cs/index';
 export { de as cpqquoteTranslationsDe } from './de/index';

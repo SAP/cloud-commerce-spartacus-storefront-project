@@ -6,9 +6,7 @@
 
 import { en } from './en/index';
 import { extractTranslationChunksConfig } from '@spartacus/core';
-
-export const checkoutScheduledReplenishmentTranslationChunksConfig =
-  extractTranslationChunksConfig(en);
+export const checkoutScheduledReplenishmentTranslationChunksConfig = extractTranslationChunksConfig(en);
 
 export { cs as checkoutScheduledReplenishmentTranslationsCs } from './cs/index';
 export { de as checkoutScheduledReplenishmentTranslationsDe } from './de/index';
