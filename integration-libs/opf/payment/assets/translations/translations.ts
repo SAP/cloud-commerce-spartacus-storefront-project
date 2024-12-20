@@ -4,13 +4,23 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { TranslationChunksConfig, TranslationResources } from '@spartacus/core';
 import { en } from './en/index';
+import { extractTranslationChunksConfig } from '@spartacus/core';
 
-export const opfPaymentTranslations: TranslationResources = {
+/**
+ * @deprecated use **specific language** translations (suffixed with language code) instead,
+ * like in the following example:
+ *             ```diff
+ *               i18n: {
+ *             -   resources: opfPaymentTranslations
+ *             +   resources: { en: opfPaymentTranslationsEn }
+ *               }
+ *             ```
+ */
+export const opfPaymentTranslations = {
   en,
 };
 
-export const opfPaymentTranslationChunksConfig: TranslationChunksConfig = {
-  opfPayment: ['opfPayment'],
-};
+export const opfPaymentTranslationChunksConfig = extractTranslationChunksConfig(en);
+
+export { en as opfPaymentTranslationsEn } from './en/index';
