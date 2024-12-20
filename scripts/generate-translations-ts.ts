@@ -67,21 +67,27 @@ function getPrefix(translationDir: string): string | undefined {
   return undefined;
 }
 
+function kebabToCamelCase(str: string): string {
+  return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+}
+
 function generateLanguageIndex(
   languageDir: string,
   translationFiles: TranslationFile[],
   modifiedFiles: ModifiedFiles
 ): void {
-  // SPIKE TODO REMOVE - TEMPORARILY WE DONT WANT TO USE THIS FUNCTION
-  return;
-
   const imports = translationFiles
-    .map((file) => `import ${file.name} from '${file.importPath}';`)
+    .map((file) => {
+      const importName = kebabToCamelCase(file.name);
+      return `import ${importName} from '${file.importPath}';`;
+    })
     .join('\n');
 
   const exportObject = `\nexport const ${path.basename(
     languageDir
-  )} = {\n${translationFiles.map((file) => `  ${file.name},`).join('\n')}\n};\n`;
+  )} = {\n${translationFiles
+    .map((file) => `  ${kebabToCamelCase(file.name)},`)
+    .join('\n')}\n};\n`;
 
   const indexContent = getLicenseHeader() + imports + exportObject;
   const indexPath = path.join(languageDir, 'index.ts');
@@ -106,29 +112,11 @@ function generateMainTranslations(
     })
     .join('\n');
 
-  const deprecatedExportName = prefix
-    ? `${prefix}Translations`
-    : 'translations';
   const chunksConfigName = prefix
     ? `${prefix}TranslationChunksConfig`
     : 'translationChunksConfig';
   const deprecatedExport = `import { en } from './en/index';
 import { extractTranslationChunksConfig } from '@spartacus/core';
-
-/**
- * @deprecated use **specific language** translations (suffixed with language code) instead,
- * like in the following example:
- *             \`\`\`diff
- *               i18n: {
- *             -   resources: ${deprecatedExportName}
- *             +   resources: { en: ${deprecatedExportName}En }
- *               }
- *             \`\`\`
- */
-export const ${deprecatedExportName} = {
-  en,
-};
-
 export const ${chunksConfigName} = extractTranslationChunksConfig(en);`;
 
   const translationsPath = path.join(translationDir, 'translations.ts');
