@@ -7,21 +7,8 @@
 import { en } from './en/index';
 import { extractTranslationChunksConfig } from '@spartacus/core';
 
-/**
- * @deprecated use **specific language** translations (suffixed with language code) instead,
- * like in the following example:
- *             ```diff
- *               i18n: {
- *             -   resources: multiDimensionalSelectorTranslations
- *             +   resources: { en: multiDimensionalSelectorTranslationsEn }
- *               }
- *             ```
- */
-export const multiDimensionalSelectorTranslations = {
-  en,
-};
-
-export const multiDimensionalSelectorTranslationChunksConfig = extractTranslationChunksConfig(en);
+export const multiDimensionalSelectorTranslationChunksConfig =
+  extractTranslationChunksConfig(en);
 
 export { cs as multiDimensionalSelectorTranslationsCs } from './cs/index';
 export { de as multiDimensionalSelectorTranslationsDe } from './de/index';
