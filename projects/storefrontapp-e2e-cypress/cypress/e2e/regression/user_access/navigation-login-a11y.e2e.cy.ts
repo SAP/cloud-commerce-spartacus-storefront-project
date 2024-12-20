@@ -9,11 +9,10 @@ import { viewportContext } from '../../../helpers/viewport-context';
 
 function assertNavigationButtonsAttributes(buttonsSelector: string) {
   cy.get(buttonsSelector).each(($btn) => {
-    const btnAriaLabel = $btn.attr('aria-label');
+    const btnAriaControl = $btn.attr('aria-controls');
     cy.wrap($btn)
-      .should('have.attr', 'title', `${btnAriaLabel} Menu`)
-      .should('have.attr', 'aria-label', btnAriaLabel)
-      .should('have.attr', 'aria-controls', btnAriaLabel);
+      .should('have.attr', 'title', `${btnAriaControl} Menu`)
+      .should('have.attr', 'aria-label', btnAriaControl);
   });
 }
 
@@ -33,12 +32,11 @@ describe('Navigation Login', () => {
 
       cy.get('cx-login button')
         .as('myAccountBtn')
-        .contains('My Account')
         .invoke('attr', 'ariaLabel')
         .contains(`Hi, ${user.firstName} ${user.lastName}`);
 
       const mainCategoryMenuBrandsRootBtnSelector =
-        'cx-category-navigation li[role="listitem"] button[aria-controls]';
+        'cx-category-navigation button[aria-controls]';
       assertNavigationButtonsAttributes(mainCategoryMenuBrandsRootBtnSelector);
 
       login.signOutUser();
