@@ -6,7 +6,8 @@
 
 import { en } from './en/index';
 import { extractTranslationChunksConfig } from '@spartacus/core';
-export const productImageZoomTranslationChunksConfig = extractTranslationChunksConfig(en);
+export const productImageZoomTranslationChunksConfig =
+  extractTranslationChunksConfig(en);
 
 export { cs as productImageZoomTranslationsCs } from './cs/index';
 export { de as productImageZoomTranslationsDe } from './de/index';

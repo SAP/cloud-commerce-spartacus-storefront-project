@@ -169,14 +169,11 @@ async function main(): Promise<void> {
   if (allModifiedFiles.length > 0) {
     console.log('\nRunning prettier on modified files...');
     const { exec } = require('child_process');
-    // const filePaths = allModifiedFiles.join(',');
 
     try {
       await new Promise((resolve, reject) => {
         exec(
-          // `prettier --config ./.prettierrc --write --list-different "${filePaths}"`
-          // `npm run prettier:fix`,
-          'echo "done"',
+          `prettier --config ./.prettierrc --write --list-different '**/assets/{,src/}translations/**/*.ts'`,
           (error: Error | null) => {
             if (error) {
               reject(error);

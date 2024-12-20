@@ -6,7 +6,8 @@
 
 import { en } from './en/index';
 import { extractTranslationChunksConfig } from '@spartacus/core';
-export const epdVisualizationTranslationChunksConfig = extractTranslationChunksConfig(en);
+export const epdVisualizationTranslationChunksConfig =
+  extractTranslationChunksConfig(en);
 
 export { cs as epdVisualizationTranslationsCs } from './cs/index';
 export { de as epdVisualizationTranslationsDe } from './de/index';

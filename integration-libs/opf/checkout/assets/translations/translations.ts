@@ -6,7 +6,8 @@
 
 import { en } from './en/index';
 import { extractTranslationChunksConfig } from '@spartacus/core';
-export const opfCheckoutTranslationChunksConfig = extractTranslationChunksConfig(en);
+export const opfCheckoutTranslationChunksConfig =
+  extractTranslationChunksConfig(en);
 
 export { cs as opfCheckoutTranslationsCs } from './cs/index';
 export { de as opfCheckoutTranslationsDe } from './de/index';
