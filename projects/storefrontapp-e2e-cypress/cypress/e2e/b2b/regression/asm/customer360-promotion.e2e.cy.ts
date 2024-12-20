@@ -111,7 +111,7 @@ context('Assisted Service Module', () => {
     it('should be able to sent customer coupon for customer coupon (CXSPA-3945)', () => {
       interceptPost(
         'claim_customer_coupon',
-        '/users/*/customercoupons/*/claim?*'
+        '/users/*/customercoupons/claim?*'
       );
       cy.get('.cx-asm-customer-360-promotion-listing-row')
         .contains(customer_coupon.name)
