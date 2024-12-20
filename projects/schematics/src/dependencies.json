@@ -1,5 +1,7 @@
 {
-  "@spartacus/assets": {},
+  "@spartacus/assets": {
+    "@spartacus/core": "2211.32.0-1"
+  },
   "@spartacus/core": {
     "@angular/common": "^17.0.5",
     "@angular/core": "^17.0.5",

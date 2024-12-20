@@ -12,7 +12,9 @@
   "dependencies": {
     "tslib": "^2.6.2"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "@spartacus/core": "2211.32.0-1"
+  },
   "publishConfig": {
     "access": "public"
   }
