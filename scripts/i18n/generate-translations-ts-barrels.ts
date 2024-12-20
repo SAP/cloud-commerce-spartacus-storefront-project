@@ -52,19 +52,17 @@ function getLicenseHeader(): string {
 function getPrefix(translationDir: string): string | undefined {
   const configPath = path.join(
     translationDir,
-    'translations-ts-generator.config'
+    'generate-translations-ts-barrels.config'
   );
   if (fs.existsSync(configPath)) {
     const content = fs.readFileSync(configPath, 'utf-8');
     const match = content.match(/PUBLIC_API_PREFIX=(.+)/);
     return match ? match[1].trim() : undefined;
   } else {
-    // SPIKE TODO REMOVE
     throw new Error(
-      `No translations-ts-generator.config file found in ${translationDir}`
+      `No generate-translations-ts-barrels.config file found in ${translationDir}`
     );
   }
-  return undefined;
 }
 
 function kebabToCamelCase(str: string): string {
