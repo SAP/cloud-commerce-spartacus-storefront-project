@@ -304,8 +304,10 @@ context('Assisted Service Module', () => {
         'not.contain',
         'Buy over $1000 get 20% off on cart'
       );
+      cy.wait(5000);
     });
     it('should be able to remove customer coupon for customer coupon (CXSPA-3945)', () => {
+      cy.wait(3000);
       cy.get('.cx-tab-header').contains('Sent').click();
       interceptDelete(
         'disclaim_customer_coupon',

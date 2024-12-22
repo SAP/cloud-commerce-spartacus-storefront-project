@@ -125,8 +125,10 @@ context('Assisted Service Module', () => {
         'not.contain',
         customer_coupon.name
       );
+      cy.wait(5000);
     });
     it('should be able to remove customer coupon for customer coupon (CXSPA-3945)', () => {
+      cy.wait(3000);
       cy.get('.cx-tab-header').contains('Sent').click();
       interceptDelete(
         'disclaim_customer_coupon',
