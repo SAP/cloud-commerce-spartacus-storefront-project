@@ -116,7 +116,8 @@ export function claimCoupon(couponCode: string) {
     'getClaimedCouponPage'
   );
 
-  const claimCoupon = waitForClaimCouponWithCodeInBody(couponCode);
+  //TODO when 'enableClaimCustomerCouponWithCodeInRequestBody' is true, call the mothod of WithCodeInBodywaitForClaimCoupon instead once ClaimCustomerCouponWithCodeInBody works in the backend(available since Commerce 2211.28)
+  const claimCoupon = waitForClaimCoupon(couponCode);
 
   const getCoupons = waitForGetCoupons();
 

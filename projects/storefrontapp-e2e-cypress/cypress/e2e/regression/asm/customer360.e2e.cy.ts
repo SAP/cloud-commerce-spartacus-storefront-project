@@ -290,7 +290,7 @@ context('Assisted Service Module', () => {
     it('should be able to sent customer coupon for customer coupon (CXSPA-3945)', () => {
       interceptPost(
         'claim_customer_coupon',
-        '/users/*/customercoupons/claim?*'
+        '/users/*/customercoupons/*/claim?*' //TODO use '/users/*/customercoupons/claim?*' instead when enable 'enableClaimCustomerCouponWithCodeInRequestBody' which is available since Commerce 2211.28
       );
       cy.get('.cx-asm-customer-360-promotion-listing-row')
         .contains('Buy over $1000 get 20% off on cart')
@@ -304,10 +304,8 @@ context('Assisted Service Module', () => {
         'not.contain',
         'Buy over $1000 get 20% off on cart'
       );
-      cy.wait(5000);
     });
     it('should be able to remove customer coupon for customer coupon (CXSPA-3945)', () => {
-      cy.wait(3000);
       cy.get('.cx-tab-header').contains('Sent').click();
       interceptDelete(
         'disclaim_customer_coupon',

@@ -838,7 +838,7 @@ export interface FeatureTogglesInterface {
    * In CustomerCouponConnector, Enables claiming customer coupon with coupon code in httpRequest body with POST method.
    *
    * When set to `false`, claiming customer coupon works with coupon code as parameter in URL, which exposes sensitive data and has security risk.
-   * When set to `true`, claiming customer coupon works with coupon code in httpRequest body with POST method, which avoids security risk.
+   * When set to `true`, claiming customer coupon works with coupon code in httpRequest body with POST method(the new Occ endpoint is available since Commerce 2211.28), which avoids security risk.
    */
   enableClaimCustomerCouponWithCodeInRequestBody?: boolean;
 
