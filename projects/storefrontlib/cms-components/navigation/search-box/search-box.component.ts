@@ -156,6 +156,7 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
     protected routingService: RoutingService
   ) {
     useFeatureStyles('a11ySearchboxLabel');
+    useFeatureStyles('a11yKeyboardFocusInSearchBox');
   }
 
   /**

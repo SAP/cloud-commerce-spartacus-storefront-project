@@ -52,6 +52,7 @@ export class QuickOrderFormComponent implements OnInit, OnDestroy {
 
   @ViewChild('quickOrderInput') quickOrderInput: ElementRef;
 
+  private featureConfigService = inject(FeatureConfigService);
   protected subscription = new Subscription();
   protected searchSubscription = new Subscription();
   private featureConfigService = inject(FeatureConfigService);
@@ -86,6 +87,15 @@ export class QuickOrderFormComponent implements OnInit, OnDestroy {
 
     if (this.isResultsBoxOpen()) {
       this.toggleBodyClass(SEARCH_BOX_ACTIVE_CLASS, false);
+      if (
+        this.featureConfigService.isEnabled(
+          'a11yQuickOrderSearchBoxRefocusOnClose'
+        )
+      ) {
+        requestAnimationFrame(() => {
+          this.quickOrderInput.nativeElement.focus();
+        });
+      }
     }
 
     const product = this.form.get('product')?.value;
