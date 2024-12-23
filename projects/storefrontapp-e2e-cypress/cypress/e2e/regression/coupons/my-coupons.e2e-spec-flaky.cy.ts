@@ -41,10 +41,7 @@ viewportContext(['mobile', 'desktop'], () => {
       });
       cy.requireLoggedIn();
     });
-    //TODO uncomment once ClaimCustomerCouponWithCodeInBody works in the backend,the new Occ endpoint is available since Commerce 2211.28.
-    it.skip('should allow claim CustomerCoupon with code in body', () => {
-      myCoupons.testClaimCustomerCouponWithCodeInBody();
-    });
+    myCoupons.testClaimCustomerCouponWithCodeInBody();
   });
 
   describe('My coupons - Authenticated user', () => {
