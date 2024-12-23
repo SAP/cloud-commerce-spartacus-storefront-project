@@ -292,12 +292,14 @@ export function testClaimCustomerCoupon() {
 
 export function testClaimCustomerCouponWithCodeInBody() {
   describe('Claim customer coupon with code in requestBody', () => {
-    it('should claim customer coupon successfully with code in requestBody', () => {
+    //TODO uncomment once ClaimCustomerCouponWithCodeInBody works in the backend,the new Occ endpoint is available since Commerce 2211.28.
+    it.skip('should claim customer coupon successfully with code in requestBody', () => {
       verifClaimCouponSuccessWithCodeInBody(validCouponCode);
       cy.saveLocalStorage();
     });
 
-    it('should not claim invalid customer coupon', () => {
+    //TODO uncomment once ClaimCustomerCouponWithCodeInBody works in the backend,the new Occ endpoint is available since Commerce 2211.28.
+    it.skip('should not claim invalid customer coupon', () => {
       cy.restoreLocalStorage();
       verifyClaimCouponFailWithCodeInBody(invalidCouponCode);
     });
