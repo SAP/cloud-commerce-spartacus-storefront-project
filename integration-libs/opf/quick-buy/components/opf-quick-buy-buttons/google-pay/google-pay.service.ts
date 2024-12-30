@@ -74,7 +74,24 @@ export class OpfGooglePayService {
       shippingAddressParameters: {
         phoneNumberRequired: false,
       },
+      emailRequired: true,
     };
+
+  protected readonly defaultGooglePayCardParameters: any = {
+    allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+    allowedCardNetworks: [
+      'AMEX',
+      'DISCOVER',
+      'INTERAC',
+      'JCB',
+      'MASTERCARD',
+      'VISA',
+    ],
+    billingAddressRequired: true,
+    billingAddressParameters: {
+      format: 'FULL',
+    },
+  };
 
   private initialTransactionInfo: google.payments.api.TransactionInfo = {
     totalPrice: '0.00',
@@ -363,6 +380,13 @@ export class OpfGooglePayService {
               )
             ),
             switchMap(() => {
+              return paymentDataResponse?.email
+                ? this.opfQuickBuyTransactionService.updateCartGuestUserEmail(
+                    paymentDataResponse.email
+                  )
+                : of(true);
+            }),
+            switchMap(() => {
               const encryptedToken = btoa(
                 paymentDataResponse.paymentMethodData.tokenizationData.token
               );
@@ -480,19 +504,7 @@ export class OpfGooglePayService {
     this.googlePaymentRequest.allowedPaymentMethods = [
       {
         parameters: {
-          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-          allowedCardNetworks: [
-            'AMEX',
-            'DISCOVER',
-            'INTERAC',
-            'JCB',
-            'MASTERCARD',
-            'VISA',
-          ],
-          billingAddressRequired: true,
-          billingAddressParameters: {
-            format: 'FULL',
-          },
+          ...this.defaultGooglePayCardParameters,
         },
         tokenizationSpecification: {
           parameters: {
