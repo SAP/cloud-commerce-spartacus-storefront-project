@@ -20,6 +20,7 @@ import { LoggerService, useFeatureStyles } from '@spartacus/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
+import { disableTabbingForTick } from '../../../layout/a11y';
 import { CarouselService } from './carousel.service';
 
 /**
@@ -95,6 +96,7 @@ export class CarouselComponent implements OnInit, OnChanges {
     protected service: CarouselService
   ) {
     useFeatureStyles('a11yFocusableCarouselControls');
+    useFeatureStyles('a11yAddPaddingToCarouselPanel');
   }
 
   ngOnInit() {
@@ -128,13 +130,8 @@ export class CarouselComponent implements OnInit, OnChanges {
   }
 
   /**
-   * Handles "Tab" navigation within the carousel.
-   *
-   * Temporarily removes all `cxFocusableCarouselItem` elements from the tab flow
-   * and restores them after a short delay. While using `requestAnimationFrame` may seem like
-   * a bad code smell, it is justified here as it ensures natural tabbing flow in
-   * cases where determining the next focusable element is complex(e.g. if `TrapFocusDirective` is used).
-   *
+   * Handles Tab key on carousel items. If the carousel items have `ArrowRight`/`ArrowLeft`
+   * navigation enabled, it temporarily disables tab navigation for these items.
    * The `cxFocusableCarouselItem` selector is used because it identifies carousel
    * items that have `ArrowRight`/`ArrowLeft` navigation enabled. These items should not
    * use tab navigation according to a11y requirements.
@@ -146,14 +143,7 @@ export class CarouselComponent implements OnInit, OnChanges {
     if (!carouselElements.length) {
       return;
     }
-    carouselElements.forEach((element) => {
-      element.tabIndex = -1;
-    });
-    requestAnimationFrame(() => {
-      carouselElements.forEach((element) => {
-        element.tabIndex = 0;
-      });
-    });
+    disableTabbingForTick(carouselElements);
   }
 
   /**

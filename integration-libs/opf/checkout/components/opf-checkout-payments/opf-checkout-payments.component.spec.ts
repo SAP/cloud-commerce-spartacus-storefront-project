@@ -38,6 +38,12 @@ class MockPaginationComponent {
   @Output() viewPageEvent = new EventEmitter<string>();
 }
 
+@Component({
+  template: '',
+  selector: 'cx-opf-checkout-payment-wrapper',
+})
+class MockOpfCheckoutPaymentWrapperComponent {}
+
 const mockActiveConfigurations: OpfActiveConfiguration[] = [
   {
     id: 1,
@@ -87,7 +93,7 @@ const mockOpfMetadata: OpfMetadataModel = {
   selectedPaymentOptionId: 111,
   termsAndConditionsChecked: true,
   defaultSelectedPaymentOptionId: 1,
-  paymentSessionId: '111111',
+  opfPaymentSessionId: '111111',
   isTermsAndConditionsAlertClosed: false,
 };
 
@@ -109,7 +115,11 @@ describe('OpfCheckoutPaymentsComponent', () => {
     );
     await TestBed.configureTestingModule({
       imports: [I18nTestingModule, OpfCheckoutTermsAndConditionsAlertModule],
-      declarations: [OpfCheckoutPaymentsComponent, MockPaginationComponent],
+      declarations: [
+        OpfCheckoutPaymentsComponent,
+        MockOpfCheckoutPaymentWrapperComponent,
+        MockPaginationComponent,
+      ],
       providers: [
         {
           provide: OpfBaseFacade,
@@ -193,7 +203,7 @@ describe('OpfCheckoutPaymentsComponent', () => {
         selectedPaymentOptionId: undefined,
         termsAndConditionsChecked: true,
         defaultSelectedPaymentOptionId,
-        paymentSessionId: '111111',
+        opfPaymentSessionId: '111111',
         isTermsAndConditionsAlertClosed: false,
       })
     );

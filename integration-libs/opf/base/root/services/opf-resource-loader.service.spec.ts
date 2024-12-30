@@ -71,6 +71,7 @@ describe('OpfResourceLoaderService', () => {
 
     it('should load provider resources successfully for scripts', fakeAsync(() => {
       const mockScriptResource = {
+        attributes: [{ key: 'crossorigin', value: 'use-credentials' }],
         url: 'script-url',
         sri: 'fake-hash-code',
         type: OpfDynamicScriptResourceType.SCRIPT,
@@ -161,7 +162,10 @@ describe('OpfResourceLoaderService', () => {
         }
       );
 
-      opfResourceLoaderService.loadResources([mockScriptResource]);
+      opfResourceLoaderService
+        .loadResources([mockScriptResource])
+        .then(() => {})
+        .catch(() => {});
 
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadScript']).toHaveBeenCalled();
@@ -173,6 +177,10 @@ describe('OpfResourceLoaderService', () => {
       const mockStylesResources = {
         url: 'style-url',
         sri: 'fake-hash-code',
+        attributes: [
+          { key: 'mock-key', value: 'mock-value' },
+          { key: 'crossorigin', value: 'use-credentials' },
+        ],
         type: OpfDynamicScriptResourceType.STYLES,
       };
 
@@ -207,7 +215,10 @@ describe('OpfResourceLoaderService', () => {
         }
       );
 
-      opfResourceLoaderService.loadResources([], [mockStylesResources]);
+      opfResourceLoaderService
+        .loadResources([], [mockStylesResources])
+        .then(() => {})
+        .catch(() => {});
 
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
 
