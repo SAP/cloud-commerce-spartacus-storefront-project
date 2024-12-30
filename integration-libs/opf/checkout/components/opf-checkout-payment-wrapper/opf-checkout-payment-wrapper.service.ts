@@ -279,6 +279,7 @@ export class OpfCheckoutPaymentWrapperService {
       otpKey,
       config: {
         cartId,
+        browserInfo,
         configurationId: String(paymentOptionId),
         resultURL: this.routingService.getFullUrl({
           cxRoute: 'paymentVerificationResult',
@@ -286,7 +287,6 @@ export class OpfCheckoutPaymentWrapperService {
         cancelURL: this.routingService.getFullUrl({
           cxRoute: 'paymentVerificationCancel',
         }),
-        browserInfo,
       },
     };
   }
