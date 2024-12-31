@@ -54,7 +54,7 @@
           'navigation.linkItemInList'
             | cxTranslate
               : {
-                  title: node.title
+                  title: node.title,
                 }
         "
         [url]="node.url"
@@ -121,7 +121,11 @@
         </ng-container>
       </ng-container>
       <ng-template #title>
-        <span [attr.aria-label]="node.title" *ngIf="node.title" [attr.tabindex]="0">
+        <span
+          [attr.aria-label]="node.title"
+          *ngIf="node.title"
+          [attr.tabindex]="0"
+        >
           {{ node.title }}
         </span>
       </ng-template>
@@ -138,7 +142,9 @@
         [attr.depth]="getTotalDepth(node)"
         [attr.wrap-after]="node.children.length > wrapAfter ? wrapAfter : null"
         [attr.columns]="getColumnCount(node.children.length)"
-        [attr.role]="flyout && (node?.children?.length ?? 0) > 1 ? 'list' : null"
+        [attr.role]="
+          flyout && (node?.children?.length ?? 0) > 1 ? 'list' : null
+        "
       >
         <ng-container *ngFor="let child of node.children; index as i">
           <ng-container
@@ -148,7 +154,7 @@
                 node: child,
                 depth: depth + 1,
                 listLength: node.children.length,
-                position: i + 1
+                position: i + 1,
               }
             "
           >

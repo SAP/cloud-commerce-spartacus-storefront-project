@@ -62,11 +62,11 @@
   span {
     font-size: 14px;
   }
-  cx-my-account-v2-navigation a,cx-my-account-v2-navigation .fas {
-    // width: 100% !important;
-    height: auto ;
-    padding: 19px 0 19px 2px ;
-    font-size: 12px ;
+  cx-my-account-v2-navigation a,
+  cx-my-account-v2-navigation .fas {
+    height: auto;
+    padding: 19px 0 19px 2px;
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 444px) {
@@ -74,7 +74,8 @@
   span {
     font-size: 11px;
   }
-  cx-my-account-v2-navigation a,cx-my-account-v2-navigation .fas {
-    font-size: 10px ;
+  cx-my-account-v2-navigation a,
+  cx-my-account-v2-navigation .fas {
+    font-size: 10px;
   }
 }
