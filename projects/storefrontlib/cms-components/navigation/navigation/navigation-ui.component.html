@@ -1,4 +1,4 @@
-<nav [attr.aria-label]="navAriaLabel" [attr.role]="'navigation'">
+<nav [attr.aria-label]="navAriaLabel">
   <ul
     [attr.role]="
       flyout && (node?.children?.length ?? 0) > 1 ? 'list' : 'presentation'
@@ -8,7 +8,7 @@
       *ngIf="flyout && (node?.children?.length ?? 0) > 1"
       class="back is-open"
     >
-      <button (click)="back()" [attr.aria-label]="'common.back' | cxTranslate">
+      <button (click)="back()">
         <cx-icon [type]="iconType.CARET_LEFT"></cx-icon>
         {{ 'common.back' | cxTranslate }}
       </button>
@@ -54,7 +54,7 @@
           'navigation.linkItemInList'
             | cxTranslate
               : {
-                  title: node.title,
+                  title: node.title
                 }
         "
         [url]="node.url"
@@ -65,6 +65,7 @@
         [tabindex]="getTabIndex(node, depth)"
         (focus)="depth || reinitializeMenu()"
         (keydown.space)="toggleOpen($any($event))"
+        (keydown.esc)="back()"
       >
         {{ node.title }}
       </cx-generic-link>
@@ -120,7 +121,7 @@
         </ng-container>
       </ng-container>
       <ng-template #title>
-        <span role="presentation" *ngIf="node.title" [attr.tabindex]="0">
+        <span [attr.aria-label]="node.title" *ngIf="node.title" [attr.tabindex]="0">
           {{ node.title }}
         </span>
       </ng-template>
@@ -137,9 +138,7 @@
         [attr.depth]="getTotalDepth(node)"
         [attr.wrap-after]="node.children.length > wrapAfter ? wrapAfter : null"
         [attr.columns]="getColumnCount(node.children.length)"
-        [attr.role]="
-          flyout && (node?.children?.length ?? 0) > 1 ? 'presentation' : 'list'
-        "
+        [attr.role]="flyout && (node?.children?.length ?? 0) > 1 ? 'list' : null"
       >
         <ng-container *ngFor="let child of node.children; index as i">
           <ng-container
@@ -149,7 +148,7 @@
                 node: child,
                 depth: depth + 1,
                 listLength: node.children.length,
-                position: i + 1,
+                position: i + 1
               }
             "
           >
