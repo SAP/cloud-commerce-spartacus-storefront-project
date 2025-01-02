@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -17,9 +17,9 @@ import {
   ConfiguratorRouterExtractorService,
 } from '@spartacus/product-configurator/common';
 import {
+  KeyboardFocusService,
   LAUNCH_CALLER,
   LaunchDialogService,
-  KeyboardFocusService,
 } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import {

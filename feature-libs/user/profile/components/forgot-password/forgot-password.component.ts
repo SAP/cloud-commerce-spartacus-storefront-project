@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,9 +11,9 @@ import {
   inject,
 } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
+import { RoutingService } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { ForgotPasswordComponentService } from './forgot-password-component.service';
-import { RoutingService } from '@spartacus/core';
 
 @Component({
   selector: 'cx-forgot-password',

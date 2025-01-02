@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, inject } from '@angular/core';
+import { ServiceDetails } from '@spartacus/s4-service/root';
 import { Observable } from 'rxjs';
 import { CheckoutServiceDetailsAdapter } from './checkout-service-details.adapter';
-import { ServiceDetails } from '@spartacus/s4-service/root';
 
 @Injectable()
 export class CheckoutServiceDetailsConnector {

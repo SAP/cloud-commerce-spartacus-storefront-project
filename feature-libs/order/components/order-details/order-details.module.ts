@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -22,6 +22,7 @@ import {
 } from '@spartacus/core';
 import { OrderOutlets, USE_MY_ACCOUNT_V2_ORDER } from '@spartacus/order/root';
 import {
+  BtnLikeLinkModule,
   CardModule,
   IconModule,
   KeyboardFocusModule,
@@ -31,7 +32,6 @@ import {
   PromotionsModule,
   ProvideOutletOptions,
   SpinnerModule,
-  BtnLikeLinkModule,
 } from '@spartacus/storefront';
 import {
   MyAccountV2ConsignmentTrackingComponent,
@@ -48,9 +48,9 @@ import { OrderDetailItemsComponent } from './order-detail-items/order-detail-ite
 import { OrderDetailReorderComponent } from './order-detail-reorder/order-detail-reorder.component';
 import { ReorderDialogComponent } from './order-detail-reorder/reorder-dialog/reorder-dialog.component';
 import { OrderDetailTotalsComponent } from './order-detail-totals/order-detail-totals.component';
+import { OrderOverviewComponentService } from './order-overview/order-overview-component.service';
 import { OrderOverviewComponent } from './order-overview/order-overview.component';
 import { defaultReorderLayoutConfig } from './reoder-layout.config';
-import { OrderOverviewComponentService } from './order-overview/order-overview-component.service';
 
 function registerOrderOutletFactory(): () => void {
   const isMyAccountV2 = inject(USE_MY_ACCOUNT_V2_ORDER);

@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { HttpHeaders } from '@angular/common/http';
 import { inject, Injectable, isDevMode } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
 import {
-  OCC_USER_ID_ANONYMOUS,
   InterceptorUtil,
-  USE_CLIENT_TOKEN,
   Occ,
+  OCC_USER_ID_ANONYMOUS,
+  USE_CLIENT_TOKEN,
 } from '@spartacus/core';
+import { OrderSelectors, StateWithOrder } from '@spartacus/order/core';
 import { OccOrderHistoryAdapter } from '@spartacus/order/occ';
 import { Order, ORDER_NORMALIZER } from '@spartacus/order/root';
-import { HttpHeaders } from '@angular/common/http';
 import { map, Observable, of, switchMap } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { StateWithOrder, OrderSelectors } from '@spartacus/order/core';
 import { OmfConfig } from './config/omf-config';
-import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',

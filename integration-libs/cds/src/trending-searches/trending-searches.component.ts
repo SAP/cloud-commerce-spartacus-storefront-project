@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
+  ChangeDetectionStrategy,
   Component,
   OnInit,
   inject,
-  ChangeDetectionStrategy,
 } from '@angular/core';
 import {
   OutletContextData,
   SearchBoxComponentService,
 } from '@spartacus/storefront';
-import { TrendingSearchesService } from './trending-searches.service';
-import { map, switchMap, tap } from 'rxjs/operators';
 import { EMPTY, Observable } from 'rxjs';
+import { map, switchMap, tap } from 'rxjs/operators';
 import { SearchBoxOutletTrendingSearches, SearchPhrases } from './model';
+import { TrendingSearchesService } from './trending-searches.service';
 
 const MAX_TRENDING_SEARCHES = 5;
 

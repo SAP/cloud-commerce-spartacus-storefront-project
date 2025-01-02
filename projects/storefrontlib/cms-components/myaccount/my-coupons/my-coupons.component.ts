@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,8 +12,8 @@ import {
 } from '@spartacus/core';
 import { combineLatest, Observable, Subscription } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { LAUNCH_CALLER, LaunchDialogService } from '../../../layout/index';
 import { ICON_TYPE } from '../../misc/icon/icon.model';
-import { LaunchDialogService, LAUNCH_CALLER } from '../../../layout/index';
 import { MyCouponsComponentService } from './my-coupons.component.service';
 
 @Component({

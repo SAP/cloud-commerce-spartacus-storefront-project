@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { loginUser, signOutUser } from '../../../helpers/checkout-flow';
 import {
-  interceptOrderList,
   interceptCancelOrder,
   interceptOrderDetails,
+  interceptOrderList,
   serviceUser,
 } from '../../../helpers/vendor/s4-service/s4-service-cancel';
 import { POWERTOOLS_BASESITE } from '../../../sample-data/b2b-checkout';

@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { TestBed } from '@angular/core/testing';
-import { CartAccessCodeService } from './cart-access-code.service';
 import { CommandService, QueryService } from '@spartacus/core';
-import { CartAccessCodeConnector } from '../connectors';
 import { of } from 'rxjs';
+import { CartAccessCodeConnector } from '../connectors';
+import { CartAccessCodeService } from './cart-access-code.service';
 import createSpy = jasmine.createSpy;
 
 describe('CartAccessCodeService', () => {

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -16,8 +16,8 @@ import {
   NgSelectA11yModule,
   SpinnerModule,
 } from '@spartacus/storefront';
-import { CheckoutBillingAddressFormService } from './checkout-billing-address-form.service';
 import { CheckoutBillingAddressFormComponent } from './checkout-billing-address-form.component';
+import { CheckoutBillingAddressFormService } from './checkout-billing-address-form.service';
 @NgModule({
   imports: [
     NgSelectA11yModule,

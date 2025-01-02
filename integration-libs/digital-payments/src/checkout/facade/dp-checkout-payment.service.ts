@@ -1,10 +1,11 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, inject } from '@angular/core';
+import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import {
   Address,
   Command,
@@ -20,7 +21,6 @@ import { Observable, combineLatest } from 'rxjs';
 import { map, switchMap, take } from 'rxjs/operators';
 import { DigitalPaymentsAdapter } from '../adapters/digital-payments.adapter';
 import { DpPaymentRequest } from '../models/dp-checkout.model';
-import { ActiveCartFacade } from '@spartacus/cart/base/root';
 @Injectable({
   providedIn: 'root',
 })

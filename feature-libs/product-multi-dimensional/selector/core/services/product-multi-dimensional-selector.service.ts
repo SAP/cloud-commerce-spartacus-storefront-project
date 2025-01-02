@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { inject, Injectable } from '@angular/core';
 import { Product, VariantMatrixElement } from '@spartacus/core';
-import { ProductMultiDimensionalSelectorImagesService } from './product-multi-dimensional-selector-images.service';
 import { VariantCategoryGroup, VariantCategoryOption } from '../model';
+import { ProductMultiDimensionalSelectorImagesService } from './product-multi-dimensional-selector-images.service';
 
 @Injectable({ providedIn: 'root' })
 export class ProductMultiDimensionalSelectorService {

@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, OnDestroy } from '@angular/core';
+import { CheckoutQueryResetEvent } from '@spartacus/checkout/base/root';
 import { EventService } from '@spartacus/core';
 import { Subscription } from 'rxjs';
 import { CheckoutServiceDetailsSetEvent } from './checkout-service-details.events';
-import { CheckoutQueryResetEvent } from '@spartacus/checkout/base/root';
 
 @Injectable({
   providedIn: 'root',

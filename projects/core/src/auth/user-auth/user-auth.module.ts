@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -17,6 +17,7 @@ import { switchMap } from 'rxjs/operators';
 import { ConfigInitializerService } from '../../config/config-initializer/config-initializer.service';
 import { provideDefaultConfig } from '../../config/config-providers';
 import { provideConfigValidator } from '../../config/config-validator/config-validator';
+import { LOCATION_INITIALIZED_MULTI } from '../../routing/location-initialized-multi/location-initialized-multi';
 import { baseUrlConfigValidator } from './config/base-url-config-validator';
 import { defaultAuthConfig } from './config/default-auth-config';
 import { UserAuthEventModule } from './events/user-auth-event.module';
@@ -24,7 +25,6 @@ import { AuthService } from './facade/auth.service';
 import { interceptors } from './http-interceptors/index';
 import { AuthStatePersistenceService } from './services/auth-state-persistence.service';
 import { AuthStorageService } from './services/auth-storage.service';
-import { LOCATION_INITIALIZED_MULTI } from '../../routing/location-initialized-multi/location-initialized-multi';
 
 /**
  * Initialize the check for `token` or `code` in the url returned from the OAuth server.

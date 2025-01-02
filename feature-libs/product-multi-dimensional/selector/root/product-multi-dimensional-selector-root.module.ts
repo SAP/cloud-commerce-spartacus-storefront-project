@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,8 +9,8 @@ import {
   provideDefaultConfig,
   provideDefaultConfigFactory,
 } from '@spartacus/core';
-import { PRODUCT_MULTI_DIMENSIONAL_SELECTOR_FEATURE } from './feature-name';
 import { defaultProductMultiDimensionalConfig } from './config/default-product-multi-dimensional-config';
+import { PRODUCT_MULTI_DIMENSIONAL_SELECTOR_FEATURE } from './feature-name';
 
 export function defaultProductMultiDimensionalSelectorComponentsConfig() {
   return {

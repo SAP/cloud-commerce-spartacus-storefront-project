@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -19,7 +19,7 @@ import {
   OpfMetadataStatePersistanceService,
 } from '@spartacus/opf/base/root';
 import { ApplePaySessionVerificationRequest } from '@spartacus/opf/quick-buy/root';
-import { catchError, Observable, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { OpfApiQuickBuyAdapter } from './opf-api-quick-buy.adapter';
 
 class MockOpfMetadataStatePersistanceService

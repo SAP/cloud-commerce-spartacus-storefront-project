@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { inject, Injectable } from '@angular/core';
-import { RescheduleServiceOrderAdapter } from './reschedule-service-order.adapter';
 import { ServiceDetails } from '@spartacus/s4-service/root';
 import { Observable } from 'rxjs';
+import { RescheduleServiceOrderAdapter } from './reschedule-service-order.adapter';
 
 @Injectable()
 export class RescheduleServiceOrderConnector {

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -15,7 +15,7 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import { RoutingService, useFeatureStyles, WindowRef } from '@spartacus/core';
+import { RoutingService, WindowRef, useFeatureStyles } from '@spartacus/core';
 import { CustomFormValidators } from '@spartacus/storefront';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 

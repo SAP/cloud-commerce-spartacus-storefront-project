@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  *
  */
 
-import { fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { RecentSearchesService } from './recent-searches.service';
-import { of } from 'rxjs';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { WindowRef } from '@spartacus/core';
+import { of } from 'rxjs';
+import { RecentSearchesService } from './recent-searches.service';
 
 describe('RecentSearchesService', () => {
   let recentSearchesService: RecentSearchesService;

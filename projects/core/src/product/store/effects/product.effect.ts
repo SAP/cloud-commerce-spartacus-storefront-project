@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,9 +12,9 @@ import { catchError, map, mergeMap } from 'rxjs/operators';
 import { AuthActions } from '../../../auth/user-auth/store/actions';
 import { LoggerService } from '../../../logger';
 import { SiteContextActions } from '../../../site-context/store/actions/index';
-import { tryNormalizeHttpError } from '../../../util/try-normalize-http-error';
 import { bufferDebounceTime } from '../../../util/rxjs/buffer-debounce-time';
 import { withdrawOn } from '../../../util/rxjs/withdraw-on';
+import { tryNormalizeHttpError } from '../../../util/try-normalize-http-error';
 import { ProductConnector } from '../../connectors/product/product.connector';
 import { ScopedProductData } from '../../connectors/product/scoped-product-data';
 import { ProductActions } from '../actions/index';

@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import * as checkoutForms from './checkout-forms';
-import * as checkout from './checkout-flow';
-import * as configurationCart from './product-configurator-cart';
 import { SampleUser } from '../sample-data/checkout-flow';
+import * as checkout from './checkout-flow';
+import * as checkoutForms from './checkout-forms';
+import * as configurationCart from './product-configurator-cart';
 
 /**
  * Verifies whether the issues banner is displayed.

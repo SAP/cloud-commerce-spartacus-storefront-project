@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,10 +11,10 @@ import {
   GlobalMessageType,
   TranslationService,
 } from '@spartacus/core';
-import { combineLatest, Observable } from 'rxjs';
+import { Card, getAddressNumbers } from '@spartacus/storefront';
+import { Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AddressBookComponentService } from './address-book.component.service';
-import { Card, getAddressNumbers } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-address-book',

@@ -1,9 +1,10 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { OmfConfig } from '@spartacus/core';
 import {
   ELECTRONICS_BASESITE,
   ELECTRONICS_CURRENCY,
@@ -18,7 +19,6 @@ const omfTester = {
   email: 'keenreviewer14@hybris.com',
   password: 'Welcome@1',
 };
-import { OmfConfig } from '@spartacus/core';
 
 const headerName = 'guid';
 

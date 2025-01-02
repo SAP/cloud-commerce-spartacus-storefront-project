@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,10 +10,10 @@ import { Product } from '../../../model/product.model';
 import { SiteContextActions } from '../../../site-context/store/actions/index';
 import { entityScopedLoaderReducer } from '../../../state/utils/scoped-loader/entity-scoped-loader.reducer';
 import {
-  ProductsState,
   PRODUCT_DETAIL_ENTITY,
-  PRODUCT_SEARCH_RESULTS_BY_CODES_ENTITY,
   PRODUCT_SEARCH_RESULTS_BY_CATEGORY_ENTITY,
+  PRODUCT_SEARCH_RESULTS_BY_CODES_ENTITY,
+  ProductsState,
 } from '../product-state';
 import * as fromProductReferences from './product-references.reducer';
 import * as fromProductReviews from './product-reviews.reducer';

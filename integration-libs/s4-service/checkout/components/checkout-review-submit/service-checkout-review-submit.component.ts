@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -19,15 +19,15 @@ import {
   CheckoutStepType,
 } from '@spartacus/checkout/base/root';
 import { TranslationService, UserCostCenterService } from '@spartacus/core';
-import { Card } from '@spartacus/storefront';
-import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
 import {
   CheckoutServiceDetailsFacade,
   CheckoutServiceSchedulePickerService,
-  ServiceDateTime,
   S4ServiceDeliveryModeConfig,
+  ServiceDateTime,
 } from '@spartacus/s4-service/root';
+import { Card } from '@spartacus/storefront';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'cx-review-submit',

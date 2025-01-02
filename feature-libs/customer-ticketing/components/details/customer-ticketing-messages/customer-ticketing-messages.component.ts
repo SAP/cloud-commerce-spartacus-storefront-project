@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,16 +7,16 @@
 import { Component, OnDestroy, ViewChild, inject } from '@angular/core';
 import { EventService } from '@spartacus/core';
 import {
-  MessageEvent,
-  MessagingComponent,
-  MessagingConfigs,
-} from '@spartacus/storefront';
-import {
   CustomerTicketingConfig,
   CustomerTicketingFacade,
   TicketDetails,
   TicketEvent,
 } from '@spartacus/customer-ticketing/root';
+import {
+  MessageEvent,
+  MessagingComponent,
+  MessagingConfigs,
+} from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CustomerTicketingMessagesComponentService } from './customer-ticketing-messages-component.service';

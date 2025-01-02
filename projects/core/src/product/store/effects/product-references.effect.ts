@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,10 +8,10 @@ import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { ProductReferencesConnector } from '../../connectors/references/product-references.connector';
-import { ProductActions } from '../actions/index';
 import { LoggerService } from '../../../logger';
 import { tryNormalizeHttpError } from '../../../util/try-normalize-http-error';
+import { ProductReferencesConnector } from '../../connectors/references/product-references.connector';
+import { ProductActions } from '../actions/index';
 
 @Injectable()
 export class ProductReferencesEffects {

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,6 +10,7 @@ export * from './converter.service';
 export * from './create-from';
 export * from './glob.service';
 export * from './http-params-uri.encoder';
+export * from './is-key-invalid';
 export * from './java-reg-exp-converter/index';
 export * from './normalize-http-error';
 export * from './object-comparison-utils';
@@ -24,4 +25,3 @@ export * from './time-utils';
 export * from './try-normalize-http-error';
 export * from './type-guards';
 export * from './type-utils';
-export * from './is-key-invalid';

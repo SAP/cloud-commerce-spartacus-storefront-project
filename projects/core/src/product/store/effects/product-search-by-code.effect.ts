@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,12 +7,12 @@
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
-import { AuthActions } from '../../../auth/user-auth/store/actions';
-import { normalizeHttpError } from '../../../util/normalize-http-error';
 import { Observable } from 'rxjs';
 import { catchError, groupBy, map, mergeMap, switchMap } from 'rxjs/operators';
+import { AuthActions } from '../../../auth/user-auth/store/actions';
 import { LoggerService } from '../../../logger/logger.service';
 import { SiteContextActions } from '../../../site-context/store/actions/index';
+import { normalizeHttpError } from '../../../util/normalize-http-error';
 import { bufferDebounceTime } from '../../../util/rxjs/buffer-debounce-time';
 import { withdrawOn } from '../../../util/rxjs/withdraw-on';
 import { ProductSearchConnector } from '../../connectors/search/product-search.connector';

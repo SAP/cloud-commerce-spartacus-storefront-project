@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import * as quote from '../../../../helpers/b2b/b2b-quote';
 import * as configuration from '../../../../helpers/product-configurator';
-import * as configurationVc from '../../../../helpers/product-configurator-vc';
 import * as configurationOverview from '../../../../helpers/product-configurator-overview';
+import * as configurationVc from '../../../../helpers/product-configurator-vc';
 
 const TEST_PRODUCT_CONFIGURABLE = 'CONF_BANDSAW_ML';
 const TEST_PRODUCT_CONFIGURABLE_WITH_ISSUES = 'CONF_SCREWDRIVER_S';

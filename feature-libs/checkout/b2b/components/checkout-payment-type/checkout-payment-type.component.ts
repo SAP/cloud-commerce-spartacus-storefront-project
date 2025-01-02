@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -19,14 +19,14 @@ import {
 import { CheckoutStepService } from '@spartacus/checkout/base/components';
 import { CheckoutStepType } from '@spartacus/checkout/base/root';
 import {
-  getLastValueSync,
   GlobalMessageService,
   GlobalMessageType,
   HttpErrorModel,
-  isNotUndefined,
   OccHttpErrorType,
+  getLastValueSync,
+  isNotUndefined,
 } from '@spartacus/core';
-import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, combineLatest, of } from 'rxjs';
 import {
   catchError,
   distinctUntilChanged,

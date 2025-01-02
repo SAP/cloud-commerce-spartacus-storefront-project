@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,7 +10,6 @@ import {
   inject,
   OnInit,
 } from '@angular/core';
-import { QuoteListComponentService } from './quote-list-component.service';
 import {
   CxDatePipe,
   PaginationModel,
@@ -18,6 +17,7 @@ import {
 } from '@spartacus/core';
 import { QuoteState } from '@spartacus/quote/root';
 import { ICON_TYPE } from '@spartacus/storefront';
+import { QuoteListComponentService } from './quote-list-component.service';
 
 @Component({
   selector: 'cx-quote-list',

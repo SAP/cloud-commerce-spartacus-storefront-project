@@ -1,9 +1,10 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { LOCATION_INITIALIZED } from '@angular/common';
 import {
   APP_INITIALIZER,
   ModuleWithProviders,
@@ -32,7 +33,6 @@ import {
   reducerToken,
 } from './store/reducers/router.reducer';
 import { ROUTING_FEATURE } from './store/routing-state';
-import { LOCATION_INITIALIZED } from '@angular/common';
 
 export function initConfigurableRoutes(
   service: ConfigurableRoutesService

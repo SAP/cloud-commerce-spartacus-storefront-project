@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -13,6 +13,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { AsmService } from '@spartacus/asm/core';
+import { AsmDialogActionEvent } from '@spartacus/asm/customer-360/root';
 import {
   AsmDeepLinkParameters,
   AsmUi,
@@ -44,7 +45,6 @@ import {
 } from 'rxjs/operators';
 import { CustomerListAction } from '../customer-list/customer-list.model';
 import { AsmComponentService } from '../services/asm-component.service';
-import { AsmDialogActionEvent } from '@spartacus/asm/customer-360/root';
 interface CartTypeKey {
   [key: string]: string;
 }

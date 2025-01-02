@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -21,20 +21,20 @@ import {
 import {
   Address,
   FeatureConfigService,
-  getLastValueSync,
   GlobalMessageService,
   GlobalMessageType,
   PaymentDetails,
   TranslationService,
   UserPaymentService,
+  getLastValueSync,
 } from '@spartacus/core';
 import { Card, ICON_TYPE } from '@spartacus/storefront';
 import {
   BehaviorSubject,
-  combineLatest,
   Observable,
-  of,
   Subscription,
+  combineLatest,
+  of,
 } from 'rxjs';
 import {
   distinctUntilChanged,

@@ -1,10 +1,10 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { user, getSampleUser, SampleUser } from '../sample-data/checkout-flow';
+import { SampleUser, getSampleUser, user } from '../sample-data/checkout-flow';
 import { login, register } from './auth-forms';
 import { waitForPage } from './checkout-flow';
 import * as alerts from './global-message';

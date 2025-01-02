@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -16,8 +16,8 @@ import {
   CPQ_CONFIGURATOR_QUANTITY_SERIALIZER,
   CPQ_CONFIGURATOR_SERIALIZER,
 } from '../common/converters/cpq-configurator.converters';
-import { CpqConfiguratorEndpointService } from './cpq-configurator-endpoint.service';
 import { Cpq } from '../common/cpq.models';
+import { CpqConfiguratorEndpointService } from './cpq-configurator-endpoint.service';
 /**
  * @deprecated since 2211.25. Not needed for commerce based CPQ orchestration (which is the default communication flavour).
  * Refer to configuration setting ConfiguratorCoreConfig.productConfigurator.cpqOverOcc = true.

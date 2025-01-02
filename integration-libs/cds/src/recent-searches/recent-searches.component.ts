@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -15,9 +15,9 @@ import {
   OutletContextData,
   SearchBoxComponentService,
 } from '@spartacus/storefront';
-import { RecentSearchesService } from './recent-searches.service';
-import { map, tap } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
+import { RecentSearchesService } from './recent-searches.service';
 
 export interface SearchBoxOutlet {
   search: string;

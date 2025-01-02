@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -19,8 +19,8 @@ import { BaseOccModule } from './occ/base-occ.module';
 import { MetaTagConfigModule } from './occ/config/meta-tag-config.module';
 import { ProcessModule } from './process/process.module';
 import { SiteContextModule } from './site-context/site-context.module';
-import { StateModule } from './state/state.module';
 import { SiteThemeModule } from './site-theme/site-theme.module';
+import { StateModule } from './state/state.module';
 
 @NgModule({
   imports: [

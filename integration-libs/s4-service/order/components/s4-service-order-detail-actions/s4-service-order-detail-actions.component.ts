@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,7 +9,7 @@ import { GlobalMessageService, GlobalMessageType } from '@spartacus/core';
 import { OrderDetailActionsComponent } from '@spartacus/order/components';
 import { Order } from '@spartacus/order/root';
 import { CheckoutServiceSchedulePickerService } from '@spartacus/s4-service/root';
-import { map, Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'cx-s4-service-order-detail-actions',

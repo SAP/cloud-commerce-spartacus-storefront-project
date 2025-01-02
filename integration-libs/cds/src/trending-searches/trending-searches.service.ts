@@ -1,27 +1,27 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { inject, Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CdsEndpointsService } from '../services';
-import { CdsConfig } from '../config';
+import { inject, Injectable, OnDestroy } from '@angular/core';
 import { BaseSiteService, WindowRef } from '@spartacus/core';
 import {
   BehaviorSubject,
-  Observable,
-  timer,
-  switchMap,
-  map,
-  takeWhile,
-  take,
-  shareReplay,
-  EMPTY,
   catchError,
+  EMPTY,
   filter,
+  map,
+  Observable,
+  shareReplay,
+  switchMap,
+  take,
+  takeWhile,
+  timer,
 } from 'rxjs';
+import { CdsConfig } from '../config';
+import { CdsEndpointsService } from '../services';
 import { SearchPhrases } from './model';
 
 const AVAILABILITY_CHECK_INTERVAL = 250;

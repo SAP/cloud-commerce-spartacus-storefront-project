@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,7 +10,7 @@ import {
   LanguageService,
   WindowRef,
 } from '@spartacus/core';
-import { lastValueFrom, Subscription } from 'rxjs';
+import { Subscription, lastValueFrom } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { DirectionConfig } from './config/direction.config';
 import { Direction, DirectionMode } from './config/direction.model';
