@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { CustomerSearchOptions, CustomerSearchPage } from '@spartacus/asm/root';
 import { ErrorAction, StateUtils } from '@spartacus/core';
 import {
-  CUSTOMER_LIST_CUSTOMERS_SEARCH_DATA,
-  CUSTOMER_SEARCH_DATA,
+    CUSTOMER_LIST_CUSTOMERS_SEARCH_DATA,
+    CUSTOMER_SEARCH_DATA,
 } from '../asm-state';
 
 export const CUSTOMER_SEARCH = '[Asm] Customer Search';

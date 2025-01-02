@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ADDED_TO_CART_DIALOG_EVENT_LISTENER,
-  EVENT_SERVICE,
-  LAUNCH_DIALOG_SERVICE,
-  MODAL_SERVICE,
+    ADDED_TO_CART_DIALOG_EVENT_LISTENER,
+    EVENT_SERVICE,
+    LAUNCH_DIALOG_SERVICE,
+    MODAL_SERVICE,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CART_BASE_COMPONENTS,
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CART_BASE_COMPONENTS,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

@@ -1,46 +1,46 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, OnDestroy } from '@angular/core';
 import {
-  ActiveCartFacade,
-  Cart,
-  CartType,
-  MultiCartFacade,
-  OrderEntry,
+    ActiveCartFacade,
+    Cart,
+    CartType,
+    MultiCartFacade,
+    OrderEntry,
 } from '@spartacus/cart/base/root';
 import {
-  OAUTH_REDIRECT_FLOW_KEY,
-  OCC_CART_ID_CURRENT,
-  OCC_USER_ID_ANONYMOUS,
-  OCC_USER_ID_GUEST,
-  StateUtils,
-  User,
-  UserIdService,
-  WindowRef,
-  getLastValueSync,
+    OAUTH_REDIRECT_FLOW_KEY,
+    OCC_CART_ID_CURRENT,
+    OCC_USER_ID_ANONYMOUS,
+    OCC_USER_ID_GUEST,
+    StateUtils,
+    User,
+    UserIdService,
+    WindowRef,
+    getLastValueSync,
 } from '@spartacus/core';
 import { Observable, Subscription, combineLatest, of, using } from 'rxjs';
 import {
-  distinctUntilChanged,
-  filter,
-  map,
-  pairwise,
-  shareReplay,
-  switchMap,
-  take,
-  tap,
-  withLatestFrom,
+    distinctUntilChanged,
+    filter,
+    map,
+    pairwise,
+    shareReplay,
+    switchMap,
+    take,
+    tap,
+    withLatestFrom,
 } from 'rxjs/operators';
 import {
-  getCartIdByUserId,
-  isEmail,
-  isEmpty,
-  isJustLoggedIn,
-  isTempCartId,
+    getCartIdByUserId,
+    isEmail,
+    isEmpty,
+    isJustLoggedIn,
+    isTempCartId,
 } from '../utils/utils';
 
 @Injectable()

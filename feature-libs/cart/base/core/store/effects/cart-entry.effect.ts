@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,10 +8,10 @@ import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { CartModification } from '@spartacus/cart/base/root';
 import {
-  LoggerService,
-  SiteContextActions,
-  tryNormalizeHttpError,
-  withdrawOn,
+    LoggerService,
+    SiteContextActions,
+    tryNormalizeHttpError,
+    withdrawOn,
 } from '@spartacus/core';
 import { Observable, from } from 'rxjs';
 import { catchError, concatMap, map } from 'rxjs/operators';

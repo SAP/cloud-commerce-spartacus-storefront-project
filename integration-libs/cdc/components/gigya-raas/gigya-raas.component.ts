@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  NgZone,
-  OnInit,
-  ViewEncapsulation,
+    ChangeDetectionStrategy,
+    Component,
+    NgZone,
+    OnInit,
+    ViewEncapsulation,
 } from '@angular/core';
 import { GigyaRaasComponentData } from '@spartacus/cdc/core';
 import { CdcConfig, CdcJsService } from '@spartacus/cdc/root';

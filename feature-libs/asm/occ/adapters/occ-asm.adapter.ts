@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,27 +7,27 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  AsmAdapter,
-  CUSTOMER_LISTS_NORMALIZER,
-  CUSTOMER_SEARCH_PAGE_NORMALIZER,
+    AsmAdapter,
+    CUSTOMER_LISTS_NORMALIZER,
+    CUSTOMER_SEARCH_PAGE_NORMALIZER,
 } from '@spartacus/asm/core';
 import {
-  AsmConfig,
-  BindCartParams,
-  CustomerListsPage,
-  CustomerRegistrationForm,
-  CustomerSearchOptions,
-  CustomerSearchPage,
+    AsmConfig,
+    BindCartParams,
+    CustomerListsPage,
+    CustomerRegistrationForm,
+    CustomerSearchOptions,
+    CustomerSearchPage,
 } from '@spartacus/asm/root';
 import {
-  BaseSiteService,
-  ConverterService,
-  InterceptorUtil,
-  LoggerService,
-  OccEndpointsService,
-  USE_CUSTOMER_SUPPORT_AGENT_TOKEN,
-  User,
-  normalizeHttpError,
+    BaseSiteService,
+    ConverterService,
+    InterceptorUtil,
+    LoggerService,
+    OccEndpointsService,
+    USE_CUSTOMER_SUPPORT_AGENT_TOKEN,
+    User,
+    normalizeHttpError,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';

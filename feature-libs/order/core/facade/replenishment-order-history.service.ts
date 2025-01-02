@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,21 +7,21 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import {
-  ProcessSelectors,
-  StateWithProcess,
-  UserIdService,
+    ProcessSelectors,
+    StateWithProcess,
+    UserIdService,
 } from '@spartacus/core';
 import {
-  ReplenishmentOrder,
-  ReplenishmentOrderHistoryFacade,
-  ReplenishmentOrderList,
+    ReplenishmentOrder,
+    ReplenishmentOrderHistoryFacade,
+    ReplenishmentOrderList,
 } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { OrderActions } from '../store/actions/index';
 import {
-  CANCEL_REPLENISHMENT_ORDER_PROCESS_ID,
-  StateWithOrder,
+    CANCEL_REPLENISHMENT_ORDER_PROCESS_ID,
+    StateWithOrder,
 } from '../store/order-state';
 import { OrderSelectors } from '../store/selectors/index';
 

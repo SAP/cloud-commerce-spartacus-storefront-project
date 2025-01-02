@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  NG_ON_INIT,
-  SET_RATE,
-  SET_RATE_ON_EVENT,
-  STAR_RATING_COMPONENT,
-  TODO_SPARTACUS,
+    NG_ON_INIT,
+    SET_RATE,
+    SET_RATE_ON_EVENT,
+    STAR_RATING_COMPONENT,
+    TODO_SPARTACUS,
 } from '../../../../shared/constants';
 import { SPARTACUS_STOREFRONTLIB } from '../../../../shared/libs-constants';
 import { MethodPropertyDeprecation } from '../../../../shared/utils/file-utils';

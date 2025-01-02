@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
-  EventService,
-  FeatureConfigService,
-  GlobalMessageService,
-  GlobalMessageType,
+    EventService,
+    FeatureConfigService,
+    GlobalMessageService,
+    GlobalMessageType,
 } from '@spartacus/core';
 import {
-  CartUtilsService,
-  QuoteDetailsReloadQueryEvent,
+    CartUtilsService,
+    QuoteDetailsReloadQueryEvent,
 } from '@spartacus/quote/core';
 import { Quote, QuoteAttachment, QuoteFacade } from '@spartacus/quote/root';
 import { FileDownloadService } from '@spartacus/storefront';

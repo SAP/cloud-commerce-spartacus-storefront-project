@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,10 +7,10 @@
 import { Injectable } from '@angular/core';
 import { PaginationConfig } from './config/pagination.config';
 import {
-  PaginationItem,
-  PaginationItemType,
-  PaginationNavigationPosition,
-  PaginationOptions,
+    PaginationItem,
+    PaginationItemType,
+    PaginationNavigationPosition,
+    PaginationOptions,
 } from './pagination.model';
 
 const FALLBACK_PAGINATION_OPTIONS: PaginationOptions = {

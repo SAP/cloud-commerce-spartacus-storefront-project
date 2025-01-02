@@ -1,27 +1,27 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  PaginationModel,
-  Product,
-  ProductInterestEntryRelation,
-  ProductInterestSearchResult,
-  ProductScope,
-  ProductService,
-  TranslationService,
-  UserInterestsService,
-  useFeatureStyles,
+    GlobalMessageService,
+    GlobalMessageType,
+    PaginationModel,
+    Product,
+    ProductInterestEntryRelation,
+    ProductInterestSearchResult,
+    ProductScope,
+    ProductService,
+    TranslationService,
+    useFeatureStyles,
+    UserInterestsService,
 } from '@spartacus/core';
 import { combineLatest, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';

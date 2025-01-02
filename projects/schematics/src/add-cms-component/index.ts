@@ -1,63 +1,63 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { basename, normalize, strings } from '@angular-devkit/core';
 import {
-  MergeStrategy,
-  Rule,
-  SchematicContext,
-  SchematicsException,
-  Tree,
-  apply,
-  applyTemplates,
-  chain,
-  externalSchematic,
-  mergeWith,
-  move,
-  noop,
-  url,
+    MergeStrategy,
+    Rule,
+    SchematicContext,
+    SchematicsException,
+    Tree,
+    apply,
+    applyTemplates,
+    chain,
+    externalSchematic,
+    mergeWith,
+    move,
+    noop,
+    url,
 } from '@angular-devkit/schematics';
 import {
-  getDecoratorMetadata,
-  getSourceNodes,
-  insertImport,
-  isImported,
+    getDecoratorMetadata,
+    getSourceNodes,
+    insertImport,
+    isImported,
 } from '@schematics/angular/utility/ast-utils';
 import { Change, InsertChange } from '@schematics/angular/utility/change';
 import {
-  ANGULAR_CORE,
-  ANGULAR_SCHEMATICS,
-  CMS_COMPONENT_DATA_CLASS,
-  CMS_COMPONENT_DATA_PROPERTY_NAME,
-  CMS_CONFIG,
-  CONFIG_MODULE_CLASS,
-  OBSERVABLE_CLASS,
-  RXJS,
-  UTF_8,
+    ANGULAR_CORE,
+    ANGULAR_SCHEMATICS,
+    CMS_COMPONENT_DATA_CLASS,
+    CMS_COMPONENT_DATA_PROPERTY_NAME,
+    CMS_CONFIG,
+    CONFIG_MODULE_CLASS,
+    OBSERVABLE_CLASS,
+    RXJS,
+    UTF_8,
 } from '../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../shared/libs-constants';
 import {
-  InsertDirection,
-  commitChanges,
-  defineProperty,
-  findConstructor,
-  getMetadataProperty,
-  getPathResultsForFile,
-  getTsSourceFile,
-  injectService,
+    InsertDirection,
+    commitChanges,
+    defineProperty,
+    findConstructor,
+    getMetadataProperty,
+    getPathResultsForFile,
+    getTsSourceFile,
+    injectService,
 } from '../shared/utils/file-utils';
 import {
-  addToModuleDeclarations,
-  addToModuleExports,
-  addToModuleImports,
-  buildRelativePath,
-  stripTsFromImport,
+    addToModuleDeclarations,
+    addToModuleExports,
+    addToModuleImports,
+    buildRelativePath,
+    stripTsFromImport,
 } from '../shared/utils/module-file-utils';
 import { getProjectFromWorkspace } from '../shared/utils/workspace-utils';
 import { CxCmsComponentSchema } from './schema';

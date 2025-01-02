@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,8 +11,8 @@ import { StatePersistenceService } from '../../state/index';
 import { AnonymousConsentsService } from '../facade/index';
 import { LoadAnonymousConsentTemplatesSuccess } from '../store/actions/anonymous-consents-group';
 import {
-  AnonymousConsentsState,
-  StateWithAnonymousConsents,
+    AnonymousConsentsState,
+    StateWithAnonymousConsents,
 } from '../store/index';
 import { getAnonymousConsentState } from '../store/selectors/feature.selector';
 

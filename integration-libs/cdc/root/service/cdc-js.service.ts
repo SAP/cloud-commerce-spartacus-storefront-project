@@ -1,38 +1,38 @@
 /*
  * SPDX-FileCopyrightText: 2022 SAP Spartacus team <spartacus-team@sap.com>
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { isPlatformBrowser } from '@angular/common';
 import {
-  Inject,
-  Injectable,
-  NgZone,
-  OnDestroy,
-  PLATFORM_ID,
+    Inject,
+    Injectable,
+    NgZone,
+    OnDestroy,
+    PLATFORM_ID,
 } from '@angular/core';
 import {
-  AuthService,
-  BaseSiteService,
-  EventService,
-  GlobalMessageService,
-  GlobalMessageType,
-  LanguageService,
-  ScriptLoader,
-  User,
-  WindowRef,
+    AuthService,
+    BaseSiteService,
+    EventService,
+    GlobalMessageService,
+    GlobalMessageType,
+    LanguageService,
+    ScriptLoader,
+    User,
+    WindowRef,
 } from '@spartacus/core';
 import { OrganizationUserRegistrationForm } from '@spartacus/organization/user-registration/root';
 import { UserProfileFacade, UserSignUp } from '@spartacus/user/profile/root';
 import {
-  combineLatest,
-  Observable,
-  of,
-  ReplaySubject,
-  Subscription,
-  throwError,
+    combineLatest,
+    Observable,
+    of,
+    ReplaySubject,
+    Subscription,
+    throwError,
 } from 'rxjs';
 import { filter, switchMap, take, tap } from 'rxjs/operators';
 import { CdcConfig } from '../config/cdc-config';

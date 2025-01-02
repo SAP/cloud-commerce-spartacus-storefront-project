@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  HttpEvent,
-  HttpHandler,
-  HttpInterceptor,
-  HttpRequest,
+    HttpEvent,
+    HttpHandler,
+    HttpInterceptor,
+    HttpRequest,
 } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import {
-  Config,
-  OCC_HTTP_TOKEN,
-  OCC_USER_ID_CONSTANTS,
-  UserIdService,
+    Config,
+    OCC_HTTP_TOKEN,
+    OCC_USER_ID_CONSTANTS,
+    UserIdService,
 } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { concatMap, map } from 'rxjs/operators';

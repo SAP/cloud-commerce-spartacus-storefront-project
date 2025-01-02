@@ -1,30 +1,30 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
+import { Params } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import {
-  ProcessSelectors,
-  RoutingService,
-  StateWithProcess,
-  UserIdService,
+    ProcessSelectors,
+    RoutingService,
+    StateWithProcess,
+    UserIdService,
 } from '@spartacus/core';
 import {
-  CancellationRequestEntryInputList,
-  ConsignmentTracking,
-  Order,
-  OrderHistoryFacade,
-  OrderHistoryList,
+    CancellationRequestEntryInputList,
+    ConsignmentTracking,
+    Order,
+    OrderHistoryFacade,
+    OrderHistoryList,
 } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';
 import { OrderActions } from '../store/actions/index';
 import { CANCEL_ORDER_PROCESS_ID, StateWithOrder } from '../store/order-state';
 import { OrderSelectors } from '../store/selectors/index';
-import { Params } from '@angular/router';
 
 @Injectable()
 export class OrderHistoryService implements OrderHistoryFacade {

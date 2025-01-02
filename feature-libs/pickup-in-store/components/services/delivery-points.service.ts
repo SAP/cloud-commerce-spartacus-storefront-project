@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,9 +9,9 @@ import { ActiveCartFacade, OrderEntry } from '@spartacus/cart/base/root';
 import { PointOfService } from '@spartacus/core';
 import { OrderFacade } from '@spartacus/order/root';
 import {
-  DeliveryPointOfService,
-  getProperty,
-  PickupLocationsSearchFacade,
+    DeliveryPointOfService,
+    getProperty,
+    PickupLocationsSearchFacade,
 } from '@spartacus/pickup-in-store/root';
 import { combineLatest, iif, Observable, of } from 'rxjs';
 import { filter, map, mergeMap, switchMap, tap } from 'rxjs/operators';

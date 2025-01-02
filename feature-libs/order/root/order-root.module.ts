@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,21 +7,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
-  CART_BASE_FEATURE,
-  ORDER_ENTRIES_CONTEXT,
+    CART_BASE_FEATURE,
+    ORDER_ENTRIES_CONTEXT,
 } from '@spartacus/cart/base/root';
 import {
-  AuthGuard,
-  CmsConfig,
-  provideDefaultConfig,
-  provideDefaultConfigFactory,
+    AuthGuard,
+    CmsConfig,
+    provideDefaultConfig,
+    provideDefaultConfigFactory,
 } from '@spartacus/core';
 import { CmsPageGuard, PageLayoutComponent } from '@spartacus/storefront';
 import { defaultOrderRoutingConfig } from './config/default-order-routing-config';
 import { ORDER_CORE_FEATURE, ORDER_FEATURE } from './feature-name';
 import {
-  OrderConfirmationOrderEntriesContextToken,
-  OrderDetailsOrderEntriesContextToken,
+    OrderConfirmationOrderEntriesContextToken,
+    OrderDetailsOrderEntriesContextToken,
 } from './tokens/context';
 
 // TODO: Inline this factory when we start releasing Ivy compiled libraries

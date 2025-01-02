@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,9 +10,9 @@ import { Observable, forkJoin } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { LoggerService } from '../../../logger';
 import {
-  NotificationType,
-  ProductInterestEntryRelation,
-  ProductInterestSearchResult,
+    NotificationType,
+    ProductInterestEntryRelation,
+    ProductInterestSearchResult,
 } from '../../../model/product-interest.model';
 import { PRODUCT_INTERESTS_NORMALIZER } from '../../../user/connectors/interests/converters';
 import { UserInterestsAdapter } from '../../../user/connectors/interests/user-interests.adapter';

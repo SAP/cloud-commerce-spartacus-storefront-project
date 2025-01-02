@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ComponentRef,
-  OnDestroy,
-  ViewContainerRef,
+    ChangeDetectionStrategy,
+    Component,
+    ComponentRef,
+    OnDestroy,
+    ViewContainerRef,
 } from '@angular/core';
 import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
+    UntypedFormBuilder,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import { RoutingService } from '@spartacus/core';
 import { OrderFacade } from '@spartacus/order/root';
-import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
+import { LAUNCH_CALLER, LaunchDialogService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 
 @Component({

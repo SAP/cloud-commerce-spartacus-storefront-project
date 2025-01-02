@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CONFIGURATOR_COMMONS_SERVICE,
-  CONFIGURATOR_FORM_COMPONENT,
-  CONFIGURATOR_GROUPS_SERVICE,
-  CONFIGURATOR_ROUTER_EXTRACTOR_SERVICE,
-  CONFIGURATOR_STOREFRONT_UTILS_SERVICE,
-  LANGUAGE_SERVICE,
+    CONFIGURATOR_COMMONS_SERVICE,
+    CONFIGURATOR_FORM_COMPONENT,
+    CONFIGURATOR_GROUPS_SERVICE,
+    CONFIGURATOR_ROUTER_EXTRACTOR_SERVICE,
+    CONFIGURATOR_STOREFRONT_UTILS_SERVICE,
+    LANGUAGE_SERVICE,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_PRODUCT_CONFIGURATOR_RULEBASED,
+    SPARTACUS_CORE,
+    SPARTACUS_PRODUCT_CONFIGURATOR_RULEBASED,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

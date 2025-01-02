@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  APP_INITIALIZER,
-  ModuleWithProviders,
-  NgModule,
-  Optional,
-  inject,
+    APP_INITIALIZER,
+    ModuleWithProviders,
+    NgModule,
+    Optional,
+    inject,
 } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { LOCATION_INITIALIZED_MULTI } from '../../routing/location-initialized-multi/location-initialized-multi';
 import { Config } from '../config-tokens';
 import {
-  CONFIG_INITIALIZER,
-  CONFIG_INITIALIZER_FORROOT_GUARD,
-  ConfigInitializer,
+    CONFIG_INITIALIZER,
+    CONFIG_INITIALIZER_FORROOT_GUARD,
+    ConfigInitializer,
 } from './config-initializer';
 import { ConfigInitializerService } from './config-initializer.service';
 

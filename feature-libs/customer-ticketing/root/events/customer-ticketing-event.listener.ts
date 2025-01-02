@@ -1,32 +1,32 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, OnDestroy } from '@angular/core';
 import {
-  CurrencySetEvent,
-  EventService,
-  GlobalMessageService,
-  GlobalMessageType,
-  LanguageSetEvent,
-  LoginEvent,
-  LogoutEvent,
+    CurrencySetEvent,
+    EventService,
+    GlobalMessageService,
+    GlobalMessageType,
+    LanguageSetEvent,
+    LoginEvent,
+    LogoutEvent,
 } from '@spartacus/core';
 import { merge, Subscription } from 'rxjs';
 import {
-  GetTicketAssociatedObjectsQueryResetEvent,
-  GetTicketCategoryQueryResetEvent,
-  GetTicketQueryReloadEvent,
-  GetTicketQueryResetEvent,
-  GetTicketsQueryReloadEvents,
-  GetTicketsQueryResetEvents,
-  NewMessageEvent,
-  TicketClosedEvent,
-  TicketCreatedEvent,
-  TicketReopenedEvent,
-  UploadAttachmentSuccessEvent,
+    GetTicketAssociatedObjectsQueryResetEvent,
+    GetTicketCategoryQueryResetEvent,
+    GetTicketQueryReloadEvent,
+    GetTicketQueryResetEvent,
+    GetTicketsQueryReloadEvents,
+    GetTicketsQueryResetEvents,
+    NewMessageEvent,
+    TicketClosedEvent,
+    TicketCreatedEvent,
+    TicketReopenedEvent,
+    UploadAttachmentSuccessEvent,
 } from './customer-ticketing.events';
 @Injectable({
   providedIn: 'root',

@@ -1,51 +1,51 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  ActiveCartFacade,
-  CartAddEntrySuccessEvent,
-  CartPageEvent,
-  CartRemoveEntrySuccessEvent,
-  CartUpdateEntrySuccessEvent,
-  MergeCartSuccessEvent,
+    ActiveCartFacade,
+    CartAddEntrySuccessEvent,
+    CartPageEvent,
+    CartRemoveEntrySuccessEvent,
+    CartUpdateEntrySuccessEvent,
+    MergeCartSuccessEvent,
 } from '@spartacus/cart/base/root';
 import { Category, EventService } from '@spartacus/core';
 import { OrderPlacedEvent } from '@spartacus/order/root';
 import {
-  CategoryPageResultsEvent,
-  HomePageEvent,
-  PageEvent,
-  ProductDetailsPageEvent,
-  SearchPageResultsEvent,
+    CategoryPageResultsEvent,
+    HomePageEvent,
+    PageEvent,
+    ProductDetailsPageEvent,
+    SearchPageResultsEvent,
 } from '@spartacus/storefront';
 import { PersonalizationContextService } from '@spartacus/tracking/personalization/core';
 import { merge, Observable, of } from 'rxjs';
 import {
-  distinctUntilChanged,
-  distinctUntilKeyChanged,
-  map,
-  pairwise,
-  startWith,
-  switchMap,
-  withLatestFrom,
+    distinctUntilChanged,
+    distinctUntilKeyChanged,
+    map,
+    pairwise,
+    startWith,
+    switchMap,
+    withLatestFrom,
 } from 'rxjs/operators';
 import {
-  AddedToCartPushEvent,
-  CartSnapshotPushEvent,
-  CartViewPushEvent,
-  CategoryViewPushEvent,
-  HomePageViewPushEvent,
-  KeywordSearchPushEvent,
-  ModifiedCartPushEvent,
-  NavigatedPushEvent,
-  OrderConfirmationPushEvent,
-  ProductViewPushEvent,
-  ProfileTagPushEvent,
-  RemovedFromCartPushEvent,
+    AddedToCartPushEvent,
+    CartSnapshotPushEvent,
+    CartViewPushEvent,
+    CategoryViewPushEvent,
+    HomePageViewPushEvent,
+    KeywordSearchPushEvent,
+    ModifiedCartPushEvent,
+    NavigatedPushEvent,
+    OrderConfirmationPushEvent,
+    ProductViewPushEvent,
+    ProfileTagPushEvent,
+    RemovedFromCartPushEvent,
 } from '../model/profile-tag.model';
 
 /**

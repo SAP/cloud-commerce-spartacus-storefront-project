@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Translatable } from '../../../i18n/translatable';
 import {
-  GlobalMessage,
-  GlobalMessageType,
+    GlobalMessage,
+    GlobalMessageType,
 } from '../../models/global-message.model';
 import { GlobalMessageActions } from '../actions/index';
 import { GlobalMessageState } from '../global-message-state';

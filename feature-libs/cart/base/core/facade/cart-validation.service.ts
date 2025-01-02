@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  ActiveCartFacade,
-  CartModification,
-  CartModificationList,
-  CartValidationFacade,
+    ActiveCartFacade,
+    CartModification,
+    CartModificationList,
+    CartValidationFacade,
 } from '@spartacus/cart/base/root';
 import {
-  Command,
-  CommandService,
-  CommandStrategy,
-  UserIdService,
+    Command,
+    CommandService,
+    CommandStrategy,
+    UserIdService,
 } from '@spartacus/core';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, switchMap, take } from 'rxjs/operators';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,15 +9,15 @@ import { CartModificationList } from '@spartacus/cart/base/root';
 import { Converter } from '@spartacus/core';
 import { ConsignmentTracking } from '../model/consignment-tracking.model';
 import {
-  Order,
-  OrderHistoryList,
-  ReturnRequest,
-  ReturnRequestEntryInputList,
-  ReturnRequestList,
+    Order,
+    OrderHistoryList,
+    ReturnRequest,
+    ReturnRequestEntryInputList,
+    ReturnRequestList,
 } from '../model/order.model';
 import {
-  ReplenishmentOrder,
-  ReplenishmentOrderList,
+    ReplenishmentOrder,
+    ReplenishmentOrderList,
 } from '../model/replenishment-order.model';
 import { ScheduleReplenishmentForm } from '../model/scheduled-replenishment.model';
 

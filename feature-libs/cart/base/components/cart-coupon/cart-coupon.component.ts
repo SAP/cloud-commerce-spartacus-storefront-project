@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Component, OnDestroy, OnInit, Optional, inject } from '@angular/core';
 import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
+    UntypedFormBuilder,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import {
-  ActiveCartFacade,
-  Cart,
-  CartVoucherFacade,
+    ActiveCartFacade,
+    Cart,
+    CartVoucherFacade,
 } from '@spartacus/cart/base/root';
 import {
-  CustomerCoupon,
-  CustomerCouponSearchResult,
-  CustomerCouponService,
-  FeatureConfigService,
+    CustomerCoupon,
+    CustomerCouponSearchResult,
+    CustomerCouponService,
+    FeatureConfigService,
 } from '@spartacus/core';
 import { Observable, Subscription, combineLatest } from 'rxjs';
 import { map, tap } from 'rxjs/operators';

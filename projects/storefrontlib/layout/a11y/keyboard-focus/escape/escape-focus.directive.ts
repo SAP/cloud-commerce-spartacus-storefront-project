@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Directive,
-  ElementRef,
-  EventEmitter,
-  HostListener,
-  OnInit,
-  Output,
+    Directive,
+    ElementRef,
+    EventEmitter,
+    HostListener,
+    OnInit,
+    Output,
 } from '@angular/core';
 import { EscapeFocusConfig } from '../keyboard-focus.model';
 import { PersistFocusDirective } from '../persist/persist-focus.directive';

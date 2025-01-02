@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  HttpEvent,
-  HttpHandler,
-  HttpInterceptor,
-  HttpRequest,
+    HttpEvent,
+    HttpHandler,
+    HttpInterceptor,
+    HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -17,8 +17,8 @@ import { SiteContextConfig } from '../../../site-context/config/site-context-con
 import { CurrencyService } from '../../../site-context/facade/currency.service';
 import { LanguageService } from '../../../site-context/facade/language.service';
 import {
-  CURRENCY_CONTEXT_ID,
-  LANGUAGE_CONTEXT_ID,
+    CURRENCY_CONTEXT_ID,
+    LANGUAGE_CONTEXT_ID,
 } from '../../../site-context/providers/context-ids';
 import { OccEndpointsService } from '../../services/occ-endpoints.service';
 

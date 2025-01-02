@@ -1,17 +1,17 @@
 /*
  * SPDX-FileCopyrightText: 2022 SAP Spartacus team <spartacus-team@sap.com>
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  PDF_INVOICES_FEATURE_NAME,
-  SPARTACUS_PDF_INVOICES,
-  SPARTACUS_PDF_INVOICES_ASSETS,
-  SPARTACUS_PDF_INVOICES_ROOT,
-  SPARTACUS_REQUESTED_DELIVERY_DATE,
-  USER_PROFILE_FEATURE_NAME,
+    PDF_INVOICES_FEATURE_NAME,
+    SPARTACUS_PDF_INVOICES,
+    SPARTACUS_PDF_INVOICES_ASSETS,
+    SPARTACUS_PDF_INVOICES_ROOT,
+    SPARTACUS_REQUESTED_DELIVERY_DATE,
+    USER_PROFILE_FEATURE_NAME,
 } from '../libs-constants';
 import { SchematicConfig } from '../utils/lib-utils';
 

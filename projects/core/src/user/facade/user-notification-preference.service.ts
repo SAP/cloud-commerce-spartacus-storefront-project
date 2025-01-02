@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -14,8 +14,8 @@ import { getProcessLoadingFactory } from '../../process/store/selectors/process.
 import { UserActions } from '../store/actions/index';
 import { UsersSelectors } from '../store/selectors/index';
 import {
-  StateWithUser,
-  UPDATE_NOTIFICATION_PREFERENCES_PROCESS_ID,
+    StateWithUser,
+    UPDATE_NOTIFICATION_PREFERENCES_PROCESS_ID,
 } from '../store/user-state';
 
 @Injectable({

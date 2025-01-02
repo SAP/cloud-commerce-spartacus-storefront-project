@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,13 +10,13 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store, select } from '@ngrx/store';
 import { EMPTY, Observable, of } from 'rxjs';
 import {
-  concatMap,
-  delay,
-  filter,
-  map,
-  switchMap,
-  take,
-  withLatestFrom,
+    concatMap,
+    delay,
+    filter,
+    map,
+    switchMap,
+    take,
+    withLatestFrom,
 } from 'rxjs/operators';
 import { Translatable } from '../../../i18n/translatable';
 import { ObjectComparisonUtils } from '../../../util/object-comparison-utils';

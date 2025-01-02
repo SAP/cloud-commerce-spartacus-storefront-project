@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,12 +7,12 @@
 import { InjectionToken } from '@angular/core';
 import { Converter } from '@spartacus/core';
 import {
-  AssociatedObject,
-  Category,
-  TicketDetails,
-  TicketEvent,
-  TicketList,
-  TicketStarter,
+    AssociatedObject,
+    Category,
+    TicketDetails,
+    TicketEvent,
+    TicketList,
+    TicketStarter,
 } from '@spartacus/customer-ticketing/root';
 
 export const CUSTOMER_TICKETING_DETAILS_NORMALIZER = new InjectionToken<

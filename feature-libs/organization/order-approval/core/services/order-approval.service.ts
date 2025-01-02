@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,23 +7,23 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import {
-  EntitiesModel,
-  ProcessSelectors,
-  SearchConfig,
-  StateUtils,
-  StateWithProcess,
-  UserIdService,
+    EntitiesModel,
+    ProcessSelectors,
+    SearchConfig,
+    StateUtils,
+    StateWithProcess,
+    UserIdService,
 } from '@spartacus/core';
 import { Observable, queueScheduler } from 'rxjs';
 import { filter, map, observeOn, tap } from 'rxjs/operators';
 import {
-  OrderApproval,
-  OrderApprovalDecision,
+    OrderApproval,
+    OrderApprovalDecision,
 } from '../model/order-approval.model';
 import { OrderApprovalActions } from '../store/actions/index';
 import {
-  ORDER_APPROVAL_MAKE_DECISION_PROCESS_ID,
-  OrderApprovalState,
+    ORDER_APPROVAL_MAKE_DECISION_PROCESS_ID,
+    OrderApprovalState,
 } from '../store/order-approval-state';
 import { OrderApprovalSelectors } from '../store/selectors';
 

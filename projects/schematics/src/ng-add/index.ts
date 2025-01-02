@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  chain,
-  noop,
-  Rule,
-  schematic,
-  SchematicContext,
-  Tree,
+    chain,
+    noop,
+    Rule,
+    schematic,
+    SchematicContext,
+    Tree,
 } from '@angular-devkit/schematics';
 import { Schema as SpartacusOptions } from '../add-spartacus/schema';
 

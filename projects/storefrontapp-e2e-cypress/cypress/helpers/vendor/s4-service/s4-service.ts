@@ -1,28 +1,28 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { tabbingOrderConfig as config } from '../../../helpers/accessibility/b2b/tabbing-order.config';
 import {
-  POWERTOOLS_BASESITE,
-  b2bDeliveryAddress,
+    POWERTOOLS_BASESITE,
+    b2bDeliveryAddress,
 } from '../../../sample-data/b2b-checkout';
 import { SampleProduct } from '../../../sample-data/checkout-flow';
+import { ORDER_CODE } from '../../../sample-data/service-order';
 import { verifyTabbingOrder } from '../../accessibility/tabbing-order';
 import {
-  interceptCheckoutB2BDetailsEndpoint,
-  interceptCostCenterEndpoint,
-  interceptPaymentTypesEndpoint,
-  interceptPutDeliveryModeEndpoint,
+    interceptCheckoutB2BDetailsEndpoint,
+    interceptCostCenterEndpoint,
+    interceptPaymentTypesEndpoint,
+    interceptPutDeliveryModeEndpoint,
 } from '../../b2b/b2b-checkout';
 import {
-  waitForProductPage,
-  addCheapProductToCart,
-  waitForPage,
+    addCheapProductToCart,
+    waitForPage,
+    waitForProductPage,
 } from '../../checkout-flow';
-import { tabbingOrderConfig as config } from '../../../helpers/accessibility/b2b/tabbing-order.config';
-import { ORDER_CODE } from '../../../sample-data/service-order';
 
 export const serviceUser = {
   email: 'james.weber@harvestlive.inc',

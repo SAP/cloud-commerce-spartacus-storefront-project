@@ -1,40 +1,40 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    inject,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import {
-  ErrorModel,
-  FeatureConfigService,
-  GlobalMessageService,
-  GlobalMessageType,
-  HttpErrorModel,
-  LanguageService,
-  PaginationModel,
-  SortModel,
-  TranslationService,
+    ErrorModel,
+    FeatureConfigService,
+    GlobalMessageService,
+    GlobalMessageType,
+    HttpErrorModel,
+    LanguageService,
+    PaginationModel,
+    SortModel,
+    TranslationService,
 } from '@spartacus/core';
 import {
-  InvoiceQueryParams,
-  InvoicesFields,
-  OrderInvoiceList,
-  PDFInvoicesFacade,
+    InvoiceQueryParams,
+    InvoicesFields,
+    OrderInvoiceList,
+    PDFInvoicesFacade,
 } from '@spartacus/pdf-invoices/root';
 import { FileDownloadService, ICON_TYPE } from '@spartacus/storefront';
 import {
-  BehaviorSubject,
-  combineLatest,
-  EMPTY,
-  Observable,
-  Subscription,
+    BehaviorSubject,
+    combineLatest,
+    EMPTY,
+    Observable,
+    Subscription,
 } from 'rxjs';
 import { catchError, skip, switchMap, take, tap } from 'rxjs/operators';
 

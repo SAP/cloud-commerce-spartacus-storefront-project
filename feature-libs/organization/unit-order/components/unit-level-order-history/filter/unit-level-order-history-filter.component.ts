@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Output,
-  Renderer2,
-  ViewChild,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Output,
+    Renderer2,
+    ViewChild,
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { OrderHistoryQueryParams } from '@spartacus/organization/unit-order/core';

@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  BREAKPOINT_SERVICE,
-  COMMON_CONFIGURATOR_UTILS_SERVICE,
-  CONFIGURATOR_CART_ENTRY_BUNDLE_INFO_COMPONENT,
-  CONFIGURATOR_CART_ENTRY_BUNDLE_INFO_SERVICE,
-  TRANSLATION_SERVICE,
+    BREAKPOINT_SERVICE,
+    COMMON_CONFIGURATOR_UTILS_SERVICE,
+    CONFIGURATOR_CART_ENTRY_BUNDLE_INFO_COMPONENT,
+    CONFIGURATOR_CART_ENTRY_BUNDLE_INFO_SERVICE,
+    TRANSLATION_SERVICE,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_PRODUCT_CONFIGURATOR_COMMON,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_PRODUCT_CONFIGURATOR_COMMON,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,26 +8,26 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActiveCartFacade, DeliveryMode } from '@spartacus/cart/base/root';
 import { B2BCheckoutReviewSubmitComponent } from '@spartacus/checkout/b2b/components';
 import {
-  CheckoutCostCenterFacade,
-  CheckoutPaymentTypeFacade,
+    CheckoutCostCenterFacade,
+    CheckoutPaymentTypeFacade,
 } from '@spartacus/checkout/b2b/root';
 import { CheckoutStepService } from '@spartacus/checkout/base/components';
 import {
-  CheckoutDeliveryAddressFacade,
-  CheckoutDeliveryModesFacade,
-  CheckoutPaymentFacade,
-  CheckoutStepType,
+    CheckoutDeliveryAddressFacade,
+    CheckoutDeliveryModesFacade,
+    CheckoutPaymentFacade,
+    CheckoutStepType,
 } from '@spartacus/checkout/base/root';
 import { TranslationService, UserCostCenterService } from '@spartacus/core';
+import {
+    CheckoutServiceDetailsFacade,
+    CheckoutServiceSchedulePickerService,
+    S4ServiceDeliveryModeConfig,
+    ServiceDateTime,
+} from '@spartacus/s4-service/root';
 import { Card } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import {
-  CheckoutServiceDetailsFacade,
-  CheckoutServiceSchedulePickerService,
-  ServiceDateTime,
-  S4ServiceDeliveryModeConfig,
-} from '@spartacus/s4-service/root';
 
 @Component({
   selector: 'cx-review-submit',

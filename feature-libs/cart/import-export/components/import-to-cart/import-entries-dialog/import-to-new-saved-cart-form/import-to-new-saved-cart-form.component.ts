@@ -1,32 +1,32 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Output,
+    ChangeDetectionStrategy,
+    Component,
+    EventEmitter,
+    Output,
 } from '@angular/core';
 import {
-  AbstractControl,
-  UntypedFormControl,
-  UntypedFormGroup,
-  Validators,
+    AbstractControl,
+    UntypedFormControl,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import { ProductData } from '@spartacus/cart/base/root';
 import {
-  CartNameGeneration,
-  CartNameSource,
-  ImportExportConfig,
+    CartNameGeneration,
+    CartNameSource,
+    ImportExportConfig,
 } from '@spartacus/cart/import-export/core';
 import { CxDatePipe } from '@spartacus/core';
 import {
-  FilesFormValidators,
-  ImportCsvFileService,
-  LaunchDialogService,
+    FilesFormValidators,
+    ImportCsvFileService,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { of } from 'rxjs';
 import { ImportProductsFromCsvService } from '../../import-products-from-csv.service';

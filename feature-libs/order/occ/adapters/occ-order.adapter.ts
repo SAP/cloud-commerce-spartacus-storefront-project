@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,18 +7,18 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  ConverterService,
-  DEFAULT_SERVER_ERROR_RETRIES_COUNT,
-  InterceptorUtil,
-  LoggerService,
-  OCC_USER_ID_ANONYMOUS,
-  Occ,
-  OccEndpointsService,
-  USE_CLIENT_TOKEN,
-  backOff,
-  isJaloError,
-  isServerError,
-  normalizeHttpError,
+    ConverterService,
+    DEFAULT_SERVER_ERROR_RETRIES_COUNT,
+    InterceptorUtil,
+    LoggerService,
+    OCC_USER_ID_ANONYMOUS,
+    Occ,
+    OccEndpointsService,
+    USE_CLIENT_TOKEN,
+    backOff,
+    isJaloError,
+    isServerError,
+    normalizeHttpError,
 } from '@spartacus/core';
 import { OrderAdapter } from '@spartacus/order/core';
 import { ORDER_NORMALIZER, Order } from '@spartacus/order/root';

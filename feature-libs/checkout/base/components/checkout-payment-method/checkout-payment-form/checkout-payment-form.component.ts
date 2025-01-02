@@ -1,47 +1,47 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    EventEmitter,
+    Input,
+    OnInit,
+    Output,
+    inject,
 } from '@angular/core';
 import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
+    UntypedFormBuilder,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import {
-  CheckoutDeliveryAddressFacade,
-  CheckoutPaymentFacade,
+    CheckoutDeliveryAddressFacade,
+    CheckoutPaymentFacade,
 } from '@spartacus/checkout/base/root';
 import {
-  Address,
-  AddressValidation,
-  CardType,
-  Country,
-  FeatureConfigService,
-  GlobalMessageService,
-  GlobalMessageType,
-  PaymentDetails,
-  Region,
-  TranslationService,
-  UserAddressService,
-  UserPaymentService,
+    Address,
+    AddressValidation,
+    CardType,
+    Country,
+    FeatureConfigService,
+    GlobalMessageService,
+    GlobalMessageType,
+    PaymentDetails,
+    Region,
+    TranslationService,
+    UserAddressService,
+    UserPaymentService,
 } from '@spartacus/core';
 import {
-  Card,
-  ICON_TYPE,
-  LAUNCH_CALLER,
-  LaunchDialogService,
-  getAddressNumbers,
+    Card,
+    ICON_TYPE,
+    LAUNCH_CALLER,
+    LaunchDialogService,
+    getAddressNumbers,
 } from '@spartacus/storefront';
 import { BehaviorSubject, EMPTY, Observable, combineLatest } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';

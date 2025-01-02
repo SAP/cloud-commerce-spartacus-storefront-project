@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import {
-  AsmCustomer360Facade,
-  AsmCustomer360PromotionList,
-  AsmCustomer360Type,
-  AsmCustomer360Promotion,
+    AsmCustomer360Facade,
+    AsmCustomer360Promotion,
+    AsmCustomer360PromotionList,
+    AsmCustomer360Type,
 } from '@spartacus/asm/customer-360/root';
+import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import { BehaviorSubject, Subscription, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
-import { ActiveCartFacade } from '@spartacus/cart/base/root';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

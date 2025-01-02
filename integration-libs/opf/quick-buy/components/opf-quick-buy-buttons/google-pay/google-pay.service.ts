@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,21 +10,21 @@ import { Cart, DeliveryMode } from '@spartacus/cart/base/root';
 import { Address } from '@spartacus/core';
 
 import {
-  OpfActiveConfiguration,
-  OpfResourceLoaderService,
+    OpfActiveConfiguration,
+    OpfResourceLoaderService,
 } from '@spartacus/opf/base/root';
 import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
 import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
-  OPF_GOOGLE_PAY_PROVIDER_NAME,
-  OPF_QUICK_BUY_ADDRESS_FIELD_PLACEHOLDER,
-  OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
-  OpfQuickBuyConfig,
-  OpfQuickBuyDeliveryType,
-  OpfQuickBuyGooglePayProvider,
-  OpfQuickBuyLocation,
-  OpfQuickBuyProviderType,
-  QuickBuyTransactionDetails,
+    OPF_GOOGLE_PAY_PROVIDER_NAME,
+    OPF_QUICK_BUY_ADDRESS_FIELD_PLACEHOLDER,
+    OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
+    OpfQuickBuyConfig,
+    OpfQuickBuyDeliveryType,
+    OpfQuickBuyGooglePayProvider,
+    OpfQuickBuyLocation,
+    OpfQuickBuyProviderType,
+    QuickBuyTransactionDetails,
 } from '@spartacus/opf/quick-buy/root';
 import { CurrentProductService } from '@spartacus/storefront';
 import { Observable, forkJoin, lastValueFrom, of } from 'rxjs';

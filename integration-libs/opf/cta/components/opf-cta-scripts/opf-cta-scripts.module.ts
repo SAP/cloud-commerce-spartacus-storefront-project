@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,8 +9,8 @@ import { NgModule } from '@angular/core';
 import { CmsConfig, provideDefaultConfig } from '@spartacus/core';
 
 import {
-  OpfDynamicCtaService,
-  OpfStaticCtaService,
+    OpfDynamicCtaService,
+    OpfStaticCtaService,
 } from '@spartacus/opf/cta/core';
 import { OpfCtaElementModule } from '../opf-cta-element';
 import { OpfCtaScriptsComponent } from './opf-cta-scripts.component';

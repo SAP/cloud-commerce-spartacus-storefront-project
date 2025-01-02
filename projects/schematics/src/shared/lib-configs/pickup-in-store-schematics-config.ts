@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CART_BASE_FEATURE_NAME,
-  ORDER_FEATURE_NAME,
-  PICKUP_IN_STORE_FEATURE_NAME,
-  SPARTACUS_PICKUP_IN_STORE,
-  SPARTACUS_PICKUP_IN_STORE_ASSETS,
-  SPARTACUS_PICKUP_IN_STORE_ROOT,
-  STOREFINDER_FEATURE_NAME,
-  USER_PROFILE_FEATURE_NAME,
+    CART_BASE_FEATURE_NAME,
+    ORDER_FEATURE_NAME,
+    PICKUP_IN_STORE_FEATURE_NAME,
+    SPARTACUS_PICKUP_IN_STORE,
+    SPARTACUS_PICKUP_IN_STORE_ASSETS,
+    SPARTACUS_PICKUP_IN_STORE_ROOT,
+    STOREFINDER_FEATURE_NAME,
+    USER_PROFILE_FEATURE_NAME,
 } from '../libs-constants';
 import { SchematicConfig } from '../utils/lib-utils';
 

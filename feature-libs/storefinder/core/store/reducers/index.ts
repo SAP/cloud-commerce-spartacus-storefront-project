@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Action,
-  ActionReducer,
-  ActionReducerMap,
-  MetaReducer,
+    Action,
+    ActionReducer,
+    ActionReducerMap,
+    MetaReducer,
 } from '@ngrx/store';
 
 import { InjectionToken, Provider } from '@angular/core';
-import { StoresState, STORE_FINDER_DATA } from '../store-finder-state';
 import { SiteContextActions, StateUtils } from '@spartacus/core';
 import { StoreFinderActions } from '../actions';
+import { STORE_FINDER_DATA, StoresState } from '../store-finder-state';
 import { findStoresReducer } from './find-stores.reducer';
 import { viewAllStoresReducer } from './view-all-stores.reducer';
 

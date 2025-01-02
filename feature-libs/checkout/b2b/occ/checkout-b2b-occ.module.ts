@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
-  CheckoutCostCenterAdapter,
-  CheckoutPaymentTypeAdapter,
+    CheckoutCostCenterAdapter,
+    CheckoutPaymentTypeAdapter,
 } from '@spartacus/checkout/b2b/core';
 import { provideDefaultConfig } from '@spartacus/core';
 import { OccCheckoutCostCenterAdapter } from './adapters/occ-checkout-cost-center.adapter';

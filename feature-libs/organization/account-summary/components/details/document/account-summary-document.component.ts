@@ -1,28 +1,28 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import {
-  LanguageService,
-  SortModel,
-  TranslationService,
+    LanguageService,
+    SortModel,
+    TranslationService,
 } from '@spartacus/core';
 import {
-  AccountSummaryDocumentType,
-  AccountSummaryFacade,
-  AccountSummaryList,
-  DocumentFields,
-  DocumentQueryParams,
-  DocumentStatus,
-  FilterByOptions,
+    AccountSummaryDocumentType,
+    AccountSummaryFacade,
+    AccountSummaryList,
+    DocumentFields,
+    DocumentQueryParams,
+    DocumentStatus,
+    FilterByOptions,
 } from '@spartacus/organization/account-summary/root';
 import { FileDownloadService, ICON_TYPE } from '@spartacus/storefront';
 import { BehaviorSubject, combineLatest, Observable, Subscription } from 'rxjs';

@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  EpdVisualizationConfig,
-  EpdVisualizationInnerConfig,
-  UsageIdConfig,
+    EpdVisualizationConfig,
+    EpdVisualizationInnerConfig,
+    UsageIdConfig,
 } from '@spartacus/epd-visualization/root';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { first, map } from 'rxjs/operators';
 import {
-  Metadatum,
-  NodesResponse,
-  TreeNode,
+    Metadatum,
+    NodesResponse,
+    TreeNode,
 } from '../../connectors/scene/nodes-response';
 import { SceneConnector } from '../../connectors/scene/scene.connector';
 

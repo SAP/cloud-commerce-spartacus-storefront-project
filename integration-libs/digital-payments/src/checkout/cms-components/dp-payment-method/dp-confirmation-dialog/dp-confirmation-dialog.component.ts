@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
-  FocusConfig,
-  ICON_TYPE,
-  LaunchDialogService,
+    FocusConfig,
+    ICON_TYPE,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { DP_CARD_REGISTRATION_STATUS } from '../../../../utils/dp-constants';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'cx-dp-confirmation-dialog',

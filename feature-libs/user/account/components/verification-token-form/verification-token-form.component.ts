@@ -1,27 +1,27 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  HostBinding,
-  OnInit,
-  ViewChild,
-  inject,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    HostBinding,
+    OnInit,
+    ViewChild,
+    inject,
 } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
 import { LAUNCH_CALLER, LaunchDialogService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 
+import { RoutingService } from '@spartacus/core';
 import { VerificationToken } from '@spartacus/user/account/root';
 import { ONE_TIME_PASSWORD_LOGIN_PURPOSE } from '../user-account-constants';
 import { VerificationTokenFormComponentService } from './verification-token-form-component.service';
-import { RoutingService } from '@spartacus/core';
 
 @Component({
   selector: 'cx-verification-token-form',

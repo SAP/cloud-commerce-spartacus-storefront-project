@@ -1,42 +1,42 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { isPlatformBrowser } from '@angular/common';
 import {
-  Inject,
-  inject,
-  Injectable,
-  OnDestroy,
-  PLATFORM_ID,
+    Inject,
+    inject,
+    Injectable,
+    OnDestroy,
+    PLATFORM_ID,
 } from '@angular/core';
 import { BaseSiteService, LoggerService, WindowRef } from '@spartacus/core';
 import {
-  BehaviorSubject,
-  fromEvent,
-  merge,
-  Observable,
-  of,
-  Subscription,
+    BehaviorSubject,
+    fromEvent,
+    merge,
+    Observable,
+    of,
+    Subscription,
 } from 'rxjs';
 import {
-  distinctUntilChanged,
-  filter,
-  map,
-  shareReplay,
-  take,
-  tap,
+    distinctUntilChanged,
+    filter,
+    map,
+    shareReplay,
+    take,
+    tap,
 } from 'rxjs/operators';
 import { CdsConfig } from '../../config/index';
 import {
-  ConsentReferenceEvent,
-  DebugEvent,
-  InternalProfileTagEventNames,
-  ProfileTagJsConfig,
-  ProfileTagPushEvent,
-  ProfileTagWindowObject,
+    ConsentReferenceEvent,
+    DebugEvent,
+    InternalProfileTagEventNames,
+    ProfileTagJsConfig,
+    ProfileTagPushEvent,
+    ProfileTagWindowObject,
 } from '../model/profile-tag.model';
 
 @Injectable({

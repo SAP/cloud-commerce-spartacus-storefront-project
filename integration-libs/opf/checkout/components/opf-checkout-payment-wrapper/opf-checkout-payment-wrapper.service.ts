@@ -1,44 +1,44 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, inject } from '@angular/core';
 import {
-  ActiveCartFacade,
-  CartAccessCodeFacade,
+    ActiveCartFacade,
+    CartAccessCodeFacade,
 } from '@spartacus/cart/base/root';
 import {
-  DEFAULT_AUTHORIZATION_ERROR_RETRIES_COUNT,
-  GlobalMessageService,
-  GlobalMessageType,
-  HttpErrorModel,
-  HttpResponseStatus,
-  RoutingService,
-  UserIdService,
-  backOff,
-  isAuthorizationError,
+    DEFAULT_AUTHORIZATION_ERROR_RETRIES_COUNT,
+    GlobalMessageService,
+    GlobalMessageType,
+    HttpErrorModel,
+    HttpResponseStatus,
+    RoutingService,
+    UserIdService,
+    backOff,
+    isAuthorizationError,
 } from '@spartacus/core';
 
 import {
-  OpfMetadataStoreService,
-  OpfResourceLoaderService,
+    OpfMetadataStoreService,
+    OpfResourceLoaderService,
 } from '@spartacus/opf/base/root';
 import { OPF_PAYMENT_AND_REVIEW_SEMANTIC_ROUTE } from '@spartacus/opf/checkout/root';
 import {
-  OpfPaymentFacade,
-  OpfPaymentRenderMethodEvent,
-  OpfPaymentRenderPattern,
-  OpfPaymentSessionData,
+    OpfPaymentFacade,
+    OpfPaymentRenderMethodEvent,
+    OpfPaymentRenderPattern,
+    OpfPaymentSessionData,
 } from '@spartacus/opf/payment/root';
 import { OrderFacade } from '@spartacus/order/root';
 import {
-  BehaviorSubject,
-  Observable,
-  combineLatest,
-  of,
-  throwError,
+    BehaviorSubject,
+    Observable,
+    combineLatest,
+    of,
+    throwError,
 } from 'rxjs';
 import { catchError, filter, map, switchMap, take, tap } from 'rxjs/operators';
 

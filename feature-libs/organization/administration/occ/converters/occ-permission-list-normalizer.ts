@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  Converter,
-  ConverterService,
-  EntitiesModel,
-  Occ,
+    Converter,
+    ConverterService,
+    EntitiesModel,
+    Occ,
 } from '@spartacus/core';
 import {
-  Permission,
-  PERMISSION_NORMALIZER,
+    Permission,
+    PERMISSION_NORMALIZER,
 } from '@spartacus/organization/administration/core';
 
 @Injectable({

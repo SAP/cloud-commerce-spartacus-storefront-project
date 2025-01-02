@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, inject } from '@angular/core';
 import {
-  AbstractOrderType,
-  ActiveCartFacade,
-  Cart,
-  MultiCartFacade,
-  OrderEntry,
+    AbstractOrderType,
+    ActiveCartFacade,
+    Cart,
+    MultiCartFacade,
+    OrderEntry,
 } from '@spartacus/cart/base/root';
 import { UserIdService } from '@spartacus/core';
 import { Quote, QuoteFacade } from '@spartacus/quote/root';

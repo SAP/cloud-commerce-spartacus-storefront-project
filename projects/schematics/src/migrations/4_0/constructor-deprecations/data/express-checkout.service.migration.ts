@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CHECKOUT_CONFIG_SERVICE,
-  CHECKOUT_DELIVERY_FACADE,
-  CHECKOUT_DETAILS_SERVICE,
-  CHECKOUT_PAYMENT_FACADE,
-  CLEAR_CHECKOUT_FACADE,
-  EXPRESS_CHECKOUT_SERVICE,
-  USER_ADDRESS_SERVICE,
-  USER_PAYMENT_SERVICE,
+    CHECKOUT_CONFIG_SERVICE,
+    CHECKOUT_DELIVERY_FACADE,
+    CHECKOUT_DETAILS_SERVICE,
+    CHECKOUT_PAYMENT_FACADE,
+    CLEAR_CHECKOUT_FACADE,
+    EXPRESS_CHECKOUT_SERVICE,
+    USER_ADDRESS_SERVICE,
+    USER_PAYMENT_SERVICE,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CHECKOUT_OLD_COMPONENTS,
-  SPARTACUS_CHECKOUT_OLD_ROOT,
-  SPARTACUS_CORE,
+    SPARTACUS_CHECKOUT_OLD_COMPONENTS,
+    SPARTACUS_CHECKOUT_OLD_ROOT,
+    SPARTACUS_CORE,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

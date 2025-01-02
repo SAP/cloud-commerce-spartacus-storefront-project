@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 import { Product, ProductService, RoutingService } from '@spartacus/core';
 import { CommonConfigurator } from '@spartacus/product-configurator/common';
 import {
-  FocusConfig,
-  ICON_TYPE,
-  LaunchDialogService,
+    FocusConfig,
+    ICON_TYPE,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, switchMap } from 'rxjs/operators';

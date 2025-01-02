@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
 import { AnonymousConsentsService, ConsentTemplate } from '@spartacus/core';
 import {
-  FocusConfig,
-  ICON_TYPE,
-  LaunchDialogService,
+    FocusConfig,
+    ICON_TYPE,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { Observable, of, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';

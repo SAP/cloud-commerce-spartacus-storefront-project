@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  CustomerCoupon,
-  RoutingService,
-  TranslationService,
+    CustomerCoupon,
+    RoutingService,
+    TranslationService,
 } from '@spartacus/core';
-import { map } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',

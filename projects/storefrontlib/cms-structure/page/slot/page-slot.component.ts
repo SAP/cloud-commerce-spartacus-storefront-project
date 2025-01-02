@@ -1,34 +1,34 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  HostBinding,
-  Input,
-  OnDestroy,
-  OnInit,
-  Renderer2,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    HostBinding,
+    Input,
+    OnDestroy,
+    OnInit,
+    Renderer2,
 } from '@angular/core';
 import {
-  CmsService,
-  ContentSlotComponentData,
-  ContentSlotData,
-  DynamicAttributeService,
-  isNotUndefined,
+    CmsService,
+    ContentSlotComponentData,
+    ContentSlotData,
+    DynamicAttributeService,
+    isNotUndefined,
 } from '@spartacus/core';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import {
-  distinctUntilChanged,
-  filter,
-  map,
-  switchMap,
-  tap,
+    distinctUntilChanged,
+    filter,
+    map,
+    switchMap,
+    tap,
 } from 'rxjs/operators';
 import { IntersectionOptions } from '../../../layout/loading/intersection.model';
 import { PageSlotService } from './page-slot.service';

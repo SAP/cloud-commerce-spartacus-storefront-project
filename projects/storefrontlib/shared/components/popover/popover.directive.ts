@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectorRef,
-  ComponentFactoryResolver,
-  ComponentRef,
-  Directive,
-  ElementRef,
-  EventEmitter,
-  HostListener,
-  Input,
-  OnInit,
-  Optional,
-  Output,
-  Renderer2,
-  TemplateRef,
-  ViewContainerRef,
-  inject,
+    ChangeDetectorRef,
+    ComponentFactoryResolver,
+    ComponentRef,
+    Directive,
+    ElementRef,
+    EventEmitter,
+    HostListener,
+    Input,
+    OnInit,
+    Optional,
+    Output,
+    Renderer2,
+    TemplateRef,
+    ViewContainerRef,
+    inject,
 } from '@angular/core';
 import { FeatureConfigService, WindowRef } from '@spartacus/core';
 import { Subject } from 'rxjs';

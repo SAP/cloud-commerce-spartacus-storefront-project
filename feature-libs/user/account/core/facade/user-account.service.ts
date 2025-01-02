@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  LoginEvent,
-  LogoutEvent,
-  Query,
-  QueryService,
-  UserIdService,
+    LoginEvent,
+    LogoutEvent,
+    Query,
+    QueryService,
+    UserIdService,
 } from '@spartacus/core';
 import {
-  User,
-  UserAccountChangedEvent,
-  UserAccountFacade,
+    User,
+    UserAccountChangedEvent,
+    UserAccountFacade,
 } from '@spartacus/user/account/root';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,10 +11,10 @@ import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FeaturesConfigModule, I18nModule } from '@spartacus/core';
 import {
-  FormErrorsModule,
-  IconModule,
-  KeyboardFocusModule,
-  NgSelectA11yModule,
+    FormErrorsModule,
+    IconModule,
+    KeyboardFocusModule,
+    NgSelectA11yModule,
 } from '@spartacus/storefront';
 import { AddressFormComponent } from './address-form.component';
 import { SuggestedAddressDialogComponent } from './suggested-addresses-dialog/suggested-addresses-dialog.component';

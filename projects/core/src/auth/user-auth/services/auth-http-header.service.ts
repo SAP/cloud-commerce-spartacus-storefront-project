@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,26 +7,26 @@
 import { HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
 import {
-  EMPTY,
-  Observable,
-  Subject,
-  Subscription,
-  combineLatest,
-  defer,
-  queueScheduler,
-  using,
+    EMPTY,
+    Observable,
+    Subject,
+    Subscription,
+    combineLatest,
+    defer,
+    queueScheduler,
+    using,
 } from 'rxjs';
 import {
-  filter,
-  map,
-  observeOn,
-  pairwise,
-  shareReplay,
-  skipWhile,
-  switchMap,
-  take,
-  tap,
-  withLatestFrom,
+    filter,
+    map,
+    observeOn,
+    pairwise,
+    shareReplay,
+    skipWhile,
+    switchMap,
+    take,
+    tap,
+    withLatestFrom,
 } from 'rxjs/operators';
 import { GlobalMessageService } from '../../../global-message/facade/global-message.service';
 import { GlobalMessageType } from '../../../global-message/models/global-message.model';

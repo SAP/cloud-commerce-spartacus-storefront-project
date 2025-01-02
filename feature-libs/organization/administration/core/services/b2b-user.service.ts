@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,13 +7,13 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
-  B2BUser,
-  B2BUserRight,
-  B2BUserRole,
-  EntitiesModel,
-  SearchConfig,
-  StateUtils,
-  UserIdService,
+    B2BUser,
+    B2BUserRight,
+    B2BUserRole,
+    EntitiesModel,
+    SearchConfig,
+    StateUtils,
+    UserIdService,
 } from '@spartacus/core';
 import { Observable, queueScheduler, using } from 'rxjs';
 import { auditTime, filter, map, observeOn, tap } from 'rxjs/operators';
@@ -23,12 +23,12 @@ import { UserGroup } from '../model/user-group.model';
 import { B2BUserActions } from '../store/actions/index';
 import { StateWithOrganization } from '../store/organization-state';
 import {
-  getB2BUserApprovers,
-  getB2BUserPermissions,
-  getB2BUserState,
-  getB2BUserUserGroups,
-  getB2BUserValue,
-  getUserList,
+    getB2BUserApprovers,
+    getB2BUserPermissions,
+    getB2BUserState,
+    getB2BUserUserGroups,
+    getB2BUserValue,
+    getUserList,
 } from '../store/selectors/b2b-user.selector';
 import { getItemStatus } from '../utils/get-item-status';
 

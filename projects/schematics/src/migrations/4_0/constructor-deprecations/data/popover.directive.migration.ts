@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ANGULAR_CORE,
-  CHANGE_DETECTOR_REF,
-  COMPONENT_FACTORY_RESOLVER,
-  ELEMENT_REF,
-  POPOVER_DIRECTIVE,
-  POPOVER_SERVICE,
-  POSITIONING_SERVICE,
-  RENDERER_2,
-  VIEW_CONTAINER_REF,
-  WINDOW_REF,
+    ANGULAR_CORE,
+    CHANGE_DETECTOR_REF,
+    COMPONENT_FACTORY_RESOLVER,
+    ELEMENT_REF,
+    POPOVER_DIRECTIVE,
+    POPOVER_SERVICE,
+    POSITIONING_SERVICE,
+    RENDERER_2,
+    VIEW_CONTAINER_REF,
+    WINDOW_REF,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

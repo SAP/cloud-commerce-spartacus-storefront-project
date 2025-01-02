@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  BindCartParams,
-  CustomerListsPage,
-  CustomerRegistrationForm,
-  CustomerSearchOptions,
-  CustomerSearchPage,
+    BindCartParams,
+    CustomerListsPage,
+    CustomerRegistrationForm,
+    CustomerSearchOptions,
+    CustomerSearchPage,
 } from '@spartacus/asm/root';
 import { User } from '@spartacus/core';
 import { Observable } from 'rxjs';

@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ErrorAction } from '../../../error-handling';
 import {
-  AnonymousConsent,
-  ConsentTemplate,
+    AnonymousConsent,
+    ConsentTemplate,
 } from '../../../model/consent.model';
 import { StateUtils } from '../../../state/utils/index';
 import { ANONYMOUS_CONSENTS } from '../anonymous-consents-state';

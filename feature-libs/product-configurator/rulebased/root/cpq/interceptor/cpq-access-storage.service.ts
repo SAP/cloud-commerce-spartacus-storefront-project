@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,11 +8,11 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { AuthService } from '@spartacus/core';
 import { BehaviorSubject, Observable, Subscription, timer } from 'rxjs';
 import {
-  distinctUntilChanged,
-  expand,
-  filter,
-  switchMap,
-  take,
+    distinctUntilChanged,
+    expand,
+    filter,
+    switchMap,
+    take,
 } from 'rxjs/operators';
 import { CpqAccessData } from './cpq-access-data.models';
 import { CpqAccessLoaderService } from './cpq-access-loader.service';

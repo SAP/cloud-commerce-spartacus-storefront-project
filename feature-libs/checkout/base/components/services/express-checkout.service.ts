@@ -1,26 +1,26 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  CheckoutDeliveryAddressFacade,
-  CheckoutDeliveryModesFacade,
-  CheckoutPaymentFacade,
+    CheckoutDeliveryAddressFacade,
+    CheckoutDeliveryModesFacade,
+    CheckoutPaymentFacade,
 } from '@spartacus/checkout/base/root';
 import { UserAddressService, UserPaymentService } from '@spartacus/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import {
-  catchError,
-  debounceTime,
-  distinctUntilChanged,
-  filter,
-  map,
-  switchMap,
-  take,
-  tap,
+    catchError,
+    debounceTime,
+    distinctUntilChanged,
+    filter,
+    map,
+    switchMap,
+    take,
+    tap,
 } from 'rxjs/operators';
 import { CheckoutConfigService } from '../services/checkout-config.service';
 

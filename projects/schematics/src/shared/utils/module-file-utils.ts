@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,25 +7,25 @@
 import { normalize, relative } from '@angular-devkit/core';
 import { SchematicsException, Tree } from '@angular-devkit/schematics';
 import {
-  addSymbolToNgModuleMetadata,
-  findNodes,
-  getDecoratorMetadata,
-  insertImport,
-  isImported,
+    addSymbolToNgModuleMetadata,
+    findNodes,
+    getDecoratorMetadata,
+    insertImport,
+    isImported,
 } from '@schematics/angular/utility/ast-utils';
 import {
-  Change,
-  InsertChange,
-  NoopChange,
+    Change,
+    InsertChange,
+    NoopChange,
 } from '@schematics/angular/utility/change';
 import { getAppModulePath } from '@schematics/angular/utility/ng-ast-utils';
 import ts from 'typescript';
 import { ANGULAR_CORE } from '../constants';
 import {
-  commitChanges,
-  getMetadataProperty,
-  getTsSourceFile,
-  InsertDirection,
+    commitChanges,
+    getMetadataProperty,
+    getTsSourceFile,
+    InsertDirection,
 } from './file-utils';
 import { getProjectTargets } from './workspace-utils';
 

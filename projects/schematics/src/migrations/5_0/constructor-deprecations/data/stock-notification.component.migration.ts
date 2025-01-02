@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ANGULAR_CORE,
-  CURRENT_PRODUCT_SERVICE,
-  GLOBAL_MESSAGE_SERVICE,
-  LAUNCH_DIALOG_SERVICE,
-  MODAL_SERVICE,
-  STOCK_NOTIFICATION_COMPONENT,
-  TRANSLATION_SERVICE,
-  USER_ID_SERVICE,
-  USER_INTERESTS_SERVICE,
-  USER_NOTIFICATION_PREFERENCE_SERVICE,
-  VIEW_CONTAINER_REF,
+    ANGULAR_CORE,
+    CURRENT_PRODUCT_SERVICE,
+    GLOBAL_MESSAGE_SERVICE,
+    LAUNCH_DIALOG_SERVICE,
+    MODAL_SERVICE,
+    STOCK_NOTIFICATION_COMPONENT,
+    TRANSLATION_SERVICE,
+    USER_ID_SERVICE,
+    USER_INTERESTS_SERVICE,
+    USER_NOTIFICATION_PREFERENCE_SERVICE,
+    VIEW_CONTAINER_REF,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

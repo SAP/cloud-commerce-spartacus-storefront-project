@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,9 +7,9 @@
 import { ListModel, StateUtils } from '@spartacus/core';
 import { Permission } from '../../model/permission.model';
 import {
-  B2BUserActions,
-  PermissionActions,
-  UserGroupActions,
+    B2BUserActions,
+    PermissionActions,
+    UserGroupActions,
 } from '../actions/index';
 
 export const permissionInitialState: Permission | undefined = undefined;

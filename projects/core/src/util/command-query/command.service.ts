@@ -1,27 +1,27 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, OnDestroy } from '@angular/core';
 import {
-  EMPTY,
-  Observable,
-  ReplaySubject,
-  Subject,
-  Subscription,
-  defer,
-  zip,
+    EMPTY,
+    Observable,
+    ReplaySubject,
+    Subject,
+    Subscription,
+    defer,
+    zip,
 } from 'rxjs';
 import {
-  TapObserver,
-  catchError,
-  concatMap,
-  finalize,
-  mergeMap,
-  switchMap,
-  tap,
+    TapObserver,
+    catchError,
+    concatMap,
+    finalize,
+    mergeMap,
+    switchMap,
+    tap,
 } from 'rxjs/operators';
 
 export abstract class Command<PARAMS = undefined, RESULT = unknown> {

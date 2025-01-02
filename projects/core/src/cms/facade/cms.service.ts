@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,14 +8,14 @@ import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { combineLatest, Observable, of, queueScheduler, using } from 'rxjs';
 import {
-  catchError,
-  filter,
-  map,
-  observeOn,
-  shareReplay,
-  switchMap,
-  take,
-  tap,
+    catchError,
+    filter,
+    map,
+    observeOn,
+    shareReplay,
+    switchMap,
+    take,
+    tap,
 } from 'rxjs/operators';
 import { CmsComponent } from '../../model/cms.model';
 import { RoutingService } from '../../routing/facade/routing.service';

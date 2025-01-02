@@ -1,29 +1,29 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import {
-  Cart,
-  CartOutlets,
-  CartType,
-  DeleteCartSuccessEvent as DeleteSavedCartSuccessEvent,
-  PromotionLocation,
+    Cart,
+    CartOutlets,
+    CartType,
+    DeleteCartSuccessEvent as DeleteSavedCartSuccessEvent,
+    PromotionLocation,
 } from '@spartacus/cart/base/root';
 import { SavedCartFacade } from '@spartacus/cart/saved-cart/root';
 import {
-  EventService,
-  GlobalMessageService,
-  GlobalMessageType,
-  RoutingService,
-  TranslationService,
+    EventService,
+    GlobalMessageService,
+    GlobalMessageType,
+    RoutingService,
+    TranslationService,
 } from '@spartacus/core';
 import { Observable, Subscription } from 'rxjs';
 import { map, switchMap, take, tap } from 'rxjs/operators';

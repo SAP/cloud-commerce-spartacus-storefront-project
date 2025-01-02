@@ -1,30 +1,30 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  BreadcrumbMeta,
-  ContentPageMetaResolver,
-  PageBreadcrumbResolver,
-  PageDescriptionResolver,
-  PageMetaResolver,
-  PageRobotsMeta,
-  PageRobotsResolver,
-  PageTitleResolver,
-  PageType,
-  RoutingService,
-  SemanticPathService,
-  TranslationService,
+    BreadcrumbMeta,
+    ContentPageMetaResolver,
+    PageBreadcrumbResolver,
+    PageDescriptionResolver,
+    PageMetaResolver,
+    PageRobotsMeta,
+    PageRobotsResolver,
+    PageTitleResolver,
+    PageType,
+    RoutingService,
+    SemanticPathService,
+    TranslationService,
 } from '@spartacus/core';
 import { combineLatest, defer, Observable, of } from 'rxjs';
 import {
-  distinctUntilChanged,
-  map,
-  shareReplay,
-  switchMap,
+    distinctUntilChanged,
+    map,
+    shareReplay,
+    switchMap,
 } from 'rxjs/operators';
 
 /**

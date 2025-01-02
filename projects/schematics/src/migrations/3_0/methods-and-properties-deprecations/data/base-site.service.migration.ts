@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  BASE_SITE_SERVICE,
-  GET_ALL,
-  GET_BASE_SITE_DATA,
-  SET_ACTIVE,
-  TODO_SPARTACUS,
+    BASE_SITE_SERVICE,
+    GET_ALL,
+    GET_BASE_SITE_DATA,
+    SET_ACTIVE,
+    TODO_SPARTACUS,
 } from '../../../../shared/constants';
 import { SPARTACUS_CORE } from '../../../../shared/libs-constants';
 import { MethodPropertyDeprecation } from '../../../../shared/utils/file-utils';

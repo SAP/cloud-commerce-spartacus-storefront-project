@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,6 +8,7 @@ export * from './config-utils';
 export * from './dependency-utils';
 export * from './feature-utils';
 export * from './file-utils';
+export * from './generate-default-workspace';
 export * from './graph-utils';
 export * from './import-utils';
 export * from './lib-utils';
@@ -20,4 +21,4 @@ export * from './project-tsconfig-paths';
 export * from './schematics-config-utils';
 export * from './test-utils';
 export * from './workspace-utils';
-export * from './generate-default-workspace';
+

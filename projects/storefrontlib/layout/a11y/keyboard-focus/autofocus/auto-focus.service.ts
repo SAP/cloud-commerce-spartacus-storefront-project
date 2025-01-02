@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,9 +7,9 @@
 import { Injectable } from '@angular/core';
 import { EscapeFocusService } from '../escape/escape-focus.service';
 import {
-  AutoFocusConfig,
-  FOCUS_ATTR,
-  PersistFocusConfig,
+    AutoFocusConfig,
+    FOCUS_ATTR,
+    PersistFocusConfig,
 } from '../keyboard-focus.model';
 
 @Injectable({

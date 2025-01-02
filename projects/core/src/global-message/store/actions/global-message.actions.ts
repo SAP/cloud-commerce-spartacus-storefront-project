@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Action } from '@ngrx/store';
 import {
-  GlobalMessage,
-  GlobalMessageType,
+    GlobalMessage,
+    GlobalMessageType,
 } from '../../models/global-message.model';
 
 export const ADD_MESSAGE = '[Global-message] Add a Message';

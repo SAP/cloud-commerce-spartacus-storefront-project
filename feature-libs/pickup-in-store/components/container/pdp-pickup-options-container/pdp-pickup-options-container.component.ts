@@ -1,46 +1,46 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Component,
-  ElementRef,
-  inject,
-  EventEmitter,
-  OnDestroy,
-  OnInit,
-  Output,
-  ViewChild,
-  ViewContainerRef,
+    Component,
+    ElementRef,
+    EventEmitter,
+    inject,
+    OnDestroy,
+    OnInit,
+    Output,
+    ViewChild,
+    ViewContainerRef,
 } from '@angular/core';
 import { FeatureConfigService, Product } from '@spartacus/core';
 
 import {
-  AugmentedPointOfService,
-  getProperty,
-  IntendedPickupLocationFacade,
-  PickupLocationsSearchFacade,
-  PickupOption,
-  PickupOptionFacade,
-  PreferredStoreFacade,
-  RequiredDeepPath,
+    AugmentedPointOfService,
+    getProperty,
+    IntendedPickupLocationFacade,
+    PickupLocationsSearchFacade,
+    PickupOption,
+    PickupOptionFacade,
+    PreferredStoreFacade,
+    RequiredDeepPath,
 } from '@spartacus/pickup-in-store/root';
 import {
-  CurrentProductService,
-  LAUNCH_CALLER,
-  LaunchDialogService,
+    CurrentProductService,
+    LAUNCH_CALLER,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { combineLatest, iif, Observable, of, Subscription } from 'rxjs';
 import {
-  concatMap,
-  filter,
-  map,
-  startWith,
-  switchMap,
-  take,
-  tap,
+    concatMap,
+    filter,
+    map,
+    startWith,
+    switchMap,
+    take,
+    tap,
 } from 'rxjs/operators';
 
 /** Custom type guard to ensure we have a product a defined code */

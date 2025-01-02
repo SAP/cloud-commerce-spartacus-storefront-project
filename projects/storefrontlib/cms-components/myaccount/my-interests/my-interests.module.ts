@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,12 +8,12 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
-  AuthGuard,
-  CmsConfig,
-  FeaturesConfigModule,
-  I18nModule,
-  provideDefaultConfig,
-  UrlModule,
+    AuthGuard,
+    CmsConfig,
+    FeaturesConfigModule,
+    I18nModule,
+    provideDefaultConfig,
+    UrlModule,
 } from '@spartacus/core';
 import { CmsPageGuard } from '../../../cms-structure/guards/cms-page.guard';
 import { PageLayoutComponent } from '../../../cms-structure/page/page-layout/page-layout.component';

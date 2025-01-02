@@ -1,26 +1,26 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { NgModule, Provider, Type } from '@angular/core';
 import {
-  checkoutB2BTranslationChunksConfig,
-  checkoutB2BTranslations,
+    checkoutB2BTranslationChunksConfig,
+    checkoutB2BTranslations,
 } from '@spartacus/checkout/b2b/assets';
 import { CheckoutB2BRootModule } from '@spartacus/checkout/b2b/root';
 import {
-  checkoutTranslationChunksConfig,
-  checkoutTranslations,
+    checkoutTranslationChunksConfig,
+    checkoutTranslations,
 } from '@spartacus/checkout/base/assets';
 import {
-  CHECKOUT_FEATURE,
-  CheckoutRootModule,
+    CHECKOUT_FEATURE,
+    CheckoutRootModule,
 } from '@spartacus/checkout/base/root';
 import {
-  checkoutScheduledReplenishmentTranslationChunksConfig,
-  checkoutScheduledReplenishmentTranslations,
+    checkoutScheduledReplenishmentTranslationChunksConfig,
+    checkoutScheduledReplenishmentTranslations,
 } from '@spartacus/checkout/scheduled-replenishment/assets';
 import { CheckoutScheduledReplenishmentRootModule } from '@spartacus/checkout/scheduled-replenishment/root';
 import { provideConfig } from '@spartacus/core';

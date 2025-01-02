@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { inject, Injectable } from '@angular/core';
 import {
-  UntypedFormControl,
-  UntypedFormGroup,
-  ValidatorFn,
-  Validators,
+    UntypedFormControl,
+    UntypedFormGroup,
+    ValidatorFn,
+    Validators,
 } from '@angular/forms';
 import {
-  AuthRedirectService,
-  AuthService,
-  FeatureConfigService,
-  GlobalMessageService,
-  GlobalMessageType,
-  HttpErrorModel,
-  RoutingService,
+    AuthRedirectService,
+    AuthService,
+    FeatureConfigService,
+    GlobalMessageService,
+    GlobalMessageType,
+    HttpErrorModel,
+    RoutingService,
 } from '@spartacus/core';
 import { CustomFormValidators } from '@spartacus/storefront';
 import { UserPasswordFacade } from '@spartacus/user/profile/root';

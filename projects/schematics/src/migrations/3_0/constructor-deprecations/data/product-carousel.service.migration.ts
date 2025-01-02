@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  PRODUCT_CAROUSEL_SERVICE,
-  PRODUCT_REFERENCE_SERVICE,
-  PRODUCT_SERVICE,
-  SEMANTIC_PATH_SERVICE,
+    PRODUCT_CAROUSEL_SERVICE,
+    PRODUCT_REFERENCE_SERVICE,
+    PRODUCT_SERVICE,
+    SEMANTIC_PATH_SERVICE,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

@@ -1,28 +1,28 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { InjectionToken, Provider } from '@angular/core';
 import {
-  Action,
-  ActionReducer,
-  ActionReducerMap,
-  combineReducers,
-  MetaReducer,
+    Action,
+    ActionReducer,
+    ActionReducerMap,
+    combineReducers,
+    MetaReducer,
 } from '@ngrx/store';
 import {
-  Address,
-  AuthActions,
-  B2BApprovalProcess,
-  B2BUnit,
-  B2BUser,
-  CostCenter,
-  ListModel,
-  OrderApprovalPermissionType,
-  SiteContextActions,
-  StateUtils,
+    Address,
+    AuthActions,
+    B2BApprovalProcess,
+    B2BUnit,
+    B2BUser,
+    CostCenter,
+    ListModel,
+    OrderApprovalPermissionType,
+    SiteContextActions,
+    StateUtils,
 } from '@spartacus/core';
 import { Budget } from '../../model/budget.model';
 import { Permission } from '../../model/permission.model';
@@ -30,65 +30,65 @@ import { B2BUnitNode } from '../../model/unit-node.model';
 import { UserGroup } from '../../model/user-group.model';
 import { OrganizationActions } from '../actions';
 import {
-  ADDRESS_ENTITIES,
-  ADDRESS_LIST,
-  B2B_USER_APPROVERS,
-  B2B_USER_ENTITIES,
-  B2B_USER_FEATURE,
-  B2B_USER_PERMISSIONS,
-  B2B_USER_USER_GROUPS,
-  BUDGET_ENTITIES,
-  BUDGET_FEATURE,
-  BUDGET_LIST,
-  COST_CENTER_ASSIGNED_BUDGETS,
-  COST_CENTER_ENTITIES,
-  COST_CENTER_FEATURE,
-  COST_CENTER_LIST,
-  OrganizationState,
-  ORG_UNIT_APPROVAL_PROCESSES_ENTITIES,
-  ORG_UNIT_ASSIGNED_USERS,
-  ORG_UNIT_ENTITIES,
-  ORG_UNIT_FEATURE,
-  ORG_UNIT_NODE_LIST,
-  ORG_UNIT_TREE_ENTITY,
-  PERMISSION_ENTITIES,
-  PERMISSION_FEATURE,
-  PERMISSION_LIST,
-  PERMISSION_TYPES_LIST,
-  USER_GROUP_AVAILABLE_CUSTOMERS,
-  USER_GROUP_ENTITIES,
-  USER_GROUP_FEATURE,
-  USER_GROUP_LIST,
-  USER_GROUP_PERMISSIONS,
-  USER_LIST,
+    ADDRESS_ENTITIES,
+    ADDRESS_LIST,
+    B2B_USER_APPROVERS,
+    B2B_USER_ENTITIES,
+    B2B_USER_FEATURE,
+    B2B_USER_PERMISSIONS,
+    B2B_USER_USER_GROUPS,
+    BUDGET_ENTITIES,
+    BUDGET_FEATURE,
+    BUDGET_LIST,
+    COST_CENTER_ASSIGNED_BUDGETS,
+    COST_CENTER_ENTITIES,
+    COST_CENTER_FEATURE,
+    COST_CENTER_LIST,
+    ORG_UNIT_APPROVAL_PROCESSES_ENTITIES,
+    ORG_UNIT_ASSIGNED_USERS,
+    ORG_UNIT_ENTITIES,
+    ORG_UNIT_FEATURE,
+    ORG_UNIT_NODE_LIST,
+    ORG_UNIT_TREE_ENTITY,
+    OrganizationState,
+    PERMISSION_ENTITIES,
+    PERMISSION_FEATURE,
+    PERMISSION_LIST,
+    PERMISSION_TYPES_LIST,
+    USER_GROUP_AVAILABLE_CUSTOMERS,
+    USER_GROUP_ENTITIES,
+    USER_GROUP_FEATURE,
+    USER_GROUP_LIST,
+    USER_GROUP_PERMISSIONS,
+    USER_LIST,
 } from '../organization-state';
 import {
-  b2bUserApproverListReducer,
-  b2bUserEntitiesReducer,
-  b2bUserPermissionListReducer,
-  b2bUserUserGroupListReducer,
-  userListReducer,
+    b2bUserApproverListReducer,
+    b2bUserEntitiesReducer,
+    b2bUserPermissionListReducer,
+    b2bUserUserGroupListReducer,
+    userListReducer,
 } from './b2b-user.reducer';
 import { budgetsEntitiesReducer, budgetsListReducer } from './budget.reducer';
 import {
-  costCenterAssignedBudgetsListReducer,
-  costCentersEntitiesReducer,
-  costCentersListReducer,
+    costCenterAssignedBudgetsListReducer,
+    costCentersEntitiesReducer,
+    costCentersListReducer,
 } from './cost-center.reducer';
 import {
-  orgUnitAddressListReducer,
-  orgUnitEntitiesReducer,
-  orgUnitUserListReducer,
+    orgUnitAddressListReducer,
+    orgUnitEntitiesReducer,
+    orgUnitUserListReducer,
 } from './org-unit.reducer';
 import {
-  permissionsEntitiesReducer,
-  permissionsListReducer,
+    permissionsEntitiesReducer,
+    permissionsListReducer,
 } from './permission.reducer';
 import {
-  userGroupAvailableOrderApprovalPermissionsListReducer,
-  userGroupAvailablOrgCustomersListReducer,
-  userGroupEntitiesReducer,
-  userGroupsListReducer,
+    userGroupAvailableOrderApprovalPermissionsListReducer,
+    userGroupAvailablOrgCustomersListReducer,
+    userGroupEntitiesReducer,
+    userGroupsListReducer,
 } from './user-group.reducer';
 
 export function getReducers(): ActionReducerMap<OrganizationState, any> {

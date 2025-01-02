@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,20 +8,20 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
-  CostCenter,
-  EntitiesModel,
-  LoggerService,
-  StateUtils,
-  tryNormalizeHttpError,
+    CostCenter,
+    EntitiesModel,
+    LoggerService,
+    StateUtils,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import { Observable, from, of } from 'rxjs';
 import { catchError, groupBy, map, mergeMap, switchMap } from 'rxjs/operators';
 import { CostCenterConnector } from '../../connectors/cost-center/cost-center.connector';
 import { Budget } from '../../model/budget.model';
 import {
-  BudgetActions,
-  CostCenterActions,
-  OrganizationActions,
+    BudgetActions,
+    CostCenterActions,
+    OrganizationActions,
 } from '../actions/index';
 
 @Injectable()

@@ -1,38 +1,38 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, OnDestroy } from '@angular/core';
 import {
-  ActiveCartFacade,
-  CartAddEntryFailEvent,
-  CartAddEntrySuccessEvent,
-  OrderEntry,
-  ProductData,
+    ActiveCartFacade,
+    CartAddEntryFailEvent,
+    CartAddEntrySuccessEvent,
+    OrderEntry,
+    ProductData,
 } from '@spartacus/cart/base/root';
 import {
-  QuickOrderAddEntryEvent,
-  QuickOrderFacade,
-  defaultQuickOrderConfig,
+    QuickOrderAddEntryEvent,
+    QuickOrderFacade,
+    defaultQuickOrderConfig,
 } from '@spartacus/cart/quick-order/root';
 import {
-  Config,
-  EventService,
-  HttpErrorModel,
-  Product,
-  ProductSearchConnector,
-  ProductSearchPage,
-  SearchConfig,
+    Config,
+    EventService,
+    HttpErrorModel,
+    Product,
+    ProductSearchConnector,
+    ProductSearchPage,
+    SearchConfig,
 } from '@spartacus/core';
 import {
-  BehaviorSubject,
-  Observable,
-  Subject,
-  Subscription,
-  of,
-  timer,
+    BehaviorSubject,
+    Observable,
+    Subject,
+    Subscription,
+    of,
+    timer,
 } from 'rxjs';
 import { filter, first, map, switchMap, take, tap } from 'rxjs/operators';
 

@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { PaginationModel } from '@spartacus/core';
 import {
-  QuoteComment,
-  Quote,
-  QuoteActionType,
-  QuoteDiscount,
-  QuoteList,
-  QuoteMetadata,
-  QuoteStarter,
+    Quote,
+    QuoteActionType,
+    QuoteComment,
+    QuoteDiscount,
+    QuoteList,
+    QuoteMetadata,
+    QuoteStarter,
 } from '@spartacus/quote/root';
 import { Observable } from 'rxjs';
 

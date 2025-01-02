@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  HttpEvent,
-  HttpHandler,
-  HttpInterceptor,
-  HttpRequest,
+    HttpEvent,
+    HttpHandler,
+    HttpInterceptor,
+    HttpRequest,
 } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable } from 'rxjs';
 import { OccEndpointsService, WindowRef } from '@spartacus/core';
-import { OppsCouponCodesService } from '../opps-coupon-codes.service';
+import { Observable } from 'rxjs';
 import { OppsConfig } from '../../config';
+import { OppsCouponCodesService } from '../opps-coupon-codes.service';
 
 @Injectable({ providedIn: 'root' })
 export class OccOppsCouponCodesInterceptor implements HttpInterceptor {

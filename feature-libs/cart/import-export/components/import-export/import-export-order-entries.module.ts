@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,10 +7,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
-  CmsConfig,
-  ConfigModule,
-  I18nModule,
-  UrlModule,
+    CmsConfig,
+    ConfigModule,
+    I18nModule,
+    UrlModule,
 } from '@spartacus/core';
 import { PageComponentModule } from '@spartacus/storefront';
 import { ExportOrderEntriesModule } from '../export-entries';

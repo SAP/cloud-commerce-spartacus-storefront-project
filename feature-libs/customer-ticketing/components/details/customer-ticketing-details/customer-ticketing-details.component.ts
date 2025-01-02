@@ -1,22 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import {
-  EventService,
-  RoutingService,
-  TranslationService,
+    EventService,
+    RoutingService,
+    TranslationService,
 } from '@spartacus/core';
 import {
-  CustomerTicketingFacade,
-  DATE_FORMAT,
-  GetTicketQueryReloadEvent,
-  STATUS,
-  TEXT_COLOR_CLASS,
-  TicketDetails,
+    CustomerTicketingFacade,
+    DATE_FORMAT,
+    GetTicketQueryReloadEvent,
+    STATUS,
+    TEXT_COLOR_CLASS,
+    TicketDetails,
 } from '@spartacus/customer-ticketing/root';
 import { Card } from '@spartacus/storefront';
 import { combineLatest, Observable, Subscription } from 'rxjs';

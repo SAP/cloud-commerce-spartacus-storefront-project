@@ -1,22 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ComponentRef,
-  ElementRef,
-  Injectable,
-  Injector,
-  NgModuleRef,
-  ViewContainerRef,
+    ComponentRef,
+    ElementRef,
+    Injectable,
+    Injector,
+    NgModuleRef,
+    ViewContainerRef,
 } from '@angular/core';
 import { CmsComponentMapping, Priority } from '@spartacus/core';
 import { from, Observable } from 'rxjs';
-import { DefaultComponentHandler } from './default-component.handler';
 import { switchMap } from 'rxjs/operators';
 import { ComponentHandler } from './component-handler';
+import { DefaultComponentHandler } from './default-component.handler';
 
 /**
  * Lazy component handler used for launching lazy loaded cms components implemented

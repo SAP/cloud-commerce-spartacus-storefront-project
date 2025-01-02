@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { InjectionToken } from '@angular/core';
 import { Converter } from '@spartacus/core';
 import {
-  AccountSummaryDetails,
-  AccountSummaryList,
+    AccountSummaryDetails,
+    AccountSummaryList,
 } from '@spartacus/organization/account-summary/root';
 
 export const ACCOUNT_SUMMARY_NORMALIZER = new InjectionToken<

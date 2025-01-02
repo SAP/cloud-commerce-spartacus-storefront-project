@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,31 +7,31 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import {
-  ConverterService,
-  LoggerService,
-  normalizeHttpError,
-  OccEndpointsService,
-  PaginationModel,
+    ConverterService,
+    LoggerService,
+    normalizeHttpError,
+    OccEndpointsService,
+    PaginationModel,
 } from '@spartacus/core';
 import {
-  QUOTE_ACTION_SERIALIZER,
-  QUOTE_COMMENT_SERIALIZER,
-  QUOTE_DISCOUNT_SERIALIZER,
-  QUOTE_LIST_NORMALIZER,
-  QUOTE_METADATA_SERIALIZER,
-  QUOTE_NORMALIZER,
-  QUOTE_STARTER_SERIALIZER,
-  QuoteAdapter,
+    QUOTE_ACTION_SERIALIZER,
+    QUOTE_COMMENT_SERIALIZER,
+    QUOTE_DISCOUNT_SERIALIZER,
+    QUOTE_LIST_NORMALIZER,
+    QUOTE_METADATA_SERIALIZER,
+    QUOTE_NORMALIZER,
+    QUOTE_STARTER_SERIALIZER,
+    QuoteAdapter,
 } from '@spartacus/quote/core';
 import {
-  OccQuote,
-  Quote,
-  QuoteActionType,
-  QuoteComment,
-  QuoteDiscount,
-  QuoteList,
-  QuoteMetadata,
-  QuoteStarter,
+    OccQuote,
+    Quote,
+    QuoteActionType,
+    QuoteComment,
+    QuoteDiscount,
+    QuoteList,
+    QuoteMetadata,
+    QuoteStarter,
 } from '@spartacus/quote/root';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,8 +8,8 @@ import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import {
-  OCC_USER_ID_ANONYMOUS,
-  OCC_USER_ID_CURRENT,
+    OCC_USER_ID_ANONYMOUS,
+    OCC_USER_ID_CURRENT,
 } from '../../../occ/utils/occ-constants';
 
 /**

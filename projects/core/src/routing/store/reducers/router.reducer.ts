@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,15 +12,15 @@ import { PageType } from '../../../model/cms.model';
 import { RoutingConfigService } from '../../configurable-routes/routing-config.service';
 import { CmsActivatedRouteSnapshot } from '../../models/cms-route';
 import {
-  HOME_PAGE_CONTEXT,
-  PageContext,
-  SMART_EDIT_CONTEXT,
+    HOME_PAGE_CONTEXT,
+    PageContext,
+    SMART_EDIT_CONTEXT,
 } from '../../models/page-context.model';
 import { CHANGE_NEXT_PAGE_CONTEXT } from '../actions/router.action';
 import {
-  ActivatedRouterStateSnapshot,
-  RouterState,
-  State,
+    ActivatedRouterStateSnapshot,
+    RouterState,
+    State,
 } from '../routing-state';
 
 export const initialState: RouterState = {

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
-  CART_MODIFICATION_NORMALIZER,
-  CartModification,
+    CART_MODIFICATION_NORMALIZER,
+    CartModification,
 } from '@spartacus/cart/base/root';
 import { ConverterService, OccEndpointsService } from '@spartacus/core';
 import { CommonConfigurator } from '@spartacus/product-configurator/common';
@@ -16,9 +16,9 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ConfiguratorTextfieldAdapter } from '../core/connectors/configurator-textfield.adapter';
 import {
-  CONFIGURATION_TEXTFIELD_ADD_TO_CART_SERIALIZER,
-  CONFIGURATION_TEXTFIELD_NORMALIZER,
-  CONFIGURATION_TEXTFIELD_UPDATE_CART_ENTRY_SERIALIZER,
+    CONFIGURATION_TEXTFIELD_ADD_TO_CART_SERIALIZER,
+    CONFIGURATION_TEXTFIELD_NORMALIZER,
+    CONFIGURATION_TEXTFIELD_UPDATE_CART_ENTRY_SERIALIZER,
 } from '../core/connectors/converters';
 import { ConfiguratorTextfield } from '../core/model/configurator-textfield.model';
 import { OccConfiguratorTextfield } from './occ-configurator-textfield.models';

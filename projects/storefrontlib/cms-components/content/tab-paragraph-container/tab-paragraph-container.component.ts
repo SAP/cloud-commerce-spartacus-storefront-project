@@ -1,30 +1,30 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  QueryList,
-  TemplateRef,
-  ViewChildren,
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    Component,
+    OnInit,
+    QueryList,
+    TemplateRef,
+    ViewChildren,
 } from '@angular/core';
 import {
-  CmsService,
-  CMSTabParagraphContainer,
-  WindowRef,
+    CmsService,
+    CMSTabParagraphContainer,
+    WindowRef,
 } from '@spartacus/core';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import {
-  distinctUntilChanged,
-  map,
-  startWith,
-  switchMap,
-  tap,
+    distinctUntilChanged,
+    map,
+    startWith,
+    switchMap,
+    tap,
 } from 'rxjs/operators';
 import { ComponentWrapperDirective } from '../../../cms-structure/page/component/component-wrapper.directive';
 import { CmsComponentData } from '../../../cms-structure/page/model/index';

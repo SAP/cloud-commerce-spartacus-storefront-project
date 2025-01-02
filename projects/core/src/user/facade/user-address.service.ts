@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,14 +10,14 @@ import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { UserIdService } from '../../auth/user-auth/facade/user-id.service';
 import {
-  Address,
-  AddressValidation,
-  Country,
-  Region,
+    Address,
+    AddressValidation,
+    Country,
+    Region,
 } from '../../model/address.model';
 import {
-  Command,
-  CommandService,
+    Command,
+    CommandService,
 } from '../../util/command-query/command.service';
 import { UserAddressConnector } from '../connectors/address/user-address.connector';
 import { UserActions } from '../store/actions/index';

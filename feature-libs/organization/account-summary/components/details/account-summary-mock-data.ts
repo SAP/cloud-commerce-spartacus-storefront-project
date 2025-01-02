@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AccountSummaryDetails,
-  AccountSummaryList,
-  DocumentStatus,
+    AccountSummaryDetails,
+    AccountSummaryList,
+    DocumentStatus,
 } from '@spartacus/organization/account-summary/root';
 
 const PURCHASE_ORDER = 'Purchase Order';

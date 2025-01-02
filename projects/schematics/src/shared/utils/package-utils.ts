@@ -1,32 +1,32 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Rule,
-  SchematicContext,
-  SchematicsException,
-  Tree,
+    Rule,
+    SchematicContext,
+    SchematicsException,
+    Tree,
 } from '@angular-devkit/schematics';
 import {
-  addPackageJsonDependency,
-  NodeDependency,
-  NodeDependencyType,
+    addPackageJsonDependency,
+    NodeDependency,
+    NodeDependencyType,
 } from '@schematics/angular/utility/dependencies';
 import semver from 'semver';
 import { version } from '../../../package.json';
 import collectedDependencies from '../../dependencies.json';
 import { UTF_8 } from '../constants';
 import {
-  CORE_SPARTACUS_SCOPES,
-  FEATURES_LIBS_SKIP_SCOPES,
-  SPARTACUS_ASSETS,
-  SPARTACUS_CORE,
-  SPARTACUS_SCHEMATICS,
-  SPARTACUS_STOREFRONTLIB,
-  SPARTACUS_STYLES,
+    CORE_SPARTACUS_SCOPES,
+    FEATURES_LIBS_SKIP_SCOPES,
+    SPARTACUS_ASSETS,
+    SPARTACUS_CORE,
+    SPARTACUS_SCHEMATICS,
+    SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_STYLES,
 } from '../libs-constants';
 import { getServerTsPath } from './file-utils';
 import { addPackageJsonDependencies, dependencyExists } from './lib-utils';

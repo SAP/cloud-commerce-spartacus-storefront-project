@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  B2BUser,
-  ErrorAction,
-  ListModel,
-  SearchConfig,
-  StateUtils,
+    B2BUser,
+    ErrorAction,
+    ListModel,
+    SearchConfig,
+    StateUtils,
 } from '@spartacus/core';
 import {
-  B2B_USER_APPROVERS,
-  B2B_USER_ENTITIES,
-  B2B_USER_PERMISSIONS,
-  B2B_USER_USER_GROUPS,
-  PERMISSION_ENTITIES,
-  USER_GROUP_ENTITIES,
-  USER_LIST,
+    B2B_USER_APPROVERS,
+    B2B_USER_ENTITIES,
+    B2B_USER_PERMISSIONS,
+    B2B_USER_USER_GROUPS,
+    PERMISSION_ENTITIES,
+    USER_GROUP_ENTITIES,
+    USER_LIST,
 } from '../organization-state';
 
 export const LOAD_B2B_USER = '[B2BUser] Load B2BUser Data';

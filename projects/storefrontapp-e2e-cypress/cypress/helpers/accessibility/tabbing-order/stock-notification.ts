@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  enableNotificationChannel,
-  navigateToPDP,
-  normalProductCode,
-  disableNotificationChannel,
+    disableNotificationChannel,
+    enableNotificationChannel,
+    navigateToPDP,
+    normalProductCode,
 } from '../../notification';
-import { TabElement } from '../tabbing-order.model';
 import { verifyTabbingOrder } from '../tabbing-order';
+import { TabElement } from '../tabbing-order.model';
 
 const containerSelector = '.ProductDetailsPageTemplate cx-stock-notification';
 

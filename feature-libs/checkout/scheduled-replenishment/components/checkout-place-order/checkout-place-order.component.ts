@@ -1,27 +1,27 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-  ViewContainerRef,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
+    ViewContainerRef,
 } from '@angular/core';
 import { UntypedFormBuilder } from '@angular/forms';
 import { CheckoutPlaceOrderComponent } from '@spartacus/checkout/base/components';
 import { RoutingService } from '@spartacus/core';
 import {
-  OrderFacade,
-  ORDER_TYPE,
-  recurrencePeriod,
-  ScheduledReplenishmentOrderFacade,
-  ScheduleReplenishmentForm,
+    ORDER_TYPE,
+    OrderFacade,
+    recurrencePeriod,
+    ScheduledReplenishmentOrderFacade,
+    ScheduleReplenishmentForm,
 } from '@spartacus/order/root';
-import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
+import { LAUNCH_CALLER, LaunchDialogService } from '@spartacus/storefront';
 import { BehaviorSubject, merge, Subscription } from 'rxjs';
 import { CheckoutReplenishmentFormService } from '../services/checkout-replenishment-form.service';
 

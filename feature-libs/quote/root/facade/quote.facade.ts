@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,13 +9,13 @@ import { facadeFactory, QueryState } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { QUOTE_FEATURE } from '../feature-name';
 import {
-  QuoteComment,
-  Quote,
-  QuoteActionType,
-  QuoteDiscount,
-  QuoteList,
-  QuoteMetadata,
-  QuotesStateParams,
+    Quote,
+    QuoteActionType,
+    QuoteComment,
+    QuoteDiscount,
+    QuoteList,
+    QuoteMetadata,
+    QuotesStateParams,
 } from '../model/quote.model';
 
 @Injectable({

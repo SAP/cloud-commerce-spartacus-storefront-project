@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Component, OnDestroy } from '@angular/core';
 import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
+    UntypedFormBuilder,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import { AuthRedirectService } from '@spartacus/core';

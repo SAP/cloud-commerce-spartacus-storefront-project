@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,12 +7,12 @@
 import { NgModule } from '@angular/core';
 import { CmsConfig, I18nConfig, provideConfig } from '@spartacus/core';
 import {
-  storeFinderTranslationChunksConfig,
-  storeFinderTranslations,
+    storeFinderTranslationChunksConfig,
+    storeFinderTranslations,
 } from '@spartacus/storefinder/assets';
 import {
-  StoreFinderRootModule,
-  STORE_FINDER_FEATURE,
+    STORE_FINDER_FEATURE,
+    StoreFinderRootModule,
 } from '@spartacus/storefinder/root';
 
 @NgModule({

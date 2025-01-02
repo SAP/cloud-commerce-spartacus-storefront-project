@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,15 +7,15 @@
 import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
 import { Product, ProductScope, ProductService } from '@spartacus/core';
 import {
-  ConfiguratorRouter,
-  ConfiguratorRouterExtractorService,
+    ConfiguratorRouter,
+    ConfiguratorRouterExtractorService,
 } from '@spartacus/product-configurator/common';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { EMPTY, Observable } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
-import { ConfiguratorExpertModeService } from '../../core/services/configurator-expert-mode.service';
 import { Configurator } from '../../core/model/configurator.model';
+import { ConfiguratorExpertModeService } from '../../core/services/configurator-expert-mode.service';
 
 @Component({
   selector: 'cx-configurator-product-title',

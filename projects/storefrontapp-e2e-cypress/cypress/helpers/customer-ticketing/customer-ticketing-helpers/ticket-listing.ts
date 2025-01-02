@@ -1,27 +1,27 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CATEGORY_COLUMN,
-  CHANGED_ON_COLUMN,
-  COLUMN_HEADER_TICKET_LIST,
-  CREATED_ON_COLUMN,
-  FIRST_ROW_TICKET_LIST,
-  ID_COLUMN,
-  ID_DELIMITER,
-  MAX_TICKETS_PER_PAGE,
-  STATUS_COLUMN,
-  STATUS_DELIMITER,
-  SUBJECT_COLUMN,
-  SUBJECT_DELIMITER,
-  TestCategory,
-  TestSortingTypes,
-  TestStatus,
-  TestTicketDetails,
-  visitTicketDetailsForExistingTicket,
+    CATEGORY_COLUMN,
+    CHANGED_ON_COLUMN,
+    COLUMN_HEADER_TICKET_LIST,
+    CREATED_ON_COLUMN,
+    FIRST_ROW_TICKET_LIST,
+    ID_COLUMN,
+    ID_DELIMITER,
+    MAX_TICKETS_PER_PAGE,
+    STATUS_COLUMN,
+    STATUS_DELIMITER,
+    SUBJECT_COLUMN,
+    SUBJECT_DELIMITER,
+    TestCategory,
+    TestSortingTypes,
+    TestStatus,
+    TestTicketDetails,
+    visitTicketDetailsForExistingTicket,
 } from './customer-ticketing-commons';
 const MESSAGE_BOX = '.form-control';
 

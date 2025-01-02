@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,17 +8,17 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
-  CmsConfig,
-  I18nModule,
-  provideDefaultConfig,
-  UrlModule,
+    CmsConfig,
+    I18nModule,
+    provideDefaultConfig,
+    UrlModule,
 } from '@spartacus/core';
 import {
-  BtnLikeLinkModule,
-  CardModule,
-  ListNavigationModule,
-  PromotionsModule,
-  SpinnerModule,
+    BtnLikeLinkModule,
+    CardModule,
+    ListNavigationModule,
+    PromotionsModule,
+    SpinnerModule,
 } from '@spartacus/storefront';
 import { OrderDetailItemsComponent } from '../order-details/order-detail-items/order-detail-items.component';
 import { OrderDetailTotalsComponent } from '../order-details/order-detail-totals/order-detail-totals.component';

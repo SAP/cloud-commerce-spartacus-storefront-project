@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,21 +7,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
-  AuthGuard,
-  HttpErrorHandler,
-  provideDefaultConfig,
-  provideDefaultConfigFactory,
-  RoutingConfig,
+    AuthGuard,
+    HttpErrorHandler,
+    provideDefaultConfig,
+    provideDefaultConfigFactory,
+    RoutingConfig,
 } from '@spartacus/core';
 import {
-  CmsPageGuard,
-  LayoutConfig,
-  PageLayoutComponent,
+    CmsPageGuard,
+    LayoutConfig,
+    PageLayoutComponent,
 } from '@spartacus/storefront';
 import {
-  QUOTE_CART_GUARD_FEATURE,
-  QUOTE_FEATURE,
-  QUOTE_REQUEST_FEATURE,
+    QUOTE_CART_GUARD_FEATURE,
+    QUOTE_FEATURE,
+    QUOTE_REQUEST_FEATURE,
 } from './feature-name';
 import { QuoteBadRequestHandler } from './http-interceptors/quote-bad-request.handler';
 import { QuoteNotFoundHandler } from './http-interceptors/quote-not-found.handler';

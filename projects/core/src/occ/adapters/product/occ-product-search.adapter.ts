@@ -1,21 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { HttpClient, HttpContext } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { forkJoin, Observable, of } from 'rxjs';
-import { Product } from '../../../model';
 import { map, tap } from 'rxjs/operators';
+import { Product } from '../../../model';
 import {
-  ProductSearchPage,
-  Suggestion,
+    ProductSearchPage,
+    Suggestion,
 } from '../../../model/product-search.model';
 import {
-  PRODUCT_SEARCH_PAGE_NORMALIZER,
-  PRODUCT_SUGGESTION_NORMALIZER,
+    PRODUCT_SEARCH_PAGE_NORMALIZER,
+    PRODUCT_SUGGESTION_NORMALIZER,
 } from '../../../product/connectors/search/converters';
 import { ProductSearchAdapter } from '../../../product/connectors/search/product-search.adapter';
 import { SearchConfig } from '../../../product/model/search-config';
@@ -23,7 +24,6 @@ import { ConverterService } from '../../../util/converter.service';
 import { Occ } from '../../occ-models/occ.models';
 import { OccEndpointsService } from '../../services/occ-endpoints.service';
 import { OCC_HTTP_TOKEN } from '../../utils';
-import { Router } from '@angular/router';
 
 @Injectable()
 export class OccProductSearchAdapter implements ProductSearchAdapter {

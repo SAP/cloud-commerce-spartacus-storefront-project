@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,9 +7,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
-  InterceptorUtil,
-  OccEndpointsService,
-  USE_CLIENT_TOKEN,
+    InterceptorUtil,
+    OccEndpointsService,
+    USE_CLIENT_TOKEN,
 } from '@spartacus/core';
 import { RequestedDeliveryDateAdapter } from '@spartacus/requested-delivery-date/core';
 

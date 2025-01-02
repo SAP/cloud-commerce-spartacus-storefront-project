@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  createFrom,
-  EventService,
-  ProductSearchService,
-  ProductService,
+    createFrom,
+    EventService,
+    ProductSearchService,
+    ProductService,
 } from '@spartacus/core';
 import { EMPTY, Observable } from 'rxjs';
 import { filter, map, skip, switchMap, take } from 'rxjs/operators';
 import { NavigationEvent } from '../navigation/navigation.event';
 import {
-  CategoryPageResultsEvent,
-  ProductDetailsPageEvent,
-  SearchPageResultsEvent,
+    CategoryPageResultsEvent,
+    ProductDetailsPageEvent,
+    SearchPageResultsEvent,
 } from './product-page.events';
 
 @Injectable({

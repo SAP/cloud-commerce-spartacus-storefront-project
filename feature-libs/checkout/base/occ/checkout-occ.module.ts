@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,11 +7,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
-  CheckoutAdapter,
-  CheckoutBillingAddressAdapter,
-  CheckoutDeliveryAddressAdapter,
-  CheckoutDeliveryModesAdapter,
-  CheckoutPaymentAdapter,
+    CheckoutAdapter,
+    CheckoutBillingAddressAdapter,
+    CheckoutDeliveryAddressAdapter,
+    CheckoutDeliveryModesAdapter,
+    CheckoutPaymentAdapter,
 } from '@spartacus/checkout/base/core';
 import { provideDefaultConfig } from '@spartacus/core';
 import { OccCheckoutBillingAddressAdapter } from './adapters/occ-checkout-billing-address.adapter';

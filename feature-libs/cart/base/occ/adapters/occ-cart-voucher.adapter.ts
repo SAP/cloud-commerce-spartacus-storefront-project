@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,13 +9,13 @@ import { Injectable, inject } from '@angular/core';
 import { CartVoucherAdapter } from '@spartacus/cart/base/core';
 import { CART_VOUCHER_NORMALIZER } from '@spartacus/cart/base/root';
 import {
-  ConverterService,
-  InterceptorUtil,
-  LoggerService,
-  OCC_USER_ID_ANONYMOUS,
-  OccEndpointsService,
-  USE_CLIENT_TOKEN,
-  normalizeHttpError,
+    ConverterService,
+    InterceptorUtil,
+    LoggerService,
+    OCC_USER_ID_ANONYMOUS,
+    OccEndpointsService,
+    USE_CLIENT_TOKEN,
+    normalizeHttpError,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';

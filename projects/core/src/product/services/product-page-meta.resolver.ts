@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,12 +11,12 @@ import { BreadcrumbMeta, PageRobotsMeta } from '../../cms/model/page.model';
 import { BasePageMetaResolver } from '../../cms/page/base-page-meta.resolver';
 import { PageMetaResolver } from '../../cms/page/page-meta.resolver';
 import {
-  PageBreadcrumbResolver,
-  PageDescriptionResolver,
-  PageHeadingResolver,
-  PageImageResolver,
-  PageRobotsResolver,
-  PageTitleResolver,
+    PageBreadcrumbResolver,
+    PageDescriptionResolver,
+    PageHeadingResolver,
+    PageImageResolver,
+    PageRobotsResolver,
+    PageTitleResolver,
 } from '../../cms/page/page.resolvers';
 import { PageLinkService } from '../../cms/page/routing/page-link.service';
 import { TranslationService } from '../../i18n/translation.service';

@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  configureDefaultProduct,
-  verifyTabbingOrder,
+    configureDefaultProduct,
+    verifyTabbingOrder,
 } from '../../../../helpers/vendor/epd-visualization/visual-picking-tab';
 
 context("Tabbing order - tests don't require user to be logged in", () => {

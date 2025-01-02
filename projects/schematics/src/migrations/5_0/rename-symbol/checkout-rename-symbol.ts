@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  SPARTACUS_CHECKOUT_B2B_ROOT,
-  SPARTACUS_SETUP,
+    SPARTACUS_CHECKOUT_B2B_ROOT,
+    SPARTACUS_SETUP,
 } from '../../../shared/libs-constants';
 import { RenamedSymbol } from '../../../shared/utils/file-utils';
 

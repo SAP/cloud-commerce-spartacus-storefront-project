@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Component,
-  ElementRef,
-  OnDestroy,
-  ViewChild,
-  ViewContainerRef,
+    Component,
+    ElementRef,
+    OnDestroy,
+    ViewChild,
+    ViewContainerRef,
 } from '@angular/core';
 import { Cart } from '@spartacus/cart/base/root';
 import { TranslationService } from '@spartacus/core';
 import {
-  Card,
-  ICON_TYPE,
-  LaunchDialogService,
-  LAUNCH_CALLER,
+    Card,
+    ICON_TYPE,
+    LAUNCH_CALLER,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';

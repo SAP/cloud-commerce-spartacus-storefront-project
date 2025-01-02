@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,20 +10,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import {
-  AuthGuard,
-  CmsConfig,
-  FeaturesConfigModule,
-  GlobalMessageService,
-  I18nModule,
-  UrlModule,
-  provideDefaultConfig,
-  provideDefaultConfigFactory,
+    AuthGuard,
+    CmsConfig,
+    FeaturesConfigModule,
+    GlobalMessageService,
+    I18nModule,
+    UrlModule,
+    provideDefaultConfig,
+    provideDefaultConfigFactory,
 } from '@spartacus/core';
 import {
-  BtnLikeLinkModule,
-  FormErrorsModule,
-  NgSelectA11yModule,
-  SpinnerModule,
+    BtnLikeLinkModule,
+    FormErrorsModule,
+    NgSelectA11yModule,
+    SpinnerModule,
 } from '@spartacus/storefront';
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { MyAccountV2ProfileComponent } from './my-account-v2-profile.component';

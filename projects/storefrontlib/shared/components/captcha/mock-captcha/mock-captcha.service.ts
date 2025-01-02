@@ -1,6 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2023 SAP Spartacus team <spartacus-team@sap.com>
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,8 +8,8 @@
 import { Injectable } from '@angular/core';
 
 import { Observable, Subject } from 'rxjs';
-import { CaptchaService } from '../captcha.service';
 import { RenderParams } from '../captcha.model';
+import { CaptchaService } from '../captcha.service';
 
 /**
  * Global function to be passes as "onload" url param for captcha <script>, to be

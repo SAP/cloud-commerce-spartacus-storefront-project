@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  DISABLE_INFO_SERVICE,
-  FEATURE_CONFIG_SERVICE,
-  ITEM_SERVICE,
-  MESSAGE_SERVICE,
-  TOGGLE_STATUS_COMPONENT,
+    DISABLE_INFO_SERVICE,
+    FEATURE_CONFIG_SERVICE,
+    ITEM_SERVICE,
+    MESSAGE_SERVICE,
+    TOGGLE_STATUS_COMPONENT,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_ORGANIZATION_ADMINISTRATION_COMPONENTS,
+    SPARTACUS_CORE,
+    SPARTACUS_ORGANIZATION_ADMINISTRATION_COMPONENTS,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

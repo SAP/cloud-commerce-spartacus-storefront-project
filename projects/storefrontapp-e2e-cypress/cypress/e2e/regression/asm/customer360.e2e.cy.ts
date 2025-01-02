@@ -1,18 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import * as asmCustomer360 from '../../../helpers/customer360';
-import { clearAllStorage } from '../../../support/utils/clear-all-storage';
 import * as checkout from '../../../helpers/checkout-flow';
+import { addProductToCart, waitForProductPage } from '../../../helpers/checkout-flow';
+import * as asmCustomer360 from '../../../helpers/customer360';
 import { waitForPage } from '../../../helpers/navigation';
-import { waitForProductPage } from '../../../helpers/checkout-flow';
-import { addProductToCart } from '../../../helpers/checkout-flow';
+import { clearAllStorage } from '../../../support/utils/clear-all-storage';
 import {
-  interceptDelete,
-  interceptPost,
+    interceptDelete,
+    interceptPost,
 } from '../../../support/utils/intercept';
 
 context('Assisted Service Module', () => {

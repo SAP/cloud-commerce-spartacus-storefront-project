@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { NgModule } from '@angular/core';
 import {
-  savedCartTranslationChunksConfig,
-  savedCartTranslations,
+    savedCartTranslationChunksConfig,
+    savedCartTranslations,
 } from '@spartacus/cart/saved-cart/assets';
 import {
-  CART_SAVED_CART_FEATURE,
-  SavedCartRootModule,
+    CART_SAVED_CART_FEATURE,
+    SavedCartRootModule,
 } from '@spartacus/cart/saved-cart/root';
 import { CmsConfig, I18nConfig, provideConfig } from '@spartacus/core';
 

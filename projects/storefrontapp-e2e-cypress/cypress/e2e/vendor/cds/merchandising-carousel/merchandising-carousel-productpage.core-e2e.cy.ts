@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { waitForProductPage } from '../../../../helpers/checkout-flow';
 import {
-  CURRENCY_JPY,
-  CURRENCY_LABEL,
-  LANGUAGE_LABEL,
+    CURRENCY_JPY,
+    CURRENCY_LABEL,
+    LANGUAGE_LABEL,
 } from '../../../../helpers/site-context-selector';
 import {
-  cdsHelper,
-  strategyRequestAlias,
+    cdsHelper,
+    strategyRequestAlias,
 } from '../../../../helpers/vendor/cds/cds';
 import * as merchandisingCarousel from '../../../../helpers/vendor/cds/merchandising-carousel';
 import { switchSiteContext } from '../../../../support/utils/switch-site-context';

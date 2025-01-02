@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,14 +7,14 @@
 import { HttpErrorResponse, HttpRequest } from '@angular/common/http';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import {
-  ErrorModel,
-  GlobalMessageType,
-  HttpErrorHandler,
-  HttpResponseStatus,
-  Priority,
-  RoutingService,
-  GlobalMessageService,
-  getLastValueSync,
+    ErrorModel,
+    GlobalMessageService,
+    GlobalMessageType,
+    HttpErrorHandler,
+    HttpResponseStatus,
+    Priority,
+    RoutingService,
+    getLastValueSync,
 } from '@spartacus/core';
 import { isNotFoundError } from '../../utils/utils';
 @Injectable({

@@ -1,28 +1,28 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  inject,
-  OnInit,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    inject,
+    OnInit,
 } from '@angular/core';
 import {
-  CmsService,
-  Page,
-  FeatureConfigService,
-  PointOfService,
-  RoutingService,
-  useFeatureStyles,
+    CmsService,
+    FeatureConfigService,
+    Page,
+    PointOfService,
+    RoutingService,
+    useFeatureStyles,
 } from '@spartacus/core';
 import {
-  PickupLocationsSearchFacade,
-  PointOfServiceNames,
-  PreferredStoreFacade,
+    PickupLocationsSearchFacade,
+    PointOfServiceNames,
+    PreferredStoreFacade,
 } from '@spartacus/pickup-in-store/root';
 import { StoreFinderFacade } from '@spartacus/storefinder/root';
 import { ICON_TYPE } from '@spartacus/storefront';

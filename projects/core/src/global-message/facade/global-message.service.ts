@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -13,8 +13,8 @@ import { isNotUndefined } from '../../util/type-guards';
 import { GlobalMessageType } from '../models/global-message.model';
 import { GlobalMessageActions } from '../store/actions/index';
 import {
-  GlobalMessageEntities,
-  StateWithGlobalMessage,
+    GlobalMessageEntities,
+    StateWithGlobalMessage,
 } from '../store/global-message-state';
 import { GlobalMessageSelectors } from '../store/selectors/index';
 

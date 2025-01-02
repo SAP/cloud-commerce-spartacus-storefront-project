@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  BreadcrumbMeta,
-  ContentPageMetaResolver,
-  Page,
-  RoutingService,
-  SemanticPathService,
-  TranslationService,
+    BreadcrumbMeta,
+    ContentPageMetaResolver,
+    Page,
+    RoutingService,
+    SemanticPathService,
+    TranslationService,
 } from '@spartacus/core';
 import { OrganizationPageMetaResolver } from '@spartacus/organization/administration/core';
 import { combineLatest, defer, Observable } from 'rxjs';
 import {
-  distinctUntilChanged,
-  map,
-  shareReplay,
-  switchMap,
+    distinctUntilChanged,
+    map,
+    shareReplay,
+    switchMap,
 } from 'rxjs/operators';
 
 export const ACCOUNT_SUMMARY_LIST_TRANSLATION_KEY =

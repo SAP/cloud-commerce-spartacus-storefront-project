@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ANGULAR_CORE,
-  ANONYMOUS_CONSENTS_SERVICE,
-  ANONYMOUS_CONSENT_LAUNCH_DIALOG_SERVICE,
-  ANONYMOUS_CONSENT_MANAGEMENT_BANNER_COMPONENT,
-  LAUNCH_DIALOG_SERVICE,
-  VIEW_CONTAINER_REF,
+    ANGULAR_CORE,
+    ANONYMOUS_CONSENTS_SERVICE,
+    ANONYMOUS_CONSENT_LAUNCH_DIALOG_SERVICE,
+    ANONYMOUS_CONSENT_MANAGEMENT_BANNER_COMPONENT,
+    LAUNCH_DIALOG_SERVICE,
+    VIEW_CONTAINER_REF,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

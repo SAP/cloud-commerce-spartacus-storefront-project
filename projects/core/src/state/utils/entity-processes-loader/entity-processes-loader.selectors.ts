@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,12 +7,12 @@
 import { entityLoaderStateSelector } from '../entity-loader/entity-loader.selectors';
 import { initialLoaderState } from '../loader/loader.reducer';
 import {
-  initialProcessesState,
-  ProcessesLoaderState,
+    initialProcessesState,
+    ProcessesLoaderState,
 } from '../processes-loader';
 import {
-  hasPendingProcessesSelector,
-  isStableSelector,
+    hasPendingProcessesSelector,
+    isStableSelector,
 } from '../processes-loader/processes-loader.selectors';
 import { EntityProcessesLoaderState } from './entity-processes-loader-state';
 

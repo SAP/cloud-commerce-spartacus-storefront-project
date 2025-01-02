@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { DOCUMENT, ViewportScroller } from '@angular/common';
 import {
-  ApplicationRef,
-  ComponentRef,
-  Injectable,
-  Injector,
-  inject,
+    ApplicationRef,
+    ComponentRef,
+    Injectable,
+    Injector,
+    inject,
 } from '@angular/core';
 import {
-  EventType,
-  NavigationEnd,
-  NavigationSkipped,
-  ROUTER_CONFIGURATION,
-  Router,
-  Scroll,
+    EventType,
+    NavigationEnd,
+    NavigationSkipped,
+    ROUTER_CONFIGURATION,
+    Router,
+    Scroll,
 } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter, pairwise } from 'rxjs/operators';

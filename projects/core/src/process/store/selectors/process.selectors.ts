@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,9 +8,9 @@ import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { StateUtils } from '../../../state/utils/index';
 import { LoaderState } from '../../../state/utils/loader/loader-state';
 import {
-  loaderErrorSelector,
-  loaderLoadingSelector,
-  loaderSuccessSelector,
+    loaderErrorSelector,
+    loaderLoadingSelector,
+    loaderSuccessSelector,
 } from '../../../state/utils/loader/loader.selectors';
 import { StateWithProcess } from '../process-state';
 import { getProcessState } from './feature.selector';

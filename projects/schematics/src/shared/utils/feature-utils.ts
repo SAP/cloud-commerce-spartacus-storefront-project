@@ -1,55 +1,55 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  chain,
-  externalSchematic,
-  noop,
-  Rule,
-  SchematicContext,
-  SchematicsException,
-  Tree,
+    chain,
+    externalSchematic,
+    noop,
+    Rule,
+    SchematicContext,
+    SchematicsException,
+    Tree,
 } from '@angular-devkit/schematics';
 import {
-  ArrowFunction,
-  CallExpression,
-  Expression,
-  Identifier,
-  Node,
-  SourceFile,
-  ts as tsMorph,
+    ArrowFunction,
+    CallExpression,
+    Expression,
+    Identifier,
+    Node,
+    SourceFile,
+    ts as tsMorph,
 } from 'ts-morph';
 import { Schema as SpartacusOptions } from '../../add-spartacus/schema';
 import { Schema as SpartacusWrapperOptions } from '../../wrapper-module/schema';
 import { ANGULAR_CORE } from '../constants';
 import {
-  SPARTACUS_FEATURES_MODULE,
-  SPARTACUS_FEATURES_NG_MODULE,
-  SPARTACUS_SCHEMATICS,
+    SPARTACUS_FEATURES_MODULE,
+    SPARTACUS_FEATURES_NG_MODULE,
+    SPARTACUS_SCHEMATICS,
 } from '../libs-constants';
 import {
-  featureFeatureModuleMapping,
-  featureSchematicConfigMapping,
-  getKeyByMappingValueOrThrow,
-  getSchematicsConfigByFeatureOrThrow,
+    featureFeatureModuleMapping,
+    featureSchematicConfigMapping,
+    getKeyByMappingValueOrThrow,
+    getSchematicsConfigByFeatureOrThrow,
 } from '../schematics-config-mappings';
 import { crossFeatureInstallationOrder } from './graph-utils';
 import {
-  findDynamicImport,
-  getDynamicImportImportPath,
-  isImportedFrom,
-  isRelative,
-  staticImportExists,
+    findDynamicImport,
+    getDynamicImportImportPath,
+    isImportedFrom,
+    isRelative,
+    staticImportExists,
 } from './import-utils';
 import {
-  addLibraryFeature,
-  checkAppStructure,
-  LibraryOptions,
-  Module,
-  SchematicConfig,
+    addLibraryFeature,
+    checkAppStructure,
+    LibraryOptions,
+    Module,
+    SchematicConfig,
 } from './lib-utils';
 import { getModulePropertyInitializer, Import } from './new-module-utils';
 import { createProgram } from './program';

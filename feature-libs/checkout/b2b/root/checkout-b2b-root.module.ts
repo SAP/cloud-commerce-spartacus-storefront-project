@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { NgModule } from '@angular/core';
 import {
-  CHECKOUT_BASE_CMS_COMPONENTS,
-  CHECKOUT_FEATURE,
+    CHECKOUT_BASE_CMS_COMPONENTS,
+    CHECKOUT_FEATURE,
 } from '@spartacus/checkout/base/root';
 import {
-  CmsConfig,
-  provideDefaultConfig,
-  provideDefaultConfigFactory,
+    CmsConfig,
+    provideDefaultConfig,
+    provideDefaultConfigFactory,
 } from '@spartacus/core';
 import { defaultB2BCheckoutConfig } from './config/default-b2b-checkout-config';
 import { defaultCheckoutB2BRoutingConfig } from './config/default-checkout-b2b-routing-config';

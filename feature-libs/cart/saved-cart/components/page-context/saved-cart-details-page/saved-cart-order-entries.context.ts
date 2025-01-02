@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,24 +7,24 @@
 import { Injectable } from '@angular/core';
 import { ProductImportInfoService } from '@spartacus/cart/base/core';
 import {
-  AddOrderEntriesContext,
-  Cart,
-  GetOrderEntriesContext,
-  MultiCartFacade,
-  OrderEntriesSource,
-  OrderEntry,
-  ProductData,
-  ProductImportInfo,
+    AddOrderEntriesContext,
+    Cart,
+    GetOrderEntriesContext,
+    MultiCartFacade,
+    OrderEntriesSource,
+    OrderEntry,
+    ProductData,
+    ProductImportInfo,
 } from '@spartacus/cart/base/root';
 import { SavedCartFacade } from '@spartacus/cart/saved-cart/root';
 import { RoutingService, UserIdService } from '@spartacus/core';
 import { combineLatest, Observable } from 'rxjs';
 import {
-  distinctUntilChanged,
-  map,
-  switchMap,
-  take,
-  tap,
+    distinctUntilChanged,
+    map,
+    switchMap,
+    take,
+    tap,
 } from 'rxjs/operators';
 
 @Injectable({

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,19 +7,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
-  AuthGuard,
-  CmsConfig,
-  provideDefaultConfig,
-  provideDefaultConfigFactory,
+    AuthGuard,
+    CmsConfig,
+    provideDefaultConfig,
+    provideDefaultConfigFactory,
 } from '@spartacus/core';
 import { CmsPageGuard, PageLayoutComponent } from '@spartacus/storefront';
 import { defaultCustomerTicketingConfig } from './config';
 import { defaultCustomerTicketingRoutingConfig } from './config/default-customer-ticketing-routing-config';
-import {
-  CUSTOMER_TICKETING_CORE_FEATURE,
-  CUSTOMER_TICKETING_FEATURE,
-} from './feature-name';
 import { CustomerTicketingEventModule } from './events/customer-ticketing-event.module';
+import {
+    CUSTOMER_TICKETING_CORE_FEATURE,
+    CUSTOMER_TICKETING_FEATURE,
+} from './feature-name';
 
 export function defaultCustomerTicketingComponentsConfig(): CmsConfig {
   const config: CmsConfig = {

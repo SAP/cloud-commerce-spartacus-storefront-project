@@ -1,26 +1,26 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Component,
-  OnInit,
-  OnDestroy,
-  inject,
-  ChangeDetectionStrategy,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
+    inject,
 } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CheckoutStepService } from '@spartacus/checkout/base/components';
 import { GlobalMessageService, GlobalMessageType } from '@spartacus/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subscription, BehaviorSubject, Observable, combineLatest } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
 import {
-  CheckoutServiceDetailsFacade,
-  CheckoutServiceSchedulePickerService,
+    CheckoutServiceDetailsFacade,
+    CheckoutServiceSchedulePickerService,
 } from '@spartacus/s4-service/root';
+import { BehaviorSubject, Observable, Subscription, combineLatest } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'cx-service-details',

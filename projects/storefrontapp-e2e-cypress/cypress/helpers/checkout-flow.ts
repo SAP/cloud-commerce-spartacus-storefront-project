@@ -1,28 +1,28 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { products } from '../sample-data/apparel-checkout-flow';
 import {
-  cart,
-  cartWithCheapProduct,
-  cheapProduct,
-  product,
-  SampleCartProduct,
-  SampleProduct,
-  SampleUser,
-  user,
+    cart,
+    cartWithCheapProduct,
+    cheapProduct,
+    product,
+    SampleCartProduct,
+    SampleProduct,
+    SampleUser,
+    user,
 } from '../sample-data/checkout-flow';
 import { interceptPost } from '../support/utils/intercept';
 import { addProductToCart as addToCart } from './applied-promotions';
 import { login, register } from './auth-forms';
 import {
-  AddressData,
-  fillPaymentDetails,
-  fillShippingAddress,
-  PaymentDetails,
+    AddressData,
+    fillPaymentDetails,
+    fillShippingAddress,
+    PaymentDetails,
 } from './checkout-forms';
 import { DeepPartial } from './form';
 import { productItemSelector } from './product-search';

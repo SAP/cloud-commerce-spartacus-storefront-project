@@ -1,35 +1,35 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import {
-  CheckoutCostCenterFacade,
-  CheckoutPaymentTypeFacade,
+    CheckoutCostCenterFacade,
+    CheckoutPaymentTypeFacade,
 } from '@spartacus/checkout/b2b/root';
 import {
-  CheckoutDeliveryAddressComponent,
-  CheckoutStepService,
+    CheckoutDeliveryAddressComponent,
+    CheckoutStepService,
 } from '@spartacus/checkout/base/components';
 import {
-  CheckoutDeliveryAddressFacade,
-  CheckoutDeliveryModesFacade,
+    CheckoutDeliveryAddressFacade,
+    CheckoutDeliveryModesFacade,
 } from '@spartacus/checkout/base/root';
 import {
-  Address,
-  GlobalMessageService,
-  TranslationService,
-  UserAddressService,
-  UserCostCenterService,
+    Address,
+    GlobalMessageService,
+    TranslationService,
+    UserAddressService,
+    UserCostCenterService,
 } from '@spartacus/core';
 import { Card } from '@spartacus/storefront';
 import { combineLatest, Observable, of, Subscription } from 'rxjs';

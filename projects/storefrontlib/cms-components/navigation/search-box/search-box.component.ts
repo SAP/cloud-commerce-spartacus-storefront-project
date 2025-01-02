@@ -1,31 +1,31 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  HostBinding,
-  HostListener,
-  inject,
-  Input,
-  OnDestroy,
-  OnInit,
-  Optional,
-  Renderer2,
-  ViewChild,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    HostBinding,
+    HostListener,
+    inject,
+    Input,
+    OnDestroy,
+    OnInit,
+    Optional,
+    Renderer2,
+    ViewChild,
 } from '@angular/core';
 import {
-  CmsSearchBoxComponent,
-  FeatureConfigService,
-  PageType,
-  RoutingService,
-  useFeatureStyles,
-  WindowRef,
+    CmsSearchBoxComponent,
+    FeatureConfigService,
+    PageType,
+    RoutingService,
+    useFeatureStyles,
+    WindowRef,
 } from '@spartacus/core';
 import { Observable, of, Subscription } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
@@ -36,8 +36,8 @@ import { SearchBoxComponentService } from './search-box-component.service';
 import { SearchBoxFeatures } from './search-box-features.model';
 import { SearchBoxOutlets } from './search-box-outlets.model';
 import {
-  SearchBoxProductSelectedEvent,
-  SearchBoxSuggestionSelectedEvent,
+    SearchBoxProductSelectedEvent,
+    SearchBoxSuggestionSelectedEvent,
 } from './search-box.events';
 import { SearchBoxConfig, SearchResults } from './search-box.model';
 

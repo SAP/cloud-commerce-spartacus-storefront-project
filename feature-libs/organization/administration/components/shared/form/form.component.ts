@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
 import { LoadStatus } from '@spartacus/organization/administration/core';

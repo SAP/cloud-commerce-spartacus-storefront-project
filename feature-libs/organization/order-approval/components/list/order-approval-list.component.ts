@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {
-  EntitiesModel,
-  RoutingService,
-  SearchConfig,
-  TranslationService,
-  useFeatureStyles,
+    EntitiesModel,
+    RoutingService,
+    SearchConfig,
+    TranslationService,
+    useFeatureStyles,
 } from '@spartacus/core';
 import { Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';

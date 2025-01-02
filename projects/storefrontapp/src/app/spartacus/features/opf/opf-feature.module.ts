@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,40 +7,40 @@
 import { NgModule, Provider } from '@angular/core';
 import { I18nConfig, provideConfig } from '@spartacus/core';
 import {
-  OPF_BASE_FEATURE,
-  OpfBaseRootModule,
-  OpfConfig,
+    OPF_BASE_FEATURE,
+    OpfBaseRootModule,
+    OpfConfig,
 } from '@spartacus/opf/base/root';
 import {
-  opfCheckoutTranslationChunksConfig,
-  opfCheckoutTranslations,
+    opfCheckoutTranslationChunksConfig,
+    opfCheckoutTranslations,
 } from '@spartacus/opf/checkout/assets';
 import {
-  OPF_CHECKOUT_FEATURE,
-  OpfCheckoutRootModule,
-  defaultOpfCheckoutB2bConfig,
-  defaultOpfCheckoutConfig,
+    OPF_CHECKOUT_FEATURE,
+    OpfCheckoutRootModule,
+    defaultOpfCheckoutB2bConfig,
+    defaultOpfCheckoutConfig,
 } from '@spartacus/opf/checkout/root';
 import {
-  opfPaymentTranslationChunksConfig,
-  opfPaymentTranslations,
+    opfPaymentTranslationChunksConfig,
+    opfPaymentTranslations,
 } from '@spartacus/opf/payment/assets';
 
 import { OPF_CTA_FEATURE, OpfCtaRootModule } from '@spartacus/opf/cta/root';
 import {
-  OPF_GLOBAL_FUNCTIONS_FEATURE,
-  OpfGlobalFunctionsRootModule,
+    OPF_GLOBAL_FUNCTIONS_FEATURE,
+    OpfGlobalFunctionsRootModule,
 } from '@spartacus/opf/global-functions/root';
 import {
-  OPF_PAYMENT_FEATURE,
-  OpfPaymentRootModule,
+    OPF_PAYMENT_FEATURE,
+    OpfPaymentRootModule,
 } from '@spartacus/opf/payment/root';
 import {
-  OPF_GOOGLE_PAY_PROVIDER_NAME,
-  OPF_QUICK_BUY_FEATURE,
-  OpfQuickBuyConfig,
-  OpfQuickBuyGooglePayProvider,
-  OpfQuickBuyRootModule,
+    OPF_GOOGLE_PAY_PROVIDER_NAME,
+    OPF_QUICK_BUY_FEATURE,
+    OpfQuickBuyConfig,
+    OpfQuickBuyGooglePayProvider,
+    OpfQuickBuyRootModule,
 } from '@spartacus/opf/quick-buy/root';
 import { environment } from '../../../../environments/environment';
 

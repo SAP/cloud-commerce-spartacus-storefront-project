@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,14 +9,14 @@ import { Store } from '@ngrx/store';
 import { AsmAuthStorageService, TokenTarget } from '@spartacus/asm/root';
 import { CdcAuthFacade } from '@spartacus/cdc/root';
 import {
-  AuthActions,
-  AuthRedirectService,
-  AuthStorageService,
-  AuthToken,
-  GlobalMessageService,
-  GlobalMessageType,
-  OCC_USER_ID_CURRENT,
-  UserIdService,
+    AuthActions,
+    AuthRedirectService,
+    AuthStorageService,
+    AuthToken,
+    GlobalMessageService,
+    GlobalMessageType,
+    OCC_USER_ID_CURRENT,
+    UserIdService,
 } from '@spartacus/core';
 import { combineLatest, of } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';

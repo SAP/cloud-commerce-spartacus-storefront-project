@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  SPARTACUS_STOREFINDER,
-  SPARTACUS_STOREFINDER_ASSETS,
-  SPARTACUS_STOREFINDER_ROOT,
-  STOREFINDER_FEATURE_NAME,
+    SPARTACUS_STOREFINDER,
+    SPARTACUS_STOREFINDER_ASSETS,
+    SPARTACUS_STOREFINDER_ROOT,
+    STOREFINDER_FEATURE_NAME,
 } from '../libs-constants';
 import { SchematicConfig } from '../utils/lib-utils';
 

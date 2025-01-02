@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { ErrorAction, PROCESS_FEATURE, StateUtils } from '@spartacus/core';
 import { ReplenishmentOrder } from '@spartacus/order/root';
 import {
-  CANCEL_REPLENISHMENT_ORDER_PROCESS_ID,
-  REPLENISHMENT_ORDER_DETAILS,
+    CANCEL_REPLENISHMENT_ORDER_PROCESS_ID,
+    REPLENISHMENT_ORDER_DETAILS,
 } from '../order-state';
 
 export const LOAD_REPLENISHMENT_ORDER_DETAILS =

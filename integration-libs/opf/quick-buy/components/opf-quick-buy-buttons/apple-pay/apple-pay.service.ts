@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,27 +9,27 @@ import { Injectable, inject } from '@angular/core';
 import { Address, WindowRef } from '@spartacus/core';
 import { Observable, forkJoin, of, throwError } from 'rxjs';
 import {
-  catchError,
-  finalize,
-  map,
-  switchMap,
-  take,
-  tap,
+    catchError,
+    finalize,
+    map,
+    switchMap,
+    take,
+    tap,
 } from 'rxjs/operators';
 
 import { Cart, DeliveryMode } from '@spartacus/cart/base/root';
 import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
 import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
-  ApplePaySessionVerificationRequest,
-  ApplePaySessionVerificationResponse,
-  ApplePayTransactionInput,
-  OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
-  OpfQuickBuyDeliveryType,
-  OpfQuickBuyFacade,
-  OpfQuickBuyLocation,
-  OpfQuickBuyProviderType,
-  QuickBuyTransactionDetails,
+    ApplePaySessionVerificationRequest,
+    ApplePaySessionVerificationResponse,
+    ApplePayTransactionInput,
+    OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
+    OpfQuickBuyDeliveryType,
+    OpfQuickBuyFacade,
+    OpfQuickBuyLocation,
+    OpfQuickBuyProviderType,
+    QuickBuyTransactionDetails,
 } from '@spartacus/opf/quick-buy/root';
 import { ApplePaySessionWrapperService } from './apple-pay-session/apple-pay-session-wrapper.service';
 import { ApplePaySessionOrchestrator } from './apple-pay-session/apple-pay-session.orchestrator';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,9 +8,9 @@
 // Lots of functionality is already available to you here out of the box, but we encourage you to add your own custom commands!
 
 import {
-  Continuum,
-  ReportManagementStrategy,
-  ModuleManagementStrategy,
+    Continuum,
+    ModuleManagementStrategy,
+    ReportManagementStrategy,
 } from '@continuum/continuum-javascript-professional';
 
 const accessEngineFilePath =

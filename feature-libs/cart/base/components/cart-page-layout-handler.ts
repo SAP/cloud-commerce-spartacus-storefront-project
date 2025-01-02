@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,9 +7,9 @@
 import { Injectable } from '@angular/core';
 import { CartConfigService, isEmpty } from '@spartacus/cart/base/core';
 import {
-  ActiveCartFacade,
-  Cart,
-  SelectiveCartFacade,
+    ActiveCartFacade,
+    Cart,
+    SelectiveCartFacade,
 } from '@spartacus/cart/base/root';
 import { PageLayoutHandler } from '@spartacus/storefront';
 import { combineLatest, Observable, of } from 'rxjs';

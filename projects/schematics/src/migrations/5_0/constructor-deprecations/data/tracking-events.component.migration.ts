@@ -1,22 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ELEMENT_REF,
-  ANGULAR_CORE,
-  LAUNCH_DIALOG_SERVICE,
-  NGB_ACTIVE_MODAL,
-  NG_BOOTSTRAP,
-  ORDER_HISTORY_FACADE,
-  TRACKING_EVENTS_COMPONENT,
+    ANGULAR_CORE,
+    ELEMENT_REF,
+    LAUNCH_DIALOG_SERVICE,
+    NGB_ACTIVE_MODAL,
+    NG_BOOTSTRAP,
+    ORDER_HISTORY_FACADE,
+    TRACKING_EVENTS_COMPONENT,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_ORDER_COMPONENTS,
-  SPARTACUS_ORDER_ROOT,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_ORDER_COMPONENTS,
+    SPARTACUS_ORDER_ROOT,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

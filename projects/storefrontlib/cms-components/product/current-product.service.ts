@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  isNotUndefined,
-  Product,
-  ProductScope,
-  ProductService,
-  RoutingService,
+    isNotUndefined,
+    Product,
+    ProductScope,
+    ProductService,
+    RoutingService,
 } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';

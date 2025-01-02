@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ErrorAction,
-  GeoPoint,
-  SearchConfig,
-  StateUtils,
+    ErrorAction,
+    GeoPoint,
+    SearchConfig,
+    StateUtils,
 } from '@spartacus/core';
 import { STORE_FINDER_DATA } from '../store-finder-state';
 

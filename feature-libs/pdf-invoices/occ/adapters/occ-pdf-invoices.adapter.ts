@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,18 +7,18 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import {
-  ConverterService,
-  LoggerService,
-  normalizeHttpError,
-  OccEndpointsService,
+    ConverterService,
+    LoggerService,
+    normalizeHttpError,
+    OccEndpointsService,
 } from '@spartacus/core';
 import {
-  PDFInvoicesAdapter,
-  PDF_INVOICES_LIST_INVOICES_NORMALIZER,
+    PDF_INVOICES_LIST_INVOICES_NORMALIZER,
+    PDFInvoicesAdapter,
 } from '@spartacus/pdf-invoices/core';
 import {
-  InvoiceQueryParams,
-  OrderInvoiceList,
+    InvoiceQueryParams,
+    OrderInvoiceList,
 } from '@spartacus/pdf-invoices/root';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';

@@ -1,27 +1,27 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
+    inject,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { Subscription } from 'rxjs';
 import {
-  RoutingService,
-  CustomerCouponService,
-  GlobalMessageService,
-  GlobalMessageType,
+    CustomerCouponService,
+    GlobalMessageService,
+    GlobalMessageType,
+    RoutingService,
 } from '@spartacus/core';
-import { FocusConfig, LaunchDialogService } from '../../../../layout/index';
+import { Subscription } from 'rxjs';
 import { ICON_TYPE } from '../../../../cms-components/misc/icon/index';
+import { FocusConfig, LaunchDialogService } from '../../../../layout/index';
 
 @Component({
   selector: 'cx-claim-dialog',

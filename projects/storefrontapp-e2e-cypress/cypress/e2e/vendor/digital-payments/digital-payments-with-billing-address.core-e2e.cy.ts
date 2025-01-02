@@ -1,30 +1,30 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { FeaturesConfig } from '@spartacus/core';
 import {
-  loginUser,
-  goToCheapProductDetailsPage,
-  addCheapProductToCartAndBeginCheckoutForSignedInCustomer,
-  signOut,
-  ELECTRONICS_CURRENCY,
-  ELECTRONICS_BASESITE,
-  clickAddNewPayment,
+    ELECTRONICS_BASESITE,
+    ELECTRONICS_CURRENCY,
+    addCheapProductToCartAndBeginCheckoutForSignedInCustomer,
+    clickAddNewPayment,
+    goToCheapProductDetailsPage,
+    loginUser,
+    signOut,
 } from '../../../helpers/checkout-flow';
-import {
-  my_user,
-  checkoutShippingAddress,
-  checkoutDeliveryMode,
-  interceptDigitalPaymentsRequest,
-  interceptDigitalPaymentsResponse,
-  placeOrder,
-  reviewOrder,
-  reviewPlacedOrder,
-} from '../../../helpers/vendor/digital-payments/user';
 import { fillBillingAddress } from '../../../helpers/checkout-forms';
+import {
+    checkoutDeliveryMode,
+    checkoutShippingAddress,
+    interceptDigitalPaymentsRequest,
+    interceptDigitalPaymentsResponse,
+    my_user,
+    placeOrder,
+    reviewOrder,
+    reviewPlacedOrder,
+} from '../../../helpers/vendor/digital-payments/user';
 
 describe('checkout using digital-payments with billing address', () => {
   beforeEach(() => {

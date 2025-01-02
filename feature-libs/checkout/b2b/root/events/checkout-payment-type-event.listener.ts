@@ -1,26 +1,26 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, OnDestroy } from '@angular/core';
 import {
-  CheckoutQueryResetEvent,
-  CheckoutSupportedDeliveryModesQueryResetEvent,
+    CheckoutQueryResetEvent,
+    CheckoutSupportedDeliveryModesQueryResetEvent,
 } from '@spartacus/checkout/base/root';
 import {
-  CurrencySetEvent,
-  EventService,
-  LanguageSetEvent,
-  LoginEvent,
-  LogoutEvent,
+    CurrencySetEvent,
+    EventService,
+    LanguageSetEvent,
+    LoginEvent,
+    LogoutEvent,
 } from '@spartacus/core';
 import { merge, Subscription } from 'rxjs';
 import {
-  CheckoutPaymentTypeSetEvent,
-  CheckoutPaymentTypesQueryReloadEvent,
-  CheckoutPaymentTypesQueryResetEvent,
+    CheckoutPaymentTypeSetEvent,
+    CheckoutPaymentTypesQueryReloadEvent,
+    CheckoutPaymentTypesQueryResetEvent,
 } from './checkout-b2b.events';
 
 @Injectable({

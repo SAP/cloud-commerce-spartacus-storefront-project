@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,9 +8,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CartOutlets } from '@spartacus/cart/base/root';
 import {
-  CardModule,
-  OutletPosition,
-  provideOutlet,
+    CardModule,
+    OutletPosition,
+    provideOutlet,
 } from '@spartacus/storefront';
 import { OpfPaymentMethodDetailsComponent } from './opf-payment-method-details.component';
 

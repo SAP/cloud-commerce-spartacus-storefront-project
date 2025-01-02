@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Address,
-  B2BApprovalProcess,
-  B2BUnit,
-  B2BUser,
-  EntitiesModel,
-  SearchConfig,
+    Address,
+    B2BApprovalProcess,
+    B2BUnit,
+    B2BUser,
+    EntitiesModel,
+    SearchConfig,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { B2BUnitNode } from '../../model/unit-node.model';

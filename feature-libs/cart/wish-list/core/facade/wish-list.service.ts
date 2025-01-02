@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,23 +8,23 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { StateWithMultiCart } from '@spartacus/cart/base/core';
 import {
-  Cart,
-  CartType,
-  MultiCartFacade,
-  OrderEntry,
+    Cart,
+    CartType,
+    MultiCartFacade,
+    OrderEntry,
 } from '@spartacus/cart/base/root';
 import { WishListFacade } from '@spartacus/cart/wish-list/root';
 import { OCC_USER_ID_ANONYMOUS, UserIdService } from '@spartacus/core';
 import { UserAccountFacade } from '@spartacus/user/account/root';
 import { combineLatest, Observable } from 'rxjs';
 import {
-  distinctUntilChanged,
-  filter,
-  map,
-  switchMap,
-  take,
-  tap,
-  withLatestFrom,
+    distinctUntilChanged,
+    filter,
+    map,
+    switchMap,
+    take,
+    tap,
+    withLatestFrom,
 } from 'rxjs/operators';
 import { WishListActions } from '../store/actions/index';
 import { getWishlistName } from '../utils/utils';

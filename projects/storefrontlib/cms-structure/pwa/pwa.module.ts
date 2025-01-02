@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { CommonModule } from '@angular/common';
 import { APP_INITIALIZER, isDevMode, NgModule } from '@angular/core';
 import {
-  ServiceWorkerModule,
-  SwRegistrationOptions,
+    ServiceWorkerModule,
+    SwRegistrationOptions,
 } from '@angular/service-worker';
 import { Config, I18nModule, provideDefaultConfig } from '@spartacus/core';
 import { AddToHomeScreenBannerComponent } from './components/add-to-home-screen-banner/add-to-home-screen-banner.component';

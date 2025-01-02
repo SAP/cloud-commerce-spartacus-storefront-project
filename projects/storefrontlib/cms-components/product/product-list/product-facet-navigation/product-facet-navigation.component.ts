@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  ViewChild,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    ViewChild,
 } from '@angular/core';
 import { asapScheduler, BehaviorSubject, interval, Observable, of } from 'rxjs';
 import { delayWhen, observeOn, switchMap } from 'rxjs/operators';

@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { NgModule } from '@angular/core';
 import { BEFORE_CMS_PAGE_GUARD } from '@spartacus/storefront';
 import { OppsLoginRequiredGuard } from './opps-login-required.guard';
-import { NgModule } from '@angular/core';
 
 @NgModule({
   providers: [

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,10 +7,10 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { CdcJsService } from '@spartacus/cdc/root';
 import {
-  AuthService,
-  GlobalMessageService,
-  GlobalMessageType,
-  WindowRef,
+    AuthService,
+    GlobalMessageService,
+    GlobalMessageType,
+    WindowRef,
 } from '@spartacus/core';
 import { LoginFormComponentService } from '@spartacus/user/account/components';
 import { Subscription } from 'rxjs';

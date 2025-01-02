@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,25 +7,25 @@
 import { Injectable } from '@angular/core';
 import { ActiveCartFacade, PaymentType } from '@spartacus/cart/base/root';
 import {
-  B2BPaymentTypeEnum,
-  CheckoutPaymentTypeFacade,
-  CheckoutPaymentTypeSetEvent,
-  CheckoutPaymentTypesQueryReloadEvent,
-  CheckoutPaymentTypesQueryResetEvent,
+    B2BPaymentTypeEnum,
+    CheckoutPaymentTypeFacade,
+    CheckoutPaymentTypeSetEvent,
+    CheckoutPaymentTypesQueryReloadEvent,
+    CheckoutPaymentTypesQueryResetEvent,
 } from '@spartacus/checkout/b2b/root';
 import { CheckoutQueryFacade } from '@spartacus/checkout/base/root';
 import {
-  Command,
-  CommandService,
-  CommandStrategy,
-  EventService,
-  HttpErrorModel,
-  OCC_USER_ID_ANONYMOUS,
-  Query,
-  QueryNotifier,
-  QueryService,
-  QueryState,
-  UserIdService,
+    Command,
+    CommandService,
+    CommandStrategy,
+    EventService,
+    HttpErrorModel,
+    OCC_USER_ID_ANONYMOUS,
+    Query,
+    QueryNotifier,
+    QueryService,
+    QueryState,
+    UserIdService,
 } from '@spartacus/core';
 import { Observable, combineLatest, of, throwError } from 'rxjs';
 import { concatMap, filter, map, switchMap, take, tap } from 'rxjs/operators';

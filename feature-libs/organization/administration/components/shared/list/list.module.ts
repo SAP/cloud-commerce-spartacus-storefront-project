@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,12 +11,12 @@ import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FeaturesConfigModule, I18nModule, UrlModule } from '@spartacus/core';
 import {
-  IconModule,
-  KeyboardFocusModule,
-  PaginationModule,
-  PopoverModule,
-  SplitViewModule,
-  TableModule,
+    IconModule,
+    KeyboardFocusModule,
+    PaginationModule,
+    PopoverModule,
+    SplitViewModule,
+    TableModule,
 } from '@spartacus/storefront';
 import { MessageModule } from '../message/message.module';
 import { ListComponent } from './list.component';

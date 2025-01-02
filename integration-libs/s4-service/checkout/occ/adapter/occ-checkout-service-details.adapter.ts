@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,9 +7,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  LoggerService,
-  OccEndpointsService,
-  normalizeHttpError,
+    LoggerService,
+    OccEndpointsService,
+    normalizeHttpError,
 } from '@spartacus/core';
 import { ServiceDetails } from '@spartacus/s4-service/root';
 import { Observable, catchError } from 'rxjs';

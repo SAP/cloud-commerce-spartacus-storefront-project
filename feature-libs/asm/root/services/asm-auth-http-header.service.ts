@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,18 +7,18 @@
 import { HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
-  AuthHttpHeaderService,
-  AuthRedirectService,
-  AuthService,
-  AuthStorageService,
-  AuthToken,
-  GlobalMessageService,
-  GlobalMessageType,
-  InterceptorUtil,
-  OAuthLibWrapperService,
-  OccEndpointsService,
-  RoutingService,
-  USE_CUSTOMER_SUPPORT_AGENT_TOKEN,
+    AuthHttpHeaderService,
+    AuthRedirectService,
+    AuthService,
+    AuthStorageService,
+    AuthToken,
+    GlobalMessageService,
+    GlobalMessageType,
+    InterceptorUtil,
+    OAuthLibWrapperService,
+    OccEndpointsService,
+    RoutingService,
+    USE_CUSTOMER_SUPPORT_AGENT_TOKEN,
 } from '@spartacus/core';
 import { take } from 'rxjs/operators';
 import { CsAgentAuthService } from './csagent-auth.service';

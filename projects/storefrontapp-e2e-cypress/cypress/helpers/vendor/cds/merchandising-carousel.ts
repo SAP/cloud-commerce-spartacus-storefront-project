@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CURRENCY_USD,
-  LANGUAGE_EN,
+    CURRENCY_USD,
+    LANGUAGE_EN,
 } from '../../../helpers/site-context-selector';
 import {
-  waitForCategoryPage,
-  waitForPage,
-  waitForProductPage,
+    waitForCategoryPage,
+    waitForPage,
+    waitForProductPage,
 } from '../../checkout-flow';
 
 interface StrategyRequestContext {

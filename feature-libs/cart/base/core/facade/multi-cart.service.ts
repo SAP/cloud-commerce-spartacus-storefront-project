@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,24 +7,24 @@
 import { inject, Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import {
-  Cart,
-  CartType,
-  MultiCartFacade,
-  OrderEntry,
+    Cart,
+    CartType,
+    MultiCartFacade,
+    OrderEntry,
 } from '@spartacus/cart/base/root';
 import {
-  isNotUndefined,
-  StateUtils,
-  UserIdService,
-  WindowRef,
+    isNotUndefined,
+    StateUtils,
+    UserIdService,
+    WindowRef,
 } from '@spartacus/core';
 import { Observable, of, timer } from 'rxjs';
 import {
-  debounce,
-  distinctUntilChanged,
-  filter,
-  map,
-  switchMap,
+    debounce,
+    distinctUntilChanged,
+    filter,
+    map,
+    switchMap,
 } from 'rxjs/operators';
 import { CartActions } from '../store/actions/index';
 import { StateWithMultiCart } from '../store/multi-cart-state';

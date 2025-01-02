@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Action } from '@ngrx/store';
 import {
-  LoaderMeta,
-  resetMeta as loaderResetMeta,
+    LoaderMeta,
+    resetMeta as loaderResetMeta,
 } from '../loader/loader.action';
 
 export const PROCESSES_INCREMENT_ACTION = '[PROCESSES LOADER] INCREMENT';

@@ -1,28 +1,28 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  EventEmitter,
-  inject,
-  Input,
-  OnChanges,
-  OnDestroy,
-  Output,
-  ViewChild,
-  TemplateRef,
-  Optional,
+    AfterViewInit,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    EventEmitter,
+    inject,
+    Input,
+    OnChanges,
+    OnDestroy,
+    Optional,
+    Output,
+    TemplateRef,
+    ViewChild,
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { FeatureConfigService, useFeatureStyles } from '@spartacus/core';
 import { PickupOption } from '@spartacus/pickup-in-store/root';
-import { TAB_MODE, Tab, TabComponent, TabConfig } from '@spartacus/storefront';
+import { Tab, TAB_MODE, TabComponent, TabConfig } from '@spartacus/storefront';
 import { Subscription, take } from 'rxjs';
 import { PickupOptionsTabs } from './pickup-options.model';
 

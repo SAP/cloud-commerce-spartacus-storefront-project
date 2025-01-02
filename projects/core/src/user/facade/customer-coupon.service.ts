@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,19 +12,19 @@ import { UserIdService } from '../../auth/user-auth/facade/user-id.service';
 import { CustomerCouponSearchResult } from '../../model/customer-coupon.model';
 import { StateWithProcess } from '../../process/store/process-state';
 import {
-  getProcessErrorFactory,
-  getProcessLoadingFactory,
-  getProcessSuccessFactory,
+    getProcessErrorFactory,
+    getProcessLoadingFactory,
+    getProcessSuccessFactory,
 } from '../../process/store/selectors/process.selectors';
 import { isNotUndefined } from '../../util';
 import { UserActions } from '../store/actions/index';
 import { UsersSelectors } from '../store/selectors/index';
 import {
-  CLAIM_CUSTOMER_COUPON_PROCESS_ID,
-  DISCLAIM_CUSTOMER_COUPON_PROCESS_ID,
-  StateWithUser,
-  SUBSCRIBE_CUSTOMER_COUPON_PROCESS_ID,
-  UNSUBSCRIBE_CUSTOMER_COUPON_PROCESS_ID,
+    CLAIM_CUSTOMER_COUPON_PROCESS_ID,
+    DISCLAIM_CUSTOMER_COUPON_PROCESS_ID,
+    StateWithUser,
+    SUBSCRIBE_CUSTOMER_COUPON_PROCESS_ID,
+    UNSUBSCRIBE_CUSTOMER_COUPON_PROCESS_ID,
 } from '../store/user-state';
 
 @Injectable({

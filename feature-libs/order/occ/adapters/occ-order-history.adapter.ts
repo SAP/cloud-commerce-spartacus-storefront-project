@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,32 +7,32 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  ConverterService,
-  InterceptorUtil,
-  LoggerService,
-  OCC_USER_ID_ANONYMOUS,
-  OCC_USER_ID_CURRENT,
-  Occ,
-  OccEndpointsService,
-  USE_CLIENT_TOKEN,
-  normalizeHttpError,
+    ConverterService,
+    InterceptorUtil,
+    LoggerService,
+    OCC_USER_ID_ANONYMOUS,
+    OCC_USER_ID_CURRENT,
+    Occ,
+    OccEndpointsService,
+    USE_CLIENT_TOKEN,
+    normalizeHttpError,
 } from '@spartacus/core';
 import { OrderHistoryAdapter } from '@spartacus/order/core';
 import {
-  CONSIGNMENT_TRACKING_NORMALIZER,
-  CancellationRequestEntryInputList,
-  ConsignmentTracking,
-  ORDER_HISTORY_NORMALIZER,
-  ORDER_NORMALIZER,
-  ORDER_RETURNS_NORMALIZER,
-  ORDER_RETURN_REQUEST_INPUT_SERIALIZER,
-  ORDER_RETURN_REQUEST_NORMALIZER,
-  Order,
-  OrderHistoryList,
-  ReturnRequest,
-  ReturnRequestEntryInputList,
-  ReturnRequestList,
-  ReturnRequestModification,
+    CONSIGNMENT_TRACKING_NORMALIZER,
+    CancellationRequestEntryInputList,
+    ConsignmentTracking,
+    ORDER_HISTORY_NORMALIZER,
+    ORDER_NORMALIZER,
+    ORDER_RETURNS_NORMALIZER,
+    ORDER_RETURN_REQUEST_INPUT_SERIALIZER,
+    ORDER_RETURN_REQUEST_NORMALIZER,
+    Order,
+    OrderHistoryList,
+    ReturnRequest,
+    ReturnRequestEntryInputList,
+    ReturnRequestList,
+    ReturnRequestModification,
 } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';

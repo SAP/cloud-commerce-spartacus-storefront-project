@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  MODAL_SERVICE,
-  CONSIGNMENT_TRACKING_COMPONENT,
-  ORDER_HISTORY_FACADE,
-  LAUNCH_DIALOG_SERVICE,
-  VIEW_CONTAINER_REF,
-  ANGULAR_CORE,
+    ANGULAR_CORE,
+    CONSIGNMENT_TRACKING_COMPONENT,
+    LAUNCH_DIALOG_SERVICE,
+    MODAL_SERVICE,
+    ORDER_HISTORY_FACADE,
+    VIEW_CONTAINER_REF,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_ORDER_COMPONENTS,
-  SPARTACUS_ORDER_ROOT,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_ORDER_COMPONENTS,
+    SPARTACUS_ORDER_ROOT,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

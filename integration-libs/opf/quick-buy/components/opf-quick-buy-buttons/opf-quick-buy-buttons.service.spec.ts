@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,14 +9,14 @@ import { StoreModule } from '@ngrx/store';
 import { CheckoutConfig } from '@spartacus/checkout/base/root';
 import { AuthService, QueryState, RoutingService } from '@spartacus/core';
 import {
-  OpfActiveConfigurationsResponse,
-  OpfBaseFacade,
-  OpfPaymentProviderType,
+    OpfActiveConfigurationsResponse,
+    OpfBaseFacade,
+    OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
 import { of, throwError } from 'rxjs';
 import {
-  OpfQuickBuyDigitalWallet,
-  OpfQuickBuyProviderType,
+    OpfQuickBuyDigitalWallet,
+    OpfQuickBuyProviderType,
 } from '../../root/model';
 import { OpfQuickBuyButtonsService } from './opf-quick-buy-buttons.service';
 

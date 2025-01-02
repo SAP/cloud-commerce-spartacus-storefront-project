@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ACTIVATED_ROUTE,
-  ANGULAR_ROUTER,
-  CURRENCY_SERVICE,
-  LANGUAGE_SERVICE,
-  PRODUCT_LIST_COMPONENT_SERVICE,
-  PRODUCT_SEARCH_SERVICE,
-  ROUTER,
-  ROUTING_SERVICE,
-  VIEW_CONFIG,
+    ACTIVATED_ROUTE,
+    ANGULAR_ROUTER,
+    CURRENCY_SERVICE,
+    LANGUAGE_SERVICE,
+    PRODUCT_LIST_COMPONENT_SERVICE,
+    PRODUCT_SEARCH_SERVICE,
+    ROUTER,
+    ROUTING_SERVICE,
+    VIEW_CONFIG,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

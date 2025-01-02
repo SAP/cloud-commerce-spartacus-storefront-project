@@ -1,34 +1,34 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  Input,
-  OnDestroy,
-  OnInit,
-  Optional,
-  inject,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    Input,
+    OnDestroy,
+    OnInit,
+    Optional,
+    inject,
 } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import {
-  ActiveCartFacade,
-  CartItemComponentOptions,
-  CartOutlets,
-  ConsignmentEntry,
-  MultiCartFacade,
-  OrderEntry,
-  PromotionLocation,
-  SelectiveCartFacade,
+    ActiveCartFacade,
+    CartItemComponentOptions,
+    CartOutlets,
+    ConsignmentEntry,
+    MultiCartFacade,
+    OrderEntry,
+    PromotionLocation,
+    SelectiveCartFacade,
 } from '@spartacus/cart/base/root';
 import {
-  FeatureConfigService,
-  UserIdService,
-  useFeatureStyles,
+    FeatureConfigService,
+    UserIdService,
+    useFeatureStyles,
 } from '@spartacus/core';
 import { OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -15,3 +15,4 @@ if (environment.production) {
 }
 export { renderModule } from '@angular/platform-server';
 export { AppServerModule as default } from './app/app.server.module';
+

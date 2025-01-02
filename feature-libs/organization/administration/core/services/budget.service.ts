@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,11 +7,11 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
-  CostCenter,
-  EntitiesModel,
-  SearchConfig,
-  StateUtils,
-  UserIdService,
+    CostCenter,
+    EntitiesModel,
+    SearchConfig,
+    StateUtils,
+    UserIdService,
 } from '@spartacus/core';
 import { Observable, queueScheduler, using } from 'rxjs';
 import { auditTime, filter, map, observeOn, tap } from 'rxjs/operators';
@@ -19,9 +19,9 @@ import { Budget } from '../model/budget.model';
 import { OrganizationItemStatus } from '../model/organization-item-status';
 import { BudgetActions, StateWithOrganization } from '../store/index';
 import {
-  getBudget,
-  getBudgetList,
-  getBudgetValue,
+    getBudget,
+    getBudgetList,
+    getBudgetValue,
 } from '../store/selectors/budget.selector';
 import { getItemStatus } from '../utils/get-item-status';
 

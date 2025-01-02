@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AUTH_HTTP_HEADER_SERVICE,
-  HANDLE_EXPIRED_TOKEN,
-  REFRESH_IN_PROGRESS,
-  TODO_SPARTACUS,
+    AUTH_HTTP_HEADER_SERVICE,
+    HANDLE_EXPIRED_TOKEN,
+    REFRESH_IN_PROGRESS,
+    TODO_SPARTACUS,
 } from '../../../../shared/constants';
 import { SPARTACUS_CORE } from '../../../../shared/libs-constants';
 import { MethodPropertyDeprecation } from '../../../../shared/utils/file-utils';

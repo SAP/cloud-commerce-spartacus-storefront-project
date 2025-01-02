@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,9 +7,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { OutletContextData } from '../../../../cms-structure/outlet/outlet.model';
 import {
-  TableFieldOptions,
-  TableHeader,
-  TableHeaderOutletContext,
+    TableFieldOptions,
+    TableHeader,
+    TableHeaderOutletContext,
 } from '../table.model';
 
 @Component({

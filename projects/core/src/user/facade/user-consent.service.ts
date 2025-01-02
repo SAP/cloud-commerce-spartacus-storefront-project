@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,12 +8,12 @@ import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { combineLatest, iif, Observable } from 'rxjs';
 import {
-  filter,
-  map,
-  switchMap,
-  take,
-  tap,
-  withLatestFrom,
+    filter,
+    map,
+    switchMap,
+    take,
+    tap,
+    withLatestFrom,
 } from 'rxjs/operators';
 import { AuthService } from '../../auth/user-auth/facade/auth.service';
 import { UserIdService } from '../../auth/user-auth/facade/user-id.service';
@@ -21,17 +21,17 @@ import { Consent, ConsentTemplate } from '../../model/consent.model';
 import { OCC_USER_ID_CURRENT } from '../../occ';
 import { StateWithProcess } from '../../process/store/process-state';
 import {
-  getProcessErrorFactory,
-  getProcessLoadingFactory,
-  getProcessSuccessFactory,
+    getProcessErrorFactory,
+    getProcessLoadingFactory,
+    getProcessSuccessFactory,
 } from '../../process/store/selectors/process.selectors';
 import { isNotUndefined } from '../../util/type-guards';
 import { UserActions } from '../store/actions/index';
 import { UsersSelectors } from '../store/selectors/index';
 import {
-  GIVE_CONSENT_PROCESS_ID,
-  StateWithUser,
-  WITHDRAW_CONSENT_PROCESS_ID,
+    GIVE_CONSENT_PROCESS_ID,
+    StateWithUser,
+    WITHDRAW_CONSENT_PROCESS_ID,
 } from '../store/user-state';
 
 @Injectable({

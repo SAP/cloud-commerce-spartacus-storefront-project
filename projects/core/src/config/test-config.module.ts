@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
-  InjectionToken,
-  ModuleWithProviders,
-  NgModule,
-  PLATFORM_ID,
-  inject,
+    InjectionToken,
+    ModuleWithProviders,
+    NgModule,
+    PLATFORM_ID,
+    inject,
 } from '@angular/core';
 import { provideFeatureTogglesFactory } from '../features-config';
 import { FeatureTogglesInterface } from '../features-config/feature-toggles/config/feature-toggles';

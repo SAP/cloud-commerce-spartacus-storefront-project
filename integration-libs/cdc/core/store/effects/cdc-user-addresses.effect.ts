@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,14 +8,14 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { CdcJsService } from '@spartacus/cdc/root';
 import {
-  Address,
-  Country,
-  GlobalMessageService,
-  GlobalMessageType,
-  UserActions,
-  UserAddressConnector,
-  UserAddressService,
-  UserIdService,
+    Address,
+    Country,
+    GlobalMessageService,
+    GlobalMessageType,
+    UserActions,
+    UserAddressConnector,
+    UserAddressService,
+    UserIdService,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { mergeMap, switchMap, take, tap } from 'rxjs/operators';

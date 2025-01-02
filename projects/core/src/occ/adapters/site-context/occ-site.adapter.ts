@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,11 +11,11 @@ import { map } from 'rxjs/operators';
 import { Country, CountryType, Region } from '../../../model/address.model';
 import { BaseSite, Currency, Language } from '../../../model/misc.model';
 import {
-  BASE_SITE_NORMALIZER,
-  COUNTRY_NORMALIZER,
-  CURRENCY_NORMALIZER,
-  LANGUAGE_NORMALIZER,
-  REGION_NORMALIZER,
+    BASE_SITE_NORMALIZER,
+    COUNTRY_NORMALIZER,
+    CURRENCY_NORMALIZER,
+    LANGUAGE_NORMALIZER,
+    REGION_NORMALIZER,
 } from '../../../site-context/connectors/converters';
 import { SiteAdapter } from '../../../site-context/connectors/site.adapter';
 import { ConverterService } from '../../../util/converter.service';

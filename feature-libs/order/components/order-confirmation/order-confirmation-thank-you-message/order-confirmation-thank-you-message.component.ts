@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  TranslationService,
+    GlobalMessageService,
+    GlobalMessageType,
+    TranslationService,
 } from '@spartacus/core';
 import { Order, OrderFacade, ReplenishmentOrder } from '@spartacus/order/root';
 import { Observable } from 'rxjs';

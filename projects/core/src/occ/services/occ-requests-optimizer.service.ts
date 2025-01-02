@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,9 +11,9 @@ import { map, shareReplay } from 'rxjs/operators';
 import { ScopedData } from '../../model/scoped-data';
 import { extractFields } from '../utils/occ-fields';
 import {
-  OccFieldsModel,
-  OccFieldsService,
-  ScopedDataWithUrl,
+    OccFieldsModel,
+    OccFieldsService,
+    ScopedDataWithUrl,
 } from './occ-fields.service';
 
 @Injectable({

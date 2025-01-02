@@ -1,22 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
-  EventService,
-  FeatureConfigService,
-  Product,
-  TranslationService,
-  WindowRef,
+    EventService,
+    FeatureConfigService,
+    Product,
+    TranslationService,
+    WindowRef,
 } from '@spartacus/core';
 import { Observable, defer, merge, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import {
-  ComponentCreateEvent,
-  ComponentDestroyEvent,
+    ComponentCreateEvent,
+    ComponentDestroyEvent,
 } from '../../../cms-structure';
 import { CurrentProductService } from '../current-product.service';
 

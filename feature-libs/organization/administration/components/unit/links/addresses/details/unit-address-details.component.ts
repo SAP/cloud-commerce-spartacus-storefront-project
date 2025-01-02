@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,11 +8,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Address, B2BUnit, Country, UserAddressService } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import {
-  map,
-  shareReplay,
-  switchMap,
-  tap,
-  withLatestFrom,
+    map,
+    shareReplay,
+    switchMap,
+    tap,
+    withLatestFrom,
 } from 'rxjs/operators';
 import { ItemService } from '../../../../shared/item.service';
 import { CurrentUnitService } from '../../../services/current-unit.service';

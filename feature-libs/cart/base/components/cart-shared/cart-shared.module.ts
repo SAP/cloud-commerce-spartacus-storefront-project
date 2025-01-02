@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,13 +11,13 @@ import { RouterModule } from '@angular/router';
 import { CartOutlets } from '@spartacus/cart/base/root';
 import { FeaturesConfigModule, I18nModule, UrlModule } from '@spartacus/core';
 import {
-  AtMessageModule,
-  IconModule,
-  ItemCounterModule,
-  MediaModule,
-  OutletModule,
-  PromotionsModule,
-  provideOutlet,
+    AtMessageModule,
+    IconModule,
+    ItemCounterModule,
+    MediaModule,
+    OutletModule,
+    PromotionsModule,
+    provideOutlet,
 } from '@spartacus/storefront';
 import { AddToCartModule } from '../add-to-cart/add-to-cart.module';
 import { CartCouponModule } from '../cart-coupon/cart-coupon.module';

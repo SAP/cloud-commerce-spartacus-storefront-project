@@ -1,30 +1,30 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { isPlatformServer } from '@angular/common';
 import {
-  inject,
-  Inject,
-  Injectable,
-  isDevMode,
-  NgModuleRef,
-  PLATFORM_ID,
+    inject,
+    Inject,
+    Injectable,
+    isDevMode,
+    NgModuleRef,
+    PLATFORM_ID,
 } from '@angular/core';
 import { Route } from '@angular/router';
 import {
-  CmsComponent,
-  CmsComponentChildRoutesConfig,
-  CMSComponentConfig,
-  CmsComponentMapping,
-  CmsConfig,
-  ConfigInitializerService,
-  deepMerge,
-  DeferLoadingStrategy,
-  isNotUndefined,
-  LoggerService,
+    CmsComponent,
+    CmsComponentChildRoutesConfig,
+    CMSComponentConfig,
+    CmsComponentMapping,
+    CmsConfig,
+    ConfigInitializerService,
+    deepMerge,
+    DeferLoadingStrategy,
+    isNotUndefined,
+    LoggerService,
 } from '@spartacus/core';
 import { defer, forkJoin, Observable, of } from 'rxjs';
 import { filter, map, share, tap } from 'rxjs/operators';

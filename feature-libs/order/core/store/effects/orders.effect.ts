@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,16 +7,16 @@
 import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
-  LoggerService,
-  SiteContextActions,
-  tryNormalizeHttpError,
+    LoggerService,
+    SiteContextActions,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import { OrderHistoryList } from '@spartacus/order/root';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import {
-  OrderHistoryConnector,
-  ReplenishmentOrderHistoryConnector,
+    OrderHistoryConnector,
+    ReplenishmentOrderHistoryConnector,
 } from '../../connectors/index';
 import { OrderActions } from '../actions/index';
 

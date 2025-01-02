@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { NgModule } from '@angular/core';
 import {
-  CmsConfig,
-  provideConfigValidator,
-  provideDefaultConfigFactory,
+    CmsConfig,
+    provideConfigValidator,
+    provideDefaultConfigFactory,
 } from '@spartacus/core';
 import { epdVisualizationConfigValidator } from './config';
 import { getEpdVisualizationDefaultConfig } from './config/epd-visualization-default-config';

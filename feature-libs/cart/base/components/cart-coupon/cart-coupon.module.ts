@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,10 +9,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import {
-  CmsConfig,
-  FeaturesConfigModule,
-  I18nModule,
-  provideDefaultConfig,
+    CmsConfig,
+    FeaturesConfigModule,
+    I18nModule,
+    provideDefaultConfig,
 } from '@spartacus/core';
 import { FormErrorsModule, IconModule } from '@spartacus/storefront';
 import { AppliedCouponsComponent } from './applied-coupons/applied-coupons.component';

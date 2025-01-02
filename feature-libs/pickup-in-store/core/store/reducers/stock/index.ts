@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { InjectionToken, Provider } from '@angular/core';
 import {
-  Action,
-  ActionReducer,
-  ActionReducerMap,
-  MetaReducer,
+    Action,
+    ActionReducer,
+    ActionReducerMap,
+    MetaReducer,
 } from '@ngrx/store';
 import { StateUtils } from '@spartacus/core';
 
 import { StockLevelActions } from '../../actions/index';
-import { StockLevelState, StockState, STOCK_DATA } from '../../stock-state';
+import { STOCK_DATA, StockLevelState, StockState } from '../../stock-state';
 import { browserLocationReducer } from './browser-location.reducer';
 import { hideOutOfStockReducer } from './hide-out-of-stock.reducer';
 import { stockAtStoreReducer, stockReducer } from './stock-level.reducer';

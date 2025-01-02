@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { NgModule } from '@angular/core';
 import {
-  provideDefaultConfig,
-  provideDefaultConfigFactory,
+    provideDefaultConfig,
+    provideDefaultConfigFactory,
 } from '@spartacus/core';
 import { BudgetDetailsCellModule } from '../budget/details-cell/budget-details-cell.module';
 import { SharedOrganizationModule } from '../shared/shared-organization.module';
 import { CostCenterBudgetListModule } from './budgets/cost-center-budget-list.module';
 import {
-  costCenterCmsConfig,
-  costCenterTableConfigFactory,
+    costCenterCmsConfig,
+    costCenterTableConfigFactory,
 } from './cost-center.config';
 import { CostCenterDetailsModule } from './details/cost-center-details.module';
 import { CostCenterFormModule } from './form/cost-center-form.module';

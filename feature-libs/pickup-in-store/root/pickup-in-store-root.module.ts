@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { NgModule } from '@angular/core';
 import {
-  ADD_TO_CART_FEATURE,
-  CART_BASE_FEATURE,
+    ADD_TO_CART_FEATURE,
+    CART_BASE_FEATURE,
 } from '@spartacus/cart/base/root';
 import {
-  CmsConfig,
-  provideDefaultConfig,
-  provideDefaultConfigFactory,
+    CmsConfig,
+    provideDefaultConfig,
+    provideDefaultConfigFactory,
 } from '@spartacus/core';
 
 import {
-  PICKUP_IN_STORE_CORE_FEATURE,
-  PICKUP_IN_STORE_FEATURE,
+    PICKUP_IN_STORE_CORE_FEATURE,
+    PICKUP_IN_STORE_FEATURE,
 } from './feature-name';
 
 export function defaultPickupInStoreComponentsConfig(): CmsConfig {

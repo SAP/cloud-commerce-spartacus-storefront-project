@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -14,9 +14,9 @@ import { Observable, of } from 'rxjs';
 import { Config } from '../../config';
 import { SiteTheme } from '../../model/misc.model';
 import {
-  getContextParameterDefault,
-  SiteContext,
-  THEME_CONTEXT_ID,
+    getContextParameterDefault,
+    SiteContext,
+    THEME_CONTEXT_ID,
 } from '../../site-context';
 import { isNotNullable } from '../../util/type-guards';
 import { SiteThemeActions } from '../store/actions';

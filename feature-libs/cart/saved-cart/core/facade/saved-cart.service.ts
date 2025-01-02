@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,36 +8,36 @@ import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { isSelectiveCart, StateWithMultiCart } from '@spartacus/cart/base/core';
 import {
-  Cart,
-  DeleteCartEvent as DeleteSavedCartEvent,
-  MultiCartFacade,
+    Cart,
+    DeleteCartEvent as DeleteSavedCartEvent,
+    MultiCartFacade,
 } from '@spartacus/cart/base/root';
 import { SavedCartFacade } from '@spartacus/cart/saved-cart/root';
 import {
-  EventService,
-  ProcessSelectors,
-  StateUtils,
-  StateWithProcess,
-  UserIdService,
+    EventService,
+    ProcessSelectors,
+    StateUtils,
+    StateWithProcess,
+    UserIdService,
 } from '@spartacus/core';
 import { UserAccountFacade } from '@spartacus/user/account/root';
 import { combineLatest, EMPTY, Observable, queueScheduler } from 'rxjs';
 import {
-  distinctUntilChanged,
-  filter,
-  map,
-  observeOn,
-  shareReplay,
-  startWith,
-  tap,
-  withLatestFrom,
+    distinctUntilChanged,
+    filter,
+    map,
+    observeOn,
+    shareReplay,
+    startWith,
+    tap,
+    withLatestFrom,
 } from 'rxjs/operators';
 import { SavedCartActions } from '../store/actions/index';
 import {
-  SAVED_CART_CLONE_CART_PROCESS_ID,
-  SAVED_CART_LIST_PROCESS_ID,
-  SAVED_CART_RESTORE_CART_PROCESS_ID,
-  SAVED_CART_SAVE_CART_PROCESS_ID,
+    SAVED_CART_CLONE_CART_PROCESS_ID,
+    SAVED_CART_LIST_PROCESS_ID,
+    SAVED_CART_RESTORE_CART_PROCESS_ID,
+    SAVED_CART_SAVE_CART_PROCESS_ID,
 } from '../store/saved-cart-constants';
 
 @Injectable()

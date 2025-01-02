@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { inject, Injectable } from '@angular/core';
 import {
-  ActiveCartFacade,
-  CartGuestUserFacade,
-  MultiCartFacade,
+    ActiveCartFacade,
+    CartGuestUserFacade,
+    MultiCartFacade,
 } from '@spartacus/cart/base/root';
 import { CheckoutConfig } from '@spartacus/checkout/base/root';
 import { AuthService, UserIdService } from '@spartacus/core';
 import {
-  OpfActiveConfiguration,
-  OpfBaseFacade,
-  OpfPaymentProviderType,
+    OpfActiveConfiguration,
+    OpfBaseFacade,
+    OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
 import {
-  OpfQuickBuyDigitalWallet,
-  OpfQuickBuyProviderType,
+    OpfQuickBuyDigitalWallet,
+    OpfQuickBuyProviderType,
 } from '@spartacus/opf/quick-buy/root';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';

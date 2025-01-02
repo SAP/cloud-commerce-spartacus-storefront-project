@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild,
-  ViewContainerRef,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Input,
+    Output,
+    ViewChild,
+    ViewContainerRef,
 } from '@angular/core';
 import { CustomerCoupon } from '@spartacus/core';
-import { LaunchDialogService, LAUNCH_CALLER } from '../../../../layout/index';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { LAUNCH_CALLER, LaunchDialogService } from '../../../../layout/index';
 import { MyCouponsComponentService } from '../my-coupons.component.service';
 
 @Component({

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,8 +9,8 @@ import { OrderEntry } from '@spartacus/cart/base/root';
 import { TranslationService } from '@spartacus/core';
 import { Order } from '@spartacus/order/root';
 import {
-  ServiceDateTime,
-  CheckoutServiceSchedulePickerService,
+    CheckoutServiceSchedulePickerService,
+    ServiceDateTime,
 } from '@spartacus/s4-service/root';
 import { Card, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription, map } from 'rxjs';

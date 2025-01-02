@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,25 +7,25 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject, isDevMode } from '@angular/core';
 import {
-  AddOrderEntriesContext,
-  GetOrderEntriesContext,
-  OrderEntriesSource,
-  OrderEntry,
-  ProductData,
-  ProductImportInfo,
-  ProductImportStatus,
+    AddOrderEntriesContext,
+    GetOrderEntriesContext,
+    OrderEntriesSource,
+    OrderEntry,
+    ProductData,
+    ProductImportInfo,
+    ProductImportStatus,
 } from '@spartacus/cart/base/root';
 import { QuickOrderFacade } from '@spartacus/cart/quick-order/root';
 import { LoggerService, Product, ProductConnector } from '@spartacus/core';
 import { Observable, merge, of } from 'rxjs';
 import {
-  catchError,
-  filter,
-  map,
-  mergeAll,
-  switchMap,
-  take,
-  tap,
+    catchError,
+    filter,
+    map,
+    mergeAll,
+    switchMap,
+    take,
+    tap,
 } from 'rxjs/operators';
 
 @Injectable({

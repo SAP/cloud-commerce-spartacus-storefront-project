@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { normalize, strings, virtualFs } from '@angular-devkit/core';
 import { TempScopedNodeJsSyncHost } from '@angular-devkit/core/node/testing';
 import {
-  SchematicTestRunner,
-  UnitTestTree,
+    SchematicTestRunner,
+    UnitTestTree,
 } from '@angular-devkit/schematics/testing';
 import { findNodes } from '@schematics/angular/utility/ast-utils';
 import ts from 'typescript';

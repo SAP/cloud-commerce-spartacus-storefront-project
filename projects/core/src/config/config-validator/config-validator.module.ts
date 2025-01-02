@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  APP_INITIALIZER,
-  inject,
-  isDevMode,
-  ModuleWithProviders,
-  NgModule,
-  Optional,
+    APP_INITIALIZER,
+    inject,
+    isDevMode,
+    ModuleWithProviders,
+    NgModule,
+    Optional,
 } from '@angular/core';
 import { LoggerService } from '../../logger';
 import { ConfigInitializerService } from '../config-initializer/config-initializer.service';
 import {
-  ConfigValidator,
-  ConfigValidatorToken,
-  validateConfig,
+    ConfigValidator,
+    ConfigValidatorToken,
+    validateConfig,
 } from './config-validator';
 
 export function configValidatorFactory(

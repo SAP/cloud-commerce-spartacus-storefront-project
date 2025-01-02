@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,12 +12,12 @@ import { OpfResourceLoaderService } from '@spartacus/opf/base/root';
 import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
 import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
-  OPF_GOOGLE_PAY_PROVIDER_NAME,
-  OPF_QUICK_BUY_ADDRESS_FIELD_PLACEHOLDER,
-  OpfQuickBuyConfig,
-  OpfQuickBuyGooglePayProvider,
-  OpfQuickBuyLocation,
-  OpfQuickBuyProviderType,
+    OPF_GOOGLE_PAY_PROVIDER_NAME,
+    OPF_QUICK_BUY_ADDRESS_FIELD_PLACEHOLDER,
+    OpfQuickBuyConfig,
+    OpfQuickBuyGooglePayProvider,
+    OpfQuickBuyLocation,
+    OpfQuickBuyProviderType,
 } from '@spartacus/opf/quick-buy/root';
 import { CurrentProductService } from '@spartacus/storefront';
 import { of } from 'rxjs';

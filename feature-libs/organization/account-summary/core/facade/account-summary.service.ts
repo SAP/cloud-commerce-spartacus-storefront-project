@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,10 +7,10 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { RoutingService, UserIdService } from '@spartacus/core';
 import {
-  AccountSummaryDetails,
-  AccountSummaryFacade,
-  AccountSummaryList,
-  DocumentQueryParams,
+    AccountSummaryDetails,
+    AccountSummaryFacade,
+    AccountSummaryList,
+    DocumentQueryParams,
 } from '@spartacus/organization/account-summary/root';
 import { Observable, Subscription } from 'rxjs';
 import { distinctUntilChanged, map, shareReplay } from 'rxjs/operators';

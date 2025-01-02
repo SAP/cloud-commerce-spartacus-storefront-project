@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { DOCUMENT } from '@angular/common';
 import {
-  ComponentFactoryResolver,
-  ComponentRef,
-  inject,
-  Inject,
-  Injectable,
-  isDevMode,
-  RendererFactory2,
-  ViewContainerRef,
+    ComponentFactoryResolver,
+    ComponentRef,
+    inject,
+    Inject,
+    Injectable,
+    isDevMode,
+    RendererFactory2,
+    ViewContainerRef,
 } from '@angular/core';
 import { LoggerService } from '@spartacus/core';
 import { Observable, of } from 'rxjs';

@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { NgModule } from '@angular/core';
 import {
-  CmsConfig,
-  provideDefaultConfig,
-  provideDefaultConfigFactory,
-  RoutingConfig,
+    CmsConfig,
+    provideDefaultConfig,
+    provideDefaultConfigFactory,
+    RoutingConfig,
 } from '@spartacus/core';
 import { defaultBudgetRoutingConfig } from './config/default-budget-routing.config';
 import { defaultCostCenterRoutingConfig } from './config/default-cost-center-routing.config';

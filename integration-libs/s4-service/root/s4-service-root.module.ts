@@ -1,31 +1,31 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CHECKOUT_B2B_CMS_COMPONENTS } from '@spartacus/checkout/b2b/root';
 import {
-  CmsConfig,
-  CxDatePipe,
-  provideDefaultConfig,
-  provideDefaultConfigFactory,
-} from '@spartacus/core';
-import {
-  CHECKOUT_FEATURE,
-  CheckoutConfig,
+    CHECKOUT_FEATURE,
+    CheckoutConfig,
 } from '@spartacus/checkout/base/root';
 import {
-  defaultServiceDetailsCheckoutConfig,
-  defaultServiceOrdersRoutingConfig,
+    CmsConfig,
+    CxDatePipe,
+    provideDefaultConfig,
+    provideDefaultConfigFactory,
+} from '@spartacus/core';
+import { ORDER_FEATURE } from '@spartacus/order/root';
+import { CmsPageGuard, PageLayoutComponent } from '@spartacus/storefront';
+import { defaultServiceDeliveryModeConfig } from './config/default-service-delivery-mode-config';
+import {
+    defaultServiceDetailsCheckoutConfig,
+    defaultServiceOrdersRoutingConfig,
 } from './config/index';
 import { CheckoutServiceDetailsEventModule } from './events/index';
 import { CheckoutServiceSchedulePickerService } from './facade/index';
-import { ORDER_FEATURE } from '@spartacus/order/root';
-import { RouterModule } from '@angular/router';
-import { CmsPageGuard, PageLayoutComponent } from '@spartacus/storefront';
-import { defaultServiceDeliveryModeConfig } from './config/default-service-delivery-mode-config';
 
 export const S4_SERVICE_CMS_COMPONENTS: string[] = [
   ...CHECKOUT_B2B_CMS_COMPONENTS,

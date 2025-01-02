@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, isDevMode } from '@angular/core';
 import {
-  Route,
-  UrlMatcher,
-  UrlMatchResult,
-  UrlSegment,
-  UrlSegmentGroup,
+    Route,
+    UrlMatcher,
+    UrlMatchResult,
+    UrlSegment,
+    UrlSegmentGroup,
 } from '@angular/router';
 import { GlobService } from '../../util/glob.service';
 

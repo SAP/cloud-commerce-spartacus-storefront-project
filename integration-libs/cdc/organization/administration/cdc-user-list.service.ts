@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,14 +7,14 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { CdcJsService } from '@spartacus/cdc/root';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  Translatable,
-  WindowRef,
+    GlobalMessageService,
+    GlobalMessageType,
+    Translatable,
+    WindowRef,
 } from '@spartacus/core';
 import {
-  CreateButtonType,
-  UserListService,
+    CreateButtonType,
+    UserListService,
 } from '@spartacus/organization/administration/components';
 import { B2BUserService } from '@spartacus/organization/administration/core';
 import { TableService } from '@spartacus/storefront';

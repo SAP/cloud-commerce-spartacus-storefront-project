@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,18 +7,18 @@
 import { HttpClient, HttpContext, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
-  CART_MODIFICATION_NORMALIZER,
-  CartModification,
+    CART_MODIFICATION_NORMALIZER,
+    CartModification,
 } from '@spartacus/cart/base/root';
 import {
-  ConverterService,
-  OCC_HTTP_TOKEN,
-  OccEndpointsService,
+    ConverterService,
+    OCC_HTTP_TOKEN,
+    OccEndpointsService,
 } from '@spartacus/core';
 import {
-  CommonConfigurator,
-  ConfiguratorModelUtils,
-  ConfiguratorType,
+    CommonConfigurator,
+    ConfiguratorModelUtils,
+    ConfiguratorType,
 } from '@spartacus/product-configurator/common';
 import { Observable } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';
@@ -26,13 +26,13 @@ import { RulebasedConfiguratorAdapter } from '../../core/connectors/rulebased-co
 import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorExpertModeService } from '../../core/services/configurator-expert-mode.service';
 import {
-  VARIANT_CONFIGURATOR_ADD_TO_CART_SERIALIZER,
-  VARIANT_CONFIGURATOR_NORMALIZER,
-  VARIANT_CONFIGURATOR_OVERVIEW_NORMALIZER,
-  VARIANT_CONFIGURATOR_OVERVIEW_SERIALIZER,
-  VARIANT_CONFIGURATOR_PRICE_NORMALIZER,
-  VARIANT_CONFIGURATOR_SERIALIZER,
-  VARIANT_CONFIGURATOR_UPDATE_CART_ENTRY_SERIALIZER,
+    VARIANT_CONFIGURATOR_ADD_TO_CART_SERIALIZER,
+    VARIANT_CONFIGURATOR_NORMALIZER,
+    VARIANT_CONFIGURATOR_OVERVIEW_NORMALIZER,
+    VARIANT_CONFIGURATOR_OVERVIEW_SERIALIZER,
+    VARIANT_CONFIGURATOR_PRICE_NORMALIZER,
+    VARIANT_CONFIGURATOR_SERIALIZER,
+    VARIANT_CONFIGURATOR_UPDATE_CART_ENTRY_SERIALIZER,
 } from './variant-configurator-occ.converters';
 import { OccConfigurator } from './variant-configurator-occ.models';
 

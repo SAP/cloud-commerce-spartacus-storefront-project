@@ -1,50 +1,50 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Component,
-  ElementRef,
-  inject,
-  OnDestroy,
-  OnInit,
-  Optional,
-  ViewChild,
-  ViewContainerRef,
+    Component,
+    ElementRef,
+    inject,
+    OnDestroy,
+    OnInit,
+    Optional,
+    ViewChild,
+    ViewContainerRef,
 } from '@angular/core';
 import {
-  ActiveCartFacade,
-  CartType,
-  OrderEntry,
+    ActiveCartFacade,
+    CartType,
+    OrderEntry,
 } from '@spartacus/cart/base/root';
 import { CmsService, FeatureConfigService, Page } from '@spartacus/core';
 import {
-  cartWithIdAndUserId,
-  getProperty,
-  IntendedPickupLocationFacade,
-  PickupLocationsSearchFacade,
-  PickupOption,
-  PickupOptionFacade,
-  PreferredStoreFacade,
-  RequiredDeepPath,
+    cartWithIdAndUserId,
+    getProperty,
+    IntendedPickupLocationFacade,
+    PickupLocationsSearchFacade,
+    PickupOption,
+    PickupOptionFacade,
+    PreferredStoreFacade,
+    RequiredDeepPath,
 } from '@spartacus/pickup-in-store/root';
 import {
-  LAUNCH_CALLER,
-  LaunchDialogService,
-  OutletContextData,
+    LAUNCH_CALLER,
+    LaunchDialogService,
+    OutletContextData,
 } from '@spartacus/storefront';
 import { EMPTY, iif, Observable, of, Subscription } from 'rxjs';
 import {
-  concatMap,
-  filter,
-  map,
-  startWith,
-  switchMap,
-  take,
-  tap,
-  withLatestFrom,
+    concatMap,
+    filter,
+    map,
+    startWith,
+    switchMap,
+    take,
+    tap,
+    withLatestFrom,
 } from 'rxjs/operators';
 
 type OrderEntryRequiredFields =

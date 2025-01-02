@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AfterViewInit,
-  Directive,
-  ElementRef,
-  OnChanges,
-  SimpleChanges,
+    AfterViewInit,
+    Directive,
+    ElementRef,
+    OnChanges,
+    SimpleChanges,
 } from '@angular/core';
 import { EscapeFocusDirective } from '../escape/escape-focus.directive';
 import { AutoFocusConfig } from '../keyboard-focus.model';

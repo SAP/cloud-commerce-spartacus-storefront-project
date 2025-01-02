@@ -1,22 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+    OnInit,
+    inject,
 } from '@angular/core';
 import { Cart } from '@spartacus/cart/base/root';
 import { OpfActiveConfiguration } from '@spartacus/opf/base/root';
 import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
-  OpfQuickBuyDigitalWallet,
-  OpfQuickBuyProviderType,
+    OpfQuickBuyDigitalWallet,
+    OpfQuickBuyProviderType,
 } from '@spartacus/opf/quick-buy/root';
 import { CurrentProductService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';

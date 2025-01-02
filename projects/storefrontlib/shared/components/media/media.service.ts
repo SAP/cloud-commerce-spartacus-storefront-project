@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,11 +8,11 @@ import { Injectable, inject } from '@angular/core';
 import { Config, FeatureConfigService, Image } from '@spartacus/core';
 import { MediaConfig } from './media.config';
 import {
-  ImageLoadingStrategy,
-  Media,
-  MediaContainer,
-  MediaFormatSize,
-  PictureHTMLElementSource,
+    ImageLoadingStrategy,
+    Media,
+    MediaContainer,
+    MediaFormatSize,
+    PictureHTMLElementSource,
 } from './media.model';
 
 /**

@@ -1,34 +1,34 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import {
-  isNotNullable,
-  Product,
-  ProductScope,
-  ProductService,
-  RoutingService,
-  TranslationService,
-} from '@spartacus/core';
-import {
-  ProductMultiDimensionalSelectorService,
-  VariantCategoryGroup,
-  VariantCategoryOption,
-} from '@spartacus/product-multi-dimensional/selector/core';
 import { ActivatedRoute } from '@angular/router';
 import {
-  distinctUntilChanged,
-  filter,
-  map,
-  shareReplay,
-  take,
-  tap,
-} from 'rxjs/operators';
+    isNotNullable,
+    Product,
+    ProductScope,
+    ProductService,
+    RoutingService,
+    TranslationService,
+} from '@spartacus/core';
+import {
+    ProductMultiDimensionalSelectorService,
+    VariantCategoryGroup,
+    VariantCategoryOption,
+} from '@spartacus/product-multi-dimensional/selector/core';
 import { CurrentProductService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
+import {
+    distinctUntilChanged,
+    filter,
+    map,
+    shareReplay,
+    take,
+    tap,
+} from 'rxjs/operators';
 
 @Component({
   selector: 'cx-product-multi-dimensional-selector',

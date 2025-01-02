@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  testEnableDisableMyAccountV2NotificationPreference,
-  updateEmailV2,
-  verifyEmailChannelV2,
+    testEnableDisableMyAccountV2NotificationPreference,
+    updateEmailV2,
+    verifyEmailChannelV2,
 } from '../../../helpers/notification';
 import { registerAndLogin } from '../../../helpers/update-email';
 import { viewportContext } from '../../../helpers/viewport-context';

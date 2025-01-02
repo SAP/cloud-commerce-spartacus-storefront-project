@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  OnDestroy,
-  ViewChild,
-  ViewContainerRef,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    OnDestroy,
+    ViewChild,
+    ViewContainerRef,
 } from '@angular/core';
 import { RoutingService, TranslationService } from '@spartacus/core';
 import {
-  ReplenishmentOrder,
-  ReplenishmentOrderHistoryFacade,
-  ReplenishmentOrderList,
+    ReplenishmentOrder,
+    ReplenishmentOrderHistoryFacade,
+    ReplenishmentOrderList,
 } from '@spartacus/order/root';
-import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
+import { LAUNCH_CALLER, LaunchDialogService } from '@spartacus/storefront';
 import { combineLatest, Observable, Subscription } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';
 

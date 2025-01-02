@@ -1,45 +1,45 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { tabbingOrderConfig as config } from '../../helpers/accessibility/b2b/tabbing-order.config';
 import {
-  b2bAccountShipToUser,
-  b2bDeliveryAddress,
-  b2bDeliveryAddressStub,
-  b2bDeliveryModeStub,
-  b2bProduct,
-  b2bUnit,
-  b2bUser,
-  cartWithB2bProductAndPremiumShipping,
-  costCenter,
-  order_type,
-  poNumber,
-  POWERTOOLS_BASESITE,
-  products,
-  recurrencePeriod,
-  recurrencePeriodMap,
-  replenishmentDate,
-  replenishmentDay,
+    b2bAccountShipToUser,
+    b2bDeliveryAddress,
+    b2bDeliveryAddressStub,
+    b2bDeliveryModeStub,
+    b2bProduct,
+    b2bUnit,
+    b2bUser,
+    cartWithB2bProductAndPremiumShipping,
+    costCenter,
+    order_type,
+    poNumber,
+    POWERTOOLS_BASESITE,
+    products,
+    recurrencePeriod,
+    recurrencePeriodMap,
+    replenishmentDate,
+    replenishmentDay,
 } from '../../sample-data/b2b-checkout';
 import {
-  getSampleUser,
-  SampleCartProduct,
-  SampleProduct,
-  SampleUser,
+    getSampleUser,
+    SampleCartProduct,
+    SampleProduct,
+    SampleUser,
 } from '../../sample-data/checkout-flow';
 import { myCompanyAdminUser } from '../../sample-data/shared-users';
 import { login } from '../../support/utils/login';
 import { verifyTabbingOrder } from '../accessibility/tabbing-order';
 import { TabbingOrderConfig } from '../accessibility/tabbing-order.model';
 import {
-  addCheapProductToCart,
-  verifyReviewOrderPage,
-  visitHomePage,
-  waitForPage,
-  waitForProductPage,
+    addCheapProductToCart,
+    verifyReviewOrderPage,
+    visitHomePage,
+    waitForPage,
+    waitForProductPage,
 } from '../checkout-flow';
 
 export function loginB2bUser() {

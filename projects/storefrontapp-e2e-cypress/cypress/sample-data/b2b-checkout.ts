@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { AccountData } from '../support/require-logged-in.commands';
 import {
-  SampleCartProduct,
-  SampleNonPurchasableProduct,
-  SampleProduct,
-  SampleUser,
-  user,
+    SampleCartProduct,
+    SampleNonPurchasableProduct,
+    SampleProduct,
+    SampleUser,
+    user,
 } from './checkout-flow';
 
 export const POWERTOOLS_BASESITE = 'powertools-spa';

@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+    inject,
 } from '@angular/core';
 import { Params } from '@angular/router';
 import {
-  AbstractOrderKey,
-  AbstractOrderType,
-  OrderEntry,
+    AbstractOrderKey,
+    AbstractOrderType,
+    OrderEntry,
 } from '@spartacus/cart/base/root';
 import { RoutingService } from '@spartacus/core';
 
@@ -22,8 +22,8 @@ import { AbstractOrderContext } from '@spartacus/cart/base/components';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {
-  CommonConfigurator,
-  ReadOnlyPostfix,
+    CommonConfigurator,
+    ReadOnlyPostfix,
 } from '../../core/model/common-configurator.model';
 import { CommonConfiguratorUtilsService } from '../../shared/utils/common-configurator-utils.service';
 

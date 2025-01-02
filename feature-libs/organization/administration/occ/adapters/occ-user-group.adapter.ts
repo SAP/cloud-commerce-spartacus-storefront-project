@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,22 +7,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
-  B2BUser,
-  ConverterService,
-  EntitiesModel,
-  Occ,
-  OccEndpointsService,
-  SearchConfig,
+    B2BUser,
+    ConverterService,
+    EntitiesModel,
+    Occ,
+    OccEndpointsService,
+    SearchConfig,
 } from '@spartacus/core';
 import {
-  B2B_USERS_NORMALIZER,
-  Permission,
-  PERMISSIONS_NORMALIZER,
-  UserGroup,
-  UserGroupAdapter,
-  USER_GROUPS_NORMALIZER,
-  USER_GROUP_NORMALIZER,
-  USER_GROUP_SERIALIZER,
+    B2B_USERS_NORMALIZER,
+    Permission,
+    PERMISSIONS_NORMALIZER,
+    USER_GROUP_NORMALIZER,
+    USER_GROUP_SERIALIZER,
+    USER_GROUPS_NORMALIZER,
+    UserGroup,
+    UserGroupAdapter,
 } from '@spartacus/organization/administration/core';
 import { Observable } from 'rxjs';
 

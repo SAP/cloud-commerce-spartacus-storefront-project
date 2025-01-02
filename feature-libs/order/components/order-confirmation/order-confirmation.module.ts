@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,24 +9,24 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AbstractOrderContextModule } from '@spartacus/cart/base/components';
 import {
-  CmsConfig,
-  FeaturesConfigModule,
-  I18nModule,
-  provideDefaultConfig,
+    CmsConfig,
+    FeaturesConfigModule,
+    I18nModule,
+    provideDefaultConfig,
 } from '@spartacus/core';
 import {
-  OrderConfirmationOrderEntriesContextToken,
-  OrderFacade,
-  OrderOutlets,
+    OrderConfirmationOrderEntriesContextToken,
+    OrderFacade,
+    OrderOutlets,
 } from '@spartacus/order/root';
 import {
-  CardModule,
-  FormErrorsModule,
-  OutletModule,
-  PasswordVisibilityToggleModule,
-  PromotionsModule,
-  PwaModule,
-  provideOutlet,
+    CardModule,
+    FormErrorsModule,
+    OutletModule,
+    PasswordVisibilityToggleModule,
+    PromotionsModule,
+    PwaModule,
+    provideOutlet,
 } from '@spartacus/storefront';
 import { OrderConfirmationGuard } from '../guards/order-confirmation.guard';
 import { OrderDetailBillingComponent } from '../order-details/order-detail-billing/order-detail-billing.component';

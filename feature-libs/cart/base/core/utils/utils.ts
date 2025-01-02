@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Cart } from '@spartacus/cart/base/root';
 import {
-  EMAIL_PATTERN,
-  ErrorModel,
-  OCC_USER_ID_ANONYMOUS,
+    EMAIL_PATTERN,
+    ErrorModel,
+    OCC_USER_ID_ANONYMOUS,
 } from '@spartacus/core';
 
 /**

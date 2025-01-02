@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  HostListener,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    HostListener,
+    OnInit,
 } from '@angular/core';
 import { Address, useFeatureStyles } from '@spartacus/core';
 import {
-  FocusConfig,
-  ICON_TYPE,
-  LaunchDialogService,
+    FocusConfig,
+    ICON_TYPE,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { take } from 'rxjs/operators';
 

@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AfterViewInit,
-  Directive,
-  ElementRef,
-  HostBinding,
-  HostListener,
-  OnInit,
+    AfterViewInit,
+    Directive,
+    ElementRef,
+    HostBinding,
+    HostListener,
+    OnInit,
 } from '@angular/core';
 import { BlockFocusDirective } from '../block/block-focus.directive';
 import { FOCUS_ATTR, PersistFocusConfig } from '../keyboard-focus.model';

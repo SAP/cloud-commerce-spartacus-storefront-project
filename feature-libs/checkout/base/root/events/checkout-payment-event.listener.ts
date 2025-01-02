@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, OnDestroy } from '@angular/core';
 import {
-  CurrencySetEvent,
-  EventService,
-  GlobalMessageService,
-  GlobalMessageType,
-  LanguageSetEvent,
-  LoadUserPaymentMethodsEvent,
-  OCC_USER_ID_ANONYMOUS,
+    CurrencySetEvent,
+    EventService,
+    GlobalMessageService,
+    GlobalMessageType,
+    LanguageSetEvent,
+    LoadUserPaymentMethodsEvent,
+    OCC_USER_ID_ANONYMOUS,
 } from '@spartacus/core';
 import { merge, Subscription } from 'rxjs';
 import {
-  CheckoutPaymentCardTypesQueryReloadEvent,
-  CheckoutPaymentDetailsCreatedEvent,
-  CheckoutPaymentDetailsSetEvent,
-  CheckoutQueryResetEvent,
+    CheckoutPaymentCardTypesQueryReloadEvent,
+    CheckoutPaymentDetailsCreatedEvent,
+    CheckoutPaymentDetailsSetEvent,
+    CheckoutQueryResetEvent,
 } from './checkout.events';
 
 /**

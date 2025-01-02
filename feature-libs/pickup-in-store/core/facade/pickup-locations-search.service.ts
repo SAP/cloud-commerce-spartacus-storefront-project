@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,21 +8,21 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { PointOfService, PointOfServiceStock, Stock } from '@spartacus/core';
 import {
-  PickupLocationsSearchFacade,
-  StockLocationSearchParams,
+    PickupLocationsSearchFacade,
+    StockLocationSearchParams,
 } from '@spartacus/pickup-in-store/root';
 import { Observable, Subscription } from 'rxjs';
 import { filter, tap } from 'rxjs/operators';
 import {
-  BrowserLocationActions,
-  HideOutOfStockSelectors,
-  PickupLocationActions,
-  PickupLocationsSelectors,
-  StateWithPickupLocations,
-  StateWithStock,
-  StockLevelActions,
-  StockSelectors,
-  ToggleHideOutOfStockOptionsAction,
+    BrowserLocationActions,
+    HideOutOfStockSelectors,
+    PickupLocationActions,
+    PickupLocationsSelectors,
+    StateWithPickupLocations,
+    StateWithStock,
+    StockLevelActions,
+    StockSelectors,
+    ToggleHideOutOfStockOptionsAction,
 } from '../store/index';
 
 @Injectable()

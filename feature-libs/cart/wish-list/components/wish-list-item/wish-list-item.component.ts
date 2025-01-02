@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  Output,
-  SimpleChanges,
+    ChangeDetectionStrategy,
+    Component,
+    EventEmitter,
+    Input,
+    OnChanges,
+    Output,
+    SimpleChanges,
 } from '@angular/core';
 import { OrderEntry } from '@spartacus/cart/base/root';
 import { Product, useFeatureStyles } from '@spartacus/core';
 import {
-  ProductListItemContext,
-  ProductListItemContextSource,
+    ProductListItemContext,
+    ProductListItemContextSource,
 } from '@spartacus/storefront';
 
 @Component({

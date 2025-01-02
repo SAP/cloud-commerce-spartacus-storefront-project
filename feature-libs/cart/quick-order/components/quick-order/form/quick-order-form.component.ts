@@ -1,37 +1,37 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  inject,
-  Input,
-  OnDestroy,
-  OnInit,
-  ViewChild,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    inject,
+    Input,
+    OnDestroy,
+    OnInit,
+    ViewChild,
 } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { QuickOrderFacade } from '@spartacus/cart/quick-order/root';
 import {
-  Config,
-  FeatureConfigService,
-  Product,
-  useFeatureStyles,
-  WindowRef,
+    Config,
+    FeatureConfigService,
+    Product,
+    useFeatureStyles,
+    WindowRef,
 } from '@spartacus/core';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import {
-  debounceTime,
-  distinctUntilChanged,
-  filter,
-  switchMap,
-  take,
+    debounceTime,
+    distinctUntilChanged,
+    filter,
+    switchMap,
+    take,
 } from 'rxjs/operators';
 
 const SEARCH_BOX_ACTIVE_CLASS = 'quick-order-searchbox-is-active';

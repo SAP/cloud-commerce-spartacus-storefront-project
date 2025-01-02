@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,11 +10,11 @@ import { skip, tap } from 'rxjs/operators';
 import { isFeatureEnabled } from '../../features-config';
 import { UnifiedInjector } from '../../lazy-loading/unified-injector';
 import {
-  Config,
-  ConfigChunk,
-  DefaultConfig,
-  DefaultConfigChunk,
-  RootConfig,
+    Config,
+    ConfigChunk,
+    DefaultConfig,
+    DefaultConfigChunk,
+    RootConfig,
 } from '../config-tokens';
 import { deepMerge } from '../utils/deep-merge';
 

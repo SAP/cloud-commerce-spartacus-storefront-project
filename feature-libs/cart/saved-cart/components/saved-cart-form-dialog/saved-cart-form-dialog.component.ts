@@ -1,44 +1,44 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  HostListener,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    HostListener,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import {
-  UntypedFormControl,
-  UntypedFormGroup,
-  Validators,
+    UntypedFormControl,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import {
-  Cart,
-  DeleteCartEvent as DeleteSavedCartEvent,
-  DeleteCartFailEvent as DeleteSavedCartFailEvent,
-  DeleteCartSuccessEvent as DeleteSavedCartSuccessEvent,
+    Cart,
+    DeleteCartEvent as DeleteSavedCartEvent,
+    DeleteCartFailEvent as DeleteSavedCartFailEvent,
+    DeleteCartSuccessEvent as DeleteSavedCartSuccessEvent,
 } from '@spartacus/cart/base/root';
 import {
-  SavedCartFacade,
-  SavedCartFormType,
+    SavedCartFacade,
+    SavedCartFormType,
 } from '@spartacus/cart/saved-cart/root';
 import {
-  EventService,
-  GlobalMessageService,
-  GlobalMessageType,
-  RoutingService,
-  useFeatureStyles,
+    EventService,
+    GlobalMessageService,
+    GlobalMessageType,
+    RoutingService,
+    useFeatureStyles,
 } from '@spartacus/core';
 import {
-  FocusConfig,
-  FormUtils,
-  ICON_TYPE,
-  LaunchDialogService,
+    FocusConfig,
+    FormUtils,
+    ICON_TYPE,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { Observable, Subscription, combineLatest, merge } from 'rxjs';
 import { map, take } from 'rxjs/operators';

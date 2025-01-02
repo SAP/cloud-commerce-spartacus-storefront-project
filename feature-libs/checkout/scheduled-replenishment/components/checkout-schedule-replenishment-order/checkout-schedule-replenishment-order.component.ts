@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import { useFeatureStyles } from '@spartacus/core';
 import {
-  DaysOfWeek,
-  ORDER_TYPE,
-  ScheduleReplenishmentForm,
-  recurrencePeriod,
+    DaysOfWeek,
+    ORDER_TYPE,
+    ScheduleReplenishmentForm,
+    recurrencePeriod,
 } from '@spartacus/order/root';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';

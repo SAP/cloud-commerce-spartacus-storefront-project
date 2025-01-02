@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Provider } from '@angular/core';
 import {
-  IntendedPickupLocationFacade,
-  PickupLocationsSearchFacade,
-  PickupOptionFacade,
-  PreferredStoreFacade,
+    IntendedPickupLocationFacade,
+    PickupLocationsSearchFacade,
+    PickupOptionFacade,
+    PreferredStoreFacade,
 } from '@spartacus/pickup-in-store/root';
 import { PreferredStoreService } from '../services';
 import { IntendedPickupLocationService } from './intended-pickup-location.service';

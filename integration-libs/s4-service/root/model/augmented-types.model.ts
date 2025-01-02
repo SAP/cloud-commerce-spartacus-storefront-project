@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Injectable } from '@angular/core';
+import { DeliveryMode } from '@spartacus/cart/base/root';
 import '@spartacus/checkout/base/root';
 import { Config, OccEndpoint } from '@spartacus/core';
 import '@spartacus/order/root';
 import {
-  serviceCancellable,
-  ServiceDateTime,
+    serviceCancellable,
+    ServiceDateTime,
 } from './checkout-service-details.model';
-import { Injectable } from '@angular/core';
-import { DeliveryMode } from '@spartacus/cart/base/root';
 
 export abstract class ServiceOrderConfiguration {
   serviceOrderConfiguration?: {

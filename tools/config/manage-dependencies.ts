@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -27,22 +27,22 @@ import semver from 'semver';
 import ts from 'typescript';
 import { chalk } from '../chalk';
 import {
-  PACKAGE_JSON,
-  PUBLISHING_VERSION,
-  SAPUI5_TYPES,
-  SAP_SCOPE,
-  SPARTACUS_SCHEMATICS,
-  SPARTACUS_SCOPE,
+    PACKAGE_JSON,
+    PUBLISHING_VERSION,
+    SAPUI5_TYPES,
+    SAP_SCOPE,
+    SPARTACUS_SCHEMATICS,
+    SPARTACUS_SCOPE,
 } from './const';
 import {
-  Library,
-  PackageJson,
-  ProgramOptions,
-  Repository,
-  error,
-  logUpdatedFile,
-  reportProgress,
-  success,
+    Library,
+    PackageJson,
+    ProgramOptions,
+    Repository,
+    error,
+    logUpdatedFile,
+    reportProgress,
+    success,
 } from './index';
 
 // ------------ Utilities ------------

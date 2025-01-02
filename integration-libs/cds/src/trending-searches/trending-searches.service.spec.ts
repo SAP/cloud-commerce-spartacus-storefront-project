@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  *
  */
 
 import {
-  fakeAsync,
-  TestBed,
-  tick,
-  discardPeriodicTasks,
-} from '@angular/core/testing';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
+    HttpClientTestingModule,
+    HttpTestingController,
 } from '@angular/common/http/testing';
+import {
+    discardPeriodicTasks,
+    fakeAsync,
+    TestBed,
+    tick,
+} from '@angular/core/testing';
+import { CdsConfig } from '@spartacus/cds';
 import { BaseSiteService, WindowRef } from '@spartacus/core';
-import { TrendingSearchesService } from './trending-searches.service';
 import { Observable, of } from 'rxjs';
 import { SearchPhrases } from './model';
-import { CdsConfig } from '@spartacus/cds';
+import { TrendingSearchesService } from './trending-searches.service';
 
 const mockCDSConfig: CdsConfig = {
   cds: {

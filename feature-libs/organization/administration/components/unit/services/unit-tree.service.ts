@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  B2BUnitNode,
-  B2BUnitTreeNode,
+    B2BUnitNode,
+    B2BUnitTreeNode,
 } from '@spartacus/organization/administration/core';
 import { BehaviorSubject } from 'rxjs';
 import { TREE_TOGGLE } from './unit-tree.model';

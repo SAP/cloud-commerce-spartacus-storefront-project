@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Inject,
-  InjectionToken,
-  Optional,
-  Pipe,
-  PipeTransform,
+    Inject,
+    InjectionToken,
+    Optional,
+    Pipe,
+    PipeTransform,
 } from '@angular/core';
 import { UrlCommand, UrlCommands } from '../url-command';
 

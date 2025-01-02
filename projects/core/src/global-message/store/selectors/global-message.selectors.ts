@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,9 +8,9 @@ import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { Translatable } from '../../../i18n/translatable';
 import { GlobalMessageType } from '../../models/global-message.model';
 import {
-  GlobalMessageEntities,
-  GlobalMessageState,
-  StateWithGlobalMessage,
+    GlobalMessageEntities,
+    GlobalMessageState,
+    StateWithGlobalMessage,
 } from '../global-message-state';
 import { getGlobalMessageState } from './feature.selector';
 

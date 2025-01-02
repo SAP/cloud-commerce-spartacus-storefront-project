@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { inject, Injectable } from '@angular/core';
 import {
-  Address,
-  FeatureConfigService,
-  isNotUndefined,
-  RoutingService,
+    Address,
+    FeatureConfigService,
+    isNotUndefined,
+    RoutingService,
 } from '@spartacus/core';
 import {
-  OrganizationItemStatus,
-  OrgUnitService,
+    OrganizationItemStatus,
+    OrgUnitService,
 } from '@spartacus/organization/administration/core';
 import { ROUTE_PARAMS } from '@spartacus/organization/administration/root';
 import { Observable } from 'rxjs';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,22 +8,22 @@ import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store, select } from '@ngrx/store';
 import {
-  FeatureConfigService,
-  LoggerService,
-  tryNormalizeHttpError,
+    FeatureConfigService,
+    LoggerService,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import {
-  CommonConfigurator,
-  CommonConfiguratorUtilsService,
+    CommonConfigurator,
+    CommonConfiguratorUtilsService,
 } from '@spartacus/product-configurator/common';
 import { Observable } from 'rxjs';
 import {
-  catchError,
-  filter,
-  map,
-  mergeMap,
-  switchMap,
-  take,
+    catchError,
+    filter,
+    map,
+    mergeMap,
+    switchMap,
+    take,
 } from 'rxjs/operators';
 import { RulebasedConfiguratorConnector } from '../../connectors/rulebased-configurator.connector';
 import { ConfiguratorGroupStatusService } from '../../facade/configurator-group-status.service';

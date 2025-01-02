@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ANONYMOUS_CONSENT_TEMPLATES_ADAPTER,
-  LOAD_ANONYMOUS_CONSENTS,
-  TODO_SPARTACUS,
+    ANONYMOUS_CONSENT_TEMPLATES_ADAPTER,
+    LOAD_ANONYMOUS_CONSENTS,
+    TODO_SPARTACUS,
 } from '../../../../shared/constants';
 import { SPARTACUS_CORE } from '../../../../shared/libs-constants';
 import { MethodPropertyDeprecation } from '../../../../shared/utils/file-utils';

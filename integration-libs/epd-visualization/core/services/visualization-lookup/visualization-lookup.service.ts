@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  ContentType,
-  EpdVisualizationConfig,
-  EpdVisualizationInnerConfig,
-  UsageId,
-  UsageIdConfig,
-  VisualizationInfo,
+    ContentType,
+    EpdVisualizationConfig,
+    EpdVisualizationInnerConfig,
+    UsageId,
+    UsageIdConfig,
+    VisualizationInfo,
 } from '@spartacus/epd-visualization/root';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';

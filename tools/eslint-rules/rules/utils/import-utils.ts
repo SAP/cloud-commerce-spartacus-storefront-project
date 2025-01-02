@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { AST_NODE_TYPES } from '@typescript-eslint/utils';
 import {
-  RuleFix,
-  RuleFixer,
-  SourceCode,
+    RuleFix,
+    RuleFixer,
+    SourceCode,
 } from '@typescript-eslint/utils/ts-eslint';
 
 /**

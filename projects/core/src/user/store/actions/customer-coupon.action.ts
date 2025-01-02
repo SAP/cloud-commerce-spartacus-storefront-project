@@ -1,34 +1,34 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ErrorAction } from '../../../error-handling';
 import {
-  CustomerCoupon2Customer,
-  CustomerCouponNotification,
-  CustomerCouponSearchResult,
+    CustomerCoupon2Customer,
+    CustomerCouponNotification,
+    CustomerCouponSearchResult,
 } from '../../../model/customer-coupon.model';
 import { PROCESS_FEATURE } from '../../../process/store';
 import {
-  EntityFailAction,
-  EntityLoadAction,
-  EntityLoaderResetAction,
-  EntitySuccessAction,
+    EntityFailAction,
+    EntityLoadAction,
+    EntityLoaderResetAction,
+    EntitySuccessAction,
 } from '../../../state/utils/entity-loader/entity-loader.action';
 import {
-  LoaderFailAction,
-  LoaderLoadAction,
-  LoaderResetAction,
-  LoaderSuccessAction,
+    LoaderFailAction,
+    LoaderLoadAction,
+    LoaderResetAction,
+    LoaderSuccessAction,
 } from '../../../state/utils/loader/loader.action';
 import {
-  CLAIM_CUSTOMER_COUPON_PROCESS_ID,
-  CUSTOMER_COUPONS,
-  DISCLAIM_CUSTOMER_COUPON_PROCESS_ID,
-  SUBSCRIBE_CUSTOMER_COUPON_PROCESS_ID,
-  UNSUBSCRIBE_CUSTOMER_COUPON_PROCESS_ID,
+    CLAIM_CUSTOMER_COUPON_PROCESS_ID,
+    CUSTOMER_COUPONS,
+    DISCLAIM_CUSTOMER_COUPON_PROCESS_ID,
+    SUBSCRIBE_CUSTOMER_COUPON_PROCESS_ID,
+    UNSUBSCRIBE_CUSTOMER_COUPON_PROCESS_ID,
 } from '../user-state';
 
 export const LOAD_CUSTOMER_COUPONS = '[User] Load Customer Coupons';

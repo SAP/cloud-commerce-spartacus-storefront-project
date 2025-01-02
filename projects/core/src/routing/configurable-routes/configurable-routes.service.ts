@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Injectable,
-  InjectionToken,
-  Injector,
-  inject,
-  isDevMode,
+    Injectable,
+    InjectionToken,
+    Injector,
+    inject,
+    isDevMode,
 } from '@angular/core';
 import { Route, Router, Routes, UrlMatcher } from '@angular/router';
 import { LoggerService } from '../../logger';

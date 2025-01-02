@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+    OnInit,
 } from '@angular/core';
 import {
-  UntypedFormArray,
-  UntypedFormControl,
-  UntypedFormGroup,
+    UntypedFormArray,
+    UntypedFormControl,
+    UntypedFormGroup,
 } from '@angular/forms';
-import { B2BUser, B2BUserRole, B2BUserRight, Title } from '@spartacus/core';
+import { B2BUser, B2BUserRight, B2BUserRole, Title } from '@spartacus/core';
 import {
-  B2BUnitNode,
-  B2BUserService,
-  OrgUnitService,
+    B2BUnitNode,
+    B2BUserService,
+    OrgUnitService,
 } from '@spartacus/organization/administration/core';
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { Observable } from 'rxjs';

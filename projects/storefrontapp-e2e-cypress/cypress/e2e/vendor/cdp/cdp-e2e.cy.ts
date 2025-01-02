@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { fillLoginForm } from '../../../helpers/auth-forms';
-import {
-  logoutUser,
-  waitForCmsComponentsToLoad,
-} from '../../../helpers/vendor/cdc/cdc';
 import * as customerTicketing from '../../../helpers/customer-ticketing/customer-ticketing';
+import {
+    logoutUser,
+    waitForCmsComponentsToLoad,
+} from '../../../helpers/vendor/cdc/cdc';
 const cdpUser = {
   userId: 'cdptester@cdp.com',
   password: 'Password123.',

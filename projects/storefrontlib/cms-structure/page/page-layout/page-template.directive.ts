@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectorRef,
-  Directive,
-  ElementRef,
-  Input,
-  OnDestroy,
-  OnInit,
-  Optional,
-  TemplateRef,
+    ChangeDetectorRef,
+    Directive,
+    ElementRef,
+    Input,
+    OnDestroy,
+    OnInit,
+    Optional,
+    TemplateRef,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { PageLayoutService } from './page-layout.service';

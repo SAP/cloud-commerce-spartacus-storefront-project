@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,13 +8,13 @@ import { NgModule } from '@angular/core';
 
 import { CmsConfig, provideDefaultConfig } from '@spartacus/core';
 import {
-  unitsCmsConfig,
-  userCmsConfig,
-  UserListService,
+    unitsCmsConfig,
+    userCmsConfig,
+    UserListService,
 } from '@spartacus/organization/administration/components';
 import {
-  B2BUserService,
-  OrgUnitService,
+    B2BUserService,
+    OrgUnitService,
 } from '@spartacus/organization/administration/core';
 import { CdcB2BUserService } from './cdc-b2b-user.service';
 import { CdcOrgUnitService } from './cdc-org-unit.service';

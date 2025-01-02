@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,20 +7,20 @@
 import { Component, inject } from '@angular/core';
 import { EventService, TranslationService } from '@spartacus/core';
 import {
-  Quote,
-  QuoteAction,
-  QuoteActionType,
-  QuoteFacade,
-  QuoteMetadata,
-  QuoteState,
+    Quote,
+    QuoteAction,
+    QuoteActionType,
+    QuoteFacade,
+    QuoteMetadata,
+    QuoteState,
 } from '@spartacus/quote/root';
 import { Card, ICON_TYPE } from '@spartacus/storefront';
 import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { QuoteUIConfig } from '../../config/quote-ui.config';
 import {
-  EditCard,
-  SaveEvent,
+    EditCard,
+    SaveEvent,
 } from '../buyer-edit/quote-header-buyer-edit.component';
 
 @Component({

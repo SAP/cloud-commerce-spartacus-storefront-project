@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,17 +8,17 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
-  CmsConfig,
-  FeaturesConfigModule,
-  I18nModule,
-  provideDefaultConfig,
+    CmsConfig,
+    FeaturesConfigModule,
+    I18nModule,
+    provideDefaultConfig,
 } from '@spartacus/core';
 import {
-  CarouselModule,
-  IconModule,
-  KeyboardFocusModule,
-  MediaModule,
-  OutletModule,
+    CarouselModule,
+    IconModule,
+    KeyboardFocusModule,
+    MediaModule,
+    OutletModule,
 } from '@spartacus/storefront';
 import { defaultProductImageZoomLayoutConfig } from './default-product-image-zoom-layout.config';
 import { ProductImageZoomDialogComponent } from './product-image-zoom-dialog/product-image-zoom-dialog.component';

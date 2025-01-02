@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, Type } from '@angular/core';
 import {
-  ActivatedRouteSnapshot,
-  Route,
-  Router,
-  RouterStateSnapshot,
-  UrlTree,
+    ActivatedRouteSnapshot,
+    Route,
+    Router,
+    RouterStateSnapshot,
+    UrlTree,
 } from '@angular/router';
 import {
-  CmsComponentChildRoutesConfig,
-  CmsRoute,
-  deepMerge,
-  PageContext,
-  PageType,
+    CmsComponentChildRoutesConfig,
+    CmsRoute,
+    deepMerge,
+    PageContext,
+    PageType,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { PageLayoutComponent } from '../page/page-layout/page-layout.component';

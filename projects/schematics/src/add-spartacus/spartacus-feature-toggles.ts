@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Rule,
-  SchematicContext,
-  SchematicsException,
-  Tree,
+    Rule,
+    SchematicContext,
+    SchematicsException,
+    Tree,
 } from '@angular-devkit/schematics';
 import { SourceFile } from 'ts-morph';
 import {
-  FEATURE_TOGGLES_COPIED_FROM_CORE_LIB_PATH,
-  PROVIDE_FEATURE_TOGGLES_FUNCTION,
-  SPARTACUS_CORE,
-  SPARTACUS_FEATURES_NG_MODULE,
-  addModuleProvider,
-  getProjectTsConfigPaths,
-  getSpartacusFeaturesModule,
-  saveAndFormat,
+    FEATURE_TOGGLES_COPIED_FROM_CORE_LIB_PATH,
+    PROVIDE_FEATURE_TOGGLES_FUNCTION,
+    SPARTACUS_CORE,
+    SPARTACUS_FEATURES_NG_MODULE,
+    addModuleProvider,
+    getProjectTsConfigPaths,
+    getSpartacusFeaturesModule,
+    saveAndFormat,
 } from '../shared';
 import { Schema as SpartacusOptions } from './schema';
 

@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { inject, Injectable } from '@angular/core';
-import { CancelServiceOrderConnector } from '../connector';
-import {
-  CancellationDetails,
-  CancelServiceOrderFacade,
-} from '@spartacus/s4-service/root';
-import { OrderHistoryFacade } from '@spartacus/order/root';
 import { UserIdService } from '@spartacus/core';
+import { OrderHistoryFacade } from '@spartacus/order/root';
+import {
+    CancellationDetails,
+    CancelServiceOrderFacade,
+} from '@spartacus/s4-service/root';
 import { switchMap } from 'rxjs/operators';
+import { CancelServiceOrderConnector } from '../connector';
 
 @Injectable({
   providedIn: 'root',

@@ -1,29 +1,29 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ConsignmentEntry,
-  DeliveryMode,
-  DeliveryOrderEntryGroup,
-  OrderEntry,
-  PickupOrderEntryGroup,
-  PromotionResult,
-  Voucher,
+    ConsignmentEntry,
+    DeliveryMode,
+    DeliveryOrderEntryGroup,
+    OrderEntry,
+    PickupOrderEntryGroup,
+    PromotionResult,
+    Voucher,
 } from '@spartacus/cart/base/root';
 import {
-  Address,
-  B2BUnit,
-  B2BUser,
-  CostCenter,
-  PaginationModel,
-  PaymentDetails,
-  PointOfService,
-  Price,
-  Principal,
-  SortModel,
+    Address,
+    B2BUnit,
+    B2BUser,
+    CostCenter,
+    PaginationModel,
+    PaymentDetails,
+    PointOfService,
+    Price,
+    Principal,
+    SortModel,
 } from '@spartacus/core';
 
 export interface CancelOrReturnRequestEntryInput {

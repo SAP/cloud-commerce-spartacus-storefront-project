@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,14 +7,14 @@
 import { NgModule } from '@angular/core';
 import { I18nConfig, provideConfig } from '@spartacus/core';
 import {
-  quoteTranslationChunksConfig,
-  quoteTranslations,
+    quoteTranslationChunksConfig,
+    quoteTranslations,
 } from '@spartacus/quote/assets';
 import {
-  QUOTE_CART_GUARD_FEATURE,
-  QUOTE_FEATURE,
-  QUOTE_REQUEST_FEATURE,
-  QuoteRootModule,
+    QUOTE_CART_GUARD_FEATURE,
+    QUOTE_FEATURE,
+    QUOTE_REQUEST_FEATURE,
+    QuoteRootModule,
 } from '@spartacus/quote/root';
 
 @NgModule({

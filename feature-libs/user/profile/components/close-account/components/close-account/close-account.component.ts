@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  Optional,
-  ViewChild,
-  ViewContainerRef,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    Optional,
+    ViewChild,
+    ViewContainerRef,
+    inject,
 } from '@angular/core';
-import { take } from 'rxjs/operators';
-import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { RoutingService } from '@spartacus/core';
+import { LAUNCH_CALLER, LaunchDialogService } from '@spartacus/storefront';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'cx-close-account',

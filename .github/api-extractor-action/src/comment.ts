@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,10 +7,10 @@
 import { Context } from '@actions/github/lib/context';
 import * as fs from 'fs';
 import {
-  EntryPoints,
-  EntryPointStatus,
-  FailedStatus,
-  Status,
+    EntryPoints,
+    EntryPointStatus,
+    FailedStatus,
+    Status,
 } from './api-extractor';
 import { BASE_BRANCH_DIR, REPORT_DIR } from './const';
 

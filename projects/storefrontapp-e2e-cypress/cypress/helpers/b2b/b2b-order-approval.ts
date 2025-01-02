@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import * as sampleData from '../../sample-data/b2b-order-approval';
 import {
-  approvalOrderDetail,
-  approvalOrderList,
-  approvedOrderDetails,
-  pendingOrder,
-  rejectedOrderDetails,
+    approvalOrderDetail,
+    approvalOrderList,
+    approvedOrderDetails,
+    pendingOrder,
+    rejectedOrderDetails,
 } from '../../sample-data/b2b-order-approval';
 import { waitForPage } from '../checkout-flow';
 

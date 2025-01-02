@@ -1,29 +1,29 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { EventEmitter, Injectable, OnDestroy } from '@angular/core';
 import {
-  Product,
-  ProductReference,
-  ProductReferenceService,
+    Product,
+    ProductReference,
+    ProductReferenceService,
 } from '@spartacus/core';
 import {
-  EpdVisualizationConfig,
-  EpdVisualizationInnerConfig,
-  VisualPickingConfig,
+    EpdVisualizationConfig,
+    EpdVisualizationInnerConfig,
+    VisualPickingConfig,
 } from '@spartacus/epd-visualization/root';
 import { CurrentProductService } from '@spartacus/storefront';
 import { combineLatest, Observable, Subject, Subscription } from 'rxjs';
 import {
-  distinctUntilChanged,
-  filter,
-  map,
-  shareReplay,
-  switchMap,
-  tap,
+    distinctUntilChanged,
+    filter,
+    map,
+    shareReplay,
+    switchMap,
+    tap,
 } from 'rxjs/operators';
 import { VisualPickingProductFilterService } from '../product-filter/visual-picking-product-filter.service';
 import { VisualPickingProductListItem } from './model/visual-picking-product-list-item.model';

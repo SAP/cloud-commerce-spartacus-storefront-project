@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,24 +9,24 @@ import { ofType } from '@ngrx/effects';
 import { ActionsSubject } from '@ngrx/store';
 import { MultiCartFacade } from '@spartacus/cart/base/root';
 import {
-  CloneSavedCartEvent,
-  CloneSavedCartFailEvent,
-  CloneSavedCartSuccessEvent,
-  EditSavedCartEvent,
-  EditSavedCartFailEvent,
-  EditSavedCartSuccessEvent,
-  RestoreSavedCartEvent,
-  RestoreSavedCartFailEvent,
-  RestoreSavedCartSuccessEvent,
-  SaveCartEvent,
-  SaveCartFailEvent,
-  SaveCartSuccessEvent,
+    CloneSavedCartEvent,
+    CloneSavedCartFailEvent,
+    CloneSavedCartSuccessEvent,
+    EditSavedCartEvent,
+    EditSavedCartFailEvent,
+    EditSavedCartSuccessEvent,
+    RestoreSavedCartEvent,
+    RestoreSavedCartFailEvent,
+    RestoreSavedCartSuccessEvent,
+    SaveCartEvent,
+    SaveCartFailEvent,
+    SaveCartSuccessEvent,
 } from '@spartacus/cart/saved-cart/root';
 import {
-  ActionToEventMapping,
-  createFrom,
-  EventService,
-  StateEventService,
+    ActionToEventMapping,
+    createFrom,
+    EventService,
+    StateEventService,
 } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { filter, map, switchMap, withLatestFrom } from 'rxjs/operators';

@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
-  CmsProductCarouselComponent as model,
-  FeatureConfigService,
-  Product,
-  ProductScope,
-  ProductSearchByCategoryService,
-  ProductSearchByCodeService,
-  ProductService,
+    FeatureConfigService,
+    CmsProductCarouselComponent as model,
+    Product,
+    ProductScope,
+    ProductSearchByCategoryService,
+    ProductSearchByCodeService,
+    ProductService,
 } from '@spartacus/core';
 import { Observable, of, switchMap, zip } from 'rxjs';
 import { filter, map } from 'rxjs/operators';

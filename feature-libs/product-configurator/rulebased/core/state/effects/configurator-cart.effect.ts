@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,9 +11,9 @@ import { CartActions } from '@spartacus/cart/base/core';
 import { CartModification } from '@spartacus/cart/base/root';
 import { LoggerService, tryNormalizeHttpError } from '@spartacus/core';
 import {
-  CommonConfigurator,
-  CommonConfiguratorUtilsService,
-  ConfiguratorModelUtils,
+    CommonConfigurator,
+    CommonConfiguratorUtilsService,
+    ConfiguratorModelUtils,
 } from '@spartacus/product-configurator/common';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap, take } from 'rxjs/operators';

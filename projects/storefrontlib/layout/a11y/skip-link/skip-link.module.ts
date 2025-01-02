@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { CommonModule } from '@angular/common';
 import {
-  APP_INITIALIZER,
-  ComponentFactoryResolver,
-  NgModule,
+    APP_INITIALIZER,
+    ComponentFactoryResolver,
+    NgModule,
 } from '@angular/core';
 import {
-  ConfigModule,
-  I18nModule,
-  provideDefaultConfig,
+    ConfigModule,
+    I18nModule,
+    provideDefaultConfig,
 } from '@spartacus/core';
 import { OutletPosition } from '../../../cms-structure/outlet/outlet.model';
 import { OutletService } from '../../../cms-structure/outlet/outlet.service';

@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ArrowFunction,
-  CallExpression,
-  Identifier,
-  ImportDeclaration,
-  ImportSpecifier,
-  PropertyAccessExpression,
-  SourceFile,
-  ts as tsMorph,
+    ArrowFunction,
+    CallExpression,
+    Identifier,
+    ImportDeclaration,
+    ImportSpecifier,
+    PropertyAccessExpression,
+    SourceFile,
+    ts as tsMorph,
 } from 'ts-morph';
 import { CORE_SPARTACUS_SCOPES, SPARTACUS_SCOPE } from '../libs-constants';
 import { getSpartacusProviders } from './config-utils';

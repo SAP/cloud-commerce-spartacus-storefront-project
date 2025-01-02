@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,37 +7,37 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  ConverterService,
-  LoggerService,
-  backOff,
-  isServerError,
-  tryNormalizeHttpError,
+    ConverterService,
+    LoggerService,
+    backOff,
+    isServerError,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import { OpfEndpointsService } from '@spartacus/opf/base/core';
 import {
-  OPF_CC_ACCESS_CODE_HEADER,
-  OPF_CC_PUBLIC_KEY_HEADER,
-  OpfConfig,
-  OpfMetadataStatePersistanceService,
+    OPF_CC_ACCESS_CODE_HEADER,
+    OPF_CC_PUBLIC_KEY_HEADER,
+    OpfConfig,
+    OpfMetadataStatePersistanceService,
 } from '@spartacus/opf/base/root';
 import {
-  OPF_AFTER_REDIRECT_SCRIPTS_NORMALIZER,
-  OPF_PAYMENT_CONFIG_SERIALIZER,
-  OPF_PAYMENT_SUBMIT_COMPLETE_NORMALIZER,
-  OPF_PAYMENT_SUBMIT_NORMALIZER,
-  OPF_PAYMENT_VERIFICATION_NORMALIZER,
-  OpfPaymentAdapter,
+    OPF_AFTER_REDIRECT_SCRIPTS_NORMALIZER,
+    OPF_PAYMENT_CONFIG_SERIALIZER,
+    OPF_PAYMENT_SUBMIT_COMPLETE_NORMALIZER,
+    OPF_PAYMENT_SUBMIT_NORMALIZER,
+    OPF_PAYMENT_VERIFICATION_NORMALIZER,
+    OpfPaymentAdapter,
 } from '@spartacus/opf/payment/core';
 import {
-  OpfPaymentAfterRedirectScriptResponse,
-  OpfPaymentInitiationConfig,
-  OpfPaymentSessionData,
-  OpfPaymentSubmitCompleteRequest,
-  OpfPaymentSubmitCompleteResponse,
-  OpfPaymentSubmitRequest,
-  OpfPaymentSubmitResponse,
-  OpfPaymentVerificationPayload,
-  OpfPaymentVerificationResponse,
+    OpfPaymentAfterRedirectScriptResponse,
+    OpfPaymentInitiationConfig,
+    OpfPaymentSessionData,
+    OpfPaymentSubmitCompleteRequest,
+    OpfPaymentSubmitCompleteResponse,
+    OpfPaymentSubmitRequest,
+    OpfPaymentSubmitResponse,
+    OpfPaymentVerificationPayload,
+    OpfPaymentVerificationResponse,
 } from '@spartacus/opf/payment/root';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';

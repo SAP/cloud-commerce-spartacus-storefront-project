@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,33 +8,33 @@ import { Injectable, Type } from '@angular/core';
 import { ofType } from '@ngrx/effects';
 import { ActionsSubject } from '@ngrx/store';
 import {
-  ActiveCartFacade,
-  AddCartVoucherEvent,
-  AddCartVoucherFailEvent,
-  AddCartVoucherSuccessEvent,
-  CartAddEntryEvent,
-  CartAddEntryFailEvent,
-  CartAddEntrySuccessEvent,
-  CartRemoveEntryFailEvent,
-  CartRemoveEntrySuccessEvent,
-  CartUpdateEntryFailEvent,
-  CartUpdateEntrySuccessEvent,
-  CreateCartEvent,
-  CreateCartFailEvent,
-  CreateCartSuccessEvent,
-  DeleteCartEvent,
-  DeleteCartFailEvent,
-  DeleteCartSuccessEvent,
-  RemoveCartVoucherEvent,
-  RemoveCartVoucherFailEvent,
-  RemoveCartVoucherSuccessEvent,
-  MergeCartSuccessEvent,
+    ActiveCartFacade,
+    AddCartVoucherEvent,
+    AddCartVoucherFailEvent,
+    AddCartVoucherSuccessEvent,
+    CartAddEntryEvent,
+    CartAddEntryFailEvent,
+    CartAddEntrySuccessEvent,
+    CartRemoveEntryFailEvent,
+    CartRemoveEntrySuccessEvent,
+    CartUpdateEntryFailEvent,
+    CartUpdateEntrySuccessEvent,
+    CreateCartEvent,
+    CreateCartFailEvent,
+    CreateCartSuccessEvent,
+    DeleteCartEvent,
+    DeleteCartFailEvent,
+    DeleteCartSuccessEvent,
+    MergeCartSuccessEvent,
+    RemoveCartVoucherEvent,
+    RemoveCartVoucherFailEvent,
+    RemoveCartVoucherSuccessEvent,
 } from '@spartacus/cart/base/root';
 import {
-  ActionToEventMapping,
-  createFrom,
-  EventService,
-  StateEventService,
+    ActionToEventMapping,
+    createFrom,
+    EventService,
+    StateEventService,
 } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { filter, map, switchMap, withLatestFrom } from 'rxjs/operators';

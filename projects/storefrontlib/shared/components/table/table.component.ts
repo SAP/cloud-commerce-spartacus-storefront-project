@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  HostBinding,
-  Input,
-  isDevMode,
-  Output,
+    ChangeDetectionStrategy,
+    Component,
+    EventEmitter,
+    HostBinding,
+    Input,
+    isDevMode,
+    Output,
 } from '@angular/core';
 import { TableRendererService } from './table-renderer.service';
 import {
-  TableDataOutletContext,
-  TableHeaderOutletContext,
-  TableLayout,
-  TableOptions,
-  TableStructure,
+    TableDataOutletContext,
+    TableHeaderOutletContext,
+    TableLayout,
+    TableOptions,
+    TableStructure,
 } from './table.model';
 
 /**

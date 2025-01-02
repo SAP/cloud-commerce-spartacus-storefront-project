@@ -1,33 +1,33 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  Optional,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    Optional,
+    inject,
 } from '@angular/core';
 import {
-  CartModification,
-  CartModificationList,
-  CartValidationStatusCode,
-  MultiCartFacade,
+    CartModification,
+    CartModificationList,
+    CartValidationStatusCode,
+    MultiCartFacade,
 } from '@spartacus/cart/base/root';
 import {
-  FeatureConfigService,
-  OCC_CART_ID_CURRENT,
-  useFeatureStyles,
+    FeatureConfigService,
+    OCC_CART_ID_CURRENT,
+    useFeatureStyles,
 } from '@spartacus/core';
 import { ReorderOrderFacade } from '@spartacus/order/root';
 import {
-  FocusConfig,
-  ICON_TYPE,
-  LaunchDialogService,
-  SelectFocusUtility,
+    FocusConfig,
+    ICON_TYPE,
+    LaunchDialogService,
+    SelectFocusUtility,
 } from '@spartacus/storefront';
 import { BehaviorSubject } from 'rxjs';
 

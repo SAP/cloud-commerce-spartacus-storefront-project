@@ -1,48 +1,48 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-  Optional,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    inject,
+    OnDestroy,
+    OnInit,
+    Optional,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import {
-  CheckoutDeliveryAddressFacade,
-  CheckoutPaymentFacade,
+    CheckoutDeliveryAddressFacade,
+    CheckoutPaymentFacade,
 } from '@spartacus/checkout/base/root';
 import {
-  Address,
-  FeatureConfigService,
-  getLastValueSync,
-  GlobalMessageService,
-  GlobalMessageType,
-  PaymentDetails,
-  TranslationService,
-  UserPaymentService,
+    Address,
+    FeatureConfigService,
+    getLastValueSync,
+    GlobalMessageService,
+    GlobalMessageType,
+    PaymentDetails,
+    TranslationService,
+    UserPaymentService,
 } from '@spartacus/core';
 import { Card, ICON_TYPE } from '@spartacus/storefront';
 import {
-  BehaviorSubject,
-  combineLatest,
-  Observable,
-  of,
-  Subscription,
+    BehaviorSubject,
+    combineLatest,
+    Observable,
+    of,
+    Subscription,
 } from 'rxjs';
 import {
-  distinctUntilChanged,
-  filter,
-  map,
-  switchMap,
-  take,
-  tap,
+    distinctUntilChanged,
+    filter,
+    map,
+    switchMap,
+    take,
+    tap,
 } from 'rxjs/operators';
 import { CheckoutStepService } from '../services/checkout-step.service';
 

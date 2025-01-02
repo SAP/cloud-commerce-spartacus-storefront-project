@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,10 +8,10 @@ import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { EntitiesModel, SearchConfig, StateUtils } from '@spartacus/core';
 import { Budget } from '../../model/budget.model';
 import {
-  BUDGET_FEATURE,
-  BudgetManagement,
-  OrganizationState,
-  StateWithOrganization,
+    BUDGET_FEATURE,
+    BudgetManagement,
+    OrganizationState,
+    StateWithOrganization,
 } from '../organization-state';
 import { getOrganizationState } from './feature.selector';
 

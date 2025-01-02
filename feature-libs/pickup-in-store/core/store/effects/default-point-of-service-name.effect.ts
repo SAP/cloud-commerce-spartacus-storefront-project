@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,20 +9,20 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { WindowRef } from '@spartacus/core';
 import {
-  getProperty,
-  PointOfServiceNames,
-  PREFERRED_STORE_LOCAL_STORAGE_KEY,
+    getProperty,
+    PointOfServiceNames,
+    PREFERRED_STORE_LOCAL_STORAGE_KEY,
 } from '@spartacus/pickup-in-store/root';
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { iif, of } from 'rxjs';
 
 import {
-  catchError,
-  filter,
-  map,
-  mergeMap,
-  switchMap,
-  tap,
+    catchError,
+    filter,
+    map,
+    mergeMap,
+    switchMap,
+    tap,
 } from 'rxjs/operators';
 import { DefaultPointOfServiceActions } from '../actions/index';
 import { StateWithPickupLocations } from '../pickup-location-state';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,18 +9,18 @@ import { Request, Response } from 'express';
 import * as fs from 'fs';
 import { NgExpressEngineInstance } from '../engine-decorator/ng-express-engine-decorator';
 import {
-  EXPRESS_SERVER_LOGGER,
-  ExpressServerLogger,
-  ExpressServerLoggerContext,
+    EXPRESS_SERVER_LOGGER,
+    ExpressServerLogger,
+    ExpressServerLoggerContext,
 } from '../logger';
 import { getLoggableSsrOptimizationOptions } from './get-loggable-ssr-optimization-options';
 import { RenderingCache } from './rendering-cache';
 import { preprocessRequestForLogger } from './request-context';
 import {
-  RenderingStrategy,
-  SsrOptimizationOptions,
-  defaultSsrOptimizationOptions,
-  getDefaultRenderKey,
+    RenderingStrategy,
+    SsrOptimizationOptions,
+    defaultSsrOptimizationOptions,
+    getDefaultRenderKey,
 } from './ssr-optimization-options';
 
 export type SsrCallbackFn = (

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { inject, Injectable } from '@angular/core';
 import { OrderEntry } from '@spartacus/cart/base/root';
 import {
-  OpfCtaScriptsLocation,
-  OpfCtaScriptsRequest,
+    OpfCtaScriptsLocation,
+    OpfCtaScriptsRequest,
 } from '@spartacus/opf/cta/root';
 import { Order, OrderFacade, OrderHistoryFacade } from '@spartacus/order/root';
 import { filter, map, Observable } from 'rxjs';

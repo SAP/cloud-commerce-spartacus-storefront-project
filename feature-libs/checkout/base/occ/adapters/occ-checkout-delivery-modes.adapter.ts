@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,17 +8,17 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { DeliveryMode } from '@spartacus/cart/base/root';
 import {
-  CheckoutDeliveryModesAdapter,
-  DELIVERY_MODE_NORMALIZER,
+    CheckoutDeliveryModesAdapter,
+    DELIVERY_MODE_NORMALIZER,
 } from '@spartacus/checkout/base/core';
 import {
-  ConverterService,
-  LoggerService,
-  Occ,
-  OccEndpointsService,
-  backOff,
-  isJaloError,
-  normalizeHttpError,
+    ConverterService,
+    LoggerService,
+    Occ,
+    OccEndpointsService,
+    backOff,
+    isJaloError,
+    normalizeHttpError,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';

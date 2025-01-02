@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,11 +9,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
-  UrlModule,
-  I18nModule,
-  provideDefaultConfig,
-  CmsConfig,
-  AuthGuard,
+    AuthGuard,
+    CmsConfig,
+    I18nModule,
+    provideDefaultConfig,
+    UrlModule,
 } from '@spartacus/core';
 import { MediaModule, SpinnerModule } from '@spartacus/storefront';
 import { MyAccountV2OrdersComponent } from './my-account-v2-orders.component';

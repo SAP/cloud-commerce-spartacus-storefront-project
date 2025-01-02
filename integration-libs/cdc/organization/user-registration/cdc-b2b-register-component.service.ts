@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,21 +8,21 @@ import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CdcJsService, CdcLoadUserTokenFailEvent } from '@spartacus/cdc/root';
 import {
-  AuthConfigService,
-  AuthService,
-  Command,
-  CommandService,
-  EventService,
-  GlobalMessageService,
-  GlobalMessageType,
-  RoutingService,
-  TranslationService,
-  UserAddressService,
+    AuthConfigService,
+    AuthService,
+    Command,
+    CommandService,
+    EventService,
+    GlobalMessageService,
+    GlobalMessageType,
+    RoutingService,
+    TranslationService,
+    UserAddressService,
 } from '@spartacus/core';
 import { UserRegistrationFormService } from '@spartacus/organization/user-registration/components';
 import {
-  UserRegistrationFacade,
-  OrganizationUserRegistrationForm,
+    OrganizationUserRegistrationForm,
+    UserRegistrationFacade,
 } from '@spartacus/organization/user-registration/root';
 import { UserRegisterFacade } from '@spartacus/user/profile/root';
 import { Observable, throwError } from 'rxjs';

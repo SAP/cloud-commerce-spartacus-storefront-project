@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  OrderEntry,
-  ORDER_ENTRY_PROMOTIONS_NORMALIZER,
-  PromotionResult,
+    ORDER_ENTRY_PROMOTIONS_NORMALIZER,
+    OrderEntry,
+    PromotionResult,
 } from '@spartacus/cart/base/root';
 import {
-  Converter,
-  ConverterService,
-  Occ,
-  PRODUCT_NORMALIZER,
+    Converter,
+    ConverterService,
+    Occ,
+    PRODUCT_NORMALIZER,
 } from '@spartacus/core';
 import { Order } from '@spartacus/order/root';
 

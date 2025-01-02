@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,12 +10,12 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Cart } from '@spartacus/cart/base/root';
 import { CheckoutSupportedDeliveryModesQueryReloadEvent } from '@spartacus/checkout/base/root';
 import {
-  CxDatePipe,
-  ErrorModel,
-  EventService,
-  GlobalMessageService,
-  GlobalMessageType,
-  TranslationService,
+    CxDatePipe,
+    ErrorModel,
+    EventService,
+    GlobalMessageService,
+    GlobalMessageType,
+    TranslationService,
 } from '@spartacus/core';
 import { Card, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';

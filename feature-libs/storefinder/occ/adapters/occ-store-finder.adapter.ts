@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,20 +7,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
-  ConverterService,
-  GeoPoint,
-  Occ,
-  OccEndpointsService,
-  PointOfService,
-  POINT_OF_SERVICE_NORMALIZER,
-  SearchConfig,
+    ConverterService,
+    GeoPoint,
+    Occ,
+    OccEndpointsService,
+    POINT_OF_SERVICE_NORMALIZER,
+    PointOfService,
+    SearchConfig,
 } from '@spartacus/core';
 import {
-  StoreCount,
-  StoreFinderAdapter,
-  StoreFinderSearchPage,
-  STORE_COUNT_NORMALIZER,
-  STORE_FINDER_SEARCH_PAGE_NORMALIZER,
+    STORE_COUNT_NORMALIZER,
+    STORE_FINDER_SEARCH_PAGE_NORMALIZER,
+    StoreCount,
+    StoreFinderAdapter,
+    StoreFinderSearchPage,
 } from '@spartacus/storefinder/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';

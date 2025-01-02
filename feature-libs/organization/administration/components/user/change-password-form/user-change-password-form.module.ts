@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,9 +11,9 @@ import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FeaturesConfigModule, I18nModule, UrlModule } from '@spartacus/core';
 import {
-  FormErrorsModule,
-  KeyboardFocusModule,
-  PasswordVisibilityToggleModule,
+    FormErrorsModule,
+    KeyboardFocusModule,
+    PasswordVisibilityToggleModule,
 } from '@spartacus/storefront';
 import { CardModule } from '../../shared/card/card.module';
 import { UserChangePasswordFormComponent } from './user-change-password-form.component';

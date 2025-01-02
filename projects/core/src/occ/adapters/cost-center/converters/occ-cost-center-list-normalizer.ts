@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,8 +9,8 @@ import { COST_CENTER_NORMALIZER } from '../../../../cost-center/connectors/cost-
 import { EntitiesModel } from '../../../../model/misc.model';
 import { CostCenter } from '../../../../model/org-unit.model';
 import {
-  Converter,
-  ConverterService,
+    Converter,
+    ConverterService,
 } from '../../../../util/converter.service';
 import { Occ } from '../../../occ-models/occ.models';
 

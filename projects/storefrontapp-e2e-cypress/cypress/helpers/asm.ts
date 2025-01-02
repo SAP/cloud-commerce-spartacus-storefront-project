@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,23 +12,23 @@ import * as consent from '../helpers/consent-management';
 import * as profile from '../helpers/update-profile';
 import { getSampleUser, SampleUser } from '../sample-data/checkout-flow';
 import {
-  addToCartWithProducts,
-  createCart,
-  createInactiveCart,
+    addToCartWithProducts,
+    createCart,
+    createInactiveCart,
 } from '../support/utils/cart';
 import { login as fetchingToken } from '../support/utils/login';
 
 import {
-  interceptGet,
-  interceptPatch,
-  interceptPost,
+    interceptGet,
+    interceptPatch,
+    interceptPost,
 } from '../support/utils/intercept';
 import { login } from './auth-forms';
 import * as loginHelper from './login';
 import {
-  navigateToAMyAccountPage,
-  navigateToCategory,
-  waitForPage,
+    navigateToAMyAccountPage,
+    navigateToCategory,
+    waitForPage,
 } from './navigation';
 import { generateMail, randomString } from './user';
 

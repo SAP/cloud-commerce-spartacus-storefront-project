@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { NgModule } from '@angular/core';
 import {
-  provideDefaultConfig,
-  provideDefaultConfigFactory,
+    provideDefaultConfig,
+    provideDefaultConfigFactory,
 } from '@spartacus/core';
 import { SharedOrganizationModule } from '../shared/shared-organization.module';
 import { UserGroupDetailsModule } from './details/user-group-details.module';
 import { UserGroupFormModule } from './form/user-group-form.module';
 import { UserGroupPermissionModule } from './permissions/user-group-permission-list.module';
 import {
-  userGroupCmsConfig,
-  userGroupTableConfigFactory,
+    userGroupCmsConfig,
+    userGroupTableConfigFactory,
 } from './user-group.config';
 import { UserGroupUserModule } from './users/user-group-user-list.module';
 

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { product, SampleUser, user } from '../sample-data/checkout-flow';
 import { login } from './auth-forms';
 import {
-  replenishmentOrderHistoryHeaderValue,
-  replenishmentOrderHistoryUrl,
+    replenishmentOrderHistoryHeaderValue,
+    replenishmentOrderHistoryUrl,
 } from './b2b/b2b-replenishment-order-history';
 import { waitForPage } from './checkout-flow';
 import { checkBanner, clickHamburger } from './homepage';

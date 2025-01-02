@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,24 +7,24 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { ActiveCartFacade, DeleteCartEvent } from '@spartacus/cart/base/root';
 import {
-  DeleteUserAddressEvent,
-  EventService,
-  GlobalMessageService,
-  GlobalMessageType,
-  LoadUserAddressesEvent,
-  OCC_USER_ID_ANONYMOUS,
-  UpdateUserAddressEvent,
-  UserAddressEvent,
+    DeleteUserAddressEvent,
+    EventService,
+    GlobalMessageService,
+    GlobalMessageType,
+    LoadUserAddressesEvent,
+    OCC_USER_ID_ANONYMOUS,
+    UpdateUserAddressEvent,
+    UserAddressEvent,
 } from '@spartacus/core';
 import { Subscription } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { CheckoutDeliveryAddressFacade } from '../facade/checkout-delivery-address.facade';
 import {
-  CheckoutDeliveryAddressClearedEvent,
-  CheckoutDeliveryAddressCreatedEvent,
-  CheckoutDeliveryAddressSetEvent,
-  CheckoutQueryResetEvent,
-  CheckoutSupportedDeliveryModesQueryResetEvent,
+    CheckoutDeliveryAddressClearedEvent,
+    CheckoutDeliveryAddressCreatedEvent,
+    CheckoutDeliveryAddressSetEvent,
+    CheckoutQueryResetEvent,
+    CheckoutSupportedDeliveryModesQueryResetEvent,
 } from './checkout.events';
 
 /**

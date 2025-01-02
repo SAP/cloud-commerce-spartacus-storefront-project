@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ANGULAR_CORE,
-  CMS_COMPONENTS_SERVICE,
-  CMS_COMPONENT_DATA_CLASS,
-  CMS_INJECTOR_SERVICE,
-  COMPONENT_HANDLER_SERVICE,
-  DYNAMIC_ATTRIBUTE_SERVICE,
-  EVENT_SERVICE,
-  INJECTOR,
-  INNER_COMPONENTS_HOST_DIRECTIVE,
-  RENDERER_2,
-  VIEW_CONTAINER_REF,
+    ANGULAR_CORE,
+    CMS_COMPONENTS_SERVICE,
+    CMS_COMPONENT_DATA_CLASS,
+    CMS_INJECTOR_SERVICE,
+    COMPONENT_HANDLER_SERVICE,
+    DYNAMIC_ATTRIBUTE_SERVICE,
+    EVENT_SERVICE,
+    INJECTOR,
+    INNER_COMPONENTS_HOST_DIRECTIVE,
+    RENDERER_2,
+    VIEW_CONTAINER_REF,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

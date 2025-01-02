@@ -1,38 +1,38 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Component,
-  ElementRef,
-  inject,
-  OnDestroy,
-  OnInit,
-  ViewChild,
+    Component,
+    ElementRef,
+    inject,
+    OnDestroy,
+    OnInit,
+    ViewChild,
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {
-  Quote,
-  QuoteDiscount,
-  QuoteDiscountType,
-  QuoteFacade,
-  QuoteMetadata,
+    Quote,
+    QuoteDiscount,
+    QuoteDiscountType,
+    QuoteFacade,
+    QuoteMetadata,
 } from '@spartacus/quote/root';
 import { ICON_TYPE } from '@spartacus/storefront';
 import {
-  BehaviorSubject,
-  combineLatest,
-  Observable,
-  Subject,
-  Subscription,
+    BehaviorSubject,
+    combineLatest,
+    Observable,
+    Subject,
+    Subscription,
 } from 'rxjs';
 import { debounceTime, filter, map, take, tap } from 'rxjs/operators';
 import { QuoteUIConfig } from '../../config';
 import {
-  LocalizationElements,
-  QuoteSummarySellerEditComponentService,
+    LocalizationElements,
+    QuoteSummarySellerEditComponentService,
 } from './quote-summary-seller-edit.component.service';
 
 @Component({

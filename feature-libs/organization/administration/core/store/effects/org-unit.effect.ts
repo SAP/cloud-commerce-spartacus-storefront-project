@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,23 +8,23 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
-  B2BApprovalProcess,
-  B2BUnit,
-  B2BUser,
-  EntitiesModel,
-  FeatureConfigService,
-  LoggerService,
-  StateUtils,
-  tryNormalizeHttpError,
+    B2BApprovalProcess,
+    B2BUnit,
+    B2BUser,
+    EntitiesModel,
+    FeatureConfigService,
+    LoggerService,
+    StateUtils,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import { from, Observable, of } from 'rxjs';
 import { catchError, groupBy, map, mergeMap, switchMap } from 'rxjs/operators';
 import { OrgUnitConnector } from '../../connectors/org-unit/org-unit.connector';
 import { B2BUnitNode } from '../../model/unit-node.model';
 import {
-  B2BUserActions,
-  OrganizationActions,
-  OrgUnitActions,
+    B2BUserActions,
+    OrganizationActions,
+    OrgUnitActions,
 } from '../actions/index';
 
 @Injectable()

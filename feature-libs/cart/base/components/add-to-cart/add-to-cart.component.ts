@@ -1,46 +1,46 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ComponentRef,
-  ElementRef,
-  HostListener,
-  Input,
-  OnDestroy,
-  OnInit,
-  Optional,
-  ViewChild,
-  inject,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    ComponentRef,
+    ElementRef,
+    HostListener,
+    Input,
+    OnDestroy,
+    OnInit,
+    Optional,
+    ViewChild,
+    inject,
 } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import {
-  ActiveCartFacade,
-  CartItemComponentOptions,
-  CartOutlets,
-  CartUiEventAddToCart,
+    ActiveCartFacade,
+    CartItemComponentOptions,
+    CartOutlets,
+    CartUiEventAddToCart,
 } from '@spartacus/cart/base/root';
 import {
-  CmsAddToCartComponent,
-  EventService,
-  FeatureConfigService,
-  FeatureToggles,
-  Product,
-  ProductAvailabilityService,
-  ProductScope,
-  isNotNullable,
-  useFeatureStyles,
+    CmsAddToCartComponent,
+    EventService,
+    FeatureConfigService,
+    FeatureToggles,
+    Product,
+    ProductAvailabilityService,
+    ProductScope,
+    isNotNullable,
+    useFeatureStyles,
 } from '@spartacus/core';
 import {
-  CmsComponentData,
-  CurrentProductService,
-  ICON_TYPE,
-  ProductListItemContext,
+    CmsComponentData,
+    CurrentProductService,
+    ICON_TYPE,
+    ProductListItemContext,
 } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';

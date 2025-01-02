@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,21 +8,21 @@ import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  LoggerService,
-  SiteContextActions,
-  UserIdService,
-  tryNormalizeHttpError,
+    GlobalMessageService,
+    GlobalMessageType,
+    LoggerService,
+    SiteContextActions,
+    UserIdService,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import { Order } from '@spartacus/order/root';
 import { EMPTY, Observable, of } from 'rxjs';
 import {
-  catchError,
-  filter,
-  map,
-  switchMap,
-  withLatestFrom,
+    catchError,
+    filter,
+    map,
+    switchMap,
+    withLatestFrom,
 } from 'rxjs/operators';
 import { OrderHistoryConnector } from '../../connectors/order-history.connector';
 import { OrderActions } from '../actions/index';

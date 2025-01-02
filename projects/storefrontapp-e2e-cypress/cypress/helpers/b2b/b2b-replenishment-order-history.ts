@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  b2bProduct,
-  POWERTOOLS_BASESITE,
+    b2bProduct,
+    POWERTOOLS_BASESITE,
 } from '../../sample-data/b2b-checkout';
 import { doPlaceOrder } from '../order-history';
 import { verifyReplenishmentIsCancelled } from './b2b-replenishment-order-details';

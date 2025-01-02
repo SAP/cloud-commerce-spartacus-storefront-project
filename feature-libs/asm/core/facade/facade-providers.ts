@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Provider } from '@angular/core';
 import {
-  AsmBindCartFacade,
-  AsmCreateCustomerFacade,
-  AsmCustomerListFacade,
+    AsmBindCartFacade,
+    AsmCreateCustomerFacade,
+    AsmCustomerListFacade,
 } from '@spartacus/asm/root';
 import { AsmBindCartService } from './asm-bind-cart.service';
 import { AsmCreateCustomerService } from './asm-create-customer.service';

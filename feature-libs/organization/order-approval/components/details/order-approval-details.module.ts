@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,23 +9,23 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
-  AuthGuard,
-  CmsConfig,
-  ConfigModule,
-  FeaturesConfigModule,
-  I18nModule,
-  UrlModule,
+    AuthGuard,
+    CmsConfig,
+    ConfigModule,
+    FeaturesConfigModule,
+    I18nModule,
+    UrlModule,
 } from '@spartacus/core';
 import {
-  OrderDetailItemsComponent,
-  OrderDetailTotalsComponent,
-  OrderDetailsService,
-  OrderOverviewComponent,
+    OrderDetailItemsComponent,
+    OrderDetailTotalsComponent,
+    OrderDetailsService,
+    OrderOverviewComponent,
 } from '@spartacus/order/components';
 import {
-  BtnLikeLinkModule,
-  FormErrorsModule,
-  SpinnerModule,
+    BtnLikeLinkModule,
+    FormErrorsModule,
+    SpinnerModule,
 } from '@spartacus/storefront';
 import { ApproverGuard } from '../../core/guards/approver.guard';
 import { OrderApprovalDetailFormComponent } from './order-approval-detail-form/order-approval-detail-form.component';

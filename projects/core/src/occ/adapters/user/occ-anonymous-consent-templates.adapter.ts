@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,9 +12,9 @@ import { AnonymousConsentTemplatesAdapter } from '../../../anonymous-consents/co
 import { ANONYMOUS_CONSENT_NORMALIZER } from '../../../anonymous-consents/connectors/converters';
 import { LoggerService } from '../../../logger';
 import {
-  ANONYMOUS_CONSENTS_HEADER,
-  AnonymousConsent,
-  ConsentTemplate,
+    ANONYMOUS_CONSENTS_HEADER,
+    AnonymousConsent,
+    ConsentTemplate,
 } from '../../../model/consent.model';
 import { CONSENT_TEMPLATE_NORMALIZER } from '../../../user/connectors/consent/converters';
 import { ConverterService } from '../../../util/converter.service';

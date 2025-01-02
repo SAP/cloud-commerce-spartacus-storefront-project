@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,20 +7,20 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  ConverterService,
-  LoggerService,
-  OccEndpointsService,
-  normalizeHttpError,
+    ConverterService,
+    LoggerService,
+    OccEndpointsService,
+    normalizeHttpError,
 } from '@spartacus/core';
 import {
-  ACCOUNT_SUMMARY_DOCUMENT_NORMALIZER,
-  ACCOUNT_SUMMARY_NORMALIZER,
-  AccountSummaryAdapter,
+    ACCOUNT_SUMMARY_DOCUMENT_NORMALIZER,
+    ACCOUNT_SUMMARY_NORMALIZER,
+    AccountSummaryAdapter,
 } from '@spartacus/organization/account-summary/core';
 import {
-  AccountSummaryDetails,
-  AccountSummaryList,
-  DocumentQueryParams,
+    AccountSummaryDetails,
+    AccountSummaryList,
+    DocumentQueryParams,
 } from '@spartacus/organization/account-summary/root';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';

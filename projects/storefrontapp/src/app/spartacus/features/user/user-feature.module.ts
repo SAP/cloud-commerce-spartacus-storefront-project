@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,25 +7,25 @@
 import { NgModule } from '@angular/core';
 import { CmsConfig, I18nConfig, provideConfig } from '@spartacus/core';
 import {
-  userAccountTranslationChunksConfig,
-  userAccountTranslations,
+    userAccountTranslationChunksConfig,
+    userAccountTranslations,
 } from '@spartacus/user/account/assets';
 import {
-  UserAccountRootModule,
-  USER_ACCOUNT_FEATURE,
+    USER_ACCOUNT_FEATURE,
+    UserAccountRootModule,
 } from '@spartacus/user/account/root';
 import {
-  userProfileTranslationChunksConfig,
-  userProfileTranslations,
+    userProfileTranslationChunksConfig,
+    userProfileTranslations,
 } from '@spartacus/user/profile/assets';
 import {
-  USE_MY_ACCOUNT_V2_EMAIL,
-  USE_MY_ACCOUNT_V2_PASSWORD,
-  USE_MY_ACCOUNT_V2_PROFILE,
+    USE_MY_ACCOUNT_V2_EMAIL,
+    USE_MY_ACCOUNT_V2_PASSWORD,
+    USE_MY_ACCOUNT_V2_PROFILE,
 } from '@spartacus/user/profile/components';
 import {
-  UserProfileRootModule,
-  USER_PROFILE_FEATURE,
+    USER_PROFILE_FEATURE,
+    UserProfileRootModule,
 } from '@spartacus/user/profile/root';
 import { environment } from '../../../../environments/environment';
 

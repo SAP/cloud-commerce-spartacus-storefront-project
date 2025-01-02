@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  GET_ADDRESS_CARD_CONTENT,
-  GET_BILLING_ADDRESS_CARD_CONTENT,
-  GET_DELIVERY_MODE_CARD_CONTENT,
-  GET_PAYMENT_INFO_CARD_CONTENT,
-  ORDER_CONFIRMATION_OVERVIEW_COMPONENT,
-  TODO_SPARTACUS,
+    GET_ADDRESS_CARD_CONTENT,
+    GET_BILLING_ADDRESS_CARD_CONTENT,
+    GET_DELIVERY_MODE_CARD_CONTENT,
+    GET_PAYMENT_INFO_CARD_CONTENT,
+    ORDER_CONFIRMATION_OVERVIEW_COMPONENT,
+    TODO_SPARTACUS,
 } from '../../../../shared/constants';
 import { SPARTACUS_STOREFRONTLIB } from '../../../../shared/libs-constants';
 import { MethodPropertyDeprecation } from '../../../../shared/utils/file-utils';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,10 +8,10 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { Config } from '@spartacus/core';
 import { LayoutConfig } from '../config/layout-config';
 import {
-  InlineRenderStrategy,
-  LaunchRenderStrategy,
-  OutletRenderStrategy,
-  RoutingRenderStrategy,
+    InlineRenderStrategy,
+    LaunchRenderStrategy,
+    OutletRenderStrategy,
+    RoutingRenderStrategy,
 } from './services/index';
 import { InlineRootRenderStrategy } from './services/inline-root-render.strategy';
 

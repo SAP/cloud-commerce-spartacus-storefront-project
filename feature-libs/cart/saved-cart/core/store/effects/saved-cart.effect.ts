@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,10 +10,10 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { CartActions, CartConnector } from '@spartacus/cart/base/core';
 import { ActiveCartFacade, Cart } from '@spartacus/cart/base/root';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  LoggerService,
-  tryNormalizeHttpError,
+    GlobalMessageService,
+    GlobalMessageType,
+    LoggerService,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';

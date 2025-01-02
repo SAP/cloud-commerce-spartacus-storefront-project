@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { Injectable } from '@angular/core';
 import { WindowRef } from '@spartacus/core';
 import {
-  PopoverPosition,
-  PopoverPositionArray,
+    PopoverPosition,
+    PopoverPositionArray,
 } from '../../components/popover/popover.model';
 
 // replacement for the `ClientRect` from TypeScript 4.2, which was removed in 4.4

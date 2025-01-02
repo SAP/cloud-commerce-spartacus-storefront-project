@@ -1,43 +1,43 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AfterViewChecked,
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnChanges,
-  Output,
-  SimpleChanges,
-  ViewChild,
+    AfterViewChecked,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Input,
+    OnChanges,
+    Output,
+    SimpleChanges,
+    ViewChild,
 } from '@angular/core';
 import {
-  byBoolean,
-  byComparison,
-  byNullish,
-  byString,
-  isBoolean,
-  isNumber,
-  isString,
-  itemsWith,
-  property,
-  SortOrder,
-  whenType,
+    byBoolean,
+    byComparison,
+    byNullish,
+    byString,
+    isBoolean,
+    isNumber,
+    isString,
+    itemsWith,
+    property,
+    SortOrder,
+    whenType,
 } from '@spartacus/asm/core';
+import { KeyBoardEventCode } from '@spartacus/asm/customer-360/root';
 import { DirectionMode, DirectionService } from '@spartacus/storefront';
 import { BehaviorSubject } from 'rxjs';
-import {
-  CustomerTableColumn,
-  CustomerTableTextAlign,
-  TableEntry,
-} from './asm-customer-360-table.model';
 import { AsmCustomer360Config } from '../config/asm-customer-360-config';
-import { KeyBoardEventCode } from '@spartacus/asm/customer-360/root';
+import {
+    CustomerTableColumn,
+    CustomerTableTextAlign,
+    TableEntry,
+} from './asm-customer-360-table.model';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

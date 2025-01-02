@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,31 +8,31 @@ import { Component, OnInit, inject } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
 import { CheckoutDeliveryAddressFacade } from '@spartacus/checkout/base/root';
 import {
-  Address,
-  AddressValidation,
-  Country,
-  GlobalMessageService,
-  GlobalMessageType,
-  Region,
-  TranslationService,
-  UserAddressService,
-  UserPaymentService,
+    Address,
+    AddressValidation,
+    Country,
+    GlobalMessageService,
+    GlobalMessageType,
+    Region,
+    TranslationService,
+    UserAddressService,
+    UserPaymentService,
 } from '@spartacus/core';
 import {
-  Card,
-  LAUNCH_CALLER,
-  LaunchDialogService,
-  getAddressNumbers,
+    Card,
+    LAUNCH_CALLER,
+    LaunchDialogService,
+    getAddressNumbers,
 } from '@spartacus/storefront';
 import {
-  BehaviorSubject,
-  EMPTY,
-  Observable,
-  combineLatest,
-  filter,
-  map,
-  switchMap,
-  tap,
+    BehaviorSubject,
+    EMPTY,
+    Observable,
+    combineLatest,
+    filter,
+    map,
+    switchMap,
+    tap,
 } from 'rxjs';
 import { CheckoutBillingAddressFormService } from './checkout-billing-address-form.service';
 

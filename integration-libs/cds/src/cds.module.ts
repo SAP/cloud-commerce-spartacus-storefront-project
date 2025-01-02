@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,9 +9,9 @@ import { provideConfigValidator, provideDefaultConfig } from '@spartacus/core';
 import { CdsConfig, cdsConfigValidator, DEFAULT_CDS_CONFIG } from './config';
 import { MerchandisingModule } from './merchandising';
 import {
-  ProfileTagModule,
-  ProfileTagPushEventsService,
-  TrackingModule,
+    ProfileTagModule,
+    ProfileTagPushEventsService,
+    TrackingModule,
 } from './profiletag';
 import { RecentSearchesModule } from './recent-searches/recent-searches.module';
 import { TrendingSearchesModule } from './trending-searches/trending-searches.module';

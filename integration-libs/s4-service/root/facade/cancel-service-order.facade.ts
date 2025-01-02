@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
+import { Order } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 import { CancellationDetails } from '../model/checkout-service-details.model';
-import { Order } from '@spartacus/order/root';
 
 @Injectable({
   providedIn: 'root',

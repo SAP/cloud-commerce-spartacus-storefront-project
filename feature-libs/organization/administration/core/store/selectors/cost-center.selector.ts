@@ -1,22 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import {
-  CostCenter,
-  EntitiesModel,
-  SearchConfig,
-  StateUtils,
+    CostCenter,
+    EntitiesModel,
+    SearchConfig,
+    StateUtils,
 } from '@spartacus/core';
 import { Budget } from '../../model/budget.model';
 import {
-  CostCenterManagement,
-  COST_CENTER_FEATURE,
-  OrganizationState,
-  StateWithOrganization,
+    COST_CENTER_FEATURE,
+    CostCenterManagement,
+    OrganizationState,
+    StateWithOrganization,
 } from '../organization-state';
 import { getBudgetsState } from './budget.selector';
 import { getOrganizationState } from './feature.selector';

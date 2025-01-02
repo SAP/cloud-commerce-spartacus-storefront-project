@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Directive,
-  Input,
-  OnDestroy,
-  OnInit,
-  TemplateRef,
+    Directive,
+    Input,
+    OnDestroy,
+    OnInit,
+    TemplateRef,
 } from '@angular/core';
 import { OutletPosition } from '../outlet.model';
 import { OutletService } from '../outlet.service';

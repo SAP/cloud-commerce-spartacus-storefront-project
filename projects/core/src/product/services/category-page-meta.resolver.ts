@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,16 +9,16 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { CmsService } from '../../cms/facade/cms.service';
 import {
-  BreadcrumbMeta,
-  Page,
-  PageRobotsMeta,
+    BreadcrumbMeta,
+    Page,
+    PageRobotsMeta,
 } from '../../cms/model/page.model';
 import { BasePageMetaResolver } from '../../cms/page/base-page-meta.resolver';
 import { PageMetaResolver } from '../../cms/page/page-meta.resolver';
 import {
-  PageBreadcrumbResolver,
-  PageRobotsResolver,
-  PageTitleResolver,
+    PageBreadcrumbResolver,
+    PageRobotsResolver,
+    PageTitleResolver,
 } from '../../cms/page/page.resolvers';
 import { TranslationService } from '../../i18n/translation.service';
 import { PageType } from '../../model/cms.model';

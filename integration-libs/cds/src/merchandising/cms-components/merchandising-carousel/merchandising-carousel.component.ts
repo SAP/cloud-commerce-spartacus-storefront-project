@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,13 +9,13 @@ import { RoutingService } from '@spartacus/core';
 import { CmsComponentData, IntersectionService } from '@spartacus/storefront';
 import { EMPTY, Observable, using } from 'rxjs';
 import {
-  distinctUntilKeyChanged,
-  filter,
-  map,
-  shareReplay,
-  switchMap,
-  take,
-  tap,
+    distinctUntilKeyChanged,
+    filter,
+    map,
+    shareReplay,
+    switchMap,
+    take,
+    tap,
 } from 'rxjs/operators';
 import { CmsMerchandisingCarouselComponent as model } from '../../../cds-models/cms.model';
 import { MerchandisingProduct } from '../../model/index';

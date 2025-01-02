@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,15 +7,15 @@
 import { NgModule } from '@angular/core';
 import { CdsConfig, CdsModule } from '@spartacus/cds';
 import {
-  I18nConfig,
-  provideConfig,
-  provideConfigFactory,
-  WindowRef,
-} from '@spartacus/core';
-import {
-  cdsTranslationChunksConfig,
-  cdsTranslations,
+    cdsTranslationChunksConfig,
+    cdsTranslations,
 } from '@spartacus/cds/assets';
+import {
+    I18nConfig,
+    provideConfig,
+    provideConfigFactory,
+    WindowRef,
+} from '@spartacus/core';
 
 const cds1: CdsConfig = {
   cds: {

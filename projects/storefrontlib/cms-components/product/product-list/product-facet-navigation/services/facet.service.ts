@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,9 +10,9 @@ import { Facet } from '@spartacus/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import {
-  FacetCollapseState,
-  FacetGroupCollapsedState,
-  FacetList,
+    FacetCollapseState,
+    FacetGroupCollapsedState,
+    FacetList,
 } from '../facet.model';
 import { ProductFacetService } from './product-facet.service';
 

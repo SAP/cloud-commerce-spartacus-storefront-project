@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,10 +8,10 @@ import { CommonModule } from '@angular/common';
 import { Injector, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
-  CmsConfig,
-  ContextServiceMap,
-  provideDefaultConfig,
-  SiteContextModule,
+    CmsConfig,
+    ContextServiceMap,
+    provideDefaultConfig,
+    SiteContextModule,
 } from '@spartacus/core';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import { IconModule } from '../icon/index';

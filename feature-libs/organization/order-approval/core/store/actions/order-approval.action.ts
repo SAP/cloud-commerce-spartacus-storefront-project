@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ErrorAction,
-  ListModel,
-  PROCESS_FEATURE,
-  SearchConfig,
-  StateUtils,
+    ErrorAction,
+    ListModel,
+    PROCESS_FEATURE,
+    SearchConfig,
+    StateUtils,
 } from '@spartacus/core';
 import {
-  OrderApproval,
-  OrderApprovalDecision,
+    OrderApproval,
+    OrderApprovalDecision,
 } from '../../model/order-approval.model';
 import {
-  ORDER_APPROVAL_ENTITIES,
-  ORDER_APPROVAL_LIST,
-  ORDER_APPROVAL_MAKE_DECISION_PROCESS_ID,
+    ORDER_APPROVAL_ENTITIES,
+    ORDER_APPROVAL_LIST,
+    ORDER_APPROVAL_MAKE_DECISION_PROCESS_ID,
 } from '../order-approval-state';
 
 export const LOAD_ORDER_APPROVAL = '[OrderApproval] Load OrderApproval Data';

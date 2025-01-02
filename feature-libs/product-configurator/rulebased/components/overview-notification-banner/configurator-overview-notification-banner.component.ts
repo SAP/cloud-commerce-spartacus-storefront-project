@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
-  CommonConfigurator,
-  CommonConfiguratorUtilsService,
-  ConfiguratorRouter,
-  ConfiguratorRouterExtractorService,
+    CommonConfigurator,
+    CommonConfiguratorUtilsService,
+    ConfiguratorRouter,
+    ConfiguratorRouterExtractorService,
 } from '@spartacus/product-configurator/common';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';

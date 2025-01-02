@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, NgZone, Renderer2, RendererFactory2 } from '@angular/core';
 import {
-  BaseSiteService,
-  CmsService,
-  Page,
-  PageType,
-  RoutingService,
-  WindowRef,
+    BaseSiteService,
+    CmsService,
+    Page,
+    PageType,
+    RoutingService,
+    WindowRef,
 } from '@spartacus/core';
-import { filter, take } from 'rxjs/operators';
 import { SmartEditConfig } from '@spartacus/smartedit/root';
+import { filter, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',

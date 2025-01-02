@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,9 +9,9 @@ import { NgModule } from '@angular/core';
 import { CartOutlets } from '@spartacus/cart/base/root';
 import { I18nModule, UrlModule } from '@spartacus/core';
 import {
-  IconModule,
-  OutletPosition,
-  provideOutlet,
+    IconModule,
+    OutletPosition,
+    provideOutlet,
 } from '@spartacus/storefront';
 import { ConfiguratorIssuesNotificationModule } from '../configurator-issues-notification/configurator-issues-notification.module';
 import { ConfigureCartEntryModule } from '../configure-cart-entry/configure-cart-entry.module';

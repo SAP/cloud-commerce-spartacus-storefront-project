@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,9 +8,9 @@ import { inject, Injectable } from '@angular/core';
 import { CanActivate, Router, UrlTree } from '@angular/router';
 
 import {
-  RouterState,
-  RoutingService,
-  SemanticPathService,
+    RouterState,
+    RoutingService,
+    SemanticPathService,
 } from '@spartacus/core';
 import { QuoteCartService } from '@spartacus/quote/core';
 import { combineLatest, Observable } from 'rxjs';

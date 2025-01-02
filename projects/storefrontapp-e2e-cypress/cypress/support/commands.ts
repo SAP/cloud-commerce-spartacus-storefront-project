@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -32,3 +32,4 @@ import './select-user-menu-option.commands';
 import './storage.commands';
 import './vendor/cds/merchandising-carousel.commands';
 import './viewport.commands';
+

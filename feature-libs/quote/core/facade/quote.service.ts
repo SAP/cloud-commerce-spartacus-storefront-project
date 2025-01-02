@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,54 +8,54 @@ import { inject, Injectable } from '@angular/core';
 import { ActiveCartFacade, MultiCartFacade } from '@spartacus/cart/base/root';
 import { SavedCartFacade } from '@spartacus/cart/saved-cart/root';
 import {
-  AuthService,
-  Command,
-  CommandService,
-  CommandStrategy,
-  EventService,
-  GlobalMessageService,
-  GlobalMessageType,
-  HttpErrorModel,
-  LoginEvent,
-  Query,
-  QueryService,
-  QueryState,
-  RoutingService,
-  uniteLatest,
-  UserIdService,
+    AuthService,
+    Command,
+    CommandService,
+    CommandStrategy,
+    EventService,
+    GlobalMessageService,
+    GlobalMessageType,
+    HttpErrorModel,
+    LoginEvent,
+    Query,
+    QueryService,
+    QueryState,
+    RoutingService,
+    uniteLatest,
+    UserIdService,
 } from '@spartacus/core';
 import {
-  Quote,
-  QuoteActionType,
-  QuoteComment,
-  QuoteDiscount,
-  QuoteFacade,
-  QuoteList,
-  QuoteMetadata,
-  QuotesStateParams,
-  QuoteStarter,
+    Quote,
+    QuoteActionType,
+    QuoteComment,
+    QuoteDiscount,
+    QuoteFacade,
+    QuoteList,
+    QuoteMetadata,
+    QuotesStateParams,
+    QuoteStarter,
 } from '@spartacus/quote/root';
 import { ViewConfig } from '@spartacus/storefront';
 import {
-  BehaviorSubject,
-  combineLatest,
-  EMPTY,
-  Observable,
-  of,
-  throwError,
-  zip,
+    BehaviorSubject,
+    combineLatest,
+    EMPTY,
+    Observable,
+    of,
+    throwError,
+    zip,
 } from 'rxjs';
 import {
-  catchError,
-  concatMap,
-  distinctUntilChanged,
-  filter,
-  map,
-  mergeMap,
-  switchMap,
-  take,
-  tap,
-  withLatestFrom,
+    catchError,
+    concatMap,
+    distinctUntilChanged,
+    filter,
+    map,
+    mergeMap,
+    switchMap,
+    take,
+    tap,
+    withLatestFrom,
 } from 'rxjs/operators';
 import { QuoteConnector } from '../connectors/quote.connector';
 import { QuoteDetailsReloadQueryEvent } from '../event/quote.events';

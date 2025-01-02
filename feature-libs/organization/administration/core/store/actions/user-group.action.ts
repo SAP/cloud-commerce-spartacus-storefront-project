@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ErrorAction,
-  ListModel,
-  SearchConfig,
-  StateUtils,
+    ErrorAction,
+    ListModel,
+    SearchConfig,
+    StateUtils,
 } from '@spartacus/core';
 import { UserGroup } from '../../model/user-group.model';
 import {
-  B2B_USER_ENTITIES,
-  PERMISSION_ENTITIES,
-  USER_GROUP_AVAILABLE_CUSTOMERS,
-  USER_GROUP_ENTITIES,
-  USER_GROUP_LIST,
-  USER_GROUP_PERMISSIONS,
+    B2B_USER_ENTITIES,
+    PERMISSION_ENTITIES,
+    USER_GROUP_AVAILABLE_CUSTOMERS,
+    USER_GROUP_ENTITIES,
+    USER_GROUP_LIST,
+    USER_GROUP_PERMISSIONS,
 } from '../organization-state';
 
 export const LOAD_USER_GROUP = '[UserGroup] Load UserGroup Data';

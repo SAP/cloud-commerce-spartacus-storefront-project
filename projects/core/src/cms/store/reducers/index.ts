@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { InjectionToken, Provider } from '@angular/core';
 import {
-  Action,
-  ActionReducer,
-  ActionReducerMap,
-  combineReducers,
-  MetaReducer,
+    Action,
+    ActionReducer,
+    ActionReducerMap,
+    combineReducers,
+    MetaReducer,
 } from '@ngrx/store';
 import { AuthActions } from '../../../auth/user-auth/store/actions/index';
 import { PageType } from '../../../model/cms.model';
@@ -19,11 +19,11 @@ import { entityLoaderReducer } from '../../../state/utils/entity-loader/entity-l
 import { entityReducer } from '../../../state/utils/entity/entity.reducer';
 import { NodeItem } from '../../model/node-item.model';
 import {
-  CmsState,
-  ComponentsContext,
-  COMPONENT_ENTITY,
-  NAVIGATION_DETAIL_ENTITY,
-  StateWithCms,
+    CmsState,
+    COMPONENT_ENTITY,
+    ComponentsContext,
+    NAVIGATION_DETAIL_ENTITY,
+    StateWithCms,
 } from '../cms-state';
 import * as fromComponentsReducer from './components.reducer';
 import * as fromNavigation from './navigation-entry-item.reducer';

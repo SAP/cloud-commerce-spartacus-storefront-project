@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,25 +10,25 @@ import { Actions, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
 import { defer, merge, Observable, of, SchedulerLike, using } from 'rxjs';
 import {
-  debounceTime,
-  delay,
-  distinctUntilChanged,
-  filter,
-  map,
-  shareReplay,
-  tap,
-  withLatestFrom,
+    debounceTime,
+    delay,
+    distinctUntilChanged,
+    filter,
+    map,
+    shareReplay,
+    tap,
+    withLatestFrom,
 } from 'rxjs/operators';
 import { deepMerge } from '../../config/utils/deep-merge';
 import { EventService } from '../../event/event.service';
 import { Product } from '../../model/product.model';
 import { LoadingScopesService } from '../../occ/services/loading-scopes.service';
+import { isKeyInvalid } from '../../util';
 import { uniteLatest } from '../../util/rxjs/unite-latest';
 import { withdrawOn } from '../../util/rxjs/withdraw-on';
 import { ProductActions } from '../store/actions/index';
 import { StateWithProduct } from '../store/product-state';
 import { ProductSelectors } from '../store/selectors/index';
-import { isKeyInvalid } from '../../util';
 
 @Injectable({
   providedIn: 'root',

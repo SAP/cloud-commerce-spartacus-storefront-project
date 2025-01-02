@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { InjectionToken, Provider } from '@angular/core';
 import {
-  Action,
-  ActionReducer,
-  ActionReducerMap,
-  combineReducers,
-  MetaReducer,
+    Action,
+    ActionReducer,
+    ActionReducerMap,
+    combineReducers,
+    MetaReducer,
 } from '@ngrx/store';
 import { AuthActions } from '../../../auth/index';
 import { ConsentTemplate } from '../../../model/consent.model';
 import { SiteContextActions } from '../../../site-context/index';
 import { loaderReducer } from '../../../state/utils/loader/loader.reducer';
 import {
-  AnonymousConsentsState,
-  ANONYMOUS_CONSENTS,
+    ANONYMOUS_CONSENTS,
+    AnonymousConsentsState,
 } from '../anonymous-consents-state';
 import * as fromAnonymousConsentsBanner from './anonymous-consents-banner.reducer';
 import * as fromAnonymousConsentsUpdate from './anonymous-consents-update.reducer';

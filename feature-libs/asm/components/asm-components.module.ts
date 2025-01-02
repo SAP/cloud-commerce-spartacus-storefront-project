@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,20 +9,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import {
-  FeaturesConfigModule,
-  I18nModule,
-  provideDefaultConfig,
+    FeaturesConfigModule,
+    I18nModule,
+    provideDefaultConfig,
 } from '@spartacus/core';
 import {
-  FormErrorsModule,
-  IconModule,
-  KeyboardFocusModule,
-  MessageComponentModule,
-  NgSelectA11yModule,
-  PaginationModule,
-  PasswordVisibilityToggleModule,
-  SortingModule,
-  SpinnerModule,
+    FormErrorsModule,
+    IconModule,
+    KeyboardFocusModule,
+    MessageComponentModule,
+    NgSelectA11yModule,
+    PaginationModule,
+    PasswordVisibilityToggleModule,
+    SortingModule,
+    SpinnerModule,
 } from '@spartacus/storefront';
 import { AsmBindCartDialogComponent } from './asm-bind-cart-dialog/asm-bind-cart-dialog.component';
 import { AsmBindCartComponent } from './asm-bind-cart/asm-bind-cart.component';

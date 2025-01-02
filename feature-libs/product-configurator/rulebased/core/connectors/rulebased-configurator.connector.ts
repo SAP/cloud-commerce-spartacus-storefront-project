@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,9 +7,9 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core';
 import { CartModification } from '@spartacus/cart/base/root';
 import {
-  CommonConfigurator,
-  CommonConfiguratorUtilsService,
-  ConfiguratorType,
+    CommonConfigurator,
+    CommonConfiguratorUtilsService,
+    ConfiguratorType,
 } from '@spartacus/product-configurator/common';
 import { Observable } from 'rxjs';
 import { ConfiguratorCoreConfig } from '../config/configurator-core.config';

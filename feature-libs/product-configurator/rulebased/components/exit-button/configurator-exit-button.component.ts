@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,15 +7,15 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import {
-  Product,
-  ProductService,
-  RoutingService,
-  WindowRef,
+    Product,
+    ProductService,
+    RoutingService,
+    WindowRef,
 } from '@spartacus/core';
 import {
-  CommonConfigurator,
-  ConfiguratorRouter,
-  ConfiguratorRouterExtractorService,
+    CommonConfigurator,
+    ConfiguratorRouter,
+    ConfiguratorRouterExtractorService,
 } from '@spartacus/product-configurator/common';
 import { BREAKPOINT, BreakpointService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';

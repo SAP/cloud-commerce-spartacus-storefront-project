@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { NgModule } from '@angular/core';
 import {
-  CartAddEntrySuccessEvent,
-  CartRemoveEntrySuccessEvent,
+    CartAddEntrySuccessEvent,
+    CartRemoveEntrySuccessEvent,
 } from '@spartacus/cart/base/root';
 import { CmsConfig, provideConfig } from '@spartacus/core';
 import { NavigationEvent } from '@spartacus/storefront';
 import {
-  PersonalizationRootModule,
-  PERSONALIZATION_FEATURE,
+    PERSONALIZATION_FEATURE,
+    PersonalizationRootModule,
 } from '@spartacus/tracking/personalization/root';
 import { AepModule } from '@spartacus/tracking/tms/aep';
 import { BaseTmsModule, TmsConfig } from '@spartacus/tracking/tms/core';

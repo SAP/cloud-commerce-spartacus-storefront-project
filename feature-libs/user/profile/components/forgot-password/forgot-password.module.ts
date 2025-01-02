@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,20 +9,20 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
-  AuthConfigService,
-  CmsConfig,
-  FeaturesConfigModule,
-  GlobalMessageService,
-  I18nModule,
-  NotAuthGuard,
-  provideDefaultConfig,
-  RoutingService,
-  UrlModule,
+    AuthConfigService,
+    CmsConfig,
+    FeaturesConfigModule,
+    GlobalMessageService,
+    I18nModule,
+    NotAuthGuard,
+    provideDefaultConfig,
+    RoutingService,
+    UrlModule,
 } from '@spartacus/core';
 import {
-  BtnLikeLinkModule,
-  FormErrorsModule,
-  SpinnerModule,
+    BtnLikeLinkModule,
+    FormErrorsModule,
+    SpinnerModule,
 } from '@spartacus/storefront';
 import { UserPasswordFacade } from '@spartacus/user/profile/root';
 import { ForgotPasswordComponentService } from './forgot-password-component.service';

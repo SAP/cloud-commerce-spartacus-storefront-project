@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,18 +8,18 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { provideDefaultConfig } from '@spartacus/core';
 import {
-  OrderAdapter,
-  OrderHistoryAdapter,
-  ReorderOrderAdapter,
-  ReplenishmentOrderHistoryAdapter,
-  ScheduledReplenishmentOrderAdapter,
+    OrderAdapter,
+    OrderHistoryAdapter,
+    ReorderOrderAdapter,
+    ReplenishmentOrderHistoryAdapter,
+    ScheduledReplenishmentOrderAdapter,
 } from '@spartacus/order/core';
 import {
-  ORDER_NORMALIZER,
-  ORDER_RETURN_REQUEST_NORMALIZER,
-  REORDER_ORDER_NORMALIZER,
-  REPLENISHMENT_ORDER_FORM_SERIALIZER,
-  REPLENISHMENT_ORDER_NORMALIZER,
+    ORDER_NORMALIZER,
+    ORDER_RETURN_REQUEST_NORMALIZER,
+    REORDER_ORDER_NORMALIZER,
+    REPLENISHMENT_ORDER_FORM_SERIALIZER,
+    REPLENISHMENT_ORDER_NORMALIZER,
 } from '@spartacus/order/root';
 import { OccOrderNormalizer } from './adapters/converters/occ-order-normalizer';
 import { OccReorderOrderNormalizer } from './adapters/converters/occ-reorder-order-normalizer';

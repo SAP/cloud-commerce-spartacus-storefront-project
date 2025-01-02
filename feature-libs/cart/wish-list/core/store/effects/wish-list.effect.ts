@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,29 +8,29 @@ import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Action, Store, select } from '@ngrx/store';
 import {
-  CartActions,
-  CartConnector,
-  MultiCartSelectors,
-  StateWithMultiCart,
-  getCartIdByUserId,
+    CartActions,
+    CartConnector,
+    MultiCartSelectors,
+    StateWithMultiCart,
+    getCartIdByUserId,
 } from '@spartacus/cart/base/core';
 import { CartType } from '@spartacus/cart/base/root';
 import {
-  LoggerService,
-  SiteContextActions,
-  StateUtils,
-  UserIdService,
-  isNotUndefined,
-  tryNormalizeHttpError,
+    LoggerService,
+    SiteContextActions,
+    StateUtils,
+    UserIdService,
+    isNotUndefined,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import { EMPTY, Observable, from } from 'rxjs';
 import {
-  catchError,
-  concatMap,
-  filter,
-  map,
-  switchMap,
-  withLatestFrom,
+    catchError,
+    concatMap,
+    filter,
+    map,
+    switchMap,
+    withLatestFrom,
 } from 'rxjs/operators';
 import { WishListActions } from '../actions';
 

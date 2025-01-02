@@ -1,31 +1,31 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpHeaders,
+    HttpClient,
+    HttpErrorResponse,
+    HttpHeaders,
 } from '@angular/common/http';
 import {
-  HttpClientTestingModule,
-  HttpTestingController,
+    HttpClientTestingModule,
+    HttpTestingController,
 } from '@angular/common/http/testing';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import {
-  BaseOccUrlProperties,
-  ConverterService,
-  DynamicAttributes,
-  HttpErrorModel,
-  LoggerService,
-  tryNormalizeHttpError,
+    BaseOccUrlProperties,
+    ConverterService,
+    DynamicAttributes,
+    HttpErrorModel,
+    LoggerService,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import { OpfEndpointsService } from '@spartacus/opf/base/core';
 import {
-  OpfConfig,
-  OpfMetadataStatePersistanceService,
+    OpfConfig,
+    OpfMetadataStatePersistanceService,
 } from '@spartacus/opf/base/root';
 import { defer, of, throwError } from 'rxjs';
 import { take } from 'rxjs/operators';

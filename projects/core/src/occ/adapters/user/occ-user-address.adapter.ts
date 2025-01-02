@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,9 +11,9 @@ import { catchError, map } from 'rxjs/operators';
 import { LoggerService } from '../../../logger';
 import { Address, AddressValidation } from '../../../model/address.model';
 import {
-  ADDRESS_NORMALIZER,
-  ADDRESS_SERIALIZER,
-  ADDRESS_VALIDATION_NORMALIZER,
+    ADDRESS_NORMALIZER,
+    ADDRESS_SERIALIZER,
+    ADDRESS_VALIDATION_NORMALIZER,
 } from '../../../user/connectors/address/converters';
 import { UserAddressAdapter } from '../../../user/connectors/address/user-address.adapter';
 import { ConverterService } from '../../../util/converter.service';
@@ -21,8 +21,8 @@ import { normalizeHttpError } from '../../../util/normalize-http-error';
 import { Occ } from '../../occ-models/occ.models';
 import { OccEndpointsService } from '../../services/occ-endpoints.service';
 import {
-  InterceptorUtil,
-  USE_CLIENT_TOKEN,
+    InterceptorUtil,
+    USE_CLIENT_TOKEN,
 } from '../../utils/interceptor-util';
 import { OCC_USER_ID_ANONYMOUS } from '../../utils/occ-constants';
 

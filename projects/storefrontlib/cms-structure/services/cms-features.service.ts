@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, Injector, NgModuleRef } from '@angular/core';
 import {
-  CMSComponentConfig,
-  CmsComponentMapping,
-  CmsConfig,
-  ConfigChunk,
-  ConfigInitializerService,
-  DefaultConfigChunk,
-  FeatureModuleConfig,
-  FeatureModulesService,
-  deepMerge,
+    CMSComponentConfig,
+    CmsComponentMapping,
+    CmsConfig,
+    ConfigChunk,
+    ConfigInitializerService,
+    DefaultConfigChunk,
+    FeatureModuleConfig,
+    FeatureModulesService,
+    deepMerge,
 } from '@spartacus/core';
 import { EMPTY, Observable, defer, of } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';

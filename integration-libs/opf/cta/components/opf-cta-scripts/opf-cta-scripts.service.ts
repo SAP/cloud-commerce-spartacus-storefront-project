@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,22 +10,22 @@ import { Observable, Subscription, of, throwError } from 'rxjs';
 import { concatMap, filter, finalize, map, take, tap } from 'rxjs/operators';
 
 import {
-  OpfBaseFacade,
-  OpfDynamicScript,
-  OpfResourceLoaderService,
+    OpfBaseFacade,
+    OpfDynamicScript,
+    OpfResourceLoaderService,
 } from '@spartacus/opf/base/root';
 import {
-  OpfCtaCmsPageLocation,
-  OpfCtaDynamicLocations,
-  OpfCtaFacade,
-  OpfCtaScriptsLocation,
-  OpfCtaScriptsRequest,
-  OpfCtaScriptsResponse,
+    OpfCtaCmsPageLocation,
+    OpfCtaDynamicLocations,
+    OpfCtaFacade,
+    OpfCtaScriptsLocation,
+    OpfCtaScriptsRequest,
+    OpfCtaScriptsResponse,
 } from '@spartacus/opf/cta/root';
 
 import {
-  OpfDynamicCtaService,
-  OpfStaticCtaService,
+    OpfDynamicCtaService,
+    OpfStaticCtaService,
 } from '@spartacus/opf/cta/core';
 
 @Injectable()

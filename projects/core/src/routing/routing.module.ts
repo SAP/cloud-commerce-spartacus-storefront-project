@@ -1,25 +1,26 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { LOCATION_INITIALIZED } from '@angular/common';
 import {
-  APP_INITIALIZER,
-  ModuleWithProviders,
-  NgModule,
-  inject,
+    APP_INITIALIZER,
+    ModuleWithProviders,
+    NgModule,
+    inject,
 } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import {
-  RouterState,
-  RouterStateSerializer,
-  StoreRouterConnectingModule,
+    RouterState,
+    RouterStateSerializer,
+    StoreRouterConnectingModule,
 } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import {
-  CONFIG_INITIALIZER,
-  ConfigInitializer,
+    CONFIG_INITIALIZER,
+    ConfigInitializer,
 } from '../config/config-initializer/config-initializer';
 import { RoutingConfig } from './configurable-routes';
 import { ConfigurableRoutesService } from './configurable-routes/configurable-routes.service';
@@ -27,12 +28,11 @@ import { SecurePortalConfigInitializer } from './configurable-routes/secure-port
 import { LOCATION_INITIALIZED_MULTI } from './location-initialized-multi/location-initialized-multi';
 import { effects } from './store/effects/index';
 import {
-  CustomSerializer,
-  reducerProvider,
-  reducerToken,
+    CustomSerializer,
+    reducerProvider,
+    reducerToken,
 } from './store/reducers/router.reducer';
 import { ROUTING_FEATURE } from './store/routing-state';
-import { LOCATION_INITIALIZED } from '@angular/common';
 
 export function initConfigurableRoutes(
   service: ConfigurableRoutesService

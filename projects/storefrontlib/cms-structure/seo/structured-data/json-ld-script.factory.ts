@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { isPlatformBrowser } from '@angular/common';
 import {
-  Inject,
-  Injectable,
-  isDevMode,
-  PLATFORM_ID,
-  Renderer2,
-  RendererFactory2,
+    Inject,
+    Injectable,
+    isDevMode,
+    PLATFORM_ID,
+    Renderer2,
+    RendererFactory2,
 } from '@angular/core';
 import { WindowRef } from '@spartacus/core';
 import { SeoConfig } from '../config';

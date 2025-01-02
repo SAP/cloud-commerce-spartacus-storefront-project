@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,14 +7,14 @@
 import { Injectable } from '@angular/core';
 import { OrderEntry } from '@spartacus/cart/base/root';
 import {
-  ExportColumn,
-  ExportConfig,
-  ImportExportConfig,
+    ExportColumn,
+    ExportConfig,
+    ImportExportConfig,
 } from '@spartacus/cart/import-export/core';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  TranslationService,
+    GlobalMessageService,
+    GlobalMessageType,
+    TranslationService,
 } from '@spartacus/core';
 import { ExportCsvFileService } from '@spartacus/storefront';
 import { combineLatest, Observable } from 'rxjs';

@@ -1,29 +1,29 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import {
-  AsmCustomer360SectionConfig,
-  AsmCustomer360StoreLocation,
+    AsmCustomer360SectionConfig,
+    AsmCustomer360StoreLocation,
 } from '@spartacus/asm/customer-360/root';
 import {
-  PointOfService,
-  TranslationService,
-  WeekdayOpeningDay,
+    PointOfService,
+    TranslationService,
+    WeekdayOpeningDay,
 } from '@spartacus/core';
 import {
-  StoreFinderConfig,
-  StoreFinderSearchPage,
-  StoreFinderService,
+    StoreFinderConfig,
+    StoreFinderSearchPage,
+    StoreFinderService,
 } from '@spartacus/storefinder/core';
 import { combineLatest, Observable, of, Subscription } from 'rxjs';
 import { concatMap } from 'rxjs/operators';

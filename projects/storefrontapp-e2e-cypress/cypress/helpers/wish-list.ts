@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,16 +9,16 @@ import { login, register } from './auth-forms';
 import * as checkoutAsPersistentUser from './checkout-as-persistent-user';
 import * as checkout from './checkout-flow';
 import {
-  interceptCheckoutB2CDetailsEndpoint,
-  verifyReviewOrderPage,
-  waitForPage,
-  waitForProductPage,
+    interceptCheckoutB2CDetailsEndpoint,
+    verifyReviewOrderPage,
+    waitForPage,
+    waitForProductPage,
 } from './checkout-flow';
 import {
-  AddressData,
-  fillPaymentDetails,
-  fillShippingAddress,
-  PaymentDetails,
+    AddressData,
+    fillPaymentDetails,
+    fillShippingAddress,
+    PaymentDetails,
 } from './checkout-forms';
 import { generateMail, randomString } from './user';
 

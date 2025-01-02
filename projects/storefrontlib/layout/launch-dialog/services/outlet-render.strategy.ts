@@ -1,26 +1,26 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { DOCUMENT } from '@angular/common';
 import {
-  ComponentFactory,
-  ComponentFactoryResolver,
-  ComponentRef,
-  Inject,
-  Injectable,
-  RendererFactory2,
+    ComponentFactory,
+    ComponentFactoryResolver,
+    ComponentRef,
+    Inject,
+    Injectable,
+    RendererFactory2,
 } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import {
-  OutletPosition,
-  OutletService,
+    OutletPosition,
+    OutletService,
 } from '../../../cms-structure/outlet/index';
 import { OutletRendererService } from '../../../cms-structure/outlet/outlet-renderer.service';
-import { LaunchOutletDialog, LAUNCH_CALLER } from '../config/index';
+import { LAUNCH_CALLER, LaunchOutletDialog } from '../config/index';
 import { LaunchRenderStrategy } from './launch-render.strategy';
 
 @Injectable({ providedIn: 'root' })

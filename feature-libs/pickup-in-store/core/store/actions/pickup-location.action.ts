@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,8 +8,8 @@ import { createAction, props } from '@ngrx/store';
 import { TypedAction } from '@ngrx/store/src/models';
 import { PointOfService } from '@spartacus/core';
 import {
-  AugmentedPointOfService,
-  PickupOption,
+    AugmentedPointOfService,
+    PickupOption,
 } from '@spartacus/pickup-in-store/root';
 
 export const ADD_LOCATION = '[Pickup Locations] Add Location';

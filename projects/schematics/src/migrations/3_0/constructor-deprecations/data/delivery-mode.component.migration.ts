@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ACTIVATED_ROUTE,
-  ANGULAR_FORMS,
-  ANGULAR_ROUTER,
-  CHECKOUT_CONFIG_SERVICE,
-  CHECKOUT_DELIVERY_SERVICE,
-  CHECKOUT_STEP_SERVICE,
-  DELIVERY_MODE_COMPONENT,
-  FORM_BUILDER,
-  ROUTING_SERVICE,
+    ACTIVATED_ROUTE,
+    ANGULAR_FORMS,
+    ANGULAR_ROUTER,
+    CHECKOUT_CONFIG_SERVICE,
+    CHECKOUT_DELIVERY_SERVICE,
+    CHECKOUT_STEP_SERVICE,
+    DELIVERY_MODE_COMPONENT,
+    FORM_BUILDER,
+    ROUTING_SERVICE,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

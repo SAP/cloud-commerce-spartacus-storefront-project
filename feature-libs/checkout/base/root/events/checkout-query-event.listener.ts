@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,21 +7,21 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { MergeCartSuccessEvent } from '@spartacus/cart/base/root';
 import {
-  RestoreSavedCartSuccessEvent,
-  SaveCartSuccessEvent,
+    RestoreSavedCartSuccessEvent,
+    SaveCartSuccessEvent,
 } from '@spartacus/cart/saved-cart/root';
 import {
-  CurrencySetEvent,
-  EventService,
-  LanguageSetEvent,
-  LoginEvent,
-  LogoutEvent,
+    CurrencySetEvent,
+    EventService,
+    LanguageSetEvent,
+    LoginEvent,
+    LogoutEvent,
 } from '@spartacus/core';
 import { OrderPlacedEvent } from '@spartacus/order/root';
 import { merge, Subscription } from 'rxjs';
 import {
-  CheckoutQueryReloadEvent,
-  CheckoutQueryResetEvent,
+    CheckoutQueryReloadEvent,
+    CheckoutQueryResetEvent,
 } from './checkout.events';
 
 @Injectable({

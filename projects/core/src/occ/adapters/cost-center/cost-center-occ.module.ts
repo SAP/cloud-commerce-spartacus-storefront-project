@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,9 +8,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ConfigModule } from '../../../config/config.module';
 import {
-  COST_CENTERS_NORMALIZER,
-  COST_CENTER_NORMALIZER,
-  COST_CENTER_SERIALIZER,
+    COST_CENTERS_NORMALIZER,
+    COST_CENTER_NORMALIZER,
+    COST_CENTER_SERIALIZER,
 } from '../../../cost-center/connectors/cost-center/converters';
 import { OccCostCenterListNormalizer } from './converters/occ-cost-center-list-normalizer';
 import { OccCostCenterNormalizer } from './converters/occ-cost-center-normalizer';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,19 +7,19 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  ConverterService,
-  LoggerService,
-  OccEndpointsService,
-  backOff,
-  isJaloError,
-  normalizeHttpError,
+    ConverterService,
+    LoggerService,
+    OccEndpointsService,
+    backOff,
+    isJaloError,
+    normalizeHttpError,
 } from '@spartacus/core';
 import { ScheduledReplenishmentOrderAdapter } from '@spartacus/order/core';
 import {
-  REPLENISHMENT_ORDER_FORM_SERIALIZER,
-  REPLENISHMENT_ORDER_NORMALIZER,
-  ReplenishmentOrder,
-  ScheduleReplenishmentForm,
+    REPLENISHMENT_ORDER_FORM_SERIALIZER,
+    REPLENISHMENT_ORDER_NORMALIZER,
+    ReplenishmentOrder,
+    ScheduleReplenishmentForm,
 } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';

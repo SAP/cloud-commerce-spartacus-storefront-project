@@ -1,30 +1,30 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  AuthService,
-  Command,
-  CommandService,
-  CommandStrategy,
-  EventService,
-  LanguageSetEvent,
-  Query,
-  QueryService,
-  UserIdService,
+    AuthService,
+    Command,
+    CommandService,
+    CommandStrategy,
+    EventService,
+    LanguageSetEvent,
+    Query,
+    QueryService,
+    UserIdService,
 } from '@spartacus/core';
 import {
-  User,
-  UserAccountChangedEvent,
-  UserAccountFacade,
+    User,
+    UserAccountChangedEvent,
+    UserAccountFacade,
 } from '@spartacus/user/account/root';
-import { Observable } from 'rxjs';
 import { Title, UserProfileFacade } from '@spartacus/user/profile/root';
-import { UserProfileConnector } from '../connectors/user-profile.connector';
+import { Observable } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
+import { UserProfileConnector } from '../connectors/user-profile.connector';
 
 @Injectable()
 export class UserProfileService implements UserProfileFacade {

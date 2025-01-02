@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,11 +7,11 @@
 import { HttpErrorResponse, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
-  ErrorModel,
-  GlobalMessageType,
-  HttpErrorHandler,
-  HttpResponseStatus,
-  Priority,
+    ErrorModel,
+    GlobalMessageType,
+    HttpErrorHandler,
+    HttpResponseStatus,
+    Priority,
 } from '@spartacus/core';
 import { isCartError, isCartNotFoundError } from '../../utils/utils';
 

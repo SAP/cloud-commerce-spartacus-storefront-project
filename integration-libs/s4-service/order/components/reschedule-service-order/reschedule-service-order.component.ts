@@ -1,29 +1,29 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    inject,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CartOutlets } from '@spartacus/cart/base/root';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  RoutingService,
+    GlobalMessageService,
+    GlobalMessageType,
+    RoutingService,
 } from '@spartacus/core';
 import { OrderDetailsService } from '@spartacus/order/components';
 import { Order } from '@spartacus/order/root';
 import {
-  CheckoutServiceSchedulePickerService,
-  RescheduleServiceOrderFacade,
-  ServiceDateTime,
+    CheckoutServiceSchedulePickerService,
+    RescheduleServiceOrderFacade,
+    ServiceDateTime,
 } from '@spartacus/s4-service/root';
 import { combineLatest, map, Observable, Subject, takeUntil } from 'rxjs';
 

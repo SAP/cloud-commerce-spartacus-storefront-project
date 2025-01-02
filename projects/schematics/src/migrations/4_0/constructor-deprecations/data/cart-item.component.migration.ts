@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CART_ITEM_COMPONENT,
-  CART_ITEM_CONTEXT_SOURCE,
-  PROMOTION_SERVICE,
+    CART_ITEM_COMPONENT,
+    CART_ITEM_CONTEXT_SOURCE,
+    PROMOTION_SERVICE,
 } from '../../../../shared/constants';
 import { SPARTACUS_STOREFRONTLIB } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';

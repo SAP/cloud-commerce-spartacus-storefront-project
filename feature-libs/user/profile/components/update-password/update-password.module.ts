@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,24 +9,24 @@ import { NgModule, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
-  AuthGuard,
-  AuthRedirectService,
-  AuthService,
-  CmsConfig,
-  FeaturesConfigModule,
-  GlobalMessageService,
-  I18nModule,
-  RoutingService,
-  UrlModule,
-  provideDefaultConfig,
-  provideDefaultConfigFactory,
+    AuthGuard,
+    AuthRedirectService,
+    AuthService,
+    CmsConfig,
+    FeaturesConfigModule,
+    GlobalMessageService,
+    I18nModule,
+    RoutingService,
+    UrlModule,
+    provideDefaultConfig,
+    provideDefaultConfigFactory,
 } from '@spartacus/core';
 import {
-  BtnLikeLinkModule,
-  FormErrorsModule,
-  MessageComponentModule,
-  PasswordVisibilityToggleModule,
-  SpinnerModule,
+    BtnLikeLinkModule,
+    FormErrorsModule,
+    MessageComponentModule,
+    PasswordVisibilityToggleModule,
+    SpinnerModule,
 } from '@spartacus/storefront';
 import { UserPasswordFacade } from '@spartacus/user/profile/root';
 import { UpdatePasswordComponentService } from './update-password-component.service';

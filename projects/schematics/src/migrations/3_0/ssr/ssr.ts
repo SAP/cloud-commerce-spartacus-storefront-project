@@ -1,42 +1,42 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  chain,
-  noop,
-  Rule,
-  SchematicContext,
-  Tree,
+    chain,
+    noop,
+    Rule,
+    SchematicContext,
+    Tree,
 } from '@angular-devkit/schematics';
 import { isImported } from '@schematics/angular/utility/ast-utils';
 import {
-  NodeDependency,
-  NodeDependencyType,
+    NodeDependency,
+    NodeDependencyType,
 } from '@schematics/angular/utility/dependencies';
 import { NG_EXPRESS_ENGINE_DECORATOR } from '../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_SETUP,
-  SPARTACUS_SETUP_SSR,
+    SPARTACUS_CORE,
+    SPARTACUS_SETUP,
+    SPARTACUS_SETUP_SSR,
 } from '../../../shared/libs-constants';
 import {
-  commitChanges,
-  getServerTsPath,
-  getTsSourceFile,
-  removeImport,
+    commitChanges,
+    getServerTsPath,
+    getTsSourceFile,
+    removeImport,
 } from '../../../shared/utils/file-utils';
 import {
-  addPackageJsonDependencies,
-  installPackageJsonDependencies,
+    addPackageJsonDependencies,
+    installPackageJsonDependencies,
 } from '../../../shared/utils/lib-utils';
 import { createImportChange } from '../../../shared/utils/module-file-utils';
 import {
-  checkIfSSRIsUsed,
-  getSpartacusSchematicsVersion,
-  readPackageJson,
+    checkIfSSRIsUsed,
+    getSpartacusSchematicsVersion,
+    readPackageJson,
 } from '../../../shared/utils/package-utils';
 
 export function migrate(): Rule {

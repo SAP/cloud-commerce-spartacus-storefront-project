@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { NgModule } from '@angular/core';
 import {
-  quickOrderTranslationChunksConfig,
-  quickOrderTranslations,
+    quickOrderTranslationChunksConfig,
+    quickOrderTranslations,
 } from '@spartacus/cart/quick-order/assets';
 import {
-  CART_QUICK_ORDER_FEATURE,
-  QuickOrderRootModule,
+    CART_QUICK_ORDER_FEATURE,
+    QuickOrderRootModule,
 } from '@spartacus/cart/quick-order/root';
 import { provideConfig } from '@spartacus/core';
 

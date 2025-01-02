@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,8 +8,8 @@ import { NgModule } from '@angular/core';
 import { provideDefaultConfig } from '@spartacus/core';
 import { occDigitalPaymentsConfig } from './adapters/config/occ-digital-payments-endpoint.config';
 import {
-  DP_DETAILS_NORMALIZER,
-  DP_REQUEST_NORMALIZER,
+    DP_DETAILS_NORMALIZER,
+    DP_REQUEST_NORMALIZER,
 } from './adapters/converters';
 import { DigitalPaymentsAdapter } from './adapters/digital-payments.adapter';
 import { OccDpDetailsNormalizer } from './adapters/occ-digital-payment-details.normalizer';

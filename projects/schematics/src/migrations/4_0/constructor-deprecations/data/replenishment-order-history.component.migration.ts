@@ -1,22 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ANGULAR_CORE,
-  LAUNCH_DIALOG_SERVICE,
-  REPLENISHMENT_ORDER_CANCELLATION_LAUNCH_DIALOG_SERVICE,
-  REPLENISHMENT_ORDER_HISTORY_COMPONENT,
-  ROUTING_SERVICE,
-  TRANSLATION_SERVICE,
-  USER_REPLENISHMENT_ORDER_SERVICE,
-  VIEW_CONTAINER_REF,
+    ANGULAR_CORE,
+    LAUNCH_DIALOG_SERVICE,
+    REPLENISHMENT_ORDER_CANCELLATION_LAUNCH_DIALOG_SERVICE,
+    REPLENISHMENT_ORDER_HISTORY_COMPONENT,
+    ROUTING_SERVICE,
+    TRANSLATION_SERVICE,
+    USER_REPLENISHMENT_ORDER_SERVICE,
+    VIEW_CONTAINER_REF,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

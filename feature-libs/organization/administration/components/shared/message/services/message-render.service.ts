@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ComponentFactory,
-  ComponentFactoryResolver,
-  Injectable,
-  Injector,
+    ComponentFactory,
+    ComponentFactoryResolver,
+    Injectable,
+    Injector,
 } from '@angular/core';
 import { MessageData } from '../message.model';
 import { NotificationMessageComponent } from '../notification/notification-message.component';

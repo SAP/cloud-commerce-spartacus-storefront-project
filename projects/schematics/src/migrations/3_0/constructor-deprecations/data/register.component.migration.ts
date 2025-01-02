@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ANGULAR_FORMS,
-  ANONYMOUS_CONSENTS_CONFIG,
-  ANONYMOUS_CONSENTS_SERVICE,
-  AUTH_CONFIG_SERVICE,
-  FORM_BUILDER,
-  GLOBAL_MESSAGE_SERVICE,
-  REGISTER_COMPONENT,
-  ROUTING_SERVICE,
-  USER_SERVICE,
+    ANGULAR_FORMS,
+    ANONYMOUS_CONSENTS_CONFIG,
+    ANONYMOUS_CONSENTS_SERVICE,
+    AUTH_CONFIG_SERVICE,
+    FORM_BUILDER,
+    GLOBAL_MESSAGE_SERVICE,
+    REGISTER_COMPONENT,
+    ROUTING_SERVICE,
+    USER_SERVICE,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

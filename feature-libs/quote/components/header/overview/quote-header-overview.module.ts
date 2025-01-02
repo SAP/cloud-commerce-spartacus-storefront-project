@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,18 +7,18 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
-  AuthGuard,
-  CmsConfig,
-  I18nModule,
-  provideDefaultConfig,
+    AuthGuard,
+    CmsConfig,
+    I18nModule,
+    provideDefaultConfig,
 } from '@spartacus/core';
 import {
-  CardModule,
-  IconModule,
-  KeyboardFocusModule,
+    CardModule,
+    IconModule,
+    KeyboardFocusModule,
 } from '@spartacus/storefront';
-import { QuoteHeaderOverviewComponent } from './quote-header-overview.component';
 import { QuoteHeaderBuyerEditModule } from '../buyer-edit/quote-header-buyer-edit.module';
+import { QuoteHeaderOverviewComponent } from './quote-header-overview.component';
 
 @NgModule({
   imports: [

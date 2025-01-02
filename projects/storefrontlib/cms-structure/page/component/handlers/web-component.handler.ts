@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {
-  ElementRef,
-  Inject,
-  Injectable,
-  Injector,
-  PLATFORM_ID,
-  Renderer2,
-  ViewContainerRef,
-} from '@angular/core';
-import { Observable } from 'rxjs';
-import { ComponentHandler } from './component-handler';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { CxApiService } from '../services/cx-api.service';
+import {
+    ElementRef,
+    Inject,
+    Injectable,
+    Injector,
+    PLATFORM_ID,
+    Renderer2,
+    ViewContainerRef,
+} from '@angular/core';
 import { CmsComponentMapping, Priority } from '@spartacus/core';
+import { Observable } from 'rxjs';
 import { CmsComponentData } from '../../model';
+import { CxApiService } from '../services/cx-api.service';
+import { ComponentHandler } from './component-handler';
 
 /**
  * Component handler responsible for launching cms web components.

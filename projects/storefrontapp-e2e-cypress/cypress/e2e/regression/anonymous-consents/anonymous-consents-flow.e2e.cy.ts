@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import * as anonymousConsents from '../../../helpers/anonymous-consents';
 import {
-  LANGUAGES,
-  LANGUAGE_REQUEST,
-  stub,
+    LANGUAGES,
+    LANGUAGE_REQUEST,
+    stub,
 } from '../../../helpers/site-context-selector';
 import { viewportContext } from '../../../helpers/viewport-context';
 

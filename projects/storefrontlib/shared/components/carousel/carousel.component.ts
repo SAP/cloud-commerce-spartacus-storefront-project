@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  inject,
-  Input,
-  isDevMode,
-  OnChanges,
-  OnInit,
-  Output,
-  TemplateRef,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    inject,
+    Input,
+    isDevMode,
+    OnChanges,
+    OnInit,
+    Output,
+    TemplateRef,
 } from '@angular/core';
 import { LoggerService, useFeatureStyles } from '@spartacus/core';
 import { BehaviorSubject, Observable } from 'rxjs';

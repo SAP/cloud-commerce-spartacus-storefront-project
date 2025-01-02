@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,20 +7,20 @@
 import { Injectable } from '@angular/core';
 import { ActiveCartFacade, CreateCartEvent } from '@spartacus/cart/base/root';
 import {
-  AuthService,
-  BASE_SITE_CONTEXT_ID,
-  EventService,
-  SiteContextParamsService,
-  StatePersistenceService,
-  StorageSyncType,
+    AuthService,
+    BASE_SITE_CONTEXT_ID,
+    EventService,
+    SiteContextParamsService,
+    StatePersistenceService,
+    StorageSyncType,
 } from '@spartacus/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import {
-  distinctUntilChanged,
-  map,
-  startWith,
-  switchMap,
-  takeWhile,
+    distinctUntilChanged,
+    map,
+    startWith,
+    switchMap,
+    takeWhile,
 } from 'rxjs/operators';
 
 @Injectable({

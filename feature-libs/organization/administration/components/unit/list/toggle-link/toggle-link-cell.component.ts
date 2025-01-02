@@ -1,27 +1,27 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  HostBinding,
-  Optional,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    HostBinding,
+    Optional,
+    inject,
 } from '@angular/core';
 import {
-  B2BUnit,
-  FeatureConfigService,
-  RoutingService,
-  useFeatureStyles,
+    B2BUnit,
+    FeatureConfigService,
+    RoutingService,
+    useFeatureStyles,
 } from '@spartacus/core';
 import { B2BUnitTreeNode } from '@spartacus/organization/administration/core';
 import {
-  OutletContextData,
-  TableDataOutletContext,
+    OutletContextData,
+    TableDataOutletContext,
 } from '@spartacus/storefront';
 import { take } from 'rxjs';
 import { CellComponent } from '../../../shared/table/cell.component';

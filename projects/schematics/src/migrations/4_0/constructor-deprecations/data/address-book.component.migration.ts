@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ADDRESS_BOOK_COMPONENT,
-  ADDRESS_BOOK_COMPONENT_SERVICE,
-  CHECKOUT_DELIVERY_SERVICE,
-  TRANSLATION_SERVICE,
-  USER_ADDRESS_SERVICE,
+    ADDRESS_BOOK_COMPONENT,
+    ADDRESS_BOOK_COMPONENT_SERVICE,
+    CHECKOUT_DELIVERY_SERVICE,
+    TRANSLATION_SERVICE,
+    USER_ADDRESS_SERVICE,
 } from '../../../../shared/constants';
 import { SPARTACUS_CORE } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';

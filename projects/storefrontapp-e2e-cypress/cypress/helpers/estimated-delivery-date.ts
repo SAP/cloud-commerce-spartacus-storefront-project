@@ -1,11 +1,11 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { waitForPage, addCheapProductToCart } from './checkout-flow';
 import { SampleProduct } from '../sample-data/checkout-flow';
+import { addCheapProductToCart, waitForPage } from './checkout-flow';
 
 export const cheapProduct: SampleProduct = {
   name: 'Coney Flare',

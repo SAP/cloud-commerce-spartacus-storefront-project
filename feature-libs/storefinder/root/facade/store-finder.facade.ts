@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  facadeFactory,
-  GeoPoint,
-  PointOfService,
-  SearchConfig,
+    facadeFactory,
+    GeoPoint,
+    PointOfService,
+    SearchConfig,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { STORE_FINDER_FEATURE } from '../feature-name';

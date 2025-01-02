@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,12 +7,12 @@
 import { CommonEngineOptions, CommonEngineRenderOptions } from '@angular/ssr';
 import { NgSetupOptions } from '../engine/ng-express-engine';
 import {
-  OptimizedSsrEngine,
-  SsrCallbackFn,
+    OptimizedSsrEngine,
+    SsrCallbackFn,
 } from '../optimized-engine/optimized-ssr-engine';
 import {
-  SsrOptimizationOptions,
-  defaultSsrOptimizationOptions,
+    SsrOptimizationOptions,
+    defaultSsrOptimizationOptions,
 } from '../optimized-engine/ssr-optimization-options';
 import { getServerRequestProviders } from '../providers/ssr-providers';
 

@@ -1,29 +1,29 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  QueryList,
-  ViewChildren,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    QueryList,
+    ViewChildren,
+    inject,
 } from '@angular/core';
 import { FeatureConfigService, TranslationService } from '@spartacus/core';
 import {
-  ConfiguratorRouter,
-  ConfiguratorRouterExtractorService,
+    ConfiguratorRouter,
+    ConfiguratorRouterExtractorService,
 } from '@spartacus/product-configurator/common';
 import {
-  BREAKPOINT,
-  BreakpointService,
-  DirectionMode,
-  DirectionService,
-  HamburgerMenuService,
-  ICON_TYPE,
+    BREAKPOINT,
+    BreakpointService,
+    DirectionMode,
+    DirectionService,
+    HamburgerMenuService,
+    ICON_TYPE,
 } from '@spartacus/storefront';
 import { Observable, of } from 'rxjs';
 import { filter, map, switchMap, take } from 'rxjs/operators';

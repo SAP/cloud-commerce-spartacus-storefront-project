@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  OnDestroy,
+    ChangeDetectionStrategy,
+    Component,
+    inject,
+    OnDestroy,
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import {
-  Country,
-  GlobalMessageService,
-  GlobalMessageType,
-  Region,
+    Country,
+    GlobalMessageService,
+    GlobalMessageType,
+    Region,
 } from '@spartacus/core';
 import { Title } from '@spartacus/user/profile/root';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';

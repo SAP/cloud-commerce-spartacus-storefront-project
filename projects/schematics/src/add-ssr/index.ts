@@ -1,63 +1,63 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { strings } from '@angular-devkit/core';
 import {
-  MergeStrategy,
-  Rule,
-  SchematicContext,
-  SchematicsException,
-  Source,
-  Tree,
-  apply,
-  branchAndMerge,
-  chain,
-  externalSchematic,
-  mergeWith,
-  move,
-  template,
-  url,
+    MergeStrategy,
+    Rule,
+    SchematicContext,
+    SchematicsException,
+    Source,
+    Tree,
+    apply,
+    branchAndMerge,
+    chain,
+    externalSchematic,
+    mergeWith,
+    move,
+    template,
+    url,
 } from '@angular-devkit/schematics';
 import {
-  findNode,
-  getDecoratorMetadata,
-  getMetadataField,
-  insertImport,
+    findNode,
+    getDecoratorMetadata,
+    getMetadataField,
+    insertImport,
 } from '@schematics/angular/utility/ast-utils';
 import { RemoveChange } from '@schematics/angular/utility/change';
 import {
-  NodeDependency,
-  NodeDependencyType,
+    NodeDependency,
+    NodeDependencyType,
 } from '@schematics/angular/utility/dependencies';
 import ts from 'typescript';
 import { Schema as SpartacusOptions } from '../add-spartacus/schema';
 import collectedDependencies from '../dependencies.json';
 import { getDefaultProjectNameFromWorkspace, getWorkspace } from '../shared';
 import {
-  ANGULAR_CORE,
-  ANGULAR_PLATFORM_BROWSER,
-  ANGULAR_SSR,
+    ANGULAR_CORE,
+    ANGULAR_PLATFORM_BROWSER,
+    ANGULAR_SSR,
 } from '../shared/constants';
 import { SPARTACUS_SETUP } from '../shared/libs-constants';
 import {
-  commitChanges,
-  getIndexHtmlPath,
-  getPathResultsForFile,
-  getTsSourceFile,
-  removeImport,
+    commitChanges,
+    getIndexHtmlPath,
+    getPathResultsForFile,
+    getTsSourceFile,
+    removeImport,
 } from '../shared/utils/file-utils';
 import { appendHtmlElementToHead } from '../shared/utils/html-utils';
 import {
-  addPackageJsonDependencies,
-  installPackageJsonDependencies,
+    addPackageJsonDependencies,
+    installPackageJsonDependencies,
 } from '../shared/utils/lib-utils';
 import { addToModuleProviders } from '../shared/utils/module-file-utils';
 import {
-  getPrefixedSpartacusSchematicsVersion,
-  readPackageJson,
+    getPrefixedSpartacusSchematicsVersion,
+    readPackageJson,
 } from '../shared/utils/package-utils';
 
 // Fix typing bug in @schematics/angular/utility/workspace-models since v17:

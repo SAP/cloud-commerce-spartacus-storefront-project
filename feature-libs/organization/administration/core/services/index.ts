@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,3 +12,4 @@ export * from './organization-page-meta.module';
 export * from './organization-page-meta.resolver';
 export * from './permission.service';
 export * from './user-group.service';
+

@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { loginUser, signOutUser } from '../../../helpers/checkout-flow';
 import {
-  interceptOrderList,
-  interceptRescheduleServiceOrder,
-  interceptOrderDetails,
-  serviceUser,
+    interceptOrderDetails,
+    interceptOrderList,
+    interceptRescheduleServiceOrder,
+    serviceUser,
 } from '../../../helpers/vendor/s4-service/s4-service';
 import { POWERTOOLS_BASESITE } from '../../../sample-data/b2b-checkout';
 import {
-  CANCELLED_ORDER_DETAILS,
-  CANCELLED_ORDER_LIST,
-  ORDER_CODE,
-  RESCHEDULED_DATE,
-  SERVICABLE_ORDER_DETAILS,
-  SERVICABLE_ORDER_IN_24HRS_DETAILS,
-  SERVICABLE_ORDER_LIST,
+    CANCELLED_ORDER_DETAILS,
+    CANCELLED_ORDER_LIST,
+    ORDER_CODE,
+    RESCHEDULED_DATE,
+    SERVICABLE_ORDER_DETAILS,
+    SERVICABLE_ORDER_IN_24HRS_DETAILS,
+    SERVICABLE_ORDER_LIST,
 } from '../../../sample-data/service-order';
 
 const orderListAlias = 'orderList';

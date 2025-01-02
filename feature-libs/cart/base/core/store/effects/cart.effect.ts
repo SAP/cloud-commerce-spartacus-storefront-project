@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,23 +9,23 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store, select } from '@ngrx/store';
 import { Cart } from '@spartacus/cart/base/root';
 import {
-  LoggerService,
-  OCC_CART_ID_CURRENT,
-  SiteContextActions,
-  isNotUndefined,
-  tryNormalizeHttpError,
-  withdrawOn,
+    LoggerService,
+    OCC_CART_ID_CURRENT,
+    SiteContextActions,
+    isNotUndefined,
+    tryNormalizeHttpError,
+    withdrawOn,
 } from '@spartacus/core';
 import { Observable, from, of } from 'rxjs';
 import {
-  catchError,
-  concatMap,
-  filter,
-  groupBy,
-  map,
-  mergeMap,
-  switchMap,
-  withLatestFrom,
+    catchError,
+    concatMap,
+    filter,
+    groupBy,
+    map,
+    mergeMap,
+    switchMap,
+    withLatestFrom,
 } from 'rxjs/operators';
 import { CartConnector } from '../../connectors/cart/cart.connector';
 import { getCartIdByUserId, isCartNotFoundError } from '../../utils/utils';

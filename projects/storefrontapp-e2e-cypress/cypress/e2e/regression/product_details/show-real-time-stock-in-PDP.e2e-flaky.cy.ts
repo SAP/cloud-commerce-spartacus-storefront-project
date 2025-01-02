@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { FeaturesConfig } from '@spartacus/core';
 import { visitProductPage } from '../../../helpers/coupons/cart-coupon';
 import * as sampleData from '../../../sample-data/inventory-display';
-import { FeaturesConfig } from '@spartacus/core';
 
 export const stockSelector = 'cx-add-to-cart .info';
 

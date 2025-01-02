@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ACTION_SUBJECT,
-  CART_PAGE_EVENT_BUILDER,
-  EVENT_SERVICE,
-  FEATURE_CONFIG_SERVICE,
-  RXJS,
+    ACTION_SUBJECT,
+    CART_PAGE_EVENT_BUILDER,
+    EVENT_SERVICE,
+    FEATURE_CONFIG_SERVICE,
+    RXJS,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

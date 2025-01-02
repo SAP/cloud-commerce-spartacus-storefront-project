@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ADDRESS_FORM_COMPONENT,
-  ANGULAR_FORMS,
-  FORM_BUILDER,
-  GLOBAL_MESSAGE_SERVICE,
-  LAUNCH_DIALOG_SERVICE,
-  MODAL_SERVICE,
-  TRANSLATION_SERVICE,
-  USER_ADDRESS_SERVICE,
-  USER_SERVICE,
+    ADDRESS_FORM_COMPONENT,
+    ANGULAR_FORMS,
+    FORM_BUILDER,
+    GLOBAL_MESSAGE_SERVICE,
+    LAUNCH_DIALOG_SERVICE,
+    MODAL_SERVICE,
+    TRANSLATION_SERVICE,
+    USER_ADDRESS_SERVICE,
+    USER_SERVICE,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

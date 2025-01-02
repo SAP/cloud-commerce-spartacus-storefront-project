@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Rule,
-  SchematicContext,
-  SchematicsException,
-  Tree,
+    Rule,
+    SchematicContext,
+    SchematicsException,
+    Tree,
 } from '@angular-devkit/schematics';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_FEATURES_MODULE,
-  SPARTACUS_FEATURES_NG_MODULE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_FEATURES_MODULE,
+    SPARTACUS_FEATURES_NG_MODULE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../shared/libs-constants';
 import { addModuleImport } from '../shared/utils/new-module-utils';
 import { createProgram, saveAndFormat } from '../shared/utils/program';

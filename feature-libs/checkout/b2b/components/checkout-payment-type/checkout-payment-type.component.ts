@@ -1,38 +1,38 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  ViewChild,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    ViewChild,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PaymentType } from '@spartacus/cart/base/root';
 import {
-  B2BPaymentTypeEnum,
-  CheckoutPaymentTypeFacade,
+    B2BPaymentTypeEnum,
+    CheckoutPaymentTypeFacade,
 } from '@spartacus/checkout/b2b/root';
 import { CheckoutStepService } from '@spartacus/checkout/base/components';
 import { CheckoutStepType } from '@spartacus/checkout/base/root';
 import {
-  getLastValueSync,
-  GlobalMessageService,
-  GlobalMessageType,
-  HttpErrorModel,
-  isNotUndefined,
-  OccHttpErrorType,
+    getLastValueSync,
+    GlobalMessageService,
+    GlobalMessageType,
+    HttpErrorModel,
+    isNotUndefined,
+    OccHttpErrorType,
 } from '@spartacus/core';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import {
-  catchError,
-  distinctUntilChanged,
-  filter,
-  map,
-  tap,
+    catchError,
+    distinctUntilChanged,
+    filter,
+    map,
+    tap,
 } from 'rxjs/operators';
 
 @Component({

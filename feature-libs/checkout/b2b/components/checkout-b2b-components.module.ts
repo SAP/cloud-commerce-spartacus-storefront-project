@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
-  CheckoutAuthGuard,
-  CheckoutStepsSetGuard,
+    CheckoutAuthGuard,
+    CheckoutStepsSetGuard,
 } from '@spartacus/checkout/base/components';
 import { CheckoutCostCenterModule } from './checkout-cost-center/checkout-cost-center.module';
 import { B2BCheckoutDeliveryAddressModule } from './checkout-delivery-address/checkout-delivery-address.module';

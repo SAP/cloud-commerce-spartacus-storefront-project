@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,32 +7,32 @@
 // '@sapui5/ts-types-esm' package contains types for sap modules, e.g. 'sap/ui/core/Core'
 /// <reference types="@sapui5/ts-types-esm" />
 import {
-  ChangeDetectorRef,
-  ElementRef,
-  EventEmitter,
-  Injectable,
-  OnDestroy,
+    ChangeDetectorRef,
+    ElementRef,
+    EventEmitter,
+    Injectable,
+    OnDestroy,
 } from '@angular/core';
 import { WindowRef } from '@spartacus/core';
 import {
-  SceneNodeToProductLookupService,
-  VisualizationLookupService,
+    SceneNodeToProductLookupService,
+    VisualizationLookupService,
 } from '@spartacus/epd-visualization/core';
 import {
-  ContentType,
-  EpdVisualizationConfig,
-  EpdVisualizationInnerConfig,
-  Ui5Config,
-  VisualizationApiConfig,
-  VisualizationInfo,
+    ContentType,
+    EpdVisualizationConfig,
+    EpdVisualizationInnerConfig,
+    Ui5Config,
+    VisualizationApiConfig,
+    VisualizationInfo,
 } from '@spartacus/epd-visualization/root';
 import { BehaviorSubject, Observable, of, Subscription } from 'rxjs';
 import {
-  catchError,
-  filter,
-  first,
-  mergeMap,
-  shareReplay,
+    catchError,
+    filter,
+    first,
+    mergeMap,
+    shareReplay,
 } from 'rxjs/operators';
 import type Core from 'sap/ui/core/Core';
 import type { CSSColor } from 'sap/ui/core/library';
@@ -51,9 +51,9 @@ import { LoadedSceneInfo, SceneLoadInfo } from './models/scene-load-info';
 import { SceneLoadState } from './models/scene-load-state';
 import { SelectionMode } from './models/selection-mode';
 import {
-  VisualizationLoadInfo,
-  VisualizationLoadStatus,
-  VisualizationLookupResult,
+    VisualizationLoadInfo,
+    VisualizationLoadStatus,
+    VisualizationLookupResult,
 } from './models/visualization-load-info';
 import { ZoomTo } from './models/zoom-to';
 

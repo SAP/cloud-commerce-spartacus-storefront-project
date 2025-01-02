@@ -1,46 +1,46 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { inject, Injectable } from '@angular/core';
 import {
-  ActiveCartFacade,
-  Cart,
-  CartAddEntrySuccessEvent,
-  CartRemoveEntrySuccessEvent,
-  CartUpdateEntrySuccessEvent,
+    ActiveCartFacade,
+    Cart,
+    CartAddEntrySuccessEvent,
+    CartRemoveEntrySuccessEvent,
+    CartUpdateEntrySuccessEvent,
 } from '@spartacus/cart/base/root';
 import {
-  CurrencyService,
-  EventService,
-  LanguageService,
-  Product,
-  WindowRef,
+    CurrencyService,
+    EventService,
+    LanguageService,
+    Product,
+    WindowRef,
 } from '@spartacus/core';
 import { OpfKeyValueMap } from '@spartacus/opf/base/root';
 import {
-  OpfCtaEvent,
-  OpfCtaFacade,
-  OpfCtaProductItem,
-  OpfCtaScriptsLocation,
-  OpfCtaScriptsRequest,
+    OpfCtaEvent,
+    OpfCtaFacade,
+    OpfCtaProductItem,
+    OpfCtaScriptsLocation,
+    OpfCtaScriptsRequest,
 } from '@spartacus/opf/cta/root';
 import {
-  OpfGlobalFunctionsDomain,
-  OpfGlobalFunctionsFacade,
+    OpfGlobalFunctionsDomain,
+    OpfGlobalFunctionsFacade,
 } from '@spartacus/opf/global-functions/root';
 
 import { CurrentProductService } from '@spartacus/storefront';
 import {
-  combineLatest,
-  map,
-  merge,
-  Observable,
-  Subscription,
-  take,
-  tap,
+    combineLatest,
+    map,
+    merge,
+    Observable,
+    Subscription,
+    take,
+    tap,
 } from 'rxjs';
 
 @Injectable()

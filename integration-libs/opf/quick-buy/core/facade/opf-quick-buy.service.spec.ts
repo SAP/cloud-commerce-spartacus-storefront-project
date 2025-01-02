@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { TestBed } from '@angular/core/testing';
 import {
-  ActiveCartFacade,
-  CartAccessCodeFacade,
+    ActiveCartFacade,
+    CartAccessCodeFacade,
 } from '@spartacus/cart/base/root';
 import { UserIdService } from '@spartacus/core';
 import {
-  ApplePaySessionVerificationRequest,
-  ApplePaySessionVerificationResponse,
+    ApplePaySessionVerificationRequest,
+    ApplePaySessionVerificationResponse,
 } from '@spartacus/opf/quick-buy/root';
 import { of } from 'rxjs';
 import { OpfQuickBuyConnector } from '../connectors';

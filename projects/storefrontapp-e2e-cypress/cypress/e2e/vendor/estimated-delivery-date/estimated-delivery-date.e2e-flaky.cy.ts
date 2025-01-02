@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  addCheapProductToCartAndBeginCheckoutForSignedInCustomer,
-  goToCheapProductDetailsPage,
-  loginUser,
-  signOut,
+    addCheapProductToCartAndBeginCheckoutForSignedInCustomer,
+    goToCheapProductDetailsPage,
+    loginUser,
+    signOut,
 } from '../../../helpers/checkout-flow';
 import {
-  addProductToCart,
-  cheapProduct,
-  checkoutDeliveryMode,
-  checkoutPaymentDetails,
-  checkoutShippingAddress,
-  orderConfirmation,
-  reviewAndPlaceOrder,
-  my_user,
+    addProductToCart,
+    cheapProduct,
+    checkoutDeliveryMode,
+    checkoutPaymentDetails,
+    checkoutShippingAddress,
+    my_user,
+    orderConfirmation,
+    reviewAndPlaceOrder,
 } from '../../../helpers/estimated-delivery-date';
 
 describe('estimated delivery date', () => {

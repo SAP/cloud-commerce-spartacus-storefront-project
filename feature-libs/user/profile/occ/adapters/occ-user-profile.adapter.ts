@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,27 +7,27 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, Injector, inject } from '@angular/core';
 import {
-  ConverterService,
-  InterceptorUtil,
-  LoggerService,
-  Occ,
-  OccEndpointsService,
-  USE_CAPTCHA_TOKEN,
-  USE_CLIENT_TOKEN,
-  normalizeHttpError,
+    ConverterService,
+    InterceptorUtil,
+    LoggerService,
+    Occ,
+    OccEndpointsService,
+    USE_CAPTCHA_TOKEN,
+    USE_CLIENT_TOKEN,
+    normalizeHttpError,
 } from '@spartacus/core';
+import { CaptchaApiConfig, CaptchaRenderer } from '@spartacus/storefront';
 import { User } from '@spartacus/user/account/root';
 import {
-  TITLE_NORMALIZER,
-  USER_PROFILE_NORMALIZER,
-  USER_PROFILE_SERIALIZER,
-  USER_SIGN_UP_SERIALIZER,
-  UserProfileAdapter,
+    TITLE_NORMALIZER,
+    USER_PROFILE_NORMALIZER,
+    USER_PROFILE_SERIALIZER,
+    USER_SIGN_UP_SERIALIZER,
+    UserProfileAdapter,
 } from '@spartacus/user/profile/core';
 import { Title, UserSignUp } from '@spartacus/user/profile/root';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { CaptchaApiConfig, CaptchaRenderer } from '@spartacus/storefront';
 
 const CONTENT_TYPE_JSON_HEADER = { 'Content-Type': 'application/json' };
 const CONTENT_TYPE_URLENCODED_HEADER = {

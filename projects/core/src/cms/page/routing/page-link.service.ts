@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { Injectable } from '@angular/core';
 import { WindowRef } from '../../../window/window-ref';
 import {
-  CanonicalUrlOptions,
-  PageMetaConfig,
+    CanonicalUrlOptions,
+    PageMetaConfig,
 } from '../config/page-meta.config';
 
 /**

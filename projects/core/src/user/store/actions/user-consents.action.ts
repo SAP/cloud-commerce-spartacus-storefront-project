@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,9 +9,9 @@ import { ConsentTemplate } from '../../../model/consent.model';
 import { PROCESS_FEATURE } from '../../../process/store/process-state';
 import { StateUtils } from '../../../state/utils/index';
 import {
-  GIVE_CONSENT_PROCESS_ID,
-  USER_CONSENTS,
-  WITHDRAW_CONSENT_PROCESS_ID,
+    GIVE_CONSENT_PROCESS_ID,
+    USER_CONSENTS,
+    WITHDRAW_CONSENT_PROCESS_ID,
 } from '../user-state';
 
 export const LOAD_USER_CONSENTS = '[User] Load User Consents';

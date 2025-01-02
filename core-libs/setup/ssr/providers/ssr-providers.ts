@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Provider, StaticProvider } from '@angular/core';
 import {
-  LoggerService,
-  MULTI_ERROR_HANDLER,
-  SERVER_REQUEST_ORIGIN,
-  SERVER_REQUEST_URL,
+    LoggerService,
+    MULTI_ERROR_HANDLER,
+    SERVER_REQUEST_ORIGIN,
+    SERVER_REQUEST_URL,
 } from '@spartacus/core';
 
 import { PropagatingToServerErrorHandler } from '../error-handling/multi-error-handlers';

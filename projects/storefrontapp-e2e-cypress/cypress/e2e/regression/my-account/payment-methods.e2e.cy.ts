@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,10 +9,10 @@ import * as alerts from '../../../helpers/global-message';
 import * as login from '../../../helpers/login';
 import * as paymentMethods from '../../../helpers/payment-methods';
 import {
-  addPaymentMethod,
-  testPaymentDetail,
-  verifyPaymentCard,
-  visitPaymentDetailsPage,
+    addPaymentMethod,
+    testPaymentDetail,
+    verifyPaymentCard,
+    visitPaymentDetailsPage,
 } from '../../../helpers/payment-methods';
 import { viewportContext } from '../../../helpers/viewport-context';
 import { isolateTests } from '../../../support/utils/test-isolation';

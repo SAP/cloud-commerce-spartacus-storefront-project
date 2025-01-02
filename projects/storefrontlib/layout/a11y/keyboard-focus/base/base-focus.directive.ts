@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Directive,
-  ElementRef,
-  HostBinding,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
+    Directive,
+    ElementRef,
+    HostBinding,
+    Input,
+    OnChanges,
+    OnInit,
+    SimpleChanges,
 } from '@angular/core';
 import { BaseFocusConfig } from '../keyboard-focus.model';
 import { BaseFocusService } from './base-focus.service';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,17 +9,17 @@ import { getSourceNodes } from '@schematics/angular/utility/ast-utils';
 import { ReplaceChange } from '@schematics/angular/utility/change';
 import { UTF_8 } from '../../../shared/constants';
 import {
-  buildSpartacusComment,
-  commitChanges,
-  ComponentData,
-  getAllTsSourceFiles,
-  getHtmlFiles,
-  getTsSourceFile,
-  insertCommentAboveIdentifier,
-  insertComponentSelectorComment,
-  InsertDirection,
-  insertHtmlComment,
-  isInheriting,
+    buildSpartacusComment,
+    commitChanges,
+    ComponentData,
+    getAllTsSourceFiles,
+    getHtmlFiles,
+    getTsSourceFile,
+    insertCommentAboveIdentifier,
+    insertComponentSelectorComment,
+    InsertDirection,
+    insertHtmlComment,
+    isInheriting,
 } from '../../../shared/utils/file-utils';
 import { getTemplateInfo } from '../../../shared/utils/module-file-utils';
 import { getSourceRoot } from '../../../shared/utils/workspace-utils';

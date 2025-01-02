@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AbstractType,
-  InjectionToken,
-  InjectOptions,
-  Injector,
-  Type,
+    AbstractType,
+    InjectionToken,
+    InjectOptions,
+    Injector,
+    Type,
 } from '@angular/core';
 
 const NOT_FOUND_SYMBOL = {};

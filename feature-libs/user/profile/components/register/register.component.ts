@@ -1,30 +1,30 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import {
-  UntypedFormArray,
-  UntypedFormBuilder,
-  UntypedFormControl,
-  UntypedFormGroup,
-  Validators,
+    UntypedFormArray,
+    UntypedFormBuilder,
+    UntypedFormControl,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import {
-  AnonymousConsent,
-  AnonymousConsentsConfig,
-  AnonymousConsentsService,
-  AuthConfigService,
-  ConsentTemplate,
-  FeatureConfigService,
-  GlobalMessageEntities,
-  GlobalMessageService,
-  GlobalMessageType,
-  OAuthFlow,
-  RoutingService,
-  useFeatureStyles,
+    AnonymousConsent,
+    AnonymousConsentsConfig,
+    AnonymousConsentsService,
+    AuthConfigService,
+    ConsentTemplate,
+    FeatureConfigService,
+    GlobalMessageEntities,
+    GlobalMessageService,
+    GlobalMessageType,
+    OAuthFlow,
+    RoutingService,
+    useFeatureStyles,
 } from '@spartacus/core';
 import { CustomFormValidators, sortTitles } from '@spartacus/storefront';
 import { Title, UserSignUp } from '@spartacus/user/profile/root';

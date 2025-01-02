@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,16 +7,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
-  CartAccessCodeAdapter,
-  CartAdapter,
-  CartEntryAdapter,
-  CartGuestUserAdapter,
-  CartValidationAdapter,
-  CartVoucherAdapter,
+    CartAccessCodeAdapter,
+    CartAdapter,
+    CartEntryAdapter,
+    CartGuestUserAdapter,
+    CartValidationAdapter,
+    CartVoucherAdapter,
 } from '@spartacus/cart/base/core';
 import {
-  CART_NORMALIZER,
-  ORDER_ENTRY_PROMOTIONS_NORMALIZER,
+    CART_NORMALIZER,
+    ORDER_ENTRY_PROMOTIONS_NORMALIZER,
 } from '@spartacus/cart/base/root';
 import { provideDefaultConfigFactory } from '@spartacus/core';
 import { OccCartNormalizer } from './adapters/converters/occ-cart-normalizer';

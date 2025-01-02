@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,16 +7,16 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  ConverterService,
-  InterceptorUtil,
-  LoggerService,
-  OccEndpointsService,
-  USE_CLIENT_TOKEN,
-  normalizeHttpError,
+    ConverterService,
+    InterceptorUtil,
+    LoggerService,
+    OccEndpointsService,
+    USE_CLIENT_TOKEN,
+    normalizeHttpError,
 } from '@spartacus/core';
 import {
-  ORGANIZATION_USER_REGISTRATION_SERIALIZER,
-  UserRegistrationAdapter,
+    ORGANIZATION_USER_REGISTRATION_SERIALIZER,
+    UserRegistrationAdapter,
 } from '@spartacus/organization/user-registration/core';
 import { OrganizationUserRegistration } from '@spartacus/organization/user-registration/root';
 import { Observable } from 'rxjs';

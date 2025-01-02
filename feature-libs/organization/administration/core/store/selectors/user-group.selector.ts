@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import {
-  B2BUser,
-  EntitiesModel,
-  SearchConfig,
-  StateUtils,
+    B2BUser,
+    EntitiesModel,
+    SearchConfig,
+    StateUtils,
 } from '@spartacus/core';
 import { Permission } from '../../model/permission.model';
 import { UserGroup } from '../../model/user-group.model';
 import {
-  OrganizationState,
-  StateWithOrganization,
-  UserGroupManagement,
-  USER_GROUP_FEATURE,
+    OrganizationState,
+    StateWithOrganization,
+    USER_GROUP_FEATURE,
+    UserGroupManagement,
 } from '../organization-state';
 import { getB2BUsersState } from './b2b-user.selector';
 import { getOrganizationState } from './feature.selector';

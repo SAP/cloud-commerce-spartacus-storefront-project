@@ -1,34 +1,34 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  b2bDeliveryAddress,
-  b2bDeliveryModeStub,
-  cartWithB2bProductAndPremiumShipping,
-  poNumber,
-  POWERTOOLS_BASESITE,
-  recurrencePeriodMap,
+    b2bDeliveryAddress,
+    b2bDeliveryModeStub,
+    cartWithB2bProductAndPremiumShipping,
+    poNumber,
+    POWERTOOLS_BASESITE,
+    recurrencePeriodMap,
 } from '../../../sample-data/b2b-checkout';
 import {
-  SampleCartProduct,
-  SampleProduct,
-  SampleUser,
+    SampleCartProduct,
+    SampleProduct,
+    SampleUser,
 } from '../../../sample-data/checkout-flow';
 import { AccountData } from '../../../support/require-logged-in.commands';
 import { interceptGet, interceptPost } from '../../../support/utils/intercept';
 import { tabbingOrderConfig } from '../../accessibility/b2b/tabbing-order.config';
 import { verifyTabbingOrder } from '../../accessibility/tabbing-order';
 import {
-  TabbingOrderConfig,
-  TabbingOrderTypes,
+    TabbingOrderConfig,
+    TabbingOrderTypes,
 } from '../../accessibility/tabbing-order.model';
 import { login } from '../../auth-forms';
 import {
-  interceptCheckoutB2BDetailsEndpoint,
-  interceptPutDeliveryModeEndpoint,
+    interceptCheckoutB2BDetailsEndpoint,
+    interceptPutDeliveryModeEndpoint,
 } from '../../b2b/b2b-checkout';
 import { clearActiveCart, goToCart, validateEmptyCart } from '../../cart';
 import { waitForPage, waitForProductPage } from '../../checkout-flow';

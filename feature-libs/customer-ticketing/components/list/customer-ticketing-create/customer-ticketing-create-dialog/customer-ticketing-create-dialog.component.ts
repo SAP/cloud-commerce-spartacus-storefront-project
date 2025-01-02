@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,22 +7,22 @@
 import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
-  AssociatedObject,
-  Category,
-  MAX_ENTRIES_FOR_ATTACHMENT,
-  TicketDetails,
-  TicketStarter,
+    GlobalMessageService,
+    GlobalMessageType,
+    HttpErrorModel,
+    TranslationService,
+} from '@spartacus/core';
+import {
+    AssociatedObject,
+    Category,
+    MAX_ENTRIES_FOR_ATTACHMENT,
+    TicketDetails,
+    TicketStarter,
 } from '@spartacus/customer-ticketing/root';
 import { FormUtils } from '@spartacus/storefront';
 import { Observable, of, Subscription } from 'rxjs';
-import { CustomerTicketingDialogComponent } from '../../../shared/customer-ticketing-dialog/customer-ticketing-dialog.component';
-import {
-  GlobalMessageService,
-  GlobalMessageType,
-  HttpErrorModel,
-  TranslationService,
-} from '@spartacus/core';
 import { catchError, first, tap } from 'rxjs/operators';
+import { CustomerTicketingDialogComponent } from '../../../shared/customer-ticketing-dialog/customer-ticketing-dialog.component';
 
 @Component({
   selector: 'cx-customer-ticketing-create-dialog',

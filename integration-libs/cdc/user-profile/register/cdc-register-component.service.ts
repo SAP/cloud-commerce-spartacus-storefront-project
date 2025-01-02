@@ -1,40 +1,40 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  FormControl,
-  UntypedFormArray,
-  UntypedFormBuilder,
-  Validators,
+    FormControl,
+    UntypedFormArray,
+    UntypedFormBuilder,
+    Validators,
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import {
-  CdcConsentManagementComponentService,
-  CdcJsService,
-  CdcLoadUserTokenFailEvent,
-  CDC_USER_PREFERENCE_SERIALIZER,
+    CDC_USER_PREFERENCE_SERIALIZER,
+    CdcConsentManagementComponentService,
+    CdcJsService,
+    CdcLoadUserTokenFailEvent,
 } from '@spartacus/cdc/root';
 import {
-  AnonymousConsentsService,
-  AuthService,
-  Command,
-  CommandService,
-  ConsentTemplate,
-  ConverterService,
-  EventService,
-  GlobalMessageService,
-  GlobalMessageType,
+    AnonymousConsentsService,
+    AuthService,
+    Command,
+    CommandService,
+    ConsentTemplate,
+    ConverterService,
+    EventService,
+    GlobalMessageService,
+    GlobalMessageType,
 } from '@spartacus/core';
 import { User } from '@spartacus/user/account/root';
 import { RegisterComponentService } from '@spartacus/user/profile/components';
 import {
-  UserProfileFacade,
-  UserRegisterFacade,
-  UserSignUp,
+    UserProfileFacade,
+    UserRegisterFacade,
+    UserSignUp,
 } from '@spartacus/user/profile/root';
 import { Observable, merge, throwError } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';

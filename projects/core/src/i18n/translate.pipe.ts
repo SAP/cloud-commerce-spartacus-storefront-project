@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectorRef,
-  inject,
-  isDevMode,
-  OnDestroy,
-  Pipe,
-  PipeTransform,
+    ChangeDetectorRef,
+    inject,
+    isDevMode,
+    OnDestroy,
+    Pipe,
+    PipeTransform,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoggerService } from '../logger';
 import { ObjectComparisonUtils } from '../util/object-comparison-utils';
 import {
-  isTranslatable,
-  Translatable,
-  TranslatableParams,
+    isTranslatable,
+    Translatable,
+    TranslatableParams,
 } from './translatable';
 import { TranslationService } from './translation.service';
 

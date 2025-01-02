@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,25 +7,25 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  ConverterService,
-  LoggerService,
-  backOff,
-  isServerError,
-  tryNormalizeHttpError,
+    ConverterService,
+    LoggerService,
+    backOff,
+    isServerError,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import { OpfEndpointsService } from '@spartacus/opf/base/core';
 import {
-  OPF_CC_PUBLIC_KEY_HEADER,
-  OpfConfig,
-  OpfMetadataStatePersistanceService,
+    OPF_CC_PUBLIC_KEY_HEADER,
+    OpfConfig,
+    OpfMetadataStatePersistanceService,
 } from '@spartacus/opf/base/root';
 import {
-  OPF_CTA_SCRIPTS_NORMALIZER,
-  OpfCtaAdapter,
+    OPF_CTA_SCRIPTS_NORMALIZER,
+    OpfCtaAdapter,
 } from '@spartacus/opf/cta/core';
 import {
-  OpfCtaScriptsRequest,
-  OpfCtaScriptsResponse,
+    OpfCtaScriptsRequest,
+    OpfCtaScriptsResponse,
 } from '@spartacus/opf/cta/root';
 import { OpfPaymentSubmitResponse } from '@spartacus/opf/payment/root';
 import { Observable } from 'rxjs';

@@ -1,34 +1,34 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
+    ChangeDetectionStrategy,
+    Component,
+    EventEmitter,
+    Input,
+    OnInit,
+    Output,
 } from '@angular/core';
 import {
-  UntypedFormControl,
-  UntypedFormGroup,
-  Validators,
+    UntypedFormControl,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import { OrderEntriesSource, ProductData } from '@spartacus/cart/base/root';
 import { ImportExportConfig } from '@spartacus/cart/import-export/core';
+import { GlobalMessageType } from '@spartacus/core';
 import {
-  FilesFormValidators,
-  FormUtils,
-  ImportCsvFileService,
-  LaunchDialogService,
+    FilesFormValidators,
+    FormUtils,
+    ImportCsvFileService,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { of, Subject } from 'rxjs';
 import { filter, startWith, switchMap, take, tap } from 'rxjs/operators';
 import { ImportProductsFromCsvService } from '../../import-products-from-csv.service';
-import { GlobalMessageType } from '@spartacus/core';
 
 @Component({
   selector: 'cx-import-entries-form',

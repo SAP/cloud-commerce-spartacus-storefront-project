@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  RoutingService,
+    GlobalMessageService,
+    GlobalMessageType,
+    RoutingService,
 } from '@spartacus/core';
 import { OrderReturnRequestFacade, ReturnRequest } from '@spartacus/order/root';
 import { combineLatest, Observable } from 'rxjs';

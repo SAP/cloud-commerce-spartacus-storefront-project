@@ -1,34 +1,34 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  ViewChild,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    ViewChild,
 } from '@angular/core';
 import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
+    UntypedFormBuilder,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import {
-  isNotNullable,
-  Product,
-  ProductReviewService,
-  Review,
+    isNotNullable,
+    Product,
+    ProductReviewService,
+    Review,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import {
-  distinctUntilChanged,
-  filter,
-  map,
-  switchMap,
-  tap,
+    distinctUntilChanged,
+    filter,
+    map,
+    switchMap,
+    tap,
 } from 'rxjs/operators';
 import { CurrentProductService } from '../../current-product.service';
 

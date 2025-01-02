@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  HttpEvent,
-  HttpHandler,
-  HttpInterceptor,
-  HttpRequest,
+    HttpEvent,
+    HttpHandler,
+    HttpInterceptor,
+    HttpRequest,
 } from '@angular/common/http';
 import { Injectable, inject, isDevMode } from '@angular/core';
-import { Observable } from 'rxjs';
 import { LoggerService, OccEndpointsService, WindowRef } from '@spartacus/core';
+import { Observable } from 'rxjs';
 import { SegmentRefsConfig } from '../config/segment-refs-config';
 
 @Injectable({ providedIn: 'root' })

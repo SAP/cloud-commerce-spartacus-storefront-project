@@ -1,26 +1,26 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  HostBinding,
-  Input,
+    ChangeDetectionStrategy,
+    Component,
+    HostBinding,
+    Input,
 } from '@angular/core';
 import {
-  EntitiesModel,
-  PaginationModel,
-  Translatable,
-  useFeatureStyles,
+    EntitiesModel,
+    PaginationModel,
+    Translatable,
+    useFeatureStyles,
 } from '@spartacus/core';
 import {
-  ICON_TYPE,
-  Table,
-  TableStructure,
-  TrapFocus,
+    ICON_TYPE,
+    Table,
+    TableStructure,
+    TrapFocus,
 } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';

@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  cartWithTotalVariantProduct,
-  getApparelCheckoutUser,
-  products,
-  variantProduct,
+    cartWithTotalVariantProduct,
+    getApparelCheckoutUser,
+    products,
+    variantProduct,
 } from '../sample-data/apparel-checkout-flow';
 import { assertAddressForm } from './address-book';
 import { login } from './auth-forms';
@@ -16,10 +16,10 @@ import * as guestCheckout from './checkout-as-guest';
 import * as checkout from './checkout-flow';
 import { validateUpdateProfileForm } from './update-profile';
 import {
-  addMutipleProductWithoutVariantToCart,
-  addVariantOfSameProductToCart,
-  APPAREL_CURRENCY,
-  visitProductWithoutVariantPage,
+    addMutipleProductWithoutVariantToCart,
+    addVariantOfSameProductToCart,
+    APPAREL_CURRENCY,
+    visitProductWithoutVariantPage,
 } from './variants/apparel-checkout-flow';
 
 export let variantUser;

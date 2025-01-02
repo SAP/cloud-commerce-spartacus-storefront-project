@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,8 +9,8 @@ import { Observable, combineLatest, of } from 'rxjs';
 import { distinctUntilChanged, filter } from 'rxjs/operators';
 import { LoggerService } from '../../logger';
 import {
-  getContextParameterDefault,
-  getContextParameterValues,
+    getContextParameterDefault,
+    getContextParameterValues,
 } from '../config/context-config-utils';
 import { SiteContextConfig } from '../config/site-context-config';
 import { SiteContext } from '../facade/site-context.interface';

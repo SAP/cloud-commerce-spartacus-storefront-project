@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  S4_SERVICE_FEATURE_NAME,
-  SPARTACUS_S4_SERVICE,
-  SPARTACUS_S4_SERVICE_ROOT,
-  SPARTACUS_S4_SERVICE_ASSETS,
-  CHECKOUT_B2B_FEATURE_NAME,
-  ORDER_FEATURE_NAME,
-  SPARTACUS_S4_SERVICE_CHECKOUT,
-  SPARTACUS_S4_SERVICE_ORDER,
+    CHECKOUT_B2B_FEATURE_NAME,
+    ORDER_FEATURE_NAME,
+    S4_SERVICE_FEATURE_NAME,
+    SPARTACUS_S4_SERVICE,
+    SPARTACUS_S4_SERVICE_ASSETS,
+    SPARTACUS_S4_SERVICE_CHECKOUT,
+    SPARTACUS_S4_SERVICE_ORDER,
+    SPARTACUS_S4_SERVICE_ROOT,
 } from '../../libs-constants';
 import { SchematicConfig } from '../../utils';
 import { CHECKOUT_B2B_MODULE } from '../checkout-schematics-config';

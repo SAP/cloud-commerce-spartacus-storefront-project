@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ErrorAction, PROCESS_FEATURE, StateUtils } from '@spartacus/core';
 import {
-  ReturnRequest,
-  ReturnRequestEntryInputList,
-  ReturnRequestList,
-  ReturnRequestModification,
+    ReturnRequest,
+    ReturnRequestEntryInputList,
+    ReturnRequestList,
+    ReturnRequestModification,
 } from '@spartacus/order/root';
 import {
-  CANCEL_RETURN_PROCESS_ID,
-  RETURN_REQUESTS,
-  RETURN_REQUEST_DETAILS,
+    CANCEL_RETURN_PROCESS_ID,
+    RETURN_REQUESTS,
+    RETURN_REQUEST_DETAILS,
 } from '../order-state';
 
 export const CREATE_ORDER_RETURN_REQUEST =

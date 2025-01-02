@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,17 +9,17 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
-  CmsConfig,
-  FeaturesConfigModule,
-  I18nModule,
-  NotAuthGuard,
-  UrlModule,
-  provideDefaultConfig,
+    CmsConfig,
+    FeaturesConfigModule,
+    I18nModule,
+    NotAuthGuard,
+    UrlModule,
+    provideDefaultConfig,
 } from '@spartacus/core';
 import {
-  FormErrorsModule,
-  PasswordVisibilityToggleModule,
-  SpinnerModule,
+    FormErrorsModule,
+    PasswordVisibilityToggleModule,
+    SpinnerModule,
 } from '@spartacus/storefront';
 import { OneTimePasswordLoginFormComponent } from './otp-login-form.component';
 

@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  SEGMENT_REFS_FEATURE_NAME,
-  SPARTACUS_SEGMENT_REFS,
-  SPARTACUS_SEGMENT_REFS_ROOT,
-  TRACKING_PERSONALIZATION_FEATURE_NAME,
+    SEGMENT_REFS_FEATURE_NAME,
+    SPARTACUS_SEGMENT_REFS,
+    SPARTACUS_SEGMENT_REFS_ROOT,
+    TRACKING_PERSONALIZATION_FEATURE_NAME,
 } from '../../libs-constants';
 import { SchematicConfig } from '../../utils/lib-utils';
 

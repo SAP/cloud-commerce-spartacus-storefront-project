@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,21 +8,21 @@ import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { WindowRef } from '@spartacus/core';
 import {
-  PickupLocationsSearchFacade,
-  PointOfServiceNames,
-  PreferredStoreFacade,
-  PREFERRED_STORE_LOCAL_STORAGE_KEY,
+    PickupLocationsSearchFacade,
+    PointOfServiceNames,
+    PREFERRED_STORE_LOCAL_STORAGE_KEY,
+    PreferredStoreFacade,
 } from '@spartacus/pickup-in-store/root';
 import { Observable } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { PickupInStoreConfig } from '../config';
 import {
-  DefaultPointOfServiceSelectors,
-  StateWithPickupLocations,
+    DefaultPointOfServiceSelectors,
+    StateWithPickupLocations,
 } from '../store';
 import {
-  LoadDefaultPointOfService,
-  SetDefaultPointOfService,
+    LoadDefaultPointOfService,
+    SetDefaultPointOfService,
 } from '../store/actions/default-point-of-service-name.action';
 import { isInStock } from '../utils';
 

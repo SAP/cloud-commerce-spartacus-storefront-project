@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Component,
-  EventEmitter,
-  inject,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-  SimpleChanges,
+    Component,
+    EventEmitter,
+    inject,
+    Input,
+    OnChanges,
+    OnInit,
+    Output,
+    SimpleChanges,
 } from '@angular/core';
 import {
-  AnonymousConsent,
-  ANONYMOUS_CONSENT_STATUS,
-  ConsentTemplate,
-  FeatureConfigService,
+    ANONYMOUS_CONSENT_STATUS,
+    AnonymousConsent,
+    ConsentTemplate,
+    FeatureConfigService,
 } from '@spartacus/core';
 
 @Component({

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,14 +8,14 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
-  CartNotEmptyGuard,
-  CheckoutAuthGuard,
+    CartNotEmptyGuard,
+    CheckoutAuthGuard,
 } from '@spartacus/checkout/base/components';
 import {
-  CmsConfig,
-  FeaturesConfigModule,
-  I18nModule,
-  provideDefaultConfig,
+    CmsConfig,
+    FeaturesConfigModule,
+    I18nModule,
+    provideDefaultConfig,
 } from '@spartacus/core';
 import { IconModule } from '@spartacus/storefront';
 import { CheckoutScheduleReplenishmentOrderComponent } from './checkout-schedule-replenishment-order.component';

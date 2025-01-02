@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,11 +8,11 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
-  EntitiesModel,
-  LoggerService,
-  OCC_USER_ID_ANONYMOUS,
-  StateUtils,
-  tryNormalizeHttpError,
+    EntitiesModel,
+    LoggerService,
+    OCC_USER_ID_ANONYMOUS,
+    StateUtils,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { catchError, filter, map, switchMap } from 'rxjs/operators';

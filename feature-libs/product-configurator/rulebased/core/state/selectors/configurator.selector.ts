@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  createFeatureSelector,
-  createSelector,
-  MemoizedSelector,
+    createFeatureSelector,
+    createSelector,
+    MemoizedSelector,
 } from '@ngrx/store';
 import { StateUtils } from '@spartacus/core';
 import { Configurator } from '../../model/configurator.model';
 import {
-  ConfiguratorState,
-  CONFIGURATOR_FEATURE,
-  StateWithConfigurator,
+    CONFIGURATOR_FEATURE,
+    ConfiguratorState,
+    StateWithConfigurator,
 } from '../configurator-state';
 
 export const getConfigurationsState: MemoizedSelector<

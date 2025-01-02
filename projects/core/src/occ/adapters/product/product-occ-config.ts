@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ProductScope } from '../../../product/model/product-scope';
 import {
-  LoadingScopeConfig,
-  LoadingScopesConfig,
+    LoadingScopeConfig,
+    LoadingScopesConfig,
 } from '../../config/loading-scopes-config';
 
 // Improve type-safety and code completion for product loading scopes

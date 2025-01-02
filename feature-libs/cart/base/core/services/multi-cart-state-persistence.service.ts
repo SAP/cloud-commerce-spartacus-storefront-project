@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,10 +8,10 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { CartType } from '@spartacus/cart/base/root';
 import {
-  BASE_SITE_CONTEXT_ID,
-  SiteContextParamsService,
-  StatePersistenceService,
-  StorageSyncType,
+    BASE_SITE_CONTEXT_ID,
+    SiteContextParamsService,
+    StatePersistenceService,
+    StorageSyncType,
 } from '@spartacus/core';
 import { Observable, Subscription } from 'rxjs';
 import { distinctUntilKeyChanged, filter, map } from 'rxjs/operators';

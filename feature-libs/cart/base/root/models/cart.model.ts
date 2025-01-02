@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Address,
-  CostCenter,
-  Currency,
-  PaymentDetails,
-  PointOfService,
-  Price,
-  Principal,
-  Product,
-  Promotion,
+    Address,
+    CostCenter,
+    Currency,
+    PaymentDetails,
+    PointOfService,
+    Price,
+    Principal,
+    Product,
+    Promotion,
 } from '@spartacus/core';
 
 export interface PromotionResult {

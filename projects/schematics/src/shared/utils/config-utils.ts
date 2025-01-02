@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ArrayLiteralExpression,
-  Expression,
-  Node,
-  ObjectLiteralExpression,
-  SourceFile,
-  SyntaxKind,
+    ArrayLiteralExpression,
+    Expression,
+    Node,
+    ObjectLiteralExpression,
+    SourceFile,
+    SyntaxKind,
 } from 'ts-morph';
 import { PROVIDE_CONFIG_FUNCTION } from '../constants';
 import { SPARTACUS_CORE, SPARTACUS_SETUP } from '../libs-constants';

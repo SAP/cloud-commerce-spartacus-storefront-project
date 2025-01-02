@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,12 +7,12 @@
 import { NgModule } from '@angular/core';
 import { CmsConfig, I18nConfig, provideConfig } from '@spartacus/core';
 import {
-  bulkPricingTranslationChunksConfig,
-  bulkPricingTranslations,
+    bulkPricingTranslationChunksConfig,
+    bulkPricingTranslations,
 } from '@spartacus/product/bulk-pricing/assets';
 import {
-  BulkPricingRootModule,
-  PRODUCT_BULK_PRICING_FEATURE,
+    BulkPricingRootModule,
+    PRODUCT_BULK_PRICING_FEATURE,
 } from '@spartacus/product/bulk-pricing/root';
 
 @NgModule({

@@ -1,53 +1,53 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Renderer2,
-  ViewChild,
-  inject,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Input,
+    OnDestroy,
+    OnInit,
+    Renderer2,
+    ViewChild,
+    inject,
 } from '@angular/core';
 import {
-  FeatureConfigService,
-  ImageGroup,
-  Product,
-  isNotNullable,
-  useFeatureStyles,
+    FeatureConfigService,
+    ImageGroup,
+    Product,
+    isNotNullable,
+    useFeatureStyles,
 } from '@spartacus/core';
 import { ThumbnailsGroup } from '@spartacus/product/image-zoom/root';
 import {
-  BREAKPOINT,
-  BreakpointService,
-  CurrentProductService,
-  ICON_TYPE,
+    BREAKPOINT,
+    BreakpointService,
+    CurrentProductService,
+    ICON_TYPE,
 } from '@spartacus/storefront';
 import {
-  BehaviorSubject,
-  Observable,
-  Subscription,
-  combineLatest,
-  fromEvent,
-  merge,
-  of,
+    BehaviorSubject,
+    Observable,
+    Subscription,
+    combineLatest,
+    fromEvent,
+    merge,
+    of,
 } from 'rxjs';
 import {
-  distinctUntilChanged,
-  filter,
-  map,
-  shareReplay,
-  switchMap,
-  take,
-  tap,
+    distinctUntilChanged,
+    filter,
+    map,
+    shareReplay,
+    switchMap,
+    take,
+    tap,
 } from 'rxjs/operators';
 
 @Component({

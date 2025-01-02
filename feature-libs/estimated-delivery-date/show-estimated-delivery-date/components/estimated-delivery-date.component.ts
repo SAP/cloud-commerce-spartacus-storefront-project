@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,13 +7,13 @@
 import { Component, Optional, inject } from '@angular/core';
 import { CartItemContext, OrderEntry } from '@spartacus/cart/base/root';
 import {
-  CxDatePipe,
-  TranslationService,
-  useFeatureStyles,
+    CxDatePipe,
+    TranslationService,
+    useFeatureStyles,
 } from '@spartacus/core';
 import {
-  ArrivalSlot,
-  ArrivalSlots,
+    ArrivalSlot,
+    ArrivalSlots,
 } from '@spartacus/estimated-delivery-date/root';
 import { Consignment, Order, OrderHistoryFacade } from '@spartacus/order/root';
 import { EMPTY, Observable } from 'rxjs';

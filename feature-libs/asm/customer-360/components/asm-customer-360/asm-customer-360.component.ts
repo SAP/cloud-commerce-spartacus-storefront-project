@@ -1,45 +1,45 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  HostBinding,
-  OnDestroy,
-  OnInit,
-  QueryList,
-  ViewChildren,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    HostBinding,
+    OnDestroy,
+    OnInit,
+    QueryList,
+    ViewChildren,
 } from '@angular/core';
 import { getAsmDialogActionEvent } from '@spartacus/asm/customer-360/core';
 import {
-  AsmDialogActionEvent,
-  AsmDialogActionType,
-  AsmCustomer360Data,
-  AsmCustomer360TabConfig,
-  AsmCustomer360Facade,
-  AsmCustomer360Type,
-  AsmCustomer360Overview,
-  AsmCustomerOverview,
-  KeyBoardEventCode,
+    AsmCustomer360Data,
+    AsmCustomer360Facade,
+    AsmCustomer360Overview,
+    AsmCustomer360TabConfig,
+    AsmCustomer360Type,
+    AsmCustomerOverview,
+    AsmDialogActionEvent,
+    AsmDialogActionType,
+    KeyBoardEventCode,
 } from '@spartacus/asm/customer-360/root';
 import { CsAgentAuthService } from '@spartacus/asm/root';
 import {
-  GlobalMessageType,
-  Image,
-  UrlCommand,
-  User,
-  isNotUndefined,
+    GlobalMessageType,
+    Image,
+    UrlCommand,
+    User,
+    isNotUndefined,
 } from '@spartacus/core';
 import {
-  DirectionMode,
-  DirectionService,
-  FocusConfig,
-  ICON_TYPE,
-  LaunchDialogService,
+    DirectionMode,
+    DirectionService,
+    FocusConfig,
+    ICON_TYPE,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { BehaviorSubject, Observable, Subscription, of } from 'rxjs';
 import { catchError, distinctUntilChanged, filter, map } from 'rxjs/operators';

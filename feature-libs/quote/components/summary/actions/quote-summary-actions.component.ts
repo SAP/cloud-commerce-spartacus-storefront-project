@@ -1,42 +1,42 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  HostListener,
-  inject,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-  ViewContainerRef,
+    AfterViewInit,
+    Component,
+    ElementRef,
+    HostListener,
+    inject,
+    OnDestroy,
+    OnInit,
+    ViewChild,
+    ViewContainerRef,
 } from '@angular/core';
 import { ActiveCartFacade, Cart } from '@spartacus/cart/base/root';
 import { GlobalMessageService, GlobalMessageType } from '@spartacus/core';
 import { QuoteStorefrontUtilsService } from '@spartacus/quote/core';
 import {
-  Quote,
-  QuoteAction,
-  QuoteActionType,
-  QuoteFacade,
-  QuoteRoleType,
-  QuoteState,
+    Quote,
+    QuoteAction,
+    QuoteActionType,
+    QuoteFacade,
+    QuoteRoleType,
+    QuoteState,
 } from '@spartacus/quote/root';
 import {
-  IntersectionOptions,
-  IntersectionService,
-  LAUNCH_CALLER,
-  LaunchDialogService,
+    IntersectionOptions,
+    IntersectionService,
+    LAUNCH_CALLER,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { filter, take, tap } from 'rxjs/operators';
 import {
-  ConfirmActionDialogConfig,
-  QuoteUIConfig,
+    ConfirmActionDialogConfig,
+    QuoteUIConfig,
 } from '../../config/quote-ui.config';
 import { ConfirmationContext } from '../../confirm-dialog/quote-confirm-dialog.model';
 

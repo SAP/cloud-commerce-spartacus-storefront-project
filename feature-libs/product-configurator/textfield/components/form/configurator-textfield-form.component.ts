@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Component } from '@angular/core';
 import {
-  CommonConfigurator,
-  ConfiguratorRouter,
-  ConfiguratorRouterExtractorService,
+    CommonConfigurator,
+    ConfiguratorRouter,
+    ConfiguratorRouterExtractorService,
 } from '@spartacus/product-configurator/common';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';

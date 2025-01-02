@@ -1,28 +1,28 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { logging } from '@angular-devkit/core';
 import {
-  chain,
-  Rule,
-  SchematicContext,
-  Tree,
+    chain,
+    Rule,
+    SchematicContext,
+    Tree,
 } from '@angular-devkit/schematics';
 import { NodeDependency } from '@schematics/angular/utility/dependencies';
 import collectedDependencies from '../../../dependencies.json';
 import {
-  SPARTACUS_SCHEMATICS,
-  SPARTACUS_SCOPE,
+    SPARTACUS_SCHEMATICS,
+    SPARTACUS_SCOPE,
 } from '../../../shared/libs-constants';
 import { analyzeCrossLibraryDependenciesByLibraries } from '../../../shared/utils/dependency-utils';
 import { installPackageJsonDependencies } from '../../../shared/utils/lib-utils';
 import {
-  createDependencies,
-  readPackageJson,
-  updatePackageJsonDependencies,
+    createDependencies,
+    readPackageJson,
+    updatePackageJsonDependencies,
 } from '../../../shared/utils/package-utils';
 
 export function migrateDependencies(

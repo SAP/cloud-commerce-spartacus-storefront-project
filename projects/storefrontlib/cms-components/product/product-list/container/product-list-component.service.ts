@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,23 +7,23 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
-  ActivatedRouterStateSnapshot,
-  CurrencyService,
-  LanguageService,
-  ProductSearchPage,
-  ProductSearchService,
-  RouterState,
-  RoutingService,
+    ActivatedRouterStateSnapshot,
+    CurrencyService,
+    LanguageService,
+    ProductSearchPage,
+    ProductSearchService,
+    RouterState,
+    RoutingService,
 } from '@spartacus/core';
 import { combineLatest, Observable, using } from 'rxjs';
 import {
-  debounceTime,
-  distinctUntilChanged,
-  filter,
-  map,
-  shareReplay,
-  take,
-  tap,
+    debounceTime,
+    distinctUntilChanged,
+    filter,
+    map,
+    shareReplay,
+    take,
+    tap,
 } from 'rxjs/operators';
 import { ViewConfig } from '../../../../shared/config/view-config';
 import { ProductListRouteParams, SearchCriteria } from './product-list.model';

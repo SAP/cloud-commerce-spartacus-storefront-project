@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, inject, isDevMode } from '@angular/core';
-import { RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import {
-  AuthRedirectService,
-  AuthService,
-  CmsActivatedRouteSnapshot,
-  LoggerService,
-  SemanticPathService,
+    AuthRedirectService,
+    AuthService,
+    CmsActivatedRouteSnapshot,
+    LoggerService,
+    SemanticPathService,
 } from '@spartacus/core';
 import { Observable, of, switchMap, take } from 'rxjs';
 import { OppsConfig } from '../config/opps-config';

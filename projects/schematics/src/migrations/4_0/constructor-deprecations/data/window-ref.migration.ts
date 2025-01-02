@@ -1,22 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ANGULAR_COMMON,
-  ANGULAR_CORE,
-  ANY_TYPE,
-  DOCUMENT,
-  DOCUMENT_STRING,
-  OBJECT_TYPE,
-  PLATFORM,
-  PLATFORM_ID_STRING,
-  SERVER_REQUEST_ORIGIN_STRING,
-  SERVER_REQUEST_URL_STRING,
-  STRING_TYPE,
-  WINDOW_REF,
+    ANGULAR_COMMON,
+    ANGULAR_CORE,
+    ANY_TYPE,
+    DOCUMENT,
+    DOCUMENT_STRING,
+    OBJECT_TYPE,
+    PLATFORM,
+    PLATFORM_ID_STRING,
+    SERVER_REQUEST_ORIGIN_STRING,
+    SERVER_REQUEST_URL_STRING,
+    STRING_TYPE,
+    WINDOW_REF,
 } from '../../../../shared/constants';
 import { SPARTACUS_CORE } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';

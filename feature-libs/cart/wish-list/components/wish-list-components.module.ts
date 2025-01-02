@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,19 +8,19 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
-  AuthGuard,
-  CmsConfig,
-  FeaturesConfigModule,
-  I18nModule,
-  provideDefaultConfig,
-  UrlModule,
+    AuthGuard,
+    CmsConfig,
+    FeaturesConfigModule,
+    I18nModule,
+    provideDefaultConfig,
+    UrlModule,
 } from '@spartacus/core';
 import {
-  AtMessageModule,
-  ItemCounterModule,
-  MediaModule,
-  PageComponentModule,
-  StarRatingModule,
+    AtMessageModule,
+    ItemCounterModule,
+    MediaModule,
+    PageComponentModule,
+    StarRatingModule,
 } from '@spartacus/storefront';
 import { WishListItemComponent } from './wish-list-item/wish-list-item.component';
 import { WishListComponent } from './wish-list/wish-list.component';

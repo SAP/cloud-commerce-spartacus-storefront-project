@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,16 +7,16 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import {
-  Cart,
-  CART_NORMALIZER,
-  SaveCartResult,
+    Cart,
+    CART_NORMALIZER,
+    SaveCartResult,
 } from '@spartacus/cart/base/root';
 import { SavedCartAdapter } from '@spartacus/cart/saved-cart/core';
 import {
-  ConverterService,
-  FeatureConfigService,
-  Occ,
-  OccEndpointsService,
+    ConverterService,
+    FeatureConfigService,
+    Occ,
+    OccEndpointsService,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';

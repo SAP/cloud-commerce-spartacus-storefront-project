@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,9 +8,9 @@ import { Injectable } from '@angular/core';
 import { StateEventService } from '../../state/event/state-event.service';
 import { UserActions } from '../store/actions/index';
 import {
-  AddUserAddressEvent,
-  DeleteUserAddressEvent,
-  UpdateUserAddressEvent,
+    AddUserAddressEvent,
+    DeleteUserAddressEvent,
+    UpdateUserAddressEvent,
 } from './user.events';
 
 @Injectable()

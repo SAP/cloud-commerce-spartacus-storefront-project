@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  UntypedFormControl,
-  UntypedFormGroup,
-  Validators,
+    UntypedFormControl,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import {
-  Address,
-  Country,
-  Region,
-  Title,
-  UserAddressService,
+    Address,
+    Country,
+    Region,
+    Title,
+    UserAddressService,
 } from '@spartacus/core';
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { Observable, of } from 'rxjs';

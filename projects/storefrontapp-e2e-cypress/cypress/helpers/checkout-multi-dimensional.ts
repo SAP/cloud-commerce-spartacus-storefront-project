@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { getSampleUser } from '../sample-data/checkout-flow';
 import {
-  cartWithMultipleVariantProducts,
-  cartWithTotalVariantProduct,
-  multiDBaseProduct,
-  multiDProduct,
+    cartWithMultipleVariantProducts,
+    cartWithTotalVariantProduct,
+    multiDBaseProduct,
+    multiDProduct,
 } from '../sample-data/multi-dimensional-flow';
 import { assertAddressForm } from './address-book';
 import { addProductToCart } from './applied-promotions';

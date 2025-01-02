@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,8 +8,8 @@ import { Injectable } from '@angular/core';
 import { EntitiesModel } from '@spartacus/core';
 import { OrganizationItemStatus } from '@spartacus/organization/administration/core';
 import {
-  ResponsiveTableConfiguration,
-  TableLayout,
+    ResponsiveTableConfiguration,
+    TableLayout,
 } from '@spartacus/storefront';
 import { EMPTY, Observable } from 'rxjs';
 import { ListService } from '../list/list.service';

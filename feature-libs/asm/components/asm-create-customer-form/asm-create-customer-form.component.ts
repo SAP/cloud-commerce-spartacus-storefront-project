@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,20 +7,20 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import {
-  AsmCreateCustomerFacade,
-  CustomerRegistrationForm,
+    AsmCreateCustomerFacade,
+    CustomerRegistrationForm,
 } from '@spartacus/asm/root';
 import {
-  GlobalMessageType,
-  HttpErrorModel,
-  TranslationService,
-  User,
+    GlobalMessageType,
+    HttpErrorModel,
+    TranslationService,
+    User,
 } from '@spartacus/core';
 import {
-  CustomFormValidators,
-  FocusConfig,
-  ICON_TYPE,
-  LaunchDialogService,
+    CustomFormValidators,
+    FocusConfig,
+    ICON_TYPE,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { BehaviorSubject } from 'rxjs';
 import { first } from 'rxjs/operators';

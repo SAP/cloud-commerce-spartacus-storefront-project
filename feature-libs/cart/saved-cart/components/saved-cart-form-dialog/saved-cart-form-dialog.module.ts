@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,9 +9,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FeaturesConfigModule, I18nModule } from '@spartacus/core';
 import {
-  FormErrorsModule,
-  IconModule,
-  KeyboardFocusModule,
+    FormErrorsModule,
+    IconModule,
+    KeyboardFocusModule,
 } from '@spartacus/storefront';
 import { SavedCartFormDialogComponent } from './saved-cart-form-dialog.component';
 

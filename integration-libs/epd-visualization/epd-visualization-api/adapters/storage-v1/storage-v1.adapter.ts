@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,19 +7,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  ConverterService,
-  LoggerService,
-  normalizeHttpError,
+    ConverterService,
+    LoggerService,
+    normalizeHttpError,
 } from '@spartacus/core';
 import {
-  NODES_RESPONSE_NORMALIZER,
-  NodesResponse,
-  SceneAdapter,
+    NODES_RESPONSE_NORMALIZER,
+    NodesResponse,
+    SceneAdapter,
 } from '@spartacus/epd-visualization/core';
 import {
-  EpdVisualizationConfig,
-  EpdVisualizationInnerConfig,
-  VisualizationApiConfig,
+    EpdVisualizationConfig,
+    EpdVisualizationInnerConfig,
+    VisualizationApiConfig,
 } from '@spartacus/epd-visualization/root';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';

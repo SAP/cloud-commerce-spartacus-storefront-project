@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -20,8 +20,8 @@ import { CONFIGURATOR_ATTRIBUTE_RADIO_BUTTON_COMPONENT_MIGRATION } from './data/
 import { CONFIGURATOR_GROUP_MENU_COMPONENT_MIGRATION } from './data/configurator-group-menu.component.migration';
 import { CONFIGURATOR_PRODUCT_TITLE_COMPONENT_MIGRATION } from './data/configurator-product-title.component.migration';
 import {
-  CONTENT_PAGE_META_RESOLVER_MIGRATION,
-  PAGE_META_SERVICE_MIGRATION,
+    CONTENT_PAGE_META_RESOLVER_MIGRATION,
+    PAGE_META_SERVICE_MIGRATION,
 } from './data/content-page-meta.resolver.migration';
 import { CURRENCY_SERVICE_MIGRATION } from './data/currency.service.migration';
 import { DYNAMIC_ATTRIBUTE_SERVICE_MIGRATION } from './data/dynamic-attribute.service.migration';

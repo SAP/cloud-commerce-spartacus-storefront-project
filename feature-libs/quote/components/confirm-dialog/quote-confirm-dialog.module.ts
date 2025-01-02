@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,16 +9,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
-  FeaturesConfigModule,
-  I18nModule,
-  provideDefaultConfig,
-  UrlModule,
+    FeaturesConfigModule,
+    I18nModule,
+    provideDefaultConfig,
+    UrlModule,
 } from '@spartacus/core';
 import {
-  FormErrorsModule,
-  IconModule,
-  KeyboardFocusModule,
-  SpinnerModule,
+    FormErrorsModule,
+    IconModule,
+    KeyboardFocusModule,
+    SpinnerModule,
 } from '@spartacus/storefront';
 import { defaultQuoteActionDialogConfig } from './default-quote-confirm-dialog.config';
 import { QuoteConfirmDialogComponent } from './quote-confirm-dialog.component';

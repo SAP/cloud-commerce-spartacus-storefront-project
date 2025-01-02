@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ANGULAR_CORE,
-  CMS_COMPONENTS_SERVICE,
-  CMS_CONFIG,
-  CMS_FEATURES_SERVICE,
-  CONFIG_INITIALIZER_SERVICE,
-  FEATURE_MODULES_SERVICE,
-  OBJECT_TYPE,
-  PLATFORM,
-  PLATFORM_ID_STRING,
+    ANGULAR_CORE,
+    CMS_COMPONENTS_SERVICE,
+    CMS_CONFIG,
+    CMS_FEATURES_SERVICE,
+    CONFIG_INITIALIZER_SERVICE,
+    FEATURE_MODULES_SERVICE,
+    OBJECT_TYPE,
+    PLATFORM,
+    PLATFORM_ID_STRING,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

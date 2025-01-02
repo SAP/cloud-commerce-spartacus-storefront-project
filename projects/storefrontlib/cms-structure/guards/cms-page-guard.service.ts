@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,22 +7,22 @@
 import { Injectable } from '@angular/core';
 import { RouterStateSnapshot, UrlTree } from '@angular/router';
 import {
-  CmsActivatedRouteSnapshot,
-  CmsService,
-  Page,
-  PageContext,
-  PageType,
-  RoutingService,
-  SemanticPathService,
+    CmsActivatedRouteSnapshot,
+    CmsService,
+    Page,
+    PageContext,
+    PageType,
+    RoutingService,
+    SemanticPathService,
 } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import {
-  filter,
-  map,
-  switchMap,
-  take,
-  tap,
-  withLatestFrom,
+    filter,
+    map,
+    switchMap,
+    take,
+    tap,
+    withLatestFrom,
 } from 'rxjs/operators';
 import { CmsComponentsService } from '../services/cms-components.service';
 import { CmsGuardsService } from '../services/cms-guards.service';

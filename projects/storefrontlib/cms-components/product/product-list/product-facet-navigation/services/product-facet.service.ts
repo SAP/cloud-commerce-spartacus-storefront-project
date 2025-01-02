@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,11 +7,11 @@
 import { Injectable } from '@angular/core';
 import { Params } from '@angular/router';
 import {
-  ActivatedRouterStateSnapshot,
-  Breadcrumb,
-  PageType,
-  ProductSearchPage,
-  RoutingService,
+    ActivatedRouterStateSnapshot,
+    Breadcrumb,
+    PageType,
+    ProductSearchPage,
+    RoutingService,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';

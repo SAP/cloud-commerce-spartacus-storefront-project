@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { TestBed } from '@angular/core/testing';
 import { CommandService } from '@spartacus/core';
 import {
-  OpfCtaScriptsRequest,
-  OpfCtaScriptsResponse,
+    OpfCtaScriptsRequest,
+    OpfCtaScriptsResponse,
 } from '@spartacus/opf/cta/root';
 import { Observable, of } from 'rxjs';
 import { OpfCtaConnector } from '../connectors/opf-cta.connector';

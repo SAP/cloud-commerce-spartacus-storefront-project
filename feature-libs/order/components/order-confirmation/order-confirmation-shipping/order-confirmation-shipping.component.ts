@@ -1,30 +1,30 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  Input,
-  OnDestroy,
-  OnInit,
-  Optional,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    Input,
+    OnDestroy,
+    OnInit,
+    Optional,
 } from '@angular/core';
 import {
-  AbstractOrderType,
-  CartOutlets,
-  DeliveryMode,
-  OrderEntry,
+    AbstractOrderType,
+    CartOutlets,
+    DeliveryMode,
+    OrderEntry,
 } from '@spartacus/cart/base/root';
 import { Address, TranslationService } from '@spartacus/core';
 import {
-  Order,
-  OrderFacade,
-  deliveryAddressCard,
-  deliveryModeCard,
+    Order,
+    OrderFacade,
+    deliveryAddressCard,
+    deliveryModeCard,
 } from '@spartacus/order/root';
 import { Card, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription, combineLatest, of } from 'rxjs';

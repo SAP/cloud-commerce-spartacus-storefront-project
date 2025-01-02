@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { B2BUser, ListModel, StateUtils } from '@spartacus/core';
 import {
-  B2BUserActions,
-  OrgUnitActions,
-  UserGroupActions,
+    B2BUserActions,
+    OrgUnitActions,
+    UserGroupActions,
 } from '../actions/index';
 
 export const b2bUserInitialState: B2BUser | undefined = undefined;

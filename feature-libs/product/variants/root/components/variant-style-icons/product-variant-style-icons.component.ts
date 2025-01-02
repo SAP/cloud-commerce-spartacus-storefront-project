@@ -1,27 +1,27 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnDestroy,
-  OnInit,
-  Optional,
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+    OnDestroy,
+    OnInit,
+    Optional,
 } from '@angular/core';
 import {
-  OccConfig,
-  Product,
-  VariantOption,
-  VariantOptionQualifier,
-  VariantQualifier,
+    OccConfig,
+    Product,
+    VariantOption,
+    VariantOptionQualifier,
+    VariantQualifier,
 } from '@spartacus/core';
 import {
-  ProductListItemContext,
-  ProductListOutlets,
+    ProductListItemContext,
+    ProductListOutlets,
 } from '@spartacus/storefront';
 import { EMPTY, Observable, Subscription } from 'rxjs';
 

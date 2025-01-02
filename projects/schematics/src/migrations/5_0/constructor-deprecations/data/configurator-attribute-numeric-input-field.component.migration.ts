@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CONFIGURATOR_ATTRIBUTE_NUMERIC_INPUT_FIELD_COMPONENT,
-  CONFIGURATOR_ATTRIBUTE_NUMERIC_INPUT_FIELD_SERVICE,
-  CONFIGURATOR_UI_SETTINGS_CONFIG,
-  TRANSLATION_SERVICE,
+    CONFIGURATOR_ATTRIBUTE_NUMERIC_INPUT_FIELD_COMPONENT,
+    CONFIGURATOR_ATTRIBUTE_NUMERIC_INPUT_FIELD_SERVICE,
+    CONFIGURATOR_UI_SETTINGS_CONFIG,
+    TRANSLATION_SERVICE,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_PRODUCT_CONFIGURATOR_RULEBASED,
+    SPARTACUS_CORE,
+    SPARTACUS_PRODUCT_CONFIGURATOR_RULEBASED,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

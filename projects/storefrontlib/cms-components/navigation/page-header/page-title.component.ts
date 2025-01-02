@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  AfterViewInit,
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    Component,
+    OnInit,
 } from '@angular/core';
 import {
-  CmsPageTitleComponent,
-  isNotNullable,
-  PageMetaService,
+    CmsPageTitleComponent,
+    isNotNullable,
+    PageMetaService,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';

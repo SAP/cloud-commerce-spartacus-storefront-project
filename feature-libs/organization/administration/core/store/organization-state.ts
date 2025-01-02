@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Address,
-  B2BApprovalProcess,
-  B2BUnit,
-  B2BUser,
-  CostCenter,
-  ListModel,
-  OrderApprovalPermissionType,
-  StateUtils,
+    Address,
+    B2BApprovalProcess,
+    B2BUnit,
+    B2BUser,
+    CostCenter,
+    ListModel,
+    OrderApprovalPermissionType,
+    StateUtils,
 } from '@spartacus/core';
 import { Budget } from '../model/budget.model';
 import { Permission } from '../model/permission.model';

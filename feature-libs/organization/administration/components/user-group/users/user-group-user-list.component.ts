@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
 import {
-  LoadStatus,
-  UserGroup,
+    LoadStatus,
+    UserGroup,
 } from '@spartacus/organization/administration/core';
 import { filter, first, switchMap, take } from 'rxjs/operators';
 import { ListService } from '../../shared/list/list.service';

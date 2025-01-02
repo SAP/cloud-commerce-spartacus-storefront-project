@@ -1,36 +1,36 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, inject } from '@angular/core';
 import {
-  ActiveCartFacade,
-  CartAccessCodeFacade,
+    ActiveCartFacade,
+    CartAccessCodeFacade,
 } from '@spartacus/cart/base/root';
 import {
-  Command,
-  CommandService,
-  DEFAULT_AUTHORIZATION_ERROR_RETRIES_COUNT,
-  LoggerService,
-  UserIdService,
-  backOff,
-  isAuthorizationError,
-  tryNormalizeHttpError,
+    Command,
+    CommandService,
+    DEFAULT_AUTHORIZATION_ERROR_RETRIES_COUNT,
+    LoggerService,
+    UserIdService,
+    backOff,
+    isAuthorizationError,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import {
-  ApplePaySessionVerificationRequest,
-  ApplePaySessionVerificationResponse,
-  OpfQuickBuyFacade,
+    ApplePaySessionVerificationRequest,
+    ApplePaySessionVerificationResponse,
+    OpfQuickBuyFacade,
 } from '@spartacus/opf/quick-buy/root';
 import {
-  catchError,
-  combineLatest,
-  concatMap,
-  filter,
-  switchMap,
-  take,
+    catchError,
+    combineLatest,
+    concatMap,
+    filter,
+    switchMap,
+    take,
 } from 'rxjs';
 import { OpfQuickBuyConnector } from '../connectors';
 

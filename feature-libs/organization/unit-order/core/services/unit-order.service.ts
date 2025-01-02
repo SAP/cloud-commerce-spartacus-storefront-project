@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,9 +12,9 @@ import { UnitOrderFacade } from '@spartacus/organization/unit-order/root';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import {
-  StateWithUnitOrder,
-  UnitOrderActions,
-  UnitOrderSelectors,
+    StateWithUnitOrder,
+    UnitOrderActions,
+    UnitOrderSelectors,
 } from '../store';
 
 @Injectable({ providedIn: 'root' })

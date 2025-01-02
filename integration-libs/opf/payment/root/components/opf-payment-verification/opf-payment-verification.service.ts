@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,32 +7,32 @@
 import { Injectable, ViewContainerRef, inject } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  HttpErrorModel,
-  RoutingService,
+    GlobalMessageService,
+    GlobalMessageType,
+    HttpErrorModel,
+    RoutingService,
 } from '@spartacus/core';
 
 import {
-  OpfDynamicScript,
-  OpfKeyValueMap,
-  OpfMetadataModel,
-  OpfMetadataStoreService,
-  OpfPage,
-  OpfResourceLoaderService,
+    OpfDynamicScript,
+    OpfKeyValueMap,
+    OpfMetadataModel,
+    OpfMetadataStoreService,
+    OpfPage,
+    OpfResourceLoaderService,
 } from '@spartacus/opf/base/root';
 import {
-  OpfGlobalFunctionsDomain,
-  OpfGlobalFunctionsFacade,
+    OpfGlobalFunctionsDomain,
+    OpfGlobalFunctionsFacade,
 } from '@spartacus/opf/global-functions/root';
 import { Order, OrderFacade } from '@spartacus/order/root';
 import { Observable, from, of, throwError } from 'rxjs';
 import { concatMap, filter, map, take, tap } from 'rxjs/operators';
 import { OpfPaymentFacade } from '../../facade';
 import {
-  OpfPaymentVerificationResponse,
-  OpfPaymentVerificationResult,
-  OpfPaymentVerificationUrlInput,
+    OpfPaymentVerificationResponse,
+    OpfPaymentVerificationResult,
+    OpfPaymentVerificationUrlInput,
 } from '../../model';
 
 @Injectable({

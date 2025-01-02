@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  visitCartPage,
-  waitForCartPageData,
+    visitCartPage,
+    waitForCartPageData,
 } from '../../../helpers/b2b/b2b-saved-cart';
 import * as checkoutBackoff from '../../../helpers/checkout-backoff';
 import { viewportContext } from '../../../helpers/viewport-context';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,29 +8,29 @@ import { strings } from '@angular-devkit/core';
 import { SchematicsException, Tree } from '@angular-devkit/schematics';
 import type { Element, Node } from '@angular/compiler';
 import {
-  findNode,
-  findNodes,
-  getSourceNodes,
-  insertImport,
-  isImported,
+    findNode,
+    findNodes,
+    getSourceNodes,
+    insertImport,
+    isImported,
 } from '@schematics/angular/utility/ast-utils';
 import {
-  Change,
-  InsertChange,
-  NoopChange,
-  RemoveChange,
-  ReplaceChange,
+    Change,
+    InsertChange,
+    NoopChange,
+    RemoveChange,
+    ReplaceChange,
 } from '@schematics/angular/utility/change';
 import ts from 'typescript';
 import {
-  ANGULAR_CORE,
-  INJECT_DECORATOR,
-  TODO_SPARTACUS,
-  UTF_8,
+    ANGULAR_CORE,
+    INJECT_DECORATOR,
+    TODO_SPARTACUS,
+    UTF_8,
 } from '../constants';
 import {
-  getAngularJsonFile,
-  getDefaultProjectNameFromWorkspace,
+    getAngularJsonFile,
+    getDefaultProjectNameFromWorkspace,
 } from './workspace-utils';
 
 export enum InsertDirection {

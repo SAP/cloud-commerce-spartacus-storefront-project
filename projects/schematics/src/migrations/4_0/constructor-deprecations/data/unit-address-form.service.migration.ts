@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  UNIT_ADDRESS_FORM_SERVICE,
-  USER_ADDRESS_SERVICE,
-  USER_PROFILE_FACADE,
-  USER_SERVICE,
+    UNIT_ADDRESS_FORM_SERVICE,
+    USER_ADDRESS_SERVICE,
+    USER_PROFILE_FACADE,
+    USER_SERVICE,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_ORGANIZATION_ADMINISTRATION_COMPONENTS,
-  SPARTACUS_USER_PROFILE_ROOT,
+    SPARTACUS_CORE,
+    SPARTACUS_ORGANIZATION_ADMINISTRATION_COMPONENTS,
+    SPARTACUS_USER_PROFILE_ROOT,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

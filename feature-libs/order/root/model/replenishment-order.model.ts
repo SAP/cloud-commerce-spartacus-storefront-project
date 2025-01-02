@@ -1,26 +1,26 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  DeliveryMode,
-  DeliveryOrderEntryGroup,
-  OrderEntry,
-  PaymentType,
-  PickupOrderEntryGroup,
-  PromotionResult,
-  Voucher,
+    DeliveryMode,
+    DeliveryOrderEntryGroup,
+    OrderEntry,
+    PaymentType,
+    PickupOrderEntryGroup,
+    PromotionResult,
+    Voucher,
 } from '@spartacus/cart/base/root';
 import {
-  Address,
-  CostCenter,
-  PaginationModel,
-  PaymentDetails,
-  Price,
-  Principal,
-  SortModel,
+    Address,
+    CostCenter,
+    PaginationModel,
+    PaymentDetails,
+    Price,
+    Principal,
+    SortModel,
 } from '@spartacus/core';
 
 export interface ReplenishmentOrder {

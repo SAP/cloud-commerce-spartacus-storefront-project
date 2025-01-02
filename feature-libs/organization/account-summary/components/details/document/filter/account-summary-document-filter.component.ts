@@ -1,33 +1,33 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
+    ChangeDetectionStrategy,
+    Component,
+    EventEmitter,
+    Input,
+    OnDestroy,
+    OnInit,
+    Output,
 } from '@angular/core';
 import { TranslationService } from '@spartacus/core';
 import {
-  AccountSummaryDocumentType,
-  DocumentQueryParams,
-  DocumentStatus,
-  FilterByOptions,
+    AccountSummaryDocumentType,
+    DocumentQueryParams,
+    DocumentStatus,
+    FilterByOptions,
 } from '@spartacus/organization/account-summary/root';
 import { Subscription, zip } from 'rxjs';
 
 import {
-  AbstractControl,
-  AbstractControlOptions,
-  FormBuilder,
-  FormGroup,
-  ValidationErrors,
+    AbstractControl,
+    AbstractControlOptions,
+    FormBuilder,
+    FormGroup,
+    ValidationErrors,
 } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';

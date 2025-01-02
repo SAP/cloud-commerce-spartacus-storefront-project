@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  EventService,
-  isNotUndefined,
-  ProductSearchPage,
-  RoutingService,
-  SearchboxService,
-  TranslationService,
-  WindowRef,
+    EventService,
+    isNotUndefined,
+    ProductSearchPage,
+    RoutingService,
+    SearchboxService,
+    TranslationService,
+    WindowRef,
 } from '@spartacus/core';
 import { combineLatest, Observable, of, ReplaySubject } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
 import {
-  SearchBoxProductSelectedEvent,
-  SearchBoxSuggestionSelectedEvent,
+    SearchBoxProductSelectedEvent,
+    SearchBoxSuggestionSelectedEvent,
 } from './search-box.events';
 import { SearchBoxConfig, SearchResults } from './search-box.model';
 

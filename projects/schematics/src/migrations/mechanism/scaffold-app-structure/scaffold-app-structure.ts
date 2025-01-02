@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { noop, Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { checkAppStructure } from '../../../shared/utils/lib-utils';
 import {
-  getDefaultProjectNameFromWorkspace,
-  scaffoldStructure,
+    getDefaultProjectNameFromWorkspace,
+    scaffoldStructure,
 } from '../../../shared/utils/workspace-utils';
 
 export function scaffoldAppStructure(): Rule {

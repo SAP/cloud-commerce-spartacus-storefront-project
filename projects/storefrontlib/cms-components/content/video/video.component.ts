@@ -1,28 +1,28 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  HostBinding,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    HostBinding,
 } from '@angular/core';
 import {
-  CmsService,
-  CmsVideoComponent,
-  ContainerBackgroundOptions,
-  PageType,
-  SemanticPathService,
+    CmsService,
+    CmsVideoComponent,
+    ContainerBackgroundOptions,
+    PageType,
+    SemanticPathService,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { distinctUntilChanged, take, tap } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import {
-  Media,
-  MediaContainer,
+    Media,
+    MediaContainer,
 } from '../../../shared/components/media/media.model';
 import { MediaService } from '../../../shared/components/media/media.service';
 

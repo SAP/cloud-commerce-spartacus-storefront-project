@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -13,3 +13,4 @@ export * from './services/feature-config.service';
 export * from './services/feature-styles.service';
 export * from './utils/feature-config-utils';
 export * from './utils/use-feature-styles';
+

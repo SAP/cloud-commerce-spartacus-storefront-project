@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Rule, Tree } from '@angular-devkit/schematics';
 import {
-  ASM_AUTH_HTTP_HEADER_SERVICE,
-  CS_AGENT_AUTH_SERVICE,
+    ASM_AUTH_HTTP_HEADER_SERVICE,
+    CS_AGENT_AUTH_SERVICE,
 } from '../../../shared/constants';
 import { SPARTACUS_ASM, SPARTACUS_CORE } from '../../../shared/libs-constants';
 import { RenamedSymbol } from '../../../shared/utils/file-utils';

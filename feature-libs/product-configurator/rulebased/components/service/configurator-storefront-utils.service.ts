@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,11 +7,11 @@
 import { Injectable, inject, isDevMode } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
 import {
-  LoggerService,
-  ProductScope,
-  ProductService,
-  RoutingService,
-  WindowRef,
+    LoggerService,
+    ProductScope,
+    ProductService,
+    RoutingService,
+    WindowRef,
 } from '@spartacus/core';
 import { CommonConfigurator } from '@spartacus/product-configurator/common';
 import { KeyboardFocusService } from '@spartacus/storefront';

@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CDP_FEATURE_NAME,
-  CUSTOMER_TICKETING_FEATURE_NAME,
-  SPARTACUS_CDP,
-  SPARTACUS_CDP_CUSTOMER_TICKETING,
+    CDP_FEATURE_NAME,
+    CUSTOMER_TICKETING_FEATURE_NAME,
+    SPARTACUS_CDP,
+    SPARTACUS_CDP_CUSTOMER_TICKETING,
 } from '../../libs-constants';
 import { SchematicConfig } from '../../utils/lib-utils';
 import { CUSTOMER_TICKETING_MODULE } from '../customer-ticketing-schematics-config';

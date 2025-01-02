@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,11 +8,11 @@ import { Action } from '@ngrx/store';
 import { ErrorAction } from '../../../error-handling';
 import { EntityId, entityMeta, EntityMeta } from '../entity/entity.action';
 import {
-  failMeta,
-  LoaderMeta,
-  loadMeta,
-  resetMeta,
-  successMeta,
+    failMeta,
+    LoaderMeta,
+    loadMeta,
+    resetMeta,
+    successMeta,
 } from '../loader/loader.action';
 
 export const ENTITY_LOAD_ACTION = '[ENTITY] LOAD';

@@ -1,27 +1,27 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  inject,
-  Input,
-  OnDestroy,
-  OnInit,
-  QueryList,
-  ViewChildren,
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    inject,
+    Input,
+    OnDestroy,
+    OnInit,
+    QueryList,
+    ViewChildren,
 } from '@angular/core';
-import { BreakpointService } from '../../../layout/breakpoint';
+import { TranslationService, useFeatureStyles } from '@spartacus/core';
 import { BehaviorSubject, Observable, of, Subscription } from 'rxjs';
 import { map, take } from 'rxjs/operators';
-import { Tab, TabConfig, TAB_MODE } from './tab.model';
+import { BreakpointService } from '../../../layout/breakpoint';
+import { Tab, TAB_MODE, TabConfig } from './tab.model';
 import { wrapIntoBounds } from './tab.utils';
-import { TranslationService, useFeatureStyles } from '@spartacus/core';
 
 @Component({
   selector: 'cx-tab',

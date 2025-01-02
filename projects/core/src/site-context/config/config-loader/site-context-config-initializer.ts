@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -13,10 +13,10 @@ import { JavaRegExpConverter } from '../../../util/java-reg-exp-converter/java-r
 import { WindowRef } from '../../../window/window-ref';
 import { BaseSiteService } from '../../facade/base-site.service';
 import {
-  BASE_SITE_CONTEXT_ID,
-  CURRENCY_CONTEXT_ID,
-  LANGUAGE_CONTEXT_ID,
-  THEME_CONTEXT_ID,
+    BASE_SITE_CONTEXT_ID,
+    CURRENCY_CONTEXT_ID,
+    LANGUAGE_CONTEXT_ID,
+    THEME_CONTEXT_ID,
 } from '../../providers/context-ids';
 import { SiteContextConfig } from '../site-context-config';
 

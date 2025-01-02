@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { dasherize } from '@angular-devkit/core/src/utils/strings';
 import {
-  externalSchematic,
-  noop,
-  Rule,
-  Tree,
+    externalSchematic,
+    noop,
+    Rule,
+    Tree,
 } from '@angular-devkit/schematics';
 import { getDecoratorMetadata } from '@schematics/angular/utility/ast-utils';
 import {
-  ArrayLiteralExpression,
-  CallExpression,
-  Expression,
-  Node,
-  ObjectLiteralElementLike,
-  SourceFile,
-  ts as tsMorph,
+    ArrayLiteralExpression,
+    CallExpression,
+    Expression,
+    Node,
+    ObjectLiteralElementLike,
+    SourceFile,
+    ts as tsMorph,
 } from 'ts-morph';
 import { ANGULAR_CORE, ANGULAR_SCHEMATICS } from '../constants';
 import { isSpartacusConfigDuplicate } from './config-utils';

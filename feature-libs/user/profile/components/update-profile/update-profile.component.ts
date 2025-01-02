@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  Optional,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    Optional,
+    inject,
 } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
+import { RoutingService } from '@spartacus/core';
 import { Title } from '@spartacus/user/profile/root';
 import { Observable } from 'rxjs';
 import { UpdateProfileComponentService } from './update-profile-component.service';
-import { RoutingService } from '@spartacus/core';
 
 @Component({
   selector: 'cx-update-profile',

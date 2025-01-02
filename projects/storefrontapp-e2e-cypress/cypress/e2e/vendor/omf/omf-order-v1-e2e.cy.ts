@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {
-  ELECTRONICS_BASESITE,
-  ELECTRONICS_CURRENCY,
-  loginUser,
-  signOutUser,
-} from '../../../helpers/checkout-flow';
 import { OmfConfig } from '@spartacus/core';
 import {
-  interceptOrdersEndpoint,
-  waitForResponse,
+    ELECTRONICS_BASESITE,
+    ELECTRONICS_CURRENCY,
+    loginUser,
+    signOutUser,
+} from '../../../helpers/checkout-flow';
+import {
+    interceptOrdersEndpoint,
+    waitForResponse,
 } from '../../../helpers/order-history';
 const omfTester = {
   email: 'keenreviewer14@hybris.com',

@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  BASE_PAGE_META_RESOLVER,
-  PRODUCT_SEARCH_SERVICE,
-  ROUTING_SERVICE,
-  SEARCH_PAGE_META_RESOLVER,
-  TRANSLATION_SERVICE,
+    BASE_PAGE_META_RESOLVER,
+    PRODUCT_SEARCH_SERVICE,
+    ROUTING_SERVICE,
+    SEARCH_PAGE_META_RESOLVER,
+    TRANSLATION_SERVICE,
 } from '../../../../shared/constants';
 import { SPARTACUS_CORE } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';

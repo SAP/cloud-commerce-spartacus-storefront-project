@@ -1,52 +1,52 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  chain,
-  noop,
-  Rule,
-  SchematicContext,
-  Tree,
+    chain,
+    noop,
+    Rule,
+    SchematicContext,
+    Tree,
 } from '@angular-devkit/schematics';
 import {
-  ArrayLiteralExpression,
-  ArrowFunction,
-  CallExpression,
-  SyntaxKind,
+    ArrayLiteralExpression,
+    ArrowFunction,
+    CallExpression,
+    SyntaxKind,
 } from 'ts-morph';
 import {
-  featureFeatureModuleMapping,
-  getKeyByMappingValueOrThrow,
-  getSchematicsConfigByFeatureOrThrow,
+    featureFeatureModuleMapping,
+    getKeyByMappingValueOrThrow,
+    getSchematicsConfigByFeatureOrThrow,
 } from '../shared/schematics-config-mappings';
 import { normalizeObject, removeProperty } from '../shared/utils/config-utils';
 import {
-  findFeatureModule,
-  getModuleConfig,
+    findFeatureModule,
+    getModuleConfig,
 } from '../shared/utils/feature-utils';
 import {
-  findDynamicImport,
-  getDynamicImportCallExpression,
-  getDynamicImportPropertyAccess,
-  staticImportExists,
+    findDynamicImport,
+    getDynamicImportCallExpression,
+    getDynamicImportPropertyAccess,
+    staticImportExists,
 } from '../shared/utils/import-utils';
 import {
-  createSpartacusFeatureFileName,
-  createSpartacusFeatureFolderPath,
-  createSpartacusWrapperModuleFileName,
+    createSpartacusFeatureFileName,
+    createSpartacusFeatureFolderPath,
+    createSpartacusWrapperModuleFileName,
 } from '../shared/utils/lib-utils';
 import {
-  debugLogRule,
-  formatFeatureComplete,
-  formatFeatureStart,
+    debugLogRule,
+    formatFeatureComplete,
+    formatFeatureStart,
 } from '../shared/utils/logger-utils';
 import {
-  addModuleImport,
-  ensureModuleExists,
-  getModulePropertyInitializer,
+    addModuleImport,
+    ensureModuleExists,
+    getModulePropertyInitializer,
 } from '../shared/utils/new-module-utils';
 import { createProgram, saveAndFormat } from '../shared/utils/program';
 import { getProjectTsConfigPaths } from '../shared/utils/project-tsconfig-paths';

@@ -1,30 +1,30 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  inject,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-  ViewContainerRef,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    inject,
+    OnDestroy,
+    OnInit,
+    ViewChild,
+    ViewContainerRef,
 } from '@angular/core';
 import { Cart } from '@spartacus/cart/base/root';
 import {
-  SavedCartFacade,
-  SavedCartFormType,
+    SavedCartFacade,
+    SavedCartFormType,
 } from '@spartacus/cart/saved-cart/root';
 import { RoutingService, useFeatureStyles } from '@spartacus/core';
 import {
-  LAUNCH_CALLER,
-  LaunchDialogService,
-  SiteContextComponentService,
-  SiteContextType,
+    LAUNCH_CALLER,
+    LaunchDialogService,
+    SiteContextComponentService,
+    SiteContextType,
 } from '@spartacus/storefront';
 import { from, mergeMap, Observable, Subscription } from 'rxjs';
 import { map, skip, take } from 'rxjs/operators';

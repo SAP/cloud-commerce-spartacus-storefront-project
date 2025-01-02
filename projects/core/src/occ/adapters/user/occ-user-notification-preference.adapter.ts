@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,12 +10,12 @@ import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { LoggerService } from '../../../logger';
 import {
-  NotificationPreference,
-  NotificationPreferenceList,
+    NotificationPreference,
+    NotificationPreferenceList,
 } from '../../../model/notification-preference.model';
 import {
-  NOTIFICATION_PREFERENCE_NORMALIZER,
-  NOTIFICATION_PREFERENCE_SERIALIZER,
+    NOTIFICATION_PREFERENCE_NORMALIZER,
+    NOTIFICATION_PREFERENCE_SERIALIZER,
 } from '../../../user/connectors/notification-preference';
 import { UserNotificationPreferenceAdapter } from '../../../user/connectors/notification-preference/user-notification-preference.adapter';
 import { ConverterService } from '../../../util/converter.service';

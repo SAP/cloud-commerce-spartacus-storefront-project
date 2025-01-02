@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,23 +7,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
-  ConverterService,
-  EntitiesModel,
-  Occ,
-  OccEndpointsService,
-  SearchConfig,
+    ConverterService,
+    EntitiesModel,
+    Occ,
+    OccEndpointsService,
+    SearchConfig,
 } from '@spartacus/core';
+import { Observable } from 'rxjs';
 import {
-  OrderApproval,
-  OrderApprovalDecision,
-} from '../../core/model/order-approval.model';
+    ORDER_APPROVALS_NORMALIZER,
+    ORDER_APPROVAL_DECISION_NORMALIZER,
+    ORDER_APPROVAL_NORMALIZER,
+} from '../../core/connectors/converters';
 import { OrderApprovalAdapter } from '../../core/connectors/order-approval.adapter';
 import {
-  ORDER_APPROVALS_NORMALIZER,
-  ORDER_APPROVAL_DECISION_NORMALIZER,
-  ORDER_APPROVAL_NORMALIZER,
-} from '../../core/connectors/converters';
-import { Observable } from 'rxjs';
+    OrderApproval,
+    OrderApprovalDecision,
+} from '../../core/model/order-approval.model';
 
 @Injectable()
 export class OccOrderApprovalAdapter implements OrderApprovalAdapter {

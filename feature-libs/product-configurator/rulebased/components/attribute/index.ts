@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -24,3 +24,4 @@ export * from './types/read-only/index';
 export * from './types/single-selection-bundle-dropdown/index';
 export * from './types/single-selection-bundle/index';
 export * from './types/single-selection-image/index';
+

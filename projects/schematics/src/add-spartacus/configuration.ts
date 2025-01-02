@@ -1,28 +1,28 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Rule,
-  SchematicContext,
-  SchematicsException,
-  Tree,
+    Rule,
+    SchematicContext,
+    SchematicsException,
+    Tree,
 } from '@angular-devkit/schematics';
 import { SourceFile } from 'ts-morph';
 import {
-  FEATURES_CONFIG,
-  I18N_CONFIG,
-  OCC_CONFIG,
-  PROVIDE_CONFIG_FUNCTION,
-  SITE_CONTEXT_CONFIG,
+    FEATURES_CONFIG,
+    I18N_CONFIG,
+    OCC_CONFIG,
+    PROVIDE_CONFIG_FUNCTION,
+    SITE_CONTEXT_CONFIG,
 } from '../shared/constants';
 import {
-  SPARTACUS_ASSETS,
-  SPARTACUS_CONFIGURATION_MODULE,
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_ASSETS,
+    SPARTACUS_CONFIGURATION_MODULE,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../shared/libs-constants';
 import { addModuleProvider } from '../shared/utils/new-module-utils';
 import { getSpartacusCurrentFeatureLevel } from '../shared/utils/package-utils';

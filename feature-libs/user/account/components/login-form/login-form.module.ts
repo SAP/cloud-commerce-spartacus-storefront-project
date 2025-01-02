@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,20 +9,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
-  AuthService,
-  CmsConfig,
-  FeaturesConfigModule,
-  GlobalMessageService,
-  I18nModule,
-  NotAuthGuard,
-  UrlModule,
-  WindowRef,
-  provideDefaultConfig,
+    AuthService,
+    CmsConfig,
+    FeaturesConfigModule,
+    GlobalMessageService,
+    I18nModule,
+    NotAuthGuard,
+    UrlModule,
+    WindowRef,
+    provideDefaultConfig,
 } from '@spartacus/core';
 import {
-  FormErrorsModule,
-  PasswordVisibilityToggleModule,
-  SpinnerModule,
+    FormErrorsModule,
+    PasswordVisibilityToggleModule,
+    SpinnerModule,
 } from '@spartacus/storefront';
 import { LoginFormComponentService } from './login-form-component.service';
 import { LoginFormComponent } from './login-form.component';

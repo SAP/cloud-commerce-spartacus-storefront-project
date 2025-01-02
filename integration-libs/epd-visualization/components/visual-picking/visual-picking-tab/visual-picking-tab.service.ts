@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ChangeDetectorRef, Injectable, OnDestroy } from '@angular/core';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  Product,
-  ProductReference,
-  Translatable,
-  WindowRef,
+    GlobalMessageService,
+    GlobalMessageType,
+    Product,
+    ProductReference,
+    Translatable,
+    WindowRef,
 } from '@spartacus/core';
 import { CurrentProductService } from '@spartacus/storefront';
 import { Subscription } from 'rxjs';
 import { first } from 'rxjs/operators';
 import {
-  VisualizationLoadInfo,
-  VisualizationLoadStatus,
-  VisualizationLookupResult,
+    VisualizationLoadInfo,
+    VisualizationLoadStatus,
+    VisualizationLookupResult,
 } from '../../visual-viewer/models/visualization-load-info';
 import { VisualViewerService } from '../../visual-viewer/visual-viewer.service';
 import { VisualPickingProductListService } from './product-list/visual-picking-product-list.service';

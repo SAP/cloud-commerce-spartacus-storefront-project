@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,18 +7,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
-  ConverterService,
-  EntitiesModel,
-  Occ,
-  OccEndpointsService,
-  SearchConfig,
+    ConverterService,
+    EntitiesModel,
+    Occ,
+    OccEndpointsService,
+    SearchConfig,
 } from '@spartacus/core';
 import {
-  Budget,
-  BudgetAdapter,
-  BUDGETS_NORMALIZER,
-  BUDGET_NORMALIZER,
-  BUDGET_SERIALIZER,
+    Budget,
+    BUDGET_NORMALIZER,
+    BUDGET_SERIALIZER,
+    BudgetAdapter,
+    BUDGETS_NORMALIZER,
 } from '@spartacus/organization/administration/core';
 import { Observable } from 'rxjs';
 

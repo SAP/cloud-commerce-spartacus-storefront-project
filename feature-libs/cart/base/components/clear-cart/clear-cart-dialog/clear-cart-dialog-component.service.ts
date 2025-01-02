@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  ActiveCartFacade,
-  DeleteCartFailEvent,
-  DeleteCartSuccessEvent,
-  MultiCartFacade,
+    ActiveCartFacade,
+    DeleteCartFailEvent,
+    DeleteCartSuccessEvent,
+    MultiCartFacade,
 } from '@spartacus/cart/base/root';
 import {
-  EventService,
-  GlobalMessageService,
-  GlobalMessageType,
-  UserIdService,
+    EventService,
+    GlobalMessageService,
+    GlobalMessageType,
+    UserIdService,
 } from '@spartacus/core';
 import { LaunchDialogService } from '@spartacus/storefront';
 import { merge } from 'rxjs';

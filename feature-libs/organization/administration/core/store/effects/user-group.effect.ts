@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,11 +8,11 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
-  B2BUser,
-  EntitiesModel,
-  LoggerService,
-  StateUtils,
-  tryNormalizeHttpError,
+    B2BUser,
+    EntitiesModel,
+    LoggerService,
+    StateUtils,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import { Observable, from, of } from 'rxjs';
 import { catchError, groupBy, map, mergeMap, switchMap } from 'rxjs/operators';
@@ -20,10 +20,10 @@ import { UserGroupConnector } from '../../connectors/user-group/user-group.conne
 import { Permission } from '../../model/permission.model';
 import { UserGroup } from '../../model/user-group.model';
 import {
-  B2BUserActions,
-  OrganizationActions,
-  PermissionActions,
-  UserGroupActions,
+    B2BUserActions,
+    OrganizationActions,
+    PermissionActions,
+    UserGroupActions,
 } from '../actions/index';
 
 @Injectable()

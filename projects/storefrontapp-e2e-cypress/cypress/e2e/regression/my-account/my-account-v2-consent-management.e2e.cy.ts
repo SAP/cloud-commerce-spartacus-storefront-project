@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  myAccountV2consentManagementTest,
-  verifyAsAnonymous,
+    myAccountV2consentManagementTest,
+    verifyAsAnonymous,
 } from '../../../helpers/consent-management';
 import * as login from '../../../helpers/login';
 import { viewportContext } from '../../../helpers/viewport-context';

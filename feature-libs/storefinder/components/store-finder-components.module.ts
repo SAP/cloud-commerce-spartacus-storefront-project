@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,18 +9,18 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
-  FeaturesConfigModule,
-  I18nModule,
-  provideDefaultConfig,
-  UrlModule,
+    FeaturesConfigModule,
+    I18nModule,
+    provideDefaultConfig,
+    UrlModule,
 } from '@spartacus/core';
 import { StoreFinderCoreModule } from '@spartacus/storefinder/core';
 import {
-  BtnLikeLinkModule,
-  IconModule,
-  ListNavigationModule,
-  OutletModule,
-  SpinnerModule,
+    BtnLikeLinkModule,
+    IconModule,
+    ListNavigationModule,
+    OutletModule,
+    SpinnerModule,
 } from '@spartacus/storefront';
 import { ScheduleComponent } from './schedule-component/schedule.component';
 import { StoreFinderGridComponent } from './store-finder-grid/store-finder-grid.component';

@@ -1,9 +1,10 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
+export * from './checkout-billing-address/index';
 export * from './checkout-components.module';
 export * from './checkout-delivery-address/checkout-delivery-address.component';
 export * from './checkout-delivery-address/checkout-delivery-address.module';
@@ -31,4 +32,4 @@ export * from './checkout-review-submit/checkout-review-submit.component';
 export * from './checkout-review-submit/checkout-review-submit.module';
 export * from './guards/index';
 export * from './services/index';
-export * from './checkout-billing-address/index';
+

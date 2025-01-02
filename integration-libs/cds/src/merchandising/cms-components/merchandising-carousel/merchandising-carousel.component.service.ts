@@ -1,31 +1,31 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
-import { ProductService, ProductScope } from '@spartacus/core';
+import { ProductScope, ProductService } from '@spartacus/core';
 import { EMPTY, Observable } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 import {
-  CmsMerchandisingCarouselComponent,
-  StrategyRequest,
+    CmsMerchandisingCarouselComponent,
+    StrategyRequest,
 } from '../../../cds-models';
 import { CdsConfig } from '../../../config';
 import { ProfileTagEventService } from '../../../profiletag';
 import { CdsMerchandisingProductService } from '../../facade';
 import {
-  MerchandisingMetadata,
-  MerchandisingProduct,
-  StrategyProduct,
-  StrategyProducts,
+    MerchandisingMetadata,
+    MerchandisingProduct,
+    StrategyProduct,
+    StrategyProducts,
 } from '../../model';
 import {
-  CarouselEvent,
-  MerchandisingCarouselClickedEvent,
-  MerchandisingCarouselModel,
-  MerchandisingCarouselViewedEvent,
+    CarouselEvent,
+    MerchandisingCarouselClickedEvent,
+    MerchandisingCarouselModel,
+    MerchandisingCarouselViewedEvent,
 } from './model';
 
 const DEFAULT_CAROUSEL_VIEWPORT_THRESHOLD = 80;

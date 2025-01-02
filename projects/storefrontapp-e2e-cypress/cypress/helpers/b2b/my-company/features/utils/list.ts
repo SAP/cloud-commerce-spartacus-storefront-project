@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  DEFAULT_SORT_LABEL,
-  MAX_PAGES,
-  MyCompanyConfig,
-  MyCompanyRowConfig,
-  TestListOptions,
+    DEFAULT_SORT_LABEL,
+    MAX_PAGES,
+    MyCompanyConfig,
+    MyCompanyRowConfig,
+    TestListOptions,
 } from '../../models';
 import { waitForData } from '../../my-company.utils';
 

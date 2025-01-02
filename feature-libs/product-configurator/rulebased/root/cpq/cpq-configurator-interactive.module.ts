@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,9 +8,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { provideDefaultConfig } from '@spartacus/core';
 import {
-  CmsPageGuard,
-  HamburgerMenuModule,
-  PageLayoutComponent,
+    CmsPageGuard,
+    HamburgerMenuModule,
+    PageLayoutComponent,
 } from '@spartacus/storefront';
 import { CpqConfiguratorLayoutModule } from './cpq-configurator-layout.module';
 import { defaultCpqInteractiveRoutingConfig } from './default-cpq-interactive-routing-config';

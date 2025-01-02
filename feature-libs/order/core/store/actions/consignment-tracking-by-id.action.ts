@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { ErrorAction, StateUtils } from '@spartacus/core';
 import { ConsignmentTracking } from '@spartacus/order/root';
 import {
-  CONSIGNMENT_TRACKING_BY_ID_ENTITIES,
-  getConsignmentTrackingByIdEntityKey,
+    CONSIGNMENT_TRACKING_BY_ID_ENTITIES,
+    getConsignmentTrackingByIdEntityKey,
 } from '../order-state';
 
 export const LOAD_CONSIGNMENT_TRACKING_BY_ID =

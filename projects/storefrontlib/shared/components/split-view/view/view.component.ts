@@ -1,27 +1,27 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  EventEmitter,
-  HostBinding,
-  Input,
-  OnDestroy,
-  OnInit,
-  Optional,
-  Output,
-  inject,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    EventEmitter,
+    HostBinding,
+    Input,
+    OnDestroy,
+    OnInit,
+    Optional,
+    Output,
+    inject,
 } from '@angular/core';
 import {
-  FeatureConfigService,
-  GlobalMessageService,
-  GlobalMessageType,
+    FeatureConfigService,
+    GlobalMessageService,
+    GlobalMessageType,
 } from '@spartacus/core';
 import { Subscription, timer } from 'rxjs';
 import { delayWhen, distinctUntilChanged } from 'rxjs/operators';

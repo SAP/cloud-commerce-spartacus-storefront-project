@@ -1,28 +1,28 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { InjectionToken, Provider } from '@angular/core';
 import {
-  Action,
-  ActionReducer,
-  ActionReducerMap,
-  combineReducers,
-  MetaReducer,
+    Action,
+    ActionReducer,
+    ActionReducerMap,
+    combineReducers,
+    MetaReducer,
 } from '@ngrx/store';
 import { AuthActions, ListModel, StateUtils } from '@spartacus/core';
 import { OrderApproval } from '../../model/order-approval.model';
 import {
-  OrderApprovalState,
-  ORDER_APPROVAL_ENTITIES,
-  ORDER_APPROVAL_FEATURE,
-  ORDER_APPROVAL_LIST,
+    ORDER_APPROVAL_ENTITIES,
+    ORDER_APPROVAL_FEATURE,
+    ORDER_APPROVAL_LIST,
+    OrderApprovalState,
 } from '../order-approval-state';
 import {
-  orderApprovalsEntitiesReducer,
-  orderApprovalsListReducer,
+    orderApprovalsEntitiesReducer,
+    orderApprovalsListReducer,
 } from './order-approval.reducer';
 
 export function getReducers(): ActionReducerMap<OrderApprovalState> {

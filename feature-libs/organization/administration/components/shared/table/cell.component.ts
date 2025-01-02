@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  Optional,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    Optional,
+    inject,
 } from '@angular/core';
 import { FeatureConfigService } from '@spartacus/core';
 import {
-  OutletContextData,
-  TableDataOutletContext,
-  TableFieldOptions,
+    OutletContextData,
+    TableDataOutletContext,
+    TableFieldOptions,
 } from '@spartacus/storefront';
 
 @Component({

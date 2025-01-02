@@ -1,52 +1,52 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    inject,
+    OnDestroy,
+    OnInit,
+    ViewChild,
 } from '@angular/core';
 import { FormControl, ValidatorFn, Validators } from '@angular/forms';
 import { AsmBindCartFacade } from '@spartacus/asm/root';
 import {
-  ActiveCartFacade,
-  Cart,
-  MultiCartFacade,
+    ActiveCartFacade,
+    Cart,
+    MultiCartFacade,
 } from '@spartacus/cart/base/root';
 import { SavedCartFacade } from '@spartacus/cart/saved-cart/root';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  HttpErrorModel,
-  OCC_CART_ID_CURRENT,
-  RoutingService,
-  FeatureConfigService,
+    FeatureConfigService,
+    GlobalMessageService,
+    GlobalMessageType,
+    HttpErrorModel,
+    OCC_CART_ID_CURRENT,
+    RoutingService,
 } from '@spartacus/core';
-import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
+import { LAUNCH_CALLER, LaunchDialogService } from '@spartacus/storefront';
 import {
-  BehaviorSubject,
-  combineLatest,
-  defer,
-  EMPTY,
-  iif,
-  Observable,
-  Subscription,
+    BehaviorSubject,
+    combineLatest,
+    defer,
+    EMPTY,
+    iif,
+    Observable,
+    Subscription,
 } from 'rxjs';
 import {
-  concatMap,
-  filter,
-  finalize,
-  map,
-  shareReplay,
-  take,
-  tap,
+    concatMap,
+    filter,
+    finalize,
+    map,
+    shareReplay,
+    take,
+    tap,
 } from 'rxjs/operators';
 import { BIND_CART_DIALOG_ACTION } from '../asm-bind-cart-dialog/asm-bind-cart-dialog.component';
 import { SAVE_CART_DIALOG_ACTION } from '../asm-save-cart-dialog/asm-save-cart-dialog.component';

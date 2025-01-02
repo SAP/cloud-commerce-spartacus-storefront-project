@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { AbstractType, Injectable, Injector } from '@angular/core';
 import {
-  EMPTY,
-  Observable,
-  ReplaySubject,
-  connectable,
-  isObservable,
-  throwError,
+    EMPTY,
+    Observable,
+    ReplaySubject,
+    connectable,
+    isObservable,
+    throwError,
 } from 'rxjs';
 import { delay, map, shareReplay, switchMap } from 'rxjs/operators';
 import { FeatureModulesService } from '../feature-modules.service';

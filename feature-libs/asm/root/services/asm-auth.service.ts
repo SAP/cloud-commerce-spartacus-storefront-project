@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,17 +7,17 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
-  AuthActions,
-  AuthMultisiteIsolationService,
-  AuthRedirectService,
-  AuthService,
-  AuthToken,
-  GlobalMessageService,
-  GlobalMessageType,
-  OAuthLibWrapperService,
-  RoutingService,
-  StateWithClientAuth,
-  UserIdService,
+    AuthActions,
+    AuthMultisiteIsolationService,
+    AuthRedirectService,
+    AuthService,
+    AuthToken,
+    GlobalMessageService,
+    GlobalMessageType,
+    OAuthLibWrapperService,
+    RoutingService,
+    StateWithClientAuth,
+    UserIdService,
 } from '@spartacus/core';
 import { combineLatest, from, lastValueFrom, Observable, of } from 'rxjs';
 import { map, switchMap, take } from 'rxjs/operators';

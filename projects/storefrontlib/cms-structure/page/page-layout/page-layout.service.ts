@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { inject, Injectable, isDevMode, OnDestroy } from '@angular/core';
 import {
-  CmsService,
-  isNotUndefined,
-  LoggerService,
-  Page,
-  UnifiedInjector,
+    CmsService,
+    isNotUndefined,
+    LoggerService,
+    Page,
+    UnifiedInjector,
 } from '@spartacus/core';
 import { combineLatest, Observable, of, Subscription } from 'rxjs';
 import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
 import { BreakpointService } from '../../../layout/breakpoint/breakpoint.service';
 import {
-  BREAKPOINT,
-  LayoutConfig,
-  LayoutSlotConfig,
-  SlotConfig,
+    BREAKPOINT,
+    LayoutConfig,
+    LayoutSlotConfig,
+    SlotConfig,
 } from '../../../layout/config/layout-config';
 import { PAGE_LAYOUT_HANDLER, PageLayoutHandler } from './page-layout-handler';
 

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,8 +11,8 @@ import { LoggerService } from '../../logger';
 import { Config, RootConfig } from '../config-tokens';
 import { deepMerge } from '../utils/deep-merge';
 import {
-  CONFIG_INITIALIZER_FORROOT_GUARD,
-  ConfigInitializer,
+    CONFIG_INITIALIZER_FORROOT_GUARD,
+    ConfigInitializer,
 } from './config-initializer';
 
 /**

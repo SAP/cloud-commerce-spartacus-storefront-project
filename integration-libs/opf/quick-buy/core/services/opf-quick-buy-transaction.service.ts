@@ -1,38 +1,38 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { inject, Injectable } from '@angular/core';
 import {
-  ActiveCartFacade,
-  Cart,
-  CartGuestUser,
-  CartGuestUserFacade,
-  DeliveryMode,
-  MultiCartFacade,
+    ActiveCartFacade,
+    Cart,
+    CartGuestUser,
+    CartGuestUserFacade,
+    DeliveryMode,
+    MultiCartFacade,
 } from '@spartacus/cart/base/root';
 import {
-  CheckoutBillingAddressFacade,
-  CheckoutDeliveryAddressFacade,
-  CheckoutDeliveryModesFacade,
+    CheckoutBillingAddressFacade,
+    CheckoutDeliveryAddressFacade,
+    CheckoutDeliveryModesFacade,
 } from '@spartacus/checkout/base/root';
 import {
-  Address,
-  AuthService,
-  BaseSiteService,
-  QueryState,
-  RoutingService,
-  UserAddressService,
-  UserIdService,
+    Address,
+    AuthService,
+    BaseSiteService,
+    QueryState,
+    RoutingService,
+    UserAddressService,
+    UserIdService,
 } from '@spartacus/core';
 import { OpfGlobalMessageService } from '@spartacus/opf/base/root';
 import {
-  OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
-  OpfQuickBuyDeliveryInfo,
-  OpfQuickBuyDeliveryType,
-  OpfQuickBuyLocation,
+    OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
+    OpfQuickBuyDeliveryInfo,
+    OpfQuickBuyDeliveryType,
+    OpfQuickBuyLocation,
 } from '@spartacus/opf/quick-buy/root';
 import { combineLatest, Observable, of } from 'rxjs';
 import { filter, map, switchMap, take, tap } from 'rxjs/operators';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,11 +7,11 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import {
-  AuthService,
-  CmsService,
-  ProtectedRoutesService,
-  SemanticPathService,
-  WindowRef,
+    AuthService,
+    CmsService,
+    ProtectedRoutesService,
+    SemanticPathService,
+    WindowRef,
 } from '@spartacus/core';
 import { LogoutGuard } from '@spartacus/storefront';
 

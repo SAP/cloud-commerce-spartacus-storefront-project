@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
-  NewSavedCartOrderEntriesContextToken,
-  SavedCartOrderEntriesContextToken,
+    NewSavedCartOrderEntriesContextToken,
+    SavedCartOrderEntriesContextToken,
 } from '@spartacus/cart/saved-cart/root';
 import { provideDefaultConfig } from '@spartacus/core';
 import { AddToSavedCartModule } from './add-to-saved-cart/add-to-saved-cart.module';

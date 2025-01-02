@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,21 +7,21 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  ConverterService,
-  LoggerService,
-  tryNormalizeHttpError,
+    ConverterService,
+    LoggerService,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import {
-  OPF_ACTIVE_CONFIGURATIONS_NORMALIZER,
-  OpfBaseAdapter,
-  OpfEndpointsService,
+    OPF_ACTIVE_CONFIGURATIONS_NORMALIZER,
+    OpfBaseAdapter,
+    OpfEndpointsService,
 } from '@spartacus/opf/base/core';
 import {
-  OPF_CC_PUBLIC_KEY_HEADER,
-  OpfActiveConfigurationsQuery,
-  OpfActiveConfigurationsResponse,
-  OpfConfig,
-  OpfMetadataStatePersistanceService,
+    OPF_CC_PUBLIC_KEY_HEADER,
+    OpfActiveConfigurationsQuery,
+    OpfActiveConfigurationsResponse,
+    OpfConfig,
+    OpfMetadataStatePersistanceService,
 } from '@spartacus/opf/base/root';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';

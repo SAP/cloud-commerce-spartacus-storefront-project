@@ -1,19 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { isPlatformBrowser } from '@angular/common';
 import {
-  inject,
-  Inject,
-  Injectable,
-  isDevMode,
-  PLATFORM_ID,
+    inject,
+    Inject,
+    Injectable,
+    isDevMode,
+    PLATFORM_ID,
 } from '@angular/core';
 import { defer, Observable, of } from 'rxjs';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { FeatureConfigService } from '../../features-config';
 import { UnifiedInjector } from '../../lazy-loading/unified-injector';
 import { resolveApplicable } from '../../util/applicable';
 import { uniteLatest } from '../../util/rxjs/unite-latest';
@@ -21,7 +22,6 @@ import { Page, PageMeta } from '../model/page.model';
 import { PageMetaConfig } from '../page/config/page-meta.config';
 import { PageMetaResolver } from '../page/page-meta.resolver';
 import { CmsService } from './cms.service';
-import { FeatureConfigService } from '../../features-config';
 
 /**
  * Service that collects the page meta data by using injected page resolvers.

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,9 +10,9 @@ import { RouterModule } from '@angular/router';
 import { provideDefaultConfig } from '@spartacus/core';
 import { CommonConfiguratorModule } from '@spartacus/product-configurator/common';
 import {
-  CmsPageGuard,
-  LayoutConfig,
-  PageLayoutComponent,
+    CmsPageGuard,
+    LayoutConfig,
+    PageLayoutComponent,
 } from '@spartacus/storefront';
 import { TextfieldConfiguratorRootFeatureModule } from './textfield-configurator-root-feature.module';
 import { TextfieldConfiguratorRoutingModule } from './textfield-configurator-routing.module';

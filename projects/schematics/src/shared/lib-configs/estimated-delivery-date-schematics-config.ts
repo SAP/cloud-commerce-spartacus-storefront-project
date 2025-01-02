@@ -1,16 +1,16 @@
 /*
  * SPDX-FileCopyrightText: 2022 SAP Spartacus team <spartacus-team@sap.com>
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CART_BASE_FEATURE_NAME,
-  ESTIMATED_DELIVERY_DATE_FEATURE_NAME,
-  SPARTACUS_ESTIMATED_DELIVERY_DATE,
-  SPARTACUS_ESTIMATED_DELIVERY_DATE_ASSETS,
-  SPARTACUS_ESTIMATED_DELIVERY_DATE_ROOT,
+    CART_BASE_FEATURE_NAME,
+    ESTIMATED_DELIVERY_DATE_FEATURE_NAME,
+    SPARTACUS_ESTIMATED_DELIVERY_DATE,
+    SPARTACUS_ESTIMATED_DELIVERY_DATE_ASSETS,
+    SPARTACUS_ESTIMATED_DELIVERY_DATE_ROOT,
 } from '../libs-constants';
 import { SchematicConfig } from '../utils/lib-utils';
 import { CART_BASE_MODULE } from './cart-schematics-config';

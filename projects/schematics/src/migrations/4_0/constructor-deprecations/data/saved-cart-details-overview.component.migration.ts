@@ -1,22 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ANGULAR_CORE,
-  LAUNCH_DIALOG_SERVICE,
-  SAVED_CART_DETAILS_OVERVIEW_COMPONENT,
-  SAVED_CART_DETAILS_SERVICE,
-  SAVED_CART_FORM_LAUNCH_DIALOG_SERVICE,
-  TRANSLATION_SERVICE,
-  VIEW_CONTAINER_REF,
+    ANGULAR_CORE,
+    LAUNCH_DIALOG_SERVICE,
+    SAVED_CART_DETAILS_OVERVIEW_COMPONENT,
+    SAVED_CART_DETAILS_SERVICE,
+    SAVED_CART_FORM_LAUNCH_DIALOG_SERVICE,
+    TRANSLATION_SERVICE,
+    VIEW_CONTAINER_REF,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CART_SAVED_CART_COMPONENTS,
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CART_SAVED_CART_COMPONENTS,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

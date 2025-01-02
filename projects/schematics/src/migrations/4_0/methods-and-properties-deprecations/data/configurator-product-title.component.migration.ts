@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CLICK_ON_ENTER,
-  CONFIGURATOR_PRODUCT_TITLE_COMPONENT,
-  GET_PRODUCT_IMAGE_ALT,
-  GET_PRODUCT_IMAGE_URL,
-  TODO_SPARTACUS,
+    CLICK_ON_ENTER,
+    CONFIGURATOR_PRODUCT_TITLE_COMPONENT,
+    GET_PRODUCT_IMAGE_ALT,
+    GET_PRODUCT_IMAGE_URL,
+    TODO_SPARTACUS,
 } from '../../../../shared/constants';
 import { SPARTACUS_PRODUCT_CONFIGURATOR_RULEBASED } from '../../../../shared/libs-constants';
 import { MethodPropertyDeprecation } from '../../../../shared/utils/file-utils';

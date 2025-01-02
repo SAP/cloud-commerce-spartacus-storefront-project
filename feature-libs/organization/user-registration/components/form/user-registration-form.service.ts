@@ -1,30 +1,30 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  Validators,
+    AbstractControl,
+    FormBuilder,
+    FormGroup,
+    Validators,
 } from '@angular/forms';
 import {
-  AuthConfigService,
-  Country,
-  GlobalMessageService,
-  GlobalMessageType,
-  OAuthFlow,
-  Region,
-  RoutingService,
-  TranslationService,
-  UserAddressService,
+    AuthConfigService,
+    Country,
+    GlobalMessageService,
+    GlobalMessageType,
+    OAuthFlow,
+    Region,
+    RoutingService,
+    TranslationService,
+    UserAddressService,
 } from '@spartacus/core';
 import {
-  OrganizationUserRegistration,
-  UserRegistrationFacade,
+    OrganizationUserRegistration,
+    UserRegistrationFacade,
 } from '@spartacus/organization/user-registration/root';
 import { CustomFormValidators } from '@spartacus/storefront';
 import { Title, UserRegisterFacade } from '@spartacus/user/profile/root';

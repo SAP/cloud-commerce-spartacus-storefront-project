@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,13 +7,13 @@
 import { NgModule } from '@angular/core';
 import { provideConfig } from '@spartacus/core';
 import {
-  PRODUCT_MULTI_DIMENSIONAL_SELECTOR_FEATURE,
-  ProductMultiDimensionalSelectorRootModule,
-} from '@spartacus/product-multi-dimensional/selector/root';
-import {
-  multiDimensionalSelectorTranslationChunksConfig,
-  multiDimensionalSelectorTranslations,
+    multiDimensionalSelectorTranslationChunksConfig,
+    multiDimensionalSelectorTranslations,
 } from '@spartacus/product-multi-dimensional/selector/assets';
+import {
+    PRODUCT_MULTI_DIMENSIONAL_SELECTOR_FEATURE,
+    ProductMultiDimensionalSelectorRootModule,
+} from '@spartacus/product-multi-dimensional/selector/root';
 
 @NgModule({
   imports: [ProductMultiDimensionalSelectorRootModule],

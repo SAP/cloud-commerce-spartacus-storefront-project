@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,26 +7,26 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  ConverterService,
-  LoggerService,
-  backOff,
-  isServerError,
-  tryNormalizeHttpError,
+    ConverterService,
+    LoggerService,
+    backOff,
+    isServerError,
+    tryNormalizeHttpError,
 } from '@spartacus/core';
 import { OpfEndpointsService } from '@spartacus/opf/base/core';
 import {
-  OPF_CC_ACCESS_CODE_HEADER,
-  OPF_CC_PUBLIC_KEY_HEADER,
-  OpfConfig,
-  OpfMetadataStatePersistanceService,
+    OPF_CC_ACCESS_CODE_HEADER,
+    OPF_CC_PUBLIC_KEY_HEADER,
+    OpfConfig,
+    OpfMetadataStatePersistanceService,
 } from '@spartacus/opf/base/root';
 import {
-  OPF_APPLE_PAY_WEB_SESSION_NORMALIZER,
-  OpfQuickBuyAdapter,
+    OPF_APPLE_PAY_WEB_SESSION_NORMALIZER,
+    OpfQuickBuyAdapter,
 } from '@spartacus/opf/quick-buy/core';
 import {
-  ApplePaySessionVerificationRequest,
-  ApplePaySessionVerificationResponse,
+    ApplePaySessionVerificationRequest,
+    ApplePaySessionVerificationResponse,
 } from '@spartacus/opf/quick-buy/root';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';

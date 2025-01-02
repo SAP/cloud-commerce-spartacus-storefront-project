@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  HttpClientTestingModule,
-  HttpTestingController,
+    HttpClientTestingModule,
+    HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
-  BaseOccUrlProperties,
-  ConverterService,
-  DynamicAttributes,
-  OccEndpointsService,
+    BaseOccUrlProperties,
+    ConverterService,
+    DynamicAttributes,
+    OccEndpointsService,
 } from '@spartacus/core';
 import { OccCartGuestUserAdapter } from './occ-cart-guest-user.adapter';
 

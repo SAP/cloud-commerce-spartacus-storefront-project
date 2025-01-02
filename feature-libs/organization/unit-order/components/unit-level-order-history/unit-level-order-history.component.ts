@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import {
-  RoutingService,
-  TranslationService,
-  useFeatureStyles,
+    RoutingService,
+    TranslationService,
+    useFeatureStyles,
 } from '@spartacus/core';
 import { Order, OrderHistoryList } from '@spartacus/order/root';
 import { OrderHistoryQueryParams } from '@spartacus/organization/unit-order/core';

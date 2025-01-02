@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import '@spartacus/checkout/b2b/root';
 import {
-  CheckoutConfig,
-  CheckoutStepType,
+    CheckoutConfig,
+    CheckoutStepType,
 } from '@spartacus/checkout/base/root';
 
 export const defaultOpfCheckoutB2bConfig: CheckoutConfig = {

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,8 +10,8 @@ import { Observable, of, take } from 'rxjs';
 import { Configurator } from '../../../../core/model/configurator.model';
 import { ConfiguratorUISettingsConfig } from '../../../config/configurator-ui-settings.config';
 import { ConfiguratorPriceComponentOptions } from '../../../price/configurator-price.component';
-import { ConfiguratorAttributePriceChangeService } from '../../price-change/configurator-attribute-price-change.service';
 import { ConfiguratorStorefrontUtilsService } from '../../../service/configurator-storefront-utils.service';
+import { ConfiguratorAttributePriceChangeService } from '../../price-change/configurator-attribute-price-change.service';
 
 /**
  * Service to provide unique keys for elements on the UI and for sending to configurator

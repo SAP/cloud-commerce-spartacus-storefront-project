@@ -1,37 +1,37 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectorRef,
-  ComponentRef,
-  Directive,
-  ElementRef,
-  EventEmitter,
-  Injector,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-  Renderer2,
-  Type,
-  ViewContainerRef,
+    ChangeDetectorRef,
+    ComponentRef,
+    Directive,
+    ElementRef,
+    EventEmitter,
+    Injector,
+    Input,
+    OnDestroy,
+    OnInit,
+    Output,
+    Renderer2,
+    Type,
+    ViewContainerRef,
 } from '@angular/core';
 import {
-  ContentSlotComponentData,
-  DynamicAttributeService,
-  EventService,
-  isNotUndefined,
+    ContentSlotComponentData,
+    DynamicAttributeService,
+    EventService,
+    isNotUndefined,
 } from '@spartacus/core';
 import { Subscription } from 'rxjs';
 import { filter, finalize, tap } from 'rxjs/operators';
 import { CmsComponentsService } from '../../services/cms-components.service';
 import {
-  ComponentCreateEvent,
-  ComponentDestroyEvent,
-  ComponentEvent,
+    ComponentCreateEvent,
+    ComponentDestroyEvent,
+    ComponentEvent,
 } from './events/component.event';
 import { CmsInjectorService } from './services/cms-injector.service';
 import { ComponentHandlerService } from './services/component-handler.service';

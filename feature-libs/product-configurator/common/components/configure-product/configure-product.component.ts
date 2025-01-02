@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  Optional,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    Optional,
+    inject,
 } from '@angular/core';
 import { Product, ProductScope, RoutingService } from '@spartacus/core';
 import {
-  CurrentProductService,
-  ProductListItemContext,
+    CurrentProductService,
+    ProductListItemContext,
 } from '@spartacus/storefront';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {
-  CommonConfigurator,
-  ReadOnlyPostfix,
+    CommonConfigurator,
+    ReadOnlyPostfix,
 } from '../../core/model/common-configurator.model';
 import { ConfiguratorProductScope } from '../../core/model/configurator-product-scope';
 

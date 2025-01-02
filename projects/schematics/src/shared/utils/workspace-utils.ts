@@ -1,29 +1,29 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  chain,
-  Rule,
-  SchematicContext,
-  SchematicsException,
-  Tree,
+    chain,
+    Rule,
+    SchematicContext,
+    SchematicsException,
+    Tree,
 } from '@angular-devkit/schematics';
 import {
-  ProjectType,
-  WorkspaceProject,
-  WorkspaceSchema,
-  WorkspaceTargets,
+    ProjectType,
+    WorkspaceProject,
+    WorkspaceSchema,
+    WorkspaceTargets,
 } from '@schematics/angular/utility/workspace-models';
 import { parse } from 'jsonc-parser';
 import { Schema as SpartacusOptions } from '../../add-spartacus/schema';
 import {
-  SPARTACUS_CONFIGURATION_MODULE,
-  SPARTACUS_CORE,
-  SPARTACUS_FEATURES_MODULE,
-  SPARTACUS_MODULE,
+    SPARTACUS_CONFIGURATION_MODULE,
+    SPARTACUS_CORE,
+    SPARTACUS_FEATURES_MODULE,
+    SPARTACUS_MODULE,
 } from '../libs-constants';
 import { debugLogRule } from './logger-utils';
 import { ensureModuleExists } from './new-module-utils';

@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  ProductSearchPage,
-  useFeatureStyles,
+    GlobalMessageService,
+    GlobalMessageType,
+    ProductSearchPage,
+    useFeatureStyles,
 } from '@spartacus/core';
 import { BehaviorSubject, Observable, Subscription, combineLatest } from 'rxjs';
 import { filter, skip, take } from 'rxjs/operators';

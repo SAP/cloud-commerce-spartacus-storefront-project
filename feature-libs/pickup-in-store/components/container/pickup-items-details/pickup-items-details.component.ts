@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+    OnInit,
 } from '@angular/core';
 import { CmsPickupItemDetails, useFeatureStyles } from '@spartacus/core';
 import { DeliveryPointOfService } from '@spartacus/pickup-in-store/root';

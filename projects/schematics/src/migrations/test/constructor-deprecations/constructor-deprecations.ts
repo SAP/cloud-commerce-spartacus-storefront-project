@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,8 +8,8 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { ConstructorDeprecation } from '../../../shared/utils/file-utils';
 import { migrateConstructorDeprecation } from '../../mechanism/constructor-deprecations/constructor-deprecations';
 import {
-  ADD_TO_CART_COMPONENT_MIGRATION,
-  ADD_TO_CART_COMPONENT_MIGRATION_2,
+    ADD_TO_CART_COMPONENT_MIGRATION,
+    ADD_TO_CART_COMPONENT_MIGRATION_2,
 } from './data/add-to-cart.component.migration';
 import { ASM_AUTH_HTTP_HEADER_SERVICE_MIGRATION } from './data/asm-auth-http-header.service.migration';
 import { CART_PAGE_LAYOUT_HANDLER_MIGRATIONS } from './data/cart-page-layout-handler.migration';

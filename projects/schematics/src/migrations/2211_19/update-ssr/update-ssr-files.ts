@@ -1,26 +1,26 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Path } from '@angular-devkit/core';
 import {
-  chain,
-  Rule,
-  SchematicContext,
-  Tree,
+    chain,
+    Rule,
+    SchematicContext,
+    Tree,
 } from '@angular-devkit/schematics';
 import * as ts from 'typescript';
 import {
-  EXPRESS_TOKENS,
-  NEW_ZONE_IMPORT,
-  NGUNIVERSAL_IMPORT,
-  OLD_ZONE_IMPORT,
-  SERVER_BAK_FILENAME,
-  SERVER_FILENAME,
-  SSR_SETUP_IMPORT,
+    EXPRESS_TOKENS,
+    NEW_ZONE_IMPORT,
+    NGUNIVERSAL_IMPORT,
+    OLD_ZONE_IMPORT,
+    SERVER_BAK_FILENAME,
+    SERVER_FILENAME,
+    SSR_SETUP_IMPORT,
 } from '../../../shared/constants';
-import { Path } from '@angular-devkit/core';
 
 export function updateServerFiles(): Rule {
   return chain([

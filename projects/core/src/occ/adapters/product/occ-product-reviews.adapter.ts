@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,8 +10,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Review } from '../../../model/product.model';
 import {
-  PRODUCT_REVIEW_NORMALIZER,
-  PRODUCT_REVIEW_SERIALIZER,
+    PRODUCT_REVIEW_NORMALIZER,
+    PRODUCT_REVIEW_SERIALIZER,
 } from '../../../product/connectors/reviews/converters';
 import { ProductReviewsAdapter } from '../../../product/connectors/reviews/product-reviews.adapter';
 import { ConverterService } from '../../../util/converter.service';

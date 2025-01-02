@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,17 +7,17 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CartOutlets, DeliveryMode } from '@spartacus/cart/base/root';
 import {
-  Address,
-  CmsOrderDetailOverviewComponent,
-  CostCenter,
-  PaymentDetails,
-  TranslationService,
+    Address,
+    CmsOrderDetailOverviewComponent,
+    CostCenter,
+    PaymentDetails,
+    TranslationService,
 } from '@spartacus/core';
+import { OrderOutlets, paymentMethodCard } from '@spartacus/order/root';
 import { Card, CmsComponentData } from '@spartacus/storefront';
 import { Observable, combineLatest, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { OrderDetailsService } from '../order-details.service';
-import { OrderOutlets, paymentMethodCard } from '@spartacus/order/root';
 import { OrderOverviewComponentService } from './order-overview-component.service';
 
 @Component({

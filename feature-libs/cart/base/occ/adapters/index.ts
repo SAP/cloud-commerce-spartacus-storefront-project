@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,3 +11,4 @@ export * from './occ-cart-guest-user.adapter';
 export * from './occ-cart-validation.adapter';
 export * from './occ-cart-voucher.adapter';
 export * from './occ-cart.adapter';
+

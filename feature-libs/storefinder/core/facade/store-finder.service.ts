@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,13 +8,13 @@ import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { Action, select, Store } from '@ngrx/store';
 import {
-  GeoPoint,
-  GlobalMessageService,
-  GlobalMessageType,
-  PointOfService,
-  RoutingService,
-  SearchConfig,
-  WindowRef,
+    GeoPoint,
+    GlobalMessageService,
+    GlobalMessageType,
+    PointOfService,
+    RoutingService,
+    SearchConfig,
+    WindowRef,
 } from '@spartacus/core';
 import { StoreEntities } from '@spartacus/storefinder/root';
 import { Observable, Subscription } from 'rxjs';

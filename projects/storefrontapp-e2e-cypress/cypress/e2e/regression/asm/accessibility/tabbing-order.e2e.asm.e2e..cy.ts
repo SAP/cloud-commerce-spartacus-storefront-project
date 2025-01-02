@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { tabbingOrderConfig as config } from '../../../../helpers/accessibility/tabbing-order.config';
 import {
-  asmTabbingOrderNoSelectedUser,
-  asmTabbingOrderNotLoggedIn,
-  asmTabbingOrderWithCreateCustomerForm,
-  asmTabbingOrderWithCustomerList,
-  asmTabbingOrderWithSaveInactiveCartDialog,
-  asmTabbingOrderWithSelectedUser,
+    asmTabbingOrderNoSelectedUser,
+    asmTabbingOrderNotLoggedIn,
+    asmTabbingOrderWithCreateCustomerForm,
+    asmTabbingOrderWithCustomerList,
+    asmTabbingOrderWithSaveInactiveCartDialog,
+    asmTabbingOrderWithSelectedUser,
 } from '../../../../helpers/accessibility/tabbing-order/asm';
 
 describe('Tabbing order for ASM', () => {

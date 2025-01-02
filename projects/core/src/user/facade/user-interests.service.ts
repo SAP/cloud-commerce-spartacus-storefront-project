@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,23 +10,23 @@ import { Observable } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 import { UserIdService } from '../../auth/user-auth/facade/user-id.service';
 import {
-  NotificationType,
-  ProductInterestEntryRelation,
-  ProductInterestSearchResult,
+    NotificationType,
+    ProductInterestEntryRelation,
+    ProductInterestSearchResult,
 } from '../../model/product-interest.model';
 import { StateWithProcess } from '../../process/store/process-state';
 import {
-  getProcessErrorFactory,
-  getProcessLoadingFactory,
-  getProcessSuccessFactory,
+    getProcessErrorFactory,
+    getProcessLoadingFactory,
+    getProcessSuccessFactory,
 } from '../../process/store/selectors/process.selectors';
 import { isNotUndefined } from '../../util';
 import { UserActions } from '../store/actions/index';
 import { UsersSelectors } from '../store/selectors/index';
 import {
-  ADD_PRODUCT_INTEREST_PROCESS_ID,
-  REMOVE_PRODUCT_INTERESTS_PROCESS_ID,
-  StateWithUser,
+    ADD_PRODUCT_INTEREST_PROCESS_ID,
+    REMOVE_PRODUCT_INTERESTS_PROCESS_ID,
+    StateWithUser,
 } from '../store/user-state';
 
 @Injectable({

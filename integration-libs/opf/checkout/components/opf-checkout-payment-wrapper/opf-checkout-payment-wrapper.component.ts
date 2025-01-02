@@ -1,30 +1,30 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnDestroy,
-  OnInit,
-  ViewContainerRef,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+    OnDestroy,
+    OnInit,
+    ViewContainerRef,
+    inject,
 } from '@angular/core';
 import {
-  DomSanitizer,
-  SafeHtml,
-  SafeResourceUrl,
+    DomSanitizer,
+    SafeHtml,
+    SafeResourceUrl,
 } from '@angular/platform-browser';
 import {
-  OpfGlobalFunctionsDomain,
-  OpfGlobalFunctionsFacade,
+    OpfGlobalFunctionsDomain,
+    OpfGlobalFunctionsFacade,
 } from '@spartacus/opf/global-functions/root';
 import {
-  OpfPaymentRenderPattern,
-  OpfPaymentSessionData,
+    OpfPaymentRenderPattern,
+    OpfPaymentSessionData,
 } from '@spartacus/opf/payment/root';
 import { Subscription } from 'rxjs';
 import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper.service';

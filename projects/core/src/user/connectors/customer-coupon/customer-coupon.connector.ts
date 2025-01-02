@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { FeatureConfigService } from '../../../features-config/services/feature-config.service';
 import {
-  CustomerCoupon2Customer,
-  CustomerCouponNotification,
-  CustomerCouponSearchResult,
+    CustomerCoupon2Customer,
+    CustomerCouponNotification,
+    CustomerCouponSearchResult,
 } from '../../../model/customer-coupon.model';
 import { CustomerCouponAdapter } from './customer-coupon.adapter';
-import { FeatureConfigService } from '../../../features-config/services/feature-config.service';
 
 @Injectable({
   providedIn: 'root',

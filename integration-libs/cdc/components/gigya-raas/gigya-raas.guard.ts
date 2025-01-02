@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,12 +8,12 @@ import { Injectable, inject } from '@angular/core';
 import { CanActivate, UrlTree } from '@angular/router';
 import { GigyaRaasComponentData } from '@spartacus/cdc/core';
 import {
-  AuthGuard,
-  CmsService,
-  NotAuthGuard,
-  PageContext,
-  RoutingService,
-  isNotUndefined,
+    AuthGuard,
+    CmsService,
+    NotAuthGuard,
+    PageContext,
+    RoutingService,
+    isNotUndefined,
 } from '@spartacus/core';
 import { Observable, catchError, filter, of, switchMap, take } from 'rxjs';
 

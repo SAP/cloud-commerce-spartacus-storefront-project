@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,14 +7,14 @@
 import { Injectable } from '@angular/core';
 import { Router, UrlTree } from '@angular/router';
 import {
-  ActiveCartFacade,
-  CartValidationFacade,
-  CartValidationStatusCode,
+    ActiveCartFacade,
+    CartValidationFacade,
+    CartValidationStatusCode,
 } from '@spartacus/cart/base/root';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  SemanticPathService,
+    GlobalMessageService,
+    GlobalMessageType,
+    SemanticPathService,
 } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { map, withLatestFrom } from 'rxjs/operators';

@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CUSTOMER_TICKETING_FEATURE_NAME,
-  SPARTACUS_CUSTOMER_TICKETING,
-  SPARTACUS_CUSTOMER_TICKETING_ASSETS,
-  SPARTACUS_CUSTOMER_TICKETING_ROOT,
-  USER_PROFILE_FEATURE_NAME,
+    CUSTOMER_TICKETING_FEATURE_NAME,
+    SPARTACUS_CUSTOMER_TICKETING,
+    SPARTACUS_CUSTOMER_TICKETING_ASSETS,
+    SPARTACUS_CUSTOMER_TICKETING_ROOT,
+    USER_PROFILE_FEATURE_NAME,
 } from '../libs-constants';
 import { SchematicConfig } from '../utils/lib-utils';
 

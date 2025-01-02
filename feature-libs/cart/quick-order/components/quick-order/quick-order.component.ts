@@ -1,29 +1,29 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-  ViewChild,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
+    ViewChild,
 } from '@angular/core';
 import { ActiveCartFacade, OrderEntry } from '@spartacus/cart/base/root';
 import {
-  CmsQuickOrderComponent,
-  QuickOrderStatePersistenceService,
+    CmsQuickOrderComponent,
+    QuickOrderStatePersistenceService,
 } from '@spartacus/cart/quick-order/core';
 import {
-  QuickOrderAddEntryEvent,
-  QuickOrderFacade,
+    QuickOrderAddEntryEvent,
+    QuickOrderFacade,
 } from '@spartacus/cart/quick-order/root';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  Product,
+    GlobalMessageService,
+    GlobalMessageType,
+    Product,
 } from '@spartacus/core';
 import { CmsComponentData } from '@spartacus/storefront';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';

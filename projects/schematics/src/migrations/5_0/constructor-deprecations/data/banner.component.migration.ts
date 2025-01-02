@@ -1,17 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  BANNER_COMPONENT,
-  CMS_COMPONENT_DATA_CLASS,
-  CMS_SERVICE,
-  SEMANTIC_PATH_SERVICE,
+    BANNER_COMPONENT,
+    CMS_COMPONENT_DATA_CLASS,
+    CMS_SERVICE,
+    SEMANTIC_PATH_SERVICE,
 } from '../../../../shared/constants';
-import { SPARTACUS_CORE } from '../../../../shared/libs-constants';
-import { SPARTACUS_STOREFRONTLIB } from '../../../../shared/libs-constants';
+import { SPARTACUS_CORE, SPARTACUS_STOREFRONTLIB } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 
 export const BANNER_COMPONENT_MIGRATION: ConstructorDeprecation = {

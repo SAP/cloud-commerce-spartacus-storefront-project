@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,10 +7,10 @@
 import { InjectionToken } from '@angular/core';
 import { Converter } from '@spartacus/core';
 import {
-  OpfPaymentAfterRedirectScriptResponse,
-  OpfPaymentSubmitCompleteResponse,
-  OpfPaymentSubmitResponse,
-  OpfPaymentVerificationResponse,
+    OpfPaymentAfterRedirectScriptResponse,
+    OpfPaymentSubmitCompleteResponse,
+    OpfPaymentSubmitResponse,
+    OpfPaymentVerificationResponse,
 } from '@spartacus/opf/payment/root';
 
 export const OPF_PAYMENT_VERIFICATION_NORMALIZER = new InjectionToken<

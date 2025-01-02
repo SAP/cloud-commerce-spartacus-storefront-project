@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AfterViewInit,
-  Directive,
-  ElementRef,
-  EventEmitter,
-  HostBinding,
-  HostListener,
-  OnInit,
-  Output,
-  Renderer2,
+    AfterViewInit,
+    Directive,
+    ElementRef,
+    EventEmitter,
+    HostBinding,
+    HostListener,
+    OnInit,
+    Output,
+    Renderer2,
 } from '@angular/core';
 import { FOCUS_GROUP_ATTR, LockFocusConfig } from '../keyboard-focus.model';
 import { TrapFocusDirective } from '../trap/trap-focus.directive';

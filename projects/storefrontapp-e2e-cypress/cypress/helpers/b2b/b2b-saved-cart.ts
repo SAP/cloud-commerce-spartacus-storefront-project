@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,9 +12,9 @@ import { verifyTabbingOrder as tabbingOrder } from '../accessibility/tabbing-ord
 import { addProductToCart as addToCart } from '../applied-promotions';
 import { waitForProductPage } from '../checkout-flow';
 import {
-  interceptAddToCartEndpoint,
-  interceptCartPageEndpoint,
-  waitForResponse,
+    interceptAddToCartEndpoint,
+    interceptCartPageEndpoint,
+    waitForResponse,
 } from '../order-history';
 import * as SavedCart from '../saved-cart';
 import { loginB2bUser as login } from './b2b-checkout';

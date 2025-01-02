@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  BREAKPOINT_SERVICE,
-  CMS_SERVICE,
-  LAYOUT_CONFIG,
-  PAGE_LAYOUT_HANDLER,
-  PAGE_LAYOUT_SERVICE,
-  UNIFIED_INJECTOR,
+    BREAKPOINT_SERVICE,
+    CMS_SERVICE,
+    LAYOUT_CONFIG,
+    PAGE_LAYOUT_HANDLER,
+    PAGE_LAYOUT_SERVICE,
+    UNIFIED_INJECTOR,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CORE,
-  SPARTACUS_STOREFRONTLIB,
+    SPARTACUS_CORE,
+    SPARTACUS_STOREFRONTLIB,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

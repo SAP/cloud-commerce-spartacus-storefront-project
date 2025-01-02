@@ -1,22 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, inject } from '@angular/core';
 import {
-  ActiveCartFacade,
-  CartAccessCodeFacade,
+    ActiveCartFacade,
+    CartAccessCodeFacade,
 } from '@spartacus/cart/base/root';
 import {
-  DEFAULT_AUTHORIZATION_ERROR_RETRIES_COUNT,
-  GlobalMessageService,
-  RoutingService,
-  UserIdService,
-  WindowRef,
-  backOff,
-  isAuthorizationError,
+    DEFAULT_AUTHORIZATION_ERROR_RETRIES_COUNT,
+    GlobalMessageService,
+    RoutingService,
+    UserIdService,
+    WindowRef,
+    backOff,
+    isAuthorizationError,
 } from '@spartacus/core';
 import { Order, OrderFacade } from '@spartacus/order/root';
 
@@ -24,18 +24,18 @@ import { EMPTY, Observable, combineLatest, from, of, throwError } from 'rxjs';
 import { catchError, concatMap, map, switchMap, tap } from 'rxjs/operators';
 
 import {
-  OpfPaymentError,
-  OpfPaymentErrorType,
-  OpfPaymentMerchantCallback,
-  OpfPaymentMethod,
-  OpfPaymentSubmitCompleteInput,
-  OpfPaymentSubmitCompleteRequest,
-  OpfPaymentSubmitCompleteResponse,
-  OpfPaymentSubmitInput,
-  OpfPaymentSubmitRequest,
-  OpfPaymentSubmitResponse,
-  OpfPaymentSubmitStatus,
-  opfDefaultPaymentError,
+    OpfPaymentError,
+    OpfPaymentErrorType,
+    OpfPaymentMerchantCallback,
+    OpfPaymentMethod,
+    OpfPaymentSubmitCompleteInput,
+    OpfPaymentSubmitCompleteRequest,
+    OpfPaymentSubmitCompleteResponse,
+    OpfPaymentSubmitInput,
+    OpfPaymentSubmitRequest,
+    OpfPaymentSubmitResponse,
+    OpfPaymentSubmitStatus,
+    opfDefaultPaymentError,
 } from '@spartacus/opf/payment/root';
 import { OpfPaymentConnector } from '../connectors/opf-payment.connector';
 import { OpfPaymentErrorHandlerService } from '../services/opf-payment-error-handler.service';

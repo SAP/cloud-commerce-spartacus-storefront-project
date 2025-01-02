@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CHECKOUT_CONFIG_SERVICE,
-  CHECKOUT_STEP_SERVICE,
-  GET_CHECKOUT_STEP,
-  GET_CHECKOUT_STEP_ROUTE,
-  GET_CURRENT_STEP_INDEX,
-  GET_FIRST_CHECKOUT_STEP_ROUTE,
-  GET_NEXT_CHECKOUT_STEP_URL,
-  GET_PREVIOUS_CHECKOUT_STEP_URL,
-  STEPS,
-  TODO_SPARTACUS,
+    CHECKOUT_CONFIG_SERVICE,
+    CHECKOUT_STEP_SERVICE,
+    GET_CHECKOUT_STEP,
+    GET_CHECKOUT_STEP_ROUTE,
+    GET_CURRENT_STEP_INDEX,
+    GET_FIRST_CHECKOUT_STEP_ROUTE,
+    GET_NEXT_CHECKOUT_STEP_URL,
+    GET_PREVIOUS_CHECKOUT_STEP_URL,
+    STEPS,
+    TODO_SPARTACUS,
 } from '../../../../shared/constants';
 import { SPARTACUS_STOREFRONTLIB } from '../../../../shared/libs-constants';
 import { MethodPropertyDeprecation } from '../../../../shared/utils/file-utils';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,18 +8,18 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 
 import {
-  ConverterService,
-  LoggerService,
-  OccEndpointsService,
-  normalizeHttpError,
+    ConverterService,
+    LoggerService,
+    OccEndpointsService,
+    normalizeHttpError,
 } from '@spartacus/core';
 
 import {
-  FUTURE_STOCK_LIST_NORMALIZER,
-  FUTURE_STOCK_NORMALIZER,
-  FutureStockAdapter,
-  ProductFutureStock,
-  ProductFutureStockList,
+    FUTURE_STOCK_LIST_NORMALIZER,
+    FUTURE_STOCK_NORMALIZER,
+    FutureStockAdapter,
+    ProductFutureStock,
+    ProductFutureStockList,
 } from '@spartacus/product/future-stock/core';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';

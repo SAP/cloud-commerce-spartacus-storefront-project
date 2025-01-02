@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  InvoiceQueryParams,
-  OrderInvoiceList,
+    InvoiceQueryParams,
+    OrderInvoiceList,
 } from '@spartacus/pdf-invoices/root';
 import { Observable } from 'rxjs';
 import { PDFInvoicesAdapter } from './pdf-invoices.adapter';

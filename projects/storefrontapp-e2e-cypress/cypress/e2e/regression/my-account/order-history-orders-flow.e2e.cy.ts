@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  clickOnPrimaryDialogButton,
-  verifyProductIsDisplayed,
+    clickOnPrimaryDialogButton,
+    verifyProductIsDisplayed,
 } from '../../../helpers/b2b/b2b-saved-cart';
 import {
-  clickOnActionLink,
-  doPlaceOrder,
-  interceptAddToCartEndpoint,
-  interceptCartPageEndpoint,
-  orderHistoryTest,
-  verifyActionLinkHasText,
-  waitForResponse,
+    clickOnActionLink,
+    doPlaceOrder,
+    interceptAddToCartEndpoint,
+    interceptCartPageEndpoint,
+    orderHistoryTest,
+    verifyActionLinkHasText,
+    waitForResponse,
 } from '../../../helpers/order-history';
 import { viewportContext } from '../../../helpers/viewport-context';
 import { product } from '../../../sample-data/checkout-flow';

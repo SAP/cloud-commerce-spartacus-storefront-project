@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,9 +9,9 @@ import { NgModule } from '@angular/core';
 import { ConfigModule } from '@spartacus/core';
 import { ConfiguratorTextfieldAdapter } from '../core/connectors/configurator-textfield.adapter';
 import {
-  CONFIGURATION_TEXTFIELD_ADD_TO_CART_SERIALIZER,
-  CONFIGURATION_TEXTFIELD_NORMALIZER,
-  CONFIGURATION_TEXTFIELD_UPDATE_CART_ENTRY_SERIALIZER,
+    CONFIGURATION_TEXTFIELD_ADD_TO_CART_SERIALIZER,
+    CONFIGURATION_TEXTFIELD_NORMALIZER,
+    CONFIGURATION_TEXTFIELD_UPDATE_CART_ENTRY_SERIALIZER,
 } from '../core/connectors/converters';
 import { OccConfiguratorTextfieldAddToCartSerializer } from './converters/occ-configurator-textfield-add-to-cart-serializer';
 import { OccConfiguratorTextfieldNormalizer } from './converters/occ-configurator-textfield-normalizer';

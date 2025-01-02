@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { waitForPage } from '../../../../helpers/checkout-flow';
 import { navigation } from '../../../../helpers/navigation';
 import {
-  cdsHelper,
-  strategyRequestAlias,
+    cdsHelper,
+    strategyRequestAlias,
 } from '../../../../helpers/vendor/cds/cds';
 import * as merchandisingCarousel from '../../../../helpers/vendor/cds/merchandising-carousel';
 import { profileTagHelper } from '../../../../helpers/vendor/cds/profile-tag';

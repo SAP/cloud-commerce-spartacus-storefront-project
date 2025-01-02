@@ -1,22 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  loginUser,
-  goToCheapProductDetailsPage,
-  addCheapProductToCartAndBeginCheckoutForSignedInCustomer,
-  signOut,
+    addCheapProductToCartAndBeginCheckoutForSignedInCustomer,
+    goToCheapProductDetailsPage,
+    loginUser,
+    signOut,
 } from '../../../helpers/checkout-flow';
 import {
-  my_user,
-  orderConfirmation,
-  checkoutShippingAddress,
-  checkoutDeliveryMode,
-  checkoutPaymentDetails,
-  reviewAndPlaceOrder,
+    checkoutDeliveryMode,
+    checkoutPaymentDetails,
+    checkoutShippingAddress,
+    my_user,
+    orderConfirmation,
+    reviewAndPlaceOrder,
 } from '../../../helpers/vendor/digital-payments/user';
 
 describe('checkout using digital-payments', () => {

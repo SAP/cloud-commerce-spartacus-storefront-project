@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  Component,
-  ViewChild,
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    Component,
+    ViewChild,
 } from '@angular/core';
 import { VisualViewerComponent } from '../../visual-viewer/visual-viewer.component';
 import { VisualViewerService } from '../../visual-viewer/visual-viewer.service';

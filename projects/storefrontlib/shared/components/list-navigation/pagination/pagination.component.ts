@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  Optional,
-  Output,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    EventEmitter,
+    Input,
+    Optional,
+    Output,
+    inject,
 } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { PaginationModel, TranslationService } from '@spartacus/core';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,9 +7,9 @@
 import { inject } from '@angular/core';
 import { AuthGuard, CmsConfig, FeatureToggles } from '@spartacus/core';
 import {
-  AdminGuard,
-  OrgUnitGuard,
-  UserGuard,
+    AdminGuard,
+    OrgUnitGuard,
+    UserGuard,
 } from '@spartacus/organization/administration/core';
 import { ROUTE_PARAMS } from '@spartacus/organization/administration/root';
 import { BREAKPOINT, TableConfig, TableLayout } from '@spartacus/storefront';
@@ -36,8 +36,8 @@ import { UnitChildCreateComponent } from './links/children/create/unit-child-cre
 import { UnitChildrenComponent } from './links/children/unit-children.component';
 import { UnitCostCenterListComponent } from './links/cost-centers/unit-cost-centers.component';
 import {
-  UnitCostCenterCreateComponent,
-  UnitUserCreateComponent,
+    UnitCostCenterCreateComponent,
+    UnitUserCreateComponent,
 } from './links/index';
 import { UnitUserRolesCellComponent } from './links/users/list/unit-user-link-cell.component';
 import { UnitUserListComponent } from './links/users/list/unit-user-list.component';

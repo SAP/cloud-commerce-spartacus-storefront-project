@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  interceptOrdersEndpoint,
-  waitForResponse,
+    interceptOrdersEndpoint,
+    waitForResponse,
 } from '../../../helpers/order-history';
 import * as pdfInvoicesHelper from '../../../helpers/vendor/pdf-invoices/pdf-invoices';
 import * as s4Helper from '../../../helpers/vendor/s4om/s4om';
 import {
-  ORDER_REQUEST_ENDPOINT,
-  POWERTOOLS_BASESITE,
-  USER_REQUEST_ENDPOINT,
+    ORDER_REQUEST_ENDPOINT,
+    POWERTOOLS_BASESITE,
+    USER_REQUEST_ENDPOINT,
 } from '../../../sample-data/b2b-checkout';
 import { isolateTestsBefore } from '../../../support/utils/test-isolation';
 

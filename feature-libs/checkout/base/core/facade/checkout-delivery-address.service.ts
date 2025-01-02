@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,21 +7,21 @@
 import { Injectable } from '@angular/core';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import {
-  CheckoutDeliveryAddressClearedEvent,
-  CheckoutDeliveryAddressCreatedEvent,
-  CheckoutDeliveryAddressFacade,
-  CheckoutDeliveryAddressSetEvent,
-  CheckoutQueryFacade,
+    CheckoutDeliveryAddressClearedEvent,
+    CheckoutDeliveryAddressCreatedEvent,
+    CheckoutDeliveryAddressFacade,
+    CheckoutDeliveryAddressSetEvent,
+    CheckoutQueryFacade,
 } from '@spartacus/checkout/base/root';
 import {
-  Address,
-  Command,
-  CommandService,
-  CommandStrategy,
-  EventService,
-  OCC_USER_ID_ANONYMOUS,
-  QueryState,
-  UserIdService,
+    Address,
+    Command,
+    CommandService,
+    CommandStrategy,
+    EventService,
+    OCC_USER_ID_ANONYMOUS,
+    QueryState,
+    UserIdService,
 } from '@spartacus/core';
 import { combineLatest, Observable } from 'rxjs';
 import { map, switchMap, take, tap } from 'rxjs/operators';

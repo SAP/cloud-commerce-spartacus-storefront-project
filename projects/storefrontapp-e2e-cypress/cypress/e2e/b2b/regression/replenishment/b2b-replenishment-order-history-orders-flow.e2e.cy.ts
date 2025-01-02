@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,9 +7,9 @@
 import { loginB2bUser } from '../../../../helpers/b2b/b2b-checkout';
 import * as replenishmentHistory from '../../../../helpers/b2b/b2b-replenishment-order-history';
 import {
-  ORDER_REQUEST_ENDPOINT,
-  POWERTOOLS_BASESITE,
-  USER_REQUEST_ENDPOINT,
+    ORDER_REQUEST_ENDPOINT,
+    POWERTOOLS_BASESITE,
+    USER_REQUEST_ENDPOINT,
 } from '../../../../sample-data/b2b-checkout';
 import { isolateTests } from '../../../../support/utils/test-isolation';
 

@@ -1,67 +1,67 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Path } from '@angular-devkit/core';
 import {
-  chain,
-  noop,
-  Rule,
-  SchematicContext,
-  SchematicsException,
-  Tree,
+    chain,
+    noop,
+    Rule,
+    SchematicContext,
+    SchematicsException,
+    Tree,
 } from '@angular-devkit/schematics';
 import { NodeDependency } from '@schematics/angular/utility/dependencies';
 import { WorkspaceProject } from '@schematics/angular/utility/workspace-models';
 import { SourceFile } from 'ts-morph';
 import {
-  ANGULAR_HTTP,
-  APP_ROUTING_MODULE,
-  APP_ROUTING_MODULE_LOCAL_FILENAME,
-  APP_ROUTING_MODULE_LOCAL_PATH,
-  RXJS,
+    ANGULAR_HTTP,
+    APP_ROUTING_MODULE,
+    APP_ROUTING_MODULE_LOCAL_FILENAME,
+    APP_ROUTING_MODULE_LOCAL_PATH,
+    RXJS,
 } from '../shared/constants';
 import { SPARTACUS_STOREFRONTLIB } from '../shared/libs-constants';
 import {
-  analyzeCrossFeatureDependencies,
-  analyzeCrossLibraryDependenciesByFeatures,
+    analyzeCrossFeatureDependencies,
+    analyzeCrossLibraryDependenciesByFeatures,
 } from '../shared/utils/dependency-utils';
 import { addFeatures, analyzeApplication } from '../shared/utils/feature-utils';
 import { getIndexHtmlPath } from '../shared/utils/file-utils';
 import { appendHtmlElementToHead } from '../shared/utils/html-utils';
 import {
-  addPackageJsonDependencies,
-  finalizeInstallation,
-  installPackageJsonDependencies,
+    addPackageJsonDependencies,
+    finalizeInstallation,
+    installPackageJsonDependencies,
 } from '../shared/utils/lib-utils';
 import {
-  addModuleImport,
-  addModuleProvider,
-  removeModuleImport,
+    addModuleImport,
+    addModuleProvider,
+    removeModuleImport,
 } from '../shared/utils/new-module-utils';
 import {
-  getPrefixedSpartacusSchematicsVersion,
-  getSpartacusCurrentFeatureLevel,
-  mapPackageToNodeDependencies,
-  prepare3rdPartyDependencies,
-  prepareSpartacusDependencies,
-  readPackageJson,
-  updatePackageJsonDependencies,
+    getPrefixedSpartacusSchematicsVersion,
+    getSpartacusCurrentFeatureLevel,
+    mapPackageToNodeDependencies,
+    prepare3rdPartyDependencies,
+    prepareSpartacusDependencies,
+    readPackageJson,
+    updatePackageJsonDependencies,
 } from '../shared/utils/package-utils';
 import { createProgram, saveAndFormat } from '../shared/utils/program';
 import { getProjectTsConfigPaths } from '../shared/utils/project-tsconfig-paths';
 import {
-  getRelativeStyleConfigImportPath,
-  getStylesConfigFilePath,
+    getRelativeStyleConfigImportPath,
+    getStylesConfigFilePath,
 } from '../shared/utils/styling-utils';
 import {
-  getDefaultProjectNameFromWorkspace,
-  getProjectFromWorkspace,
-  getProjectTargets,
-  getWorkspace,
-  scaffoldStructure,
+    getDefaultProjectNameFromWorkspace,
+    getProjectFromWorkspace,
+    getProjectTargets,
+    getWorkspace,
+    scaffoldStructure,
 } from '../shared/utils/workspace-utils';
 import { addSpartacusConfiguration } from './configuration';
 import { Schema as SpartacusOptions } from './schema';

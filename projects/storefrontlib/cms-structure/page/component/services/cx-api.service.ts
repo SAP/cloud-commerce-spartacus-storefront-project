@@ -1,32 +1,32 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, NgZone, Optional } from '@angular/core';
 import {
-  AuthService,
-  BaseSiteService,
-  CmsService,
-  CurrencyService,
-  FeatureConfigService,
-  GlobalMessageService,
-  LanguageService,
-  OccEndpointsService,
-  PageMetaService,
-  ProductReferenceService,
-  ProductReviewService,
-  ProductSearchService,
-  ProductService,
-  RoutingService,
-  SearchboxService,
-  TranslationService,
-  UserAddressService,
-  UserConsentService,
-  UserInterestsService,
-  UserNotificationPreferenceService,
-  UserPaymentService,
+    AuthService,
+    BaseSiteService,
+    CmsService,
+    CurrencyService,
+    FeatureConfigService,
+    GlobalMessageService,
+    LanguageService,
+    OccEndpointsService,
+    PageMetaService,
+    ProductReferenceService,
+    ProductReviewService,
+    ProductSearchService,
+    ProductService,
+    RoutingService,
+    SearchboxService,
+    TranslationService,
+    UserAddressService,
+    UserConsentService,
+    UserInterestsService,
+    UserNotificationPreferenceService,
+    UserPaymentService,
 } from '@spartacus/core';
 import { CmsComponentData } from '../../model';
 

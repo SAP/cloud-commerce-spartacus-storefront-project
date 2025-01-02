@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,9 +8,9 @@ import { NgModule } from '@angular/core';
 import { CART_BASE_FEATURE } from '@spartacus/cart/base/root';
 import { provideDefaultConfigFactory } from '@spartacus/core';
 import {
-  ADD_TO_WISHLIST_FEATURE,
-  CART_WISH_LIST_CORE_FEATURE,
-  CART_WISH_LIST_FEATURE,
+    ADD_TO_WISHLIST_FEATURE,
+    CART_WISH_LIST_CORE_FEATURE,
+    CART_WISH_LIST_FEATURE,
 } from './feature-name';
 
 export function defaultCartWishListComponentsConfig() {

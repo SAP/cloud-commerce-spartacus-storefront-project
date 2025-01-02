@@ -1,22 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import * as b2bCheckout from '../../../helpers/b2b/b2b-checkout';
 import {
-  interceptOrdersEndpoint,
-  waitForResponse,
+    interceptOrdersEndpoint,
+    waitForResponse,
 } from '../../../helpers/order-history';
 import * as s4omHelper from '../../../helpers/vendor/s4om/s4om';
 import {
-  b2bAccountShipToUser,
-  ORDER_REQUEST_ENDPOINT,
-  order_type,
-  poNumber,
-  POWERTOOLS_BASESITE,
-  USER_REQUEST_ENDPOINT,
+    b2bAccountShipToUser,
+    ORDER_REQUEST_ENDPOINT,
+    order_type,
+    poNumber,
+    POWERTOOLS_BASESITE,
+    USER_REQUEST_ENDPOINT,
 } from '../../../sample-data/b2b-checkout';
 import { isolateTestsBefore } from '../../../support/utils/test-isolation';
 

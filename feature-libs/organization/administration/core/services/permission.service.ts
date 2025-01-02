@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,11 +7,11 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
-  EntitiesModel,
-  OrderApprovalPermissionType,
-  SearchConfig,
-  StateUtils,
-  UserIdService,
+    EntitiesModel,
+    OrderApprovalPermissionType,
+    SearchConfig,
+    StateUtils,
+    UserIdService,
 } from '@spartacus/core';
 import { Observable, queueScheduler, using } from 'rxjs';
 import { auditTime, filter, map, observeOn, tap } from 'rxjs/operators';
@@ -20,11 +20,11 @@ import { Permission } from '../model/permission.model';
 import { PermissionActions } from '../store/actions/index';
 import { StateWithOrganization } from '../store/organization-state';
 import {
-  getPermission,
-  getPermissionList,
-  getPermissionState,
-  getPermissionTypes,
-  getPermissionValue,
+    getPermission,
+    getPermissionList,
+    getPermissionState,
+    getPermissionTypes,
+    getPermissionValue,
 } from '../store/selectors/permission.selector';
 import { getItemStatus } from '../utils/get-item-status';
 

@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { CDS_CONFIG } from '../../constants';
 import {
-  CDS_FEATURE_NAME,
-  SPARTACUS_CDS,
-  SPARTACUS_CDS_ASSETS,
-  TRACKING_PERSONALIZATION_FEATURE_NAME,
+    CDS_FEATURE_NAME,
+    SPARTACUS_CDS,
+    SPARTACUS_CDS_ASSETS,
+    TRACKING_PERSONALIZATION_FEATURE_NAME,
 } from '../../libs-constants';
 import {
-  AdditionalFeatureConfiguration,
-  AdditionalProviders,
+    AdditionalFeatureConfiguration,
+    AdditionalProviders,
 } from '../../utils/feature-utils';
 import { LibraryOptions, SchematicConfig } from '../../utils/lib-utils';
 

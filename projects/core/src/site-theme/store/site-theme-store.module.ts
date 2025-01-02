@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,14 +8,14 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { provideDefaultConfigFactory } from '../../config/config-providers';
 import {
-  StateConfig,
-  StateTransferType,
+    StateConfig,
+    StateTransferType,
 } from '../../state/config/state-config';
 import { effects } from './effects/index';
 import { reducerProvider, reducerToken } from './reducers/index';
 import { SITE_THEME_FEATURE } from './state';
-import { provideDefaultConfigFactory } from '../../config/config-providers';
 
 export function siteThemeStoreConfigFactory(): StateConfig {
   const config: StateConfig = {

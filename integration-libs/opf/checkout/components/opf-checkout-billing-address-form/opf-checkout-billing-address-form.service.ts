@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,34 +7,34 @@
 import { Injectable, inject } from '@angular/core';
 import { ActiveCartFacade, Cart } from '@spartacus/cart/base/root';
 import {
-  CheckoutBillingAddressFacade,
-  CheckoutDeliveryAddressFacade,
-  CheckoutPaymentFacade,
+    CheckoutBillingAddressFacade,
+    CheckoutDeliveryAddressFacade,
+    CheckoutPaymentFacade,
 } from '@spartacus/checkout/base/root';
 import {
-  Address,
-  Country,
-  GlobalMessageService,
-  GlobalMessageType,
-  HttpErrorModel,
-  UserPaymentService,
+    Address,
+    Country,
+    GlobalMessageService,
+    GlobalMessageType,
+    HttpErrorModel,
+    UserPaymentService,
 } from '@spartacus/core';
 import {
-  BehaviorSubject,
-  EMPTY,
-  Observable,
-  combineLatest,
-  throwError,
+    BehaviorSubject,
+    EMPTY,
+    Observable,
+    combineLatest,
+    throwError,
 } from 'rxjs';
 import {
-  catchError,
-  filter,
-  finalize,
-  map,
-  shareReplay,
-  switchMap,
-  take,
-  tap,
+    catchError,
+    filter,
+    finalize,
+    map,
+    shareReplay,
+    switchMap,
+    take,
+    tap,
 } from 'rxjs/operators';
 import { OpfCheckoutPaymentWrapperService } from '../opf-checkout-payment-wrapper';
 

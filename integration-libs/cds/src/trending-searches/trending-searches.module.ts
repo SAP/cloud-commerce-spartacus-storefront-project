@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {
-  OutletPosition,
-  provideOutlet,
-  SearchBoxModule,
-  SearchBoxOutlets,
-} from '@spartacus/storefront';
 import { I18nModule, UrlModule } from '@spartacus/core';
+import {
+    OutletPosition,
+    provideOutlet,
+    SearchBoxModule,
+    SearchBoxOutlets,
+} from '@spartacus/storefront';
 import { TrendingSearchesComponent } from './trending-searches.component';
 
 @NgModule({

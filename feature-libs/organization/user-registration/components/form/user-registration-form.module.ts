@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,17 +10,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import {
-  CmsConfig,
-  ConfigModule,
-  FeaturesConfigModule,
-  I18nModule,
-  NotAuthGuard,
-  UrlModule,
+    CmsConfig,
+    ConfigModule,
+    FeaturesConfigModule,
+    I18nModule,
+    NotAuthGuard,
+    UrlModule,
 } from '@spartacus/core';
 import {
-  FormErrorsModule,
-  NgSelectA11yModule,
-  SpinnerModule,
+    FormErrorsModule,
+    NgSelectA11yModule,
+    SpinnerModule,
 } from '@spartacus/storefront';
 import { UserRegistrationFormComponent } from './user-registration-form.component';
 import { UserRegistrationFormService } from './user-registration-form.service';

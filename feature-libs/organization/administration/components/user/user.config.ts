@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { inject } from '@angular/core';
 import { AuthGuard, CmsConfig, FeatureToggles } from '@spartacus/core';
 import {
-  AdminGuard,
-  UserGuard,
+    AdminGuard,
+    UserGuard,
 } from '@spartacus/organization/administration/core';
 import { ROUTE_PARAMS } from '@spartacus/organization/administration/root';
 import { TableConfig } from '@spartacus/storefront';

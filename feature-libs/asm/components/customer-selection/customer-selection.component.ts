@@ -1,39 +1,39 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  OnDestroy,
-  OnInit,
-  Output,
-  QueryList,
-  ViewChild,
-  ViewChildren,
-  inject,
+    Component,
+    ElementRef,
+    EventEmitter,
+    OnDestroy,
+    OnInit,
+    Output,
+    QueryList,
+    ViewChild,
+    ViewChildren,
+    inject,
 } from '@angular/core';
 import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
+    UntypedFormBuilder,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import { AsmService } from '@spartacus/asm/core';
 import {
-  AsmConfig,
-  AsmDeepLinkParameters,
-  CustomerSearchPage,
+    AsmConfig,
+    AsmDeepLinkParameters,
+    CustomerSearchPage,
 } from '@spartacus/asm/root';
 
 import { FeatureConfigService, User, useFeatureStyles } from '@spartacus/core';
 import {
-  DirectionMode,
-  DirectionService,
-  LAUNCH_CALLER,
-  LaunchDialogService,
+    DirectionMode,
+    DirectionService,
+    LAUNCH_CALLER,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';

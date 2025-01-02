@@ -1,31 +1,31 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Component,
-  ElementRef,
-  HostListener,
-  OnDestroy,
-  OnInit,
-  inject,
+    Component,
+    ElementRef,
+    HostListener,
+    inject,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
-import { useFeatureStyles, FeatureConfigService } from '@spartacus/core';
+import { FeatureConfigService, useFeatureStyles } from '@spartacus/core';
 import {
-  AugmentedPointOfService,
-  cartWithIdAndUserId,
-  IntendedPickupLocationFacade,
-  LocationSearchParams,
-  PickupLocationsSearchFacade,
-  PickupOptionFacade,
+    AugmentedPointOfService,
+    cartWithIdAndUserId,
+    IntendedPickupLocationFacade,
+    LocationSearchParams,
+    PickupLocationsSearchFacade,
+    PickupOptionFacade,
 } from '@spartacus/pickup-in-store/root';
 import {
-  FocusConfig,
-  ICON_TYPE,
-  LaunchDialogService,
+    FocusConfig,
+    ICON_TYPE,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 
 import { Observable, Subscription } from 'rxjs';

@@ -1,32 +1,32 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  Cart,
-  CartType,
-  MultiCartFacade,
-  OrderEntry,
-  SelectiveCartFacade,
+    Cart,
+    CartType,
+    MultiCartFacade,
+    OrderEntry,
+    SelectiveCartFacade,
 } from '@spartacus/cart/base/root';
 import {
-  BaseSiteService,
-  OCC_USER_ID_ANONYMOUS,
-  UserIdService,
+    BaseSiteService,
+    OCC_USER_ID_ANONYMOUS,
+    UserIdService,
 } from '@spartacus/core';
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { combineLatest, Observable } from 'rxjs';
 import {
-  distinctUntilChanged,
-  filter,
-  shareReplay,
-  switchMap,
-  take,
-  tap,
-  withLatestFrom,
+    distinctUntilChanged,
+    filter,
+    shareReplay,
+    switchMap,
+    take,
+    tap,
+    withLatestFrom,
 } from 'rxjs/operators';
 
 @Injectable()

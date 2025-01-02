@@ -1,27 +1,27 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  PageType,
-  ProductSearchService,
-  RoutingService,
-  ProductSearchPage,
+    PageType,
+    ProductSearchPage,
+    ProductSearchService,
+    RoutingService,
 } from '@spartacus/core';
-import { FacetService, FacetList } from '@spartacus/storefront';
+import { FacetList, FacetService } from '@spartacus/storefront';
 import { combineLatest, Observable, of } from 'rxjs';
 import {
-  distinctUntilChanged,
-  map,
-  startWith,
-  switchMap,
+    distinctUntilChanged,
+    map,
+    startWith,
+    switchMap,
 } from 'rxjs/operators';
 import {
-  ProfileTagEventService,
-  ProfileTagLifecycleService,
+    ProfileTagEventService,
+    ProfileTagLifecycleService,
 } from '../../profiletag';
 import { MerchandisingUserContext } from '../model';
 

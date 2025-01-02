@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -16,16 +16,16 @@ import { PaymentDetails } from '../../../model/payment.model';
 import { ProductInterestSearchResult } from '../../../model/product-interest.model';
 import { loaderReducer } from '../../../state/utils/loader/loader.reducer';
 import {
-  CUSTOMER_COUPONS,
-  NOTIFICATION_PREFERENCES,
-  PRODUCT_INTERESTS,
-  REGIONS,
-  RegionsState,
-  UserState,
-  USER_ADDRESSES,
-  USER_CONSENTS,
-  USER_COST_CENTERS,
-  USER_PAYMENT_METHODS,
+    CUSTOMER_COUPONS,
+    NOTIFICATION_PREFERENCES,
+    PRODUCT_INTERESTS,
+    REGIONS,
+    RegionsState,
+    USER_ADDRESSES,
+    USER_CONSENTS,
+    USER_COST_CENTERS,
+    USER_PAYMENT_METHODS,
+    UserState,
 } from '../user-state';
 import * as fromBillingCountriesReducer from './billing-countries.reducer';
 import * as fromCustomerCouponReducer from './customer-coupon.reducer';

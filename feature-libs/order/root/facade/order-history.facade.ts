@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
+import { Params } from '@angular/router';
 import { facadeFactory } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { ORDER_CORE_FEATURE } from '../feature-name';
 import { ConsignmentTracking } from '../model/consignment-tracking.model';
 import {
-  CancellationRequestEntryInputList,
-  Order,
-  OrderHistoryList,
+    CancellationRequestEntryInputList,
+    Order,
+    OrderHistoryList,
 } from '../model/order.model';
-import { Params } from '@angular/router';
 
 export function orderHistoryFacadeFactory() {
   return facadeFactory({

@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  CommonConfiguratorUtilsService,
-  ConfiguratorRouterExtractorService,
+    CommonConfiguratorUtilsService,
+    ConfiguratorRouterExtractorService,
 } from '@spartacus/product-configurator/common';
 import {
-  BREAKPOINT,
-  BreakpointService,
-  LayoutConfig,
-  PageLayoutHandler,
+    BREAKPOINT,
+    BreakpointService,
+    LayoutConfig,
+    PageLayoutHandler,
 } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { map, switchMap, take } from 'rxjs/operators';

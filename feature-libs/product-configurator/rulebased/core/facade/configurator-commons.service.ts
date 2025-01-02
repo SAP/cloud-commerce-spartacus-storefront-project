@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,8 +9,8 @@ import { Store, select } from '@ngrx/store';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import { LoggerService, StateUtils } from '@spartacus/core';
 import {
-  CommonConfigurator,
-  CommonConfiguratorUtilsService,
+    CommonConfigurator,
+    CommonConfiguratorUtilsService,
 } from '@spartacus/product-configurator/common';
 import { Observable } from 'rxjs';
 import { filter, map, switchMap, take, tap } from 'rxjs/operators';

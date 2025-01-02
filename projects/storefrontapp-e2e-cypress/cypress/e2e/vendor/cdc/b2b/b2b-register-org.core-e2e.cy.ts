@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  fillOrganizationUserRegistrationForm,
-  navigateToOrganizationUserRegisterPage,
-  verifyFormErrors,
-  verifyGlobalMessageAfterRegistration,
-  verifyTabbingOrder,
+    fillOrganizationUserRegistrationForm,
+    navigateToOrganizationUserRegisterPage,
+    verifyFormErrors,
+    verifyGlobalMessageAfterRegistration,
+    verifyTabbingOrder,
 } from '../../../../helpers/b2b/b2b-user-registration';
 import * as cdc from '../../../../helpers/vendor/cdc/cdc';
 import {
-  getSampleUser,
-  organisation,
-  user,
+    getSampleUser,
+    organisation,
+    user,
 } from '../../../../sample-data/checkout-flow';
 import { isolateTests } from '../../../../support/utils/test-isolation';
 

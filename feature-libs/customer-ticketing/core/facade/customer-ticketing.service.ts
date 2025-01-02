@@ -1,54 +1,54 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  Command,
-  CommandService,
-  CommandStrategy,
-  EventService,
-  HttpErrorModel,
-  Query,
-  QueryNotifier,
-  QueryService,
-  QueryState,
-  RoutingService,
-  UserIdService,
+    Command,
+    CommandService,
+    CommandStrategy,
+    EventService,
+    HttpErrorModel,
+    Query,
+    QueryNotifier,
+    QueryService,
+    QueryState,
+    RoutingService,
+    UserIdService,
 } from '@spartacus/core';
 import {
-  AssociatedObject,
-  Category,
-  CustomerTicketingFacade,
-  GetTicketAssociatedObjectsQueryReloadEvent,
-  GetTicketAssociatedObjectsQueryResetEvent,
-  GetTicketCategoryQueryReloadEvent,
-  GetTicketCategoryQueryResetEvent,
-  GetTicketQueryReloadEvent,
-  GetTicketQueryResetEvent,
-  GetTicketsQueryReloadEvents,
-  GetTicketsQueryResetEvents,
-  NewMessageEvent,
-  STATUS,
-  TicketClosedEvent,
-  TicketCreatedEvent,
-  TicketDetails,
-  TicketEvent,
-  TicketList,
-  TicketReopenedEvent,
-  TicketStarter,
-  UploadAttachmentSuccessEvent,
+    AssociatedObject,
+    Category,
+    CustomerTicketingFacade,
+    GetTicketAssociatedObjectsQueryReloadEvent,
+    GetTicketAssociatedObjectsQueryResetEvent,
+    GetTicketCategoryQueryReloadEvent,
+    GetTicketCategoryQueryResetEvent,
+    GetTicketQueryReloadEvent,
+    GetTicketQueryResetEvent,
+    GetTicketsQueryReloadEvents,
+    GetTicketsQueryResetEvents,
+    NewMessageEvent,
+    STATUS,
+    TicketClosedEvent,
+    TicketCreatedEvent,
+    TicketDetails,
+    TicketEvent,
+    TicketList,
+    TicketReopenedEvent,
+    TicketStarter,
+    UploadAttachmentSuccessEvent,
 } from '@spartacus/customer-ticketing/root';
 import { combineLatest, Observable, of, throwError } from 'rxjs';
 import {
-  concatMap,
-  distinctUntilChanged,
-  map,
-  switchMap,
-  take,
-  tap,
+    concatMap,
+    distinctUntilChanged,
+    map,
+    switchMap,
+    take,
+    tap,
 } from 'rxjs/operators';
 import { CustomerTicketingConnector } from '../connectors/customer-ticketing.connector';
 

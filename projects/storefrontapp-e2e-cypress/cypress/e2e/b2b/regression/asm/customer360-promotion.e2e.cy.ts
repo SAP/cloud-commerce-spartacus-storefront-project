@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,8 +10,8 @@ import { ELECTRONICS_BASESITE } from '../../../../helpers/checkout-flow';
 import { POWERTOOLS_BASESITE } from '../../../../sample-data/b2b-checkout';
 import { clearAllStorage } from '../../../../support/utils/clear-all-storage';
 import {
-  interceptDelete,
-  interceptPost,
+    interceptDelete,
+    interceptPost,
 } from '../../../../support/utils/intercept';
 
 context('Assisted Service Module', () => {

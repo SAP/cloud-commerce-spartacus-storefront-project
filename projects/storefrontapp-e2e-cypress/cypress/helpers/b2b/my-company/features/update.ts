@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { MyCompanyConfig } from '../models/index';
 import {
-  ignoreCaseSensivity,
-  loginAsMyCompanyAdmin,
+    ignoreCaseSensivity,
+    loginAsMyCompanyAdmin,
 } from '../my-company.utils';
 import { completeForm, FormType, verifyDetails } from './utils/form';
 

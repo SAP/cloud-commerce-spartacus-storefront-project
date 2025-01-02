@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,11 +7,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
-  CmsConfig,
-  DeferLoadingStrategy,
-  FeaturesConfigModule,
-  I18nModule,
-  provideDefaultConfig,
+    CmsConfig,
+    DeferLoadingStrategy,
+    FeaturesConfigModule,
+    I18nModule,
+    provideDefaultConfig,
 } from '@spartacus/core';
 import { KeyboardFocusModule } from '../../layout/a11y/keyboard-focus/index';
 import { AnonymousConsentManagementBannerComponent } from './banner/anonymous-consent-management-banner.component';

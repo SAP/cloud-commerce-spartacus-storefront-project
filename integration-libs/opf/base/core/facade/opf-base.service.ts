@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,9 +7,9 @@
 import { Injectable, inject } from '@angular/core';
 import { CommandService, QueryService, QueryState } from '@spartacus/core';
 import {
-  OpfActiveConfigurationsQuery,
-  OpfActiveConfigurationsResponse,
-  OpfBaseFacade,
+    OpfActiveConfigurationsQuery,
+    OpfActiveConfigurationsResponse,
+    OpfBaseFacade,
 } from '@spartacus/opf/base/root';
 import { Observable } from 'rxjs';
 import { OpfBaseConnector } from '../connectors/opf-base.connector';

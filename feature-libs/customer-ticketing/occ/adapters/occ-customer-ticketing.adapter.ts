@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,30 +7,30 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  ConverterService,
-  LoggerService,
-  OccEndpointsService,
-  normalizeHttpError,
+    ConverterService,
+    LoggerService,
+    OccEndpointsService,
+    normalizeHttpError,
 } from '@spartacus/core';
 import {
-  CUSTOMER_TICKETING_ASSOCIATED_OBJECTS_NORMALIZER,
-  CUSTOMER_TICKETING_CATEGORY_NORMALIZER,
-  CUSTOMER_TICKETING_CREATE_NORMALIZER,
-  CUSTOMER_TICKETING_DETAILS_NORMALIZER,
-  CUSTOMER_TICKETING_EVENT_NORMALIZER,
-  CUSTOMER_TICKETING_FILE_NORMALIZER,
-  CUSTOMER_TICKETING_LIST_NORMALIZER,
-  CustomerTicketingAdapter,
+    CUSTOMER_TICKETING_ASSOCIATED_OBJECTS_NORMALIZER,
+    CUSTOMER_TICKETING_CATEGORY_NORMALIZER,
+    CUSTOMER_TICKETING_CREATE_NORMALIZER,
+    CUSTOMER_TICKETING_DETAILS_NORMALIZER,
+    CUSTOMER_TICKETING_EVENT_NORMALIZER,
+    CUSTOMER_TICKETING_FILE_NORMALIZER,
+    CUSTOMER_TICKETING_LIST_NORMALIZER,
+    CustomerTicketingAdapter,
 } from '@spartacus/customer-ticketing/core';
 import {
-  AssociatedObject,
-  AssociatedObjectsList,
-  CategoriesList,
-  Category,
-  TicketDetails,
-  TicketEvent,
-  TicketList,
-  TicketStarter,
+    AssociatedObject,
+    AssociatedObjectsList,
+    CategoriesList,
+    Category,
+    TicketDetails,
+    TicketEvent,
+    TicketList,
+    TicketStarter,
 } from '@spartacus/customer-ticketing/root';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';

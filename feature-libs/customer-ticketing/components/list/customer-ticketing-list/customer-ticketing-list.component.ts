@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,11 +7,11 @@
 import { Component } from '@angular/core';
 import { RoutingService, TranslationService } from '@spartacus/core';
 import {
-  CustomerTicketingConfig,
-  CustomerTicketingFacade,
-  STATUS,
-  TEXT_COLOR_CLASS,
-  TicketList,
+    CustomerTicketingConfig,
+    CustomerTicketingFacade,
+    STATUS,
+    TEXT_COLOR_CLASS,
+    TicketList,
 } from '@spartacus/customer-ticketing/root';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { combineLatest, Observable } from 'rxjs';

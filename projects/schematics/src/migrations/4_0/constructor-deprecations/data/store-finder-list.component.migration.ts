@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ANGULAR_COMMON,
-  ANY_TYPE,
-  DOCUMENT,
-  DOCUMENT_STRING,
-  STORE_DATA_SERVICE,
-  STORE_FINDER_LIST_COMPONENT,
-  STORE_FINDER_SERVICE,
+    ANGULAR_COMMON,
+    ANY_TYPE,
+    DOCUMENT,
+    DOCUMENT_STRING,
+    STORE_DATA_SERVICE,
+    STORE_FINDER_LIST_COMPONENT,
+    STORE_FINDER_SERVICE,
 } from '../../../../shared/constants';
 import { SPARTACUS_STOREFINDER } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';

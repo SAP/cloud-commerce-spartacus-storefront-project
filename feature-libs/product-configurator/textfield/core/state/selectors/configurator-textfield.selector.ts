@@ -1,19 +1,19 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  createFeatureSelector,
-  createSelector,
-  MemoizedSelector,
+    createFeatureSelector,
+    createSelector,
+    MemoizedSelector,
 } from '@ngrx/store';
 import { ConfiguratorTextfield } from '../../model/configurator-textfield.model';
 import {
-  ConfigurationTextfieldState,
-  CONFIGURATION_TEXTFIELD_FEATURE,
-  StateWithConfigurationTextfield,
+    CONFIGURATION_TEXTFIELD_FEATURE,
+    ConfigurationTextfieldState,
+    StateWithConfigurationTextfield,
 } from '../configuration-textfield-state';
 
 const getConfigurationContentSelector = (state: ConfigurationTextfieldState) =>

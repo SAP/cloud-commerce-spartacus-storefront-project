@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,18 +8,18 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import {
-  CheckoutPaymentMethodComponent as CorePaymentMethodComponent,
-  CheckoutStepService,
+    CheckoutStepService,
+    CheckoutPaymentMethodComponent as CorePaymentMethodComponent,
 } from '@spartacus/checkout/base/components';
 import {
-  CheckoutDeliveryAddressService,
-  CheckoutPaymentService,
+    CheckoutDeliveryAddressService,
+    CheckoutPaymentService,
 } from '@spartacus/checkout/base/core';
 import {
-  GlobalMessageService,
-  PaymentDetails,
-  TranslationService,
-  UserPaymentService,
+    GlobalMessageService,
+    PaymentDetails,
+    TranslationService,
+    UserPaymentService,
 } from '@spartacus/core';
 import { DP_CARD_REGISTRATION_STATUS } from '../../../utils/dp-constants';
 

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,27 +8,27 @@ import { inject, Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { StateUtils, UserIdService } from '@spartacus/core';
 import {
-  Consignment,
-  ConsignmentTracking,
-  ConsignmentView,
-  Order,
-  OrderHistory,
-  OrderHistoryList,
-  OrderHistoryListView,
-  OrderHistoryView,
-  OrderView,
-  ReturnRequestList,
+    Consignment,
+    ConsignmentTracking,
+    ConsignmentView,
+    Order,
+    OrderHistory,
+    OrderHistoryList,
+    OrderHistoryListView,
+    OrderHistoryView,
+    OrderView,
+    ReturnRequestList,
 } from '@spartacus/order/root';
-import { Observable, of, using, combineLatest } from 'rxjs';
+import { combineLatest, Observable, of, using } from 'rxjs';
 import { auditTime, filter, map, switchMap, tap } from 'rxjs/operators';
 import { OrderActions } from '../store';
 import {
-  getOrderById,
-  getOrderByIdEntity,
+    getOrderById,
+    getOrderByIdEntity,
 } from '../store/selectors/order-by-id.selector';
 import {
-  getConsignmentTrackingById,
-  getConsignmentTrackingByIdEntity,
+    getConsignmentTrackingById,
+    getConsignmentTrackingByIdEntity,
 } from '../store/selectors/order-group.selectors';
 import { OrderHistoryService } from './order-history.service';
 import { OrderReturnRequestService } from './order-return-request.service';

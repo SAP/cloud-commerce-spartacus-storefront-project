@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  CMS_FLEX_COMPONENT_TYPE,
-  JSP_INCLUDE_CMS_COMPONENT_TYPE,
+    CMS_FLEX_COMPONENT_TYPE,
+    JSP_INCLUDE_CMS_COMPONENT_TYPE,
 } from '../../../../cms/config/cms-config';
 import { ContentSlotComponentData } from '../../../../cms/model/content-slot-component-data.model';
 import { ContentSlotData } from '../../../../cms/model/content-slot-data.model';
 import {
-  CmsStructureModel,
-  Page,
-  PageRobotsMeta,
+    CmsStructureModel,
+    Page,
+    PageRobotsMeta,
 } from '../../../../cms/model/page.model';
 import { Converter } from '../../../../util/converter.service';
 import { Occ } from '../../../occ-models/occ.models';

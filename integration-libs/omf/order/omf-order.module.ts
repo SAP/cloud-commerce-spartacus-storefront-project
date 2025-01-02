@@ -1,16 +1,16 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { NgModule } from '@angular/core';
-import { OrderHistoryAdapter } from '@spartacus/order/core';
-import { OccOmfOrderHistoryAdapter } from './occ-omf-order-history.adapter';
-import { OrderHistoryFacade } from '@spartacus/order/root';
-import { OmfOrderHistoryService } from './omf-order-history.service';
 import { provideDefaultConfig } from '@spartacus/core';
+import { OrderHistoryAdapter } from '@spartacus/order/core';
+import { OrderHistoryFacade } from '@spartacus/order/root';
 import { defaultOmfConfig } from './config/default-omf-config';
+import { OccOmfOrderHistoryAdapter } from './occ-omf-order-history.adapter';
+import { OmfOrderHistoryService } from './omf-order-history.service';
 
 @NgModule({
   providers: [

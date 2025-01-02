@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,13 +8,13 @@ import { inject, Injectable } from '@angular/core';
 import { ObjectComparisonUtils } from '@spartacus/core';
 import { ConfiguratorRouterExtractorService } from '@spartacus/product-configurator/common';
 import {
-  EMPTY,
-  filter,
-  Observable,
-  of,
-  shareReplay,
-  switchMap,
-  tap,
+    EMPTY,
+    filter,
+    Observable,
+    of,
+    shareReplay,
+    switchMap,
+    tap,
 } from 'rxjs';
 import { ConfiguratorCommonsService } from '../../../core/facade/configurator-commons.service';
 import { Configurator } from '../../../core/model/configurator.model';

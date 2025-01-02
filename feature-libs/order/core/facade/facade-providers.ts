@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Provider } from '@angular/core';
 import {
-  OrderFacade,
-  OrderHistoryFacade,
-  OrderReturnRequestFacade,
-  ReorderOrderFacade,
-  ReplenishmentOrderHistoryFacade,
-  ScheduledReplenishmentOrderFacade,
+    OrderFacade,
+    OrderHistoryFacade,
+    OrderReturnRequestFacade,
+    ReorderOrderFacade,
+    ReplenishmentOrderHistoryFacade,
+    ScheduledReplenishmentOrderFacade,
 } from '@spartacus/order/root';
 import { MyAccountV2OrderHistoryService } from './my-account-v2-order-history.service';
 import { OrderHistoryService } from './order-history.service';

@@ -1,45 +1,45 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
+    inject,
 } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
 import { ActiveCartFacade, MultiCartFacade } from '@spartacus/cart/base/root';
 import {
-  GlobalMessageService,
-  GlobalMessageType,
-  RoutingService,
+    GlobalMessageService,
+    GlobalMessageType,
+    RoutingService,
 } from '@spartacus/core';
 import { Order, OrderHistoryFacade } from '@spartacus/order/root';
 import {
-  CommonConfigurator,
-  CommonConfiguratorUtilsService,
-  ConfiguratorModelUtils,
-  ConfiguratorRouter,
-  ConfiguratorRouterExtractorService,
+    CommonConfigurator,
+    CommonConfiguratorUtilsService,
+    ConfiguratorModelUtils,
+    ConfiguratorRouter,
+    ConfiguratorRouterExtractorService,
 } from '@spartacus/product-configurator/common';
 import {
-  ICON_TYPE,
-  IntersectionOptions,
-  IntersectionService,
-  KeyboardFocusService,
+    ICON_TYPE,
+    IntersectionOptions,
+    IntersectionService,
+    KeyboardFocusService,
 } from '@spartacus/storefront';
 import { Observable, Subscription, of } from 'rxjs';
 import {
-  delay,
-  distinctUntilChanged,
-  filter,
-  map,
-  switchMap,
-  take,
+    delay,
+    distinctUntilChanged,
+    filter,
+    map,
+    switchMap,
+    take,
 } from 'rxjs/operators';
 import { ConfiguratorCartService } from '../../core/facade/configurator-cart.service';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';

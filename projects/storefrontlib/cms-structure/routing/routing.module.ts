@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import {
-  RoutingModule as CoreRoutingModule,
-  ProtectedRoutesGuard,
-  provideDefaultConfig,
+    RoutingModule as CoreRoutingModule,
+    ProtectedRoutesGuard,
+    provideDefaultConfig,
 } from '@spartacus/core';
 import { BEFORE_CMS_PAGE_GUARD } from '../guards/before-cms-page-guard.token';
 import { CmsRouteModule } from './cms-route/cms-route.module';

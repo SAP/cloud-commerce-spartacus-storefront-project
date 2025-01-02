@@ -1,40 +1,40 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  HostListener,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    HostListener,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import {
-  ActiveCartFacade,
-  Cart,
-  CartAddEntryFailEvent,
-  CartAddEntrySuccessEvent,
-  OrderEntry,
-  PromotionLocation,
+    ActiveCartFacade,
+    Cart,
+    CartAddEntryFailEvent,
+    CartAddEntrySuccessEvent,
+    OrderEntry,
+    PromotionLocation,
 } from '@spartacus/cart/base/root';
 import { RoutingService, useFeatureStyles } from '@spartacus/core';
 import {
-  FocusConfig,
-  ICON_TYPE,
-  LaunchDialogService,
+    FocusConfig,
+    ICON_TYPE,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { Observable, Subscription, of } from 'rxjs';
 import {
-  filter,
-  map,
-  shareReplay,
-  startWith,
-  switchMap,
-  tap,
+    filter,
+    map,
+    shareReplay,
+    startWith,
+    switchMap,
+    tap,
 } from 'rxjs/operators';
 
 export interface AddedToCartDialogComponentData {

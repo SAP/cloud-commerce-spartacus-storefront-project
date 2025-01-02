@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  formatCurrency,
-  getCurrencySymbol,
-  getLocaleId,
+    formatCurrency,
+    getCurrencySymbol,
+    getLocaleId,
 } from '@angular/common';
 import { Injectable, inject, isDevMode } from '@angular/core';
 import { LanguageService, LoggerService } from '@spartacus/core';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,9 +12,9 @@ import { ActivatedRoutesService } from '../../../routing/services/activated-rout
 import { BreadcrumbMeta } from '../../model/page.model';
 import { DefaultRoutePageMetaResolver } from './default-route-page-meta.resolver';
 import {
-  ActivatedRouteSnapshotWithPageMeta,
-  RouteBreadcrumbResolver,
-  RoutePageMetaConfig,
+    ActivatedRouteSnapshotWithPageMeta,
+    RouteBreadcrumbResolver,
+    RoutePageMetaConfig,
 } from './route-page-meta.model';
 
 // PRIVATE

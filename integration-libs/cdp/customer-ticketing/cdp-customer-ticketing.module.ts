@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { NgModule } from '@angular/core';
 import {
-  CustomerTicketingCloseComponentService,
-  CustomerTicketingMessagesComponentService,
-  CustomerTicketingReopenComponentService,
+    CustomerTicketingCloseComponentService,
+    CustomerTicketingMessagesComponentService,
+    CustomerTicketingReopenComponentService,
 } from '@spartacus/customer-ticketing/components';
 import { CdpCustomerTicketingCloseComponentService } from './cdp-customer-ticketing-close-component.service';
-import { CdpCustomerTicketingReopenComponentService } from './cdp-customer-ticketing-reopen-component.service';
 import { CdpCustomerTicketingMessagesComponentService } from './cdp-customer-ticketing-messages-component.service';
+import { CdpCustomerTicketingReopenComponentService } from './cdp-customer-ticketing-reopen-component.service';
 
 @NgModule({
   imports: [],

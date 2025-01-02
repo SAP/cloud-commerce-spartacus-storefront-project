@@ -1,47 +1,47 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  chain,
-  noop,
-  Rule,
-  SchematicContext,
-  SchematicsException,
-  Tree,
+    chain,
+    noop,
+    Rule,
+    SchematicContext,
+    SchematicsException,
+    Tree,
 } from '@angular-devkit/schematics';
 import {
-  getDecoratorMetadata,
-  getMetadataField,
-  isImported,
+    getDecoratorMetadata,
+    getMetadataField,
+    isImported,
 } from '@schematics/angular/utility/ast-utils';
 import { Change, RemoveChange } from '@schematics/angular/utility/change';
 import {
-  NodeDependency,
-  NodeDependencyType,
+    NodeDependency,
+    NodeDependencyType,
 } from '@schematics/angular/utility/dependencies';
 import { getAppModulePath } from '@schematics/angular/utility/ng-ast-utils';
 import ts from 'typescript';
 import {
-  addPackageJsonDependencies,
-  ANGULAR_CORE,
-  commitChanges,
-  getDefaultProjectNameFromWorkspace,
-  getSpartacusSchematicsVersion,
-  getTsSourceFile,
-  installPackageJsonDependencies,
-  readPackageJson,
-  removeImport,
-  SPARTACUS_STOREFINDER,
-  SPARTACUS_STOREFRONTLIB,
-  STOREFINDER_MODULE,
-  STOREFRONT_MODULE,
+    addPackageJsonDependencies,
+    ANGULAR_CORE,
+    commitChanges,
+    getDefaultProjectNameFromWorkspace,
+    getSpartacusSchematicsVersion,
+    getTsSourceFile,
+    installPackageJsonDependencies,
+    readPackageJson,
+    removeImport,
+    SPARTACUS_STOREFINDER,
+    SPARTACUS_STOREFRONTLIB,
+    STOREFINDER_MODULE,
+    STOREFRONT_MODULE,
 } from '../../../shared/index';
 import {
-  getAngularJsonFile,
-  validateSpartacusInstallation,
+    getAngularJsonFile,
+    validateSpartacusInstallation,
 } from '../../../shared/utils/workspace-utils';
 
 export function migrate(): Rule {

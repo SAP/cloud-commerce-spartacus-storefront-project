@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -13,9 +13,9 @@ import { LoggerService } from '../../../logger/logger.service';
 import { SiteContextActions } from '../../../site-context/store/actions/index';
 import { bufferDebounceTime } from '../../../util/rxjs/buffer-debounce-time';
 import { withdrawOn } from '../../../util/rxjs/withdraw-on';
+import { tryNormalizeHttpError } from '../../../util/try-normalize-http-error';
 import { ProductSearchConnector } from '../../connectors/search/product-search.connector';
 import { ProductActions } from '../actions/index';
-import { tryNormalizeHttpError } from '../../../util/try-normalize-http-error';
 
 @Injectable()
 export class ProductSearchByCategoryEffects {

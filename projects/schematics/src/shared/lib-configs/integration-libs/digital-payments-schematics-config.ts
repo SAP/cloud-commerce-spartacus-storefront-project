@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CHECKOUT_BASE_FEATURE_NAME,
-  DIGITAL_PAYMENTS_FEATURE_NAME,
-  SPARTACUS_DIGITAL_PAYMENTS,
-  SPARTACUS_DIGITAL_PAYMENTS_ASSETS,
+    CHECKOUT_BASE_FEATURE_NAME,
+    DIGITAL_PAYMENTS_FEATURE_NAME,
+    SPARTACUS_DIGITAL_PAYMENTS,
+    SPARTACUS_DIGITAL_PAYMENTS_ASSETS,
 } from '../../libs-constants';
 import { SchematicConfig } from '../../utils/lib-utils';
 import { CHECKOUT_BASE_MODULE } from '../checkout-schematics-config';

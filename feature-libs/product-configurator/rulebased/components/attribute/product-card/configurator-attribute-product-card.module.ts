@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,9 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { I18nModule, UrlModule } from '@spartacus/core';
 import {
-  IconModule,
-  KeyboardFocusModule,
-  MediaModule,
+    IconModule,
+    KeyboardFocusModule,
+    MediaModule,
 } from '@spartacus/storefront';
 import { ConfiguratorPriceModule } from '../../price/configurator-price.module';
 import { ConfiguratorShowMoreModule } from '../../show-more/configurator-show-more.module';

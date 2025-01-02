@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,12 +7,12 @@
 import { Injectable } from '@angular/core';
 import { CartModification } from '@spartacus/cart/base/root';
 import {
-  CommonConfigurator,
-  ConfiguratorType,
+    CommonConfigurator,
+    ConfiguratorType,
 } from '@spartacus/product-configurator/common';
 import {
-  Configurator,
-  RulebasedConfiguratorAdapter,
+    Configurator,
+    RulebasedConfiguratorAdapter,
 } from '@spartacus/product-configurator/rulebased';
 import { Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';

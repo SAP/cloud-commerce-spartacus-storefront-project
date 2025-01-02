@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 import { filter, map, pairwise } from 'rxjs/operators';
 import { EventService } from '../../event/event.service';
 import {
-  Breadcrumb,
-  ProductSearchPage,
+    Breadcrumb,
+    ProductSearchPage,
 } from '../../model/product-search.model';
 import { createFrom } from '../../util/create-from';
 import { ProductSearchService } from '../facade/product-search.service';

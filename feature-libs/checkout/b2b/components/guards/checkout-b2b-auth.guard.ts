@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,17 +8,17 @@ import { Injectable } from '@angular/core';
 import { Router, UrlTree } from '@angular/router';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import {
-  CheckoutAuthGuard,
-  CheckoutConfigService,
+    CheckoutAuthGuard,
+    CheckoutConfigService,
 } from '@spartacus/checkout/base/components';
 import {
-  AuthRedirectService,
-  AuthService,
-  B2BUser,
-  B2BUserRole,
-  GlobalMessageService,
-  GlobalMessageType,
-  SemanticPathService,
+    AuthRedirectService,
+    AuthService,
+    B2BUser,
+    B2BUserRole,
+    GlobalMessageService,
+    GlobalMessageType,
+    SemanticPathService,
 } from '@spartacus/core';
 import { User, UserAccountFacade } from '@spartacus/user/account/root';
 import { combineLatest, Observable } from 'rxjs';

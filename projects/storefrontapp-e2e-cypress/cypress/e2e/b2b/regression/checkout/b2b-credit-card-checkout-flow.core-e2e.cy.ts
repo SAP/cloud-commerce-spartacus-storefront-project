@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,10 +7,10 @@
 import * as b2bCheckout from '../../../../helpers/b2b/b2b-checkout';
 import * as checkout from '../../../../helpers/checkout-flow';
 import {
-  cartWithB2bProduct,
-  order_type,
-  POWERTOOLS_BASESITE,
-  products,
+    cartWithB2bProduct,
+    order_type,
+    POWERTOOLS_BASESITE,
+    products,
 } from '../../../../sample-data/b2b-checkout';
 import { user } from '../../../../sample-data/checkout-flow';
 

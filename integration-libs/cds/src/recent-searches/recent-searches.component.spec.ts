@@ -1,24 +1,24 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  *
  */
 
+import { CUSTOM_ELEMENTS_SCHEMA, Pipe, PipeTransform } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { I18nTestingModule } from '@spartacus/core';
 import {
-  RecentSearchesComponent,
-  SearchBoxOutlet,
-} from './recent-searches.component';
-import { RecentSearchesService } from './recent-searches.service';
-import {
-  OutletContextData,
-  SearchBoxComponentService,
+    OutletContextData,
+    SearchBoxComponentService,
 } from '@spartacus/storefront';
 import { BehaviorSubject, of } from 'rxjs';
-import { I18nTestingModule } from '@spartacus/core';
-import { CUSTOM_ELEMENTS_SCHEMA, Pipe, PipeTransform } from '@angular/core';
-import { RouterTestingModule } from '@angular/router/testing';
+import {
+    RecentSearchesComponent,
+    SearchBoxOutlet,
+} from './recent-searches.component';
+import { RecentSearchesService } from './recent-searches.service';
 
 @Pipe({
   name: 'cxHighlight',

@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable } from '@angular/core';
 import {
-  Facet,
-  ProductSearchPage,
+    Facet,
+    ProductSearchPage,
 } from '../../../../model/product-search.model';
 import { PRODUCT_NORMALIZER } from '../../../../product/connectors/product/converters';
 import {
-  Converter,
-  ConverterService,
+    Converter,
+    ConverterService,
 } from '../../../../util/converter.service';
 import { Occ } from '../../../occ-models/occ.models';
 

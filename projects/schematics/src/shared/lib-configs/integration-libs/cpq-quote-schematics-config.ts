@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CART_BASE_FEATURE_NAME,
-  CPQ_QUOTE_FEATURE_NAME,
-  SPARTACUS_CPQ_QUOTE,
-  SPARTACUS_CPQ_QUOTE_ASSETS,
-  SPARTACUS_CPQ_QUOTE_ROOT,
+    CART_BASE_FEATURE_NAME,
+    CPQ_QUOTE_FEATURE_NAME,
+    SPARTACUS_CPQ_QUOTE,
+    SPARTACUS_CPQ_QUOTE_ASSETS,
+    SPARTACUS_CPQ_QUOTE_ROOT,
 } from '../../libs-constants';
 import { SchematicConfig } from '../../utils/lib-utils';
 import { CART_BASE_MODULE } from '../cart-schematics-config';

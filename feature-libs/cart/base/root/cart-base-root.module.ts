@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
-  provideDefaultConfig,
-  provideDefaultConfigFactory,
+    provideDefaultConfig,
+    provideDefaultConfigFactory,
 } from '@spartacus/core';
 import { CmsPageGuard, PageLayoutComponent } from '@spartacus/storefront';
 import { defaultCartConfig } from './config/default-cart-config';
@@ -16,10 +16,10 @@ import { defaultCartRoutingConfig } from './config/default-cart-routing-config';
 import { ORDER_ENTRIES_CONTEXT } from './context/order-entires.context';
 import { CartBaseEventModule } from './events/cart-base-event.module';
 import {
-  ADD_TO_CART_FEATURE,
-  CART_BASE_CORE_FEATURE,
-  CART_BASE_FEATURE,
-  MINI_CART_FEATURE,
+    ADD_TO_CART_FEATURE,
+    CART_BASE_CORE_FEATURE,
+    CART_BASE_FEATURE,
+    MINI_CART_FEATURE,
 } from './feature-name';
 import { ActiveCartOrderEntriesContextToken } from './tokens/context';
 

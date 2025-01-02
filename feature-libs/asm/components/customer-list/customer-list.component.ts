@@ -1,38 +1,38 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Component,
-  ElementRef,
-  OnDestroy,
-  OnInit,
-  ViewChild,
+    Component,
+    ElementRef,
+    OnDestroy,
+    OnInit,
+    ViewChild,
 } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
 import {
-  AsmConfig,
-  AsmCustomerListFacade,
-  CustomerListColumnActionType,
-  CustomerListsPage,
-  CustomerSearchOptions,
-  CustomerSearchPage,
+    AsmConfig,
+    AsmCustomerListFacade,
+    CustomerListColumnActionType,
+    CustomerListsPage,
+    CustomerSearchOptions,
+    CustomerSearchPage,
 } from '@spartacus/asm/root';
 import {
-  SortModel,
-  TranslationService,
-  User,
-  OccConfig,
+    OccConfig,
+    SortModel,
+    TranslationService,
+    User,
 } from '@spartacus/core';
 import {
-  BREAKPOINT,
-  BreakpointService,
-  FocusConfig,
-  ICON_TYPE,
-  LaunchDialogService,
-  LAUNCH_CALLER,
+    BREAKPOINT,
+    BreakpointService,
+    FocusConfig,
+    ICON_TYPE,
+    LAUNCH_CALLER,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { combineLatest, NEVER, Observable, Subscription } from 'rxjs';
 import { distinctUntilChanged, map, tap } from 'rxjs/operators';

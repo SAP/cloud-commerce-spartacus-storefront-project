@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,8 +9,8 @@ import { tabbingOrderConfig as tabConfig } from '../../helpers/accessibility/tab
 import { clickAllowAllFromBanner } from '../../helpers/anonymous-consents';
 import * as configuration from '../../helpers/product-configurator';
 import * as configurationOverview from '../../helpers/product-configurator-overview';
-import * as configurationVc from '../../helpers/product-configurator-vc';
 import * as configuratorOverviewVc from '../../helpers/product-configurator-overview-vc';
+import * as configurationVc from '../../helpers/product-configurator-vc';
 /**
  * This suite is marked as flaky due to performance (synchronization) issues on
  * https://spartacus-devci767.eastus.cloudapp.azure.com:9002 that we analyze in

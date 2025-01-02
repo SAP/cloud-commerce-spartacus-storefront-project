@@ -1,31 +1,31 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Address,
-  B2BApprovalProcess,
-  B2BUnit,
-  ErrorAction,
-  ListModel,
-  SearchConfig,
-  StateUtils,
+    Address,
+    B2BApprovalProcess,
+    B2BUnit,
+    ErrorAction,
+    ListModel,
+    SearchConfig,
+    StateUtils,
 } from '@spartacus/core';
 import { B2BUnitNode } from '../../model/unit-node.model';
 import {
-  ADDRESS_ENTITIES,
-  ADDRESS_LIST,
-  B2B_USER_ENTITIES,
-  ORG_UNIT_APPROVAL_PROCESSES,
-  ORG_UNIT_APPROVAL_PROCESSES_ENTITIES,
-  ORG_UNIT_ASSIGNED_USERS,
-  ORG_UNIT_ENTITIES,
-  ORG_UNIT_NODES,
-  ORG_UNIT_NODE_LIST,
-  ORG_UNIT_TREE,
-  ORG_UNIT_TREE_ENTITY,
+    ADDRESS_ENTITIES,
+    ADDRESS_LIST,
+    B2B_USER_ENTITIES,
+    ORG_UNIT_APPROVAL_PROCESSES,
+    ORG_UNIT_APPROVAL_PROCESSES_ENTITIES,
+    ORG_UNIT_ASSIGNED_USERS,
+    ORG_UNIT_ENTITIES,
+    ORG_UNIT_NODES,
+    ORG_UNIT_NODE_LIST,
+    ORG_UNIT_TREE,
+    ORG_UNIT_TREE_ENTITY,
 } from '../organization-state';
 
 export const LOAD_ORG_UNIT = '[B2BUnit] Load B2BUnit Data';

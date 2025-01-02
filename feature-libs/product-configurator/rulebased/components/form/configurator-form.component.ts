@@ -1,34 +1,34 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-  inject,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
+    inject,
 } from '@angular/core';
 import { GlobalMessageService, GlobalMessageType } from '@spartacus/core';
 import {
-  ConfiguratorRouter,
-  ConfiguratorRouterExtractorService,
+    ConfiguratorRouter,
+    ConfiguratorRouterExtractorService,
 } from '@spartacus/product-configurator/common';
 import {
-  LAUNCH_CALLER,
-  LaunchDialogService,
-  KeyboardFocusService,
+    KeyboardFocusService,
+    LAUNCH_CALLER,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import {
-  delay,
-  distinctUntilChanged,
-  filter,
-  skip,
-  switchMap,
-  take,
+    delay,
+    distinctUntilChanged,
+    filter,
+    skip,
+    switchMap,
+    take,
 } from 'rxjs/operators';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
 import { ConfiguratorGroupsService } from '../../core/facade/configurator-groups.service';

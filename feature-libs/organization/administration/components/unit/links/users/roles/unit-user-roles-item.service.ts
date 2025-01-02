@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,9 +8,9 @@ import { Injectable } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
 import { B2BUser, RoutingService } from '@spartacus/core';
 import {
-  B2BUserService,
-  OrganizationItemStatus,
-  OrgUnitService,
+    B2BUserService,
+    OrganizationItemStatus,
+    OrgUnitService,
 } from '@spartacus/organization/administration/core';
 import { Observable } from 'rxjs';
 import { ItemService } from '../../../../shared/item.service';

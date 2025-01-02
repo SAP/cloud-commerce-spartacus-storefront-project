@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import * as b2bQuote from '../../../../helpers/b2b/b2b-quote';
-import * as cpqQuoteDownload from '../../../../helpers/vendor/cpq/cpq-quote-download';
 import * as cpqQuoteDiscount from '../../../../helpers/vendor/cpq/cpq-quote-discount';
+import * as cpqQuoteDownload from '../../../../helpers/vendor/cpq/cpq-quote-download';
 
 const BUYER_EMAIL = 'james.weber@harvestlive.inc';
 const BUYER_PASSWORD = 'welcome';

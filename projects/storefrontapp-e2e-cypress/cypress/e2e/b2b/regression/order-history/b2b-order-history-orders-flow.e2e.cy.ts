@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,22 +8,22 @@ import * as b2bCheckout from '../../../../helpers/b2b/b2b-checkout';
 import { loginB2bUser } from '../../../../helpers/b2b/b2b-checkout';
 import * as cart from '../../../../helpers/cart';
 import {
-  goToOrderDetails,
-  interceptCartFromOrderEndpoint,
-  interceptOrdersEndpoint,
-  saveOrderDetails,
-  waitForResponse,
+    goToOrderDetails,
+    interceptCartFromOrderEndpoint,
+    interceptOrdersEndpoint,
+    saveOrderDetails,
+    waitForResponse,
 } from '../../../../helpers/order-history';
 import {
-  b2bAccountShipToUser,
-  b2bProduct,
-  cartWithB2bProductAndPremiumShipping,
-  costCenter,
-  ORDER_REQUEST_ENDPOINT,
-  order_type,
-  poNumber,
-  POWERTOOLS_BASESITE,
-  USER_REQUEST_ENDPOINT,
+    b2bAccountShipToUser,
+    b2bProduct,
+    cartWithB2bProductAndPremiumShipping,
+    costCenter,
+    ORDER_REQUEST_ENDPOINT,
+    order_type,
+    poNumber,
+    POWERTOOLS_BASESITE,
+    USER_REQUEST_ENDPOINT,
 } from '../../../../sample-data/b2b-checkout';
 import { isolateTests } from '../../../../support/utils/test-isolation';
 

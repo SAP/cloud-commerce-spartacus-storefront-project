@@ -1,32 +1,32 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ComponentFactory,
-  ComponentRef,
-  Directive,
-  EmbeddedViewRef,
-  EventEmitter,
-  Injector,
-  Input,
-  OnChanges,
-  OnDestroy,
-  Output,
-  SimpleChanges,
-  TemplateRef,
-  ViewContainerRef,
+    ComponentFactory,
+    ComponentRef,
+    Directive,
+    EmbeddedViewRef,
+    EventEmitter,
+    Injector,
+    Input,
+    OnChanges,
+    OnDestroy,
+    Output,
+    SimpleChanges,
+    TemplateRef,
+    ViewContainerRef,
 } from '@angular/core';
 import { ReplaySubject, Subscription } from 'rxjs';
 import { DeferLoaderService } from '../../layout/loading/defer-loader.service';
 import { IntersectionOptions } from '../../layout/loading/intersection.model';
 import { OutletRendererService } from './outlet-renderer.service';
 import {
-  OutletContextData,
-  OutletPosition,
-  USE_STACKED_OUTLETS,
+    OutletContextData,
+    OutletPosition,
+    USE_STACKED_OUTLETS,
 } from './outlet.model';
 import { OutletService } from './outlet.service';
 

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,23 +7,23 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { MergeCartSuccessEvent } from '@spartacus/cart/base/root';
 import {
-  RestoreSavedCartSuccessEvent,
-  SaveCartSuccessEvent,
+    RestoreSavedCartSuccessEvent,
+    SaveCartSuccessEvent,
 } from '@spartacus/cart/saved-cart/root';
 import {
-  CheckoutDeliveryAddressClearedEvent,
-  CheckoutDeliveryAddressSetEvent,
-  CheckoutDeliveryModeClearedEvent,
-  CheckoutDeliveryModeSetEvent,
-  CheckoutPaymentDetailsCreatedEvent,
-  CheckoutPaymentDetailsSetEvent,
+    CheckoutDeliveryAddressClearedEvent,
+    CheckoutDeliveryAddressSetEvent,
+    CheckoutDeliveryModeClearedEvent,
+    CheckoutDeliveryModeSetEvent,
+    CheckoutPaymentDetailsCreatedEvent,
+    CheckoutPaymentDetailsSetEvent,
 } from '@spartacus/checkout/base/root';
 import { EventService, LoginEvent, LogoutEvent } from '@spartacus/core';
 import {
-  DaysOfWeek,
-  ORDER_TYPE,
-  recurrencePeriod,
-  ScheduleReplenishmentForm,
+    DaysOfWeek,
+    ORDER_TYPE,
+    recurrencePeriod,
+    ScheduleReplenishmentForm,
 } from '@spartacus/order/root';
 import { BehaviorSubject, merge, Observable, Subscription } from 'rxjs';
 

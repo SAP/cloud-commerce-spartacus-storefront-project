@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CART_EVENT_BUILDER,
-  REGISTER_DELETE_CART,
-  REGISTER_DELETE_SAVED_CART_EVENTS,
-  SAVED_CART_EVENT_BUILDER,
-  TODO_SPARTACUS,
+    CART_EVENT_BUILDER,
+    REGISTER_DELETE_CART,
+    REGISTER_DELETE_SAVED_CART_EVENTS,
+    SAVED_CART_EVENT_BUILDER,
+    TODO_SPARTACUS,
 } from '../../../../shared/constants';
 import { SPARTACUS_CART_SAVED_CART_CORE } from '../../../../shared/libs-constants';
 import { MethodPropertyDeprecation } from '../../../../shared/utils/file-utils';

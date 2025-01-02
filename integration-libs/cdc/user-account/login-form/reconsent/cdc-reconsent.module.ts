@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,11 +8,11 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { I18nModule, provideDefaultConfig } from '@spartacus/core';
 import {
-  BtnLikeLinkModule,
-  ConsentManagementModule,
-  IconModule,
-  KeyboardFocusModule,
-  SpinnerModule,
+    BtnLikeLinkModule,
+    ConsentManagementModule,
+    IconModule,
+    KeyboardFocusModule,
+    SpinnerModule,
 } from '@spartacus/storefront';
 import { CdcReconsentDialogEventListener } from './cdc-reconsent-dialogue-event.listener';
 import { CdcReconsentComponent } from './cdc-reconsent.component';

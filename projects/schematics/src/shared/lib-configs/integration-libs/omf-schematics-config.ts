@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  OMF_FEATURE_NAME,
-  ORDER_FEATURE_NAME,
-  SPARTACUS_OMF,
-  SPARTACUS_OMF_ORDER,
-  SPARTACUS_OMF_ROOT,
+    OMF_FEATURE_NAME,
+    ORDER_FEATURE_NAME,
+    SPARTACUS_OMF,
+    SPARTACUS_OMF_ORDER,
+    SPARTACUS_OMF_ROOT,
 } from '../../libs-constants';
 import { SchematicConfig } from '../../utils/lib-utils';
 import { ORDER_MODULE } from '../order-schematics-config';

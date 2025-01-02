@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,10 +7,10 @@
 import { Injectable } from '@angular/core';
 import { EntitiesModel, PaginationModel, Translatable } from '@spartacus/core';
 import {
-  ResponsiveTableConfiguration,
-  TableLayout,
-  TableService,
-  TableStructure,
+    ResponsiveTableConfiguration,
+    TableLayout,
+    TableService,
+    TableStructure,
 } from '@spartacus/storefront';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';

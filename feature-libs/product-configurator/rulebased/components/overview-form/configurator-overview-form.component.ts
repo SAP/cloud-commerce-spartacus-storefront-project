@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,10 +8,10 @@ import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
 import { ConfiguratorRouterExtractorService } from '@spartacus/product-configurator/common';
 import { Observable } from 'rxjs';
 import {
-  distinctUntilKeyChanged,
-  filter,
-  switchMap,
-  tap,
+    distinctUntilKeyChanged,
+    filter,
+    switchMap,
+    tap,
 } from 'rxjs/operators';
 
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';

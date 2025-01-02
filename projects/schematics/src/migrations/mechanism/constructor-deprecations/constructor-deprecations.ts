@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,15 +7,15 @@
 import { SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getSourceNodes } from '@schematics/angular/utility/ast-utils';
 import {
-  addConstructorParam,
-  commitChanges,
-  ConstructorDeprecation,
-  findConstructor,
-  getAllTsSourceFiles,
-  getTsSourceFile,
-  InsertDirection,
-  isCandidateForConstructorDeprecation,
-  removeConstructorParam,
+    addConstructorParam,
+    commitChanges,
+    ConstructorDeprecation,
+    findConstructor,
+    getAllTsSourceFiles,
+    getTsSourceFile,
+    InsertDirection,
+    isCandidateForConstructorDeprecation,
+    removeConstructorParam,
 } from '../../../shared/utils/file-utils';
 import { getSourceRoot } from '../../../shared/utils/workspace-utils';
 

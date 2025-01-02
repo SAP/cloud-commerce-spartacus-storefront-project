@@ -1,81 +1,81 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { dasherize } from '@angular-devkit/core/src/utils/strings';
 import {
-  chain,
-  ExecutionOptions,
-  noop,
-  Rule,
-  SchematicContext,
-  SchematicsException,
-  TaskId,
-  Tree,
+    chain,
+    ExecutionOptions,
+    noop,
+    Rule,
+    SchematicContext,
+    SchematicsException,
+    TaskId,
+    Tree,
 } from '@angular-devkit/schematics';
 import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
 import {
-  addPackageJsonDependency,
-  NodeDependency,
-  NodeDependencyType,
+    addPackageJsonDependency,
+    NodeDependency,
+    NodeDependencyType,
 } from '@schematics/angular/utility/dependencies';
 import { SourceFile } from 'ts-morph';
 import {
-  CMS_CONFIG,
-  I18N_CONFIG,
-  PROVIDE_CONFIG_FUNCTION,
-  UTF_8,
+    CMS_CONFIG,
+    I18N_CONFIG,
+    PROVIDE_CONFIG_FUNCTION,
+    UTF_8,
 } from '../constants';
 import {
-  SPARTACUS_CONFIGURATION_MODULE,
-  SPARTACUS_CORE,
-  SPARTACUS_FEATURES_MODULE,
-  SPARTACUS_FEATURES_NG_MODULE,
-  SPARTACUS_SETUP,
+    SPARTACUS_CONFIGURATION_MODULE,
+    SPARTACUS_CORE,
+    SPARTACUS_FEATURES_MODULE,
+    SPARTACUS_FEATURES_NG_MODULE,
+    SPARTACUS_SETUP,
 } from '../libs-constants';
 import { getB2bConfiguration } from './config-utils';
 import {
-  AdditionalFeatureConfiguration,
-  AdditionalProviders,
-  findFeatureModule,
-  getSpartacusFeaturesModule,
+    AdditionalFeatureConfiguration,
+    AdditionalProviders,
+    findFeatureModule,
+    getSpartacusFeaturesModule,
 } from './feature-utils';
 import {
-  crossFeatureInstallationOrder,
-  crossLibraryInstallationOrder,
+    crossFeatureInstallationOrder,
+    crossLibraryInstallationOrder,
 } from './graph-utils';
 import { createImports } from './import-utils';
 import {
-  debugLogRule,
-  formatFeatureComplete,
-  formatFeatureStart,
+    debugLogRule,
+    formatFeatureComplete,
+    formatFeatureStart,
 } from './logger-utils';
 import {
-  addModuleImport,
-  addModuleProvider,
-  ensureModuleExists,
-  Import,
+    addModuleImport,
+    addModuleProvider,
+    ensureModuleExists,
+    Import,
 } from './new-module-utils';
 import {
-  createDependencies,
-  createSpartacusDependencies,
-  getPrefixedSpartacusSchematicsVersion,
-  readPackageJson,
+    createDependencies,
+    createSpartacusDependencies,
+    getPrefixedSpartacusSchematicsVersion,
+    readPackageJson,
 } from './package-utils';
 import { createProgram, saveAndFormat } from './program';
 import { getProjectTsConfigPaths } from './project-tsconfig-paths';
 import {
-  getRelativeStyleConfigImportPath,
-  getStylesConfigFilePath,
+    getRelativeStyleConfigImportPath,
+    getStylesConfigFilePath,
 } from './styling-utils';
 import {
-  getDefaultProjectNameFromWorkspace,
-  getProject,
-  getSourceRoot,
-  getWorkspace,
-  scaffoldStructure,
+    getDefaultProjectNameFromWorkspace,
+    getProject,
+    getSourceRoot,
+    getWorkspace,
+    scaffoldStructure,
 } from './workspace-utils';
 
 export interface LibraryOptions extends Partial<ExecutionOptions> {

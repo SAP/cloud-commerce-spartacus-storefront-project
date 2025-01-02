@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,8 +11,8 @@ import { map } from 'rxjs/operators';
 import { BreakpointService } from '../../../layout/breakpoint/breakpoint.service';
 import { BREAKPOINT } from '../../../layout/config/layout-config';
 import {
-  ResponsiveTableConfiguration,
-  TableConfig,
+    ResponsiveTableConfiguration,
+    TableConfig,
 } from './config/table.config';
 import { TableStructure, TableStructureConfiguration } from './table.model';
 

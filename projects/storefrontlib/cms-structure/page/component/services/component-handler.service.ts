@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ComponentRef,
-  ElementRef,
-  inject,
-  Inject,
-  Injectable,
-  Injector,
-  isDevMode,
-  NgModuleRef,
-  Optional,
-  ViewContainerRef,
+    ComponentRef,
+    ElementRef,
+    inject,
+    Inject,
+    Injectable,
+    Injector,
+    isDevMode,
+    NgModuleRef,
+    Optional,
+    ViewContainerRef,
 } from '@angular/core';
 import {
-  CmsComponentMapping,
-  LoggerService,
-  resolveApplicable,
+    CmsComponentMapping,
+    LoggerService,
+    resolveApplicable,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { ComponentHandler } from '../handlers/component-handler';

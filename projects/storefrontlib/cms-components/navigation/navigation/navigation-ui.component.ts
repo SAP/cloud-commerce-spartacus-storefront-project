@@ -1,31 +1,31 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  EventEmitter,
-  HostBinding,
-  HostListener,
-  inject,
-  Input,
-  OnDestroy,
-  OnInit,
-  Optional,
-  Renderer2,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    EventEmitter,
+    HostBinding,
+    HostListener,
+    inject,
+    Input,
+    OnDestroy,
+    OnInit,
+    Optional,
+    Renderer2,
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { FeatureConfigService, WindowRef } from '@spartacus/core';
 import { Subject, Subscription } from 'rxjs';
 import {
-  debounceTime,
-  distinctUntilChanged,
-  filter,
-  take,
+    debounceTime,
+    distinctUntilChanged,
+    filter,
+    take,
 } from 'rxjs/operators';
 import { BREAKPOINT, BreakpointService } from '../../../layout';
 import { ICON_TYPE } from '../../misc/icon/index';

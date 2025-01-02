@@ -1,6 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2022 SAP Spartacus team <spartacus-team@sap.com>
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,8 +8,8 @@
 import { NgModule } from '@angular/core';
 import { CmsConfig, provideDefaultConfigFactory } from '@spartacus/core';
 import {
-  PDF_INVOICES_CORE_FEATURE,
-  PDF_INVOICES_FEATURE,
+    PDF_INVOICES_CORE_FEATURE,
+    PDF_INVOICES_FEATURE,
 } from './feature-name';
 
 export function defaultRequestedDeliveryDateComponentsConfig(): CmsConfig {

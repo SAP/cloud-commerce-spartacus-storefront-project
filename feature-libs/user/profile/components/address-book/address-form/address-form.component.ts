@@ -1,41 +1,41 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-  ViewChild,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Input,
+    OnDestroy,
+    OnInit,
+    Output,
+    ViewChild,
 } from '@angular/core';
 import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
+    UntypedFormBuilder,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import {
-  Address,
-  AddressValidation,
-  Country,
-  ErrorModel,
-  GlobalMessageService,
-  GlobalMessageType,
-  Region,
-  Title,
-  TranslationService,
-  UserAddressService,
+    Address,
+    AddressValidation,
+    Country,
+    ErrorModel,
+    GlobalMessageService,
+    GlobalMessageType,
+    Region,
+    Title,
+    TranslationService,
+    UserAddressService,
 } from '@spartacus/core';
 import {
-  LAUNCH_CALLER,
-  LaunchDialogService,
-  sortTitles,
+    LAUNCH_CALLER,
+    LaunchDialogService,
+    sortTitles,
 } from '@spartacus/storefront';
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { BehaviorSubject, Observable, Subscription, combineLatest } from 'rxjs';

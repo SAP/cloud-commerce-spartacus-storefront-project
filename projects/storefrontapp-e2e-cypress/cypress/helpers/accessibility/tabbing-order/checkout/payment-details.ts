@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { user } from '../../../../sample-data/checkout-flow';
 import { waitForPage } from '../../../checkout-flow';
 import {
-  fillBillingAddress,
-  fillPaymentDetails,
+    fillBillingAddress,
+    fillPaymentDetails,
 } from '../../../checkout-forms';
 import { checkoutNextStep, verifyTabbingOrder } from '../../tabbing-order';
 import { TabElement } from '../../tabbing-order.model';

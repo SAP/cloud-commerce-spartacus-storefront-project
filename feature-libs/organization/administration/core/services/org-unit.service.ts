@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,15 +7,15 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
-  Address,
-  B2BApprovalProcess,
-  B2BUnit,
-  B2BUser,
-  CostCenter,
-  EntitiesModel,
-  SearchConfig,
-  StateUtils,
-  UserIdService,
+    Address,
+    B2BApprovalProcess,
+    B2BUnit,
+    B2BUser,
+    CostCenter,
+    EntitiesModel,
+    SearchConfig,
+    StateUtils,
+    UserIdService,
 } from '@spartacus/core';
 import { Observable, queueScheduler, using } from 'rxjs';
 import { auditTime, filter, map, observeOn, tap } from 'rxjs/operators';
@@ -24,15 +24,15 @@ import { B2BUnitNode } from '../model/unit-node.model';
 import { OrgUnitActions } from '../store/actions/index';
 import { StateWithOrganization } from '../store/organization-state';
 import {
-  getApprovalProcesses,
-  getAssignedUsers,
-  getB2BAddress,
-  getB2BAddresses,
-  getOrgUnit,
-  getOrgUnitList,
-  getOrgUnitState,
-  getOrgUnitTree,
-  getOrgUnitValue,
+    getApprovalProcesses,
+    getAssignedUsers,
+    getB2BAddress,
+    getB2BAddresses,
+    getOrgUnit,
+    getOrgUnitList,
+    getOrgUnitState,
+    getOrgUnitTree,
+    getOrgUnitValue,
 } from '../store/selectors/org-unit.selector';
 import { getItemStatus } from '../utils/get-item-status';
 

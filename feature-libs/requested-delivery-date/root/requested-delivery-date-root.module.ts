@@ -1,6 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2022 SAP Spartacus team <spartacus-team@sap.com>
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,8 +12,8 @@ import { OutletPosition, provideOutlet } from '@spartacus/storefront';
 import { DeliveryModeDatePickerComponent } from './components/delivery-mode-date-picker/delivery-mode-date-picker.component';
 import { OrderOverviewDeliveryDateComponent } from './components/order-overview-delivery-date/order-overview-delivery-date.component';
 import {
-  REQUESTED_DELIVERY_DATE_CORE_FEATURE,
-  REQUESTED_DELIVERY_DATE_FEATURE,
+    REQUESTED_DELIVERY_DATE_CORE_FEATURE,
+    REQUESTED_DELIVERY_DATE_FEATURE,
 } from './feature-name';
 
 export function defaultRequestedDeliveryDateComponentsConfig(): CmsConfig {

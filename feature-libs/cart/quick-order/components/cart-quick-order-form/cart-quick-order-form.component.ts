@@ -1,33 +1,33 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    inject,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
+    UntypedFormBuilder,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import {
-  ActiveCartFacade,
-  Cart,
-  CartAddEntryFailEvent,
-  CartAddEntrySuccessEvent,
+    ActiveCartFacade,
+    Cart,
+    CartAddEntryFailEvent,
+    CartAddEntrySuccessEvent,
 } from '@spartacus/cart/base/root';
 import {
-  EventService,
-  FeatureConfigService,
-  GlobalMessageService,
-  GlobalMessageType,
-  useFeatureStyles,
+    EventService,
+    FeatureConfigService,
+    GlobalMessageService,
+    GlobalMessageType,
+    useFeatureStyles,
 } from '@spartacus/core';
 import { Observable, Subscription } from 'rxjs';
 import { first, map } from 'rxjs/operators';

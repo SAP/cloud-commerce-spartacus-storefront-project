@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,10 +7,10 @@
 import { HttpParams, HttpParamsOptions } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  BaseSiteService,
-  DynamicAttributes,
-  HttpParamsURIEncoder,
-  StringTemplate,
+    BaseSiteService,
+    DynamicAttributes,
+    HttpParamsURIEncoder,
+    StringTemplate,
 } from '@spartacus/core';
 
 import { OpfApiConfig, OpfConfig } from '@spartacus/opf/base/root';

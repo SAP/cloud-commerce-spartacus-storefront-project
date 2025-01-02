@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
+    ChangeDetectionStrategy,
+    Component,
+    EventEmitter,
+    Input,
+    OnInit,
+    Output,
 } from '@angular/core';
 import { Product, ProductService, TranslationService } from '@spartacus/core';
 import { ConfiguratorProductScope } from '@spartacus/product-configurator/common';
 import {
-  FocusConfig,
-  ICON_TYPE,
-  KeyboardFocusService,
+    FocusConfig,
+    ICON_TYPE,
+    KeyboardFocusService,
 } from '@spartacus/storefront';
 import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';

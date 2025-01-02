@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,20 +7,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
-  ConverterService,
-  EntitiesModel,
-  Occ,
-  OccEndpointsService,
-  SearchConfig,
-  OrderApprovalPermissionType,
+    ConverterService,
+    EntitiesModel,
+    Occ,
+    OccEndpointsService,
+    OrderApprovalPermissionType,
+    SearchConfig,
 } from '@spartacus/core';
 import {
-  Permission,
-  PermissionAdapter,
-  PERMISSIONS_NORMALIZER,
-  PERMISSION_NORMALIZER,
-  PERMISSION_TYPES_NORMALIZER,
-  PERMISSION_SERIALIZER,
+    Permission,
+    PERMISSION_NORMALIZER,
+    PERMISSION_SERIALIZER,
+    PERMISSION_TYPES_NORMALIZER,
+    PermissionAdapter,
+    PERMISSIONS_NORMALIZER,
 } from '@spartacus/organization/administration/core';
 import { Observable } from 'rxjs';
 

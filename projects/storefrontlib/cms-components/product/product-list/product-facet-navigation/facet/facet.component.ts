@@ -1,29 +1,29 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  HostBinding,
-  Input,
-  Optional,
-  QueryList,
-  ViewChild,
-  ViewChildren,
-  inject,
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    HostBinding,
+    Input,
+    Optional,
+    QueryList,
+    ViewChild,
+    ViewChildren,
+    inject,
 } from '@angular/core';
 import { Facet, FacetValue, FeatureConfigService } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { ICON_TYPE } from '../../../../../cms-components/misc/icon/icon.model';
 import {
-  FocusDirective,
-  disableTabbingForTick,
+    FocusDirective,
+    disableTabbingForTick,
 } from '../../../../../layout/a11y';
 import { FacetCollapseState } from '../facet.model';
 import { FacetService } from '../services/facet.service';

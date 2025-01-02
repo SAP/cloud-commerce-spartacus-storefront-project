@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,13 +7,13 @@
 import { NgModule } from '@angular/core';
 import { CmsConfig, I18nConfig, provideConfig } from '@spartacus/core';
 import {
-  orderTranslationChunksConfig,
-  orderTranslations,
+    orderTranslationChunksConfig,
+    orderTranslations,
 } from '@spartacus/order/assets';
 import {
-  USE_MY_ACCOUNT_V2_ORDER,
-  OrderRootModule,
-  ORDER_FEATURE,
+    ORDER_FEATURE,
+    OrderRootModule,
+    USE_MY_ACCOUNT_V2_ORDER,
 } from '@spartacus/order/root';
 import { environment } from '../../../../environments/environment';
 

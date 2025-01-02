@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
-  LoadStatus,
-  OrganizationItemStatus,
+    LoadStatus,
+    OrganizationItemStatus,
 } from '@spartacus/organization/administration/core';
 import {
-  OutletContextData,
-  TableDataOutletContext,
+    OutletContextData,
+    TableDataOutletContext,
 } from '@spartacus/storefront';
 import { EMPTY, Observable } from 'rxjs';
 import { filter, first, switchMap, take } from 'rxjs/operators';

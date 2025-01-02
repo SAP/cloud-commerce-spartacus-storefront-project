@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  LIST_VIEW_PAGE_SIZE,
-  MAX_INPUT_CHARACTERS,
-  MAX_INPUT_CHARACTERS_FOR_SUBJECT,
-  MAX_SIZE_FOR_ATTACHMENT,
+    LIST_VIEW_PAGE_SIZE,
+    MAX_INPUT_CHARACTERS,
+    MAX_INPUT_CHARACTERS_FOR_SUBJECT,
+    MAX_SIZE_FOR_ATTACHMENT,
 } from '../customer-ticketing-constants';
 import { CustomerTicketingConfig } from './customer-ticketing-config';
 

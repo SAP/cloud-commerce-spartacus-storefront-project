@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,8 +8,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { B2BUnit, useFeatureStyles } from '@spartacus/core';
 import { B2BUserService } from '@spartacus/organization/administration/core';
 import {
-  OutletContextData,
-  TableDataOutletContext,
+    OutletContextData,
+    TableDataOutletContext,
 } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { ItemService } from '../../../../shared/item.service';

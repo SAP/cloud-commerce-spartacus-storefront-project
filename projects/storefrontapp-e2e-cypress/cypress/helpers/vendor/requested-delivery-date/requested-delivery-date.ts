@@ -1,23 +1,23 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  b2bDeliveryAddress,
-  b2bDeliveryModeStub,
+    b2bDeliveryAddress,
+    b2bDeliveryModeStub,
 } from '../../../sample-data/b2b-checkout';
 import { interceptGet } from '../../../support/utils/intercept';
 import { tabbingOrderConfig } from '../../accessibility/b2b/tabbing-order.config';
 import { verifyTabbingOrder } from '../../accessibility/tabbing-order';
 import {
-  TabbingOrderConfig,
-  TabbingOrderTypes,
+    TabbingOrderConfig,
+    TabbingOrderTypes,
 } from '../../accessibility/tabbing-order.model';
 import {
-  interceptCheckoutB2BDetailsEndpoint,
-  interceptPutDeliveryModeEndpoint,
+    interceptCheckoutB2BDetailsEndpoint,
+    interceptPutDeliveryModeEndpoint,
 } from '../../b2b/b2b-checkout';
 import { waitForPage } from '../../checkout-flow';
 import * as alerts from '../../global-message';

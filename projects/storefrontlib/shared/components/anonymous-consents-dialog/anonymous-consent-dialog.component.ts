@@ -1,28 +1,28 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Component,
-  ElementRef,
-  HostBinding,
-  HostListener,
-  inject,
-  OnDestroy,
-  OnInit,
-  Optional,
+    Component,
+    ElementRef,
+    HostBinding,
+    HostListener,
+    inject,
+    OnDestroy,
+    OnInit,
+    Optional,
 } from '@angular/core';
 import {
-  AnonymousConsent,
-  AnonymousConsentsConfig,
-  AnonymousConsentsService,
-  ConsentTemplate,
-  FeatureConfigService,
-  GlobalMessageService,
-  GlobalMessageType,
-  useFeatureStyles,
+    AnonymousConsent,
+    AnonymousConsentsConfig,
+    AnonymousConsentsService,
+    ConsentTemplate,
+    FeatureConfigService,
+    GlobalMessageService,
+    GlobalMessageType,
+    useFeatureStyles,
 } from '@spartacus/core';
 import { combineLatest, Observable, Subject, Subscription } from 'rxjs';
 import { distinctUntilChanged, take, tap } from 'rxjs/operators';

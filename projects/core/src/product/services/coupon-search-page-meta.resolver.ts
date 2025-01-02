@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,9 +11,9 @@ import { filter, map, switchMap } from 'rxjs/operators';
 import { AuthService } from '../../auth/user-auth/facade/auth.service';
 import { BreadcrumbMeta, Page } from '../../cms/model/page.model';
 import {
-  PageBreadcrumbResolver,
-  PageMetaResolver,
-  PageTitleResolver,
+    PageBreadcrumbResolver,
+    PageMetaResolver,
+    PageTitleResolver,
 } from '../../cms/page';
 import { TranslationService } from '../../i18n/translation.service';
 import { PageType } from '../../model/cms.model';

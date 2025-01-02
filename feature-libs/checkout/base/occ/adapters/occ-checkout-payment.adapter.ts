@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,22 +7,22 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
-  CheckoutPaymentAdapter,
-  PAYMENT_CARD_TYPE_NORMALIZER,
-  PAYMENT_DETAILS_SERIALIZER,
+    CheckoutPaymentAdapter,
+    PAYMENT_CARD_TYPE_NORMALIZER,
+    PAYMENT_DETAILS_SERIALIZER,
 } from '@spartacus/checkout/base/core';
 import {
-  CardType,
-  ConverterService,
-  HttpParamsURIEncoder,
-  LoggerService,
-  Occ,
-  OccEndpointsService,
-  PAYMENT_DETAILS_NORMALIZER,
-  PaymentDetails,
-  backOff,
-  isJaloError,
-  normalizeHttpError,
+    CardType,
+    ConverterService,
+    HttpParamsURIEncoder,
+    LoggerService,
+    Occ,
+    OccEndpointsService,
+    PAYMENT_DETAILS_NORMALIZER,
+    PaymentDetails,
+    backOff,
+    isJaloError,
+    normalizeHttpError,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';

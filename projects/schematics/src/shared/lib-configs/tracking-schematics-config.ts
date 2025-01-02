@@ -1,20 +1,20 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  SPARTACUS_PERSONALIZATION,
-  SPARTACUS_PERSONALIZATION_ROOT,
-  SPARTACUS_TMS_AEP,
-  SPARTACUS_TMS_CORE,
-  SPARTACUS_TMS_GTM,
-  SPARTACUS_TRACKING,
-  TRACKING_PERSONALIZATION_FEATURE_NAME,
-  TRACKING_TMS_AEP_FEATURE_NAME,
-  TRACKING_TMS_GTM_FEATURE_NAME,
-  USER_PROFILE_FEATURE_NAME,
+    SPARTACUS_PERSONALIZATION,
+    SPARTACUS_PERSONALIZATION_ROOT,
+    SPARTACUS_TMS_AEP,
+    SPARTACUS_TMS_CORE,
+    SPARTACUS_TMS_GTM,
+    SPARTACUS_TRACKING,
+    TRACKING_PERSONALIZATION_FEATURE_NAME,
+    TRACKING_TMS_AEP_FEATURE_NAME,
+    TRACKING_TMS_GTM_FEATURE_NAME,
+    USER_PROFILE_FEATURE_NAME,
 } from '../libs-constants';
 import { AdditionalFeatureConfiguration } from '../utils/feature-utils';
 import { LibraryOptions, SchematicConfig } from '../utils/lib-utils';

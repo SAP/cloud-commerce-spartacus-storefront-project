@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { isolateTests } from '../../../support/utils/test-isolation';
-import * as siteTheme from '../../../helpers/site-theme';
 import { FeaturesConfig } from '@spartacus/core';
+import * as siteTheme from '../../../helpers/site-theme';
+import { isolateTests } from '../../../support/utils/test-isolation';
 
 context('Site Theme', { testIsolation: false }, () => {
   isolateTests();

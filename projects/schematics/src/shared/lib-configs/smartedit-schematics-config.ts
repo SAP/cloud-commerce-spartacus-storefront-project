@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { SMART_EDIT_CONFIG } from '../constants';
 import {
-  SMARTEDIT_FEATURE_NAME,
-  SPARTACUS_SMARTEDIT,
-  SPARTACUS_SMARTEDIT_ROOT,
+    SMARTEDIT_FEATURE_NAME,
+    SPARTACUS_SMARTEDIT,
+    SPARTACUS_SMARTEDIT_ROOT,
 } from '../libs-constants';
 import { AdditionalFeatureConfiguration } from '../utils/feature-utils';
 import { LibraryOptions, SchematicConfig } from '../utils/lib-utils';

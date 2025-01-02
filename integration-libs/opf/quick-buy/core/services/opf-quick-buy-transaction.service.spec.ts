@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,31 +7,31 @@
 import { fakeAsync, flush, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
 import {
-  ActiveCartFacade,
-  Cart,
-  CartGuestUserFacade,
-  DeliveryMode,
-  MultiCartFacade,
+    ActiveCartFacade,
+    Cart,
+    CartGuestUserFacade,
+    DeliveryMode,
+    MultiCartFacade,
 } from '@spartacus/cart/base/root';
 import {
-  CheckoutBillingAddressFacade,
-  CheckoutDeliveryAddressFacade,
-  CheckoutDeliveryModesFacade,
+    CheckoutBillingAddressFacade,
+    CheckoutDeliveryAddressFacade,
+    CheckoutDeliveryModesFacade,
 } from '@spartacus/checkout/base/root';
 import {
-  Address,
-  AuthService,
-  BaseSiteService,
-  EventService,
-  RouterState,
-  RoutingService,
-  UserAddressService,
-  UserIdService,
+    Address,
+    AuthService,
+    BaseSiteService,
+    EventService,
+    RouterState,
+    RoutingService,
+    UserAddressService,
+    UserIdService,
 } from '@spartacus/core';
 import { OpfGlobalMessageService } from '@spartacus/opf/base/root';
 import {
-  OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
-  OpfQuickBuyLocation,
+    OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
+    OpfQuickBuyLocation,
 } from '@spartacus/opf/quick-buy/root';
 import { BehaviorSubject, of, throwError } from 'rxjs';
 import { OpfQuickBuyTransactionService } from './opf-quick-buy-transaction.service';

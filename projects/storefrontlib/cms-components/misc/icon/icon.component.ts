@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  Component,
-  ElementRef,
-  HostBinding,
-  Input,
-  Renderer2,
+    Component,
+    ElementRef,
+    HostBinding,
+    Input,
+    Renderer2,
 } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
 import { DirectionMode } from '../../../layout/direction/config/direction.model';

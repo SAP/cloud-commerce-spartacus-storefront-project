@@ -1,34 +1,34 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ComponentRef,
-  Injectable,
-  NgZone,
-  ViewContainerRef,
-  inject,
+    ComponentRef,
+    Injectable,
+    NgZone,
+    ViewContainerRef,
+    inject,
 } from '@angular/core';
 import { WindowRef } from '@spartacus/core';
 import {
-  OpfErrorDialogOptions,
-  OpfKeyValueMap,
-  OpfPage,
-  defaultOpfErrorDialogOptions,
+    OpfErrorDialogOptions,
+    OpfKeyValueMap,
+    OpfPage,
+    defaultOpfErrorDialogOptions,
 } from '@spartacus/opf/base/root';
 import { OpfCtaFacade } from '@spartacus/opf/cta/root';
 import {
-  OpfGlobalFunctionsDomain,
-  OpfGlobalFunctionsFacade,
-  OpfRegisterGlobalFunctionsInput,
+    OpfGlobalFunctionsDomain,
+    OpfGlobalFunctionsFacade,
+    OpfRegisterGlobalFunctionsInput,
 } from '@spartacus/opf/global-functions/root';
 import {
-  OpfPaymentFacade,
-  OpfPaymentGlobalMethods,
-  OpfPaymentMerchantCallback,
-  OpfPaymentMethod,
+    OpfPaymentFacade,
+    OpfPaymentGlobalMethods,
+    OpfPaymentMerchantCallback,
+    OpfPaymentMethod,
 } from '@spartacus/opf/payment/root';
 import { LAUNCH_CALLER, LaunchDialogService } from '@spartacus/storefront';
 import { Observable, Subject, lastValueFrom } from 'rxjs';

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,15 +8,15 @@ import { ErrorAction } from '../../../error-handling';
 import { NotificationPreference } from '../../../model/notification-preference.model';
 import { PROCESS_FEATURE } from '../../../process/store/process-state';
 import {
-  EntityFailAction,
-  EntityLoadAction,
-  EntityLoaderResetAction,
-  EntitySuccessAction,
+    EntityFailAction,
+    EntityLoadAction,
+    EntityLoaderResetAction,
+    EntitySuccessAction,
 } from '../../../state/utils/entity-loader/entity-loader.action';
 import { StateUtils } from '../../../state/utils/index';
 import {
-  NOTIFICATION_PREFERENCES,
-  UPDATE_NOTIFICATION_PREFERENCES_PROCESS_ID,
+    NOTIFICATION_PREFERENCES,
+    UPDATE_NOTIFICATION_PREFERENCES_PROCESS_ID,
 } from '../user-state';
 
 export const LOAD_NOTIFICATION_PREFERENCES =

@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  PRODUCT_CONFIGURATOR_TEXTFIELD_FEATURE,
-  PRODUCT_CONFIGURATOR_TEXTFIELD_FEATURE_OBSOLETE,
-  TODO_SPARTACUS,
+    PRODUCT_CONFIGURATOR_TEXTFIELD_FEATURE,
+    PRODUCT_CONFIGURATOR_TEXTFIELD_FEATURE_OBSOLETE,
+    TODO_SPARTACUS,
 } from '../../../../shared/constants';
 import { ConfigDeprecation } from '../../../../shared/utils/file-utils';
 

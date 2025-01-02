@@ -1,18 +1,18 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  CancellationRequestEntryInputList,
-  ConsignmentTracking,
-  Order,
-  OrderHistoryList,
-  ReturnRequest,
-  ReturnRequestEntryInputList,
-  ReturnRequestList,
-  ReturnRequestModification,
+    CancellationRequestEntryInputList,
+    ConsignmentTracking,
+    Order,
+    OrderHistoryList,
+    ReturnRequest,
+    ReturnRequestEntryInputList,
+    ReturnRequestList,
+    ReturnRequestModification,
 } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 

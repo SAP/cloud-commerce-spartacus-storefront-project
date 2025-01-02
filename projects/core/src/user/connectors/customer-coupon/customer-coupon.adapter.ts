@@ -1,14 +1,14 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Observable } from 'rxjs';
 import {
-  CustomerCoupon2Customer,
-  CustomerCouponNotification,
-  CustomerCouponSearchResult,
+    CustomerCoupon2Customer,
+    CustomerCouponNotification,
+    CustomerCouponSearchResult,
 } from '../../../model/customer-coupon.model';
 
 export abstract class CustomerCouponAdapter {

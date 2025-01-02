@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,8 +12,8 @@ import { StateModule } from '@spartacus/core';
 import { CONFIGURATION_TEXTFIELD_FEATURE } from './configuration-textfield-state';
 import { configuratorTextfieldEffects } from './effects/index';
 import {
-  configuratorTextfieldReducerProvider,
-  configuratorTextfieldReducerToken,
+    configuratorTextfieldReducerProvider,
+    configuratorTextfieldReducerToken,
 } from './reducers/index';
 
 @NgModule({

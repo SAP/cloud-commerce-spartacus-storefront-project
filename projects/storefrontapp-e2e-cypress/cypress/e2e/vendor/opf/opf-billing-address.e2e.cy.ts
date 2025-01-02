@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,12 +7,12 @@
 import { waitForPage } from '../../../helpers/checkout-flow';
 import { fillShippingAddress } from '../../../helpers/checkout-forms';
 import {
-  changeLastNameOnPaymentForm,
-  checkAddressForAllRequiredFields,
-  fillPaymentAddress,
-  mockPaymentAddress,
-  proceedToCheckoutWithFirstProductFromSearch,
-  verifyDeliveryMethod,
+    changeLastNameOnPaymentForm,
+    checkAddressForAllRequiredFields,
+    fillPaymentAddress,
+    mockPaymentAddress,
+    proceedToCheckoutWithFirstProductFromSearch,
+    verifyDeliveryMethod,
 } from '../../../helpers/opf';
 import { viewportContext } from '../../../helpers/viewport-context';
 import { getSampleUser } from '../../../sample-data/checkout-flow';

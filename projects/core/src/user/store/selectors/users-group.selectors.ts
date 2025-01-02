@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -15,3 +15,4 @@ export * from './regions.selectors';
 export * from './user-addresses.selectors';
 export * from './user-consents.selectors';
 export * from './user-cost-center.selectors';
+

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -13,12 +13,12 @@ import * as loginHelper from '../../../../helpers/login';
 import { navigation } from '../../../../helpers/navigation';
 import * as productSearch from '../../../../helpers/product-search';
 import {
-  createProductQuery,
-  QUERY_ALIAS,
+    createProductQuery,
+    QUERY_ALIAS,
 } from '../../../../helpers/product-search';
 import {
-  cdsHelper,
-  strategyRequestAlias,
+    cdsHelper,
+    strategyRequestAlias,
 } from '../../../../helpers/vendor/cds/cds';
 import { profileTagHelper } from '../../../../helpers/vendor/cds/profile-tag';
 

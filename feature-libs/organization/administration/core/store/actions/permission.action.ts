@@ -1,22 +1,22 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ErrorAction,
-  ListModel,
-  OrderApprovalPermissionType,
-  SearchConfig,
-  StateUtils,
+    ErrorAction,
+    ListModel,
+    OrderApprovalPermissionType,
+    SearchConfig,
+    StateUtils,
 } from '@spartacus/core';
 import { Permission } from '../../model/permission.model';
 import {
-  PERMISSION_ENTITIES,
-  PERMISSION_LIST,
-  PERMISSION_TYPES,
-  PERMISSION_TYPES_LIST,
+    PERMISSION_ENTITIES,
+    PERMISSION_LIST,
+    PERMISSION_TYPES,
+    PERMISSION_TYPES_LIST,
 } from '../organization-state';
 
 export const LOAD_PERMISSION = '[Permission] Load Permission Data';

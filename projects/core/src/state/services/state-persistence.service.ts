@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,9 +10,9 @@ import { map, tap, withLatestFrom } from 'rxjs/operators';
 import { StorageSyncType } from '../../state/config/state-config';
 import { WindowRef } from '../../window/window-ref';
 import {
-  getStorage,
-  persistToStorage,
-  readFromStorage,
+    getStorage,
+    persistToStorage,
+    readFromStorage,
 } from '../utils/browser-storage';
 
 @Injectable({

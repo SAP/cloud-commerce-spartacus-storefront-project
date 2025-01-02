@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,8 +9,8 @@ import { Product, WindowRef } from '@spartacus/core';
 import { OpfPaymentService } from '@spartacus/opf/payment/core';
 import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
 import {
-  OpfQuickBuyService,
-  OpfQuickBuyTransactionService,
+    OpfQuickBuyService,
+    OpfQuickBuyTransactionService,
 } from '@spartacus/opf/quick-buy/core';
 import { OpfQuickBuyDeliveryType } from '@spartacus/opf/quick-buy/root';
 import { Subject, of, throwError } from 'rxjs';

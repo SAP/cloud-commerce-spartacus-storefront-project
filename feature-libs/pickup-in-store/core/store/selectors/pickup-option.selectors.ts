@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,8 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { PickupOption } from '@spartacus/pickup-in-store/root';
 import {
-  PickupOptionState,
-  StateWithPickupOption,
+    PickupOptionState,
+    StateWithPickupOption,
 } from '../pickup-option-state';
 import { getPickupOptionState } from './feature.selectors';
 

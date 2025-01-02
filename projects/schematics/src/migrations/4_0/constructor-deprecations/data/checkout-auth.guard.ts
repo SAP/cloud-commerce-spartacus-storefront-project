@@ -1,25 +1,25 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ACTIVE_CART_SERVICE,
-  ANGULAR_ROUTER,
-  AUTH_REDIRECT_SERVICE,
-  AUTH_SERVICE,
-  CHECKOUT_AUTH_GUARD,
-  CHECKOUT_CONFIG_SERVICE,
-  GLOBAL_MESSAGE_SERVICE,
-  ROUTER,
-  SEMANTIC_PATH_SERVICE,
-  USER_SERVICE,
+    ACTIVE_CART_SERVICE,
+    ANGULAR_ROUTER,
+    AUTH_REDIRECT_SERVICE,
+    AUTH_SERVICE,
+    CHECKOUT_AUTH_GUARD,
+    CHECKOUT_CONFIG_SERVICE,
+    GLOBAL_MESSAGE_SERVICE,
+    ROUTER,
+    SEMANTIC_PATH_SERVICE,
+    USER_SERVICE,
 } from '../../../../shared/constants';
 import {
-  SPARTACUS_CHECKOUT,
-  SPARTACUS_CORE,
-  SPARTACUS_USER_ACCOUNT,
+    SPARTACUS_CHECKOUT,
+    SPARTACUS_CORE,
+    SPARTACUS_USER_ACCOUNT,
 } from '../../../../shared/libs-constants';
 import { ConstructorDeprecation } from '../../../../shared/utils/file-utils';
 

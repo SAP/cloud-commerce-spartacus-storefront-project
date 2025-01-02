@@ -1,27 +1,27 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  AbstractControl,
-  UntypedFormGroup,
-  ValidationErrors,
-  ValidatorFn,
+    AbstractControl,
+    UntypedFormGroup,
+    ValidationErrors,
+    ValidatorFn,
 } from '@angular/forms';
 import {
-  CONSECUTIVE_CHARACTERS,
-  EMAIL_PATTERN,
-  MIN_ONE_DIGIT_PATTERN,
-  MIN_ONE_SPECIAL_CHARACTER_PATTERN,
-  MIN_ONE_UPPER_CASE_CHARACTER_PATTERN,
-  MIN_SIX_CHARACTERS_PATTERN,
-  MIN_EIGHT_CHARACTERS_PATTERN,
-  MAX_CHARACTERS_PATTERN,
-  PASSWORD_PATTERN,
-  STRONG_PASSWORD_PATTERN,
-  SECURE_PASSWORD_PATTERN,
+    CONSECUTIVE_CHARACTERS,
+    EMAIL_PATTERN,
+    MAX_CHARACTERS_PATTERN,
+    MIN_EIGHT_CHARACTERS_PATTERN,
+    MIN_ONE_DIGIT_PATTERN,
+    MIN_ONE_SPECIAL_CHARACTER_PATTERN,
+    MIN_ONE_UPPER_CASE_CHARACTER_PATTERN,
+    MIN_SIX_CHARACTERS_PATTERN,
+    PASSWORD_PATTERN,
+    SECURE_PASSWORD_PATTERN,
+    STRONG_PASSWORD_PATTERN,
 } from '@spartacus/core';
 
 export class CustomFormValidators {

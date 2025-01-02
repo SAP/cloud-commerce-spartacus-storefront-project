@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,10 +7,10 @@
 import { Action } from '@ngrx/store';
 import { entityMeta, EntityMeta } from '../entity/entity.action';
 import {
-  processesDecrementMeta,
-  processesIncrementMeta,
-  ProcessesLoaderMeta,
-  processesLoaderResetMeta,
+    processesDecrementMeta,
+    processesIncrementMeta,
+    ProcessesLoaderMeta,
+    processesLoaderResetMeta,
 } from '../processes-loader/processes-loader.action';
 
 export const ENTITY_PROCESSES_LOADER_RESET_ACTION =

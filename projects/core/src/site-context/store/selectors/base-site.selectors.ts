@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,10 +7,10 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { BaseSite } from '../../../model/misc.model';
 import {
-  BaseSiteEntities,
-  BaseSiteState,
-  SiteContextState,
-  StateWithSiteContext,
+    BaseSiteEntities,
+    BaseSiteState,
+    SiteContextState,
+    StateWithSiteContext,
 } from '../state';
 import { getSiteContextState } from './site-context.selector';
 

@@ -1,15 +1,15 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Component, Optional, OnDestroy, OnInit, Inject } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, Optional } from '@angular/core';
 import { CartItemContext, OrderEntry } from '@spartacus/cart/base/root';
 
+import { CpqDiscounts } from '@spartacus/cpq-quote/root';
 import { Observable, Subscription } from 'rxjs';
 import { CpqQuoteService } from '../../cpq-qute.service';
-import { CpqDiscounts } from '@spartacus/cpq-quote/root';
 interface ExtendedOrderEntry extends OrderEntry {
   cpqDiscounts?: CpqDiscounts[];
 }

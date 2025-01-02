@@ -1,21 +1,21 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import {
-  Event,
-  NavigationCancel,
-  NavigationEnd,
-  Router,
+    Event,
+    NavigationCancel,
+    NavigationEnd,
+    Router,
 } from '@angular/router';
 import { Subscription } from 'rxjs';
 

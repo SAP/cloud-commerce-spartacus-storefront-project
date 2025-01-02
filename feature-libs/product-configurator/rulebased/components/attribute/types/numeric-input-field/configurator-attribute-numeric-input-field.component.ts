@@ -1,17 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { getLocaleId } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  isDevMode,
-  OnDestroy,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    inject,
+    isDevMode,
+    OnDestroy,
+    OnInit,
 } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
 import { LoggerService, TranslationService } from '@spartacus/core';
@@ -25,8 +25,8 @@ import { ConfiguratorStorefrontUtilsService } from '../../../service/configurato
 import { ConfiguratorAttributeCompositionContext } from '../../composition/configurator-attribute-composition.model';
 import { ConfiguratorAttributeInputFieldComponent } from '../input-field/configurator-attribute-input-field.component';
 import {
-  ConfiguratorAttributeNumericInputFieldService,
-  ConfiguratorAttributeNumericInterval,
+    ConfiguratorAttributeNumericInputFieldService,
+    ConfiguratorAttributeNumericInterval,
 } from './configurator-attribute-numeric-input-field.component.service';
 
 class DefaultSettings {

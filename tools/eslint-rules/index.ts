@@ -1,32 +1,32 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  rule as useProvideDefaultConfig,
-  RULE_NAME as useProvideDefaultConfigName,
+    rule as useProvideDefaultConfig,
+    RULE_NAME as useProvideDefaultConfigName,
 } from './rules/use-provide-default-config';
 
 import {
-  rule as useProvideDefaultConfigFactory,
-  RULE_NAME as useProvideDefaultConfigFactoryName,
+    rule as useProvideDefaultConfigFactory,
+    RULE_NAME as useProvideDefaultConfigFactoryName,
 } from './rules/use-provide-default-config-factory';
 
 import {
-  rule as useProvideDefaultFeatureToggles,
-  RULE_NAME as useProvideDefaultFeatureTogglesName,
+    rule as useProvideDefaultFeatureToggles,
+    RULE_NAME as useProvideDefaultFeatureTogglesName,
 } from './rules/use-provide-default-feature-toggles';
 
 import {
-  rule as useProvideDefaultFeatureTogglesFactory,
-  RULE_NAME as useProvideDefaultFeatureTogglesFactoryName,
+    rule as useProvideDefaultFeatureTogglesFactory,
+    RULE_NAME as useProvideDefaultFeatureTogglesFactoryName,
 } from './rules/use-provide-default-feature-toggles-factory';
 
 import {
-  rule as noNgrxFailActionWithoutErrorActionImplementation,
-  RULE_NAME as noNgrxFailActionWithoutErrorActionImplementationName,
+    rule as noNgrxFailActionWithoutErrorActionImplementation,
+    RULE_NAME as noNgrxFailActionWithoutErrorActionImplementationName,
 } from './rules/no-ngrx-fail-action-without-error-action-implementation';
 
 /**
