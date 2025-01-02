@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-
 declare global {
   namespace Cypress {
     interface Chainable {
