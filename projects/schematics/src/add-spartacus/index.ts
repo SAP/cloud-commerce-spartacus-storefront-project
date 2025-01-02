@@ -151,7 +151,7 @@ function installStyles(options: SpartacusOptions): Rule {
       `@import '${relativeStyleConfigImportPath}';\n` +
       `\n// ORDER IMPORTANT: Spartacus core first\n` +
       `@import '@spartacus/styles/scss/core';\n\n` +
-      `// ORDER IMPORTANT: Bootstrap next\n` +
+      `// ORDER IMPORTANT: Copy of Bootstrap files next\n` +
       `@import '@spartacus/styles/bootstrap-copy/scss/reboot';\n` +
       `@import '@spartacus/styles/bootstrap-copy/scss/type';\n` +
       `@import '@spartacus/styles/bootstrap-copy/scss/grid';\n` +
