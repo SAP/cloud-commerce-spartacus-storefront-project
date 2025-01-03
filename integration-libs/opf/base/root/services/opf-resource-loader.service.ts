@@ -22,11 +22,12 @@ export class OpfResourceLoaderService {
   protected document = inject(DOCUMENT);
   protected platformId = inject(PLATFORM_ID);
 
-  protected readonly OPF_RESOURCE_ATTRIBUTE_KEY = 'data-opf-resource';
   protected readonly CORS_DEFAULT_VALUE = 'anonymous';
+  protected readonly OPF_RESOURCE_LOAD_ONCE_ATTR_KEY = 'opf-load-once';
+  protected readonly OPF_RESOURCE_ATTRIBUTE_KEY = 'data-opf-resource';
 
   protected embedStyles(embedOptions: {
-    attributes?: OpfKeyValueMap[];
+    attributes?: { [key: string]: string };
     src: string;
     sri?: string;
     callback?: EventListener;
@@ -38,30 +39,22 @@ export class OpfResourceLoaderService {
     link.href = src;
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.setAttribute(this.OPF_RESOURCE_ATTRIBUTE_KEY, 'true');
     if (sri) {
       link.integrity = sri;
-      const corsKeyvalue = attributes?.find(
-        (attr) => attr.key === 'crossorigin' && !!attr.value?.length
-      );
-      link.crossOrigin = corsKeyvalue?.value ?? this.CORS_DEFAULT_VALUE;
+      link.crossOrigin = attributes?.['crossorigin'] ?? this.CORS_DEFAULT_VALUE;
+
+      attributes?.['crossorigin'] && delete attributes?.['crossorigin'];
     }
-    if (attributes?.length) {
-      attributes.forEach((attribute) => {
-        const { key, value } = attribute;
+
+    attributes &&
+      Object.keys(attributes)?.forEach((key) => {
         if (!(key in link)) {
-          link.setAttribute(key, value);
+          link.setAttribute(key, attributes[key as keyof object]);
         }
       });
-    }
 
-    if (callback) {
-      link.addEventListener('load', callback);
-    }
-
-    if (errorCallback) {
-      link.addEventListener('error', errorCallback);
-    }
+    callback && link.addEventListener('load', callback);
+    errorCallback && link.addEventListener('error', errorCallback);
 
     this.document.head.appendChild(link);
   }
@@ -74,6 +67,21 @@ export class OpfResourceLoaderService {
     return this.scriptLoader.hasScript(src);
   }
 
+  protected handleOpfAttribute(keyValueList?: OpfKeyValueMap[] | undefined): {
+    [key: string]: string;
+  } {
+    const attributes: { [key: string]: string } = {};
+    keyValueList?.forEach((keyValue: OpfKeyValueMap) => {
+      attributes[keyValue.key] = keyValue.value;
+    });
+    if (!attributes[this.OPF_RESOURCE_LOAD_ONCE_ATTR_KEY]) {
+      attributes[this.OPF_RESOURCE_ATTRIBUTE_KEY] = 'true';
+    } else {
+      delete attributes[this.OPF_RESOURCE_LOAD_ONCE_ATTR_KEY];
+    }
+    return attributes;
+  }
+
   /**
    * Loads a script specified in the resource object.
    *
@@ -82,31 +90,21 @@ export class OpfResourceLoaderService {
    */
   protected loadScript(resource: OpfDynamicScriptResource): Promise<void> {
     return new Promise((resolve, reject) => {
-      const attributes: any = {
+      const attributes: { [key: string]: string } = {
         type: 'text/javascript',
-        [this.OPF_RESOURCE_ATTRIBUTE_KEY]: true,
+        ...this.handleOpfAttribute(resource.attributes),
       };
 
       if (resource?.sri) {
         attributes['integrity'] = resource.sri;
-        const corsKeyvalue: OpfKeyValueMap | undefined =
-          resource?.attributes?.find(
-            (attr) => attr.key === 'crossorigin' && !!attr.value?.length
-          );
-        attributes['crossOrigin'] =
-          corsKeyvalue?.value ?? this.CORS_DEFAULT_VALUE;
+        const corsKeyvalue: string | undefined = attributes?.['crossorigin'];
+        attributes['crossOrigin'] = corsKeyvalue ?? this.CORS_DEFAULT_VALUE;
+        corsKeyvalue && delete attributes?.['crossorigin'];
       }
-
-      if (resource.attributes) {
-        resource.attributes.forEach((attribute) => {
-          attributes[attribute.key] = attribute.value;
-        });
-      }
-
-      if (resource.url && !this.hasScript(resource.url)) {
+      if (resource?.url && !this.hasScript(resource.url)) {
         this.scriptLoader.embedScript({
-          src: resource.url,
-          attributes: attributes,
+          src: resource.url as string,
+          attributes,
           callback: () => resolve(),
           errorCallback: () => reject(),
           disableKeyRestriction: true,
@@ -127,7 +125,7 @@ export class OpfResourceLoaderService {
     return new Promise((resolve, reject) => {
       if (resource.url && !this.hasStyles(resource.url)) {
         this.embedStyles({
-          attributes: resource?.attributes,
+          attributes: this.handleOpfAttribute(resource?.attributes),
           src: resource.url,
           sri: resource?.sri,
           callback: () => resolve(),
