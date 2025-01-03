@@ -103,8 +103,8 @@ export class OpfResourceLoaderService {
       }
       if (resource?.url && !this.hasScript(resource.url)) {
         this.scriptLoader.embedScript({
-          src: resource.url as string,
           attributes,
+          src: resource.url,
           callback: () => resolve(),
           errorCallback: () => reject(),
           disableKeyRestriction: true,
