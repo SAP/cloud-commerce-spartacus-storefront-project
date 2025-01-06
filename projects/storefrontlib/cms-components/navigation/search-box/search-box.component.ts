@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -24,8 +24,8 @@ import {
   FeatureConfigService,
   PageType,
   RoutingService,
-  WindowRef,
   useFeatureStyles,
+  WindowRef,
 } from '@spartacus/core';
 import { Observable, of, Subscription } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
@@ -156,6 +156,7 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
     protected routingService: RoutingService
   ) {
     useFeatureStyles('a11ySearchboxLabel');
+    useFeatureStyles('a11yKeyboardFocusInSearchBox');
   }
 
   /**
