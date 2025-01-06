@@ -115,13 +115,13 @@ export class PdpPickupOptionsContainerComponent implements OnInit, OnDestroy {
           .pipe(map((intendedLocation) => ({ intendedLocation, productCode })))
       ),
       switchMap(({ intendedLocation, productCode }) => {
-        if (!!intendedLocation && !!intendedLocation.displayName) {
+        if (intendedLocation?.displayName) {
           this.displayNameIsSet = true;
           return of(getProperty(intendedLocation, 'displayName'));
-        } else {
-          this.setIntendedPickupLocation(productCode);
-          return of(undefined);
         }
+
+        this.setIntendedPickupLocation(productCode);
+        return of(undefined);
       })
     );
 
@@ -159,24 +159,26 @@ export class PdpPickupOptionsContainerComponent implements OnInit, OnDestroy {
   }
 
   setIntendedPickupLocation(productCode: string) {
-    this.preferredStoreFacade
-      .getPreferredStoreWithProductInStock(productCode)
-      .pipe(
-        map(({ name }) => name),
-        tap((storeName) =>
-          this.pickupLocationsSearchService.loadStoreDetails(storeName)
-        ),
-        concatMap((storeName: string) =>
-          this.pickupLocationsSearchService.getStoreDetails(storeName)
-        ),
-        filter((storeDetails) => !!storeDetails)
-      )
-      .subscribe((storeDetails) => {
-        this.intendedPickupLocationService.setIntendedLocation(productCode, {
-          ...storeDetails,
-          pickupOption: 'delivery',
-        });
-      });
+    this.subscription.add(
+      this.preferredStoreFacade
+        .getPreferredStoreWithProductInStock(productCode)
+        .pipe(
+          map(({ name }) => name),
+          tap((storeName) =>
+            this.pickupLocationsSearchService.loadStoreDetails(storeName)
+          ),
+          concatMap((storeName: string) =>
+            this.pickupLocationsSearchService.getStoreDetails(storeName)
+          ),
+          filter((storeDetails) => !!storeDetails)
+        )
+        .subscribe((storeDetails) => {
+          this.intendedPickupLocationService.setIntendedLocation(productCode, {
+            ...storeDetails,
+            pickupOption: 'delivery',
+          });
+        })
+    );
   }
 
   // TODO: Make argument required once 'a11yDialogTriggerRefocus' feature flag is removed.
