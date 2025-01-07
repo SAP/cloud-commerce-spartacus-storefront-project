@@ -12,7 +12,7 @@ export function defaultOrganizationUserRegistrationComponentsConfig(): CmsConfig
   const config: CmsConfig = {
     featureModules: {
       [ORGANIZATION_USER_REGISTRATION_FEATURE]: {
-        cmsComponents: ['OrganizationUserRegistrationComponent'],
+        cmsComponents: ['OrganizationUserRegistrationComponent', 'OneTimePasswordOrganizationUserRegistrationComponent'],
       },
     },
   };
