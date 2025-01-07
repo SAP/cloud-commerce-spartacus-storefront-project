@@ -46,7 +46,7 @@ export class MyAccountV2OrderHistoryService {
   getOrderDetailsWithTracking(
     orderCode: string
   ): Observable<OrderView | undefined> {
-    return this.getOrderDetailsV2(orderCode).pipe(
+    return this.getOrderDetails(orderCode).pipe(
       switchMap((order: Order | undefined) => {
         //-----------------> filling consignment tracking
         const orderView: OrderView = { ...order };
@@ -195,27 +195,7 @@ export class MyAccountV2OrderHistoryService {
     });
   }
 
-  //TODO: CXINT-2896: Remove this method in next major release
-  /**
-   * @deprecated since 2211.20. Use getOrderDetailsV2 instead
-   */
-  getOrderDetails(code: string): Observable<Order> {
-    const loading$ = this.getOrderDetailsState(code).pipe(
-      auditTime(0),
-      tap((state) => {
-        if (!(state.loading || state.success || state.error)) {
-          this.loadOrderDetails(code);
-        }
-      })
-    );
-    return using(
-      () => loading$.subscribe(),
-      () => this.getOrderDetailsValue(code)
-    );
-  }
-
-  //TODO: CXINT-2896: Rename this method to `getOrderDetails` in next major release
-  getOrderDetailsV2(code: string): Observable<Order | undefined> {
+  getOrderDetails(code: string): Observable<Order | undefined> {
     const loading$ = this.getOrderDetailsState(code).pipe(
       auditTime(0),
       tap((state) => {
