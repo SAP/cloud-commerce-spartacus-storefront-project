@@ -4,6 +4,7 @@
 @import '@spartacus/styles/scss/core';
 
 // ORDER IMPORTANT: Bootstrap next
+
 @import '@spartacus/styles/vendor/bootstrap/scss/reboot';
 @import '@spartacus/styles/vendor/bootstrap/scss/type';
 @import '@spartacus/styles/vendor/bootstrap/scss/grid';
@@ -12,25 +13,13 @@
 @import '@spartacus/styles/vendor/bootstrap/scss/dropdown';
 @import '@spartacus/styles/vendor/bootstrap/scss/card';
 @import '@spartacus/styles/vendor/bootstrap/scss/nav';
-
 @import '@spartacus/styles/vendor/bootstrap/scss/buttons';
-
 @import '@spartacus/styles/vendor/bootstrap/scss/forms';
 @import '@spartacus/styles/vendor/bootstrap/scss/custom-forms';
-
 @import '@spartacus/styles/vendor/bootstrap/scss/modal';
 @import '@spartacus/styles/vendor/bootstrap/scss/close';
-
 @import '@spartacus/styles/vendor/bootstrap/scss/alert';
-// @import 'bootstrap/scss/message'; DOESNT EXIST IN BOOTSTRAP 4
 @import '@spartacus/styles/vendor/bootstrap/scss/tooltip';
-// @import 'bootstrap/scss/tables'; ITS NOT USED IN SPARTACUS
-@import '@spartacus/styles/vendor/bootstrap/scss/card';
-// @import 'bootstrap/scss/accordion'; DOESNT EXIST IN BOOTSTRAP 4
-// @import 'bootstrap/scss/tabs'; DOESNT EXIST IN BOOTSTRAP 4
-// @import 'bootstrap/scss/carousel'; ITS NOT USED IN SPARTACUS
-// @import 'bootstrap/scss/link'; DOESNT EXIST IN BOOTSTRAP 4
-@import '@spartacus/styles/vendor/bootstrap/scss/dropdown';
 
 // ORDER IMPORTANT: Spartacus styles last
 @import '@spartacus/styles';
