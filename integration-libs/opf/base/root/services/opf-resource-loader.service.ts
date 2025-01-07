@@ -67,7 +67,16 @@ export class OpfResourceLoaderService {
     return this.scriptLoader.hasScript(src);
   }
 
-  protected handleOpfAttribute(keyValueList?: OpfKeyValueMap[] | undefined): {
+  /**
+   * Create attributes intended to script and link elements.
+   *
+   * Return attributes list including keyValueList and OPF specific attribute with below logic:
+   *
+   * 1. Resource loads only once: 'opf-load-once' key detected, no additional attribute added.
+   * 2. Resource deleted at page/payment change: 'data-opf-resource' attribute is added.
+   */
+
+  protected createAttributesList(keyValueList?: OpfKeyValueMap[] | undefined): {
     [key: string]: string;
   } {
     const attributes: { [key: string]: string } = {};
@@ -92,7 +101,7 @@ export class OpfResourceLoaderService {
     return new Promise((resolve, reject) => {
       const attributes: { [key: string]: string } = {
         type: 'text/javascript',
-        ...this.handleOpfAttribute(resource.attributes),
+        ...this.createAttributesList(resource.attributes),
       };
 
       if (resource?.sri) {
@@ -125,7 +134,7 @@ export class OpfResourceLoaderService {
     return new Promise((resolve, reject) => {
       if (resource.url && !this.hasStyles(resource.url)) {
         this.embedStyles({
-          attributes: this.handleOpfAttribute(resource?.attributes),
+          attributes: this.createAttributesList(resource?.attributes),
           src: resource.url,
           sri: resource?.sri,
           callback: () => resolve(),
