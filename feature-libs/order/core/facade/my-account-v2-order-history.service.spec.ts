@@ -238,6 +238,17 @@ describe('MyAccountV2OrderHistoryService', () => {
         })
         .unsubscribe();
     });
+    it('should not emit when success and error are null or undefined', () => {
+      spyOn(service as any, 'getOrderDetailsState').and.returnValue(
+        of({ success: null, error: undefined, loading: false, value: null })
+      );
+      service
+        .getOrderDetails(orderCode)
+        .subscribe(() => {
+          fail('Should not emit any value');
+        });
+      expect((service as any).getOrderDetailsState).toHaveBeenCalledWith(orderCode);
+    });
   });
   describe('getOrderDetailsWithTracking', () => {
     it('should return order details with consignment tracking', () => {
