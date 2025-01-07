@@ -225,8 +225,15 @@ export class PopoverDirective implements OnInit {
         this.cxPopoverOptions?.autoPositioning;
 
       if (this.cxPopoverOptions?.appendToBody) {
+        const element = this.featureConfigService?.isEnabled(
+          'a11yPopoverHighContrast'
+        )
+          ? // we need to select first child element,
+            // otherwise HCT theming isn't getting picked up.
+            this.winRef.document.body.firstElementChild
+          : this.winRef.document.body;
         this.renderer.appendChild(
-          this.winRef.document.body,
+          element,
           this.popoverContainer.location.nativeElement
         );
       }
