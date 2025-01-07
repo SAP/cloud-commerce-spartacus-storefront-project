@@ -42,3 +42,12 @@
 
 @import '@spartacus/styles/index';
 ```
+3. Individual imports.
+   If your application directly imports specific Bootstrap classes in any of your stylesheets, replace those imports with the corresponding Spartacus imports. For example:
+```
+// Original import
+@import '~bootstrap/scss/reboot';
+
+// Replace with
+@import '@spartacus/styles/bootstrap-copy/scss/reboot';
+```
