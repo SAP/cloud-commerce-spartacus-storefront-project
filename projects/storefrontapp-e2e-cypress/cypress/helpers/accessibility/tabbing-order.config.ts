@@ -2551,4 +2551,19 @@ export const tabbingOrderConfig: TabbingOrderConfig = {
     { value: 'Verify', type: TabbingOrderTypes.BUTTON },
     { value: 'Back', type: TabbingOrderTypes.LINK },
   ],
+  otpRegistration: [
+    { value: 'Title', type: TabbingOrderTypes.FORM_FIELD },
+    { value: 'First name', type: TabbingOrderTypes.FORM_FIELD },
+    { value: 'Last name', type: TabbingOrderTypes.FORM_FIELD },
+    { value: 'Email address', type: TabbingOrderTypes.FORM_FIELD },
+    { value: 'Continue', type: TabbingOrderTypes.BUTTON },
+  ],
+  verifyTokenForRegistration: [
+    { value: 'tokenCode', type: TabbingOrderTypes.FORM_FIELD },
+    { value: "Didn't receive the code?", type: TabbingOrderTypes.LINK },
+    { value: 'Register', type: TabbingOrderTypes.BUTTON },
+    { value: 'Back', type: TabbingOrderTypes.LINK },
+    { value: 'Password', type: TabbingOrderTypes.FORM_FIELD },
+    { value: 'Confirm Password', type: TabbingOrderTypes.FORM_FIELD },
+  ],
 };
