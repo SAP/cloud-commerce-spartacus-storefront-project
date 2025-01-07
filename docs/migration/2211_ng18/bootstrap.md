@@ -24,21 +24,21 @@
 @import '@spartacus/styles/scss/core';
 
 // ORDER IMPORTANT: Bootstrap next
-@import '@spartacus/styles/bootstrap-copy/scss/reboot';
-@import '@spartacus/styles/bootstrap-copy/scss/type';
-@import '@spartacus/styles/bootstrap-copy/scss/grid';
-@import '@spartacus/styles/bootstrap-copy/scss/utilities';
-@import '@spartacus/styles/bootstrap-copy/scss/transitions';
-@import '@spartacus/styles/bootstrap-copy/scss/dropdown';
-@import '@spartacus/styles/bootstrap-copy/scss/card';
-@import '@spartacus/styles/bootstrap-copy/scss/nav';
-@import '@spartacus/styles/bootstrap-copy/scss/buttons';
-@import '@spartacus/styles/bootstrap-copy/scss/forms';
-@import '@spartacus/styles/bootstrap-copy/scss/custom-forms';
-@import '@spartacus/styles/bootstrap-copy/scss/modal';
-@import '@spartacus/styles/bootstrap-copy/scss/close';
-@import '@spartacus/styles/bootstrap-copy/scss/alert';
-@import '@spartacus/styles/bootstrap-copy/scss/tooltip';
+@import '@spartacus/styles/vendor/bootstrap/scss/reboot';
+@import '@spartacus/styles/vendor/bootstrap/scss/type';
+@import '@spartacus/styles/vendor/bootstrap/scss/grid';
+@import '@spartacus/styles/vendor/bootstrap/scss/utilities';
+@import '@spartacus/styles/vendor/bootstrap/scss/transitions';
+@import '@spartacus/styles/vendor/bootstrap/scss/dropdown';
+@import '@spartacus/styles/vendor/bootstrap/scss/card';
+@import '@spartacus/styles/vendor/bootstrap/scss/nav';
+@import '@spartacus/styles/vendor/bootstrap/scss/buttons';
+@import '@spartacus/styles/vendor/bootstrap/scss/forms';
+@import '@spartacus/styles/vendor/bootstrap/scss/custom-forms';
+@import '@spartacus/styles/vendor/bootstrap/scss/modal';
+@import '@spartacus/styles/vendor/bootstrap/scss/close';
+@import '@spartacus/styles/vendor/bootstrap/scss/alert';
+@import '@spartacus/styles/vendor/bootstrap/scss/tooltip';
 
 @import '@spartacus/styles/index';
 ```
@@ -49,5 +49,5 @@
 @import '~bootstrap/scss/reboot';
 
 // Replace with
-@import '@spartacus/styles/bootstrap-copy/scss/reboot';
+@import '@spartacus/styles/vendor/bootstrap/scss/reboot';
 ```

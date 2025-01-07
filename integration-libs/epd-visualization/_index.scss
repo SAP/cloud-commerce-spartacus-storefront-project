@@ -1,8 +1,8 @@
 @import '@spartacus/styles/scss/core';
 
-@import '@spartacus/styles/bootstrap-copy/scss/functions';
-@import '@spartacus/styles/bootstrap-copy/scss/variables';
-@import '@spartacus/styles/bootstrap-copy/scss/_mixins';
+@import '@spartacus/styles/vendor/bootstrap/scss/functions';
+@import '@spartacus/styles/vendor/bootstrap/scss/variables';
+@import '@spartacus/styles/vendor/bootstrap/scss/_mixins';
 
 @import './styles/index';
 
