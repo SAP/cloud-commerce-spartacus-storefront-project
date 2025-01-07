@@ -19,9 +19,9 @@ import { LAUNCH_CALLER, LaunchDialogService } from '@spartacus/storefront';
 import { VerificationToken, VerificationTokenFacade } from '@spartacus/user/account/root';
 import { ONE_TIME_PASSWORD_REGISTRATION_PURPOSE } from '../user-account-constants';
 import { RegisterVerificationTokenFormComponentService } from './register-verification-token-form-component.service';
-import { GlobalMessageService, RoutingService } from '@spartacus/core';
+import { RoutingService } from '@spartacus/core';
 import { UntypedFormGroup } from '@angular/forms';
-import {  Subject, Subscription } from 'rxjs';
+import {   Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'cx-verification-token-form',
@@ -29,7 +29,6 @@ import {  Subject, Subscription } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterVerificationTokenFormComponent implements OnInit {
-  constructor() {}
   protected service: RegisterVerificationTokenFormComponentService = inject(
     RegisterVerificationTokenFormComponentService
   );
@@ -40,13 +39,6 @@ export class RegisterVerificationTokenFormComponent implements OnInit {
   protected verificationTokenFacade = inject(VerificationTokenFacade);
   form: UntypedFormGroup = this.service.form;
   isUpdating$: Subject<boolean> = new Subject<boolean>();
-  protected globalMessage: GlobalMessageService = inject(GlobalMessageService);
-  isVerificationCodeValid: boolean = false;
-  // isUpdating$ = this.busy$.pipe(
-  //   tap((state) => {
-  //     state === true ? this.form.disable() : this.form.enable();
-  //   })
-  // );
   waitTime: number = 60;
   protected subscriptions = new Subscription();
 
@@ -58,19 +50,15 @@ export class RegisterVerificationTokenFormComponent implements OnInit {
 
   tokenId: string;
 
-  tokenCode: string;
-
-  registerForm: UntypedFormGroup = this.service.form;
+  registerData: UntypedFormGroup;
 
   target: string;
-
-  password: string;
 
   isResendDisabled: boolean = true;
 
   ngOnInit() {
     if (!!history.state) {
-      this.registerForm = history.state['form'];
+      this.registerData = history.state['form'];
       this.tokenId = history.state['tokenId'];
       this.target = history.state['loginId'];
       history.pushState(
@@ -97,38 +85,28 @@ export class RegisterVerificationTokenFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // this.service.registerUser(this.registerForm);
-    // submit(): void {
-      // if (this.registerForm.valid) {
+    if (!this.form.valid) {
+      this.form.markAllAsTouched();
+      return;
+    }
         this.isUpdating$.next(true);
         this.subscriptions.add(
           this.service
-            .registerUser(this.registerForm)
+            .registerUser(this.registerData)
             .subscribe({
               complete: () => this.isUpdating$.next(false),
               error: () => {
                 this.isUpdating$.next(false);
-                this.isVerificationCodeValid = false;
-                // this.registerForm.get('tokenCode').setValue('');
-                // this.tokenCode = '';
-                // this.globalMessage?.add(
-                //   { key: 'userRegistrationForm.messageToFailedToRegister' },
-                //   GlobalMessageType.MSG_TYPE_ERROR
-                // );
+                this.form.get('tokenCode')?.setErrors({ invalidTokenCodeError: true });
               },
             })
         );
-      // } else {
-        // this.registerForm.markAllAsTouched();
-      // }
-    // }
   }
 
   resendOTP(): void {
     this.isResendDisabled = true;
     this.resendLink.nativeElement.tabIndex = -1;
     this.resendLink.nativeElement.blur();
-    this.waitTime = 60;
     this.startWaitTimeInterval();
     this.verificationTokenFacade.createVerificationToken({
       loginId: this.target,

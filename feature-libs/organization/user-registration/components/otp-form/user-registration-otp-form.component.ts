@@ -8,7 +8,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
-  OnDestroy,
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import {
@@ -19,7 +18,7 @@ import {
   WindowRef,
 } from '@spartacus/core';
 import { Title } from '@spartacus/user/profile/root';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { UserRegistrationOTPFormService } from './user-registration-otp-form.service';
 import { VerificationToken, VerificationTokenCreation, VerificationTokenFacade } from '@spartacus/user/account/root';
 // eslint-disable-next-line @nx/enforce-module-boundaries
@@ -30,7 +29,7 @@ import { ONE_TIME_PASSWORD_REGISTRATION_PURPOSE } from 'feature-libs/user/accoun
   templateUrl: './user-registration-otp-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserRegistrationOTPFormComponent implements OnDestroy {
+export class UserRegistrationOTPFormComponent {
   protected routingService = inject(RoutingService);
   protected verificationTokenFacade = inject(VerificationTokenFacade);
   protected winRef = inject(WindowRef);
@@ -46,8 +45,6 @@ export class UserRegistrationOTPFormComponent implements OnDestroy {
   registerForm: FormGroup = this.userRegistrationFormService.form;
 
   isLoading$ = new BehaviorSubject(false);
-
-  protected subscriptions = new Subscription();
 
   protected globalMessageService = inject(GlobalMessageService, {
     optional: true,
@@ -87,7 +84,6 @@ export class UserRegistrationOTPFormComponent implements OnDestroy {
         state: {
           form: this.registerForm.value,
           loginId: verificationTokenCreation.loginId,
-          // password: verificationTokenCreation.password,
           tokenId: verificationToken.tokenId,
           expiresIn: verificationToken.expiresIn,
         },
@@ -97,8 +93,6 @@ export class UserRegistrationOTPFormComponent implements OnDestroy {
 
   protected collectDataFromRegistrationForm(): VerificationTokenCreation {
     return {
-      // TODO: consider dropping toLowerCase as this should not be part of the UI,
-      // as it's too opinionated and doesn't work with other AUTH services
       loginId: this.registerForm.value.email.toLowerCase(),
       purpose: ONE_TIME_PASSWORD_REGISTRATION_PURPOSE,
     };
@@ -107,9 +101,5 @@ export class UserRegistrationOTPFormComponent implements OnDestroy {
   protected onCreateVerificationTokenComplete(): void {
     this.registerForm.reset();
     this.busy$.next(false);
-  }
-
-  ngOnDestroy(): void {
-    this.subscriptions.unsubscribe();
   }
 }
