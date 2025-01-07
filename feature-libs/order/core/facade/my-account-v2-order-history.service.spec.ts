@@ -242,12 +242,12 @@ describe('MyAccountV2OrderHistoryService', () => {
       spyOn(service as any, 'getOrderDetailsState').and.returnValue(
         of({ success: null, error: undefined, loading: false, value: null })
       );
-      service
-        .getOrderDetails(orderCode)
-        .subscribe(() => {
-          fail('Should not emit any value');
-        });
-      expect((service as any).getOrderDetailsState).toHaveBeenCalledWith(orderCode);
+      service.getOrderDetails(orderCode).subscribe(() => {
+        fail('Should not emit any value');
+      });
+      expect((service as any).getOrderDetailsState).toHaveBeenCalledWith(
+        orderCode
+      );
     });
   });
   describe('getOrderDetailsWithTracking', () => {
