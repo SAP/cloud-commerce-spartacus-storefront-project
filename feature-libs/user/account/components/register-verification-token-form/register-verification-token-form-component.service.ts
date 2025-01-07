@@ -18,14 +18,12 @@ import {
   OAuthFlow,
   RoutingService,
   TranslationService,
-  UserAddressService,
 } from '@spartacus/core';
 import {
   OrganizationUserRegistration,
   UserRegistrationFacade,
 } from '@spartacus/organization/user-registration/root';
-import { UserRegisterFacade } from '@spartacus/user/profile/root';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { switchMap, take, tap } from 'rxjs/operators';
 
 const globalMsgShowTime: number = 10000;
@@ -35,20 +33,11 @@ const globalMsgShowTime: number = 10000;
 export class RegisterVerificationTokenFormComponentService {
   protected globalMessage: GlobalMessageService = inject(GlobalMessageService);
   protected formBuilder = inject(FormBuilder);
-  protected userRegisterFacade: UserRegisterFacade = inject(UserRegisterFacade);
-  protected userAddressService: UserAddressService = inject(UserAddressService);
   protected organizationUserRegistrationFacade: UserRegistrationFacade = inject(
     UserRegistrationFacade);
   protected translationService: TranslationService = inject(TranslationService);
   protected authConfigService: AuthConfigService = inject(AuthConfigService);
   protected routingService: RoutingService = inject(RoutingService);
-  protected busy$ = new BehaviorSubject(false);
-
-  isUpdating$ = this.busy$.pipe(
-    tap((state) => {
-      state === true ? this.form.disable() : this.form.enable();
-    })
-  );
 
   form: UntypedFormGroup = new UntypedFormGroup({
     tokenId: new UntypedFormControl('', [Validators.required]),
