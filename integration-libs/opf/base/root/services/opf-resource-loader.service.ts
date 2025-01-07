@@ -53,8 +53,13 @@ export class OpfResourceLoaderService {
         }
       });
 
-    callback && link.addEventListener('load', callback);
-    errorCallback && link.addEventListener('error', errorCallback);
+    if (callback) {
+      link.addEventListener('load', callback);
+    }
+
+    if (errorCallback) {
+      link.addEventListener('error', errorCallback);
+    }
 
     this.document.head.appendChild(link);
   }
