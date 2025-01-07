@@ -42,8 +42,7 @@ export class OpfResourceLoaderService {
     if (sri) {
       link.integrity = sri;
       link.crossOrigin = attributes?.['crossorigin'] ?? this.CORS_DEFAULT_VALUE;
-
-      attributes?.['crossorigin'] && delete attributes?.['crossorigin'];
+      delete attributes?.['crossorigin'];
     }
 
     attributes &&
