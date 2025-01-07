@@ -419,7 +419,7 @@ if (environment.cpq) {
         a11yHideConsentButtonWhenBannerVisible: true,
         a11yRepeatingButtonsUniqueLabels: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
-        useSiteThemeService: false,
+        useSiteThemeService: true,
         enableConsecutiveCharactersPasswordRequirement: true,
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
