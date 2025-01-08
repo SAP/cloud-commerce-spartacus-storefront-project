@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -419,7 +419,7 @@ if (environment.cpq) {
         a11ySearchableDropdownFirstElementFocus: true,
         a11yHideConsentButtonWhenBannerVisible: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
-        useSiteThemeService: false,
+        useSiteThemeService: true,
         enableConsecutiveCharactersPasswordRequirement: true,
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
@@ -431,6 +431,7 @@ if (environment.cpq) {
         a11yWrapReviewOrderInSection: true,
         enableCarouselCategoryProducts: true,
         enableSecurePasswordValidation: true,
+        enableClaimCustomerCouponWithCodeInRequestBody: false,
       };
       return appFeatureToggles;
     }),
