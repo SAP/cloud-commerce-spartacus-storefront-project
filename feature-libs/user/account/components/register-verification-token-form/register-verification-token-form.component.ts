@@ -105,6 +105,7 @@ export class RegisterVerificationTokenFormComponent implements OnInit {
 
   resendOTP(): void {
     this.isResendDisabled = true;
+    this.waitTime = 60;
     this.resendLink.nativeElement.tabIndex = -1;
     this.resendLink.nativeElement.blur();
     this.startWaitTimeInterval();
