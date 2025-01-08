@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -38,6 +38,7 @@ export class UnitLevelOrderHistoryComponent implements OnDestroy {
     protected translation: TranslationService
   ) {
     useFeatureStyles('a11yTruncatedTextForResponsiveView');
+    useFeatureStyles('a11yTruncatedTextUnitLevelOrderHistory');
   }
 
   orders$: Observable<OrderHistoryList | undefined> = this.unitOrdersFacade
