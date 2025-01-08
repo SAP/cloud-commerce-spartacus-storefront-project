@@ -54,7 +54,7 @@
         "placeholder": "Zip/Postal code"
       },
       "postalCodeOnOTPForm": {
-        "label": "Zip/Postal code (optional)",
+        "label": "Zip/Postal code",
         "placeholder": "Zip/Postal code"
       },
       "addressLine": {
