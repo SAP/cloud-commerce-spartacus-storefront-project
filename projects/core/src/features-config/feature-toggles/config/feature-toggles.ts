@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -778,6 +778,11 @@ export interface FeatureTogglesInterface {
   a11yDifferentiateFocusedAndSelected?: boolean;
 
   /**
+   * When enabled the input element in `QuickOrderFormComponent' will regain its focus after the dropdown is closed.
+   */
+  a11yQuickOrderSearchBoxRefocusOnClose?: boolean;
+
+  /**
    * Adds a visible focus indicator for keyboard navigation in the `SearchBoxComponent` without affecting the visual state for mouse interactions.
    * Affects: SearchBoxComponent
    */
@@ -788,6 +793,12 @@ export interface FeatureTogglesInterface {
    * Affects: CarouselComponent
    */
   a11yAddPaddingToCarouselPanel?: boolean;
+
+  /**
+   * Search dropdowns will display the focus ring correctly when navigating to the options using the down arrow key.
+   * Affects: SearchBoxComponent, QuickOrderFormComponent
+   */
+  a11ySearchableDropdownFirstElementFocus?: boolean;
 
   /**
    * Hides the 'Consent Management' button from the tab order when the cookies banner is visible.
@@ -837,6 +848,14 @@ export interface FeatureTogglesInterface {
   enableConsecutiveCharactersPasswordRequirement?: boolean;
 
   /**
+   * In CustomerCouponConnector, Enables claiming customer coupon with coupon code in httpRequest body with POST method.
+   *
+   * When set to `false`, claiming customer coupon works with coupon code as parameter in URL, which exposes sensitive data and has security risk.
+   * When set to `true`, claiming customer coupon works with coupon code in httpRequest body with POST method(the new Occ endpoint is available since Commerce 2211.28), which avoids security risk.
+   */
+  enableClaimCustomerCouponWithCodeInRequestBody?: boolean;
+
+  /**
    * Enables a validation that prevents new passwords from matching the current password
    * in the password update form.
    *
@@ -881,20 +900,13 @@ export interface FeatureTogglesInterface {
    *  ```ts
    * provideConfig({
    *   pictureElementFormats: {
-   *    mediaQueries: {
-   *     'max-width': '767px',
-   *      ...
-   *    },
-   *    width: 50,
-   *    height: 50,
+   *    mediaQueries: '(max-width: 480px)',
    *   },
    * })
    * ```
    *
-   * After activating this toggle, new inputs in `MediaComponent` — specifically
-   * `width`, `height`, and `sizes` — will be passed to the template as HTML attributes.
-   *
-   * Toggle activates `@Input() elementType: 'img' | 'picture' = 'img'` in `MediaComponent`
+   * Toggle activates `@Input() elementType: 'img' | 'picture' = 'img'`
+   * and `@Input() sizesForImgElement: string` in `MediaComponent`
    *
    */
   useExtendedMediaComponentConfiguration?: boolean;
@@ -1061,8 +1073,10 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11ySearchboxAssistiveMessage: false,
   updateConsentGivenInOnChanges: false,
   a11yDifferentiateFocusedAndSelected: false,
+  a11yQuickOrderSearchBoxRefocusOnClose: false,
   a11yKeyboardFocusInSearchBox: false,
   a11yAddPaddingToCarouselPanel: false,
+  a11ySearchableDropdownFirstElementFocus: false,
   a11yHideConsentButtonWhenBannerVisible: false,
   a11yHighContrastBorders: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
@@ -1078,4 +1092,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yScrollToTopPositioning: false,
   enableSecurePasswordValidation: false,
   enableCarouselCategoryProducts: false,
+  enableClaimCustomerCouponWithCodeInRequestBody: false,
 };
