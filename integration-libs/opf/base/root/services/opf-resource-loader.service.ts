@@ -110,9 +110,9 @@ export class OpfResourceLoaderService {
 
       if (resource?.sri) {
         attributes['integrity'] = resource.sri;
-        const corsKeyvalue: string | undefined = attributes?.['crossorigin'];
-        attributes['crossOrigin'] = corsKeyvalue ?? this.CORS_DEFAULT_VALUE;
-        corsKeyvalue && delete attributes?.['crossorigin'];
+        attributes['crossOrigin'] =
+          attributes?.['crossorigin'] ?? this.CORS_DEFAULT_VALUE;
+        delete attributes?.['crossorigin'];
       }
       if (resource?.url && !this.hasScript(resource.url)) {
         this.scriptLoader.embedScript({
