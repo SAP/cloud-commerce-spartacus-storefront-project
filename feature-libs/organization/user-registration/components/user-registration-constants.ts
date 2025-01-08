@@ -4,4 +4,4 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export const ONE_TIME_PASSWORD_LOGIN_PURPOSE = 'LOGIN';
+export const ONE_TIME_PASSWORD_REGISTRATION_PURPOSE = 'REGISTRATION';

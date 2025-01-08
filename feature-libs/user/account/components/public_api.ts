@@ -11,4 +11,3 @@ export * from './my-account-v2-user/index';
 export * from './otp-login-form/index';
 export * from './user-account-component.module';
 export * from './verification-token-form/index';
-export * from './register-verification-token-form/index';

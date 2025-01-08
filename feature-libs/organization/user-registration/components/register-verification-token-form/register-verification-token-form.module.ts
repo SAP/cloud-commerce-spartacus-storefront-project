@@ -1,5 +1,4 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
  * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
@@ -27,7 +26,7 @@ import {
   SpinnerModule,
 } from '@spartacus/storefront';
 
-import { defaultVerificationTokenLayoutConfig } from '../verification-token-form/default-verification-token-layout.config';
+import { defaultVerificationTokenLayoutConfig } from '../../../../user/account/components/verification-token-form/default-verification-token-layout.config';
 import { RegisterVerificationTokenFormComponentService } from './register-verification-token-form-component.service';
 import { RegisterVerificationTokenFormComponent } from './register-verification-token-form.component';
 import { VerificationTokenFacade } from '@spartacus/user/account/root';

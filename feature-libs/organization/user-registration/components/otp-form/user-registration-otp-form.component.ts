@@ -1,5 +1,4 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
  * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
@@ -22,8 +21,7 @@ import { Title } from '@spartacus/user/profile/root';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { UserRegistrationOTPFormService } from './user-registration-otp-form.service';
 import { VerificationToken, VerificationTokenCreation, VerificationTokenFacade } from '@spartacus/user/account/root';
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import { ONE_TIME_PASSWORD_REGISTRATION_PURPOSE } from 'feature-libs/user/account/components/user-account-constants';
+import { ONE_TIME_PASSWORD_REGISTRATION_PURPOSE } from '../user-registration-constants';
 
 @Component({
   selector: 'cx-user-registration-otp-form',

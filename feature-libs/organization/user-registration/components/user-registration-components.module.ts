@@ -8,8 +8,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserRegistrationFormModule } from './form/user-registration-form.module';
 import { UserRegistrationOTPFormModule } from './otp-form/user-registration-otp-form.module';
+import { RegisterVerificationTokenFormModule } from './register-verification-token-form';
 
 @NgModule({
-  imports: [RouterModule, UserRegistrationFormModule, UserRegistrationOTPFormModule],
+  imports: [RouterModule, UserRegistrationFormModule, UserRegistrationOTPFormModule, RegisterVerificationTokenFormModule,
+  ],
 })
 export class UserRegistrationComponentsModule {}

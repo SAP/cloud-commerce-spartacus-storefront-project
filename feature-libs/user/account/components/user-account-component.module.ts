@@ -11,14 +11,12 @@ import { LoginModule } from './login/login.module';
 import { MyAccountV2UserModule } from './my-account-v2-user';
 import { OneTimePasswordLoginFormModeule } from './otp-login-form/otp-login-form.module';
 import { VerificationTokenFormModule } from './verification-token-form/verification-token-form.module';
-import { RegisterVerificationTokenFormModule } from './register-verification-token-form';
 
 @NgModule({
   imports: [
     LoginModule,
     LoginFormModule,
     VerificationTokenFormModule,
-    RegisterVerificationTokenFormModule,
     LoginRegisterModule,
     MyAccountV2UserModule,
     OneTimePasswordLoginFormModeule,
