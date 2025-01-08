@@ -1,5 +1,4 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
  * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
@@ -177,12 +176,19 @@ export class OpfQuickBuyTransactionService {
   }
 
   deleteUserAddresses(addrIds: string[]): void {
-    this.opfGlobalMessageService.disableGlobalMessage([
-      'addressForm.userAddressDeleteSuccess',
-    ]);
-    addrIds.forEach((addrId) => {
-      this.userAddressService.deleteUserAddress(addrId);
-    });
+    this.authService
+      .isUserLoggedIn()
+      .pipe(take(1))
+      .subscribe((isUserLoggedIn) => {
+        if (isUserLoggedIn) {
+          this.opfGlobalMessageService.disableGlobalMessage([
+            'addressForm.userAddressDeleteSuccess',
+          ]);
+          addrIds.forEach((addrId) => {
+            this.userAddressService.deleteUserAddress(addrId);
+          });
+        }
+      });
   }
 
   createCartGuestUser(): Observable<boolean> {

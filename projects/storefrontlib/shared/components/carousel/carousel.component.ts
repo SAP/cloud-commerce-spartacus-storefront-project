@@ -1,5 +1,4 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
  * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
@@ -21,8 +20,8 @@ import { LoggerService, useFeatureStyles } from '@spartacus/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
-import { CarouselService } from './carousel.service';
 import { disableTabbingForTick } from '../../../layout/a11y';
+import { CarouselService } from './carousel.service';
 
 /**
  * Generic carousel component that can be used to render any carousel items,
@@ -97,6 +96,7 @@ export class CarouselComponent implements OnInit, OnChanges {
     protected service: CarouselService
   ) {
     useFeatureStyles('a11yFocusableCarouselControls');
+    useFeatureStyles('a11yAddPaddingToCarouselPanel');
   }
 
   ngOnInit() {

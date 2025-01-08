@@ -1,12 +1,11 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
  * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { Injectable, OnDestroy, inject } from '@angular/core';
-import { StatePersistenceService } from '@spartacus/core';
+import { LANGUAGE_CONTEXT_ID, StatePersistenceService } from '@spartacus/core';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { OpfMetadataModel } from '../model/opf-metadata-store.model';
@@ -45,6 +44,15 @@ export class OpfMetadataStatePersistanceService implements OnDestroy {
         onRead: (state) => this.onRead(state),
       })
     );
+  }
+
+  /**
+   * Gets an active content language from the browser local storage.
+   */
+  public getActiveLanguage(): string {
+    return this.statePersistenceService.readStateFromStorage({
+      key: LANGUAGE_CONTEXT_ID,
+    }) as string;
   }
 
   /**

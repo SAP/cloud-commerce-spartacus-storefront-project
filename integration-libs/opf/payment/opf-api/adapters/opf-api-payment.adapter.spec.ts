@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,10 +8,12 @@ import {
   HttpClient,
   HttpErrorResponse,
   HttpHeaders,
+  provideHttpClient,
+  withInterceptorsFromDi,
 } from '@angular/common/http';
 import {
-  HttpClientTestingModule,
   HttpTestingController,
+  provideHttpClientTesting,
 } from '@angular/common/http/testing';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import {
@@ -22,11 +24,14 @@ import {
   LoggerService,
   tryNormalizeHttpError,
 } from '@spartacus/core';
+import { OpfEndpointsService } from '@spartacus/opf/base/core';
+import {
+  OpfConfig,
+  OpfMetadataStatePersistanceService,
+} from '@spartacus/opf/base/root';
 import { defer, of, throwError } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { OpfEndpointsService } from '@spartacus/opf/base/core';
 import { OPF_PAYMENT_VERIFICATION_NORMALIZER } from '../../core/tokens';
-import { OpfConfig } from '@spartacus/opf/base/root';
 import { OpfPaymentVerificationResponse } from '../../root/model';
 import { OpfApiPaymentAdapter } from './opf-api-payment.adapter';
 
@@ -80,6 +85,14 @@ export class MockOpfEndpointsService implements Partial<OpfEndpointsService> {
   }
 }
 
+class MockOpfMetadataStatePersistanceService
+  implements Partial<OpfMetadataStatePersistanceService>
+{
+  getActiveLanguage(): string {
+    return 'en-us';
+  }
+}
+
 const mockPaymentSessionId = '123';
 
 const mockNormalizedJaloError = tryNormalizeHttpError(
@@ -109,7 +122,7 @@ describe(`OpfApiPaymentAdapter`, () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [],
       providers: [
         OpfApiPaymentAdapter,
         {
@@ -120,6 +133,12 @@ describe(`OpfApiPaymentAdapter`, () => {
           provide: OpfConfig,
           useValue: mockOpfConfig,
         },
+        {
+          provide: OpfMetadataStatePersistanceService,
+          useClass: MockOpfMetadataStatePersistanceService,
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
       ],
     });
 

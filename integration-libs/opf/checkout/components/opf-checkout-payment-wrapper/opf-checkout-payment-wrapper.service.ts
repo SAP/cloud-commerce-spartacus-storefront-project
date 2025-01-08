@@ -1,5 +1,4 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
  * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
@@ -141,7 +140,9 @@ export class OpfCheckoutPaymentWrapperService {
       paymentOptionConfig.paymentSessionId
         ? paymentOptionConfig.paymentSessionId
         : undefined;
-    this.opfMetadataStoreService.updateOpfMetadata({ paymentSessionId });
+    this.opfMetadataStoreService.updateOpfMetadata({
+      opfPaymentSessionId: paymentSessionId,
+    });
   }
 
   reloadPaymentMode(): void {
@@ -150,18 +151,16 @@ export class OpfCheckoutPaymentWrapperService {
     }
   }
 
+  /**
+   * Render payment option covering the three patterns: IFRAME, FULL_PAGE, HOSTED_FIELDS.
+   * Context to explain this method logic:
+   * All three patterns can contains `dynamicScript` value.
+   * IFRAME and FULL_PAGE patterns can also have `destination` value.
+   * if `dynamicScript` and `destination` are present in same config, dynamicScript takes precendence.
+   * @param config
+   * @returns : none, OpfPaymentRenderMethodEvent gets emitted
+   */
   renderPaymentGateway(config: OpfPaymentSessionData) {
-    if (config?.destination) {
-      this.renderPaymentMethodEvent$.next({
-        isLoading: false,
-        isError: false,
-        renderType: config?.pattern,
-        data: config?.destination.url,
-        destination: config?.destination,
-      });
-      return;
-    }
-
     if (config?.dynamicScript) {
       const html = config?.dynamicScript?.html;
 
@@ -175,7 +174,7 @@ export class OpfCheckoutPaymentWrapperService {
             isLoading: false,
             isError: false,
             renderType: config?.pattern,
-            data: html,
+            html,
           });
 
           if (html) {
@@ -187,11 +186,16 @@ export class OpfCheckoutPaymentWrapperService {
         });
       return;
     }
-    this.handlePaymentInitiationError({
-      message: 'Payment Configuration problem',
-    })
-      .pipe(take(1))
-      .subscribe();
+    if (config?.destination) {
+      this.renderPaymentMethodEvent$.next({
+        isLoading: false,
+        isError: false,
+        renderType: config?.pattern,
+        destination: config?.destination,
+      });
+      return;
+    }
+    this.handleGeneralPaymentError().pipe(take(1)).subscribe();
   }
 
   protected handlePaymentInitiationError(

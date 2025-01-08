@@ -1,5 +1,4 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
  * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
@@ -50,6 +49,13 @@ export class ApplePayService {
   );
   protected opfQuickBuyFacade = inject(OpfQuickBuyFacade);
   protected paymentInProgress = false;
+  protected readonly defaultApplePayCardParameters: any = {
+    shippingMethods: [],
+    merchantCapabilities: ['supports3DS'],
+    supportedNetworks: ['visa', 'masterCard', 'amex', 'discover'],
+    requiredShippingContactFields: ['email', 'name', 'postalAddress'],
+    requiredBillingContactFields: ['email', 'name', 'postalAddress'],
+  };
 
   protected initialTransactionDetails: QuickBuyTransactionDetails = {
     context: OpfQuickBuyLocation.PRODUCT,
@@ -169,16 +175,12 @@ export class ApplePayService {
     this.transactionDetails = this.initTransactionDetails(transactionInput);
     const countryCode = transactionInput?.countryCode || '';
     const initialRequest: ApplePayJS.ApplePayPaymentRequest = {
+      ...this.defaultApplePayCardParameters,
       currencyCode: this.transactionDetails.total.currency,
       total: {
         amount: this.transactionDetails.total.amount,
         label: this.transactionDetails.total.label,
       },
-      shippingMethods: [],
-      merchantCapabilities: ['supports3DS'],
-      supportedNetworks: ['visa', 'masterCard', 'amex', 'discover'],
-      requiredShippingContactFields: ['email', 'name', 'postalAddress'],
-      requiredBillingContactFields: ['email', 'name', 'postalAddress'],
       countryCode,
     };
 

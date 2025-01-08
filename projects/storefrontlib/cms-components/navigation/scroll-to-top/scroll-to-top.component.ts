@@ -1,5 +1,4 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
  * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
@@ -21,8 +20,10 @@ import {
   FeatureConfigService,
   ScrollBehavior,
   WindowRef,
+  AnonymousConsentsService,
+  useFeatureStyles,
 } from '@spartacus/core';
-import { take } from 'rxjs/operators';
+import { take, Observable } from 'rxjs';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import { SelectFocusUtility } from '../../../layout/a11y/index';
 import { ICON_TYPE } from '../../misc/icon/icon.model';
@@ -38,6 +39,7 @@ export class ScrollToTopComponent implements OnInit {
   @HostBinding('class.display')
   display: boolean | undefined;
 
+  protected elevatedPosition$: Observable<boolean> | undefined;
   protected window: Window | undefined = this.winRef.nativeWindow;
   protected scrollBehavior: ScrollBehavior = ScrollBehavior.SMOOTH;
   protected displayThreshold: number = (this.window?.innerHeight ?? 400) / 2;
@@ -50,15 +52,26 @@ export class ScrollToTopComponent implements OnInit {
   @Optional() protected featureConfigService = inject(FeatureConfigService, {
     optional: true,
   });
+  @Optional() protected anonymousConsentsService = inject(
+    AnonymousConsentsService,
+    {
+      optional: true,
+    }
+  );
 
   constructor(
     protected winRef: WindowRef,
     protected componentData: CmsComponentData<CmsScrollToTopComponent>,
     protected selectFocusUtility: SelectFocusUtility
-  ) {}
+  ) {
+    useFeatureStyles('a11yScrollToTopPositioning');
+  }
 
   ngOnInit(): void {
     this.setConfig();
+    if (this.featureConfigService?.isEnabled('a11yScrollToTopPositioning')) {
+      this.elevatedPosition$ = this.anonymousConsentsService?.isBannerVisible();
+    }
   }
 
   @HostListener('window:scroll', ['$event'])
