@@ -26,9 +26,8 @@ import {
   SpinnerModule,
 } from '@spartacus/storefront';
 
-import { defaultVerificationTokenLayoutConfig } from '../../../../user/account/components/verification-token-form/default-verification-token-layout.config';
-import { RegisterVerificationTokenFormComponentService } from './register-verification-token-form-component.service';
-import { RegisterVerificationTokenFormComponent } from './register-verification-token-form.component';
+import { RegisterVerificationTokenFormComponentService } from './verification-token-form-component.service';
+import { RegisterVerificationTokenFormComponent } from './verification-token-form.component';
 import { VerificationTokenFacade } from '@spartacus/user/account/root';
 
 @NgModule({
@@ -66,10 +65,7 @@ import { VerificationTokenFacade } from '@spartacus/user/account/root';
         },
       },
     }),
-    provideDefaultConfig(defaultVerificationTokenLayoutConfig),
   ],
-  declarations: [
-    RegisterVerificationTokenFormComponent,
-  ],
+  declarations: [RegisterVerificationTokenFormComponent],
 })
 export class RegisterVerificationTokenFormModule {}

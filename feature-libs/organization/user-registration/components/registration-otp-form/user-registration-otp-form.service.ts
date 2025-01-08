@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -14,15 +14,9 @@ import {
 import {
   AuthConfigService,
   Country,
-  GlobalMessageService,
   Region,
-  RoutingService,
-  TranslationService,
   UserAddressService,
 } from '@spartacus/core';
-import {
-  UserRegistrationFacade,
-} from '@spartacus/organization/user-registration/root';
 import { CustomFormValidators } from '@spartacus/storefront';
 import { Title, UserRegisterFacade } from '@spartacus/user/profile/root';
 import { Observable, of } from 'rxjs';
@@ -32,16 +26,10 @@ import { filter, switchMap, tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class UserRegistrationOTPFormService {
-  constructor(
-    protected userRegisterFacade: UserRegisterFacade,
-    protected userAddressService: UserAddressService,
-    protected organizationUserRegistrationFacade: UserRegistrationFacade,
-    protected translationService: TranslationService,
-    protected globalMessageService: GlobalMessageService,
-    protected authConfigService: AuthConfigService,
-    protected routingService: RoutingService,
-    protected formBuilder: FormBuilder
-  ) {}
+  protected userRegisterFacade = inject(UserRegisterFacade);
+  protected userAddressService = inject(UserAddressService);
+  protected authConfigService = inject(AuthConfigService);
+  protected formBuilder = inject(FormBuilder);
 
   private _form: FormGroup = this.buildForm();
 

@@ -34,7 +34,8 @@ export class RegisterVerificationTokenFormComponentService {
   protected globalMessage: GlobalMessageService = inject(GlobalMessageService);
   protected formBuilder = inject(FormBuilder);
   protected organizationUserRegistrationFacade: UserRegistrationFacade = inject(
-    UserRegistrationFacade);
+    UserRegistrationFacade
+  );
   protected translationService: TranslationService = inject(TranslationService);
   protected authConfigService: AuthConfigService = inject(AuthConfigService);
   protected routingService: RoutingService = inject(RoutingService);
@@ -44,7 +45,9 @@ export class RegisterVerificationTokenFormComponentService {
     tokenCode: new UntypedFormControl('', [Validators.required]),
   });
 
-  protected buildMessageContent(formValue: { [key: string]: any }): Observable<string> {
+  protected buildMessageContent(formValue: {
+    [key: string]: any;
+  }): Observable<string> {
     return this.translationService.translate(
       'userRegistrationForm.messageToApproverTemplate',
       {
@@ -58,16 +61,6 @@ export class RegisterVerificationTokenFormComponentService {
         companyName: formValue.companyName,
         message: formValue.message,
       }
-    );
-  }
-
-  /**
-   * Displays confirmation global message.
-   */
-  protected displayGlobalMessage(): void {
-    return this.globalMessage.add(
-      { key: 'userRegistrationForm.successFormSubmitMessage' },
-      GlobalMessageType.MSG_TYPE_CONFIRMATION
     );
   }
 
@@ -96,7 +89,9 @@ export class RegisterVerificationTokenFormComponentService {
     );
   }
 
-  registerUser(formValue: { [key: string]: any }): Observable<OrganizationUserRegistration> {
+  registerUser(formValue: {
+    [key: string]: any;
+  }): Observable<OrganizationUserRegistration> {
     return this.buildMessageContent(formValue).pipe(
       take(1),
       switchMap((message: string) =>
@@ -111,7 +106,10 @@ export class RegisterVerificationTokenFormComponentService {
         })
       ),
       tap(() => {
-        this.displayGlobalMessage();
+        this.displayMessage(
+          'userRegistrationForm.successFormSubmitMessage',
+          {}
+        );
         this.redirectToLogin();
       })
     );

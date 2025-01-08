@@ -4,11 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import {
   Country,
@@ -20,11 +16,15 @@ import {
 import { Title } from '@spartacus/user/profile/root';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { UserRegistrationOTPFormService } from './user-registration-otp-form.service';
-import { VerificationToken, VerificationTokenCreation, VerificationTokenFacade } from '@spartacus/user/account/root';
+import {
+  VerificationToken,
+  VerificationTokenCreation,
+  VerificationTokenFacade,
+} from '@spartacus/user/account/root';
 import { ONE_TIME_PASSWORD_REGISTRATION_PURPOSE } from '../user-registration-constants';
 
 @Component({
-  selector: 'cx-user-registration-otp-form',
+  selector: 'cx-user-registration-form',
   templateUrl: './user-registration-otp-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -32,6 +32,9 @@ export class UserRegistrationOTPFormComponent {
   protected routingService = inject(RoutingService);
   protected verificationTokenFacade = inject(VerificationTokenFacade);
   protected winRef = inject(WindowRef);
+  protected globalMessageService = inject(GlobalMessageService, {
+    optional: true,
+  });
   protected busy$ = new BehaviorSubject(false);
   titles$: Observable<Title[]> = this.userRegistrationFormService.getTitles();
 
@@ -44,10 +47,6 @@ export class UserRegistrationOTPFormComponent {
   registerForm: FormGroup = this.userRegistrationFormService.form;
 
   isLoading$ = new BehaviorSubject(false);
-
-  protected globalMessageService = inject(GlobalMessageService, {
-    optional: true,
-  });
 
   constructor(
     protected userRegistrationFormService: UserRegistrationOTPFormService

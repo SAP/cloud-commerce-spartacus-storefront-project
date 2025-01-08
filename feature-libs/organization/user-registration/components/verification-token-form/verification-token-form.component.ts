@@ -16,16 +16,19 @@ import {
 } from '@angular/core';
 import { LAUNCH_CALLER, LaunchDialogService } from '@spartacus/storefront';
 
-import { VerificationToken, VerificationTokenFacade } from '@spartacus/user/account/root';
-import { RegisterVerificationTokenFormComponentService } from './register-verification-token-form-component.service';
+import {
+  VerificationToken,
+  VerificationTokenFacade,
+} from '@spartacus/user/account/root';
+import { RegisterVerificationTokenFormComponentService } from './verification-token-form-component.service';
 import { RoutingService } from '@spartacus/core';
 import { UntypedFormGroup } from '@angular/forms';
-import {   Subject, Subscription } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { ONE_TIME_PASSWORD_REGISTRATION_PURPOSE } from '../user-registration-constants';
 
 @Component({
   selector: 'cx-verification-token-form',
-  templateUrl: './register-verification-token-form.component.html',
+  templateUrl: './verification-token-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterVerificationTokenFormComponent implements OnInit {
@@ -89,18 +92,18 @@ export class RegisterVerificationTokenFormComponent implements OnInit {
       this.form.markAllAsTouched();
       return;
     }
-        this.isUpdating$.next(true);
-        this.subscriptions.add(
-          this.service
-            .registerUser(this.registerData)
-            .subscribe({
-              complete: () => this.isUpdating$.next(false),
-              error: () => {
-                this.isUpdating$.next(false);
-                this.form.get('tokenCode')?.setErrors({ invalidTokenCodeError: true });
-              },
-            })
-        );
+    this.isUpdating$.next(true);
+    this.subscriptions.add(
+      this.service.registerUser(this.registerData).subscribe({
+        complete: () => this.isUpdating$.next(false),
+        error: () => {
+          this.isUpdating$.next(false);
+          this.form
+            .get('tokenCode')
+            ?.setErrors({ invalidTokenCodeError: true });
+        },
+      })
+    );
   }
 
   resendOTP(): void {
@@ -109,9 +112,11 @@ export class RegisterVerificationTokenFormComponent implements OnInit {
     this.resendLink.nativeElement.tabIndex = -1;
     this.resendLink.nativeElement.blur();
     this.startWaitTimeInterval();
-    this.verificationTokenFacade.createVerificationToken({
-      loginId: this.target,
-      purpose: ONE_TIME_PASSWORD_REGISTRATION_PURPOSE})
+    this.verificationTokenFacade
+      .createVerificationToken({
+        loginId: this.target,
+        purpose: ONE_TIME_PASSWORD_REGISTRATION_PURPOSE,
+      })
       .subscribe({
         next: (result: VerificationToken) => (this.tokenId = result.tokenId),
         complete: () =>
@@ -121,7 +126,6 @@ export class RegisterVerificationTokenFormComponent implements OnInit {
           ),
       });
   }
-
 
   startWaitTimeInterval(): void {
     const interval = setInterval(() => {

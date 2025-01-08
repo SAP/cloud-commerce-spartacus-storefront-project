@@ -19,11 +19,13 @@
         bindLabel="name"
         bindValue="code"
         placeholder="{{
-          'userRegistrationForm.fields.titleCodeOnOTPForm.placeholder' | cxTranslate
+          'userRegistrationForm.fields.titleCodeOnOTPForm.placeholder'
+            | cxTranslate
         }}"
         [cxNgSelectA11y]="{
           ariaLabel:
-            'userRegistrationForm.fields.titleCodeOnOTPForm.label' | cxTranslate,
+            'userRegistrationForm.fields.titleCodeOnOTPForm.label'
+            | cxTranslate,
         }"
       >
       </ng-select>
@@ -168,11 +170,13 @@
           bindLabel="name"
           bindValue="isocode"
           placeholder="{{
-            'userRegistrationForm.fields.countryOnOTPForm.placeholder' | cxTranslate
+            'userRegistrationForm.fields.countryOnOTPForm.placeholder'
+              | cxTranslate
           }}"
           [cxNgSelectA11y]="{
             ariaLabel:
-              'userRegistrationForm.fields.countryOnOTPForm.label' | cxTranslate,
+              'userRegistrationForm.fields.countryOnOTPForm.label'
+              | cxTranslate,
           }"
         >
         </ng-select>
@@ -181,7 +185,9 @@
         <cx-form-errors
           *cxFeature="'formErrorsDescriptiveMessages'"
           [translationParams]="{
-            label: 'userRegistrationForm.fields.countryOnOTPForm.label' | cxTranslate,
+            label:
+              'userRegistrationForm.fields.countryOnOTPForm.label'
+              | cxTranslate,
           }"
           [control]="registerForm.get('country.isocode')"
         ></cx-form-errors>
@@ -201,7 +207,8 @@
         type="text"
         class="form-control"
         placeholder="{{
-          'userRegistrationForm.fields.addressLineOnOTPForm.placeholder' | cxTranslate
+          'userRegistrationForm.fields.addressLineOnOTPForm.placeholder'
+            | cxTranslate
         }}"
         formControlName="line1"
       />
@@ -210,7 +217,9 @@
       <cx-form-errors
         *cxFeature="'formErrorsDescriptiveMessages'"
         [translationParams]="{
-          label: 'userRegistrationForm.fields.addressLineOnOTPForm.label' | cxTranslate,
+          label:
+            'userRegistrationForm.fields.addressLineOnOTPForm.label'
+            | cxTranslate,
         }"
         [control]="registerForm.get('line1')"
       ></cx-form-errors>
@@ -223,7 +232,8 @@
 
     <label>
       <span class="label-content">{{
-        'userRegistrationForm.fields.secondAddressLineOnOTPForm.label' | cxTranslate
+        'userRegistrationForm.fields.secondAddressLineOnOTPForm.label'
+          | cxTranslate
       }}</span>
       <input
         type="text"
@@ -260,7 +270,8 @@
         type="text"
         class="form-control"
         placeholder="{{
-          'userRegistrationForm.fields.postalCodeOnOTPForm.placeholder' | cxTranslate
+          'userRegistrationForm.fields.postalCodeOnOTPForm.placeholder'
+            | cxTranslate
         }}"
         formControlName="postalCode"
       />
@@ -269,7 +280,9 @@
       <cx-form-errors
         *cxFeature="'formErrorsDescriptiveMessages'"
         [translationParams]="{
-          label: 'userRegistrationForm.fields.postalCodeOnOTPForm.label' | cxTranslate,
+          label:
+            'userRegistrationForm.fields.postalCodeOnOTPForm.label'
+            | cxTranslate,
         }"
         [control]="registerForm.get('postalCode')"
       ></cx-form-errors>
@@ -294,11 +307,13 @@
           bindLabel="name"
           bindValue="isocode"
           placeholder="{{
-            'userRegistrationForm.fields.stateOnOTPForm.placeholder' | cxTranslate
+            'userRegistrationForm.fields.stateOnOTPForm.placeholder'
+              | cxTranslate
           }}"
           id="region-select"
           [cxNgSelectA11y]="{
-            ariaLabel: 'userRegistrationForm.fields.stateOnOTPForm.label' | cxTranslate,
+            ariaLabel:
+              'userRegistrationForm.fields.stateOnOTPForm.label' | cxTranslate,
           }"
         >
         </ng-select>
@@ -307,7 +322,8 @@
         <cx-form-errors
           *cxFeature="'formErrorsDescriptiveMessages'"
           [translationParams]="{
-            label: 'userRegistrationForm.fields.stateOnOTPForm.label' | cxTranslate,
+            label:
+              'userRegistrationForm.fields.stateOnOTPForm.label' | cxTranslate,
           }"
           [control]="registerForm.get('region.isocode')"
         ></cx-form-errors>
@@ -327,7 +343,8 @@
         type="tel"
         class="form-control"
         placeholder="{{
-          'userRegistrationForm.fields.phoneNumberOnOTPForm.placeholder' | cxTranslate
+          'userRegistrationForm.fields.phoneNumberOnOTPForm.placeholder'
+            | cxTranslate
         }}"
         formControlName="phoneNumber"
       />
@@ -336,7 +353,9 @@
       <cx-form-errors
         *cxFeature="'formErrorsDescriptiveMessages'"
         [translationParams]="{
-          label: 'userRegistrationForm.fields.phoneNumberOnOTPForm.label' | cxTranslate,
+          label:
+            'userRegistrationForm.fields.phoneNumberOnOTPForm.label'
+            | cxTranslate,
         }"
         [control]="registerForm.get('phoneNumber')"
       ></cx-form-errors>
@@ -355,7 +374,8 @@
         class="form-control"
         formControlName="message"
         placeholder="{{
-          'userRegistrationForm.fields.messageOnOTPForm.placeholder' | cxTranslate
+          'userRegistrationForm.fields.messageOnOTPForm.placeholder'
+            | cxTranslate
         }}"
         rows="5"
       ></textarea>
@@ -364,7 +384,8 @@
       <cx-form-errors
         *cxFeature="'formErrorsDescriptiveMessages'"
         [translationParams]="{
-          label: 'userRegistrationForm.fields.messageOnOTPForm.label' | cxTranslate,
+          label:
+            'userRegistrationForm.fields.messageOnOTPForm.label' | cxTranslate,
         }"
         [control]="registerForm.get('message')"
       ></cx-form-errors>
