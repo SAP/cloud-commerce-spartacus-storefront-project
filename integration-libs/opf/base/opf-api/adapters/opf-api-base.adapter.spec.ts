@@ -1,13 +1,17 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { HttpErrorResponse } from '@angular/common/http';
 import {
-  HttpClientTestingModule,
+  HttpErrorResponse,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
   HttpTestingController,
+  provideHttpClientTesting,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ConverterService, LoggerService } from '@spartacus/core';
@@ -18,6 +22,7 @@ import {
   OpfActiveConfigurationsPagination,
   OpfActiveConfigurationsResponse,
   OpfConfig,
+  OpfMetadataStatePersistanceService,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
 import { map } from 'rxjs';
@@ -80,6 +85,14 @@ class MockOpfEndpointsService implements Partial<OpfEndpointsService> {
   }
 }
 
+class MockOpfMetadataStatePersistanceService
+  implements Partial<OpfMetadataStatePersistanceService>
+{
+  getActiveLanguage(): string {
+    return 'en-us';
+  }
+}
+
 describe('OpfApiBaseAdapter', () => {
   let service: OpfApiBaseAdapter;
   let httpMock: HttpTestingController;
@@ -89,13 +102,19 @@ describe('OpfApiBaseAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [],
       providers: [
         OpfApiBaseAdapter,
         ConverterService,
         { provide: LoggerService, useClass: MockLoggerService },
         { provide: OpfEndpointsService, useClass: MockOpfEndpointsService },
+        {
+          provide: OpfMetadataStatePersistanceService,
+          useClass: MockOpfMetadataStatePersistanceService,
+        },
         { provide: OpfConfig, useValue: mockOpfConfig },
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
       ],
     });
 

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -75,6 +75,22 @@ export class OpfGooglePayService {
         phoneNumberRequired: false,
       },
     };
+
+  protected readonly defaultGooglePayCardParameters: any = {
+    allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+    allowedCardNetworks: [
+      'AMEX',
+      'DISCOVER',
+      'INTERAC',
+      'JCB',
+      'MASTERCARD',
+      'VISA',
+    ],
+    billingAddressRequired: true,
+    billingAddressParameters: {
+      format: 'FULL',
+    },
+  };
 
   private initialTransactionInfo: google.payments.api.TransactionInfo = {
     totalPrice: '0.00',
@@ -480,19 +496,7 @@ export class OpfGooglePayService {
     this.googlePaymentRequest.allowedPaymentMethods = [
       {
         parameters: {
-          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-          allowedCardNetworks: [
-            'AMEX',
-            'DISCOVER',
-            'INTERAC',
-            'JCB',
-            'MASTERCARD',
-            'VISA',
-          ],
-          billingAddressRequired: true,
-          billingAddressParameters: {
-            format: 'FULL',
-          },
+          ...this.defaultGooglePayCardParameters,
         },
         tokenizationSpecification: {
           parameters: {

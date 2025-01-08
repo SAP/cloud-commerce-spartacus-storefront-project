@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
-  HttpClientTestingModule,
   HttpTestingController,
+  provideHttpClientTesting,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ConverterService, LoggerService } from '@spartacus/core';
@@ -15,6 +15,7 @@ import {
   OPF_CC_PUBLIC_KEY_HEADER,
   OpfConfig,
   OpfDynamicScriptResourceType,
+  OpfMetadataStatePersistanceService,
 } from '@spartacus/opf/base/root';
 import {
   OpfCtaScriptsRequest,
@@ -23,6 +24,10 @@ import {
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { OpfApiCtaAdapter } from './opf-api-cta.adapter';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const mockCtaScriptsRequest: OpfCtaScriptsRequest = {
   paymentAccountIds: [123],
@@ -62,6 +67,14 @@ const mockOpfConfig: OpfConfig = {
   },
 };
 
+class MockOpfMetadataStatePersistanceService
+  implements Partial<OpfMetadataStatePersistanceService>
+{
+  getActiveLanguage(): string {
+    return 'en-us';
+  }
+}
+
 describe('OpfApiCtaAdapter', () => {
   let adapter: OpfApiCtaAdapter;
   let httpMock: HttpTestingController;
@@ -75,13 +88,19 @@ describe('OpfApiCtaAdapter', () => {
     ]);
 
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [],
       providers: [
         OpfApiCtaAdapter,
         { provide: OpfConfig, useValue: mockOpfConfig },
         { provide: ConverterService, useValue: converterSpy },
         { provide: OpfEndpointsService, useValue: opfEndpointsSpy },
+        {
+          provide: OpfMetadataStatePersistanceService,
+          useClass: MockOpfMetadataStatePersistanceService,
+        },
         LoggerService,
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
       ],
     });
 
