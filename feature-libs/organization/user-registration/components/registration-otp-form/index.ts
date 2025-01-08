@@ -5,5 +5,4 @@
  */
 
 export * from './user-registration-otp-form.component';
-export * from './user-registration-otp-form.service';
 export * from './user-registration-otp-form.module';

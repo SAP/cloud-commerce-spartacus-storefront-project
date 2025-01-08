@@ -22,7 +22,6 @@ import {
   NgSelectA11yModule,
   SpinnerModule,
 } from '@spartacus/storefront';
-import { UserRegistrationOTPFormService } from './user-registration-otp-form.service';
 import { UserRegistrationOTPFormComponent } from './user-registration-otp-form.component';
 
 @NgModule({
@@ -48,6 +47,5 @@ import { UserRegistrationOTPFormComponent } from './user-registration-otp-form.c
   ],
   declarations: [UserRegistrationOTPFormComponent],
   exports: [UserRegistrationOTPFormComponent],
-  providers: [UserRegistrationOTPFormService],
 })
 export class UserRegistrationOTPFormModule {}

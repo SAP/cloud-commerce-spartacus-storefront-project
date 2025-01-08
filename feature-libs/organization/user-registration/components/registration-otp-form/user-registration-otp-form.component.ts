@@ -15,13 +15,13 @@ import {
 } from '@spartacus/core';
 import { Title } from '@spartacus/user/profile/root';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { UserRegistrationOTPFormService } from './user-registration-otp-form.service';
 import {
   VerificationToken,
   VerificationTokenCreation,
   VerificationTokenFacade,
 } from '@spartacus/user/account/root';
 import { ONE_TIME_PASSWORD_REGISTRATION_PURPOSE } from '../user-registration-constants';
+import { UserRegistrationFormService } from '../form';
 
 @Component({
   selector: 'cx-user-registration-form',
@@ -35,6 +35,7 @@ export class UserRegistrationOTPFormComponent {
   protected globalMessageService = inject(GlobalMessageService, {
     optional: true,
   });
+  protected userRegistrationFormService = inject(UserRegistrationFormService);
   protected busy$ = new BehaviorSubject(false);
   titles$: Observable<Title[]> = this.userRegistrationFormService.getTitles();
 
@@ -47,10 +48,6 @@ export class UserRegistrationOTPFormComponent {
   registerForm: FormGroup = this.userRegistrationFormService.form;
 
   isLoading$ = new BehaviorSubject(false);
-
-  constructor(
-    protected userRegistrationFormService: UserRegistrationOTPFormService
-  ) {}
 
   onSubmit(): void {
     if (!this.registerForm.valid) {
