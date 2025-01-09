@@ -56,7 +56,6 @@ describe('Tabbing order for B2B OTP registration', () => {
             verificationCodeStartIndex,
             verificationCodeStartIndex + 8
           );
-          cy.log('Extracted verification code: ' + verificationCode);
 
           listenForTokenAuthenticationRequest();
           cy.get('cx-verification-token-form').within(() => {
