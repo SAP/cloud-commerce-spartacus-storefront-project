@@ -23,7 +23,7 @@ export class OpfResourceLoaderService {
   protected platformId = inject(PLATFORM_ID);
 
   protected readonly CORS_DEFAULT_VALUE = 'anonymous';
-  protected readonly OPF_RESOURCE_LOAD_ONCE_ATTR_KEY = 'opf-load-once';
+  protected readonly OPF_RESOURCE_LOAD_ONCE_ATTRIBUTE_KEY = 'opf-load-once';
   protected readonly OPF_RESOURCE_ATTRIBUTE_KEY = 'data-opf-resource';
 
   protected embedStyles(embedOptions: {
@@ -87,11 +87,10 @@ export class OpfResourceLoaderService {
     keyValueList?.forEach((keyValue: OpfKeyValueMap) => {
       attributes[keyValue.key] = keyValue.value;
     });
-    if (!attributes[this.OPF_RESOURCE_LOAD_ONCE_ATTR_KEY]) {
+    if (attributes?.[this.OPF_RESOURCE_LOAD_ONCE_ATTRIBUTE_KEY] === 'true') {
       attributes[this.OPF_RESOURCE_ATTRIBUTE_KEY] = 'true';
-    } else {
-      delete attributes[this.OPF_RESOURCE_LOAD_ONCE_ATTR_KEY];
     }
+    delete attributes?.[this.OPF_RESOURCE_LOAD_ONCE_ATTRIBUTE_KEY];
     return attributes;
   }
 
@@ -101,6 +100,7 @@ export class OpfResourceLoaderService {
    * The returned Promise is resolved when the script is loaded or already present.
    * The returned Promise is rejected when a loading error occurs.
    */
+
   protected loadScript(resource: OpfDynamicScriptResource): Promise<void> {
     return new Promise((resolve, reject) => {
       const attributes: { [key: string]: string } = {
@@ -134,6 +134,7 @@ export class OpfResourceLoaderService {
    * The returned Promise is resolved when the stylesheet is loaded or already present.
    * The returned Promise is rejected when a loading error occurs.
    */
+
   protected loadStyles(resource: OpfDynamicScriptResource): Promise<void> {
     return new Promise((resolve, reject) => {
       if (resource.url && !this.hasStyles(resource.url)) {
@@ -178,6 +179,7 @@ export class OpfResourceLoaderService {
    * The returned Promise is resolved when all resources are loaded.
    * The returned Promise is also resolved (not rejected!) immediately when any loading error occurs.
    */
+
   loadResources(
     scripts: OpfDynamicScriptResource[] = [],
     styles: OpfDynamicScriptResource[] = []
