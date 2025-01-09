@@ -1,36 +1,41 @@
 <ng-container *cxFeature="'a11yRepeatingButtonsUniqueLabels'">
-  <div
-    *ngIf="storeSelected$ | async as storeSelected"
-    [attr.data-preferred-store]="pointOfServiceName.name"
-    [attr.data-store-is-selected]="
-      pointOfServiceName.name === storeSelected.name
-    "
-    class="setpreferredstore-container"
-    (click)="setAsPreferred()"
-  >
+  <ng-container *ngIf="{ storeSelected: storeSelected$ | async } as data">
     <div
-      [ngClass]="{
-        'icon-selected': pointOfServiceName.name === storeSelected.name,
-        'icon-not-selected': pointOfServiceName.name !== storeSelected.name,
-      }"
-    >
-      <cx-icon aria-hidden="true" [type]="ICON_TYPE.HEART"></cx-icon>
-    </div>
-    <button
-      data-text="setPreferredStore.myStore"
       [attr.data-preferred-store]="pointOfServiceName.name"
-      class="set-preferred-heading"
-      [attr.aria-label]="
-        (getSetStoreButtonLabel(storeSelected.name) | cxTranslate) +
-        ', ' +
-        pointOfServiceName.displayName
+      [attr.data-store-is-selected]="
+        pointOfServiceName.name === data.storeSelected?.name
       "
+      class="setpreferredstore-container"
+      (click)="setAsPreferred()"
     >
-      {{ getSetStoreButtonLabel(storeSelected.name) | cxTranslate }}
-    </button>
-  </div>
+      <div
+        [ngClass]="
+          pointOfServiceName.name === data.storeSelected?.name
+            ? 'icon-selected'
+            : 'icon-not-selected'
+        "
+      >
+        <cx-icon aria-hidden="true" [type]="ICON_TYPE.HEART"></cx-icon>
+      </div>
+      <button
+        data-text="setPreferredStore.myStore"
+        [attr.data-preferred-store]="pointOfServiceName.name"
+        class="set-preferred-heading"
+        [attr.aria-label]="
+          (getSetStoreButtonLabel(data.storeSelected?.name || '')
+            | cxTranslate) +
+          ', ' +
+          pointOfServiceName.displayName
+        "
+      >
+        {{
+          getSetStoreButtonLabel(data.storeSelected?.name || '') | cxTranslate
+        }}
+      </button>
+    </div>
+  </ng-container>
 </ng-container>
-<ng-container *cxFeature="'a11yRepeatingButtonsUniqueLabels'">
+<ng-container *cxFeature="'!a11yRepeatingButtonsUniqueLabels'">
   <div
     [attr.data-preferred-store]="pointOfServiceName.name"
     [attr.data-store-is-selected]="
