@@ -18,7 +18,7 @@ import {
   provideFeatureTogglesFactory,
 } from '@spartacus/core';
 import {
-  // AnonymousConsentManagementBannerModule,
+  AnonymousConsentManagementBannerModule,
   AnonymousConsentsDialogModule,
   BannerCarouselModule,
   BannerModule,
@@ -208,7 +208,7 @@ if (environment.cpq) {
     AnonymousConsentsModule.forRoot(),
     // Anonymous Consents UI
     AnonymousConsentsDialogModule,
-    // AnonymousConsentManagementBannerModule,
+    AnonymousConsentManagementBannerModule,
 
     // Product Core
     ProductModule.forRoot(),
