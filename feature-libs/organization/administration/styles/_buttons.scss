@@ -2,7 +2,7 @@
 
   a.link,
   button.link {
-    border-radius: 0;
+    border-radius: 0.2rem;
 
     &:focus {
       @include visible-focus();
@@ -30,8 +30,7 @@
 
   button.button,
   a.button {
-
-    border-radius: 0;
+    border-radius: 0.2rem;
 
     &:focus {
       @include visible-focus();
