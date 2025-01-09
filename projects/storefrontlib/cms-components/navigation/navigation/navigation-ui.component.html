@@ -21,6 +21,7 @@
   </ul>
 </nav>
 <!-- we generate links in a recursive manner -->
+
 <ng-template
   #nav
   let-node="node"
@@ -121,12 +122,12 @@
         </ng-container>
       </ng-container>
       <ng-template #title>
-        <span
-          [attr.aria-label]="node.title"
-          *ngIf="node.title"
-          [attr.tabindex]="0"
-        >
-          {{ node.title }}
+        <span *ngIf="node.title" [attr.tabindex]="0" role="heading"
+        aria-level="4">
+        1{{ node.title }}
+      </span>
+        <span *ngIf="node.title" [attr.tabindex]="0" >
+         2 {{ node.title }}
         </span>
       </ng-template>
     </ng-template>
@@ -142,9 +143,6 @@
         [attr.depth]="getTotalDepth(node)"
         [attr.wrap-after]="node.children.length > wrapAfter ? wrapAfter : null"
         [attr.columns]="getColumnCount(node.children.length)"
-        [attr.role]="
-          flyout && (node?.children?.length ?? 0) > 1 ? 'list' : null
-        "
       >
         <ng-container *ngFor="let child of node.children; index as i">
           <ng-container

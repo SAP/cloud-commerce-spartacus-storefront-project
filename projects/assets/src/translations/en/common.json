@@ -63,10 +63,7 @@
     "goTo": "Go to {{location}}",
     "navigateTo": "Navigate to {{nav}}",
     "scrollToTop": "Scroll back to the top of the page",
-    "linkItemInList": "{{title}}",
-    "linkItemInLists": "{{title}}. {{position}} of {{listLength}}",
-    "navigation": "navigation",
-    "mainNavigation": "Main Navigation"
+    "linkItemInList": "{{title}}"
   },
   "searchBox": {
     "placeholder": "Enter product name or SKU",
