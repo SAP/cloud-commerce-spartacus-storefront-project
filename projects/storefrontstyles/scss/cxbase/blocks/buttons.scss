@@ -340,9 +340,9 @@ button,
 
 // override opacity of bootstrap .close class
 button.close:not(:disabled):not(.disabled) {
-    @include forFeature('a11yImproveContrast') {
-      &:focus {
-        opacity: 1;
-      }
+  @include forFeature('a11yImproveContrast') {
+    &:focus {
+      opacity: 1;
     }
+  }
 }
