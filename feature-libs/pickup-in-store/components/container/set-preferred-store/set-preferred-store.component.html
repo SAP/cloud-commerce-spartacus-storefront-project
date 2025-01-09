@@ -1,37 +1,64 @@
-<div
-  [attr.data-preferred-store]="pointOfServiceName.name"
-  [attr.data-store-is-selected]="
-    pointOfServiceName.name === (storeSelected$ | async)?.name
-  "
-  class="setpreferredstore-container"
-  (click)="setAsPreferred()"
->
+<ng-container *cxFeature="'a11yRepeatingButtonsUniqueLabels'">
   <div
-    [ngClass]="{
-      'icon-selected':
-        pointOfServiceName.name === (storeSelected$ | async)?.name,
-      'icon-not-selected':
-        pointOfServiceName.name !== (storeSelected$ | async)?.name,
-    }"
-  >
-    <cx-icon aria-hidden="true" [type]="ICON_TYPE.HEART"></cx-icon>
-  </div>
-  <button
-    data-text="setPreferredStore.myStore"
+    *ngIf="storeSelected$ | async as storeSelected"
     [attr.data-preferred-store]="pointOfServiceName.name"
-    class="set-preferred-heading"
-    [attr.aria-label]="
-      (pointOfServiceName.name === (storeSelected$ | async)?.name
-        ? ('setPreferredStore.myStore' | cxTranslate)
-        : ('setPreferredStore.makeThisMyStore' | cxTranslate)) +
-      ', ' +
-      pointOfServiceName.displayName
+    [attr.data-store-is-selected]="
+      pointOfServiceName.name === storeSelected.name
     "
+    class="setpreferredstore-container"
+    (click)="setAsPreferred()"
   >
-    {{
+    <div
+      [ngClass]="{
+        'icon-selected': pointOfServiceName.name === storeSelected.name,
+        'icon-not-selected': pointOfServiceName.name !== storeSelected.name,
+      }"
+    >
+      <cx-icon aria-hidden="true" [type]="ICON_TYPE.HEART"></cx-icon>
+    </div>
+    <button
+      data-text="setPreferredStore.myStore"
+      [attr.data-preferred-store]="pointOfServiceName.name"
+      class="set-preferred-heading"
+      [attr.aria-label]="
+        (getSetStoreButtonLabel(storeSelected.name) | cxTranslate) +
+        ', ' +
+        pointOfServiceName.displayName
+      "
+    >
+      {{ getSetStoreButtonLabel(storeSelected.name) | cxTranslate }}
+    </button>
+  </div>
+</ng-container>
+<ng-container *cxFeature="'a11yRepeatingButtonsUniqueLabels'">
+  <div
+    [attr.data-preferred-store]="pointOfServiceName.name"
+    [attr.data-store-is-selected]="
       pointOfServiceName.name === (storeSelected$ | async)?.name
-        ? ('setPreferredStore.myStore' | cxTranslate)
-        : ('setPreferredStore.makeThisMyStore' | cxTranslate)
-    }}
-  </button>
-</div>
+    "
+    class="setpreferredstore-container"
+    (click)="setAsPreferred()"
+  >
+    <div
+      [ngClass]="{
+        'icon-selected':
+          pointOfServiceName.name === (storeSelected$ | async)?.name,
+        'icon-not-selected':
+          pointOfServiceName.name !== (storeSelected$ | async)?.name,
+      }"
+    >
+      <cx-icon aria-hidden="true" [type]="ICON_TYPE.HEART"></cx-icon>
+    </div>
+    <button
+      data-text="setPreferredStore.myStore"
+      [attr.data-preferred-store]="pointOfServiceName.name"
+      class="set-preferred-heading"
+    >
+      {{
+        pointOfServiceName.name === (storeSelected$ | async)?.name
+          ? ('setPreferredStore.myStore' | cxTranslate)
+          : ('setPreferredStore.makeThisMyStore' | cxTranslate)
+      }}
+    </button>
+  </div>
+</ng-container>
