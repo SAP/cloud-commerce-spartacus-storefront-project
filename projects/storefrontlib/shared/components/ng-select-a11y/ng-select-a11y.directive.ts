@@ -19,13 +19,13 @@ import {
   Renderer2,
   SecurityContext,
 } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { FeatureConfigService, TranslationService } from '@spartacus/core';
-import { filter, merge, take } from 'rxjs';
-import { BREAKPOINT, BreakpointService } from '../../../layout';
-import { NgSelectComponent } from '@ng-select/ng-select';
-import { map } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { DomSanitizer } from '@angular/platform-browser';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { FeatureConfigService } from '@spartacus/core';
+import { filter, merge, take } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { BREAKPOINT, BreakpointService } from '../../../layout';
 
 const ARIA_LABEL = 'aria-label';
 
@@ -40,7 +40,6 @@ export class NgSelectA11yDirective implements AfterViewInit {
    */
   @Input() cxNgSelectA11y: { ariaLabel?: string; ariaControls?: string };
 
-  protected translationService = inject(TranslationService);
   protected domSanitizer = inject(DomSanitizer);
   protected selectComponent = inject(NgSelectComponent);
   protected destroyRef = inject(DestroyRef);
@@ -145,21 +144,14 @@ export class NgSelectA11yDirective implements AfterViewInit {
     const options: HTMLOptionElement[] =
       this.elementRef?.nativeElement.querySelectorAll('.ng-option');
     if (options?.length) {
-      this.translationService
-        .translate('common.of')
-        .pipe(take(1))
-        .subscribe((translation) => {
-          options.forEach(
-            (option: HTMLOptionElement, index: string | number) => {
-              const sanitizedOptionText = this.domSanitizer.sanitize(
-                SecurityContext.HTML,
-                option.innerText
-              );
-              const ariaLabel = `${sanitizedOptionText}, ${+index + 1} ${translation} ${options.length}`;
-              this.renderer.setAttribute(option, ARIA_LABEL, ariaLabel);
-            }
-          );
-        });
+      options.forEach((option: HTMLOptionElement) => {
+        const sanitizedOptionText = this.domSanitizer.sanitize(
+          SecurityContext.HTML,
+          option.innerText
+        );
+        const ariaLabel = `${sanitizedOptionText}`;
+        this.renderer.setAttribute(option, ARIA_LABEL, ariaLabel);
+      });
     }
     observerInstance.disconnect();
   }
