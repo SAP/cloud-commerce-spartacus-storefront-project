@@ -1,8 +1,8 @@
 .cx-organization-user-register-button {
   @import '@spartacus/styles/scss/cxbase/mixins';
-  @import '@spartacus/styles/scss/cxbase/blocks/buttons';
+  //@import '@spartacus/styles/scss/cxbase/blocks/buttons';
   a {
-    @extend .btn, .btn-block, .btn-secondary;
+    //@extend .btn, .btn-block, .btn-secondary;
     &:focus {
       @include visible-focus();
     }
