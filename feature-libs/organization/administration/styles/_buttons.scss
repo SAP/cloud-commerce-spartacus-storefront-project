@@ -1,5 +1,4 @@
 %buttons {
-
   a.link,
   button.link {
     border-radius: 0.2rem;
@@ -70,7 +69,6 @@
   button.button.primary,
   button.button.primary.disabled,
   button.button.primary:active:not(:disabled):not(.disabled) {
-
     background-color: var(--cx-color-primary);
     border-color: var(--cx-color-primary);
 
