@@ -223,51 +223,6 @@ describe('MyAccountV2OrderHistoryService', () => {
         })
       );
     });
-  });
-  describe('getOrderDetailsV2', () => {
-    it('should load order details when not present in the store', fakeAsync(() => {
-      spyOn(userService, 'takeUserId').and.callThrough();
-      const sub = service.getOrderDetailsV2(orderCode).subscribe();
-
-      actions$
-        .pipe(ofType(OrderActions.LOAD_ORDER_BY_ID), take(1))
-        .subscribe((action) => {
-          expect(action).toEqual(
-            new OrderActions.LoadOrderById({
-              userId: OCC_USER_ID_CURRENT,
-              code: orderCode,
-            })
-          );
-        });
-
-      tick();
-      expect(userService.takeUserId).toHaveBeenCalled();
-      expect(store.dispatch).toHaveBeenCalledWith(
-        new OrderActions.LoadOrderById({
-          code: orderCode,
-          userId: OCC_USER_ID_CURRENT,
-        })
-      );
-      sub.unsubscribe();
-    }));
-
-    it('should be able to return order without loading when present in the store', () => {
-      spyOn(userService, 'takeUserId').and.callThrough();
-      store.dispatch(new OrderActions.LoadOrderByIdSuccess(order1));
-      service
-        .getOrderDetailsV2(orderCode)
-        .subscribe((data) => {
-          expect(data).toEqual(order1);
-        })
-        .unsubscribe();
-      expect(userService.takeUserId).not.toHaveBeenCalled();
-      expect(store.dispatch).not.toHaveBeenCalledWith(
-        new OrderActions.LoadOrderById({
-          code: orderCode,
-          userId: OCC_USER_ID_CURRENT,
-        })
-      );
-    });
     it('should return `undefined` in case of error when loading order', () => {
       spyOn(userService, 'takeUserId').and.callThrough();
       store.dispatch(
@@ -277,16 +232,27 @@ describe('MyAccountV2OrderHistoryService', () => {
         })
       );
       service
-        .getOrderDetailsV2('orderX')
+        .getOrderDetails('orderX')
         .subscribe((data) => {
           expect(data).toEqual(undefined);
         })
         .unsubscribe();
     });
+    it('should not emit when success and error are null or undefined', () => {
+      spyOn(service as any, 'getOrderDetailsState').and.returnValue(
+        of({ success: null, error: undefined, loading: false, value: null })
+      );
+      service.getOrderDetails(orderCode).subscribe(() => {
+        fail('Should not emit any value');
+      });
+      expect((service as any).getOrderDetailsState).toHaveBeenCalledWith(
+        orderCode
+      );
+    });
   });
   describe('getOrderDetailsWithTracking', () => {
     it('should return order details with consignment tracking', () => {
-      spyOn(service, 'getOrderDetailsV2').and.returnValue(of(order1));
+      spyOn(service, 'getOrderDetails').and.returnValue(of(order1));
       spyOn(service, 'getConsignmentTracking').and.returnValue(of(tracking1));
       service.getOrderDetailsWithTracking(orderCode).subscribe((result) => {
         expect(result).toEqual({
@@ -303,7 +269,7 @@ describe('MyAccountV2OrderHistoryService', () => {
             },
           ],
         });
-        expect(service.getOrderDetailsV2).toHaveBeenCalledWith(orderCode);
+        expect(service.getOrderDetails).toHaveBeenCalledWith(orderCode);
         expect(service.getConsignmentTracking).toHaveBeenCalledWith(
           orderCode,
           consignmentCode
@@ -311,7 +277,7 @@ describe('MyAccountV2OrderHistoryService', () => {
       });
     });
     it('should return order details without consignment tracking', () => {
-      spyOn(service, 'getOrderDetailsV2').and.returnValue(of(order2));
+      spyOn(service, 'getOrderDetails').and.returnValue(of(order2));
       spyOn(service, 'getConsignmentTracking').and.stub();
       service.getOrderDetailsWithTracking(orderCode).subscribe((result) => {
         expect(result).toEqual({
@@ -323,7 +289,7 @@ describe('MyAccountV2OrderHistoryService', () => {
             },
           ],
         });
-        expect(service.getOrderDetailsV2).toHaveBeenCalledWith(orderCode);
+        expect(service.getOrderDetails).toHaveBeenCalledWith(orderCode);
         expect(service.getConsignmentTracking).not.toHaveBeenCalled();
       });
     });
