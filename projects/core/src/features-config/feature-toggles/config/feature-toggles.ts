@@ -800,6 +800,18 @@ export interface FeatureTogglesInterface {
   a11yAddPaddingToCarouselPanel?: boolean;
 
   /**
+   * Restores the focus to the card once a option has been selected and the checkout has updated.
+   * Affects: CheckoutPaymentMethodComponent, CheckoutDeliveryAddressComponent
+   */
+  a11yFocusOnCardAfterSelecting?: boolean;
+
+  /**
+   * Search dropdowns will display the focus ring correctly when navigating to the options using the down arrow key.
+   * Affects: SearchBoxComponent, QuickOrderFormComponent
+   */
+  a11ySearchableDropdownFirstElementFocus?: boolean;
+
+  /**
    * Hides the 'Consent Management' button from the tab order when the cookies banner is visible.
    * Ensures the button is re-enabled and part of the tab order once consent is given and the banner disappears.
    * Renames the button from "View Details" to "Consent Management" after consent is given.
@@ -807,6 +819,13 @@ export interface FeatureTogglesInterface {
    * Affects: AnonymousConsentOpenDialogComponent, AnonymousConsentManagementBannerComponent
    */
   a11yHideConsentButtonWhenBannerVisible?: boolean;
+
+  /**
+   * Ensures that borders across all UI elements are visible and meet accessibility standards in high-contrast dark and light themes.
+   * This change is applied globally to enhance usability for users relying on high-contrast modes.
+   * Affects: CustomerTickingListComponent, CheckoutReviewPaymentComponent, SavedCartListComponent
+   */
+  a11yHighContrastBorders?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -1069,7 +1088,10 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yQuickOrderSearchBoxRefocusOnClose: false,
   a11yKeyboardFocusInSearchBox: false,
   a11yAddPaddingToCarouselPanel: false,
+  a11yFocusOnCardAfterSelecting: false,
+  a11ySearchableDropdownFirstElementFocus: false,
   a11yHideConsentButtonWhenBannerVisible: false,
+  a11yHighContrastBorders: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
