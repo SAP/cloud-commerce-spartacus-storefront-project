@@ -6,4 +6,3 @@
 
 export * from './otp-login-register.component';
 export * from './otp-login-register.module';
-export * from './otp-register-component.service';

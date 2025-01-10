@@ -177,7 +177,8 @@ describe('RegistrationVerificationTokenFormComponent', () => {
       expect(component.startWaitTimeInterval).toHaveBeenCalled();
       expect(component.createRegistrationVerificationToken).toHaveBeenCalled();
       expect(service.displayMessage).toHaveBeenCalledWith(
-        'example@example.com'
+        'verificationTokenForm.createVerificationToken',
+        { target: 'example@example.com' }
       );
     });
   });

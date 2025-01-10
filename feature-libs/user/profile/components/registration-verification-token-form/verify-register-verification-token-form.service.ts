@@ -26,11 +26,11 @@ export class RegistrationVerificationTokenFormComponentService {
   private featureConfigService: FeatureConfigService =
     inject(FeatureConfigService);
 
-  displayMessage(target: string) {
+  displayMessage(key: string, params: Object) {
     this.globalMessageService.add(
       {
-        key: 'verificationTokenForm.createVerificationToken',
-        params: { target },
+        key: key,
+        params,
       },
       GlobalMessageType.MSG_TYPE_CONFIRMATION,
       globalMsgShowTime
@@ -43,9 +43,9 @@ export class RegistrationVerificationTokenFormComponentService {
 
   postRegisterMessage(): void {
     if (this.featureConfigService.isEnabled('a11yPostRegisterSuccessMessage')) {
-      this.globalMessageService.add(
-        { key: 'register.postRegisterSuccessMessage' },
-        GlobalMessageType.MSG_TYPE_CONFIRMATION
+      this.displayMessage(
+        'register.postRegisterSuccessMessage',
+        globalMsgShowTime
       );
     } else {
       this.globalMessageService.add(

@@ -5,11 +5,7 @@
  */
 import { inject, TestBed } from '@angular/core/testing';
 import { UntypedFormBuilder } from '@angular/forms';
-import {
-  FeatureConfigService,
-  GlobalMessageService,
-  GlobalMessageType,
-} from '@spartacus/core';
+import { FeatureConfigService, GlobalMessageService } from '@spartacus/core';
 import { UserRegisterFacade, UserSignUp } from '@spartacus/user/profile/root';
 import { of } from 'rxjs';
 
@@ -33,7 +29,6 @@ class MockFeatureConfigService {
 describe('RegistrationVerificationTokenFormComponentService', () => {
   let service: RegistrationVerificationTokenFormComponentService;
   let userRegisterFacade: UserRegisterFacade;
-  let globalMessageService: GlobalMessageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -46,7 +41,6 @@ describe('RegistrationVerificationTokenFormComponentService', () => {
       ],
     });
 
-    globalMessageService = TestBed.inject(GlobalMessageService);
     userRegisterFacade = TestBed.inject(UserRegisterFacade);
     service = TestBed.inject(RegistrationVerificationTokenFormComponentService);
   });
@@ -79,12 +73,10 @@ describe('RegistrationVerificationTokenFormComponentService', () => {
   });
 
   describe('postRegisterMessage', () => {
-    it('should delegate to globalMessageService.add', () => {
+    it('should delegate to displayMessage', () => {
+      const displayMessageSpy = spyOn(service, 'displayMessage');
       service.postRegisterMessage();
-      expect(globalMessageService.add).toHaveBeenCalledWith(
-        { key: 'register.postRegisterSuccessMessage' },
-        GlobalMessageType.MSG_TYPE_CONFIRMATION
-      );
+      expect(displayMessageSpy).toHaveBeenCalled();
     });
   });
 });

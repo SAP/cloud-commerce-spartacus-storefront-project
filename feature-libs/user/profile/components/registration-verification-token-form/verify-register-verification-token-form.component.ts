@@ -5,6 +5,7 @@
  */
 
 import {
+  ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   ElementRef,
@@ -31,21 +32,26 @@ import {
   OAuthFlow,
   RoutingService,
 } from '@spartacus/core';
-import { RegistrationVerificationToken, UserSignUp } from '../../root/model';
-import { RegistrationVerificationTokenFacade } from '../../root/facade';
+import { UserSignUp } from '../../root/model';
 import { HttpErrorResponse } from '@angular/common/http';
+import {
+  VerificationToken,
+  VerificationTokenFacade,
+} from '@spartacus/user/account/root';
 
 @Component({
   selector: 'cx-registration-verification-token-form',
   templateUrl: './verify-register-verification-token-form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegistrationVerificationTokenFormComponent implements OnInit {
-  constructor(
-    protected fb: UntypedFormBuilder,
-    protected router: RoutingService,
-    protected authConfigService: AuthConfigService,
-    protected registrationVerificationTokenFacade: RegistrationVerificationTokenFacade
-  ) {}
+  protected fb = inject(UntypedFormBuilder);
+  protected router = inject(RoutingService);
+  protected authConfigService = inject(AuthConfigService);
+  protected registrationVerificationTokenFacade = inject(
+    VerificationTokenFacade
+  );
+  constructor() {}
   protected service: RegistrationVerificationTokenFormComponentService = inject(
     RegistrationVerificationTokenFormComponentService
   );
@@ -80,6 +86,8 @@ export class RegistrationVerificationTokenFormComponent implements OnInit {
   protected cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
 
   waitTime: number = 60;
+
+  waitTimeForRateLimit: number = 300;
 
   registerForm: UntypedFormGroup = this.fb.group(
     {
@@ -124,7 +132,10 @@ export class RegistrationVerificationTokenFormComponent implements OnInit {
       this.router.go(['/login/register']);
     } else {
       this.startWaitTimeInterval();
-      this.service.displayMessage(this.target);
+      this.service.displayMessage(
+        'verificationTokenForm.createVerificationToken',
+        { target: this.target }
+      );
     }
   }
 
@@ -178,7 +189,7 @@ export class RegistrationVerificationTokenFormComponent implements OnInit {
         next: () => this.onRegisterUserSuccess(),
         complete: () => this.isLoading$.next(false),
         error: (error: HttpErrorResponse) => {
-          if (error.status == 400) {
+          if (error.status === 400) {
             this.registerForm
               .get('tokenCode')
               ?.setErrors({ invalidTokenCodeError: error.message });
@@ -229,19 +240,20 @@ export class RegistrationVerificationTokenFormComponent implements OnInit {
       this.target,
       ONE_TIME_PASSWORD_REGISTRATION_PURPOSE
     ).subscribe({
-      next: (result: RegistrationVerificationToken) =>
-        (this.tokenId = result.tokenId),
-      complete: () => this.service.displayMessage(this.target),
+      next: (result: VerificationToken) => (this.tokenId = result.tokenId),
+      complete: () =>
+        this.service.displayMessage(
+          'verificationTokenForm.createVerificationToken',
+          { target: this.target }
+        ),
     });
   }
 
   createRegistrationVerificationToken(loginId: string, purpose: string) {
-    return this.registrationVerificationTokenFacade.createRegistrationVerificationToken(
-      {
-        loginId,
-        purpose,
-      }
-    );
+    return this.registrationVerificationTokenFacade.createVerificationToken({
+      loginId,
+      purpose,
+    });
   }
 
   startWaitTimeInterval(): void {

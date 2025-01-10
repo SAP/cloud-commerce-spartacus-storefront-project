@@ -25,12 +25,7 @@ import {
   useFeatureStyles,
 } from '@spartacus/core';
 import { CustomFormValidators, sortTitles } from '@spartacus/storefront';
-import {
-  RegistrationVerificationToken,
-  RegistrationVerificationTokenCreation,
-  RegistrationVerificationTokenFacade,
-  Title,
-} from '@spartacus/user/profile/root';
+import { Title } from '@spartacus/user/profile/root';
 import {
   BehaviorSubject,
   combineLatest,
@@ -41,18 +36,30 @@ import {
 } from 'rxjs';
 
 import { ONE_TIME_PASSWORD_REGISTRATION_PURPOSE } from '../user-account-constants';
-import { OneTimePasswordLoginRegisterComponentService } from './otp-register-component.service';
+import { RegisterComponentService } from '../register';
+import {
+  VerificationToken,
+  VerificationTokenCreation,
+  VerificationTokenFacade,
+} from '@spartacus/user/account/root';
 
 @Component({
   selector: 'cx-otp-register-form',
   templateUrl: './otp-login-register.component.html',
 })
-export class OneTimePasswordLoginRegisterComponent
-  implements OnInit, OnDestroy
-{
+export class OneTimePasswordRegisterComponent implements OnInit, OnDestroy {
+  protected globalMessageService = inject(GlobalMessageService);
+  protected fb = inject(UntypedFormBuilder);
+  protected router = inject(RoutingService);
+  protected anonymousConsentsService = inject(AnonymousConsentsService);
+  protected anonymousConsentsConfig = inject(AnonymousConsentsConfig);
+  protected clientAuthenticationTokenService = inject(
+    ClientAuthenticationTokenService
+  );
+  protected registerComponentService = inject(RegisterComponentService);
   protected routingService = inject(RoutingService);
   protected registrationVerificationTokenFacade = inject(
-    RegistrationVerificationTokenFacade
+    VerificationTokenFacade
   );
 
   titles$: Observable<Title[]>;
@@ -76,7 +83,7 @@ export class OneTimePasswordLoginRegisterComponent
       disabled: this.isConsentRequired(),
     }),
     additionalConsents:
-      this.oneTimePasswordLoginRegisterComponentService.generateAdditionalConsentsFormControl?.() ??
+      this.registerComponentService.generateAdditionalConsentsFormControl?.() ??
       this.fb.array([]),
     termsandconditions: [false, Validators.requiredTrue],
     captcha: [false, Validators.requiredTrue],
@@ -96,26 +103,16 @@ export class OneTimePasswordLoginRegisterComponent
     this.registerForm.value.additionalConsents[index] = checked;
   }
 
-  constructor(
-    protected globalMessageService: GlobalMessageService,
-    protected fb: UntypedFormBuilder,
-    protected router: RoutingService,
-    protected anonymousConsentsService: AnonymousConsentsService,
-    protected anonymousConsentsConfig: AnonymousConsentsConfig,
-    protected clientAuthenticationTokenService: ClientAuthenticationTokenService,
-    protected oneTimePasswordLoginRegisterComponentService: OneTimePasswordLoginRegisterComponentService
-  ) {
+  constructor() {
     useFeatureStyles('a11yPasswordVisibliltyBtnValueOverflow');
   }
 
   ngOnInit() {
-    this.titles$ = this.oneTimePasswordLoginRegisterComponentService
-      .getTitles()
-      .pipe(
-        map((titles: Title[]) => {
-          return titles.sort(sortTitles);
-        })
-      );
+    this.titles$ = this.registerComponentService.getTitles().pipe(
+      map((titles: Title[]) => {
+        return titles.sort(sortTitles);
+      })
+    );
 
     // TODO: Workaround: allow server for decide is titleCode mandatory (if yes, provide personalized message)
     this.subscription.add(
@@ -163,8 +160,7 @@ export class OneTimePasswordLoginRegisterComponent
     );
 
     this.additionalRegistrationConsents =
-      this.oneTimePasswordLoginRegisterComponentService?.getAdditionalConsents() ||
-      [];
+      this.registerComponentService?.getAdditionalConsents() || [];
 
     this.subscription.add(
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -188,11 +184,9 @@ export class OneTimePasswordLoginRegisterComponent
     const registrationVerificationTokenCreation =
       this.collectDataFromRegisterForm();
     this.registrationVerificationTokenFacade
-      .createRegistrationVerificationToken(
-        registrationVerificationTokenCreation
-      )
+      .createVerificationToken(registrationVerificationTokenCreation)
       .subscribe({
-        next: (result: RegistrationVerificationToken) =>
+        next: (result: VerificationToken) =>
           this.goToVerificationTokenForm(
             result,
             registrationVerificationTokenCreation
@@ -206,11 +200,7 @@ export class OneTimePasswordLoginRegisterComponent
     this.isLoading$.next(false);
   }
 
-  titleSelected(title: Title): void {
-    this.registerForm['controls'].titleCode.setValue(title.code);
-  }
-
-  collectDataFromRegisterForm(): RegistrationVerificationTokenCreation {
+  collectDataFromRegisterForm(): VerificationTokenCreation {
     return {
       loginId: this.registerForm.value.email.toLowerCase(),
       purpose: ONE_TIME_PASSWORD_REGISTRATION_PURPOSE,
@@ -218,8 +208,8 @@ export class OneTimePasswordLoginRegisterComponent
   }
 
   protected goToVerificationTokenForm(
-    registrationVerificationToken: RegistrationVerificationToken,
-    registrationVerificationTokenCreation: RegistrationVerificationTokenCreation
+    registrationVerificationToken: VerificationToken,
+    registrationVerificationTokenCreation: VerificationTokenCreation
   ): void {
     this.routingService.go(
       {

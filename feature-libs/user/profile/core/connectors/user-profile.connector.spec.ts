@@ -4,11 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { TestBed } from '@angular/core/testing';
-import {
-  RegistrationVerificationToken,
-  RegistrationVerificationTokenCreation,
-  UserSignUp,
-} from '@spartacus/user/profile/root';
+import { UserSignUp } from '@spartacus/user/profile/root';
 import { of } from 'rxjs';
 import { UserProfileAdapter } from './user-profile.adapter';
 import { UserProfileConnector } from './user-profile.connector';
@@ -28,14 +24,6 @@ class MockUserAdapter implements UserProfileAdapter {
   updateEmail = createSpy('updateEmail').and.returnValue(of({}));
   updatePassword = createSpy('updatePassword').and.returnValue(of({}));
   loadTitles = createSpy('loadTitles').and.returnValue(of([]));
-  createRegistrationVerificationToken = createSpy(
-    'createRegistrationVerificationToken'
-  ).and.callFake(() => {
-    return of({
-      expiresIn: '300',
-      tokenId: 'mockTokenId',
-    });
-  });
 }
 
 describe('UserConnector', () => {
@@ -147,30 +135,5 @@ describe('UserConnector', () => {
     service.getTitles().subscribe((res) => (result = res));
     expect(result).toEqual([]);
     expect(adapter.loadTitles).toHaveBeenCalledWith();
-  });
-
-  it('createRegistrationVerificationToken should call adapter', () => {
-    const regsitrationVerificationTokenCreation: RegistrationVerificationTokenCreation =
-      {
-        purpose: 'REGISTRATION',
-        loginId: 'test@email.com',
-      };
-
-    const registrationVerificationToken: RegistrationVerificationToken = {
-      expiresIn: '300',
-      tokenId: 'mockTokenId',
-    };
-
-    let result;
-
-    service
-      .createRegistrationVerificationToken(
-        regsitrationVerificationTokenCreation
-      )
-      .subscribe((res) => (result = res));
-    expect(result).toEqual(registrationVerificationToken);
-    expect(adapter.createRegistrationVerificationToken).toHaveBeenCalledWith(
-      regsitrationVerificationTokenCreation
-    );
   });
 });

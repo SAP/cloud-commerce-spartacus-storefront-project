@@ -17,8 +17,6 @@ export const defaultOccUserProfileConfig: OccConfig = {
         userUpdateLoginId: 'users/${userId}/login',
         userUpdatePassword: 'users/${userId}/password',
         titles: 'titles',
-        createRegistrationVerificationToken:
-          'users/anonymous/verificationToken',
       },
     },
   },

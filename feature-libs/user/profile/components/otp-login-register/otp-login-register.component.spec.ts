@@ -37,10 +37,10 @@ import { MockFeatureDirective } from 'projects/storefrontlib/shared/test/mock-fe
 import { EMPTY, Observable, of } from 'rxjs';
 
 import createSpy = jasmine.createSpy;
-import { OneTimePasswordLoginRegisterComponentService } from './otp-register-component.service';
-import { OneTimePasswordLoginRegisterComponent } from './otp-login-register.component';
-import { RegistrationVerificationTokenFacade } from '../../root/facade';
 import { ONE_TIME_PASSWORD_REGISTRATION_PURPOSE } from '../user-account-constants';
+import { OneTimePasswordRegisterComponent } from './otp-login-register.component';
+import { VerificationTokenFacade } from '@spartacus/user/account/root';
+import { RegisterComponentService } from '../register';
 
 const mockRegisterFormData: any = {
   titleCode: 'Mr',
@@ -102,10 +102,8 @@ class MockAnonymousConsentsService {
   }
 }
 
-class MockRegistrationVerificationTokenFacade
-  implements Partial<RegistrationVerificationTokenFacade>
-{
-  createRegistrationVerificationToken = createSpy().and.returnValue(
+class MockVerificationTokenFacade implements Partial<VerificationTokenFacade> {
+  createVerificationToken = createSpy().and.returnValue(
     of({
       expiresIn: '300',
       tokenId: 'mockTokenId',
@@ -120,8 +118,8 @@ const mockAnonymousConsentsConfig: AnonymousConsentsConfig = {
   },
 };
 
-class MockOneTimePasswordLoginRegisterComponentService
-  implements Partial<OneTimePasswordLoginRegisterComponentService>
+class MockRegisterComponentService
+  implements Partial<RegisterComponentService>
 {
   getTitles = createSpy().and.returnValue(of(mockTitlesList));
   getAdditionalConsents = createSpy();
@@ -158,15 +156,15 @@ class MockClientAuthenticationTokenService
   loadClientAuthenticationToken = createSpy().and.returnValue(of(undefined));
 }
 
-describe('OneTimePasswordLoginRegisterComponent', () => {
+describe('OneTimePasswordRegisterComponent', () => {
   let controls: any;
-  let component: OneTimePasswordLoginRegisterComponent;
-  let fixture: ComponentFixture<OneTimePasswordLoginRegisterComponent>;
+  let component: OneTimePasswordRegisterComponent;
+  let fixture: ComponentFixture<OneTimePasswordRegisterComponent>;
   let mockRoutingService: RoutingService;
 
   let globalMessageService: GlobalMessageService;
   let anonymousConsentService: AnonymousConsentsService;
-  let registrationVerificationTokenFacade: RegistrationVerificationTokenFacade;
+  let registrationVerificationTokenFacade: VerificationTokenFacade;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -181,15 +179,15 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
         CaptchaModule,
       ],
       declarations: [
-        OneTimePasswordLoginRegisterComponent,
+        OneTimePasswordRegisterComponent,
         MockUrlPipe,
         MockSpinnerComponent,
         MockFeatureDirective,
       ],
       providers: [
         {
-          provide: OneTimePasswordLoginRegisterComponentService,
-          useClass: MockOneTimePasswordLoginRegisterComponentService,
+          provide: RegisterComponentService,
+          useClass: MockRegisterComponentService,
         },
         {
           provide: GlobalMessageService,
@@ -224,19 +222,19 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
           useClass: MockClientAuthenticationTokenService,
         },
         {
-          provide: RegistrationVerificationTokenFacade,
-          useClass: MockRegistrationVerificationTokenFacade,
+          provide: VerificationTokenFacade,
+          useClass: MockVerificationTokenFacade,
         },
       ],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OneTimePasswordLoginRegisterComponent);
+    fixture = TestBed.createComponent(OneTimePasswordRegisterComponent);
     globalMessageService = TestBed.inject(GlobalMessageService);
     anonymousConsentService = TestBed.inject(AnonymousConsentsService);
     registrationVerificationTokenFacade = TestBed.inject(
-      RegistrationVerificationTokenFacade
+      VerificationTokenFacade
     );
     mockRoutingService = TestBed.inject(RoutingService);
 
@@ -252,7 +250,7 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
 
   describe('submit button', () => {
     it('should NOT be disabled', () => {
-      fixture = TestBed.createComponent(OneTimePasswordLoginRegisterComponent);
+      fixture = TestBed.createComponent(OneTimePasswordRegisterComponent);
       fixture.detectChanges();
       const el: HTMLElement = fixture.debugElement.nativeElement;
       const submitButton: HTMLElement = el.querySelector(
@@ -303,7 +301,7 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
       component.ngOnInit();
       component.submitForm();
       expect(
-        registrationVerificationTokenFacade.createRegistrationVerificationToken
+        registrationVerificationTokenFacade.createVerificationToken
       ).toHaveBeenCalledWith({
         loginId: mockRegisterFormData.email.toLowerCase(),
         purpose: ONE_TIME_PASSWORD_REGISTRATION_PURPOSE,
@@ -314,7 +312,7 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
       component.ngOnInit();
       component.submitForm();
       expect(
-        registrationVerificationTokenFacade.createRegistrationVerificationToken
+        registrationVerificationTokenFacade.createVerificationToken
       ).not.toHaveBeenCalled();
     });
 
@@ -382,7 +380,7 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
     });
 
     function getCaptchaControl(
-      component: OneTimePasswordLoginRegisterComponent
+      component: OneTimePasswordRegisterComponent
     ): AbstractControl {
       return component.registerForm.get('captcha') as AbstractControl;
     }

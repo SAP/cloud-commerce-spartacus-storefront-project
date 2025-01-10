@@ -13,7 +13,7 @@ import { UpdateEmailModule } from './update-email/update-email.module';
 import { UpdatePasswordModule } from './update-password/update-password.module';
 import { UpdateProfileModule } from './update-profile/update-profile.module';
 import { AddressBookModule } from './address-book';
-import { OneTimePasswordLoginRegisterModule } from './otp-login-register';
+import { OneTimePasswordRegisterModule } from './otp-login-register';
 import { RegistrationVerificationTokenFormModule } from './registration-verification-token-form';
 
 @NgModule({
@@ -26,7 +26,7 @@ import { RegistrationVerificationTokenFormModule } from './registration-verifica
     ResetPasswordModule,
     CloseAccountModule,
     AddressBookModule,
-    OneTimePasswordLoginRegisterModule,
+    OneTimePasswordRegisterModule,
     RegistrationVerificationTokenFormModule,
   ],
 })

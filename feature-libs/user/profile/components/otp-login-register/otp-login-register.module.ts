@@ -23,11 +23,11 @@ import {
   PageSlotModule,
   SpinnerModule,
 } from '@spartacus/storefront';
-import { OneTimePasswordLoginRegisterComponent } from './otp-login-register.component';
 import { ReactiveFormsModule, UntypedFormBuilder } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { OneTimePasswordLoginRegisterComponentService } from './otp-register-component.service';
 import { UserRegisterFacade } from '../../root/facade';
+import { OneTimePasswordRegisterComponent } from './otp-login-register.component';
+import { RegisterComponentService } from '../register';
 
 @NgModule({
   imports: [
@@ -49,12 +49,12 @@ import { UserRegisterFacade } from '../../root/facade';
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {
         ReturningCustomerOTPRegisterComponent: {
-          component: OneTimePasswordLoginRegisterComponent,
+          component: OneTimePasswordRegisterComponent,
           guards: [NotAuthGuard],
           providers: [
             {
-              provide: OneTimePasswordLoginRegisterComponentService,
-              useClass: OneTimePasswordLoginRegisterComponentService,
+              provide: RegisterComponentService,
+              useClass: RegisterComponentService,
               deps: [UserRegisterFacade, UntypedFormBuilder],
             },
           ],
@@ -62,6 +62,6 @@ import { UserRegisterFacade } from '../../root/facade';
       },
     }),
   ],
-  declarations: [OneTimePasswordLoginRegisterComponent],
+  declarations: [OneTimePasswordRegisterComponent],
 })
-export class OneTimePasswordLoginRegisterModule {}
+export class OneTimePasswordRegisterModule {}
