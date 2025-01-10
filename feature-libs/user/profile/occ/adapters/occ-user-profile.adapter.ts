@@ -45,6 +45,7 @@ export class OccUserProfileAdapter implements UserProfileAdapter {
     protected occEndpoints: OccEndpointsService,
     protected converter: ConverterService
   ) {}
+
   update(userId: string, user: User): Observable<unknown> {
     const endpoint = this.occEndpoints.isConfigured('userUpdateProfile')
       ? 'userUpdateProfile'
