@@ -128,12 +128,8 @@
         </ng-container>
       </ng-container>
       <ng-template #title>
-        <span *ngIf="node.title" [attr.tabindex]="0" role="heading"
-        aria-level="4">
-        1{{ node.title }}
-      </span>
-        <span *ngIf="node.title" [attr.tabindex]="0" >
-         2 {{ node.title }}
+        <span *ngIf="node.title" [attr.tabindex]="0">
+          {{ node.title }}
         </span>
       </ng-template>
     </ng-template>
