@@ -302,6 +302,27 @@ export class ConfiguratorCommonsService {
     );
   }
 
+  readAttributeDomain(
+    owner: CommonConfigurator.Owner,
+    group: Configurator.Group,
+    attribute: Configurator.Attribute
+  ) {
+    this.store
+      .pipe(
+        select(ConfiguratorSelectors.getConfigurationFactory(owner.key)),
+        take(1)
+      )
+      .subscribe((configuration) =>
+        this.store.dispatch(
+          new ConfiguratorActions.ReadAttributeDomain({
+            configuration: configuration,
+            groupId: group.id,
+            attributeKey: attribute.key ?? attribute.name,
+          })
+        )
+      );
+  }
+
   protected getOrCreateConfigurationForProduct(
     owner: CommonConfigurator.Owner,
     configIdTemplate?: string

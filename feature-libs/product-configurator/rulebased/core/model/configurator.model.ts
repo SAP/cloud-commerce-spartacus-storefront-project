@@ -237,10 +237,12 @@ export namespace Configurator {
     SINGLE_SELECTION_IMAGE = 'single_selection_image',
 
     //introduced with CPQ
-
     CHECKBOXLIST_PRODUCT = 'checkBoxListProduct',
     DROPDOWN_PRODUCT = 'dropdownProduct',
     RADIOBUTTON_PRODUCT = 'radioGroupProduct',
+
+    //CPS lazy load
+    SAP_DOMAIN_ON_DEMAND_SINGLE_VALUE = 'dropdown_lazy',
   }
 
   export enum ImageFormatType {

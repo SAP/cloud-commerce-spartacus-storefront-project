@@ -357,6 +357,10 @@ export class OccConfiguratorVariantNormalizer
         uiType = Configurator.UiType.SINGLE_SELECTION_IMAGE;
         break;
       }
+      case OccConfigurator.UiType.SAP_DOMAIN_ON_DEMAND_SINGLE_VALUE: {
+        uiType = Configurator.UiType.SAP_DOMAIN_ON_DEMAND_SINGLE_VALUE;
+        break;
+      }
     }
     return uiType;
   }

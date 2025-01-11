@@ -107,6 +107,7 @@ export class OccConfiguratorVariantSerializer
       Configurator.UiType.RADIOBUTTON_ADDITIONAL_INPUT,
       Configurator.UiType.DROPDOWN_ADDITIONAL_INPUT,
       Configurator.UiType.DROPDOWN,
+      Configurator.UiType.SAP_DOMAIN_ON_DEMAND_SINGLE_VALUE,
       Configurator.UiType.SINGLE_SELECTION_IMAGE,
     ];
 
@@ -157,6 +158,7 @@ export class OccConfiguratorVariantSerializer
       Configurator.UiType.RADIOBUTTON_ADDITIONAL_INPUT,
       Configurator.UiType.DROPDOWN_ADDITIONAL_INPUT,
       Configurator.UiType.DROPDOWN,
+      Configurator.UiType.SAP_DOMAIN_ON_DEMAND_SINGLE_VALUE,
       Configurator.UiType.SINGLE_SELECTION_IMAGE,
     ];
 
@@ -180,6 +182,7 @@ export class OccConfiguratorVariantSerializer
         uiType = OccConfigurator.UiType.RADIO_BUTTON_ADDITIONAL_INPUT;
         break;
       }
+      case Configurator.UiType.SAP_DOMAIN_ON_DEMAND_SINGLE_VALUE:
       case Configurator.UiType.DROPDOWN: {
         uiType = OccConfigurator.UiType.DROPDOWN;
         break;
