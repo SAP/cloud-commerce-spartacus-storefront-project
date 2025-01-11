@@ -15,6 +15,7 @@ import {
   b2bUser,
   cartWithB2bProductAndPremiumShipping,
   costCenter,
+  costCenterId,
   order_type,
   poNumber,
   POWERTOOLS_BASESITE,
@@ -199,6 +200,9 @@ export function selectAccountPayment() {
 
   cy.wait('@getCart').its('response.statusCode').should('eq', 200);
 
+  cy.wait(1000);
+  cy.get('div > label > select').select(costCenterId);
+
   // intercept costCenter list to get Rustic address Id which will be use in delivery addr/mode stubs
   cy.wait(`@${getCostCenters}`).then((xhr) => {
     if (
@@ -208,7 +212,11 @@ export function selectAccountPayment() {
       // first element of Cost Center is the default one, always match the combo-box selection
       b2bDeliveryAddress.id =
         xhr.response.body.costCenters[0].unit.addresses[0].id;
+      cy.log('Cost center update required');
+    } else {
+      cy.log('Cost center update not required');
     }
+    // cy.pause();
   });
 }
 
@@ -225,6 +233,23 @@ export function selectCreditCardPayment() {
   cy.wait(`@${deliveryAddressPage}`)
     .its('response.statusCode')
     .should('eq', 200);
+}
+
+export function confirmAccountShippingAddress() {
+  cy.get('.cx-checkout-title').should('contain', 'Shipping Address');
+  cy.get('cx-order-summary .cx-summary-partials .cx-summary-row')
+    .first()
+    .find('.cx-summary-amount')
+    .should('not.be.empty');
+
+  cy.get('cx-card .card-header').should('contain', 'Selected');
+
+  verifyTabbingOrder(
+    'cx-page-layout.MultiStepCheckoutSummaryPageTemplate',
+    config.shippingAddressAccount
+  );
+
+  cy.get('button.btn-primary').should('be.enabled').click();
 }
 
 export function selectAccountShippingAddress() {
@@ -248,8 +273,10 @@ export function selectAccountShippingAddress() {
     cy.get('.cx-card-label-bold').should('not.be.empty');
   });
 
-  cy.get('cx-card .card-header').should('contain', 'Selected');
+  cy.wait(2000);
+  cy.get('.card-body').click({ force: true });
 
+  cy.get('cx-card .card-header').should('contain', 'Selected');
   /**
    * Delivery mode PUT intercept is not in selectAccountDeliveryMode()
    * because it doesn't choose a delivery mode and the intercept might have missed timing depending on cypress's performance
@@ -260,7 +287,6 @@ export function selectAccountShippingAddress() {
     'getDeliveryPage'
   );
 
-  // Accessibility
   verifyTabbingOrder(
     'cx-page-layout.MultiStepCheckoutSummaryPageTemplate',
     config.shippingAddressAccount
