@@ -25,7 +25,7 @@ import {
 } from '@spartacus/storefront';
 import { ReactiveFormsModule, UntypedFormBuilder } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { UserRegisterFacade } from '../../root/facade';
+import { UserRegisterFacade } from '@spartacus/user/profile/root';
 import { OneTimePasswordRegisterComponent } from './otp-login-register.component';
 import { RegisterComponentService } from '../register';
 

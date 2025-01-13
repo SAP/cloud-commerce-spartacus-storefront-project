@@ -32,7 +32,7 @@ import {
   OAuthFlow,
   RoutingService,
 } from '@spartacus/core';
-import { UserSignUp } from '../../root/model';
+import { UserSignUp } from '@spartacus/user/profile/root';
 import { HttpErrorResponse } from '@angular/common/http';
 import {
   VerificationToken,
@@ -86,8 +86,6 @@ export class RegistrationVerificationTokenFormComponent implements OnInit {
   protected cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
 
   waitTime: number = 60;
-
-  waitTimeForRateLimit: number = 300;
 
   registerForm: UntypedFormGroup = this.fb.group(
     {
