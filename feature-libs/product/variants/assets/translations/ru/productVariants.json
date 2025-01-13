@@ -1,9 +1,9 @@
 {
-  "productVariants" : {
-    "style" : "Стиль",
-    "selectedStyle" : "Выбранный стиль",
-    "size" : "Размер",
-    "color" : "Цвет",
-    "sizeGuideLabel" : "Руководство по стилю"
+  "productVariants": {
+    "style": "Стиль",
+    "selectedStyle": "Выбранный стиль",
+    "size": "Размер",
+    "color": "Цвет",
+    "sizeGuideLabel": "Руководство по стилю"
   }
 }

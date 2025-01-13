@@ -1,6 +1,6 @@
 {
-  "cdsRecentSearches" : {
-    "recentSearches" : "Recherches récentes",
-    "ariaRecentSearches" : "Saisie des recherches récentes"
+  "cdsRecentSearches": {
+    "recentSearches": "Recherches récentes",
+    "ariaRecentSearches": "Saisie des recherches récentes"
   }
 }

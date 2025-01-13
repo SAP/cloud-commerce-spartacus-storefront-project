@@ -1,8 +1,8 @@
 {
-  "s4omScheduleLines" : {
-    "quantity" : "– Menny.",
-    "a11y" : {
-      "scheduleLineEntryInfo" : "A mennyiség ({{ quantity }}) {{ date }}-ig lesz kiszállítva"
+  "s4omScheduleLines": {
+    "quantity": "– Menny.",
+    "a11y": {
+      "scheduleLineEntryInfo": "A mennyiség ({{ quantity }}) {{ date }}-ig lesz kiszállítva"
     }
   }
 }

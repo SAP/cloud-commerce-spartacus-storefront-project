@@ -1,8 +1,8 @@
 {
-  "s4omScheduleLines" : {
-    "quantity" : "- Množství",
-    "a11y" : {
-      "scheduleLineEntryInfo" : "{{ quantity }} množství bude dodáno do {{ date }}"
+  "s4omScheduleLines": {
+    "quantity": "- Množství",
+    "a11y": {
+      "scheduleLineEntryInfo": "{{ quantity }} množství bude dodáno do {{ date }}"
     }
   }
 }

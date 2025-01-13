@@ -1,70 +1,70 @@
 {
-  "epdVisualization" : {
-    "visualViewer" : {
-      "contentType" : {
-        "drawing2D" : "2D",
-        "model3D" : "3D"
+  "epdVisualization": {
+    "visualViewer": {
+      "contentType": {
+        "drawing2D": "2D",
+        "model3D": "3D"
       },
-      "toolbar" : {
-        "homeButton" : {
-          "label" : "Kezdőlap"
+      "toolbar": {
+        "homeButton": {
+          "label": "Kezdőlap"
         },
-        "zoomButton" : {
-          "label" : "Nagyítás"
+        "zoomButton": {
+          "label": "Nagyítás"
         },
-        "panButton" : {
-          "label" : "Pásztázás"
+        "panButton": {
+          "label": "Pásztázás"
         },
-        "rotateButton" : {
-          "label" : "Forgatás"
+        "rotateButton": {
+          "label": "Forgatás"
         },
-        "isolateButton" : {
-          "label" : "Izolálás"
+        "isolateButton": {
+          "label": "Izolálás"
         },
-        "playButton" : {
-          "label" : "Lejátszás"
+        "playButton": {
+          "label": "Lejátszás"
         },
-        "pauseButton" : {
-          "label" : "Szünet"
+        "pauseButton": {
+          "label": "Szünet"
         },
-        "hotspotsButton" : {
-          "label" : "Gócpontok",
-          "show" : "Megjelenítés",
-          "hide" : "Elrejtés"
+        "hotspotsButton": {
+          "label": "Gócpontok",
+          "show": "Megjelenítés",
+          "hide": "Elrejtés"
         },
-        "visualViewerAnimationSlider" : {
-          "label" : "Animációs csúszka",
-          "role" : "Csúszka"
+        "visualViewerAnimationSlider": {
+          "label": "Animációs csúszka",
+          "role": "Csúszka"
         }
       }
     },
-    "visualPicking" : {
-      "visualPickingTab" : {
-        "noProductReferences" : "Nem találhatók pótalkatrészek ehhez a termékhez."
+    "visualPicking": {
+      "visualPickingTab": {
+        "noProductReferences": "Nem találhatók pótalkatrészek ehhez a termékhez."
       },
-      "visualPickingProductList" : {
-        "description" : "Leírás",
-        "itemPrice" : "Ár",
-        "outOfStock" : "Nincs készleten",
-        "id" : "Azonosító"
+      "visualPickingProductList": {
+        "description": "Leírás",
+        "itemPrice": "Ár",
+        "outOfStock": "Nincs készleten",
+        "id": "Azonosító"
       },
-      "visualPickingProductFilter" : {
-        "input" : {
-          "placeholder" : "Szűrés név vagy azonosító szerint"
+      "visualPickingProductFilter": {
+        "input": {
+          "placeholder": "Szűrés név vagy azonosító szerint"
         },
-        "searchButton" : {
-          "label" : "keresés"
+        "searchButton": {
+          "label": "keresés"
         },
-        "resetButton" : {
-          "label" : "alaphelyzet"
+        "resetButton": {
+          "label": "alaphelyzet"
         }
       }
     },
-    "errors" : {
-      "visualLoad" : {
-        "noMatchingVisualFound" : "Nem található egyező vizualizáció",
-        "multipleMatchingVisualsFound" : "Több egyező vizualizáció található",
-        "unexpectedLoadError" : "Hiba történt a vizualizáció betöltésekor"
+    "errors": {
+      "visualLoad": {
+        "noMatchingVisualFound": "Nem található egyező vizualizáció",
+        "multipleMatchingVisualsFound": "Több egyező vizualizáció található",
+        "unexpectedLoadError": "Hiba történt a vizualizáció betöltésekor"
       }
     }
   }

@@ -1,70 +1,70 @@
 {
-  "epdVisualization" : {
-    "visualViewer" : {
-      "contentType" : {
-        "drawing2D" : "2D",
-        "model3D" : "3D"
+  "epdVisualization": {
+    "visualViewer": {
+      "contentType": {
+        "drawing2D": "2D",
+        "model3D": "3D"
       },
-      "toolbar" : {
-        "homeButton" : {
-          "label" : "Domů"
+      "toolbar": {
+        "homeButton": {
+          "label": "Domů"
         },
-        "zoomButton" : {
-          "label" : "Lupa"
+        "zoomButton": {
+          "label": "Lupa"
         },
-        "panButton" : {
-          "label" : "Posunout"
+        "panButton": {
+          "label": "Posunout"
         },
-        "rotateButton" : {
-          "label" : "Otočit"
+        "rotateButton": {
+          "label": "Otočit"
         },
-        "isolateButton" : {
-          "label" : "Izolovat"
+        "isolateButton": {
+          "label": "Izolovat"
         },
-        "playButton" : {
-          "label" : "Přehrát"
+        "playButton": {
+          "label": "Přehrát"
         },
-        "pauseButton" : {
-          "label" : "Pozastavit"
+        "pauseButton": {
+          "label": "Pozastavit"
         },
-        "hotspotsButton" : {
-          "label" : "Hotspoty",
-          "show" : "Zobrazit",
-          "hide" : "Skrýt"
+        "hotspotsButton": {
+          "label": "Hotspoty",
+          "show": "Zobrazit",
+          "hide": "Skrýt"
         },
-        "visualViewerAnimationSlider" : {
-          "label" : "Slider s animací",
-          "role" : "Slider"
+        "visualViewerAnimationSlider": {
+          "label": "Slider s animací",
+          "role": "Slider"
         }
       }
     },
-    "visualPicking" : {
-      "visualPickingTab" : {
-        "noProductReferences" : "Pro tento produkt nejsou k dispozici žádné náhradní díly."
+    "visualPicking": {
+      "visualPickingTab": {
+        "noProductReferences": "Pro tento produkt nejsou k dispozici žádné náhradní díly."
       },
-      "visualPickingProductList" : {
-        "description" : "Popis",
-        "itemPrice" : "Cena",
-        "outOfStock" : "Není skladem",
-        "id" : "ID"
+      "visualPickingProductList": {
+        "description": "Popis",
+        "itemPrice": "Cena",
+        "outOfStock": "Není skladem",
+        "id": "ID"
       },
-      "visualPickingProductFilter" : {
-        "input" : {
-          "placeholder" : "Filtrovat podle názvu nebo ID"
+      "visualPickingProductFilter": {
+        "input": {
+          "placeholder": "Filtrovat podle názvu nebo ID"
         },
-        "searchButton" : {
-          "label" : "hledat"
+        "searchButton": {
+          "label": "hledat"
         },
-        "resetButton" : {
-          "label" : "reset"
+        "resetButton": {
+          "label": "reset"
         }
       }
     },
-    "errors" : {
-      "visualLoad" : {
-        "noMatchingVisualFound" : "Nebyly nalezeny žádné vyhovující vizualizace",
-        "multipleMatchingVisualsFound" : "Bylo nalezeno několik vyhovujících vizualizací",
-        "unexpectedLoadError" : "Došlo k chybě při načítání vizualizací"
+    "errors": {
+      "visualLoad": {
+        "noMatchingVisualFound": "Nebyly nalezeny žádné vyhovující vizualizace",
+        "multipleMatchingVisualsFound": "Bylo nalezeno několik vyhovujících vizualizací",
+        "unexpectedLoadError": "Došlo k chybě při načítání vizualizací"
       }
     }
   }

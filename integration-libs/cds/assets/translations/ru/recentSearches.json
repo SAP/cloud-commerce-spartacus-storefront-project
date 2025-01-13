@@ -1,6 +1,6 @@
 {
-  "cdsRecentSearches" : {
-    "recentSearches" : "Последние поисковые запросы",
-    "ariaRecentSearches" : "ввод последних поисковых запросов"
+  "cdsRecentSearches": {
+    "recentSearches": "Последние поисковые запросы",
+    "ariaRecentSearches": "ввод последних поисковых запросов"
   }
 }

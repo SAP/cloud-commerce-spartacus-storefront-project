@@ -1,9 +1,9 @@
 {
-  "productVariants" : {
-    "style" : "Estilo",
-    "selectedStyle" : "Estilo selecionado",
-    "size" : "Tamanho",
-    "color" : "Cor",
-    "sizeGuideLabel" : "Guia de estilo"
+  "productVariants": {
+    "style": "Estilo",
+    "selectedStyle": "Estilo selecionado",
+    "size": "Tamanho",
+    "color": "Cor",
+    "sizeGuideLabel": "Guia de estilo"
   }
 }

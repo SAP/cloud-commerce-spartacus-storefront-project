@@ -1,70 +1,70 @@
 {
-  "epdVisualization" : {
-    "visualViewer" : {
-      "contentType" : {
-        "drawing2D" : "2D",
-        "model3D" : "3D"
+  "epdVisualization": {
+    "visualViewer": {
+      "contentType": {
+        "drawing2D": "2D",
+        "model3D": "3D"
       },
-      "toolbar" : {
-        "homeButton" : {
-          "label" : "Strona główna"
+      "toolbar": {
+        "homeButton": {
+          "label": "Strona główna"
         },
-        "zoomButton" : {
-          "label" : "Skaluj"
+        "zoomButton": {
+          "label": "Skaluj"
         },
-        "panButton" : {
-          "label" : "Przesuń"
+        "panButton": {
+          "label": "Przesuń"
         },
-        "rotateButton" : {
-          "label" : "Obróć"
+        "rotateButton": {
+          "label": "Obróć"
         },
-        "isolateButton" : {
-          "label" : "Wyizoluj"
+        "isolateButton": {
+          "label": "Wyizoluj"
         },
-        "playButton" : {
-          "label" : "Odtwórz"
+        "playButton": {
+          "label": "Odtwórz"
         },
-        "pauseButton" : {
-          "label" : "Wstrzymaj"
+        "pauseButton": {
+          "label": "Wstrzymaj"
         },
-        "hotspotsButton" : {
-          "label" : "Obszary aktywne",
-          "show" : "Pokaż",
-          "hide" : "Ukryj"
+        "hotspotsButton": {
+          "label": "Obszary aktywne",
+          "show": "Pokaż",
+          "hide": "Ukryj"
         },
-        "visualViewerAnimationSlider" : {
-          "label" : "Suwak animacji",
-          "role" : "Suwak"
+        "visualViewerAnimationSlider": {
+          "label": "Suwak animacji",
+          "role": "Suwak"
         }
       }
     },
-    "visualPicking" : {
-      "visualPickingTab" : {
-        "noProductReferences" : "Dla tego produktu nie są dostępne części zamienne."
+    "visualPicking": {
+      "visualPickingTab": {
+        "noProductReferences": "Dla tego produktu nie są dostępne części zamienne."
       },
-      "visualPickingProductList" : {
-        "description" : "Opis",
-        "itemPrice" : "Cena",
-        "outOfStock" : "Zapas wyczerpany",
-        "id" : "ID"
+      "visualPickingProductList": {
+        "description": "Opis",
+        "itemPrice": "Cena",
+        "outOfStock": "Zapas wyczerpany",
+        "id": "ID"
       },
-      "visualPickingProductFilter" : {
-        "input" : {
-          "placeholder" : "Filtruj według nazwy lub ID"
+      "visualPickingProductFilter": {
+        "input": {
+          "placeholder": "Filtruj według nazwy lub ID"
         },
-        "searchButton" : {
-          "label" : "szukaj"
+        "searchButton": {
+          "label": "szukaj"
         },
-        "resetButton" : {
-          "label" : "resetuj"
+        "resetButton": {
+          "label": "resetuj"
         }
       }
     },
-    "errors" : {
-      "visualLoad" : {
-        "noMatchingVisualFound" : "Nie znaleziono pasującej wizualizacji",
-        "multipleMatchingVisualsFound" : "Znaleziono wiele pasujących wizualizacji",
-        "unexpectedLoadError" : "Wystąpił błąd podczas ładowania wizualizacji"
+    "errors": {
+      "visualLoad": {
+        "noMatchingVisualFound": "Nie znaleziono pasującej wizualizacji",
+        "multipleMatchingVisualsFound": "Znaleziono wiele pasujących wizualizacji",
+        "unexpectedLoadError": "Wystąpił błąd podczas ładowania wizualizacji"
       }
     }
   }
