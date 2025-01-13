@@ -76,11 +76,7 @@ export class RegistrationVerificationTokenFormComponent implements OnInit {
     : [
         this.featureConfigService.isEnabled('enableSecurePasswordValidation')
           ? CustomFormValidators.securePasswordValidator
-          : this.featureConfigService.isEnabled(
-                'enableConsecutiveCharactersPasswordRequirement'
-              )
-            ? CustomFormValidators.strongPasswordValidator
-            : CustomFormValidators.passwordValidator,
+          : CustomFormValidators.passwordValidators ,
       ];
 
   protected cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
@@ -199,9 +195,9 @@ export class RegistrationVerificationTokenFormComponent implements OnInit {
 
   collectDataFromRegisterForm(formData: any): UserSignUp {
     const {
+      email,
       firstName,
       lastName,
-      email,
       password,
       titleCode,
       tokenId: verificationTokenId,
@@ -209,9 +205,9 @@ export class RegistrationVerificationTokenFormComponent implements OnInit {
     } = formData;
 
     return {
+      uid: email.toLowerCase(),
       firstName,
       lastName,
-      uid: email.toLowerCase(),
       password,
       titleCode,
       verificationTokenId,

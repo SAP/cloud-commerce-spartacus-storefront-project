@@ -11,8 +11,7 @@ import {
   GlobalMessageType,
   User,
 } from '@spartacus/core';
-import { UserRegisterFacade } from '@spartacus/user/profile/root';
-import { UserSignUp } from '@spartacus/user/profile/root';
+import { UserRegisterFacade, UserSignUp } from '@spartacus/user/profile/root';
 import { Observable } from 'rxjs';
 
 const globalMsgShowTime: number = 10000;

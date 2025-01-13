@@ -164,7 +164,7 @@ export class OneTimePasswordRegisterComponent implements OnInit, OnDestroy {
 
     this.subscription.add(
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      this.registerForm.get('newsletter')!.valueChanges.subscribe(() => {
+      this.registerForm.get('newsletter')?.valueChanges.subscribe(() => {
         this.toggleAnonymousConsent();
       })
     );
@@ -172,13 +172,13 @@ export class OneTimePasswordRegisterComponent implements OnInit, OnDestroy {
 
   submitForm(): void {
     if (this.registerForm.valid) {
-      this.SendRegistrationVerificationToken();
+      this.sendRegistrationVerificationToken();
     } else {
       this.registerForm.markAllAsTouched();
     }
   }
 
-  SendRegistrationVerificationToken(): void {
+  sendRegistrationVerificationToken(): void {
     this.isLoading$.next(true);
     this.clientAuthenticationTokenService.loadClientAuthenticationToken();
     const registrationVerificationTokenCreation =
@@ -251,7 +251,7 @@ export class OneTimePasswordRegisterComponent implements OnInit, OnDestroy {
 
     if (registerConsent) {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      if (Boolean(this.registerForm.get('newsletter')!.value)) {
+      if (Boolean(this.registerForm.get('newsletter')?.value)) {
         this.anonymousConsentsService.giveConsent(registerConsent);
       } else {
         this.anonymousConsentsService.withdrawConsent(registerConsent);
