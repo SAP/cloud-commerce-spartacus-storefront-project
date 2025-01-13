@@ -87,7 +87,7 @@ export class RegistrationVerificationTokenFormComponent implements OnInit {
 
   waitTime: number = 60;
 
-  waitTimeForRateLimit: number = 300;
+  waitTimeForRateLimit: number = 10;
 
   registerForm: UntypedFormGroup = this.fb.group(
     {
@@ -115,6 +115,7 @@ export class RegistrationVerificationTokenFormComponent implements OnInit {
       this.titleCode = history.state['titleCode'];
       this.firstName = history.state['firstName'];
       this.lastName = history.state['lastName'];
+      this.errorStatus = history.state['errorStatus'];
 
       history.pushState(
         {
@@ -123,12 +124,21 @@ export class RegistrationVerificationTokenFormComponent implements OnInit {
           titleCode: '',
           firstName: '',
           lastName: '',
+          errorStatus: '',
         },
         'verifyTokenForRegistration'
       );
     }
 
-    if (!this.target || !this.tokenId || !this.firstName || !this.lastName) {
+    if(this.errorStatus === 400) {
+      this.upToRateLimit = true;
+      this.tokenId = "invalidTokenId";
+      this.startRateLimitWaitTimeInterval();
+     
+      this.isLoading$.next(false);
+    }
+
+     else if (!this.target || !this.tokenId || !this.firstName || !this.lastName) {
       this.router.go(['/login/register']);
     } else {
       this.startWaitTimeInterval();
@@ -161,7 +171,11 @@ export class RegistrationVerificationTokenFormComponent implements OnInit {
 
   passwordconf: string;
 
+  errorStatus: int;
+
   isResendDisabled: boolean = true;
+
+  upToRateLimit: boolean;
 
   onSubmit(): void {
     if (this.registerForm.valid) {
@@ -264,6 +278,19 @@ export class RegistrationVerificationTokenFormComponent implements OnInit {
         clearInterval(interval);
         this.isResendDisabled = false;
         this.resendLink.nativeElement.tabIndex = 0;
+        this.cdr.detectChanges();
+      }
+    }, 1000);
+  }
+
+  startRateLimitWaitTimeInterval(): void {
+    const interval = setInterval(() => {
+      this.waitTimeForRateLimit--;
+      this.cdr.detectChanges();
+      if (this.waitTimeForRateLimit <= 0) {
+        clearInterval(interval);
+        this.upToRateLimit = false;
+        this.isResendDisabled = false;
         this.cdr.detectChanges();
       }
     }, 1000);

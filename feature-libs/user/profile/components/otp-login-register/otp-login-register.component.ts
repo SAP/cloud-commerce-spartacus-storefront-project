@@ -42,6 +42,7 @@ import {
   VerificationTokenCreation,
   VerificationTokenFacade,
 } from '@spartacus/user/account/root';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'cx-otp-register-form',
@@ -191,7 +192,23 @@ export class OneTimePasswordRegisterComponent implements OnInit, OnDestroy {
             result,
             registrationVerificationTokenCreation
           ),
-        error: () => this.isLoading$.next(false),
+          error: (error: HttpErrorResponse) => {
+            this.routingService.go(
+              {
+                cxRoute: 'verifyTokenForRegistration',
+              },
+              {
+                state: {
+                  errorStatus: error.status,
+                  titleCode: this.registerForm.value.titleCode,
+                  firstName: this.registerForm.value.firstName,
+                  lastName: this.registerForm.value.lastName,
+                  loginId: registrationVerificationTokenCreation.loginId,
+                },
+              }
+            );
+            this.isLoading$.next(false);
+          },
         complete: () => this.onCreateRegistrationVerificationTokenComplete(),
       });
   }
