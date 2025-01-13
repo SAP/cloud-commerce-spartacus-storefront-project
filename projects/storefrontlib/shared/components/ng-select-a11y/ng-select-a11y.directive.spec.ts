@@ -89,7 +89,9 @@ describe('NgSelectA11yDirective', () => {
       const options = select.querySelectorAll('.ng-option');
       expect(options.length).toBe(3);
       options.forEach((option: HTMLElement, index: number) => {
-        expect(option.getAttribute('aria-label')).toEqual(`${index + 1}`);
+        expect(option.getAttribute('aria-label')).toEqual(
+          `${index + 1}, ${index + 1} of ${options.length}`
+        );
       });
       done();
     });
