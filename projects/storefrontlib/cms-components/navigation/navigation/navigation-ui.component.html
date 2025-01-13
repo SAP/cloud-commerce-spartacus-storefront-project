@@ -56,8 +56,6 @@
             | cxTranslate
               : {
                   title: node.title,
-                  position,
-                  listLength,
                 }
         "
         [url]="node.url"
@@ -106,7 +104,6 @@
         </ng-container>
         <ng-container *cxFeature="'a11yNavigationUiKeyboardControls'">
           <button
-            aria-level="4"
             [attr.role]="(isDesktop$ | async) && depth ? 'heading' : 'button'"
             [attr.aria-haspopup]="true"
             [attr.aria-expanded]="false"
@@ -131,12 +128,7 @@
         </ng-container>
       </ng-container>
       <ng-template #title>
-        <span
-          role="heading"
-          aria-level="4"
-          *ngIf="node.title"
-          [attr.tabindex]="-1"
-        >
+        <span *ngIf="node.title" [attr.tabindex]="0">
           {{ node.title }}
         </span>
       </ng-template>
