@@ -76,7 +76,7 @@ export class RegisterVerificationTokenFormComponent implements OnInit {
           'verificationTokenForm.needInputCredentials',
           {}
         );
-        this.routingService.go(['/login']);
+        this.routingService.go(['/login/register']);
       } else {
         this.startWaitTimeInterval();
         this.service.displayMessage(
