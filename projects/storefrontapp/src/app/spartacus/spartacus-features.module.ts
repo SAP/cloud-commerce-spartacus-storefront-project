@@ -380,7 +380,11 @@ if (environment.cpq) {
         a11yLinkBtnsToTertiaryBtns: true,
         a11yRepeatedPageTitleFix: true,
         a11yDeliveryModeRadiogroup: true,
-        a11yNgSelectOptionsCount: true,
+        /**
+         * Defaults to false cause ng-select options ariaLabels are working as expected
+         * since Spartacus 2211.33
+         */      
+        a11yNgSelectOptionsCount: false,
         a11yNgSelectCloseDropdownOnEscape: true,
         a11yRepeatedCancelOrderError: true,
         a11yAddedToCartActiveDialog: true,
